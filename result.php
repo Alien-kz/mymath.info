@@ -46,17 +46,6 @@
 			Данные взяты с официального сайта <a href="http://msu.kz"> msu.kz </a>. <br/>
 			Эти данные не являются официальным списком приёмной комиссии. <br/>
 		</p>
-		<p align="center">
-			<a href="result.php?sub=mrp&lim=27" class="c mobile">Прикладная математика и информатика</a>
-			<a href="result.php?sub=mr&lim=25" class="c mobile">Математика</a>
-		</p>
-		<p align="center">
-			<a href="result.php?sub=mre&lim=27" class="c mobile">Экономика</a>
-			<a href="result.php?sub=mrg&lim=26" class="c mobile">Экология и природопользование</a>
-		</p>
-		<p align="center">
-			<a href="result.php?sub=erl&lim=20" class="c mobile">Филология</a>
-		</p>		
 			<?php
 				function is_mobile() { 
 					return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
@@ -137,7 +126,23 @@
 					array_multisort($total_sum, SORT_DESC, $multiarray);
 					return $multiarray;
 				}
-
+				
+				$type = "";
+				if(is_mobile()){
+					$type = 'mobile';
+				} else {
+					$type = 'desktop';
+				}
+			
+				echo '<p align="center">';
+				echo '<a href="result.php?sub=mrp&lim=27" class="c '.$type.'">Прикладная математика и информатика</a> ';
+				echo '<a href="result.php?sub=mr&lim=25" class="c '.$type.'">Математика</a>';
+				echo '</p>';
+				echo '<p align="center">';
+				echo '<a href="result.php?sub=mre&lim=27" class="c '.$type.'">Экономика</a> ';
+				echo '<a href="result.php?sub=mrg&lim=26" class="c '.$type.'">Экология и природопользование</a> ';
+				echo '<a href="result.php?sub=erl&lim=20" class="c '.$type.'">Филология</a>';
+				echo '</p>';
 				$identifier = "Пропуск";
 				$total = "Сумма";
 				$subject = array( 'm' => "Математика",
