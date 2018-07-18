@@ -21,7 +21,7 @@
 			font-size: 24pt;
 		}
 		.desktop {
-			font-size: 14pt;
+			font-size: 12pt;
 		}
 		.jewel {
 			border: 1px solid #000; /* Рамка вокруг таблицы */
@@ -134,15 +134,17 @@
 					$type = 'desktop';
 				}
 			
-				echo '<p align="center">';
-				echo '<a href="result.php?sub=mrp&lim=27" class="c '.$type.'">Прикладная математика и информатика</a> ';
-				echo '<a href="result.php?sub=mr&lim=25" class="c '.$type.'">Математика</a>';
-				echo '</p>';
-				echo '<p align="center">';
-				echo '<a href="result.php?sub=mre&lim=27" class="c '.$type.'">Экономика</a> ';
-				echo '<a href="result.php?sub=mrg&lim=26" class="c '.$type.'">Экология и природопользование</a> ';
-				echo '<a href="result.php?sub=erl&lim=20" class="c '.$type.'">Филология</a>';
-				echo '</p>';
+				echo '<p align="center">\n';
+				echo '<a href="result.php?sub=mrp&lim=27" class="c '.$type.'">Прикладная математика и информатика</a> \n';
+				echo '<a href="result.php?sub=mr&lim=25" class="c '.$type.'">Математика</a>\n';
+				echo '</p>\n';
+				echo '<p align="center">\n';
+				echo '<a href="result.php?sub=mre&lim=27" class="c '.$type.'">Экономика</a> \n';
+				echo '<a href="result.php?sub=mrg&lim=26" class="c '.$type.'">Экология и природопользование</a>\n';
+				echo '</p>\n';
+				echo '<p align="center">\n';
+				echo '<a href="result.php?sub=erl&lim=20" class="c '.$type.'">Филология</a>\n';
+				echo '</p>\n';
 				$identifier = "Пропуск";
 				$total = "Сумма";
 				$subject = array( 'm' => "Математика",
