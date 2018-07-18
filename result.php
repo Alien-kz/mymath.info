@@ -4,17 +4,50 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  </head>
+		<style>
+		.c {
+			border: 1px solid #333; /* Рамка */
+			display: inline-block;
+			padding: 5px 15px; /* Поля */
+			text-decoration: none; /* Убираем подчёркивание */
+			color: #000; /* Цвет текста */
+			}
+		.c:hover {
+			box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Тень */
+			background: linear-gradient(to bottom, #fcfff4, #e9e9ce); /* Градиент */
+			color: #a00;
+			}
+		.jewel {
+			border: 1px solid #000; /* Рамка вокруг таблицы */
+			border-collapse: collapse;
+			}
+		.jewel th {
+			background: #666;
+			color: #fff;
+		}
+		.jewel td, .jewel th { 
+			padding: 3px; /* Поля вокруг текста */
+			text-align: center; /* Выравнивание по центру */ 
+			border: 1px solid #000;
+		}
+		.jewel td, .jewel th { 
+			width: 50pt; /* Ширина таблицы */
+		}
+		</style>
+	</head>
 	<body>
 		<p align="center">
-			Данные взяты с официального сайта и отсортированы. <br/>
-			Не являются официальным источником. <br/>
+			Данные взяты с официального сайта <a href="http://msu.kz"> msu.kz </a>. <br/>
+			Эти данные не являются официальным списком приёмной комиссии. <br/>
 		</p>
 		<p align="center">
-			<a href="result.php?sub=mre&lim=27"> Экономика </a><br/>
-			<a href="result.php?sub=mrp&lim=27"> Прикладная математика и информатика </a><br/>
-			<a href="result.php?sub=mr&lim=25"> Математика </a><br/>
-			<a href="result.php?sub=mrg&lim=26"> Экология </a><br/>
-			<a href="result.php?sub=erl&lim=20"> Филология </a><br/>
+			<a href="result.php?sub=mrp&lim=27" class="c">Прикладная математика и информатика</a>
+			<a href="result.php?sub=mr&lim=25" class="c">Математика</a>
+		</p>
+		<p align="center">
+			<a href="result.php?sub=mre&lim=27" class="c">Экономика</a>
+			<a href="result.php?sub=mrg&lim=26" class="c">Экология и природопользование</a>
+			<a href="result.php?sub=erl&lim=20" class="c">Филология</a>
 		</p>		
 			<?php
 				function file_to_array($filename)
@@ -34,10 +67,10 @@
 				function print_full_table($multiarray, $header, $limit)
 				{
 					echo "<p align='center'>\n";
-					echo "<table border>\n";
-					echo "<tr><td>Место</td>";
+					echo "<table class='jewel'>\n";
+					echo "<tr><th>Место</th>";
 					foreach ($header as $head) {
-						 echo "<td>".$head."</td>";
+						 echo "<th>".$head."</th>";
 					}
 					echo "</tr>\n";
 
