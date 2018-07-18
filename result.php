@@ -78,8 +78,10 @@
 					echo "<p align='center'>\n";
 					if(is_mobile()){
 						echo "<table class='jewel mobile'>\n";
+						echo("Мобильная");
 					} else {
 						echo "<table class='jewel desktop'>\n";
+						echo("Немобильная");
 					}
 					
 					echo "<tr><th>Место</th>";
