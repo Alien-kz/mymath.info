@@ -21,7 +21,7 @@
 			font-size: 24pt;
 		}
 		.desktop {
-			font-size: 18pt;
+			font-size: 14pt;
 		}
 		.jewel {
 			border: 1px solid #000; /* Рамка вокруг таблицы */
@@ -53,6 +53,8 @@
 		<p align="center">
 			<a href="result.php?sub=mre&lim=27" class="c mobile">Экономика</a>
 			<a href="result.php?sub=mrg&lim=26" class="c mobile">Экология и природопользование</a>
+		</p>
+		<p align="center">
 			<a href="result.php?sub=erl&lim=20" class="c mobile">Филология</a>
 		</p>		
 			<?php
@@ -78,10 +80,8 @@
 					echo "<p align='center'>\n";
 					if(is_mobile()){
 						echo "<table class='jewel mobile'>\n";
-						echo("Мобильная");
 					} else {
 						echo "<table class='jewel desktop'>\n";
-						echo("Немобильная");
 					}
 					
 					echo "<tr><th>Место</th>";
