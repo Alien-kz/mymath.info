@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title> Предварителные результаты экзаменов .</title>
+		<title> Предварителные результаты экзаменов.</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  </head>
@@ -27,6 +27,10 @@
 			border: 1px solid #000; /* Рамка вокруг таблицы */
 			border-collapse: collapse;
 		}
+		.selected {
+			font-weight: bold;
+			background: #693;
+		}
 		.jewel th {
 			background: #666;
 			color: #fff;
@@ -43,8 +47,9 @@
 	</head>
 	<body>
 		<p align="center">
-			Данные взяты с официального сайта <a href="http://msu.kz"> msu.kz </a>. <br/>
+			Данные взяты с официального сайта <a href="http://msu.kz">msu.kz</a>. <br/>
 			Эти данные не являются официальным списком приёмной комиссии. <br/>
+			Не забывайте, что некоторые абитуриенты сдают экзамен в резервный день. <br/>
 		</p>
 			<?php
 				function is_mobile() { 
@@ -64,7 +69,7 @@
 					return $result;
 				}
 
-				function print_full_table($multiarray, $header, $limit)
+				function print_full_table($multiarray, $header, $limit, $id)
 				{
 					echo "<p align='center'>\n";
 					if(is_mobile()){
@@ -83,12 +88,15 @@
 					foreach ($multiarray as $row) {
 						$position += 1;
 						if ($position <= $limit) {
-							echo "<tr bgcolor='silver'><td>".$position."</td>";
+							echo "<tr bgcolor='silver' $border><td>".$position."</td>";
 						} else { 
-							echo "<tr><td>".$position."</td>";
+							echo "<tr $border><td>".$position."</td>";
 						}
 						foreach ($row as $point) {
-							  echo "<td>".$point."</td>"; 
+							if ($row[0] == $id)
+								echo "<td class='selected'>".$point."</td>"; 
+							else
+								echo "<td>".$point."</td>"; 
 						}
 						echo "</tr>\n";
 					}
@@ -133,17 +141,20 @@
 				} else {
 					$type = 'desktop';
 				}
-			
+				$id = "&id=00000";
+				if (!empty($_GET["id"]))
+					$id = "&id=".$_GET["id"];
+
 				echo "<p align='center'>\n";
-				echo "<a href='result.php?sub=mrp&lim=27' class='c ".$type."'>Прикладная математика и информатика</a> \n";
-				echo "<a href='result.php?sub=mr&lim=25' class='c ".$type."'>Математика</a>\n";
+				echo "<a href='result.php?sub=mrp&lim=27$id' class='c ".$type."'>Прикладная математика и информатика</a> \n";
+				echo "<a href='result.php?sub=mr&lim=25$id' class='c ".$type."'>Математика</a>\n";
 				echo "</p>\n";
 				echo "<p align='center'>\n";
-				echo "<a href='result.php?sub=mre&lim=27' class='c ".$type."'>Экономика</a> \n";
-				echo "<a href='result.php?sub=mrg&lim=26' class='c ".$type."'>Экология и природопользование</a>\n";
+				echo "<a href='result.php?sub=mre&lim=27$id' class='c ".$type."'>Экономика</a> \n";
+				echo "<a href='result.php?sub=mrg&lim=26$id' class='c ".$type."'>Экология и природопользование</a>\n";
 				echo "</p>\n";
 				echo "<p align='center'>\n";
-				echo "<a href='result.php?sub=erl&lim=20' class='c ".$type."'>Филология</a>\n";
+				echo "<a href='result.php?sub=erl&lim=20$id' class='c ".$type."'>Филология</a>\n";
 				echo "</p>\n";
 				$identifier = "Пропуск";
 				$total = "Сумма";
@@ -159,7 +170,6 @@
 								  'p' => "phys",
 								  'g' => "geo",
 								  'l' => "liter");
-								  
 				if (!empty($_GET["sub"])) {
 					$superkey = str_split($_GET["sub"]);
 					$data = array();
@@ -188,7 +198,11 @@
 					$limit = 0;
 					if (!empty($_GET["lim"]))
 						$limit = intval($_GET["lim"]);
-					print_full_table($merged_table, $header, $limit);
+					$id = 0;
+					if (!empty($_GET["id"]))
+						$id = intval($_GET["id"]);
+						
+					print_full_table($merged_table, $header, $limit, $id);
 				}
 			?>
 		<p>
