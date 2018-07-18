@@ -11,16 +11,18 @@
 			padding: 5px 15px; /* Поля */
 			text-decoration: none; /* Убираем подчёркивание */
 			color: #000; /* Цвет текста */
-			}
+			font-size: 16pt;
+		}
 		.c:hover {
 			box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Тень */
 			background: linear-gradient(to bottom, #fcfff4, #e9e9ce); /* Градиент */
 			color: #a00;
-			}
+		}
 		.jewel {
 			border: 1px solid #000; /* Рамка вокруг таблицы */
 			border-collapse: collapse;
-			}
+			font-size: 16pt;
+		}
 		.jewel th {
 			background: #666;
 			color: #fff;
