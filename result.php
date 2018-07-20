@@ -47,9 +47,10 @@
 	</head>
 	<body>
 		<p align="center">
-			Данные взяты с официального сайта <a href="http://msu.kz">msu.kz</a>. <br/>
-			Эти данные не являются официальным списком приёмной комиссии. <br/>
+			Данные по отдельным предметам взяты с официального сайта <a href="http://msu.kz">msu.kz</a>. <br/>
+			Сводные данные не являются официальным списком приёмной комиссии. <br/>
 			Не забывайте, что некоторые абитуриенты сдают экзамен в резервный день. <br/>
+			Попадание в топ не означает, что абитуриент реально поступает на указанное направление.  <br/>
 		</p>
 			<?php
 				function is_mobile() { 
@@ -64,12 +65,13 @@
 						$str = explode("\t", $value);
 						$ident = intval($str[0]);
 						$point = intval($str[1]);
-						$result[ $ident ] = $point;
+						if ($ident != 0)
+							$result[ $ident ] = $point;
 					}
 					return $result;
 				}
 
-				function print_full_table($multiarray, $header, $limit, $id)
+				function print_full_table($multiarray, $header, $limit, $id, $tops, $faculties_name)
 				{
 					echo "<p align='center'>\n";
 					if(is_mobile()){
@@ -82,26 +84,59 @@
 					foreach ($header as $head) {
 						 echo "<th>".$head."</th>";
 					}
+					echo "<th>В топе</th>";
 					echo "</tr>\n";
 
 					$position = 0;
 					foreach ($multiarray as $row) {
 						$position += 1;
 						if ($position <= $limit) {
-							echo "<tr bgcolor='silver' $border><td>".$position."</td>";
+							echo "<tr bgcolor='silver'><td>".$position."</td>";
 						} else { 
-							echo "<tr $border><td>".$position."</td>";
+							echo "<tr><td>".$position."</td>";
 						}
 						foreach ($row as $point) {
 							if ($row[0] == $id)
-								echo "<td class='selected'>".$point."</td>"; 
+								echo "<td class='selected'>".$point."</td>";
 							else
 								echo "<td>".$point."</td>"; 
 						}
-						echo "</tr>\n";
+						$appendix = "<td>";
+						$alt = "";
+						foreach ($tops as $faculty => $thetop) {
+							if (in_array($row[0], $thetop)){
+								$alt.=$faculties_name[$faculty]."<br/>";
+							}
+						}
+						$appendix .= "$alt</tr>\n";
+						echo $appendix;
 					}
 					echo "</table>\n";
 					echo "</p>\n";
+				}
+
+				function write_top($multiarray, $limit, $faculty) {
+					$position = 0;
+					$ids = "";
+					foreach ($multiarray as $row) {
+						$position += 1;
+						if ($position <= $limit) {
+							$ids .= $row[0]."\n";
+						}
+					}
+					file_put_contents("top/$faculty.txt", $ids, LOCK_EX);
+				}
+				
+				function get_top($faculties) {
+					$answer = array();
+					foreach ($faculties as $faculty) {
+						if (!file_exists("top/$faculty.txt"))
+							continue;
+						$top_array = file("top/$faculty.txt");
+						if ($top_array != false)
+							$answer[$faculty] = $top_array;
+					}
+					return $answer;
 				}
 				
 				function merge($multiarray, $multiarraysize) {
@@ -144,6 +179,17 @@
 				$id = "&id=00000";
 				if (!empty($_GET["id"]))
 					$id = "&id=".$_GET["id"];
+
+				$faculties = array('mrp' => 'vmk',
+								 'mr' => 'mm',
+								 'mre' => 'econom',
+								 'mrg' => 'geo',
+								 'erl' => 'phyl');
+				$faculties_name = array('vmk' => 'Прикл.математика...',
+								 'mm' => 'Математика',
+								 'econom' => 'Экономика',
+								 'geo' => 'Экология...',
+								 'phyl' => 'Филология');
 
 				echo "<p align='center'>\n";
 				echo "<a href='result.php?sub=mrp&lim=27$id' class='c ".$type."'>Прикладная математика и информатика</a> \n";
@@ -201,10 +247,21 @@
 					$id = 0;
 					if (!empty($_GET["id"]))
 						$id = intval($_GET["id"]);
-						
-					print_full_table($merged_table, $header, $limit, $id);
+					
+					$tops = get_top($faculties);
+					print_full_table($merged_table, $header, $limit, $id, $tops, $faculties_name);
+					
+					if (!empty($_GET["top"])) {
+						$subject_mask = $_GET["sub"];
+						if (!empty($faculties[$subject_mask])) {
+							write_top($merged_table, $limit, $faculties[$subject_mask]);
+						}
+					}
 				}
 			?>
+		<p align="center">
+			Чтобы подсветить отдельный пропуск, замените нули id=00000 на последние пять цифр пропуска. <br/>
+		</p>
 		<p>
 			Используйте ключи: <br/>
 			m - математика <br/>
