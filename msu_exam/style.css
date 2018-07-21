@@ -18,7 +18,7 @@
 	padding: 15px 5px; /* Поля */
 	text-decoration: none; /* Убираем подчёркивание */
 	color: #000; /* Цвет текста */
-	font-size: 20pt;
+	font-size: 16pt;
 	font-weight: bold;
 }
 .cmobile:hover {
@@ -28,7 +28,7 @@
 }
 
 .mobile {
-	font-size: 18pt;
+	font-size: 16pt;
 }
 .desktop {
 	font-size: 12pt;
