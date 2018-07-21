@@ -8,7 +8,7 @@
 	<body>
 		<link href='msu_exam/style.css' rel='stylesheet' type='text/css' >
 		<p align="center">
-			Чтобы подсветить отдельный пропуск, замените нули id=00000 на последние пять цифр пропуска. <br/>
+			Чтобы <span class='row_selected'>подсветить</span> отдельный пропуск, замените нули id=00000 на последние пять цифр пропуска. <br/>
 		</p>
 		<p align="center">
 			<table>

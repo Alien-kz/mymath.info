@@ -151,7 +151,7 @@ function append_top_and_status_colomns($merged_table, $limit, $tops, $faculties_
 
 	for ($i = 0; $i < $users; $i++) {
 		$row = $merged_table[$i];
-		$status = 'DEFAULT';	
+		$status = 'row_default';	
 		$reserve = 0;
 		for ($j = 0; $j < $size - 1; $j++) {
 			if ($row[$j] == 1) {
@@ -159,13 +159,13 @@ function append_top_and_status_colomns($merged_table, $limit, $tops, $faculties_
 			}
 		}
 		if ($reserve == 1) {
-			$status = 'RESERVED';
+			$status = 'row_reserved';
 		}
 		if (end($row) == 0){
-			$status = 'FAILED';
+			$status = 'row_failed';
 		}				
 		if ($i < $limit) {
-			$status = 'TOP';
+			$status = 'row_top';
 		}
 		
 		$all_tops = "";

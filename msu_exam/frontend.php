@@ -15,12 +15,8 @@ function get_user_agent_type() {
 ################################################################################
 
 function output_merged_table($merged_table, $header, $user_agent_type, $selected_id) {
-	$bgcolor = array('TOP' => 'Silver',
-					'FAILED' => 'LightCoral',
-					'RESERVED' => 'Aquamarine',
-					'DEFAULT' => 'White');
 	echo "<p align='center'>\n";
-	echo "<table class='jewel '.$user_agent_type.'>\n";
+	echo "<table class='jewel ".$user_agent_type."'>\n";
 	
 	echo "<tr>";
 	foreach ($header as $head) {
@@ -31,15 +27,17 @@ function output_merged_table($merged_table, $header, $user_agent_type, $selected
 	$position = 0;
 	foreach ($merged_table as $row) {
 		$position += 1;
-		$color = $bgcolor[$row['status']];
 		$size = $row['size'];
 
-		echo "<tr bgcolor='".$color."'>";
-		echo "<td>".$position."</td>";
-
+		echo "<tr class='".$row['status']."'>";
 		$cell_color = "";
-		if ($row[0] == $selected_id)
-			$cell_color = "bgcolor='Green'";
+		if ($row[0] == $selected_id) {
+			$cell_color = "class='row_selected'"; 
+			echo "<td>".$position."<a name='selected'></a></td>";
+		} else {
+			echo "<td>".$position."</td>";
+		}
+
 		for ($i = 0; $i < $size; $i++) {
 			echo "<td ".$cell_color.">".$row[$i]."</td>"; 
 		}
@@ -53,12 +51,12 @@ function set_button($subject_keys, $limit, $faculty, $user_agent_type, $page) {
 	$id = "00000";
 	if (!empty($_GET["id"]))
 		$id = $_GET["id"];
-	echo "<a href='".$page."?id=".$id."&sub=".$subject_keys."&lim=".$limit."' class='c ".$user_agent_type."'>".$faculty."</a> \n";
+	echo "<a href='".$page."?id=".$id."&sub=".$subject_keys."&lim=".$limit."' class='c".$user_agent_type."'>".$faculty."</a> \n";
 }
 
 function set_simple_button($text, $user_agent_type, $page) {
 	echo "<p align='center'>\n";
-	set_button("", "", $text, $user_agent_type, $page);
+	set_button("0", "0&clear=true", $text, $user_agent_type, $page);
 	echo "</p>\n";
 }
 

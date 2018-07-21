@@ -1,32 +1,62 @@
-.c {
+.cdesktop {
 	border: 1px solid #333; /* Рамка */
 	display: inline-block;
 	padding: 5px 15px; /* Поля */
 	text-decoration: none; /* Убираем подчёркивание */
 	color: #000; /* Цвет текста */
+	font-size: 14pt;
 }
-.c:hover {
-	box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Тень */
+.cdesktop:hover {
+	box-shadow: 0 0 0 rgba(0,0,0,0.3); /* Тень */
 	background: linear-gradient(to bottom, #fcfff4, #e9e9ce); /* Градиент */
 	color: #a00;
 }
+
+.cmobile {
+	border: 1px solid #333; /* Рамка */
+	display: inline-block;
+	padding: 15px 5px; /* Поля */
+	text-decoration: none; /* Убираем подчёркивание */
+	color: #000; /* Цвет текста */
+	font-size: 20pt;
+	font-weight: bold;
+}
+.cmobile:hover {
+	box-shadow: 0 0 0 rgba(0,0,0,0.3); /* Тень */
+	background: linear-gradient(to bottom, #fcfff4, #e9e9ce); /* Градиент */
+	color: #a00;
+}
+
 .mobile {
-	font-size: 24pt;
+	font-size: 18pt;
 }
 .desktop {
-	font-size: 11pt;
+	font-size: 12pt;
 }
+
 .jewel {
 	border: 1px solid #000; /* Рамка вокруг таблицы */
 	border-collapse: collapse;
 }
-.selected {
+.row_selected {
 	font-weight: bold;
-	background: #693;
+	background: mediumpurple;
+}
+.row_top {
+	background: lightgreen;
+}
+.row_failed {
+	background: lightcoral;
+}
+.row_reserved {
+	background: lightsteelblue;
+}
+.row_default {
+	background: white;
 }
 .jewel th {
-	background: #666;
-	color: #fff;
+	background: dimgray;
+	color: white;
 }
 .jewel td, .jewel th { 
 	padding: 3px; /* Поля вокруг текста */
@@ -34,5 +64,5 @@
 	border: 1px solid #000;
 }
 .jewel td, .jewel th { 
-	width: 50pt; /* Ширина таблицы */
+	width: 30pt; /* Ширина таблицы */
 }

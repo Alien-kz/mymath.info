@@ -7,24 +7,10 @@
 	</head>
 	<body>
 		<link href='msu_exam/style.css' rel='stylesheet' type='text/css' >
-		<p align="center">
-			Данные по отдельным предметам взяты с официального сайта <a href="http://msu.kz">msu.kz</a>. <br/>
-			Сводные данные не являются официальным списком приёмной комиссии. <br/>
-			Не забывайте, что некоторые абитуриенты теоретически могут сдавать экзамен в резервный день <span style="background:Aquamarine">(выставлен 1 балл)</span>. <br/>
-			Попадание в топ на специальность "Математика" не означает, что абитуриент реально поступает на указанное направление.  <br/>
-		</p>
-		<p align="center">
-			Чтобы подсветить отдельный пропуск, замените нули id=00000 на последние пять цифр пропуска. <br/>
-		</p>
 		<?php
 			include_once "msu_exam/routine.php";
-			include_once "msu_exam/frontend.php";
-			
+			include_once "msu_exam/frontend.php";			
 			$user_agent_type = get_user_agent_type();
-			$limit = 0;
-			if (!empty($_GET["lim"]))
-				$limit = intval($_GET["lim"]);
-
 			$id = 0;
 			if (!empty($_GET["id"]))
 				$id = intval($_GET["id"]);
@@ -32,8 +18,34 @@
 			$subjects_mask = "";
 			if (!empty($_GET["sub"]))
 				$subjects_mask = $_GET["sub"];
+
+			$limit = 0;
+			if (!empty($_GET["lim"]))
+				$limit = intval($_GET["lim"]);
+		?>
+		<p align='center' class='<?php echo $user_agent_type;?>'>
+			Данные по отдельным предметам взяты с официального сайта <a href="http://msu.kz">msu.kz</a>. <br/>
+			Сводные данные не являются официальным списком приёмной комиссии. <br/>
+		</p>
+	
+		<form action="result.php#selected" method="GET">
+		<input type="hidden" name="sub" value="<?php echo $subjects_mask;?>" /> 
+		<input type="hidden" name="lim" value="<?php echo $limit;?>" /> 
 			
-			set_buttons("Выберите направление", $user_agent_type, "result.php");
+		<p align='center'>
+			<table class='<?php echo $user_agent_type;?>'>
+			<tr><td><span class='row_top'>Абитуриенты</span></td> <td>входят в топ без учета резервистов. </td></tr>
+			<tr><td><span class='row_reserved'>Абитуриенты</span></td> <td> могут подняться по списку по результатам резервного дня. </td></tr>
+			<tr><td><span class='row_failed'>Абитуриенты</span></td> <td> точно не проходят по данному направлению. </td></tr>
+			<tr><td><span class='row_selected'>Абитуриент</span></td> <td> по 5 последним цифрам пропуска 
+				<input type="number" name="id" min="10000" max="99999" maxlength="3" value="<?php echo $id;?>"  class='c<?php echo $user_agent_type;?>'/> 
+				<input type="submit" value="выбрать"  class='c<?php echo $user_agent_type;?>'/> 
+			</td></tr>
+			</table>
+		</p>
+		</form>.
+		<?php	
+			set_buttons("", $user_agent_type, "result.php");
 
 			if ($subjects_mask != "") {
 				$subjects_char_index = str_split($subjects_mask);
