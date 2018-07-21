@@ -49,8 +49,8 @@
 		<p align="center">
 			Данные по отдельным предметам взяты с официального сайта <a href="http://msu.kz">msu.kz</a>. <br/>
 			Сводные данные не являются официальным списком приёмной комиссии. <br/>
-			Не забывайте, что некоторые абитуриенты сдают экзамен в резервный день. <br/>
-			Попадание в топ не означает, что абитуриент реально поступает на указанное направление.  <br/>
+			Не забывайте, что некоторые абитуриенты теоретически могут сдавать экзамен в резервный день <span style="background:Aquamarine">(выставлен 1 балл)</span>. <br/>
+			Попадание в топ на специальность "Математика" не означает, что абитуриент реально поступает на указанное направление.  <br/>
 		</p>
 			<?php
 				function is_mobile() { 
@@ -92,13 +92,27 @@
 					foreach ($multiarray as $row) {
 						$position += 1;
 						$len = count($row);
-						if ($position <= $limit) {
-							echo "<tr bgcolor='silver'><td>".$position."</td>";
-						} else if ($row[$len - 1] == 0){
-							echo "<tr bgcolor='LightCoral'><td>".$position."</td>";						
-						} else {
-							echo "<tr><td>".$position."</td>";
+						
+						$profile = true;
+						if ($row[$len - 1] == 0)
+							$profile = false;
+						
+						$reserve = 0;
+						foreach ($row as $point) {
+							if ($point == 1)
+								$reserve += 1;
 						}
+						
+						if ($position <= $limit) {
+							echo "<tr bgcolor='silver'>";
+						} else if (!$profile){
+							echo "<tr bgcolor='LightCoral'>";						
+						} else if ($reserve == 1){
+							echo "<tr bgcolor='Aquamarine'>";						
+						} else {
+							echo "<tr>";
+						}
+						echo "<td>".$position."</td>";
 						
 						foreach ($row as $point) {
 							if ($row[0] == $id)
