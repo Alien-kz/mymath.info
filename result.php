@@ -64,9 +64,10 @@
 					{
 						$str = explode("\t", $value);
 						$ident = intval($str[0]);
-						$point = intval($str[1]);
-						if ($ident != 0)
+						if ($ident != 0) {
+							$point = intval($str[1]);
 							$result[ $ident ] = $point;
+						}
 					}
 					return $result;
 				}
@@ -90,11 +91,15 @@
 					$position = 0;
 					foreach ($multiarray as $row) {
 						$position += 1;
+						$len = count($row);
 						if ($position <= $limit) {
 							echo "<tr bgcolor='silver'><td>".$position."</td>";
-						} else { 
+						} else if ($row[$len - 1] == 0){
+							echo "<tr bgcolor='LightCoral'><td>".$position."</td>";						
+						} else {
 							echo "<tr><td>".$position."</td>";
 						}
+						
 						foreach ($row as $point) {
 							if ($row[0] == $id)
 								echo "<td class='selected'>".$point."</td>";
@@ -153,15 +158,16 @@
 						foreach ($multiarray as $index => $subject) {
 							if (array_key_exists($ident, $subject)) {
 								$result[ $ident ][ $index + 1 ] = $subject[ $ident ];
-								if ($subject[ $ident ] <= 2)
-									$fail = true;								
+								if ($subject[ $ident ] == 2)
+									$fail = true;
 								$sum += $subject[ $ident ];
+							} else {
+								$fail = true;
 							}
-							if ($fail)
-								$sum = 0;
-							$result[ $ident ][$multiarraysize + 1] = $sum;
-							
 						}
+						if ($fail)
+							$sum = 0;
+						$result[ $ident ][$multiarraysize + 1] = $sum;
 					}
 					return $result;
 				}
