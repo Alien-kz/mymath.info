@@ -149,11 +149,16 @@
 						$result[ $ident ][0] = $ident;
 
 						$sum = 0;
+						$fail = false;
 						foreach ($multiarray as $index => $subject) {
 							if (array_key_exists($ident, $subject)) {
 								$result[ $ident ][ $index + 1 ] = $subject[ $ident ];
+								if ($subject[ $ident ] <= 2)
+									$fail = true;								
 								$sum += $subject[ $ident ];
 							}
+							if ($fail)
+								$sum = 0;
 							$result[ $ident ][$multiarraysize + 1] = $sum;
 							
 						}
