@@ -64,10 +64,14 @@ function set_buttons($header, $user_agent_type, $page) {
 	echo "<h2 align='center'>".$header."</h2>";
 	echo "<p align='center'>\n";
 	set_button("mrp", "27", "Прикладная математика и информатика", $user_agent_type, $page);
+	echo "</p>\n";
+	echo "<p align='center'>\n";
 	set_button("mr", "25", "Математика", $user_agent_type, $page);
 	echo "</p>\n";
 	echo "<p align='center'>\n";
 	set_button("mre", "27", "Экономика", $user_agent_type, $page);
+	echo "</p>\n";
+	echo "<p align='center'>\n";
 	set_button("mrg", "26", "Экология и природопользование", $user_agent_type, $page);
 	echo "</p>\n";
 	echo "<p align='center'>\n";
