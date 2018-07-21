@@ -8,14 +8,19 @@
 	<body>
 		<link href='msu_exam/style.css' rel='stylesheet' type='text/css' >
 		<p align="center">
-			Данные по отдельным предметам взяты с официального сайта <a href="http://msu.kz">msu.kz</a>. <br/>
-			Сводные данные не являются официальным списком приёмной комиссии. <br/>
-			Не забывайте, что некоторые абитуриенты теоретически могут сдавать экзамен в резервный день <span style="background:Aquamarine">(выставлен 1 балл)</span>. <br/>
-			Попадание в топ на специальность "Математика" не означает, что абитуриент реально поступает на указанное направление.  <br/>
-		</p>
-		<p align="center">
 			Чтобы подсветить отдельный пропуск, замените нули id=00000 на последние пять цифр пропуска. <br/>
 		</p>
+		<p align="center">
+			<table>
+			<tr><td>m</td><td>математика </td></tr>
+			<tr><td>r</td><td>русский язык </td></tr>
+			<tr><td>e</td><td>английский язык </td></tr>
+			<tr><td>p</td><td>физика </td></tr>
+			<tr><td>g</td><td>география </td></tr>
+			<tr><td>l</td><td>литература </td></tr>
+			</table>
+		</p>
+
 		<?php
 			include_once "msu_exam/routine.php";
 			include_once "msu_exam/frontend.php";
@@ -32,12 +37,24 @@
 			$subjects_mask = "";
 			if (!empty($_GET["sub"]))
 				$subjects_mask = $_GET["sub"];
-			
-			set_buttons("Выберите направление", $user_agent_type, "result.php");
+
+			$clear = (!empty($_GET["clear"])) && ($_GET["clear"]);
+			if ($clear) {
+				foreach ($data_file_top as $faculty) {
+					file_put_contents("top/$faculty.txt", "", LOCK_EX);
+				}
+			}
+
+			set_buttons("Закешировать топ", $user_agent_type, "make_top.php");
+			set_simple_button("Очистить все топы", $user_agent_type, "make_top.php");
+			set_buttons("Посмотреть результаты", $user_agent_type, "result.php");
 
 			if ($subjects_mask != "") {
 				$subjects_char_index = str_split($subjects_mask);
 				$merged_table = sort_by_sum(merge(get_multi_tables($subjects_char_index, $data_file_result)));
+				if (!empty($data_file_top[$subjects_mask]) && !$clear) {
+					write_top($merged_table, $limit, $data_file_top[$subjects_mask]);
+				}
 				$tops = get_top($data_file_top);
 				$header = get_merged_table_header($subjects_char_index, $subject_name, array("Место", "Пропуск"), array("Сумма", "В топе"));
 				$merged_table = append_top_and_status_colomns($merged_table, $limit, $tops, $faculties_name_for_top);
@@ -46,3 +63,4 @@
 		?>
 	</body>
 </html>
+
