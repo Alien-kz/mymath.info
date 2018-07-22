@@ -47,8 +47,8 @@
 		</div>
 
 		<?php
-			set_form("Последние 5 цифр пропуска", $subjects_mask, $limit, $id, $user_agent_type, "result.php#selected");
 			set_buttons("Направление", $subjects_mask, $user_agent_type, "result.php");
+			set_form("Последние 5 цифр пропуска", $subjects_mask, $limit, $id, $user_agent_type, "result.php#selected");
 			
 			if ($subjects_mask != "") {
 				$subjects_char_index = str_split($subjects_mask);
