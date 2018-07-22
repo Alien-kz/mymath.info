@@ -16,7 +16,7 @@ function get_user_agent_type() {
 
 function output_merged_table($merged_table, $header, $user_agent_type, $selected_id) {
 	echo "<p align='center'>\n";
-	echo "<table class='jewel ".$user_agent_type."'>\n";
+	echo "<table border=1 class='jewel ".$user_agent_type."'>\n";
 	
 	echo "<tr>";
 	foreach ($header as $head) {

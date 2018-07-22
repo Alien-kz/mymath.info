@@ -5,10 +5,10 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	</head>
-	<link href='msu_exam/exam_style.css?ver=2018-07-22-2' rel='stylesheet' type='text/css' >
+	<link href='exam_style.css?ver=2018-07-22-2' rel='stylesheet' type='text/css' >
 	<?php
-		include_once "msu_exam/routine.php";
-		include_once "msu_exam/frontend.php";			
+		include_once "routine.php";
+		include_once "frontend.php";			
 		$user_agent_type = get_user_agent_type();
 		$id = 0;
 		if (!empty($_GET["id"]))
@@ -30,7 +30,7 @@
 		}
 	?>
 	<body class='<?php echo $user_agent_type;?>'>
-		<link href='msu_exam/exam_style.css?ver=2018-07-22-2' rel='stylesheet' type='text/css' >
+		<link href='exam_style.css?ver=2018-07-22-2' rel='stylesheet' type='text/css' >
 		<p align="center">
 			<table>
 			<tr><td>
