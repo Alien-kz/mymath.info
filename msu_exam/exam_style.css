@@ -16,7 +16,7 @@ h2 {
 	padding: 5px 15px;
 	text-decoration: none;
 	color: white;
-	font-size: 14pt;
+	font-size: 16pt;
 }
 .cmobile {
 	border: 1px solid gray;
@@ -42,10 +42,10 @@ h2 {
 
 
 .mobile {
-	font-size: 16pt;
+	font-size: 18pt;
 }
 .desktop {
-	font-size: 12pt;
+	font-size: 15pt;
 }
 
 .jewel {

@@ -5,31 +5,32 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	</head>
-	<body>
-		<link href='msu_exam/exam_style.css' rel='stylesheet' type='text/css' >
-		<?php
-			include_once "msu_exam/routine.php";
-			include_once "msu_exam/frontend.php";			
-			$user_agent_type = get_user_agent_type();
-			$id = 0;
-			if (!empty($_GET["id"]))
-				$id = intval($_GET["id"]);
-	
-			$subjects_mask = "";
-			if (!empty($_GET["sub"]))
-				$subjects_mask = $_GET["sub"];
+	<link href='msu_exam/exam_style.css?ver=2018-07-22-2' rel='stylesheet' type='text/css' >
+	<?php
+		include_once "msu_exam/routine.php";
+		include_once "msu_exam/frontend.php";			
+		$user_agent_type = get_user_agent_type();
+		$id = 0;
+		if (!empty($_GET["id"]))
+			$id = intval($_GET["id"]);
 
-			$limit = 0;
-			if (!empty($_GET["lim"]))
-				$limit = intval($_GET["lim"]);
+		$subjects_mask = "";
+		if (!empty($_GET["sub"]))
+			$subjects_mask = $_GET["sub"];
 
-			$clear = (!empty($_GET["clear"])) && ($_GET["clear"]);
-			if ($clear) {
-				foreach ($data_file_top as $faculty) {
-					file_put_contents("top/$faculty.txt", "", LOCK_EX);
-				}
+		$limit = 0;
+		if (!empty($_GET["lim"]))
+			$limit = intval($_GET["lim"]);
+
+		$clear = (!empty($_GET["clear"])) && ($_GET["clear"]);
+		if ($clear) {
+			foreach ($data_file_top as $faculty) {
+				file_put_contents("top/$faculty.txt", "", LOCK_EX);
 			}
-		?>
+		}
+	?>
+	<body class='<?php echo $user_agent_type;?>'>
+		<link href='msu_exam/exam_style.css?ver=2018-07-22-2' rel='stylesheet' type='text/css' >
 		<p align="center">
 			<table>
 			<tr><td>
