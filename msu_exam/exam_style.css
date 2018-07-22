@@ -1,3 +1,8 @@
+body {
+	background: url(light_msu.jpg) repeat;
+	background-size: contain;
+}
+
 h2 {
 	margin-top: 0px;
 	margin-bottom: 0px;
