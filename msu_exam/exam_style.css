@@ -3,9 +3,9 @@ h2 {
 	margin-bottom: 0px;
 }
 .brd {
-    border: 1px solid gray; /* Параметры границы */
-    background: gainsboro; /* Цвет фона */
-    padding: 5px; /* Поля вокруг текста */
+    border: 1px solid gray;
+    background: gainsboro;
+    padding: 5px;
     display: inline-block;
 	margin-top: 10px;
 }
@@ -13,8 +13,8 @@ h2 {
 .cdesktop {
 	border: 1px solid gray;
 	display: inline-block;
-	padding: 5px 15px; /* Поля */
-	text-decoration: none; /* Убираем подчёркивание */
+	padding: 5px 15px;
+	text-decoration: none;
 	background: dimgray;
 	color: white;
 	font-size: 14pt;
@@ -24,14 +24,14 @@ h2 {
 	color: white;
 }
 .selected {
-	background: linear-gradient(to bottom, green, black); /* Градиент */
+	background: linear-gradient(to bottom, green, black);
 	color: white;
 }
 .cmobile {
 	border: 1px solid gray;
 	display: inline-block;
-	padding: 15px 5px; /* Поля */
-	text-decoration: none; /* Убираем подчёркивание */
+	padding: 15px 5px;
+	text-decoration: none;
 	background: dimgray;
 	color: white;
 	font-size: 16pt;
