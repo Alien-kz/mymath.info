@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	</head>
-	<link href='exam_style.css?ver=2018-07-22-2' rel='stylesheet' type='text/css' >
+	<link href='exam_style.css?ver=2018-07-22-4' rel='stylesheet' type='text/css' >
 	<?php
 		include_once "routine.php";
 		include_once "frontend.php";			
