@@ -34,7 +34,7 @@
 
 		<div align='center'>
 		<div align='left' class='brd'>
-			<span class='row_top mobile'>Абитуриенты</span> входят в топ без учета резервистов. <br/>
+			<span class='row_top'>Абитуриенты</span> входят в топ без учета резервистов. <br/>
 			<span class='row_reserved'>Абитуриенты</span> могли писать в резервный день. <br/>
 			<span class='row_failed'>Абитуриенты</span> точно не проходят по данному направлению. <br/> <br/>
 			<span class='arrow_up'>&#9650;</span> 
