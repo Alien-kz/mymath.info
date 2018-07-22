@@ -54,6 +54,8 @@ function set_button($subjects_keys, $limit, $faculty, $user_agent_type, $page, $
 	$class = "c".$user_agent_type;
 	if ($subjects_mask == $subjects_keys)
 		$class .= " selected";
+	else
+		$class .= " notselected";
 	echo "<a href='".$page."?id=".$id."&sub=".$subjects_keys."&lim=".$limit."' class='$class'>".$faculty."</a> \n";
 }
 
@@ -73,7 +75,7 @@ function div_button($user_agent_type) {
 function set_form($header, $subjects_mask, $limit, $id, $user_agent_type, $page) {
 	echo "<div align='center'>\n";
 	echo "<div align='center' class='brd'>\n";
-	$class="c$user_agent_type row_selected";
+	$class="c$user_agent_type selected";
 	echo "<h2 align='center'>".$header."</h2>\n";
 	echo "<p>\n";
 	echo "<form action='$page' method='GET'>\n";

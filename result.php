@@ -5,40 +5,38 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	</head>
-	<body>
-		<link href='msu_exam/exam_style.css?ver=2018-07-22-1' rel='stylesheet' type='text/css' >
-		<?php
-			include_once "msu_exam/routine.php";
-			include_once "msu_exam/frontend.php";			
-			$user_agent_type = get_user_agent_type();
-			$id = 0;
-			if (!empty($_GET["id"]))
-				$id = intval($_GET["id"]);
-	
-			$subjects_mask = "";
-			if (!empty($_GET["sub"]))
-				$subjects_mask = $_GET["sub"];
+	<link href='msu_exam/exam_style.css?ver=2018-07-22-1' rel='stylesheet' type='text/css' >
+	<?php
+		include_once "msu_exam/routine.php";
+		include_once "msu_exam/frontend.php";			
+		$user_agent_type = get_user_agent_type();
+		$id = 0;
+		if (!empty($_GET["id"]))
+			$id = intval($_GET["id"]);
 
-			$limit = 0;
-			if (!empty($_GET["lim"]))
-				$limit = intval($_GET["lim"]);
-		?>
+		$subjects_mask = "";
+		if (!empty($_GET["sub"]))
+			$subjects_mask = $_GET["sub"];
+
+		$limit = 0;
+		if (!empty($_GET["lim"]))
+			$limit = intval($_GET["lim"]);
+	?>
+	<body class='<?php echo $user_agent_type;?>'>
 		<div align='center'>
 		<div align='center' class='row_failed brd'>
 		<h2>
-			Сводные данные не являются официальным списком приёмной комиссии.<br/>
-			Официальные сводные данные выйдут на официальном сайте <a href="http://msu.kz">msu.kz</a>
+			Данная свобдная таблица не является офицальным списком приёмной комиссии.<br/>
+			Официальные сводная таблица выйдет на сайте <a href="http://msu.kz">msu.kz</a>
 		</h2>
 		</div>
 		</div>
 
 		<div align='center'>
-		<div align='center' class='brd'>
-			<table class='<?php echo $user_agent_type;?>'>
-			<tr><td><span class='row_top'>Абитуриенты</span></td> <td>входят в топ без учета резервистов. </td></tr>
-			<tr><td><span class='row_reserved'>Абитуриенты</span></td> <td> могли писать в резервный день. </td></tr>
-			<tr><td><span class='row_failed'>Абитуриенты</span></td> <td> точно не проходят по данному направлению. </td></tr>
-			</table>
+		<div align='left' class='brd'>
+			<span class='row_top mobile'>Абитуриенты</span> входят в топ без учета резервистов. <br/>
+			<span class='row_reserved'>Абитуриенты</span> могли писать в резервный день. <br/>
+			<span class='row_failed'>Абитуриенты</span> точно не проходят по данному направлению. <br/> <br/>
 			<span class='arrow_up'>&#9650;</span> 
 			Вы можете подняться в таблице за счет абитуриентов, которые прошли на другие направления или отказались. <br/>
 			<span class='arrow_down'>&#9660;</span> 

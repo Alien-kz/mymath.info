@@ -15,28 +15,31 @@ h2 {
 	display: inline-block;
 	padding: 5px 15px;
 	text-decoration: none;
-	background: dimgray;
 	color: white;
 	font-size: 14pt;
-}
-.cdesktop:hover {
-	background: green;
-	color: white;
-}
-.selected {
-	background: linear-gradient(to bottom, green, black);
-	color: white;
 }
 .cmobile {
 	border: 1px solid gray;
 	display: inline-block;
 	padding: 15px 5px;
 	text-decoration: none;
-	background: dimgray;
 	color: white;
-	font-size: 16pt;
+	font-size: 28pt;
 	font-weight: bold;
 }
+.cdesktop:hover {
+	background: green;
+	color: white;
+}
+
+.notselected {
+	background: dimgray;
+}
+
+.selected {
+	background: linear-gradient(to bottom, green, black);
+}
+
 
 .mobile {
 	font-size: 16pt;
