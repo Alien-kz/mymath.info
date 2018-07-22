@@ -45,7 +45,7 @@
 		</p>
 
 		<?php	
-			set_form("Выберите пропуск", $subjects_mask, $limit, $id, $user_agent_type, "result.php#selected");
+			set_form("Последние 5 цифр пропуска", $subjects_mask, $limit, $id, $user_agent_type, "result.php#selected");
 			set_buttons("Направление", $subjects_mask, $user_agent_type, "result.php");
 
 			if ($subjects_mask != "") {
