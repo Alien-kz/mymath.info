@@ -23,31 +23,33 @@
 			if (!empty($_GET["lim"]))
 				$limit = intval($_GET["lim"]);
 		?>
-		<h1 align='center' class='row_failed'>
+		<div align='center'>
+		<div align='center' class='row_failed brd'>
+		<h2>
 			Сводные данные не являются официальным списком приёмной комиссии.<br/>
 			Официальные сводные данные выйдут на официальном сайте <a href="http://msu.kz">msu.kz</a>
-		</h1>
-		
-		<p align='center'>
+		</h2>
+		</div>
+		</div>
+
+		<div align='center'>
+		<div align='center' class='brd'>
 			<table class='<?php echo $user_agent_type;?>'>
 			<tr><td><span class='row_top'>Абитуриенты</span></td> <td>входят в топ без учета резервистов. </td></tr>
 			<tr><td><span class='row_reserved'>Абитуриенты</span></td> <td> могли писать в резервный день. </td></tr>
 			<tr><td><span class='row_failed'>Абитуриенты</span></td> <td> точно не проходят по данному направлению. </td></tr>
 			</table>
-		</p>
-		<p align='center' class='<?php echo $user_agent_type;?>'>
 			<span class='arrow_up'>&#9650;</span> 
 			Вы можете подняться в таблице за счет абитуриентов, которые прошли на другие направления или отказались. <br/>
-		</p>
-		<p align='center' class='<?php echo $user_agent_type;?>'>
 			<span class='arrow_down'>&#9660;</span> 
-			Вы можете спуститься в таблице только за счет <span class='row_reserved'>абитуриентов</span>, которые имели возможность сдать в резерный день. <br/>
-		</p>
+			Вы можете спуститься в таблице за счет <span class='row_reserved'>абитуриентов</span>, которые имели возможность сдать в резерный день. <br/>
+		</div>
+		</div>
 
-		<?php	
+		<?php
 			set_form("Последние 5 цифр пропуска", $subjects_mask, $limit, $id, $user_agent_type, "result.php#selected");
 			set_buttons("Направление", $subjects_mask, $user_agent_type, "result.php");
-
+			
 			if ($subjects_mask != "") {
 				$subjects_char_index = str_split($subjects_mask);
 				$merged_table = sort_by_sum(merge(get_multi_tables($subjects_char_index, $data_file_result)));

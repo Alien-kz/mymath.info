@@ -1,9 +1,22 @@
+h2 {
+	margin-left: 5px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.brd {
+    border: 1px solid gray; /* Параметры границы */
+    background: lightgray; /* Цвет фона */
+    padding: 5px; /* Поля вокруг текста */
+    display: inline-block;
+	margin-top: 10px;
+}
+
 .cdesktop {
 	border: 1px solid gray;
 	display: inline-block;
 	padding: 5px 15px; /* Поля */
 	text-decoration: none; /* Убираем подчёркивание */
-	background: dimgray; /* Градиент */
+	background: dimgray;
 	color: white;
 	font-size: 14pt;
 }
@@ -39,7 +52,7 @@
 .row_selected {
 	font-weight: bold;
 	color: white;
-	background: mediumpurple;
+	background: darkgreen;
 }
 .row_top {
 	background: lightgreen;

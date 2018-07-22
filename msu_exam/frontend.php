@@ -66,26 +66,32 @@ function set_simple_button($text, $user_agent_type, $page) {
 function div_button($user_agent_type) {
 	if ($user_agent_type == 'mobile') {
 		echo "</p>\n";
-		echo "<p align='center'>\n";
+		echo "<p>\n";
 	}
 }
 
 function set_form($header, $subjects_mask, $limit, $id, $user_agent_type, $page) {
+	echo "<div align='center'>\n";
+	echo "<div align='center' class='brd'>\n";
 	$class="c$user_agent_type row_selected";
 	echo "<h2 align='center'>".$header."</h2>\n";
+	echo "<p>\n";
 	echo "<form action='$page' method='GET'>\n";
-	echo "<p align='center'>\n";
 	echo "<input type='hidden' name='sub' value='$subjects_mask'/>\n"; 
 	echo "<input type='hidden' name='lim' value='$limit'/>\n"; 
 	echo "<input type='number' name='id' min='10000' max='99999' value='$id' class='$class'/>\n";
 	echo "<input type='submit' value='найти' class='$class'/>\n";
-	echo "</p>\n";
 	echo "</form>\n";
+	echo "</p>\n";
+	echo "</div>\n";
+	echo "</div>\n";
 }
 
 function set_buttons($header, $subjects_mask, $user_agent_type, $page) {
-	echo "<h2 align='center'>".$header."</h2>";
-	echo "<p align='center'>\n";
+	echo "<div align='center'>\n";
+	echo "<div align='center' class='brd'>\n";
+	echo "<h2 align='center'>".$header."</h2>\n";
+	echo "<p>\n";
 	set_button("mrp", "27", "Прикладная математика и информатика", $user_agent_type, $page, $subjects_mask);
 	div_button($user_agent_type);
 	set_button("mr", "25", "Математика", $user_agent_type, $page, $subjects_mask);
@@ -96,6 +102,8 @@ function set_buttons($header, $subjects_mask, $user_agent_type, $page) {
 	div_button($user_agent_type);
 	set_button("erl", "20", "Филология", $user_agent_type, $page, $subjects_mask);
 	echo "</p>\n";
+	echo "</div>\n";
+	echo "</div>\n";
 }
 
 ?>
