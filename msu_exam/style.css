@@ -1,30 +1,28 @@
 .cdesktop {
-	border: 1px solid #333; /* Рамка */
+	border: 1px solid gray;
 	display: inline-block;
 	padding: 5px 15px; /* Поля */
 	text-decoration: none; /* Убираем подчёркивание */
-	color: #000; /* Цвет текста */
+	background: dimgray; /* Градиент */
+	color: white;
 	font-size: 14pt;
 }
 .cdesktop:hover {
-	box-shadow: 0 0 0 rgba(0,0,0,0.3); /* Тень */
-	background: linear-gradient(to bottom, #fcfff4, #e9e9ce); /* Градиент */
-	color: #a00;
+	background: green;
+	color: white;
 }
-
+.selected {
+	background: linear-gradient(to bottom, green, black); /* Градиент */
+	color: white;
+}
 .cmobile {
-	border: 1px solid #333; /* Рамка */
+	border: 1px solid gray;
 	display: inline-block;
 	padding: 15px 5px; /* Поля */
 	text-decoration: none; /* Убираем подчёркивание */
 	color: #000; /* Цвет текста */
 	font-size: 16pt;
 	font-weight: bold;
-}
-.cmobile:hover {
-	box-shadow: 0 0 0 rgba(0,0,0,0.3); /* Тень */
-	background: linear-gradient(to bottom, #fcfff4, #e9e9ce); /* Градиент */
-	color: #a00;
 }
 
 .mobile {
@@ -40,6 +38,7 @@
 }
 .row_selected {
 	font-weight: bold;
+	color: white;
 	background: mediumpurple;
 }
 .row_top {
@@ -54,8 +53,14 @@
 .row_default {
 	background: white;
 }
+.arrow_up {
+	color: green;
+}
+.arrow_down {
+	color: red;
+}
 .jewel th {
-	background: dimgray;
+	background: linear-gradient(to bottom, green, black); /* Градиент */
 	color: white;
 }
 .jewel td, .jewel th { 
