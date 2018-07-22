@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	</head>
-	<link href='exam_style.css?ver=2018-07-22-4' rel='stylesheet' type='text/css' >
+	<link href='exam_style.css?ver=2018-07-22-5' rel='stylesheet' type='text/css' >
 	<?php
 		include_once "routine.php";
 		include_once "frontend.php";			
@@ -22,18 +22,18 @@
 		if (!empty($_GET["lim"]))
 			$limit = intval($_GET["lim"]);
 	?>
-	<body class='<?php echo $user_agent_type;?>'>
+	<body>
 		<div align='center'>
 		<div align='center' class='row_failed brd'>
-		<h2>
+		<h3>
 			Данная таблица не является официальным списком приёмной комиссии.<br/>
 			Официальные результаты будут опубликованы на сайте <a href="http://msu.kz">msu.kz</a>
-		</h2>
+		</h3>
 		</div>
 		</div>
 
 		<div align='center'>
-		<div align='left' class='brd'>
+		<div align='left' class='brd <?php echo $user_agent_type;?>'>
 			<span class='row_top'>Абитуриенты</span> входят в топ без учета резервистов. <br/>
 			<span class='row_reserved'>Абитуриенты</span> могли писать в резервный день. <br/>
 			<span class='row_failed'>Абитуриенты</span> точно не проходят по данному направлению. <br/> <br/>
@@ -45,9 +45,12 @@
 		</div>
 
 		<?php
+			echo "<div align='center'>\n";
 			set_buttons("Направление", $subjects_mask, $user_agent_type, "result.php");
 			set_form("Последние 5 цифр пропуска", $subjects_mask, $limit, $id, $user_agent_type, "result.php#selected");
-			
+			echo "</div>\n";
+		?>
+		<?php
 			if ($subjects_mask != "") {
 				$subjects_char_index = str_split($subjects_mask);
 				$merged_table = sort_by_sum(merge(get_multi_tables($subjects_char_index, $data_file_result)));

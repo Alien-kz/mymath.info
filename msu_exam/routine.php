@@ -11,7 +11,7 @@ $data_file_top = array('mrp' => 'vmk',
 						'mre' => 'econom',
 						'mrg' => 'geo',
 						'erl' => 'phyl');
-$faculties_name_for_top = array('vmk' => 'Прикл.математика...',
+$faculties_name_for_top = array('vmk' => 'Прикл.матем...',
 								'mm' => 'Математика',
 								'econom' => 'Экономика',
 								'geo' => 'Экология...',
@@ -175,8 +175,8 @@ function append_top_and_status_colomns($merged_table, $limit, $tops, $faculties_
 			}
 		}
 		
-		$merged_table[$i][$size] = $all_tops;
-		$merged_table[$i]['size'] = $size + 1;
+		$merged_table[$i]['top'] = $all_tops;
+		$merged_table[$i]['size'] = $size;
 		$merged_table[$i]['status'] = $status;
 	}
 	return $merged_table;

@@ -1,18 +1,20 @@
 body {
-	background: url(light_msu.jpg) repeat;
-	background-size: contain;
+	background: url(light_msu.jpg);
+	background-attachment: fixed;
 }
 
-h2 {
+h3 {
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
+
 .brd {
     border: 1px solid gray;
     background: gainsboro;
     padding: 5px;
     display: inline-block;
 	margin-top: 10px;
+	vertical-align: top;
 }
 
 .cdesktop {
@@ -21,7 +23,6 @@ h2 {
 	padding: 5px 15px;
 	text-decoration: none;
 	color: white;
-	font-size: 16pt;
 }
 .cmobile {
 	border: 1px solid gray;
@@ -29,8 +30,6 @@ h2 {
 	padding: 15px 5px;
 	text-decoration: none;
 	color: white;
-	font-size: 28pt;
-	font-weight: bold;
 }
 .cdesktop:hover {
 	background: green;
@@ -45,20 +44,58 @@ h2 {
 	background: linear-gradient(to bottom, green, black);
 }
 
+.mobile_big{
+	font-size: 20pt;
+}
 
 .mobile {
+	font-size: 12pt;
+}
+
+.desktop_big {
 	font-size: 18pt;
 }
+
 .desktop {
-	font-size: 15pt;
+	font-size: 12pt;
 }
 
 .jewel {
-	border: 1px solid #000; /* Рамка вокруг таблицы */
+	border: 1px solid gray;
 	border-collapse: collapse;
 }
+
+.jewel thead {
+
+}
+
+.jewel thead tr{
+	display:block;
+}
+
+.jewel th {
+	padding: 5px;
+	background: linear-gradient(to bottom, green, black);
+	color: white;
+	text-align: center;
+	width: 150px;
+	word-break: break-all;
+}
+
+.jewel tbody{
+	display:block;
+	overflow:auto;
+	height:400px;
+}
+
+.jewel td {
+	padding: 5px;
+	text-align: center;
+	width: 150px;
+	word-break: break-all;
+}
+
 .row_selected {
-	font-weight: bold;
 	color: white;
 	background: darkgreen;
 }
@@ -80,15 +117,4 @@ h2 {
 .arrow_down {
 	color: red;
 }
-.jewel th {
-	background: linear-gradient(to bottom, green, black); /* Градиент */
-	color: white;
-}
-.jewel td, .jewel th { 
-	padding: 3px; /* Поля вокруг текста */
-	text-align: center; /* Выравнивание по центру */ 
-	border: 1px solid #000;
-}
-.jewel td, .jewel th { 
-	width: 30pt; /* Ширина таблицы */
-}
+

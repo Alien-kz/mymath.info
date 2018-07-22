@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	</head>
-	<link href='exam_style.css?ver=2018-07-22-2' rel='stylesheet' type='text/css' >
+	<link href='exam_style.css?ver=2018-07-22-5' rel='stylesheet' type='text/css' >
 	<?php
 		include_once "routine.php";
 		include_once "frontend.php";			
@@ -53,9 +53,11 @@
 			</table>
 		</p>
 		<?php	
+			echo "<div align='center'>\n";
 			set_buttons("Направление", $subjects_mask, $user_agent_type, "result.php");
 			set_buttons("Закешировать топ", $subjects_mask, $user_agent_type, "make_top.php");
 			set_simple_button("Очистить все топы", $user_agent_type, "make_top.php");
+			echo "</div>\n";
 
 			if ($subjects_mask != "") {
 				$subjects_char_index = str_split($subjects_mask);
