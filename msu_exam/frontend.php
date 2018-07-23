@@ -14,7 +14,7 @@ function get_user_agent_type() {
 # ('Пропуск', 'Математика', 'Русский', ...)
 ################################################################################
 
-function output_merged_table($merged_table, $header, $user_agent_type, $selected_id) {
+function output_merged_table($merged_table, $header, $user_agent_type, $selected_id, $_big) {
 	echo "<div align='center'>\n";
 	echo "<div class='brd'>\n";
 	echo "<table border=1 class='jewel'>\n";
@@ -28,11 +28,12 @@ function output_merged_table($merged_table, $header, $user_agent_type, $selected
 
 	echo "<tbody>\n";
 	$position = 0;
-	foreach ($merged_table as $row) {
-		$position += 1;
-		$size = $row['size'];
-
-		echo "<tr class='".$row['status']." ".$user_agent_type."_big'>";
+	$width = $merged_table['size'];
+	$height = count($merged_table) - 1;
+	for ($i = 0; $i < $height; $i++) {
+		$row = $merged_table[$i];
+		$position = $i + 1;
+		echo "<tr class='".$row['status']." ".$user_agent_type.$_big."'>";
 		$cell_color = "";
 		if ($row[0] == $selected_id) {
 			$cell_color = "row_selected"; 
@@ -41,10 +42,14 @@ function output_merged_table($merged_table, $header, $user_agent_type, $selected
 			echo "<td>".$position."</td>";
 		}
 
-		for ($i = 0; $i < $size; $i++) {
-			echo "<td class='".$cell_color."'>".$row[$i]."</td>"; 
+		for ($j = 0; $j < $width; $j++) {
+			echo "<td class='".$cell_color."'>".$row[$j]."</td>"; 
 		}
-		echo "<td class='".$cell_color." ".$user_agent_type."'>".$row['top']."</td>"; 
+		$append = "";
+		if (!empty($row['top'])) {
+			$append = $row['top'];
+		}
+		echo "<td class='".$cell_color." ".$user_agent_type."'>".$append."</td>";
 		echo "</tr>\n";
 	}
 	echo "</tbody>\n";

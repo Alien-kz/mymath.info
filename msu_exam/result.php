@@ -33,6 +33,12 @@
 		</div>
 
 		<div align='center'>
+		<div align='center' class='row_failed brd'>
+			<a href="result_names.php?"> Результаты по предметам с фамилиями </a>
+		</div>
+		</div>
+
+		<div align='center'>
 		<div align='left' class='brd <?php echo $user_agent_type;?>'>
 			<span class='row_top'>Абитуриенты</span> входят в топ без учета резервистов. <br/>
 			<span class='row_reserved'>Абитуриенты</span> могли писать в резервный день. <br/>
@@ -54,10 +60,10 @@
 			if ($subjects_mask != "") {
 				$subjects_char_index = str_split($subjects_mask);
 				$merged_table = sort_by_sum(merge(get_multi_tables($subjects_char_index, $data_file_result)));
-				$tops = get_top($data_file_top);
+				$tops = get_top('top', $data_file_top);
 				$header = get_merged_table_header($subjects_char_index, $subject_name, array("Место", "Пропуск"), array("Сумма", "В топе"));
 				$merged_table = append_top_and_status_colomns($merged_table, $limit, $tops, $faculties_name_for_top);
-				output_merged_table($merged_table, $header, $user_agent_type, $id);
+				output_merged_table($merged_table, $header, $user_agent_type, $id, "_big");
 			}
 		?>
 	</body>

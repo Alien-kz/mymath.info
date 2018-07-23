@@ -65,7 +65,7 @@
 				if (!empty($data_file_top[$subjects_mask]) && !$clear) {
 					write_top($merged_table, $limit, $data_file_top[$subjects_mask]);
 				}
-				$tops = get_top($data_file_top);
+				$tops = get_top('top', $data_file_top);
 				$header = get_merged_table_header($subjects_char_index, $subject_name, array("Место", "Пропуск"), array("Сумма", "В топе"));
 				$merged_table = append_top_and_status_colomns($merged_table, $limit, $tops, $faculties_name_for_top);
 				output_merged_table($merged_table, $header, $user_agent_type, $id);

@@ -44,6 +44,51 @@ function file_to_array($filename) {
 	return $unique_table;
 }
 
+function write_top($multi_tables, $limit, $faculty) {
+	$position = 0;
+	$ids = "";
+	foreach ($multi_tables as $row) {
+		$position += 1;
+		if ($position <= $limit) {
+			$ids .= $row[0]."\n";
+		}
+	}
+	file_put_contents("top/$faculty.txt", $ids, LOCK_EX);
+}
+
+function get_top($dir, $faculties) {
+	$answer = array();
+	foreach ($faculties as $faculty) {
+		if (!file_exists("$dir/$faculty.txt"))
+			continue;
+		$top_array = file("$dir/$faculty.txt", FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES);
+		if ($top_array != false)
+			$answer[$faculty] = $top_array;
+	}
+	return $answer;
+}
+
+
+################################################################################
+# ('vmk' => ("Баев Ален 117", "Баева Виолетта 300", ... ), 'mm' => ()
+# 
+################################################################################
+
+function split_top($tops) {
+	$splitted_tops = array();
+	foreach ($tops as $faculty => $rows){
+		$splitted_rows = array();
+		foreach ($rows as $row) {
+			$splitted = explode("\t", $row);
+			if ($splitted[0] != "")
+				array_push($splitted_rows, $splitted);
+		}
+		$splitted_tops[$faculty] = $splitted_rows;
+	}
+	return $splitted_tops;
+}
+
+
 ################################################################################
 # 'mre'
 # math.txt -> $data['m'] = (id => point, id => point, ..., id => point)
@@ -120,30 +165,6 @@ function sort_by_sum($merged_table) {
 	return $merged_table;
 }
 
-function write_top($multi_tables, $limit, $faculty) {
-	$position = 0;
-	$ids = "";
-	foreach ($multi_tables as $row) {
-		$position += 1;
-		if ($position <= $limit) {
-			$ids .= $row[0]."\n";
-		}
-	}
-	file_put_contents("top/$faculty.txt", $ids, LOCK_EX);
-}
-
-function get_top($faculties) {
-	$answer = array();
-	foreach ($faculties as $faculty) {
-		if (!file_exists("top/$faculty.txt"))
-			continue;
-		$top_array = file("top/$faculty.txt");
-		if ($top_array != false)
-			$answer[$faculty] = $top_array;
-	}
-	return $answer;
-}
-
 function append_top_and_status_colomns($merged_table, $limit, $tops, $faculties_name_for_top) {
 	# status : 'DEFAULT', 'TOP', 'FAILED', 'RESERVED'
 	$users = count($merged_table);
@@ -176,11 +197,52 @@ function append_top_and_status_colomns($merged_table, $limit, $tops, $faculties_
 		}
 		
 		$merged_table[$i]['top'] = $all_tops;
-		$merged_table[$i]['size'] = $size;
 		$merged_table[$i]['status'] = $status;
 	}
+	$merged_table['size'] = $size;
 	return $merged_table;
 }
+
+function append_final_top($merged_table, $limit, $current_faculty, $faculties_name_for_top) {
+	$current_table = $merged_table[$current_faculty];
+	$users = count($current_table);
+
+	$collision = false;
+	for ($i = 0; $i < $users; $i++) {
+		$user = $current_table[$i];
+		$status = 'row_default';	
+		$all_tops = "";
+		if ($i < $limit) {
+			$status = 'row_top';
+		}
+		if ($i < $limit && 
+			$current_table[$i][2] == $current_table[$limit][2]) {
+			$collision = true;
+			$status = 'row_failed';
+		}
+		if ($i >= $limit && $collision &&
+			$current_table[$i][2] == $current_table[$limit][2]) {
+			$status = 'row_failed';
+		}
+		foreach ($faculties_name_for_top as $faculty => $fname) {
+			if ($faculty != $current_faculty) {
+				foreach ($merged_table[$faculty] as $altuser) {
+					if ($user[0] != "..." &&
+						$user[0] == $altuser[0] && 
+						$user[1] == $altuser[1]) {
+						$status = 'row_reserved';
+						$all_tops .= $fname."<br/>";
+					}
+				}
+			}
+		}
+		$current_table[$i]['top'] = $all_tops;
+		$current_table[$i]['status'] = $status;
+	}
+	$current_table['size'] = 3;
+	return $current_table;
+}
+
 
 ################################################################################
 # 'mre'
