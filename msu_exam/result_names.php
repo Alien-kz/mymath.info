@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	</head>
-	<link href='exam_style.css?ver=2018-07-22-5' rel='stylesheet' type='text/css' >
+	<link href='exam_style.css?ver=2018-07-23' rel='stylesheet' type='text/css' >
 	<?php
 		include_once "routine.php";
 		include_once "frontend.php";			
@@ -56,7 +56,7 @@
 				$merged_table = split_top(get_top('final', $data_file_top));
 				$faculty = $data_file_top[$subjects_mask];
 				$current_table = append_final_top($merged_table, $limit, $faculty, $faculties_limits, $faculties_name_for_top);
-				$header = array("Место", "Фамилия", "Имя", "Балл", "Еще может выбрать");
+				$header = array("Место", "Фамилия", "Имя", "Балл", "Может выбрать");
 				output_merged_table($current_table, $header, $user_agent_type, "", "");
 			}
 		?>
