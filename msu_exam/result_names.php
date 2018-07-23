@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	</head>
-	<link href='exam_style.css?ver=2018-07-23' rel='stylesheet' type='text/css' >
+	<link href='exam_style.css?ver=2018-07-23-1' rel='stylesheet' type='text/css' >
 	<?php
 		include_once "routine.php";
 		include_once "frontend.php";			
@@ -42,7 +42,9 @@
 
 		<div align='center'>
 		<div align='left' class='brd <?php echo $user_agent_type;?>'>
-			<span class='row_failed'> Абитуриенты </span> попавшие на границу с равными баллам должны уточнять информацию в приёмной комиссии<br/>
+			<span class='row_failed'> Абитуриенты, </span> попавшие на границу с равными баллам, должны уточнять информацию в приёмной комиссии.<br/>
+			<span class='row_reserved'> Абитуриенты, </span> прошедшие на несколько направлений, должны выбрать одно.<br/>
+			Окончательные списки будут содержать по одной фамилии в каждом списке.<br/>
 		</div>
 		</div>
 		
