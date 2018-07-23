@@ -231,15 +231,16 @@ function append_final_top($merged_table, $limit, $current_faculty, $faculties_li
 		}
 		foreach ($faculties_name_for_top as $faculty => $fname) {
 			if ($faculty != $current_faculty) {
-				/*for ($i = 0; $i < $faculties_limits[$faculty]; $i++) {
-					$altuser = $merged_table[$faculty][$i];
+				$size = $faculties_limits[$faculty];
+				for ($j = 0; $j < $size; $j++) {
+					$altuser = $merged_table[$faculty][$j];
 					if ($user[0] != "..." &&
 						$user[0] == $altuser[0] && 
 						$user[1] == $altuser[1]) {
 						$status = 'row_reserved';
 						$all_tops .= $fname."<br/>";
 					}
-				}*/
+				}
 			}
 		}
 		$current_table[$i]['top'] = $all_tops;
