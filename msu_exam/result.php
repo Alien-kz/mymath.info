@@ -33,8 +33,10 @@
 		</div>
 
 		<div align='center'>
-		<div align='center' class='row_failed brd'>
+		<div align='center' class='brd'>
+		<h3>
 			<a href="result_names.php?"> Результаты по предметам с фамилиями </a>
+		</h3>
 		</div>
 		</div>
 

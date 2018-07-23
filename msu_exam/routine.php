@@ -11,6 +11,11 @@ $data_file_top = array('mrp' => 'vmk',
 						'mre' => 'econom',
 						'mrg' => 'geo',
 						'erl' => 'phyl');
+$faculties_limits = array('vmk' => 27,
+							'mm' => 25,
+							'econom' => 27,
+							'geo' => 26,
+							'phyl' => 20);
 $faculties_name_for_top = array('vmk' => 'Прикл.матем...',
 								'mm' => 'Математика',
 								'econom' => 'Экономика',
@@ -203,7 +208,7 @@ function append_top_and_status_colomns($merged_table, $limit, $tops, $faculties_
 	return $merged_table;
 }
 
-function append_final_top($merged_table, $limit, $current_faculty, $faculties_name_for_top) {
+function append_final_top($merged_table, $limit, $current_faculty, $faculties_limits, $faculties_name_for_top) {
 	$current_table = $merged_table[$current_faculty];
 	$users = count($current_table);
 
@@ -226,14 +231,15 @@ function append_final_top($merged_table, $limit, $current_faculty, $faculties_na
 		}
 		foreach ($faculties_name_for_top as $faculty => $fname) {
 			if ($faculty != $current_faculty) {
-				foreach ($merged_table[$faculty] as $altuser) {
+				/*for ($i = 0; $i < $faculties_limits[$faculty]; $i++) {
+					$altuser = $merged_table[$faculty][$i];
 					if ($user[0] != "..." &&
 						$user[0] == $altuser[0] && 
 						$user[1] == $altuser[1]) {
 						$status = 'row_reserved';
 						$all_tops .= $fname."<br/>";
 					}
-				}
+				}*/
 			}
 		}
 		$current_table[$i]['top'] = $all_tops;

@@ -42,7 +42,7 @@
 
 		<div align='center'>
 		<div align='left' class='brd <?php echo $user_agent_type;?>'>
-			<span class='row_failed'> Абитуриенты </span> попавшие на границу с равными баллам должны уточнять информацию в приемной комиссии<br/>
+			<span class='row_failed'> Абитуриенты </span> попавшие на границу с равными баллам должны уточнять информацию в приёмной комиссии<br/>
 		</div>
 		</div>
 		
@@ -54,10 +54,8 @@
 		<?php
 			if ($subjects_mask != "") {
 				$merged_table = split_top(get_top('final', $data_file_top));
-				
 				$faculty = $data_file_top[$subjects_mask];
-				$current_table = append_final_top($merged_table, $limit, $faculty, $faculties_name_for_top);
-#				var_dump($current_table);
+				$current_table = append_final_top($merged_table, $limit, $faculty, $faculties_limits, $faculties_name_for_top);
 				$header = array("Место", "Фамилия", "Имя", "Балл", "Еще может выбрать");
 				output_merged_table($current_table, $header, $user_agent_type, "", "");
 			}
