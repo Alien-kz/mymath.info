@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	</head>
-	<link href='exam_style.css?ver=2018-07-23' rel='stylesheet' type='text/css' >
+	<link href='exam_style.css?ver=2018-07-23-1' rel='stylesheet' type='text/css' >
 	<?php
 		include_once "routine.php";
 		include_once "frontend.php";			
@@ -35,8 +35,15 @@
 		<div align='center'>
 		<div align='center' class='brd'>
 		<h3>
-			<a href="result_names.php?"> Результаты по предметам с фамилиями </a>
-		</h3>
+			<?php
+				$page = "result_names.php";
+				$attributes .= "?id=".$id;
+				$attributes .= "&sub=".$subjects_mask;
+				$attributes .= "&lim=".$limit; 
+				echo "<a href='".$page.$attributes."'>";
+				echo "Результаты по предметам с фамилиями";
+				echo "</a>\n";
+			?>		</h3>
 		</div>
 		</div>
 
@@ -61,11 +68,35 @@
 		<?php
 			if ($subjects_mask != "") {
 				$subjects_char_index = str_split($subjects_mask);
-				$merged_table = sort_by_sum(merge(get_multi_tables($subjects_char_index, $data_file_result)));
+				
+				# input
 				$tops = get_top('top', $data_file_top);
-				$header = get_merged_table_header($subjects_char_index, $subject_name, array("Место", "Пропуск"), array("Сумма", "В топе"));
-				$merged_table = append_top_and_status_colomns($merged_table, $limit, $tops, $faculties_name_for_top);
-				output_merged_table($merged_table, $header, $user_agent_type, $id, "_big");
+				$multi_tables = get_multi_tables($subjects_char_index, $data_file_result);
+
+				# work 1
+				$merged_table = merge($multi_tables);
+				$merged_table = sort_by_sum($merged_table);
+
+				# work 2
+				$merged_table =	set_status($merged_table, 
+											$limit,
+											$id);
+				$merged_table = append_comment_colomn($merged_table, 
+														$limit, 
+														$tops, $faculties_name_for_top);
+				$merged_table = unshift_position_colomn($merged_table);
+
+				# output
+				$header = get_merged_table_header($subjects_char_index,
+												$subject_name, 
+												array("Место", "Пропуск"),
+												array("Сумма", "Может выбрать"));
+				$wide_colomns = array(count($header) - 1);
+				output_merged_table($merged_table, 
+									$header, 
+									$user_agent_type, 
+									$wide_colomns,
+									"wide_colomn");
 			}
 		?>
 	</body>

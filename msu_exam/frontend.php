@@ -14,45 +14,54 @@ function get_user_agent_type() {
 # ('Пропуск', 'Математика', 'Русский', ...)
 ################################################################################
 
-function output_merged_table($merged_table, $header, $user_agent_type, $selected_id, $_big) {
+function output_merged_table($merged_table, $header, $user_agent_type, $wide_colomns, $css_class) {
+# make array of col type
+	$width = count(current($merged_table)) - 1;
+	$col_class = array_fill(0, $width, "standard_colomn ". $user_agent_type);
+	foreach ($wide_colomns as $index) {
+		$col_class[$index] = $css_class." ".$user_agent_type;
+	}
+
+# print preambulas
 	echo "<div align='center'>\n";
 	echo "<div class='brd'>\n";
-	echo "<table border=1 class='jewel'>\n";
+	echo "<table border=1 class='jewel '>\n";
+
+# print header
 	echo "<thead>\n";
-	echo "<tr class='".$user_agent_type."'>";
-	foreach ($header as $head) {
-			echo "<th>".$head."</th>";
+	echo "<tr>";
+	for ($j = 0; $j < $width; $j++) {
+		echo "<th class='".$col_class[$j]."'>".$header[$j]."</th>";
 	}
 	echo "</tr>\n";
 	echo "</thead>\n";
+	
+# make array of col type
+	$col_class = array_fill(0, $width, "standard_colomn ". $user_agent_type."_big");
+	foreach ($wide_colomns as $index) {
+		$col_class[$index] = $css_class." ".$user_agent_type;
+	}
 
+# print body
 	echo "<tbody>\n";
-	$position = 0;
-	$width = $merged_table['size'];
 	$height = count($merged_table) - 1;
 	for ($i = 0; $i < $height; $i++) {
 		$row = $merged_table[$i];
-		$position = $i + 1;
-		echo "<tr class='".$row['status']." ".$user_agent_type.$_big."'>";
-		$cell_color = "";
-		if ($row[0] == $selected_id) {
-			$cell_color = "row_selected"; 
-			echo "<td>".$position."<a name='selected'></a></td>";
-		} else {
-			echo "<td>".$position."</td>";
+
+		$is_selected = "";
+		if ($row['status'] == 'row_selected') {
+			$is_selected = "<a name='selected'></a>";
 		}
 
+		echo "<tr class='".$row['status']." ".$user_agent_type."'>";
 		for ($j = 0; $j < $width; $j++) {
-			echo "<td class='".$cell_color."'>".$row[$j]."</td>"; 
+			echo "<td class='".$col_class[$j]."'>".$row[$j].$is_selected."</td>"; 
 		}
-		$append = "";
-		if (!empty($row['top'])) {
-			$append = $row['top'];
-		}
-		echo "<td class='".$cell_color." ".$user_agent_type."'>".$append."</td>";
 		echo "</tr>\n";
 	}
 	echo "</tbody>\n";
+
+# print postambulas
 	echo "</table>\n";
 	echo "</div>\n";
 	echo "</div>\n";

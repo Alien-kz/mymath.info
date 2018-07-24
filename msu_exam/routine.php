@@ -35,13 +35,14 @@ $subject_name = array( 'm' => "Математика",
 ################################################################################
 
 function file_to_array($filename) {
-	$rows = file($filename);
+	$rows = file($filename, FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES);
 	$unique_table = array();
 	foreach($rows as $value)
 	{
 		$str = explode("\t", $value);
-		$id = intval($str[0]);
-		if ($id != 0) {
+#		$id = intval($str[0]);
+		$id = $str[0];
+		if ($id != "") {
 			$point = intval($str[1]);
 			$unique_table[ $id ] = $point;
 		}
@@ -124,20 +125,21 @@ function get_multi_tables($subjects_char_index, $datafile_name) {
 ################################################################################
 
 function merge($multi_tables) {
-	$multi_tables_size = count($multi_tables);
+	$multi_tables_number = count($multi_tables);
 	$merged_table = array();
+	$key_table = array();
 	foreach ($multi_tables as $unique_table) {
-		$merged_table = $merged_table + $unique_table;
+		$key_table = $key_table + $unique_table;
 	}
-	foreach ($merged_table as $id => $value) {
-		$merged_table[ $id ] = array_fill(0, $multi_tables_size + 2, 0);
-		$merged_table[ $id ][ 0 ] = $id;
+	foreach ($key_table as $id => $value) {
+		$row = array_fill(0, $multi_tables_number + 2, 0);
+		$row[ 0 ] = $id;
 
 		$sum = 0;
 		$fail = false;
 		foreach ($multi_tables as $index => $subject) {
 			if (array_key_exists($id, $subject)) {
-				$merged_table[ $id ][ $index + 1 ] = $subject[ $id ];
+				$row[ $index + 1 ] = $subject[ $id ];
 				if ($subject[ $id ] == 2)
 					$fail = true;
 				$sum += $subject[ $id ];
@@ -147,7 +149,30 @@ function merge($multi_tables) {
 		}
 		if ($fail)
 			$sum = 0;
-		$merged_table[ $id ][$multi_tables_size + 1] = $sum;
+		$row[$multi_tables_number + 1] = $sum;
+		array_push($merged_table, $row);
+	}
+	return $merged_table;
+}
+
+function merge_all($multi_tables) {
+	$multi_tables_number = count($multi_tables);
+	$merged_table = array();
+	$key_table = array();
+	foreach ($multi_tables as $unique_table) {
+		$key_table = $key_table + $unique_table;
+	}
+	foreach ($key_table as $id => $value) {
+		$row = array_fill(0, $multi_tables_number + 2, 0);
+		$row[ 0 ] = $id;
+
+		$sum = 0;
+		foreach ($multi_tables as $index => $subject) {
+			$row[ $index + 1 ] = $subject[ $id ];
+			$sum += intval($subject[ $id ]);
+		}
+		$row[$multi_tables_number + 1] = $sum;
+		array_push($merged_table, $row);
 	}
 	return $merged_table;
 }
@@ -170,7 +195,7 @@ function sort_by_sum($merged_table) {
 	return $merged_table;
 }
 
-function append_top_and_status_colomns($merged_table, $limit, $tops, $faculties_name_for_top) {
+function set_status($merged_table, $limit, $selected_id) {
 	# status : 'DEFAULT', 'TOP', 'FAILED', 'RESERVED'
 	$users = count($merged_table);
 	$size = count(end($merged_table));
@@ -193,47 +218,71 @@ function append_top_and_status_colomns($merged_table, $limit, $tops, $faculties_
 		if ($i < $limit) {
 			$status = 'row_top';
 		}
-		
+		if ($merged_table[$i][0] == $selected_id) {
+			$status = 'row_selected';
+		}
+		$merged_table[$i]['status'] = $status;
+	}
+	return $merged_table;
+}
+
+function set_final_status($merged_table, $limit) {
+	# status : 'DEFAULT', 'TOP', 'FAILED', 'RESERVED'
+	$users = count($merged_table);
+	$collision = false;
+
+	for ($i = 0; $i < $users; $i++) {
+		$row = $merged_table[$i];
+		$status = 'row_default';	
+		if ($i < $limit) {
+			$status = 'row_top';
+		}
+		if ($i < $limit && 
+			$merged_table[$i][2] == $merged_table[$limit][2]) {
+			$collision = true;
+			$status = 'row_failed';
+		}
+		if ($i >= $limit && $collision &&
+			$merged_table[$i][2] == $merged_table[$limit][2]) {
+			$status = 'row_failed';
+		}
+		$merged_table[$i]['status'] = $status;
+	}
+	return $merged_table;
+}
+
+function append_comment_colomn($merged_table, $limit, $tops, $faculties_name_for_top) {
+	$users = count($merged_table);
+	for ($i = 0; $i < $users; $i++) {
+		$row = $merged_table[$i];		
 		$all_tops = "";
 		foreach ($tops as $faculty => $thetop) {
 			if (in_array($row[0], $thetop)){
 				$all_tops .= $faculties_name_for_top[$faculty]."<br/>";
 			}
 		}
-		
-		$merged_table[$i]['top'] = $all_tops;
-		$merged_table[$i]['status'] = $status;
+		array_push($merged_table[$i], $all_tops);
 	}
-	$merged_table['size'] = $size;
 	return $merged_table;
 }
 
-function append_final_top($merged_table, $limit, $current_faculty, $faculties_limits, $faculties_name_for_top) {
-	$current_table = $merged_table[$current_faculty];
-	$users = count($current_table);
+
+function append_final_comment_colomn($multi_table,
+					$current_faculty, 
+					$faculties_limits, 
+					$faculties_name_for_top) {
+	$merged_table = $multi_table[$current_faculty];
+	$users = count($merged_table);
 
 	$collision = false;
 	for ($i = 0; $i < $users; $i++) {
-		$user = $current_table[$i];
-		$status = 'row_default';	
+		$user = $merged_table[$i];
 		$all_tops = "";
-		if ($i < $limit) {
-			$status = 'row_top';
-		}
-		if ($i < $limit && 
-			$current_table[$i][2] == $current_table[$limit][2]) {
-			$collision = true;
-			$status = 'row_failed';
-		}
-		if ($i >= $limit && $collision &&
-			$current_table[$i][2] == $current_table[$limit][2]) {
-			$status = 'row_failed';
-		}
 		foreach ($faculties_name_for_top as $faculty => $fname) {
 			if ($faculty != $current_faculty) {
 				$size = $faculties_limits[$faculty];
 				for ($j = 0; $j < $size; $j++) {
-					$altuser = $merged_table[$faculty][$j];
+					$altuser = $multi_table[$faculty][$j];
 					if ($user[0] != "..." &&
 						$user[0] == $altuser[0] && 
 						$user[1] == $altuser[1]) {
@@ -243,11 +292,18 @@ function append_final_top($merged_table, $limit, $current_faculty, $faculties_li
 				}
 			}
 		}
-		$current_table[$i]['top'] = $all_tops;
-		$current_table[$i]['status'] = $status;
+		array_push($merged_table[$i], $all_tops);
 	}
-	$current_table['size'] = 3;
-	return $current_table;
+	return $merged_table;
+}
+
+function unshift_position_colomn($merged_table) {
+	$users = count($merged_table);
+	for ($i = 0; $i < $users; $i++) {
+		array_unshift($merged_table[$i], $i + 1);
+	}
+	return $merged_table;
+
 }
 
 

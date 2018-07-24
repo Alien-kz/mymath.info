@@ -35,7 +35,15 @@
 		<div align='center'>
 		<div align='center' class='brd'>
 		<h3>
-			<a href="result.php?"> Результаты по предметам с шифрами </a>
+			<?php
+				$page = "result.php";
+				$attributes .= "?id=".$id;
+				$attributes .= "&sub=".$subjects_mask;
+				$attributes .= "&lim=".$limit; 
+				echo "<a href='".$page.$attributes."'>";
+				echo "Результаты по предметам с шифрами";
+				echo "</a>\n";
+			?>
 		</h3>
 		</div>
 		</div>
@@ -55,11 +63,26 @@
 		?>
 		<?php
 			if ($subjects_mask != "") {
-				$merged_table = split_top(get_top('final', $data_file_top));
 				$faculty = $data_file_top[$subjects_mask];
-				$current_table = append_final_top($merged_table, $limit, $faculty, $faculties_limits, $faculties_name_for_top);
+
+				# input
+				$multi_table = split_top(get_top('final', $data_file_top));				
+				# work 2
+				$merged_table = append_final_comment_colomn($multi_table, 
+												$faculty, 
+												$faculties_limits, 
+												$faculties_name_for_top);
+				$merged_table = set_final_status($merged_table, $limit);
+				$merged_table = unshift_position_colomn($merged_table);
+				
+				# output				
 				$header = array("Место", "Фамилия", "Имя", "Балл", "Может выбрать");
-				output_merged_table($current_table, $header, $user_agent_type, "", "");
+				$wide_colomns = array(1, 2, 4);
+				output_merged_table($merged_table, 
+									$header, 
+									$user_agent_type, 
+									$wide_colomns,
+									"wide_colomn");
 			}
 		?>
 	</body>

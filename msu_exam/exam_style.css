@@ -49,11 +49,11 @@ h3 {
 }
 
 .mobile {
-	font-size: 12pt;
+	font-size: 14pt;
 }
 
 .desktop_big {
-	font-size: 18pt;
+	font-size: 16pt;
 }
 
 .desktop {
@@ -61,38 +61,41 @@ h3 {
 }
 
 .jewel {
-	border: 1px solid gray;
+	border: 2px solid gray;
 	border-collapse: collapse;
+	word-break: break-all;
 }
 
 .jewel thead {
-
+	display: block;
+	position: relative;
 }
 
-.jewel thead tr{
-	display:block;
+.jewel tbody {
+	display: block;
+    height: 400px;
+    overflow-y: scroll;
 }
 
 .jewel th {
-	padding: 5px;
 	background: linear-gradient(to bottom, green, black);
+	text-align: center;
 	color: white;
-	text-align: center;
-	width: 150px;
-	word-break: break-all;
 }
 
-.jewel tbody{
-	display:block;
-	overflow:auto;
-	height:400px;
+.standard_colomn {
+	width: 120px;
+	text-align: center;
 }
 
-.jewel td {
-	padding: 5px;
-	text-align: center;
-	width: 150px;
-	word-break: break-all;
+.wide_colomn {
+	width: 200px;
+	text-align: left;
+}
+
+.extra_wide_colomn {
+	width: 400px;
+	text-align: left;
 }
 
 .row_selected {

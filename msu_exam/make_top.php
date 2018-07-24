@@ -61,14 +61,38 @@
 
 			if ($subjects_mask != "") {
 				$subjects_char_index = str_split($subjects_mask);
-				$merged_table = sort_by_sum(merge(get_multi_tables($subjects_char_index, $data_file_result)));
+				
+				# input
+				$tops = get_top('top', $data_file_top);
+				$multi_tables = get_multi_tables($subjects_char_index, $data_file_result);
+
+				# work 1
+				$merged_table = merge($multi_tables);
+				$merged_table = sort_by_sum($merged_table);
 				if (!empty($data_file_top[$subjects_mask]) && !$clear) {
 					write_top($merged_table, $limit, $data_file_top[$subjects_mask]);
 				}
-				$tops = get_top('top', $data_file_top);
-				$header = get_merged_table_header($subjects_char_index, $subject_name, array("Место", "Пропуск"), array("Сумма", "В топе"));
-				$merged_table = append_top_and_status_colomns($merged_table, $limit, $tops, $faculties_name_for_top);
-				output_merged_table($merged_table, $header, $user_agent_type, $id);
+
+				# work 2
+				$merged_table =	set_status($merged_table, 
+											$limit,
+											$id);
+				$merged_table = append_comment_colomn($merged_table, 
+														$limit, 
+														$tops, $faculties_name_for_top);
+				$merged_table = unshift_position_colomn($merged_table);
+
+				# output
+				$header = get_merged_table_header($subjects_char_index,
+												$subject_name, 
+												array("Место", "Пропуск"),
+												array("Сумма", "Может выбрать"));
+				$wide_colomns = array(count($header) - 1);
+				output_merged_table($merged_table, 
+									$header, 
+									$user_agent_type, 
+									$wide_colomns,
+									"wide_colomn");
 			}
 		?>
 	</body>
