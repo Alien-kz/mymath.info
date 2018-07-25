@@ -21,17 +21,14 @@
 	background: linear-gradient(to bottom, green, black);
 }
 
-.content_div {
+.hello_div {
     border: 1px solid gray;
     display: inline-block;
     padding: 5px;
-	margin-top: 0px;
-	width: 800px;
+	margin-top: 10px;
+	width: 1000px;
 	vertical-align: top;
 
-	text-align: center;
-}
-
-.img_in_div {
-	width: 300px;
+	text-align: left;
+	font-size: 2em;
 }

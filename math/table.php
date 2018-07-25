@@ -14,6 +14,25 @@ function get_table_from_file($filename) {
 	return $table;
 }
 
+function print_header($text) {
+	echo "<div align='center'>\n";
+	echo "<h2>\n";
+	echo "$text\n";
+	echo "</h2>\n";
+	echo "</div>\n";
+}
+
+function print_buttons($link, $selected_key, $buttons) {
+	echo "<div align='center'>\n";
+	foreach ($buttons as $key => $text) {
+		$is_selected = "";
+		if (strval($key) === $selected_key)
+			$is_selected = " selected";
+		echo "<a class='button $is_selected' href='$link=$key'>$text</a> \n";
+	}
+	echo "</div>\n";
+}
+
 function print_table($table) {
 # make array of col type
 	$height = count($table) - 1;

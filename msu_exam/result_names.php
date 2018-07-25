@@ -27,7 +27,7 @@
 		<div class="header">
 			<a class="button" href="../index.html"> Главная </a>
 			<a class="button selected" href="result.php"> Экзамены в филиал 2018 </a>
-			<a class="button" href="../imc/show.php"> Олимпиада по математике IMC </a>
+			<a class="button" href="../math/show.php"> Олимпиады по математике </a>
 			<a class="button" href="../books/show.php"> Книги </a>
 		</div>
 	
@@ -45,6 +45,7 @@
 		<h3>
 			<?php
 				$page = "result.php";
+				$attributes = "";
 				$attributes .= "?id=".$id;
 				$attributes .= "&sub=".$subjects_mask;
 				$attributes .= "&lim=".$limit; 
