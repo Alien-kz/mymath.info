@@ -4,8 +4,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link href='exam_style.css?ver=2018-07-25-2' rel='stylesheet' type='text/css' >
+		<link href='../main.css?ver=2018-07-25-2' rel='stylesheet' type='text/css' >
 	</head>
-	<link href='exam_style.css?ver=2018-07-24-1' rel='stylesheet' type='text/css' >
 	<?php
 		include_once "routine.php";
 		include_once "frontend.php";			
@@ -23,6 +24,13 @@
 			$limit = intval($_GET["lim"]);
 	?>
 	<body>
+		<div class="header">
+			<a class="button" href="../index.html"> Главная </a>
+			<a class="button selected" href="result.php"> Экзамены в филиал 2018 </a>
+			<a class="button" href="../imc/show.php"> Олимпиада по математике IMC </a>
+			<a class="button" href="../books/show.php"> Книги </a>
+		</div>
+	
 		<div align='center'>
 		<div align='center' class='row_failed brd'>
 		<h3>

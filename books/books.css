@@ -1,0 +1,10 @@
+.content_div {
+    border: 1px solid gray;
+    display: inline-block;
+    padding: 5px;
+	margin-top: 0px;
+	width: 300px;
+	vertical-align: top;
+
+	text-align: center;
+}

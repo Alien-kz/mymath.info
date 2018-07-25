@@ -40,7 +40,6 @@ function file_to_array($filename) {
 	foreach($rows as $value)
 	{
 		$str = explode("\t", $value);
-#		$id = intval($str[0]);
 		$id = $str[0];
 		if ($id != "") {
 			$point = intval($str[1]);
