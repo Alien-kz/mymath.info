@@ -1,10 +1,13 @@
+a {
+	text-decoration: none;
+}
+
 .bordered_href {
 	border: 2px solid gray;
 	display: inline-block;
 	padding: 5px 15px;
 
 	text-decoration: none;
-	background: gainsboro;
 	color: white;
 
 	font-size: 20pt;

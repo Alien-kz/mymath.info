@@ -1,0 +1,8 @@
+Pos	First name	Family name	University	P1	P2	P3	P4	P5	Day1
+19-21	Bekarys	Bekmaganbetov	MSU, Kazakhstan Branch	10	10	8	9		37
+172-184	Anuar	Askergaliyev	MSU, Kazakhstan Branch	10	0	4	1	0	15
+232-253	Alexandra	Zhuravskaya	MSU, Kazakhstan Branch	10	1	0	0		11
+254-304	Abylaikhan	Bozzhigitov	Nazarbayev University	10		0	0		10
+254-304	Maksat	Kuanyshbay	Nazarbayev University	10		0	0		10
+326-331	Bakytzhan	Kurmanbek	Nazarbayev University	0	0	1	0	0	1
+
