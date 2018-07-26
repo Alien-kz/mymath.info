@@ -2,6 +2,7 @@ table {
 	border: 2px solid gray;
 	border-collapse: collapse;
 	font-size: 20px;
+	margin-top: 20px;
 }
 
 tr {

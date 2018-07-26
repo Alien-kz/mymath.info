@@ -71,4 +71,23 @@ function print_table($table) {
 	echo "</div>\n";
 	echo "</div>\n";
 }
+
+function show_pdf_file($file) {
+	echo "<div align='center'>\n";
+	echo "<div>\n";
+	echo "<iframe src='$file' width='800px' height='800px'></iframe>";
+	echo "</div>\n";
+	echo "</div>\n";
+}
+
+function show_link_file($file, $header) {
+	echo "<div align='center'>\n";
+	echo "<span>\n";
+	echo "<a class='button' href='$file.tex' download> $header в формате .tex </a>";
+	echo "</span>\n";
+	echo "<span>\n";
+	echo "<a class='button' href='$file.pdf' download> $header в формате .pdf </a>";
+	echo "</span>\n";
+	echo "</div>\n";
+}
 ?>

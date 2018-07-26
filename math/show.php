@@ -80,10 +80,22 @@
 				print_buttons("show.php?olymp=msu&year", 
 								$year,
 								$buttons);
-								
-				print_header("Результаты");
-				$table = get_table_from_file("msu/result/$year.txt");
-				print_table($table);
+				if ($year != "") {
+					print_header("Задачи");
+					show_link_file("msu/problems/problems-$year", $buttons[$year]);
+					show_pdf_file("msu/problems/problems-$year.pdf");
+
+					print_header("Решения");
+					show_link_file("msu/solutions/solutions-$year", $buttons[$year]);
+					show_pdf_file("msu/solutions/solutions-$year.pdf");
+
+					print_header("Результаты");
+					show_link_file("msu/results/results-$year", $buttons[$year]);
+					$table = get_table_from_file("msu/results/results-$year.txt");
+					
+					print_table($table);
+				}
+
 			}
 			if ($olymp == "rep") {
 				print_header("Республиканские олимпиады по математике.");

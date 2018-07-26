@@ -13,6 +13,8 @@ button, input, .block {
 <?php
 function convert($input) {
 	$output = $input."\n";
+	$output = str_replace("$","", $output);
+	$output = str_replace("\\Sigma","Итог", $output);
 	$output = str_replace("&","\t", $output);
 	$output = str_replace("\\\\","", $output);
 	$output = preg_replace("/\\\\[^\n]*\n/", "", $output);
