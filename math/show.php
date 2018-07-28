@@ -50,14 +50,14 @@
 
 				if ($year != "") {
 					$site = "http://imc-math.org.uk/index.php?year=$year&item=results";
-					if ($year == "2018") {
+					if ($year == "2019") {
 						$site = "http://imc-math.ddns.net/?show=results";
 					}
 					
 					print_header("Подробные результаты на сайтe <a href='".$site."'>IMC</a>.");
 
 					$head = "Результаты IMC-".$year;
-					if ($year == "2018") {
+					if ($year == "2019") {
 						$head = "Предварительные результаты IMC-2018.";
 					}
 					
