@@ -41,7 +41,10 @@
 				
 				print_buttons("show.php?olymp=imc&year", 
 								$year,
-								array("2016" => "2016 год", 
+								array(		"2013" => "2013 год", 
+								      		"2014" => "2014 год", 
+										"2015" => "2015 год", 
+										"2016" => "2016 год", 
 										"2017" => "2017 год", 
 										"2018" => "2018 год"));
 
@@ -83,11 +86,11 @@
 				if ($year != "") {
 					print_header("Задачи");
 					show_link_file("msu/problems/problems-$year", $buttons[$year]);
-					show_pdf_file("msu/problems/problems-$year.pdf");
+					#show_pdf_file("msu/problems/problems-$year.pdf");
 
 					print_header("Решения");
 					show_link_file("msu/solutions/solutions-$year", $buttons[$year]);
-					show_pdf_file("msu/solutions/solutions-$year.pdf");
+					#show_pdf_file("msu/solutions/solutions-$year.pdf");
 
 					print_header("Результаты");
 					show_link_file("msu/results/results-$year", $buttons[$year]);
