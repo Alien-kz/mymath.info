@@ -62,8 +62,12 @@
 					}
 					
 					print_header($head);
-
 					$table = get_table_from_file("imc/$year.txt");
+					print_table($table);
+					
+					$head = "Командные результаты IMC-".$year;
+					print_header($head);
+					$table = get_table_from_file("imc/$year-teams.txt");
 					print_table($table);
 				}
 			}
