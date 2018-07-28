@@ -1,0 +1,3 @@
+Place	Team	Team members	Best 3 + average
+47.	Nazarbayev University	<p>Alibek Sailanbayev (50),</p><p> Nursultan Svankulov (42),</p><p> Serikbolsyn Duisembay (34),</p><p> Nurlan Abdukadyrov (32),</p><p> Olzhas Akbayev (25)</p>	162.60
+52.	Kazakh-British Technical University	<p>Temirulan Mussayev (41),</p><p> Alimzhan Amanov (40),</p><p> Temirlan Satylkhanov (25)</p>	141.33
