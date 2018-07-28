@@ -1,7 +1,7 @@
-Pos	First name	Family name	University	P1	P2	P3	P4	P5	Day1	P6	P7	P8	P9	P10	Day2	Sum Prize
-41-45	Bekarys	Bekmaganbetov	Moscow State University, Kazakhstan Branch	10	10	8	9		37	10	10	2			22	59  First Prize
-133-141	Anuar	Askergaliyev	Moscow State University, Kazakhstan Branch	10	0	4	2	0	16	10	10	2			22	38  Second Prize
-247-256	Alexandra	Zhuravskaya	Moscow State University, Kazakhstan Branch	10	1	0	1		12	10	0	2		0	12	24  Third Prize
-306-310	Abylaikhan	Bozzhigitov	Nazarbayev University	10		0	0		10	0	2	1			3	13  Honourable Mention
-306-310	Bakytzhan	Kurmanbek	Nazarbayev University	0	0	1	0	0	1	10	2	0	0		12	13  Honourable Mention
-324-328	Maksat	Kuanyshbay	Nazarbayev University	10		0	0		10	0		0			0	10  Honourable Mention
+Pos	First name	Family name	University	P1	P2	P3	P4	P5	Day1	P6	P7	P8	P9	P10	Day2	Sum	Prize
+41-45	Bekarys	Bekmaganbetov	Moscow State University, Kazakhstan Branch	10	10	8	9		37	10	10	2			22	59	First Prize
+133-141	Anuar	Askergaliyev	Moscow State University, Kazakhstan Branch	10	0	4	2	0	16	10	10	2			22	38	Second Prize
+247-256	Alexandra	Zhuravskaya	Moscow State University, Kazakhstan Branch	10	1	0	1		12	10	0	2		0	12	24	Third Prize
+306-310	Abylaikhan	Bozzhigitov	Nazarbayev University	10		0	0		10	0	2	1			3	13	Honourable Mention
+306-310	Bakytzhan	Kurmanbek	Nazarbayev University	0	0	1	0	0	1	10	2	0	0		12	13	Honourable Mention
+324-328	Maksat	Kuanyshbay	Nazarbayev University	10		0	0		10	0		0			0	10	Honourable Mention
