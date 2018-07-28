@@ -1,0 +1,2 @@
+Place	Team	Best 3 + average
+28.	Nazarbayev University	93.8
