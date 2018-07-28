@@ -6,3 +6,4 @@ Pos	First name	Family name	University	P1	P2	P3	P4	P5	Day1	P6	P7	P8	P9	P10	Day2	S
 224-232	Serikbolsyn	Duisembay	Nazarbayev University	10	4	0	2	0	16	10	0	8		0	18	34	Third Prize
 236-241	Nurlan	Abdukadyrov	Nazarbayev University	10	0	0	0		10	10	10	2			22	32	Honourable Mention
 262-264	Olzhas	Akbayev	Nazarbayev University	9	2	0	0	1	12	1	10	2			13	25	Honourable Mention
+262-264	Temirlan	Satylkhanov	Kazakh-British Technical University	10	5	0	0	0	15	1	8			1	10	25	Honourable Mention
