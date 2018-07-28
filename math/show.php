@@ -10,7 +10,7 @@
 	<body>
 		<div class="header">
 			<a class="button" href="../index.html"> Главная </a>
-			<a class="button" href="../msu_exam/result.php"> Экзамены в филиал 2018 </a>
+			<!--<a class="button" href="../msu_exam/result.php"> Экзамены в филиал 2018 </a>-->
 			<a class="button selected" href="show.php"> Олимпиады по математике </a>
 			<a class="button" href="../books/show.php"> Книги </a>
 		</div>
