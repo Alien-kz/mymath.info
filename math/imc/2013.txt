@@ -1,1 +1,6 @@
-Pos	First name	Family name	University	P1	P2	P3	P4	P5	Day1	P6	P7	P8	P9	P10	Day2	Sum Prize
+Pos	First name	Family name	University	Sum Prize
+98 Serikbolsyn Duisembay Nazarbayev University Second
+111 Adilbek Kairzhan Nazarbayev University Second
+112 Nurlan Kanapin Nazarbayev University Second
+238 Nursultan Svankulov Nazarbayev University Hon Men
+273 Adilet Otemissov Nazarbayev University Cert
