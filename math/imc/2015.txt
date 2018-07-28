@@ -1,5 +1,5 @@
 Pos	First name	Family name	University	P1	P2	P3	P4	P5	Day1	P6	P7	P8	P9	P10	Day2	Sum Prize
-65-69 Sergazy Kalmurzayev Nazarbayev University 10  10	10	0		30	6	1	10			17	47	Second Prize
+65-69 Sergazy Kalmurzayev Nazarbayev University 10  10  10  0   30  6 1 10      17  47  Second Prize
 95-97	Alibek	Sailanbayev	Nazarbayev University	10	10	10	0	0	30	10	1	0		0	11	41	Second Prize
 203-210	Serikbolsyn	Duisembay	Nazarbayev University	7	6	2			15	8	0	0	0		8	23	Third Prize
 216-225	Sultan	Zhanakhmetov	Nazarbayev University	7	10	3			20	1	0	0	0	0	1	21	Honorable Mention
