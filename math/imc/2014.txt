@@ -1,4 +1,4 @@
-Pos	First name	Family name	University	P1	P2	P3	P4	P5	Day1	P6	P7	P8	P9	P10	Day2	Sum Prize
+Pos	First name	Family name	University	P1	P2	P3	P4	P5	Day1	P6	P7	P8	P9	P10	Day2	Sum	Prize
 115-126	Alibek	Sailanbayev	Nazarbayev University	10	10	8	10	0	38	10	2	0			12	50	second prize
 163-173	Nursultan	Svankulov	Nazarbayev University	8	5		0		13	10	10	9		0	29	42	third prize
 224-232	Serikbolsyn	Duisembay	Nazarbayev University 10	4	0	2	0	16	10	0	8		0	18	34	third prize
