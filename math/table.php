@@ -14,6 +14,49 @@ function get_table_from_file($filename) {
 	return $table;
 }
 
+function replace_prize_text($table, $colomn, $multiple, $replace, $needles) {
+	$html_pre = array();
+	$html_post = "";
+	if ($multiple) {
+		foreach ($needles as $code) {
+			$html_pre[$code] = "<span class='".$code."'>";
+		}
+		$html_post = "</span>";
+	} else {
+		foreach ($needles as $code) {
+			$html_pre[$code] = "<p><big><span class='".$code."'>";
+		}
+		$html_post = "</span></big></p>";
+	}
+	$img = array("gold" => "&#10102",
+				 "silver" => "&#10103",
+				 "bronze" => "&#10104");
+	
+	$height = count($table) - 1;
+	for ($i = 0; $i < $height; $i++) {
+		$row = $table[$i][$colomn];
+		
+		if ($multiple) {
+			foreach ($needles as $needle => $code) {
+				$result = $html_pre[$code].$img[$code].$html_post;
+				$row = str_replace($needle, $result, $row);
+			}
+		} else {
+			foreach ($needles as $needle => $code) {
+				$result = $html_pre[$code].$img[$code]." ".$needle.$html_post;
+				if ($replace)
+					$result = $html_pre[$code].$img[$code].$html_post;
+				$row = str_replace($needle, $result, $row);
+				if ($row != $table[$i][$colomn]) {
+					break;
+				}
+			}
+		}
+		$table[$i][$colomn] = $row;
+	}
+	return $table;
+}
+
 function print_header($text) {
 	echo "<div align='center'>\n";
 	echo "<h2>\n";
@@ -35,7 +78,7 @@ function print_buttons($link, $selected_key, $buttons) {
 
 function print_table($table) {
 # make array of col type
-	$height = count($table) - 1;
+	$height = count($table);
 	$width = count(current($table));
 
 # print preambulas
@@ -52,6 +95,7 @@ function print_table($table) {
 		}
 		echo "</tr>\n";
 		echo "</thead>\n";
+		$height -= 1;
 	}
 	
 # print body

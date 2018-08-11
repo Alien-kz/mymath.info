@@ -50,7 +50,7 @@
 
 				if ($year != "") {
 					$site = "http://imc-math.org.uk/index.php?year=$year&item=results";
-					if ($year == "2019") {
+					if ($year == "2018") {
 						$site = "http://imc-math.ddns.net/?show=results";
 					}
 					
@@ -63,11 +63,25 @@
 					
 					print_header($head);
 					$table = get_table_from_file("imc/$year.txt");
+					$needles = array("First" => "gold", 
+									 "Second" => "silver", 
+									 "Third" => "bronze");
+					$table = replace_prize_text($table, 
+												count(current($table)) - 1, 
+												False,
+												True,
+												$needles);
+					$table = replace_prize_text($table, count(current($table)) - 1, False);
 					print_table($table);
 					
 					$head = "Командные результаты IMC-".$year;
 					print_header($head);
 					$table = get_table_from_file("imc/$year-teams.txt");
+					$table = replace_prize_text($table, 
+												count(current($table)) - 2, 
+												True,
+												True,
+												$needles);
 					print_table($table);
 				}
 			}
@@ -75,7 +89,7 @@
 				print_header("Олимпиады Казахстанского филиала МГУ по математике.");
 
 				$buttons = array();
-				for ($y = 2012; $y <= 2017; $y++) {
+				for ($y = 2008; $y <= 2017; $y++) {
 					$buttons[strval($y)] = $y." год";
 				}
 				$buttons['2014-bonus'] = "2014 год (доп.тур)";
@@ -96,11 +110,20 @@
 					show_link_file("msu/solutions/solutions-$year", $buttons[$year]);
 					#show_pdf_file("msu/solutions/solutions-$year.pdf");
 
-					print_header("Результаты");
-					show_link_file("msu/results/results-$year", $buttons[$year]);
-					$table = get_table_from_file("msu/results/results-$year.txt");
-					
-					print_table($table);
+					if ($year >= 2012) {
+						print_header("Результаты");
+						show_link_file("msu/results/results-$year", $buttons[$year]);
+						$table = get_table_from_file("msu/results/results-$year.txt");
+						if (!strstr($year, "bonus")) {
+							$needles = array("1" => "gold", "2" => "silver", "3" => "bronze");
+							$table = replace_prize_text($table, 
+														count(current($table)) - 1, 
+														False,
+														True,
+														$needles);
+						}
+						print_table($table);
+					}
 				}
 
 			}
@@ -116,9 +139,17 @@
 								$year,
 								$buttons);
 								
-				print_header("Результаты");
-				$table = get_table_from_file("rep/result/$year.txt");
-				print_table($table);
+				if ($year != "") {
+					print_header("Результаты");
+					$table = get_table_from_file("rep/result/$year.txt");
+					$needles = array("1" => "gold", "2" => "silver", "3" => "bronze");
+					$table = replace_prize_text($table, 
+												count(current($table)) - 1, 
+												False,
+												True,
+												$needles);
+					print_table($table);
+				}
 			}
 				
 		?>

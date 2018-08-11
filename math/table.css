@@ -17,6 +17,16 @@ td, th {
 
 td:last-child {
 	text-align: center;
-	font-weight: bold;
 }
 
+.gold {
+	color: gold;
+}
+
+.silver {
+	color: silver;
+}
+
+.bronze {
+	color: goldenrod;
+}

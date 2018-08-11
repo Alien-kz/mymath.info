@@ -1,2 +1,2 @@
 Place	Team	Team members	Best 3 + average
-32.	Nazarbayev University	<p>Sergazy Kalmurzayev (47),</p><p>Alibek Sailanbayev (41),</p><p>Serikbolsyn Duisembay (23)</p><p>Sultan Zhanakhmetov (21),</p><p>Yerzhan Imanmalik (20)</p>	141.40
+32.	Nazarbayev University	<p>Sergazy Kalmurzayev (47) Second</p><p>Alibek Sailanbayev (41) Second</p><p>Serikbolsyn Duisembay (23) Third</p><p>Sultan Zhanakhmetov (21)</p><p>Yerzhan Imanmalik (20)</p>	141.40
