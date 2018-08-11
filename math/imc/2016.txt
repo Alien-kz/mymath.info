@@ -4,3 +4,5 @@ Pos	First name	Family name	University	P1	P2	P3	P4	P5	D1	P6	P7	P8	P9	P10	D2	Sum	P
 165-173	Sultan 	Zhanakhmetov	Nazarbayev University	0	5	10	0		15	10	10	1	1		22	37	Third Prize
 195-202	Alexandra 	Zhuravskaya	Moscow State University, Kazakhstan Branch	6	2	10	0	0	18	8	4	0	1		13	31	Third Prize
 252-258	Yeldar 	Toktasynov	Nazarbayev University	0	0	10			10	10	0	0			10	20	Honourable Mention
+309-312	Ruslan	Polichshuk	Nazarbayev University	0	0	0	0		0	3	1	1			5	5	Certificate
+
