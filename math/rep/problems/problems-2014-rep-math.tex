@@ -1,0 +1,62 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtext}
+
+\usepackage{comment}
+\usepackage{geometry}
+\geometry{left=1cm, right=1cm, top=2cm, bottom=2cm}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\usepackage{wrapfig}
+\usepackage{fancybox,fancyhdr}
+\sloppy
+
+\setlength{\headheight}{28pt}
+
+\newcommand{\head}[4]
+{
+	\fancyhf{}
+	\pagestyle{fancy}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\end{large}
+	#2 \\
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{VI Республиканская студенческая предметная олимпиада по направлению \\ <<Математика>>}{27 марта 2014}{Казахский национальный университет имени аль-Фараби}{г. Алматы}
+
+\begin{enumerate}
+\item Вычислить предел:
+$$\lim_{x \to +\infty} \frac{(x - \sqrt{x^2 - 1})^n + (x + \sqrt{x^2 - 1})^n}{x^n}.$$
+
+\item Решить систему уравнений:
+$$
+\begin{cases}
+\frac{x^2}{y^2} + \frac{y^2}{z^2} + \frac{z^2}{x^2} = 3 \\
+x + y + z = 3 \\
+\frac{y^2}{x^2} + \frac{z^2}{y^2} + \frac{x^2}{z^2} = 3 \\
+\end{cases}
+$$
+
+\item Дан многочлен с целыми коэффициентами. В трех целых точках он принимает значение 2. Докажите, что ни в какой целой точке он не принимает значение 3.
+
+\item Найти все решения дифференциального уравнения второго порядка $$f''(x) + f(\pi - x) = 1.$$
+
+\end{enumerate}
+
+\end{document} 

@@ -10,14 +10,16 @@
     display: inline-block;
 	padding: 5px 15px;
     border: 1px solid gray;
-	background: gray;
-	color: white;
-	border-radius: 25px;
+	background: lightgray;
+	color: black;
+	border-radius: 10px;
 	font-size: 1em;
+	font-weight: bold;
 	text-decoration: none;
 }
 
 .selected {
+	color: white;
 	background: linear-gradient(to bottom, green, black);
 }
 

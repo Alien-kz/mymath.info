@@ -1,0 +1,64 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtext}
+
+\usepackage{comment}
+\usepackage{geometry}
+\geometry{left=1cm, right=1cm, top=2cm, bottom=2cm}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\usepackage{wrapfig}
+\usepackage{fancybox,fancyhdr}
+\sloppy
+
+\setlength{\headheight}{28pt}
+
+\newcommand{\head}[4]
+{
+	\fancyhf{}
+	\pagestyle{fancy}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\end{large}
+	#2 \\
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{X Республиканская студенческая предметная олимпиада по направлению \\ <<Математическое и компьютеное моделирование>>}{20 апреля 2018}{Назарбаев Университет}{г. Астана}
+
+\begin{flushright}
+Стоимость задач: \\
+7 баллов каждая задача.\\
+\end{flushright}
+
+\begin{enumerate}
+\item Мяч весом $0,1$ килограмма подбрасывают вверх с земли с начальной скоростью $20$ м/с. Сила сопротивления воздуха величиной $|v|^3/1020,4$ направлена в сторону противоположную скорости мяча, где скорость v измеряется в м/с. Найдите формулу для вычисления времени, которое требуется мячу для достижения максимальной высоты над уровнем земли. 
+
+\item Допустим $1 < p < 2$ и дана функция $\varphi(x) = |x|^{p-2} x$, где $x \in \mathbb{R}$. Докажите неравенство
+$$|\varphi(x) - \varphi(y)| \leqslant 2^{2-p} |x-y|^{p-1}.$$
+Также покажите, что равенство имеет место если $y = -x$.
+
+\item Вычислите точное значение $\cos\left(\frac{\pi}{10}\right)$.
+
+\item Вычислите интеграл
+$$\int_{0}^{1} \sqrt{-\ln(x)} dx.$$
+
+\item Даны 52 точки $P_1(x_1, y_1)$, $P_2(x_2, y_2)$, \ldots, $P_{52}(x_{52}, y_{52})$, расположенные в квадрате, длина стороны которого равна 7. Покажите, что среди этих 52 точек всегда можно найти 3 точки,
+которые расположены внутри круга радиуса 1.
+\end{enumerate}
+
+\end{document} 

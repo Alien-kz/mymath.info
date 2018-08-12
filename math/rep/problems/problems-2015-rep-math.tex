@@ -1,0 +1,67 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtext}
+
+\usepackage{comment}
+\usepackage{geometry}
+\geometry{left=1cm, right=1cm, top=2cm, bottom=2cm}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\usepackage{wrapfig}
+\usepackage{fancybox,fancyhdr}
+\sloppy
+
+\setlength{\headheight}{28pt}
+
+\newcommand{\head}[4]
+{
+	\fancyhf{}
+	\pagestyle{fancy}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\end{large}
+	#2 \\
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{VII Республиканская студенческая предметная олимпиада по направлению \\ <<Математика>>}{26 марта 2015}{Казахский национальный университет имени аль-Фараби}{г. Алматы}
+
+\begin{enumerate}
+\item Функция $f(x)$ дважды непрерывно дифференцируема на отрезке $[a, b]$ и имеет на $[a, b]$ не менее трех различных нулей. Докажите, что существует точка $x \in [a, b]$ такая, что $f(x) + f''(x) = 2 f'(x)$. 
+
+\item Функция $f(x)$ дважды непрерывно дифференцируема на полуоси $[0, +\infty)$. Известно, что $f(x) > 0$, $f'(x) > 0$ и $\frac{f(x) f''(x)}{(f'(x))^2} \leqslant 2$ для всех $x \in [0, +\infty)$. Доказать, что $\lim_{x \to +\infty} \frac{f'(x)}{(f(x))^2} = 0$.
+
+\item Известно, что для квадратных матриц $A$ и $B$ одинакового порядка выполнены следующие равенства $AB = BA$, $A^{99} = E$, $B^{100} = E$, где $E$ --- единичная матрица. Докажите, что существует матрица $C$ такая, что $(A + E + B) C = C (A + E + B) = E$.
+
+\item Пусть
+$$A = 
+\begin{pmatrix}
+3 & 2 \\
+2 & 0 \\
+\end{pmatrix},
+A^n =
+\begin{pmatrix}
+a_{11}(n) & a_{12}(n) \\
+a_{21}(n) & a_{22}(n) \\
+\end{pmatrix}.
+$$
+
+Доказать существование и найти предел $\lim_{n \to \infty} \frac{a_{12}(n)}{a_{22}(n)}$.
+
+\end{enumerate}
+
+\end{document} 

@@ -1,0 +1,57 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtext}
+
+\usepackage{comment}
+\usepackage{geometry}
+\geometry{left=1cm, right=1cm, top=2cm, bottom=2cm}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\usepackage{wrapfig}
+\usepackage{fancybox,fancyhdr}
+\sloppy
+
+\setlength{\headheight}{28pt}
+
+\newcommand{\head}[4]
+{
+	\fancyhf{}
+	\pagestyle{fancy}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\end{large}
+	#2 \\
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{X Республиканская студенческая предметная олимпиада по направлению \\ <<Математика>>}{03 апреля 2018}{Казахстанско-Британский технический университет}{г. Алматы}
+
+\begin{enumerate}
+
+\item Последовательность многочленов $P_n$ равномерно сходится на всей оси $f: \mathbb{R} \to \mathbb{R}$. Докажите, что $f$ является многочленом.
+
+\item Докажите, что если непрерывно дифференцируемая функция $f: \mathbb{R} \to \mathbb{R}$ удовлевторяет тождеству $f(x) = \alpha f(x / 2)$, а $|\alpha| < 2$, то при $|\alpha| = 1$ функция $f$ --- произвольная постоянная, а при остальных $\alpha$ --- нулевая.
+
+\item Две непрерывно дифференцируемые на $[0; a]$ функции $f_0$, $f_1$ принимают неположительные значения и $f_0(0) = f_1(0) = 0$. Докажите, что если при всех $x$ выполняется неравенство $f'_0(x) + x f'_1(x) \geqslant 0$ на отрезке $[0; a]$, то обе функции являются тождественно нулевыми.
+
+\item Известно, что на графике многочлена $P$ можно отметить $n$ точек, являющихся вершинами правильного $n$-угольника. Доказать, что его степень не меньше $n - 1$.
+
+\item Если три вектора $(u_1, u_2, u_3)$, $(v_1, v_2, v_3)$, $(w_1, w_2, w_3)$ с ненулевыми координатами попарно ортогональны, то векторы $\left(\frac{1}{u_1}, \frac{1}{u_2}, \frac{1}{u_3} \right)$, $\left(\frac{1}{v_1}, \frac{1}{v_2}, \frac{1}{v_3} \right)$, $\left(\frac{1}{w_1}, \frac{1}{w_2}, \frac{1}{w_3} \right)$ с обратными координатами компланарны, т.е. лежат в одной плоскости.
+\end{enumerate}
+
+
+\end{document} 

@@ -30,3 +30,8 @@ td:last-child {
 .bronze {
 	color: goldenrod;
 }
+
+.head {
+	font-size: 1em;
+	font-weight: bold;
+}

@@ -65,6 +65,12 @@ function print_header($text) {
 	echo "</div>\n";
 }
 
+function print_text($text) {
+	echo "<div align='center'>\n";
+	echo "$text\n";
+	echo "</div>\n";
+}
+
 function print_buttons($link, $selected_key, $buttons) {
 	echo "<div align='center'>\n";
 	foreach ($buttons as $key => $text) {
@@ -124,13 +130,13 @@ function show_pdf_file($file) {
 	echo "</div>\n";
 }
 
-function show_link_file($file, $header) {
+function show_link_file($header, $file, $button_text) {
 	echo "<div align='center'>\n";
 	echo "<span>\n";
-	echo "<a class='button' href='$file.tex' download> $header в формате .tex </a>";
+	echo "<a class='button' href='$file.tex' download> $header $button_text (.tex) </a>";
 	echo "</span>\n";
 	echo "<span>\n";
-	echo "<a class='button' href='$file.pdf' download> $header в формате .pdf </a>";
+	echo "<a class='button' href='$file.pdf' download> $header $button_text (.pdf) </a>";
 	echo "</span>\n";
 	echo "</div>\n";
 }
