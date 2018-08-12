@@ -4,8 +4,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<link href='../main.css?ver=2018-08-12-2' rel='stylesheet' type='text/css' >
-		<link href='books.css?ver=2018-08-12-2' rel='stylesheet' type='text/css' >
+		<link href='../main.css?ver=2018-08-12-5' rel='stylesheet' type='text/css' >
+		<link href='books.css?ver=2018-08-12-5' rel='stylesheet' type='text/css' >
 	</head>
 	<body>
 		<div class="header">
