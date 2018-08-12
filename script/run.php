@@ -19,7 +19,10 @@ function convert($input) {
 	$output = str_replace("\\\\","", $output);
 	$output = preg_replace("/\\\\[^\n]*\n/", "", $output);
 	$output = preg_replace("/%[^\n]*\n/", "", $output);
-	$output = str_replace("\n\n","\n", $output);
+	$output = preg_replace("/#[^\n]*\n/", "", $output);
+	$output = preg_replace("/{[^\n]*\n/", "", $output);
+	$output = preg_replace("/}[^\n]*\n/", "", $output);
+	$output = preg_replace('/^[ \t]*[\r\n]+/m', '', $output);
 	$output = str_replace("\r","", $output);
 	return $output;
 }
