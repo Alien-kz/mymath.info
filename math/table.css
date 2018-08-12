@@ -35,3 +35,13 @@ td:last-child {
 	font-size: 1em;
 	font-weight: bold;
 }
+
+.buttons_div {
+	padding: 0px;
+/*	border: 1px solid gray;*/
+	width: 90%;
+}
+
+.xscroll {
+	overflow-x: auto;
+}

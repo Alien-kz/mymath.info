@@ -24,9 +24,9 @@ function replace_prize_text($table, $colomn, $multiple, $replace, $needles) {
 		$html_post = "</span>";
 	} else {
 		foreach ($needles as $code) {
-			$html_pre[$code] = "<p><big><span class='".$code."'>";
+			$html_pre[$code] = "<p><big><big><big><span class='".$code."'>";
 		}
-		$html_post = "</span></big></p>";
+		$html_post = "</span></big></big></big></p>";
 	}
 	$img = array("gold" => "&#10102",
 				 "silver" => "&#10103",
@@ -73,14 +73,16 @@ function print_text($text) {
 	echo "</div>\n";
 }
 
-function print_buttons($link, $selected_key, $buttons) {
+function print_buttons($link, $selected_key, $buttons, $options) {
 	echo "<div align='center'>\n";
+	echo "<div class='buttons_div'>\n";
 	foreach ($buttons as $key => $text) {
 		$is_selected = "";
 		if (strval($key) === $selected_key)
 			$is_selected = " selected";
-		echo "<a class='button $is_selected' href='$link=$key'>$text</a> \n";
+		echo "<a class='button $is_selected $options' href='$link=$key'>$text</a> \n";
 	}
+	echo "</div>\n";
 	echo "</div>\n";
 }
 
@@ -91,8 +93,8 @@ function print_table($table) {
 
 # print preambulas
 	echo "<div align='center'>\n";
-	echo "<div>\n";
-	echo "<table>\n";
+	echo "<div class='xscroll'>\n";
+	echo "<table class='buttons_div'>\n";
 
 # print header
 	if (isset($table['header'])) {

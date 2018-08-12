@@ -4,8 +4,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<link href='table.css?ver=2018-08-12-2' rel='stylesheet' type='text/css' >
-		<link href='../main.css?ver=2018-08-12-2' rel='stylesheet' type='text/css' >
+		<link href='table.css?ver=2018-08-12-4' rel='stylesheet' type='text/css' >
+		<link href='../main.css?ver=2018-08-12-4' rel='stylesheet' type='text/css' >
 	</head>
 	<body>
 		<div class="header">
@@ -32,8 +32,8 @@
 			print_header("Студенческие олимпиады по математике.");
 			print_buttons("show.php?olymp", 
 							$olymp, 
-							array("msu" => "Олимпиада Казахстанского филиала МГУ (г. Астана)",
-									"republic" => "Республиканская предметная олимпиада (МОН РК)", 
+							array("msu" => "Филиала МГУ (г. Астана)",
+									"republic" => "Республиканская предметная (МОН РК)", 
 									"imc" => "International Mathematics Competition (Болгария)"));
 			
 			if ($olymp == "imc") {
@@ -43,7 +43,7 @@
 				for ($y = 2013; $y <= 2018; $y++) {
 					$buttons[strval($y)] = $y." год";
 				}
-				print_buttons("show.php?olymp=imc&year", $year, $buttons);
+				print_buttons("show.php?olymp=imc&year", $year, $buttons, "colomns6");
 				
 				if ($year != "") {
 					print_header("Материалы олимпиады");
@@ -91,6 +91,8 @@
 					print_header("Республиканские студенческие предметные олимпиады по направлениям <br/> 'Математика' и 'Математическое и компьютерное моделирование'.");
 					for ($y = 2014; $y <= 2018; $y++) {
 						$buttons["math-".strval($y)] = "Математика ".$y." год";
+					}
+					for ($y = 2014; $y <= 2018; $y++) {
 						$buttons["mcm-".strval($y)] = "МКМ ".$y." год";
 					}
 					$directory = "republic";
@@ -103,7 +105,7 @@
 					$buttons['2014-train'] = "2014 год (доп.тур)";
 					$buttons['2018-train'] = "2018 год (доп.тур)";
 				}
-				print_buttons("show.php?olymp=$olymp&year", $year, $buttons);
+				print_buttons("show.php?olymp=$olymp&year", $year, $buttons, "colomns5");
 
 				if ($year != "") {
 					print_header("Материалы олимпиады");
@@ -120,8 +122,8 @@
 													False,
 													True,
 													$needles);
-						print_table($table);
 					}
+					print_table($table);
 				}
 
 			}
