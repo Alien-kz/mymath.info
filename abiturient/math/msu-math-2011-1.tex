@@ -1,0 +1,85 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtext}
+
+\usepackage{comment}
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+\usepackage[inline]{enumitem}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\usepackage{wrapfig}
+\usepackage{fancybox,fancyhdr}
+\sloppy
+
+\setlength{\headheight}{28pt}
+\newcommand{\variant}[2]{
+	\begin{center}
+	\textit{#2 вариант}
+	\end{center}
+}
+
+\newcommand{\unit}[1]{\text{\textit{ #1}}}
+\newcommand{\units}[2]{ \frac{\text{\textit{#1}}}{\text{\textit{#2}}}}
+
+\newcommand{\head}[4]
+{
+	\fancyhf{}
+	\pagestyle{fancy}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2} \\
+	\end{large}
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{Вступительный экзамен по математике}{2011}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
+
+\variant{2011}{1}
+
+\begin{enumerate}[wide]
+\item Какие из чисел $2$, $\frac34$, $\sqrt{7}+2$, $\sqrt7-2$ являются корнями уравнения
+$$4x^3 + 9 = 19 x^2 ?$$
+
+\item Представьте число $\sqrt{33}$ в виде десятичной дроби с точностью до~$0{,}1$.
+
+\item Решите уравнение
+$$ \cos \left(\frac{3\pi}{2} + 2x \right) - \sin(\pi + 4x) = \sin{4x} + \sin{x} .$$
+
+\item Решите систему уравнений
+$$
+\begin{cases}
+4^x \cdot 32^y = 256,\\
+\sqrt{2x-2} = y.
+\end{cases}
+$$
+
+\item В арифметической прогрессии 34 члена, и разность этой прогрессии равна 12. Сумма всех членов прогрессии в 4 раза больше, чем сумма членов, стоящих на нечетных местах. Найдите первый член этой прогрессии.
+
+\item В трапеции, описанной около окружности радиуса 4, разность длин боковых сторон равна 4, а длина средней линии равна 12. Найдите длины сторон трапеции.
+
+\item Решите неравенство
+$$\frac{\log_2(x+6) \cdot \log_5(x+5)}{x+4} \leqslant \frac{\log_5(x+6) \cdot \log_2(x+5)}{x+3} .$$
+
+\item В пирамиде $ABCD$: $AB = 1$, $AC = 2$, $AD = 3$, $BC = \sqrt{5}$, $BD = \sqrt{10}$, $CD = \sqrt{13}$. Найдите радиус шара, вписанного в пирамиду $ABCD$.
+
+\end{enumerate}
+
+\newpage
+
+\end{document} 

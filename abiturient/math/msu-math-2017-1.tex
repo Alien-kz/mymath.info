@@ -1,0 +1,82 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtext}
+
+\usepackage{comment}
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+\usepackage[inline]{enumitem}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\usepackage{wrapfig}
+\usepackage{fancybox,fancyhdr}
+\sloppy
+
+\setlength{\headheight}{28pt}
+\newcommand{\variant}[2]{
+	\begin{center}
+	\textit{#2 вариант}
+	\end{center}
+}
+
+\newcommand{\unit}[1]{\text{\textit{ #1}}}
+\newcommand{\units}[2]{ \frac{\text{\textit{#1}}}{\text{\textit{#2}}}}
+
+\newcommand{\head}[4]
+{
+	\fancyhf{}
+	\pagestyle{fancy}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2} \\
+	\end{large}
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{Вступительный экзамен по математике}{2017}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
+
+\variant{2017}{1}
+
+\begin{enumerate}[wide]
+\item Найдите все целые числа, которые лежат между числами $\sqrt{3} \cdot \sqrt{85}$ и $\frac{14-1{,}7}{3-2{,}3}$.
+
+\item Решите уравнение $|x^2-14x+48| = 14x - 42 - x^2$.
+
+\item В 9 коробках с номерами от 1 до 9 лежат только красные и синие шары. Число красных шаров во второй коробке в $\frac76$ раз больше, чем в первой. Количества красных шаров в коробках образуют арифметическую прогрессию, а количества синих шаров в коробках образуют геометрическую прогрессию (в пордяке номеров коробок). Количество синих шаров в первой коробке составляет 25\%, а в третьей --- 50\% от числа всех шаров в данной коробке. Найти отношение общего числа синих шаров к общему числу красных шаров.
+
+\item Решите уравнение $\sin\left(2x + \frac{\pi}{4}\right) - \sin{x} = \frac{1}{\sqrt{2}}$.
+
+\item Решите систему уравнений
+$$
+\begin{cases}
+x^{\log_y{x}} = \frac{y^2}{x},\\
+\left( \log_{3} x^2 \right) \cdot \log_{x} \left( 2x - \frac{3}{y} \right) = 4
+\end{cases}
+$$
+
+\item В выпуклом четырехугольнике $ABCD$ $\angle{B} = \angle{C} = 60^{\circ}$, $AD = 21$, $BC = 40$. Окружность с центром на стороне $BC$ касается сторон $AB$, $AD$ и $CD$. Найдите длины сторон $AB$ и $CD$.
+
+\item Найдите все значения параметра $a$, при которых неравенство $13 + \sin^2{x} > 3 a^2 - a + (4a - 5) \cos{x}$ выполняется для всех $x$.
+
+\item В правильную четырехугольную пирамиду $SABCD$ ($S$ --- вершина пирамиды) вписан шар. Через центр шара и ребро $AB$ проведена плоскость, которая в пересечении с пирамидой дает четырехугольник $ABMN$. Объемы пирамид $SABMN$ и $SABCD$ относятся как $5 : 9$. Найдите косинус двугранного угла между боковой гранью и основанием исходной пирамиды.
+\end{enumerate}
+
+\newpage
+
+
+\end{document} 

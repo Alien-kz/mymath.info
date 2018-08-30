@@ -1,0 +1,88 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtext}
+
+\usepackage{comment}
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+\usepackage[inline]{enumitem}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\usepackage{wrapfig}
+\usepackage{fancybox,fancyhdr}
+\sloppy
+
+\setlength{\headheight}{28pt}
+\newcommand{\variant}[2]{
+	\begin{center}
+	\textit{#2 вариант}
+	\end{center}
+}
+
+\newcommand{\unit}[1]{\text{\textit{ #1}}}
+\newcommand{\units}[2]{ \frac{\text{\textit{#1}}}{\text{\textit{#2}}}}
+
+\newcommand{\head}[4]
+{
+	\fancyhf{}
+	\pagestyle{fancy}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2} \\
+	\end{large}
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{Вступительный экзамен по математике}{2015}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
+
+\variant{2015}{1}
+
+\begin{enumerate}[wide]
+\item Какое из чисел больше и почему: 4,5 или $\sqrt{\frac{21}{8}} + \frac{17}{6}$ ?
+
+\item Решите уравнение
+$$(x^2 - 8x + 16)(x^2 - 8x + 18) - 24 = 0 .$$
+
+\item Решите уравнение
+$$\sqrt{24} \cos{x} = \sqrt{11 \cos{x} - \cos{2x}} .$$
+
+\item Решите систему уравнений
+$$
+\begin{cases}
+y^2 + 2xy = 40x,\\
+16x^2 + 8xy = 5y .
+\end{cases}
+$$
+
+\item Решите неравенство
+$$ \frac{\log_{25} \left(7 - \frac{x}{2} \right) }{\log_{125} (22 - x) } \leqslant \frac{3}{4} .$$
+
+\item В треугольнике длины двух сторон равны 4 и 5, а длина биссектрисы угла между этими сторонами равна $\frac{20}{9}$. Найдите площадь этого треугольника.
+
+\item Найдите все значения параметра $a$, при которых уравнение
+$$(x+1)^4 - (a+3) (x^2 + 2x) + a^2 + 3a + 1 = 0$$
+имеет 4 различных корня, образующих арифметическую прогрессию.
+
+\item В правильной шестиугольной пирамиде с вершиной $S$ и основанием $ABCDEF$ площадь сечения $SAC$ относится к площади боковой грани $SAB$ как \mbox{$\sqrt{51} : \sqrt{19}$}. Сторона основания равна 3. Найти объем данной шестиугольной пирамиды.
+
+\end{enumerate}
+
+\newpage
+
+
+\end{document} 

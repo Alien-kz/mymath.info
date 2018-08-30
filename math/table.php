@@ -57,34 +57,6 @@ function replace_prize_text($table, $colomn, $multiple, $replace, $needles) {
 	return $table;
 }
 
-function print_header($text) {
-	echo "<div align='center'>\n";
-	echo "<h2>\n";
-	echo "$text\n";
-	echo "</h2>\n";
-	echo "</div>\n";
-}
-
-function print_text($text) {
-	echo "<div align='center'>\n";
-	echo "<h3>\n";
-	echo "$text\n";
-	echo "</h3>\n";
-	echo "</div>\n";
-}
-
-function print_buttons($link, $selected_key, $buttons, $options) {
-	echo "<div align='center'>\n";
-	echo "<div class='buttons_div'>\n";
-	foreach ($buttons as $key => $text) {
-		$is_selected = "";
-		if (strval($key) === $selected_key)
-			$is_selected = " selected";
-		echo "<a class='button $is_selected $options' href='$link=$key'>$text</a> \n";
-	}
-	echo "</div>\n";
-	echo "</div>\n";
-}
 
 function print_table($table) {
 # make array of col type
@@ -124,26 +96,5 @@ function print_table($table) {
 	echo "</table>\n";
 	echo "</div>\n";
 	echo "</div>\n";
-}
-
-function show_pdf_file($file) {
-	echo "<div align='center'>\n";
-	echo "<div>\n";
-	echo "<iframe src='$file' width='800px' height='800px'></iframe>";
-	echo "</div>\n";
-	echo "</div>\n";
-}
-
-function show_link_file($header, $file, $button_text) {
-	if (file_exists($file.".pdf")) {
-		echo "<div align='center'>\n";
-		echo "<span>\n";
-		echo "<a class='button' href='$file.tex' download> $header $button_text (.tex) </a>";
-		echo "</span>\n";
-		echo "<span>\n";
-		echo "<a class='button' href='$file.pdf' download> $header $button_text (.pdf) </a>";
-		echo "</span>\n";
-		echo "</div>\n";
-	}
 }
 ?>

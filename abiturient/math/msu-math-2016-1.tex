@@ -1,0 +1,89 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtext}
+
+\usepackage{comment}
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+\usepackage[inline]{enumitem}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\usepackage{wrapfig}
+\usepackage{fancybox,fancyhdr}
+\sloppy
+
+\setlength{\headheight}{28pt}
+\newcommand{\variant}[2]{
+	\begin{center}
+	\textit{#2 вариант}
+	\end{center}
+}
+
+\newcommand{\unit}[1]{\text{\textit{ #1}}}
+\newcommand{\units}[2]{ \frac{\text{\textit{#1}}}{\text{\textit{#2}}}}
+
+\newcommand{\head}[4]
+{
+	\fancyhf{}
+	\pagestyle{fancy}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2} \\
+	\end{large}
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{Вступительный экзамен по математике}{2016}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
+
+\variant{2016}{1}
+
+\begin{enumerate}[wide]
+\item Сколько различных решений имеет уравнение
+$$7x^2 + 6x + 7 = 2 \sqrt{10} \cdot (x^2 - 1)?$$
+
+\item Решите систему уравнений
+$$
+\begin{cases}
+x - y = 5,\\
+x^3 - y^3 = 335.
+\end{cases}
+.$$
+
+\item Дана квадратная таблица $10 \times 10$ клеток (10 строк, 10 столбцов). В каждой клетке таблицы стоит число. Известно, что при переходе из любой клетки в соседнюю с ней клетку, расположенную ниже, число увеличивается на~4, а при переходе из любой клетки в соседнюю с ней клетку справа число уменьшается на 1. Сумма всех чисел в таблице равна 250. Какое число стоит в самой левой клетке нижнего ряда?
+
+\item Решите неравенство
+$$
+\sqrt{7 + 2 ^ {\log_x{5}}} \geqslant 1 + 4 ^ {\log_x{\sqrt5}}.
+$$
+
+\item Решите уравнение
+$$ \tg {2x} = 9\sin^2{x} + 4\sin{x} \cos{x} - 3 \cos^2{x}.$$
+
+\item В четырехугольнике $ABCD$ сторона $AD$ в $\sqrt{\frac{19}{4}}$ раз длиннее стороны $BC$ и $AB = CD = 2$. Продолжения сторон $AB$ (за точку $B$) и $DC$ (за точку $C$) пересекаются в точке $K$, при этом $BK = 1$, $CK = 2$. Найдите площадь четырехугольника $ABCD$.
+
+\item Найдите все целочисленные решения уравнения
+$$\cos{\frac{(10 x - 48) \pi}{3x + 5}} = 1.$$
+
+\item В правильной треугольной пирамиде радиус вписанного шара в 3 раза короче высоты и равен $7 + \sqrt{21}$. Найдите радиус шара, который касается всех ребер пирамиды.
+
+\end{enumerate}
+
+\newpage
+
+
+\end{document} 

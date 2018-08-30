@@ -10,7 +10,7 @@
 	<body>
 		<div class="header">
 			<a class="button" href="../index.html"> Главная </a>
-			<!--<a class="button" href="../msu_exam/result.php"> Экзамены в филиал 2018 </a>-->
+			<a class="button" href="../abiturient/show.php"> Абитуриентам </a>
 			<a class="button" href="../math/show.php"> Олимпиады по математике </a>
 			<a class="button selected" href="show.php"> Книги </a>
 		</div>
@@ -72,7 +72,7 @@
 			Неизданное
 			</h2>
 			<div class="content_div">
-				<a href="resource/2014_2018_republic_olympiad_in_math_for_student.pdf">
+				<a href="2014_2018_republic_olympiad_in_math_for_student.pdf">
 					<p align="center">
 					Cтуденческие республиканские олимпиады <br/>
 					по математике и по математическому и компьютерному моделированию <br/>

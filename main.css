@@ -18,15 +18,6 @@
 	text-decoration: none;
 }
 
-
-.colomns5 {
-	min-width: 15%;
-}
-
-.colomns6 {
-	min-width: 12%;
-}
-
 .selected {
 	color: white;
 	background: linear-gradient(to bottom, green, black);
@@ -42,4 +33,26 @@
 
 	text-align: left;
 	font-size: 1em;
+}
+
+.colomns2 {
+	min-width: 20%;
+}
+
+.colomns3 {
+	min-width: 20%;
+}
+
+.colomns5 {
+	min-width: 15%;
+}
+
+.colomns6 {
+	min-width: 12%;
+}
+
+.buttons_div {
+	padding: 0px;
+/*	border: 1px solid gray;*/
+	width: 80%;
 }

@@ -4,19 +4,20 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<link href='table.css?ver=2018-08-12-5' rel='stylesheet' type='text/css' >
-		<link href='../main.css?ver=2018-08-12-5' rel='stylesheet' type='text/css' >
+		<link href='table.css?ver=2018-08-30-1' rel='stylesheet' type='text/css' >
+		<link href='../main.css?ver=2018-08-30-1' rel='stylesheet' type='text/css' >
 	</head>
 	<body>
 		<div class="header">
 			<a class="button" href="../index.html"> Главная </a>
-			<!--<a class="button" href="../msu_exam/result.php"> Экзамены в филиал 2018 </a>-->
-			<a class="button selected" href="show.php"> Олимпиады по математике </a>
+			<a class="button" href="../abiturient/show.php"> Абитуриентам </a>
+			<a class="button selected" href="show.php"> Олимпиады по математике </a>		
 			<a class="button" href="../books/show.php"> Книги </a>
 		</div>
 
 		<?php
 			include_once "table.php";
+			include_once "../routine/html.php";
 			$olymp = "";
 			if (isset($_GET["olymp"])) {
 				$olymp = $_GET["olymp"];
@@ -32,12 +33,13 @@
 			print_header("Студенческие олимпиады по математике.");
 			print_buttons("show.php?olymp", 
 							$olymp, 
-							array("msu" => "Филиала МГУ (г. Астана)",
-									"republic" => "Республиканская предметная (МОН РК)", 
-									"imc" => "International Mathematics Competition (Болгария)"));
+							array("msu" => "КФ МГУ",
+									"republic" => "Республиканская", 
+									"imc" => "IMC"),
+							"colomns3");
 			
 			if ($olymp == "imc") {
-				print_header("Казахстан на международной студенческой олимпиаде по математике IMC.");
+				print_header("Казахстан на международной студенческой олимпиаде по математике <br/> IMC International Mathematics Competition (Болгария).");
 				
 				$buttons = array();
 				for ($y = 2013; $y <= 2018; $y++) {
@@ -88,17 +90,17 @@
 				$buttons = array();
 				$directory = $olymp;
 				if ($olymp == "republic") {
-					print_header("Республиканские студенческие предметные олимпиады по направлениям <br/> 'Математика' и 'Математическое и компьютерное моделирование'.");
+					print_header("Республиканские студенческие предметные олимпиады по направлениям <br/> 'Математика' и 'Математическое и компьютерное моделирование' (МОН РК).");
 					for ($y = 2014; $y <= 2018; $y++) {
-						$buttons["math-".strval($y)] = "Математика ".$y." год";
+						$buttons["math-".strval($y)] = "Матем ".$y;
 					}
 					for ($y = 2014; $y <= 2018; $y++) {
-						$buttons["mcm-".strval($y)] = "МКМ ".$y." год";
+						$buttons["mcm-".strval($y)] = "МКМ ".$y;
 					}
 					$directory = "republic";
 				}
 				if ($olymp == "msu") {
-					print_header("Олимпиады Казахстанского филиала МГУ по математике.");
+					print_header("Олимпиады Казахстанского филиала МГУ по математике (г. Астана).");
 					for ($y = 2008; $y <= 2017; $y++) {
 						$buttons[strval($y)] = $y." год";
 					}
