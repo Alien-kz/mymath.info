@@ -8,9 +8,9 @@ function get_user_agent_type() {
 
 function print_header($text) {
 	echo "<div align='center'>\n";
-	echo "<h2>\n";
+	echo "<h3>\n";
 	echo "$text\n";
-	echo "</h2>\n";
+	echo "</h3>\n";
 	echo "</div>\n";
 }
 
@@ -72,10 +72,8 @@ function show_link_file($file, $link_text) {
 
 function show_png_file($file) {
 	if (file_exists($file.".png")) {
-		echo "<div align='center'>\n";
-		echo "<div class='image_div'>\n";
-		echo "<img src='$file.png'>";
-		echo "</div>\n";
+		echo "<div align='center' class='image_div'>\n";
+		echo "<img class='image_fit' src='$file.png'>";
 		echo "</div>\n";
 	}
 	else if (file_exists($file."-0.png")) {
@@ -83,8 +81,8 @@ function show_png_file($file) {
 		$part = 0;
 		$file_name = $file."-".$part.".png";
 		do {
-			echo "<div class='image_div'>\n";
-			echo " <img src='$file_name'>\n";
+			echo "<div align='center' class='image_div'>\n";
+			echo " <img class='image_fit' src='$file_name'>\n";
 			echo "</div>\n";
 			$part += 1;
 			$file_name = $file."-".$part.".png";

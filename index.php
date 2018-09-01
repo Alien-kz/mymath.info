@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="keywords" content="студенческие олимпиады, олимпиады по математике, олимпиады по программированию, Казахстанский филиал МГУ, олимпиада филиала МГУ, олимпиада Астана, вступительные задания МГУ, задачи по математике, задачи по математическому анализу, задачи по линейной алгебре, Республиканская студенческая олимпиада, математика, математическое и компьюетрное моделировние">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 		<?php
 			include_once "routine/html.php";

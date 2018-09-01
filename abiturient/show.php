@@ -4,14 +4,16 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
 		<?php
 			include_once "../routine/html.php";
 			$agent = get_user_agent_type();
 			
 			if ($agent == 'desktop') {
-				echo "<link href='../main.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
+				echo "<link href='../main.css?ver=2018-09-01-3' rel='stylesheet' type='text/css' >";
 			} else {
-				echo "<link href='../main_m.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
+				echo "<link href='../main_m.css?ver=2018-09-01-3' rel='stylesheet' type='text/css' >";
 			}
 		?>
 	</head>
@@ -36,6 +38,7 @@
 		
 		<?php
 			
+#			echo "<a name='subject'></a>";			
 			print_header("Вступительные экзамены в филиал МГУ.");
 			print_buttons("show.php?subject=", 
 							$subject, 
@@ -49,20 +52,20 @@
 				$directory = $subject;
 				$variant = "";
 				if ($subject == "math") {
-					print_header("Математика");
 					for ($y = 2011; $y <= 2017; $y++) {
 						$buttons[$y] = $y." год";
 					}
 					$variant = "1";
 				}
 				if ($subject == "phys") {
-					print_header("Физика");
 					for ($y = 2015; $y <= 2017; $y++) {
 						$buttons[$y] = $y." год";
 					}
 					$variant = "2";
 				}
-				print_buttons("show.php?subject=$subject&year=", $year, $buttons, "colomns7");
+				echo "<a name='matherial'></a>";
+				print_header("Выберите год");
+				print_buttons("show.php?subject=$subject&year=", $year, $buttons, "colomns7", "#matherial");
 
 				if ($year != "") {
 					print_header("Материалы экзамена");

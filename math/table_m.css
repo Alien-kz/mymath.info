@@ -39,7 +39,3 @@ td:last-child {
 .head {
 	font-weight: bold;
 }
-
-.xscroll {
-	overflow-x: auto;
-}
