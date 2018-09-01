@@ -1,32 +1,25 @@
-\documentclass[11pt, a5paper]{article}
+\documentclass[11pt, a4paper]{article}
 
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{mathtext}
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usepackage{enumitem}			%enumarate parameters
 
-\usepackage{comment}
-\usepackage{geometry}
-\geometry{left=0.5cm, right=1cm, top=1cm, bottom=1cm}
-\usepackage[inline]{enumitem}
-
-\usepackage{graphicx}
-\usepackage{tikz}
-\usetikzlibrary{patterns}
-
-\usepackage{wrapfig}
-\usepackage{fancybox,fancyhdr}
-\sloppy
-
-\setlength{\headheight}{28pt}
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
 
 \newcommand{\head}[4]
 {
-	\fancyhf{}
 	\pagestyle{fancy}
+	\fancyhf{}
 	\chead{#3, #4}
 
 	\begin{center}
@@ -40,7 +33,7 @@
 
 \begin{document}
 
-\head{Республиканская студенческая олимпиада по~математике}{2006}{Актюбинский региональный государственный университет}{г. Актобе}
+\head{Республиканская студенческая олимпиада по~математике}{2006}{Актюбинский региональный государственный университет}{г.~Актобе}
 
 \begin{enumerate}
 \item (6 баллов) Пусть $f(x) \in C[0, +\infty)$ и для любого $x \geqslant 0$ справедливо равенство
