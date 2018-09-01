@@ -4,17 +4,31 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<link href='../main.css?ver=2018-08-12-5' rel='stylesheet' type='text/css' >
-		<link href='books.css?ver=2018-08-12-5' rel='stylesheet' type='text/css' >
+		<?php
+			include_once "../routine/html.php";
+			include_once "table.php";
+			$agent = get_user_agent_type();
+			
+			if ($agent == 'desktop') {
+				echo "<link href='books.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
+				echo "<link href='../main.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
+			} else {
+				echo "<link href='books_m.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
+				echo "<link href='../main_m.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
+			}
+		?>
+		
 	</head>
 	<body>
-		<div class="header">
-			<a class="button" href="../index.html"> Главная </a>
-			<a class="button" href="../abiturient/show.php"> Абитуриентам </a>
-			<a class="button" href="../math/show.php"> Олимпиады по математике </a>
-			<a class="button selected" href="show.php"> Книги </a>
-		</div>
-		
+		<?php
+			$buttons = array("../index.php" => "Главная",
+							"../abiturient/show.php" => "Абитуриентам", 
+							"../math/show.php" => "Олимпиады по математике",
+							"../books/show.php" => "Книги");
+			$css = "colomns_in_header";
+			print_buttons("", "../books/show.php", $buttons, $css);
+
+		?>
 		<div align="center">
 			<h2>
 			Изданное

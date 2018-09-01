@@ -4,20 +4,29 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<link href='table.css?ver=2018-08-30-1' rel='stylesheet' type='text/css' >
-		<link href='../main.css?ver=2018-08-30-1' rel='stylesheet' type='text/css' >
+		<?php
+			include_once "../routine/html.php";
+			include_once "table.php";
+			$agent = get_user_agent_type();
+			
+			if ($agent == 'desktop') {
+				echo "<link href='table.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
+				echo "<link href='../main.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
+			} else {
+				echo "<link href='table_m.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
+				echo "<link href='../main_m.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
+			}
+		?>
+		
 	</head>
 	<body>
-		<div class="header">
-			<a class="button" href="../index.html"> Главная </a>
-			<a class="button" href="../abiturient/show.php"> Абитуриентам </a>
-			<a class="button selected" href="show.php"> Олимпиады по математике </a>		
-			<a class="button" href="../books/show.php"> Книги </a>
-		</div>
-
 		<?php
-			include_once "table.php";
-			include_once "../routine/html.php";
+			$buttons = array("../index.php" => "Главная",
+							"../abiturient/show.php" => "Абитуриентам", 
+							"../math/show.php" => "Олимпиады по математике",
+							"../books/show.php" => "Книги");
+			print_buttons("", "../math/show.php", $buttons, "colomns_in_header");
+
 			$olymp = "";
 			if (isset($_GET["olymp"])) {
 				$olymp = $_GET["olymp"];
@@ -26,25 +35,27 @@
 			if (isset($_GET["year"])) {
 				$year = strval($_GET["year"]);
 			}
+			
 		?>
 		
 		<?php
-			
+			echo "<a name='type'></a>";
 			print_header("Студенческие олимпиады по математике.");
-			print_buttons("show.php?olymp", 
+			print_buttons("show.php?olymp=", 
 							$olymp, 
 							array("msu" => "КФ МГУ",
 									"republic" => "Республиканская", 
 									"imc" => "IMC"),
-							"colomns3");
+							"colomns3",
+							"#type");
 			
 			if ($olymp == "republic" or $olymp == "msu" or $olymp == "imc") {
 				$buttons = array();
 				$directory = $olymp;
+				echo "<a name='detail'></a>";
 				# print header and genearate year buttons
 				if ($olymp == "msu") {
-					print_header("Открытая студенческая олимпиада");
-					print_header("Казахстанского филиала МГУ по математике.");
+					print_header("Открытая студенческая олимпиада <br/> Казахстанского филиала МГУ по математике.");
 					for ($y = 2008; $y <= 2017; $y++) {
 						$buttons[strval($y)] = $y." год";
 					}
@@ -56,8 +67,7 @@
 
 				}
 				if ($olymp == "republic") {
-					print_header("Республиканская студенческая олимпиада");
-					print_header("'Математика' и 'МКМ'.");
+					print_header("Республиканская студенческая олимпиада <br/> по направлениям 'Математика' и 'МКМ'.");
 					for ($y = 2014; $y <= 2018; $y++) {
 						$buttons["math-".strval($y)] = "Матем ".$y;
 					}
@@ -69,8 +79,7 @@
 									"3" => "bronze");
 				}
 				if ($olymp == "imc") {
-					print_header("Международная студенческая олимпиада");
-					print_header("International Mathematics Competition.");				
+					print_header("Международная студенческая олимпиада <br/> International Mathematics Competition.");
 					for ($y = 2013; $y <= 2018; $y++) {
 						$buttons[strval($y)] = $y." год";
 					}
@@ -81,16 +90,17 @@
 				
 				# print about button and year buttons
 				if ($year == "about") {
-					print_buttons("show.php?olymp=$olymp&year", $year, array("" => "Скрыть ..."), "colomns3");
+					print_buttons("show.php?olymp=$olymp&year=", $year, array("" => "Скрыть ..."), "colomns3", "#detail");
 					print_text(file_get_contents($directory."/about.txt")); 
 				} else {
-					print_buttons("show.php?olymp=$olymp&year", $year, array("about" => "Подробнее об олимпиаде ..."), "colomns3");
+					print_buttons("show.php?olymp=$olymp&year=", $year, array("about" => "Подробнее об олимпиаде ..."), "colomns3", "#detail");
 				}
+				echo "<a name='matherial'></a>";
 				print_header("Выберите год");
-				print_buttons("show.php?olymp=$olymp&year", $year, $buttons, "colomns5");
+				print_buttons("show.php?olymp=$olymp&year=", $year, $buttons, "colomns5", "#matherial");
 
 				if ($year != "" and $year != "about") {
-					print_centered_text("Материалы олимпиады");
+					print_header("Материалы олимпиады");
 					if ($olymp == "imc") {
 						$site = "http://imc-math.org.uk";
 						$results_link = $site."/index.php?year=$year&item=results";
@@ -101,8 +111,8 @@
 							$problems_link = $site."/?show=day1";
 						}					
 
-						print_centered_text("<a href='$problems_link'>Задачи</a>.");
-						print_centered_text("<a href='$results_link'>Результаты</a>.");
+						print_buttons("", "", array($problems_link => "Задачи"), "colomns2");
+						print_buttons("", "", array($results_link => "Результаты"), "colomns2");
 					} else {
 						show_link_file("$directory/problems/$olymp-$year-problems", "Задачи ".$buttons[$year]);
 						show_link_file("$directory/solutions/$olymp-$year-solutions", "Решения ".$buttons[$year]);

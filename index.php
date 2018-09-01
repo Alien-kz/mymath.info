@@ -4,17 +4,27 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<link href='main.css?ver=2018-08-12-5' rel='stylesheet' type='text/css' >
+		<?php
+			include_once "routine/html.php";
+			$agent = get_user_agent_type();
+			
+			if ($agent == 'desktop') {
+				echo "<link href='main.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
+			} else {
+				echo "<link href='main_m.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
+			}
+		?>
+		
 	</head>
 	<body>
-	<div class="header">
-		<a class="button selected" href="index.html"> Главная </a>
-		<a class="button" href="abiturient/show.php"> Абитуриентам </a>
-		<a class="button" href="math/show.php"> Олимпиады по математике </a>
-		<a class="button" href="books/show.php"> Книги </a>
-		<!--<a class="button" href="msu_exam/result.php?"> Экзамены в филиал 2018 </a>-->
-	</div>
-		
+		<?php
+			$buttons = array("index.php" => "Главная",
+							"abiturient/show.php" => "Абитуриентам", 
+							"math/show.php" => "Олимпиады по математике",
+							"books/show.php" => "Книги");
+			print_buttons("", "index.php", $buttons, "colomns_in_header");
+		?>
+	
 		<div align="center">
 			<div class="hello_div">
 				<h2 align='center'> Здравствуйте, уважаемые посетители! </h2>			

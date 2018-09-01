@@ -1,5 +1,11 @@
 <?php
 
+function get_user_agent_type() { 
+	if (preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]))
+		return 'mobile';
+	return 'desktop';
+}
+
 function print_header($text) {
 	echo "<div align='center'>\n";
 	echo "<h2>\n";
@@ -25,7 +31,7 @@ function print_text($text) {
 	echo "</div>\n";
 }
 
-function print_buttons($link, $selected_key, $buttons, $options) {
+function print_buttons($link, $selected_key, $buttons, $options, $anchor) {
 	echo "<div align='center'>\n";
 	echo "<div class='buttons_div'>\n";
 	foreach ($buttons as $key => $text) {
@@ -34,7 +40,7 @@ function print_buttons($link, $selected_key, $buttons, $options) {
 			$is_selected = " selected";
 		if ($options == "vertical")
 			echo "<div class='buttons_div'>\n";
-		echo "<a class='button $is_selected $options' href='$link=$key'>$text</a> \n";
+		echo "<a class='button $is_selected $options' href='$link$key$anchor'>$text</a> \n";
 		if ($options == "vertical")
 			echo "</div>\n";
 	}

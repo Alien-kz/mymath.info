@@ -1,13 +1,18 @@
+h2 {
+	font-size: 3em;	
+}
+
 .button {
 	margin: 5px;
     display: inline-block;
-	padding: 5px 15px;
+	padding: 25px 15px;
     border: 1px solid gray;
 	background: lightgray;
 	color: black;
-	border-radius: 10px;
+	border-radius: 20px;
 	font-weight: bold;
 	text-decoration: none;
+	font-size: 3em;
 }
 
 .selected {
@@ -27,6 +32,7 @@
 }
 
 .hello_div, .text_div {
+	font-size: 2em;
     padding: 10px;
 	margin: 10px;
 	width: 80%;
@@ -38,28 +44,27 @@
 }
 
 .colomns2 {
-	min-width: 30%;
+	min-width: 50%;
 }
 
 .colomns3 {
-	min-width: 25%;
+	min-width: 50%;
 }
 
 .colomns4 {
-	min-width: 18%;
+	min-width: 40%;
 }
 
 .colomns5 {
-	min-width: 15%;
+	min-width: 40%;
 }
 
 .colomns6 {
-	min-width: 12%;
+	min-width: 40%;
 }
 
 .colomns_in_header {
-	min-width: 18%;
-	padding: 15px 15px;
+	min-width: 100%;
 }
 
 .buttons_div {

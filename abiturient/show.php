@@ -4,18 +4,26 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<link href='../main.css?ver=2018-08-30-2' rel='stylesheet' type='text/css' >
-	</head>
-	<body>
-		<div class="header">
-			<a class="button" href="../index.html"> Главная </a>
-			<a class="button selected" href="show.php"> Абитуриентам </a>
-			<a class="button" href="../math/show.php"> Олимпиады по математике </a>
-			<a class="button" href="../books/show.php"> Книги </a>
-		</div>
-
 		<?php
 			include_once "../routine/html.php";
+			$agent = get_user_agent_type();
+			
+			if ($agent == 'desktop') {
+				echo "<link href='../main.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
+			} else {
+				echo "<link href='../main_m.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
+			}
+		?>
+	</head>
+	<body>
+		<?php
+			$buttons = array("../index.php" => "Главная",
+				"../abiturient/show.php" => "Абитуриентам", 
+				"../math/show.php" => "Олимпиады по математике",
+				"../books/show.php" => "Книги");
+			print_buttons("", "../abiturient/show.php", $buttons, "colomns_in_header");
+
+		
 			$subject = "";
 			if (isset($_GET["subject"])) {
 				$subject = $_GET["subject"];
@@ -29,7 +37,7 @@
 		<?php
 			
 			print_header("Вступительные экзамены в филиал МГУ.");
-			print_buttons("show.php?subject", 
+			print_buttons("show.php?subject=", 
 							$subject, 
 							array("math" => "Математика",
 								  "phys" => "Физика"),
@@ -54,7 +62,7 @@
 					}
 					$variant = "2";
 				}
-				print_buttons("show.php?subject=$subject&year", $year, $buttons, "colomns4");
+				print_buttons("show.php?subject=$subject&year=", $year, $buttons, "colomns4");
 
 				if ($year != "") {
 					print_header("Материалы экзамена");

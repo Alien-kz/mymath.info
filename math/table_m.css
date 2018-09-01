@@ -1,0 +1,45 @@
+table {
+	border: 2px solid gray;
+	border-collapse: collapse;
+	white-space: nowrap;
+	width: 100%;
+	font-size: 1em;
+}
+
+tr {
+	border: 1px solid gray;
+}
+
+td, th {
+	padding: 5px;
+	border: 1px solid gray;
+	text-align: center;
+}
+
+td:last-child {
+	text-align: center;
+}
+
+/*div {
+	border: 1px solid gray;
+}*/
+
+.gold {
+	color: gold;
+}
+
+.silver {
+	color: silver;
+}
+
+.bronze {
+	color: goldenrod;
+}
+
+.head {
+	font-weight: bold;
+}
+
+.xscroll {
+	overflow-x: auto;
+}
