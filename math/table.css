@@ -1,7 +1,8 @@
 table {
 	border: 2px solid gray;
 	border-collapse: collapse;
-	font-size: 20px;
+/*	font-size: 20px;*/
+	white-space: nowrap;
 	margin-top: 20px;
 }
 
@@ -32,7 +33,7 @@ td:last-child {
 }
 
 .head {
-	font-size: 1em;
+/*	font-size: 1em;*/
 	font-weight: bold;
 }
 

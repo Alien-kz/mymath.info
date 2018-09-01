@@ -1,0 +1,11 @@
+Pos	Participant	University	P1	P2	P3	P4	P5	D1	P6	P7	P8	P9	P10	D2	Sum	Prize
+190-199	Bekarys Bekmaganbentov	Moscow State University,<br/> Kazakhstan Branch	3	0	0			3	10	0	10	2		22	25	Third
+210-217	Maksat Kuanyshbay	Nazarbayev University	0	0	4			4	8		10	0		18	22	Third
+218-225	Alexandra Zhuravskaya	Moscow State University,<br/> Kazakhstan Branch	3	0	0	0		3	10	1	7	0		18	21	Third
+242-247	Kassym Zhunis	Nazarbayev University	7	0				7	10			0	0	10	17	Honourable Mention
+248-254	Abylaikhan Bozzhigitov	Nazarbayev University	0	0	3			3	3	9	1			13	16	Honourable Mention
+248-254	Yessenaly Zhangbyrbayev	Kazakh-British Technical University		0	10	0		10	6	0		0		6	16	Honourable Mention
+263-269	Alimzhan Amanov	Kazakh-British Technical University	1	0	2			3	0		10	0		10	13	Honourable Mention
+307-309	Zhumazhenis Dairabay	Nazarbayev University	2	0				2	3		0			3	5	Certificate
+313-315	Nurdaulet Akhanov	Kazakh-British Technical University			3			3	0	0	0			0	3	Certificate
+316-321	Abylaikhan Dunembay	Nazarbayev University	2	0	0			2	0		0	0		0	2	Certificate

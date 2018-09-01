@@ -1,4 +1,4 @@
 Place	Team	Team members	Best 3 + average
 55.	Nazarbayev University	<p>Maksat Kuanyshbay (22) Third</p><p>Kassym Zhunis (17)</p><p>Abylaikhan Bozzhigitov (16)</p><p>Zhumazhenis Dairabay (5)</p><p>Abylaikhan Dunembay (2)</p>	75.00
-57.	Moscow State University. Kazakhstan Branch	<p>Bekarys Bekmaganbentov (25) Third</p><p>Alexandra Zhuravskaya (21) Third</p>	69.00
+57.	Moscow State University, Kazakhstan Branch	<p>Bekarys Bekmaganbentov (25) Third</p><p>Alexandra Zhuravskaya (21) Third</p>	69.00
 67.	Kazakh-British Technical University	<p>Yessenaly Zhangbyrbayev (16)</p><p>Alimzhan Amanov (13)</p><p>Nurdaulet Akhanov (3)	</p>42.67

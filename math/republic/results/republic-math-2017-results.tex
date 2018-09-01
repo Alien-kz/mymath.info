@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[11pt, a5paper, landscape]{article}
 
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -10,16 +10,26 @@
 
 \usepackage{comment}
 \usepackage{geometry}
-\geometry{left=1cm, right=1cm, top=2cm, bottom=2cm}
+\geometry{left=0.5cm, right=1cm, top=1cm, bottom=1cm}
+\usepackage[inline]{enumitem}
 
 \usepackage{graphicx}
 \usepackage{tikz}
+\usetikzlibrary{patterns}
 
 \usepackage{wrapfig}
 \usepackage{fancybox,fancyhdr}
 \sloppy
 
 \setlength{\headheight}{28pt}
+\newcommand{\variant}[2]{
+	\begin{center}
+	\textit{Вариант #2}
+	\end{center}
+}
+
+\newcommand{\unit}[1]{\text{\textit{ #1}}}
+\newcommand{\units}[2]{ \frac{\text{\textit{#1}}}{\text{\textit{#2}}}}
 
 \newcommand{\head}[4]
 {
@@ -30,7 +40,7 @@
 	\begin{center}
 	\begin{large}
 	#1 \\
-	\textit{#2} \\
+	#2 \\
 	\end{large}
 	\end{center}
 
@@ -38,24 +48,24 @@
 
 \begin{document}
 
-\head{IX Республиканская студенческая предметная олимпиада по направлению \\ <<Математика>>}{13 апреля 2017}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
+\head{IX Республиканская студенческая предметная олимпиада по~направлению~<<Математика>>}{13 апреля 2017}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
 
 \begin{center}
 \begin{tabular}{|l|l|l|c|c|c|c|c|c|c|c|c|}
 \hline
 № & Участник & ВУЗ & Курс & 1 & 2 & 3 & 4 & 5 & 6 & $\Sigma$ & Диплом \\
 \hline
-1 & Жанбырбаев Есеналы & КБТУ & 2 & 10 & 10 & 10 & 3 & 0 & 10 & 43 & 1  \\
+1 & Жанбырбаев Есеналы & КБТУ & 2 & 10 & 10 & 10 & 3 & 0 & 10 & 43 & 1 \\
 \hline
-2 & Бекмаганбетов Бекарыс & КФ МГУ & 1 & 10 & 10 & 10 & 2 & 10 & 0 & 42 & 2  \\
+2 & Бекмаганбетов Бекарыс & КФ МГУ & 1 & 10 & 10 & 10 & 2 & 10 & 0 & 42 & 2 \\
 \hline
-3 & Сайланбаев Алибек & НУ & 4 & 10 & 10 & 10 & 2 & 0 & 8 & 40 & 2  \\
+3 & Сайланбаев Алибек & НУ & 4 & 10 & 10 & 10 & 2 & 0 & 8 & 40 & 2 \\
 \hline
-4 & Аманкелды Акежан & НУ & 4 & 9 & 9 & 10 & 5 & 0 & 0 & 33 & 3  \\
+4 & Аманкелды Акежан & НУ & 4 & 9 & 9 & 10 & 5 & 0 & 0 & 33 & 3 \\
 \hline
-5 & Жанахметов Султан & НУ & 3 & 10 & 10 & 10 & 2 & 0 & 0 & 32 & 3  \\
+5 & Жанахметов Султан & НУ & 3 & 10 & 10 & 10 & 2 & 0 & 0 & 32 & 3 \\
 \hline
-6 & Шакиев Александр & МУИТ & 2 & 10 & 9 & 10 & 0 & 0 & 0 & 29 & 3  \\
+6 & Шакиев Александр & МУИТ & 2 & 10 & 9 & 10 & 0 & 0 & 0 & 39 & 3 \\
 \hline
 \end{tabular}
 \end{center}

@@ -19,9 +19,9 @@ function replace_prize_text($table, $colomn, $multiple, $replace, $needles) {
 	$html_post = "";
 	if ($multiple) {
 		foreach ($needles as $code) {
-			$html_pre[$code] = "<span class='".$code."'>";
+			$html_pre[$code] = "<big><big><span class='".$code."'>";
 		}
-		$html_post = "</span>";
+		$html_post = "</span></big></big>";
 	} else {
 		foreach ($needles as $code) {
 			$html_pre[$code] = "<p><big><big><big><span class='".$code."'>";

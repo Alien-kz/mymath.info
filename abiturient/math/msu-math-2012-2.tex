@@ -1,0 +1,84 @@
+\documentclass[11pt, a5paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtext}
+
+\usepackage{comment}
+\usepackage{geometry}
+\geometry{left=1cm, right=1cm, top=1cm, bottom=1cm}
+\usepackage[inline]{enumitem}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\usepackage{wrapfig}
+\usepackage{fancybox,fancyhdr}
+\sloppy
+
+\setlength{\headheight}{28pt}
+\newcommand{\variant}[2]{
+	\begin{center}
+	\textit{Вариант #2}
+	\end{center}
+}
+
+\newcommand{\unit}[1]{\text{\textit{ #1}}}
+\newcommand{\units}[2]{ \frac{\text{\textit{#1}}}{\text{\textit{#2}}}}
+
+\newcommand{\head}[4]
+{
+	\fancyhf{}
+	\pagestyle{fancy}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 --- #2 \\
+	\end{large}
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{Вступительный экзамен по математике}{2012}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
+
+\variant{2012}{2}
+
+\begin{enumerate}[wide]
+\item Определите, какие из чисел являются целыми, и вычислите эти целые числа:
+\begin{enumerate}
+\item[a)] $\frac{11}{3} + \frac{9}{11} + \frac{17}{33}$;
+\item[б)] $\sqrt{14} \cdot \sqrt{35} \cdot \sqrt{10}$;
+\item[в)] $\frac{3{,}1 \cdot 3{,}8}{5{,}89}$. 
+\end{enumerate}
+
+\item Решите уравнение
+$$\sqrt{x^2 + 12} = 8 - x^2 .$$
+
+\item Решите уравнение
+$$ \left( x + \frac{\pi}{2} \right)^2 \left| \cos{x} - \sin{x} \right|= \frac{\pi^2}{4} \left( \cos{x} - \sin{x} \right) .$$
+
+\item В арифметической прогрессии девятый член больше четвертого члена на 10 и больше третьего члена в 5 раз. Найдите сумму всех членов этой прогрессии, начиная с двухсотого члена и заканчивая трехсотым.
+
+\item Решите неравенство
+$$3 \log_{\sqrt{x}}{11} \leqslant 8 + 2 \log_{11} \left( \frac{1}{x} \right ) .$$
+
+\item В выпуклом шестиугольнике все углы равны $120^{\circ}$ и четыре последовательные стороны имеют длины 4, 5, 5, 6. Найдите площадь шестиугольника.
+
+\item Найдите все значения, которые принимает функция
+$$f(x) = \frac{3 x^2 + x + 1}{2 x^2 - x + 1} .$$
+
+\item Кусок сыра в форме правильной четырехугольной пирамиды $SABCD$ ($S$ --- вершина пирамиды) разрезали одним плоским разрезом, который проходит через ребро $AB$ и делит ребро $SC$ в отношении $2:3$, считая от вершины $S$. Найдите отношение объемов полученных кусков сыра.
+
+\end{enumerate}
+
+\newpage
+
+\end{document} 

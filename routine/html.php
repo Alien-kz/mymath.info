@@ -9,10 +9,11 @@ function print_header($text) {
 }
 
 function print_text($text) {
+	$text = nl2br($text);
 	echo "<div align='center'>\n";
-	echo "<h3>\n";
-	echo "$text\n";
-	echo "</h3>\n";
+	echo "<div class='hello_div'>\n";
+	echo $text."\n";
+	echo "</div>\n";
 	echo "</div>\n";
 }
 
@@ -41,15 +42,15 @@ function show_pdf_file($file) {
 	echo "</div>\n";
 }
 
-function show_link_file($header, $file, $button_text) {
+function show_link_file($file, $link_text) {
 	if (file_exists($file.".pdf")) 
 	{
 		echo "<div align='center'>\n";
 		echo "<span>\n";
-		echo "<a class='button' href='$file.tex' download> $header $button_text (.tex) </a>";
+		echo "<a class='button' href='$file.tex' download> $link_text (.tex) </a>";
 		echo "</span>\n";
 		echo "<span>\n";
-		echo "<a class='button' href='$file.pdf' download> $header $button_text (.pdf) </a>";
+		echo "<a class='button' href='$file.pdf' download> $link_text (.pdf) </a>";
 		echo "</span>\n";
 		echo "</div>\n";
 	}
@@ -58,9 +59,9 @@ function show_link_file($header, $file, $button_text) {
 function show_png_file($file) {
 	if (file_exists($file.".png")) {
 		echo "<div align='center'>\n";
-		echo "<span>\n";
+		echo "<div class='image_div'>\n";
 		echo "<img src='$file.png'>";
-		echo "</span>\n";
+		echo "</div>\n";
 		echo "</div>\n";
 	}
 	else if (file_exists($file."-0.png")) {
@@ -68,7 +69,7 @@ function show_png_file($file) {
 		$part = 0;
 		$file_name = $file."-".$part.".png";
 		do {
-			echo "<div>\n";
+			echo "<div class='image_div'>\n";
 			echo " <img src='$file_name'>\n";
 			echo "</div>\n";
 			$part += 1;

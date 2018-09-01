@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[11pt, a5paper, landscape]{article}
 
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -10,16 +10,26 @@
 
 \usepackage{comment}
 \usepackage{geometry}
-\geometry{left=1cm, right=1cm, top=2cm, bottom=2cm}
+\geometry{left=0.5cm, right=1cm, top=1cm, bottom=1cm}
+\usepackage[inline]{enumitem}
 
 \usepackage{graphicx}
 \usepackage{tikz}
+\usetikzlibrary{patterns}
 
 \usepackage{wrapfig}
 \usepackage{fancybox,fancyhdr}
 \sloppy
 
 \setlength{\headheight}{28pt}
+\newcommand{\variant}[2]{
+	\begin{center}
+	\textit{Вариант #2}
+	\end{center}
+}
+
+\newcommand{\unit}[1]{\text{\textit{ #1}}}
+\newcommand{\units}[2]{ \frac{\text{\textit{#1}}}{\text{\textit{#2}}}}
 
 \newcommand{\head}[4]
 {
@@ -30,7 +40,7 @@
 	\begin{center}
 	\begin{large}
 	#1 \\
-	\textit{#2} \\
+	#2 \\
 	\end{large}
 	\end{center}
 
@@ -38,24 +48,24 @@
 
 \begin{document}
 
-\head{VII Республиканская студенческая предметная олимпиада по направлению \\ <<Математическое и компьютерное моделирование>>}{26 марта 2015}{Казахский национальный университет имени аль-Фараби}{г. Алматы}
+\head{VII Республиканская студенческая предметная олимпиада по~направлению~<<Математическое и компьютерное моделирование>>}{26 марта 2015}{Казахский национальный университет имени аль-Фараби}{г. Алматы}
 
 \begin{center}
 \begin{tabular}{|l|l|l|c|c|}
 \hline
 № & Участник & ВУЗ & Курс & Диплом \\
 \hline
-1 & Амир Мирас & КФ МГУ & 2 & 1  \\
+1 & Амир Мирас & КФ МГУ & 2 & 1 \\
 \hline
-2 & Жусупов Али & КФ МГУ & 1 & 2  \\
+2 & Жусупов Али & КФ МГУ & 1 & 2 \\
 \hline
-3 & Мусакулова Гульдерайым & КазНУ & 4 & 2  \\
+3 & Мусакулова Гульдерайым & КазНУ & 4 & 2 \\
 \hline
-4 & Ахмер Ермек & КазНУ & 4 & 3  \\
+4 & Ахмер Ермек & КазНУ & 4 & 3 \\
 \hline
-5 & Каныбек Тогжан & КазНУ & 4 & 3  \\
+5 & Каныбек Тогжан & КазНУ & 4 & 3 \\
 \hline
-6 & Иманбекова Жанна & КазНУ & ? & 3  \\
+6 & Иманбекова Жанна & КазНУ & ? & 3 \\
 \hline
 \end{tabular}
 \end{center}

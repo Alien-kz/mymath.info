@@ -35,12 +35,21 @@
 	font-size: 1em;
 }
 
+.image_div {
+    margin: 10px;
+	padding: 10px;
+}
+
 .colomns2 {
-	min-width: 20%;
+	min-width: 30%;
 }
 
 .colomns3 {
-	min-width: 20%;
+	min-width: 25%;
+}
+
+.colomns4 {
+	min-width: 18%;
 }
 
 .colomns5 {

@@ -28,12 +28,12 @@
 		
 		<?php
 			
-			print_header("Задания вступительных экзаменов в филиал МГУ.");
+			print_header("Вступительные экзамены в филиал МГУ.");
 			print_buttons("show.php?subject", 
 							$subject, 
 							array("math" => "Математика",
 								  "phys" => "Физика"),
-							"colomns2");
+							"colomns3");
 			
 			if ($subject == "math" or $subject  == "phys") {
 
@@ -42,7 +42,7 @@
 				$variant = "";
 				if ($subject == "math") {
 					print_header("Математика");
-					for ($y = 2011; $y <= 2017; $y++) {
+					for ($y = 2011; $y <= 2018; $y++) {
 						$buttons[$y] = $y." год";
 					}
 					$variant = "1";
@@ -54,13 +54,18 @@
 					}
 					$variant = "2";
 				}
-				print_buttons("show.php?subject=$subject&year", $year, $buttons, "colomns5");
+				print_buttons("show.php?subject=$subject&year", $year, $buttons, "colomns4");
 
 				if ($year != "") {
 					print_header("Материалы экзамена");
-					$file_name = "$directory/msu-$subject-$year-$variant";
-					show_link_file("Задачи", $file_name, $buttons[$year]);
-					show_png_file($file_name);
+					$file_name_1 = "$directory/msu-$subject-$year-1";
+					$file_name_2 = "$directory/msu-$subject-$year-2";
+					
+					show_link_file($file_name_1, $buttons[$year]." 1 вариант");
+					show_link_file($file_name_2, $buttons[$year]." 2 вариант");
+
+					show_png_file($file_name_1);
+					show_png_file($file_name_2);
 				}
 
 			}

@@ -1,0 +1,85 @@
+\documentclass[11pt, a5paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtext}
+
+\usepackage{comment}
+\usepackage{geometry}
+\geometry{left=1cm, right=1cm, top=1cm, bottom=1cm}
+\usepackage[inline]{enumitem}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\usepackage{wrapfig}
+\usepackage{fancybox,fancyhdr}
+\sloppy
+
+\setlength{\headheight}{28pt}
+\newcommand{\variant}[2]{
+	\begin{center}
+	\textit{Вариант #2}
+	\end{center}
+}
+
+\newcommand{\unit}[1]{\text{\textit{ #1}}}
+\newcommand{\units}[2]{ \frac{\text{\textit{#1}}}{\text{\textit{#2}}}}
+
+\newcommand{\head}[4]
+{
+	\fancyhf{}
+	\pagestyle{fancy}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 --- #2 \\
+	\end{large}
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{Вступительный экзамен по математике}{2011}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
+
+\variant{2011}{2}
+
+\begin{enumerate}[wide]
+\item Какие из чисел $2$, $-\frac23$, $\sqrt{5}+3$, $\sqrt5-3$ являются корнями уравнения
+$$3x^3 = 16 x^2 - 8?$$
+
+\item Представьте число $\sqrt{39}$ в виде десятичной дроби с точностью до~$0{,}1$.
+
+\item Решите уравнение
+$$ \cos \left(\frac{3\pi}{2} - 2x \right) + \sin(\pi - 3x) = \sin{3x} - \cos{x} .$$
+
+\item Решите систему уравнений
+$$
+\begin{cases}
+8^x \cdot 64^y = 128,\\
+\sqrt{12y-7} = x.
+\end{cases}
+$$
+
+\item В арифметической прогрессии 26 членов, и разность этой прогрессии равна 15. Сумма всех членов прогрессии в 5 раз больше, чем сумма членов, стоящих на нечетных местах. Найдите первый член этой прогрессии.
+
+\item В трапеции, описанной около окружности радиуса 6, разность длин боковых сторон равна 4, а длина средней линии равна 15. Найдите длины сторон трапеции.
+
+\item Решите неравенство
+$$\frac{\log_3(x-3) \cdot \log_4(x-4)}{x-5} \leqslant \frac{\log_4(x-3) \cdot \log_3(x-4)}{x-6} .$$
+
+\item В пирамиде $ABCD$: $AB = 1$, $AC = 3$, $AD = 4$, $BC = \sqrt{10}$, $BD = \sqrt{17}$, $CD = 5$. Найдите радиус шара, вписанного в пирамиду $ABCD$.
+
+\end{enumerate}
+
+\newpage
+
+
+\end{document} 

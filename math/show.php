@@ -38,87 +38,81 @@
 									"imc" => "IMC"),
 							"colomns3");
 			
-			if ($olymp == "imc") {
-				print_header("Казахстан на международной студенческой олимпиаде по математике <br/> IMC International Mathematics Competition (Болгария).");
-				
-				$buttons = array();
-				for ($y = 2013; $y <= 2018; $y++) {
-					$buttons[strval($y)] = $y." год";
-				}
-				print_buttons("show.php?olymp=imc&year", $year, $buttons, "colomns6");
-				
-				if ($year != "") {
-					print_header("Материалы олимпиады");
-					
-					$site = "http://imc-math.org.uk";
-					$results_link = $site."/index.php?year=$year&item=results";
-					$problems_link = $site."/index.php?year=$year&item=problems";
-					if ($year == "2018") {
-						$site = "http://imc-math.ddns.net";
-						$results_link = $site."/?show=results";
-						$problems_link = $site."/?show=day1";
-					}					
-
-					print_text("Задачи и решения доступны на официальном сайтe <br/> <a href='$problems_link'>$problems_link</a>.");
-					print_text("Подробные результаты доступны на официальном сайтe <br/> <a href='$results_link'>$results_link</a>.");
-									
-					print_header("Результаты студентов из Казахстана на IMC-".$year." в личном зачете");
-					$table = get_table_from_file("imc/results/$year.txt");
-					$needles = array("First" => "gold", 
-									 "Second" => "silver", 
-									 "Third" => "bronze");
-					$table = replace_prize_text($table, 
-												count(current($table)) - 1, 
-												False,
-												True,
-												$needles);
-					$table = replace_prize_text($table, count(current($table)) - 1, False);
-					print_table($table);
-					
-					print_header("Результаты команд из Казахстана на IMC-".$year);
-					$table = get_table_from_file("imc/results/$year-teams.txt");
-					$table = replace_prize_text($table, 
-												count(current($table)) - 2, 
-												True,
-												True,
-												$needles);
-					print_table($table);					
-				}
-			}
-			if ($olymp == "republic" or $olymp == "msu") {
-
+			if ($olymp == "republic" or $olymp == "msu" or $olymp == "imc") {
 				$buttons = array();
 				$directory = $olymp;
+				# print header and genearate year buttons
+				if ($olymp == "msu") {
+					print_header("Открытая студенческая олимпиада");
+					print_header("Казахстанского филиала МГУ по математике.");
+					for ($y = 2008; $y <= 2017; $y++) {
+						$buttons[strval($y)] = $y." год";
+					}
+					$buttons['2014-train'] = "2014 год (тренировка)";
+					$buttons['2018-train'] = "2018 год (тренировка)";
+					$needles = array("1" => "gold", 
+									"2" => "silver", 
+									"3" => "bronze");
+
+				}
 				if ($olymp == "republic") {
-					print_header("Республиканские студенческие предметные олимпиады по направлениям <br/> 'Математика' и 'Математическое и компьютерное моделирование' (МОН РК).");
+					print_header("Республиканская студенческая предметная олимпиада");
+					print_header("'Математика' и 'Математическое и компьютерное моделирование'.");
 					for ($y = 2014; $y <= 2018; $y++) {
 						$buttons["math-".strval($y)] = "Матем ".$y;
 					}
 					for ($y = 2014; $y <= 2018; $y++) {
 						$buttons["mcm-".strval($y)] = "МКМ ".$y;
 					}
-					$directory = "republic";
+					$needles = array("1" => "gold", 
+									"2" => "silver", 
+									"3" => "bronze");
 				}
-				if ($olymp == "msu") {
-					print_header("Олимпиады Казахстанского филиала МГУ по математике (г. Астана).");
-					for ($y = 2008; $y <= 2017; $y++) {
+				if ($olymp == "imc") {
+					print_header("Международная студенческая олимпиада по математике");
+					print_header("International Mathematics Competition.");				
+					for ($y = 2013; $y <= 2018; $y++) {
 						$buttons[strval($y)] = $y." год";
 					}
-					$buttons['2014-train'] = "2014 год (доп.тур)";
-					$buttons['2018-train'] = "2018 год (доп.тур)";
+					$needles = array("First" => "gold", 
+									"Second" => "silver", 
+									"Third" => "bronze");
 				}
+				
+				# print about button and year buttons
+				if ($year == "about") {
+					print_buttons("show.php?olymp=$olymp&year", $year, array("" => "Скрыть ..."), "colomns3");
+					print_text(file_get_contents($directory."/about.txt")); 
+				} else {
+					print_buttons("show.php?olymp=$olymp&year", $year, array("about" => "Подробнее об олимпиаде ..."), "colomns3");
+				}
+				print_header("Выберите год");
 				print_buttons("show.php?olymp=$olymp&year", $year, $buttons, "colomns5");
 
-				if ($year != "") {
+				if ($year != "" and $year != "about") {
 					print_header("Материалы олимпиады");
-					show_link_file("Задачи", "$directory/problems/$olymp-$year-problems", $buttons[$year]);
-					show_link_file("Решения", "$directory/solutions/$olymp-$year-solutions", $buttons[$year]);
-					show_link_file("Результаты", "$directory/results/$olymp-$year-results", $buttons[$year]);
+					if ($olymp == "imc") {
+						$site = "http://imc-math.org.uk";
+						$results_link = $site."/index.php?year=$year&item=results";
+						$problems_link = $site."/index.php?year=$year&item=problems";
+						if ($year == "2018") {
+							$site = "http://imc-math.ddns.net";
+							$results_link = $site."/?show=results";
+							$problems_link = $site."/?show=day1";
+						}					
+
+						print_text("Задачи и решения доступны на официальном сайтe <br/> <a href='$problems_link'>$problems_link</a>.");
+						print_text("Подробные результаты доступны на официальном сайтe <br/> <a href='$results_link'>$results_link</a>.");	
+					} else {
+						show_link_file("$directory/problems/$olymp-$year-problems", "Задачи ".$buttons[$year]);
+						show_link_file("$directory/solutions/$olymp-$year-solutions", "Решения ".$buttons[$year]);
+						show_link_file("$directory/results/$olymp-$year-results", "Результаты ".$buttons[$year]);
+						show_png_file("$directory/problems/$olymp-$year-problems");
+					}
 
 					
 					$table = get_table_from_file("$directory/results/$olymp-$year-results.txt");
 					if (!strstr($year, "train")) {
-						$needles = array("1" => "gold", "2" => "silver", "3" => "bronze");
 						$table = replace_prize_text($table, 
 													count(current($table)) - 1, 
 													False,
@@ -126,6 +120,17 @@
 													$needles);
 					}
 					print_table($table);
+					
+					if ($olymp == "imc") {
+						print_header("Результаты команд из Казахстана на IMC-".$year);
+						$table = get_table_from_file("$directory/results/$olymp-$year-teams.txt");
+						$table = replace_prize_text($table, 
+													count(current($table)) - 2, 
+													True,
+													True,
+													$needles);
+						print_table($table);
+					}
 				}
 
 			}

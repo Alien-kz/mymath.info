@@ -1,9 +1,0 @@
-Pos	First name	Family name	University	P1	P2	P3	P4	P5	Day1	P6	P7	P8	P9	P10	Day2	Sum	Prize
-115-126	Alibek	Sailanbayev	Nazarbayev University	10	10	8	10	0	38	10	2	0			12	50	Second
-163-173	Nursultan	Svankulov	Nazarbayev University	8	5		0		13	10	10	9		0	29	42	Third
-174-179	Temirulan	Mussayev	Kazakh-British Technical University	10	2		10	0	22	9	10	0		0	19	41	Third
-180-185	Alimzhan	Amanov	Kazakh-British Technical University	10	10	0			20	10	10		0	0	20	40	Third
-224-232	Serikbolsyn	Duisembay	Nazarbayev University	10	4	0	2	0	16	10	0	8		0	18	34	Third
-236-241	Nurlan	Abdukadyrov	Nazarbayev University	10	0	0	0		10	10	10	2			22	32	Honourable Mention
-262-264	Olzhas	Akbayev	Nazarbayev University	9	2	0	0	1	12	1	10	2			13	25	Honourable Mention
-262-264	Temirlan	Satylkhanov	Kazakh-British Technical University	10	5	0	0	0	15	1	8			1	10	25	Honourable Mention
