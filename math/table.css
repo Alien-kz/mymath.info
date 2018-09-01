@@ -35,6 +35,18 @@ td:last-child {
 	color: goldenrod;
 }
 
+.bg_gold {
+	background: gold;
+}
+
+.bg_silver {
+	background: silver;
+}
+
+.bg_bronze {
+	background: goldenrod;
+}
+
 .head {
 	font-weight: bold;
 }

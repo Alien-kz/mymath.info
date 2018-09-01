@@ -20,10 +20,6 @@ td:last-child {
 	text-align: center;
 }
 
-/*div {
-	border: 1px solid gray;
-}*/
-
 .gold {
 	color: gold;
 }
@@ -34,6 +30,18 @@ td:last-child {
 
 .bronze {
 	color: goldenrod;
+}
+
+.bg_gold {
+	background: gold;
+}
+
+.bg_silver {
+	background: silver;
+}
+
+.bg_bronze {
+	background: goldenrod;
 }
 
 .head {

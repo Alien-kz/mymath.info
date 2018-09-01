@@ -48,6 +48,25 @@ function print_buttons($link, $selected_key, $buttons, $options, $anchor) {
 	echo "</div>\n";
 }
 
+function print_select_buttons($link, $key_name, $selected_key, $buttons, $defaults_keys, $anchor) {
+	echo "<div align='center'>\n";
+	echo "<form action='$link' method='get'>";
+	echo "<select class='button colomns5' name='$key_name' autofocus>";
+	
+	foreach ($buttons as $key => $text) {
+		$is_selected = "";
+		if (strval($key) === $selected_key)
+			$is_selected = " selected";
+		echo "<option class='$is_selected' $is_selected value='$key'> $text </option> \n";
+	}
+	echo "</select>";
+	foreach ($defaults_keys as $key => $value) {
+		echo "<input type='hidden' name='$key' value='$value'>\n";
+	}
+	echo "<input class='button colomns5' type='submit' value='выбрать'>\n";
+	echo "</form>\n";
+	echo "</div>\n";
+}
 function show_pdf_file($file) {
 	echo "<div align='center'>\n";
 	echo "<div>\n";

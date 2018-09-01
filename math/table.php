@@ -18,19 +18,22 @@ function replace_prize_text($table, $colomn, $multiple, $replace, $needles) {
 	$html_pre = array();
 	$html_post = "";
 	if ($multiple) {
+		$img = array("gold" => "&#10102",
+					"silver" => "&#10103",
+					"bronze" => "&#10104");
 		foreach ($needles as $code) {
-			$html_pre[$code] = "<big><big><span class='".$code."'>";
+			$html_pre[$code] = "<big><big><span class='$code'>";
 		}
 		$html_post = "</span></big></big>";
 	} else {
+		$img = array("gold" => "&#10112",
+					"silver" => "&#10113",
+					"bronze" => "&#10114");
 		foreach ($needles as $code) {
-			$html_pre[$code] = "<p><big><big><big><span class='".$code."'>";
+			$html_pre[$code] = "<p><big><big><big><span><b>";
 		}
-		$html_post = "</span></big></big></big></p>";
+		$html_post = "</b></span></big></big></big></p>";
 	}
-	$img = array("gold" => "&#10102",
-				 "silver" => "&#10103",
-				 "bronze" => "&#10104");
 	
 	$height = count($table) - 1;
 	for ($i = 0; $i < $height; $i++) {
@@ -48,6 +51,7 @@ function replace_prize_text($table, $colomn, $multiple, $replace, $needles) {
 					$result = $html_pre[$code].$img[$code].$html_post;
 				$row = str_replace($needle, $result, $row);
 				if ($row != $table[$i][$colomn]) {
+					$table[$i]['row_type'] = $code;
 					break;
 				}
 			}
@@ -61,7 +65,11 @@ function replace_prize_text($table, $colomn, $multiple, $replace, $needles) {
 function print_table($table) {
 # make array of col type
 	$height = count($table);
-	$width = count(current($table));
+	$row = current($table);
+	$width = count($row);
+	if (isset($row['row_type'])) {
+		$row -= 1;
+	}
 
 # print preambulas
 	echo "<div align='center'>\n";
@@ -71,7 +79,7 @@ function print_table($table) {
 # print header
 	if (isset($table['header'])) {
 		echo "<thead>\n";
-		echo "<tr>";
+		echo "<tr class='selected'>";
 		for ($j = 0; $j < $width; $j++) {
 			echo "<th>".$table['header'][$j]."</th>";
 		}
@@ -84,7 +92,11 @@ function print_table($table) {
 	echo "<tbody>\n";
 	for ($i = 0; $i < $height; $i++) {
 		$row = $table[$i];
-		echo "<tr>";
+		$color = "";
+		if (isset($row['row_type'])) {
+			$color = "class='bg_".$row['row_type']."'";
+		}
+		echo "<tr $color>";
 		for ($j = 0; $j < $width; $j++) {
 			echo "<td>".$row[$j]."</td>"; 
 		}

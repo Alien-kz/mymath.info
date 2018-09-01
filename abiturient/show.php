@@ -23,7 +23,7 @@
 				"../abiturient/show.php" => "Абитуриентам", 
 				"../math/show.php" => "Олимпиады по математике",
 				"../books/show.php" => "Книги");
-			print_buttons("", "../abiturient/show.php", $buttons, "colomns_in_header");
+			print_buttons("", "../abiturient/show.php", $buttons, "colomns_in_header", "");
 
 		
 			$subject = "";
@@ -44,7 +44,7 @@
 							$subject, 
 							array("math" => "Математика",
 								  "phys" => "Физика"),
-							"colomns3");
+							"colomns3", "");
 			
 			if ($subject == "math" or $subject  == "phys") {
 

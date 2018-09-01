@@ -7,7 +7,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<?php
 			include_once "../routine/html.php";
-			include_once "table.php";
 			$agent = get_user_agent_type();
 			
 			if ($agent == 'desktop') {
@@ -27,7 +26,7 @@
 							"../math/show.php" => "Олимпиады по математике",
 							"../books/show.php" => "Книги");
 			$css = "colomns_in_header";
-			print_buttons("", "../books/show.php", $buttons, $css);
+			print_buttons("", "../books/show.php", $buttons, $css, "");
 
 		?>
 		<div align="center">
