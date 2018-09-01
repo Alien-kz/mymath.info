@@ -1,9 +1,8 @@
 table {
 	border: 2px solid gray;
 	border-collapse: collapse;
-/*	font-size: 20px;*/
 	white-space: nowrap;
-	margin-top: 20px;
+	width: 100%;
 }
 
 tr {
@@ -20,6 +19,10 @@ td:last-child {
 	text-align: center;
 }
 
+/*div {
+	border: 1px solid gray;
+}*/
+
 .gold {
 	color: gold;
 }
@@ -33,7 +36,6 @@ td:last-child {
 }
 
 .head {
-/*	font-size: 1em;*/
 	font-weight: bold;
 }
 

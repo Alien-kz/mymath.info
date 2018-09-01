@@ -56,8 +56,8 @@
 
 				}
 				if ($olymp == "republic") {
-					print_header("Республиканская студенческая предметная олимпиада");
-					print_header("'Математика' и 'Математическое и компьютерное моделирование'.");
+					print_header("Республиканская студенческая олимпиада");
+					print_header("'Математика' и 'МКМ'.");
 					for ($y = 2014; $y <= 2018; $y++) {
 						$buttons["math-".strval($y)] = "Матем ".$y;
 					}
@@ -69,7 +69,7 @@
 									"3" => "bronze");
 				}
 				if ($olymp == "imc") {
-					print_header("Международная студенческая олимпиада по математике");
+					print_header("Международная студенческая олимпиада");
 					print_header("International Mathematics Competition.");				
 					for ($y = 2013; $y <= 2018; $y++) {
 						$buttons[strval($y)] = $y." год";
@@ -90,7 +90,7 @@
 				print_buttons("show.php?olymp=$olymp&year", $year, $buttons, "colomns5");
 
 				if ($year != "" and $year != "about") {
-					print_header("Материалы олимпиады");
+					print_centered_text("Материалы олимпиады");
 					if ($olymp == "imc") {
 						$site = "http://imc-math.org.uk";
 						$results_link = $site."/index.php?year=$year&item=results";
@@ -101,8 +101,8 @@
 							$problems_link = $site."/?show=day1";
 						}					
 
-						print_text("Задачи и решения доступны на официальном сайтe <br/> <a href='$problems_link'>$problems_link</a>.");
-						print_text("Подробные результаты доступны на официальном сайтe <br/> <a href='$results_link'>$results_link</a>.");	
+						print_centered_text("<a href='$problems_link'>Задачи</a>.");
+						print_centered_text("<a href='$results_link'>Результаты</a>.");
 					} else {
 						show_link_file("$directory/problems/$olymp-$year-problems", "Задачи ".$buttons[$year]);
 						show_link_file("$directory/solutions/$olymp-$year-solutions", "Решения ".$buttons[$year]);
@@ -122,7 +122,7 @@
 					print_table($table);
 					
 					if ($olymp == "imc") {
-						print_header("Результаты команд из Казахстана на IMC-".$year);
+						print_centered_text("Команды из Казахстана");
 						$table = get_table_from_file("$directory/results/$olymp-$year-teams.txt");
 						$table = replace_prize_text($table, 
 													count(current($table)) - 2, 

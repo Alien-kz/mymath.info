@@ -8,6 +8,14 @@ function print_header($text) {
 	echo "</div>\n";
 }
 
+function print_centered_text($text) {
+	echo "<div align='center'>\n";
+	echo "<div class='text_div'>\n";
+	echo "$text\n";
+	echo "</div>\n";
+	echo "</div>\n";
+}
+
 function print_text($text) {
 	$text = nl2br($text);
 	echo "<div align='center'>\n";

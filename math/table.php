@@ -65,8 +65,8 @@ function print_table($table) {
 
 # print preambulas
 	echo "<div align='center'>\n";
-	echo "<div class='xscroll'>\n";
-	echo "<table class='buttons_div'>\n";
+	echo "<div class='xscroll text_div'>\n";
+	echo "<table align='center'>\n";
 
 # print header
 	if (isset($table['header'])) {

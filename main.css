@@ -13,7 +13,6 @@
 	background: lightgray;
 	color: black;
 	border-radius: 10px;
-	font-size: 1em;
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -25,14 +24,19 @@
 
 .hello_div {
     border: 1px solid gray;
+	border-radius: 10px;
     display: inline-block;
-    padding: 5px;
-	margin-top: 0px;
-	width: 1000px;
-	vertical-align: top;
-
 	text-align: left;
-	font-size: 1em;
+}
+
+.text_div {
+	text-align: center;
+}
+
+.hello_div, .text_div {
+    padding: 10px;
+	margin: 10px;
+	width: 80%;
 }
 
 .image_div {
@@ -61,7 +65,8 @@
 }
 
 .buttons_div {
-	padding: 0px;
+	border-radius: 10px;
+	padding: 5px;
 /*	border: 1px solid gray;*/
 	width: 80%;
 }
