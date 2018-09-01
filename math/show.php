@@ -10,11 +10,11 @@
 			$agent = get_user_agent_type();
 			
 			if ($agent == 'desktop') {
-				echo "<link href='table.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
-				echo "<link href='../main.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
+				echo "<link href='table.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
+				echo "<link href='../main.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
 			} else {
-				echo "<link href='table_m.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
-				echo "<link href='../main_m.css?ver=2018-09-01-1' rel='stylesheet' type='text/css' >";
+				echo "<link href='table_m.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
+				echo "<link href='../main_m.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
 			}
 		?>
 		
