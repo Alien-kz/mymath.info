@@ -64,10 +64,11 @@
 					$needles = array("1" => "gold", 
 									"2" => "silver", 
 									"3" => "bronze");
-
+					$year_colomn_width = "colomns5";
 				}
 				if ($olymp == "republic") {
 					print_header("Республиканская студенческая олимпиада <br/> по направлениям 'Математика' и 'МКМ'.");
+					$buttons["math-2006"] = "Матем 2006";
 					for ($y = 2014; $y <= 2018; $y++) {
 						$buttons["math-".strval($y)] = "Матем ".$y;
 					}
@@ -77,6 +78,7 @@
 					$needles = array("1" => "gold", 
 									"2" => "silver", 
 									"3" => "bronze");
+					$year_colomn_width = "colomns6";
 				}
 				if ($olymp == "imc") {
 					print_header("Международная студенческая олимпиада <br/> International Mathematics Competition.");
@@ -86,6 +88,7 @@
 					$needles = array("First" => "gold", 
 									"Second" => "silver", 
 									"Third" => "bronze");
+					$year_colomn_width = "colomns6";
 				}
 				
 				# print about button and year buttons
@@ -97,7 +100,7 @@
 				}
 				echo "<a name='matherial'></a>";
 				print_header("Выберите год");
-				print_buttons("show.php?olymp=$olymp&year=", $year, $buttons, "colomns5", "#matherial");
+				print_buttons("show.php?olymp=$olymp&year=", $year, $buttons, $year_colomn_width, "#matherial");
 
 				if ($year != "" and $year != "about") {
 					print_header("Материалы олимпиады");
@@ -111,8 +114,10 @@
 							$problems_link = $site."/?show=day1";
 						}					
 
-						print_buttons("", "", array($problems_link => "Задачи"), "colomns2");
-						print_buttons("", "", array($results_link => "Результаты"), "colomns2");
+						print_buttons("", "", 
+										array($problems_link => "Задачи", 
+											$results_link => "Результаты"), 
+									"colomns3");
 					} else {
 						show_link_file("$directory/problems/$olymp-$year-problems", "Задачи ".$buttons[$year]);
 						show_link_file("$directory/solutions/$olymp-$year-solutions", "Решения ".$buttons[$year]);

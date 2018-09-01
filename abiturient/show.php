@@ -50,7 +50,7 @@
 				$variant = "";
 				if ($subject == "math") {
 					print_header("Математика");
-					for ($y = 2011; $y <= 2018; $y++) {
+					for ($y = 2011; $y <= 2017; $y++) {
 						$buttons[$y] = $y." год";
 					}
 					$variant = "1";
@@ -62,7 +62,7 @@
 					}
 					$variant = "2";
 				}
-				print_buttons("show.php?subject=$subject&year=", $year, $buttons, "colomns4");
+				print_buttons("show.php?subject=$subject&year=", $year, $buttons, "colomns7");
 
 				if ($year != "") {
 					print_header("Материалы экзамена");

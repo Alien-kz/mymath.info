@@ -1,0 +1,59 @@
+\documentclass[11pt, a5paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtext}
+
+\usepackage{comment}
+\usepackage{geometry}
+\geometry{left=0.5cm, right=1cm, top=1cm, bottom=1cm}
+\usepackage[inline]{enumitem}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+\usepackage{wrapfig}
+\usepackage{fancybox,fancyhdr}
+\sloppy
+
+\setlength{\headheight}{28pt}
+
+\newcommand{\head}[4]
+{
+	\fancyhf{}
+	\pagestyle{fancy}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{Республиканская студенческая олимпиада по~математике}{2006}{Актюбинский региональный государственный университет}{г. Актобе}
+
+\begin{enumerate}
+\item (6 баллов) Пусть $f(x) \in C[0, +\infty)$ и для любого $x \geqslant 0$ справедливо равенство
+$$ \sin \int_{0}^{x} f(u) du = \frac{x}{x+1}$$
+Определить функцию $f(x)$.
+
+\item (8 баллов) Доказать, что для любого $n \in N \cup \{0\}$ справедливо равенство $$\int_{0}^{2 \pi} \sin(\sin x + n x) dx = 0.$$
+
+\item (8 баллов) Доказать, что если $\overrightarrow{AA_1} + 
+\overrightarrow{BB_1} +
+\overrightarrow{CC_1} = \overrightarrow{0}$, где $[AA_1]$, $[BB_1]$, $[CC_1]$ --- биссекторисы треугольника, то треугольник правильный.
+
+\item (8 баллов) Найти наибольшее значение определителя 3-го порядка, элементы которого состоят из 1 и $-1$.
+\end{enumerate}
+
+\end{document} 
