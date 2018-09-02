@@ -73,13 +73,13 @@ function print_table($table) {
 
 # print preambulas
 	echo "<div align='center'>\n";
-	echo "<div class='xscroll text_div'>\n";
+	echo "<div class='xscroll'>\n";
 	echo "<table align='center'>\n";
 
 # print header
 	if (isset($table['header'])) {
 		echo "<thead>\n";
-		echo "<tr class='selected'>";
+		echo "<tr>";
 		for ($j = 0; $j < $width; $j++) {
 			echo "<th>".$table['header'][$j]."</th>";
 		}

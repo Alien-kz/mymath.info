@@ -6,11 +6,20 @@ function get_user_agent_type() {
 	return 'desktop';
 }
 
+function div_open($text) {
+	echo "<div align='center'>";
+	echo "<div class='content_div'>";
+	print_header($text);
+}
+
+function div_close() {
+	echo "</div>";
+	echo "</div>";
+}
+
 function print_header($text) {
 	echo "<div align='center'>\n";
-	echo "<h3>\n";
-	echo "$text\n";
-	echo "</h3>\n";
+	echo "<p>$text</p>\n";
 	echo "</div>\n";
 }
 
@@ -91,12 +100,15 @@ function show_link_file($file, $link_text) {
 
 function show_png_file($file) {
 	if (file_exists($file.".png")) {
+		div_open();
 		echo "<div align='center' class='image_div'>\n";
 		echo "<img class='image_fit' src='$file.png'>";
 		echo "</div>\n";
+		div_close();
 	}
 	else if (file_exists($file."-0.png")) {
 		echo "<div align='center'>\n";
+		div_open();
 		$part = 0;
 		$file_name = $file."-".$part.".png";
 		do {
@@ -108,6 +120,7 @@ function show_png_file($file) {
 		} while (file_exists($file_name));
 
 		echo "</div>\n";
+		div_close();
 	}
 }
 

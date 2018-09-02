@@ -11,9 +11,9 @@
 			$agent = get_user_agent_type();
 			
 			if ($agent == 'desktop') {
-				echo "<link href='../main.css?ver=2018-09-01-3' rel='stylesheet' type='text/css' >";
+				echo "<link href='../main.css?ver=2018-09-02-4' rel='stylesheet' type='text/css' >";
 			} else {
-				echo "<link href='../main_m.css?ver=2018-09-01-3' rel='stylesheet' type='text/css' >";
+				echo "<link href='../main_m.css?ver=2018-09-02-4' rel='stylesheet' type='text/css' >";
 			}
 		?>
 	</head>
@@ -37,14 +37,14 @@
 		?>
 		
 		<?php
-			
-#			echo "<a name='subject'></a>";			
-			print_header("Вступительные экзамены в филиал МГУ.");
+			div_open("Вступительные экзамены в Казахстанский филиал МГУ");
 			print_buttons("show.php?subject=", 
 							$subject, 
 							array("math" => "Математика",
 								  "phys" => "Физика"),
 							"colomns3", "");
+			div_close();
+
 			
 			if ($subject == "math" or $subject  == "phys") {
 
@@ -64,19 +64,20 @@
 					$variant = "2";
 				}
 				echo "<a name='matherial'></a>";
-				print_header("Выберите год");
+				div_open("Выберите год");
 				print_buttons("show.php?subject=$subject&year=", $year, $buttons, "colomns7", "#matherial");
-
+				div_close();
+			
 				if ($year != "") {
-					print_header("Материалы экзамена");
+					div_open("Материалы экзамена");
 					$file_name_1 = "$directory/msu-$subject-$year-1";
 					$file_name_2 = "$directory/msu-$subject-$year-2";
 					
 					show_link_file($file_name_1, $buttons[$year]." 1 вариант");
 					show_link_file($file_name_2, $buttons[$year]." 2 вариант");
 
-					show_png_file($file_name_1);
-					show_png_file($file_name_2);
+					show_png_file($file_name_2."-".$agent);
+					show_png_file($file_name_2."-".$agent);
 				}
 
 			}

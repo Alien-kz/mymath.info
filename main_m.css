@@ -1,16 +1,15 @@
-h2 {
-	font-size: 1em;	
+p {
+	margin: 5px;
 }
 
 .button {
-	margin: 5px;
+	margin: 2px;
     display: inline-block;
 	padding: 5px 5px;
     border: 1px solid gray;
 	background: lightgray;
 	color: black;
 	border-radius: 10px;
-	font-weight: bold;
 	text-decoration: none;
 	font-size: 1em;
 }
@@ -18,6 +17,21 @@ h2 {
 .selected {
 	color: white;
 	background: linear-gradient(to bottom, green, black);
+}
+
+.content_div {
+    border: 1px solid gray;
+	border-radius: 10px;
+	text-align: center;
+	margin: 10px;
+	width: 90%;
+}
+
+.hello_div, .text_div {
+	font-size: 1em;
+    padding: 5px;
+	margin: 5px;
+	width: 90%;
 }
 
 .hello_div {
@@ -29,13 +43,6 @@ h2 {
 
 .text_div {
 	text-align: center;
-}
-
-.hello_div, .text_div {
-	font-size: 1em;
-    padding: 5px;
-	margin: 5px;
-	width: 80%;
 }
 
 .image_div {

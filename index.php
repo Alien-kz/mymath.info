@@ -12,9 +12,9 @@
 			$agent = get_user_agent_type();
 			
 			if ($agent == 'desktop') {
-				echo "<link href='main.css?ver=2018-09-02' rel='stylesheet' type='text/css' >";
+				echo "<link href='main.css?ver=2018-09-02-1' rel='stylesheet' type='text/css' >";
 			} else {
-				echo "<link href='main_m.css?ver=2018-09-02' rel='stylesheet' type='text/css' >";
+				echo "<link href='main_m.css?ver=2018-09-02-1' rel='stylesheet' type='text/css' >";
 			}
 		?>
 		
@@ -30,7 +30,7 @@
 	
 		<div align="center">
 			<div class="hello_div">
-				<h2 align='center'> Здравствуйте, уважаемые посетители! </h2>			
+				<h3 align='center'> Здравствуйте, уважаемые посетители! </h3>			
 			
 				<p> Данный сайт является сборником различных материалов студенческих олимпиад по математике и программированию Казахстанского филиала МГУ. </p>
 
@@ -45,7 +45,7 @@
 		<div align="center">
 			<div class="hello_div">
 		
-			<h2  align='center'> Последнее обновление </h2>
+			<h3  align='center'> Последнее обновление </h3>
 		
 			Опубликованы варианты вступительных экзаменов в Казахстанский филиал 2011-2017 годов по математике и 2015-2017 годов по физике. <br/>
 <a href="abiturient/show.php"> Задания вступительных экзаменов</a>

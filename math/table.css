@@ -3,6 +3,7 @@ table {
 	border-collapse: collapse;
 	white-space: nowrap;
 	width: 100%;
+	font-size: 0.75em;
 }
 
 tr {
@@ -19,9 +20,12 @@ td:last-child {
 	text-align: center;
 }
 
-/*div {
-	border: 1px solid gray;
-}*/
+th {
+	color: white;
+	background: linear-gradient(to bottom, gray, black);
+	font-weight: normal;
+}
+
 
 .gold {
 	color: gold;
@@ -45,10 +49,6 @@ td:last-child {
 
 .bg_bronze {
 	background: goldenrod;
-}
-
-.head {
-	font-weight: bold;
 }
 
 .xscroll {

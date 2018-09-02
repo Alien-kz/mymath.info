@@ -3,7 +3,7 @@ table {
 	border-collapse: collapse;
 	white-space: nowrap;
 	width: 100%;
-	font-size: 1em;
+	font-size: 0.75em;
 }
 
 tr {
@@ -18,6 +18,12 @@ td, th {
 
 td:last-child {
 	text-align: center;
+}
+
+th {
+	color: white;
+	background: linear-gradient(to bottom, gray, black);
+	font-weight: normal;
 }
 
 .gold {
