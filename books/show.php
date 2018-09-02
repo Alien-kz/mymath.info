@@ -29,12 +29,14 @@
 			print_buttons("", "../books/show.php", $buttons, $css, "");
 
 		?>
+		
 		<div align="center">
-			<h2>
+		<div class="content_div" align="center">
+			<p align='center'>
 			Изданное
-			</h2>
-			<div class="content_div">
-				<a href="2008_2018_msu_olympiad_in_math.pdf">
+			</p>
+			<div class="book_div">
+					<a href="2008_2018_msu_olympiad_in_math.pdf">
 					<img class='img_in_div' src="2008_2018_msu_olympiad_in_math_logo_mini.jpg">
 					<p>
 					Cтуденческие олимпиады <br/>
@@ -57,8 +59,10 @@
 					Объем: 109 страниц.
 				</p>
 			</div>
-			<div class="content_div">
-				<a href="2013_2018_msu_olympiad_in_programming.pdf">
+
+			<div class="book_div">
+					<a href="2013_2018_msu_olympiad_in_programming.pdf">
+				
 					<img class='img_in_div' src="2013_2018_msu_olympiad_in_programming_logo_mini.jpg">
 					<p>
 					Cтуденческие олимпиады <br/>
@@ -81,11 +85,13 @@
 				</p>
 			</div>
 		</div>
+		</div>
 		<div align="center">
-			<h2>
+		<div class="content_div" align="center">
+			<p align='center'>
 			Неизданное
-			</h2>
-			<div class="content_div">
+			</p>
+			<div class="book_div">
 				<a href="2014_2018_republic_olympiad_in_math_for_student.pdf">
 					<p align="center">
 					Cтуденческие республиканские олимпиады <br/>
@@ -103,6 +109,7 @@
 					Объем: 16 страниц.
 				</p>
 			</div>
+		</div>
 		</div>
 	</body>
 </html>

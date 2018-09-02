@@ -4,15 +4,16 @@
     display: inline-block;
     padding: 5px;
 	margin: 5px;
-	width: 40%;
+	width: 90%;
 	vertical-align: top;
 
 	text-align: center;
+	min-height: 100%;
 }
 
 .img_in_div {
 	max-width: 80%;
-	border-radius: 20px;
+	border-radius: 10px;
 }
 
 .block {
