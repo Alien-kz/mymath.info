@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 	<head>
 		<title>Задачи по математике, программированию и не только.</title>
@@ -16,6 +17,7 @@
 			} else {
 				echo "<link href='main_m.css?ver=2018-09-02-1' rel='stylesheet' type='text/css' >";
 			}
+			echo "<link href='chars.css?ver=2018-09-02-1' rel='stylesheet' type='text/css' >";
 		?>
 		
 	</head>
@@ -29,30 +31,22 @@
 		?>
 	
 		<div align="center">
-		<div class="content_div" align="center">
-				<h3 align='center'> Здравствуйте, уважаемые посетители! </h3>			
-			
-				<p> Данный сайт является сборником различных материалов студенческих олимпиад по математике и программированию Казахстанского филиала МГУ. </p>
-
-				<p> Не забывайте следить за информацией об интересных мероприятиях в филиале МГУ на странице <a href='http://vk.com/aperture_time'>aperture_time</a>.</p> 
-
-				<p> Обратная связь по почте: a-l-e-n на mail.ru.</p> 
-				
-<!--				<p> Большой любитель олимпиад, Баев Ален.</p> -->
-			</div>
+		<div class="content_div">
+			<h3 align='center'> Здравствуйте, уважаемые посетители! </h3>
+			<p align='left'> 
+				<?php print_text(file_get_contents("hello.txt")); ?>
+			</p>
 		</div>
 		</div>
-	
+
 		<div align="center">
-		<div class="content_div" align="center">
-		
-			<h3  align='center'> Последнее обновление </h3>
-		
-			Опубликованы варианты вступительных экзаменов в Казахстанский филиал 2011-2017 годов по математике и 2015-2017 годов по физике. <br/>
-<a href="abiturient/show.php"> Задания вступительных экзаменов</a>
+		<div class="content_div">
+			<h3 align='center'> Последнее обновление </h3>
+			<p align='left'> 
+				<?php print_text(replace_level(file_get_contents("news.txt"))); ?>
+			</p>
 		</div>
 		</div>
-
 		<p>
 			<!-- Yandex.Metrika counter -->
 			<script type="text/javascript" >

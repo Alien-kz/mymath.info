@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 	<head>
 		<title> Материалы для абитуриентов.</title>
@@ -15,6 +16,7 @@
 			} else {
 				echo "<link href='../main_m.css?ver=2018-09-02-4' rel='stylesheet' type='text/css' >";
 			}
+			echo "<link href='../chars.css?ver=2018-09-02-4' rel='stylesheet' type='text/css' >";
 		?>
 	</head>
 	<body>
@@ -45,9 +47,10 @@
 							"colomns3", "");
 			div_close();
 
+			########################################
 			
 			if ($subject == "math" or $subject  == "phys") {
-
+				$header = "";
 				$buttons = array();
 				$directory = $subject;
 				$variant = "";
@@ -56,30 +59,45 @@
 						$buttons[$y] = $y." год";
 					}
 					$variant = "1";
+					$header = "Экзамен по математике";
 				}
 				if ($subject == "phys") {
 					for ($y = 2015; $y <= 2017; $y++) {
 						$buttons[$y] = $y." год";
 					}
 					$variant = "2";
+					$header = "Экзамен по физике";
 				}
-				echo "<a name='matherial'></a>";
-				div_open("Выберите год");
-				print_buttons("show.php?subject=$subject&year=", $year, $buttons, "colomns7", "#matherial");
-				div_close();
+
+
+				echo "<a name='material'></a>";
+				div_open($header);
+				if ($year == "about") {
+					print_buttons("show.php?subject=$subject&amp;year=", $subject, array("" => "Скрыть ..."), "colomns3", "#material");
+					print_text(file_get_contents("$subject/about.txt")); 
+				} else {
+					print_buttons("show.php?subject=$subject&amp;year=", $year, array("about" => "Подробнее об экзамене ..."), "colomns3", "#material");
 			
-				if ($year != "") {
+				
+				}
+				print_header("Выберите год");
+				print_buttons("show.php?subject=$subject&amp;year=", $year, $buttons, "colomns7", "#material");
+				div_close();
+
+				########################################
+
+				if ($year != "" and $year != "about") {
 					div_open("Материалы экзамена");
-					$file_name_1 = "$directory/msu-$subject-$year-1";
-					$file_name_2 = "$directory/msu-$subject-$year-2";
+					$file_name_1 = "$directory/problems/msu-$subject-$year-1";
+					$file_name_2 = "$directory/problems/msu-$subject-$year-2";
 					
 					show_link_file($file_name_1, $buttons[$year]." 1 вариант");
 					show_link_file($file_name_2, $buttons[$year]." 2 вариант");
 
 					show_png_file($file_name_1."-".$agent);
 					show_png_file($file_name_2."-".$agent);
+					div_close();
 				}
-
 			}
 		?>
 		<p>

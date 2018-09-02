@@ -5,5 +5,7 @@
 Формат: 1 тур продолжительностью 3 часа.
 Задачи: от 7 до 10 задач.
 Уровень сложности задач (по личному мнению автора): 4/5. 
-Официальный сайт олимпиады: <a href='http://www.msu.kz/science/olimpiady/'>msu.kz/science/olimpiady</a>.  
-Официальная страница vk: <a href='https://vk.com/aperture_time'>aperture_time</a>. 
+
+Страница олимпиады: 
+<a href='http://www.msu.kz/science/olimpiady/'>На сайте филиала МГУ</a>
+<a href='https://vk.com/aperture_time'>Вконтакте</a>

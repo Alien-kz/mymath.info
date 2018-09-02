@@ -31,12 +31,18 @@ function print_centered_text($text) {
 	echo "</div>\n";
 }
 
+function replace_level($text) {
+	$text = str_replace("+++", "<span class='green'>&#10102;</span>", $text);
+	$text = str_replace("++-", "<span class='yellow'>&#10103;</span>", $text);
+	$text = str_replace("+--", "<span class='red'>&#10104;</span>", $text);
+	return $text;
+}
+
 function print_text($text) {
 	$text = nl2br($text);
-	echo "<div align='center'>\n";
-	echo "<div class='hello_div'>\n";
+	$text = str_replace("<a ", "<a class='button external_link' target='blank_' ", $text);
+	echo "<div align='left'>\n";
 	echo $text."\n";
-	echo "</div>\n";
 	echo "</div>\n";
 }
 

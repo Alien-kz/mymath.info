@@ -5,4 +5,9 @@
 Формат: 2 тура продолжительностью 5 часов каждый.
 Задачи: в каждом туре по 5 задач стоимость 10 баллов каждая.
 Уровень сложности задач (по личному мнению автора): 5/5. 
-Официальный сайт олимпиады: <a href='http://www.imc-math.org.uk/'> imc-math.org.uk</a>.  
+Официальный сайт олимпиады: 
+<a href='http://www.imc-math.org.uk/'> imc-math.org.uk</a>
+
+Про выступление Казахстана на IMC-2016:
+<a href='https://yvision.kz/post/705037'> Заметка на yvision.kz</a>
+<a href='http://vechastana.kz/novosti/1004980-astanchanin-batyrkhan-orynkul-vpervye-v-istorii-strany-zavoeval-zoloto-na-mezhdunarodnoy-studenchesk/'> Газета "Вечерняя Астана"</a>

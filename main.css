@@ -14,6 +14,14 @@ p {
 	font-size: 1em;
 }
 
+.external_link {
+	color: black;
+	background: linear-gradient(to bottom, white, lightblue);
+#	background: linear-gradient(blue, white, blue);
+#	background: linear-gradient(white, blue, white);
+#	background: linear-gradient(black, blue, black);
+}
+
 .selected {
 	color: white;
 	background: linear-gradient(to bottom, green, black);
