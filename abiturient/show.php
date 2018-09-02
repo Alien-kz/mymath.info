@@ -76,7 +76,7 @@
 					show_link_file($file_name_1, $buttons[$year]." 1 вариант");
 					show_link_file($file_name_2, $buttons[$year]." 2 вариант");
 
-					show_png_file($file_name_2."-".$agent);
+					show_png_file($file_name_1."-".$agent);
 					show_png_file($file_name_2."-".$agent);
 				}
 
