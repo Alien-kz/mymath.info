@@ -1,0 +1,97 @@
+\documentclass[10pt, a4paper, landscape]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{longtable}			%long table
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\sloppy							%correct overfull
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{#3 \\ #2}
+	\rhead{#1}
+	
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+}
+\newcommand{\accept}[2]{
+	\centerline{\boxed{#1}}
+	\newline
+	\centerline{\scriptsize{#2}}
+}
+\newcommand{\reject}[1]{
+	\centerline{#1}
+}
+\def\arraystretch{1.5}
+
+\begin{document}
+
+\head{Открытая олимпиада по программированию \\ Осенний тур 2016}{15 октября 2016}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\begin{center}
+\begin{longtable}{|c|c|p{0.1\linewidth}|p{0.2\linewidth}|*{12}{p{0.025\linewidth}|}c|c|}
+\hline 
+№ & КФ & Команда & Состав & A & B & C & D & E & F & G & H & I & J & K & L & Итог & Штраф\\
+\hline
+\endhead
+1 & & NU: EPS &  
+Улугбек Адильбеков (НУ) \newline 
+Мадияр Айтжанов (НУ) \newline 
+Сергазы Калмурзаев (НУ)  & \accept{+1}{0:25}   & \accept{+1}{0:07}   & \accept{+}{1:19}   & \accept{+}{0:57}   & \accept{+}{1:44}   & \accept{+1}{0:28}   & \reject{-1} & \reject{-13} & \accept{+}{1:04}   & \accept{+1}{0:50}   & \accept{+}{1:51}   & \accept{+1}{1:27}    & 10  & 712\\ \hline
+2 &  & NU MVP &  
+Батырхан Орынкул (НУ) \newline  \mbox{} \newline   & \accept{+1}{0:23}   & \accept{+}{0:25}   & \accept{+}{1:31}   & \accept{+}{1:52}   & \accept{+}{3:03}   & \accept{+}{2:51}   &  &  & \accept{+}{0:37}   & \accept{+}{1:05}   & \accept{+}{2:43}   & \accept{+1}{1:22}    & 10  & 992\\ \hline
+3 & & IITU T &  
+Сатылханов Темирлан\newline (МУИТ) \newline  & \accept{+}{0:05}   & \accept{+}{0:06}   & -10 & \accept{+}{2:04}   & \accept{+}{3:20}   & \accept{+}{0:46}   & \reject{-8} &  & \accept{+}{0:13}   & \accept{+}{0:36}   &  & \accept{+2}{0:25}    & 8  & 495\\ \hline
+4 &  & ENU \newline Eagles &  
+Айкен (ЕНУ) \newline 
+Нурбек (ЕНУ)\newline 
+Азамат (ЕНУ) & \accept{+}{0:22}   & \accept{+}{0:15}   & -2 & \accept{+}{1:27}   &  & \accept{+1}{2:50}   & \accept{+}{3:59}   &  &  &  & \accept{+}{0:52}   & \accept{+}{0:12}    & 7  & 617\\ \hline
+5 & 1  & Snowy \newline Cube &  Журавская Александра (ВМ-3) \newline Камалбеков Тимур (ВМ-3) \newline Абайулы Ерулан (ВМ-3)  & \accept{+4}{1:22}   & \accept{+}{0:06}   & \accept{+6}{3:33}   & \accept{+2}{2:34}   &  & \accept{+2}{0:51}   &  & \reject{-3} & \accept{+5}{3:23}   & \reject{-2} & \reject{-5} & \accept{+2}{2:28}    & 7  & 1277\\ \hline
+6 & 2  & Big Dipper &  Надира Шокетаева (ММ-4) \newline Амир Мирас (ВМ-4) \newline Таранов Денис (ВМ-4) & \accept{+}{1:31}   & \accept{+}{0:09}   &  & \accept{+5}{3:15}   &  &  & \accept{+}{1:22}   &  & \accept{+5}{2:46}   & \accept{+10}{3:38}   & \reject{-7} & \accept{+4}{1:00}    & 7  & 1301\\ \hline
+7 & 3  & Жизнь \newline за Нерзула &  Болотников Димитрий \newline (ММ-2) \newline Газизов Куат (ММ-2) \newline Аскергали Ануар (ВМ-1) & \accept{+}{0:31}   & \accept{+}{0:26}   &  & \reject{-3} &  & \accept{+1}{2:06}   &  &  & \accept{+}{3:45}   &  & \accept{+1}{2:35}   & \accept{+}{2:48}    & 6  & 771\\ \hline
+8 & 4  & Lord \newline Bendtner \newline Team &  Вержбицкий Владислав  \newline (ВМ-4) \newline Седякин Илья (ВМ-4) \newline Таскынов Ануар (ВМ-4) & \accept{+}{0:58}   & \accept{+}{0:45}   &  & \accept{+4}{3:45}   &  & \reject{-1} &  &  &  & \accept{+}{1:12}   & \accept{+2}{2:29}   & \accept{+3}{2:40}    & 6  & 889\\
+\hline
+9 & & ENU \newline Tigers &  Нурлан (ЕНУ) \newline 
+Адилет (ЕНУ)  \newline 
+Шамиль (ЕНУ) & \accept{+1}{0:30}   & \accept{+}{0:24}   &  & \accept{+3}{3:57}   &  & \accept{+6}{3:58}   &  &  &  &  &  & \accept{+3}{2:53}    & 5  & 962\\ 
+\hline    
+10 & 5  & Эсприт &  Шарипов Азат (ВМ-1) \newline Узакбай Каби (ВМ-1) \newline Танкибаева Салима (ВМ-1) & \accept{+}{0:53}   & \accept{+}{0:12}   &  &  &  & \reject{-3} &  &  &  &  & \accept{+2}{3:04}   & \accept{+1}{1:16}    & 4  & 385\\ 
+\hline
+11 & 6  & dovahkiin &  Темирхан Омаров (ВМ-3) \newline \mbox{} \newline   & \accept{+1}{0:33}   & \accept{+2}{1:01}   &  & \reject{-2} &  &  &  &  & \accept{+}{3:15}   &  &  & \accept{+2}{2:35}    & 4  & 544\\ \hline
+12 & & IITU A &  Андрей Ким (МУИТ) \newline  \mbox{} \newline   & \accept{+}{0:07}   & \accept{+}{0:10}   &  &  &  &  &  &  & \accept{+1}{0:18}   &  &  &   & 3  & 55\\ \hline
+13 & & M\&M's &  Лежников Макар \newline Кенжегалиев Мирас \newline   & \accept{+}{0:22}   & \accept{+}{0:31}   & \reject{-1} & \accept{+1}{2:08}   &  & -3 &  &  &  &  &  & \reject{-2}  & 3  & 201\\ \hline
+14 & 7  & Dark \newline Horses &  Абдыкалик Чингиз (ВМ-2) \newline Ким Владимир (ВМ-2) \newline  Козган Айжас (ВМ-2) & \accept{+}{1:19}   & \accept{+1}{0:14}   &  & \reject{-1} &  &  & \reject{-2} & \reject{-1} &  &  &  & \accept{+}{1:58}    & 3  & 231\\ \hline
+15 & & апельсин &  Ера (ЕНУ) \newline Ануар (ЕНУ) \newline  Али (ЕНУ) & \accept{+}{0:44}   & \accept{+2}{0:19}   &  &  &  &  & \reject{-1} &  & \reject{-4} & \accept{+3}{2:16}   &  & \reject{-4}  & 3  & 299\\ \hline
+16 & & ENU \newline goTeam &  Назаров Ельшат (ЕНУ) \newline Шаги Лесбек (ЕНУ) \newline  Галы Махмуд (ЕНУ) & \accept{+}{1:06}   & \accept{+}{3:37}   & \reject{-4} &  &  &  & \accept{+}{3:26}   &  &  &  & \reject{-6} &   & 3  & 489\\ \hline
+17 &  & UAB &  Еркін Асқар \newline Жүніс Батырбек \newline   Даулетқали Ұлан   & \accept{+}{2:10}   & \accept{+1}{2:02}   &  & \reject{-3} &  &  & \accept{+}{3:38}   & \reject{-5} &  &  &  &   & 3  & 490\\ \hline
+18 & & Quiant &  Бауыржан Нургалиев \newline Меирхан Есеев  \newline  Даниар Бахытов   & \accept{+1}{1:11}   & \accept{+2}{2:21}   & \reject{-4} & \reject{-9} &  &  & \accept{+3}{3:26}   &  & \reject{-2} &  & \reject{-3} &   & 3  & 538\\ \hline
+19 & 8  & Moby-Dick &  Коробов Павел (ММ-2) \newline Сеилов Айтмухамед (ММ-2) \newline  Алан Вагнер (60) & \accept{+}{1:05}   & \accept{+}{0:28}   &  &  &  &  &  & \reject{-2} &  & \reject{-7} &  & \reject{-6}  & 2  & 93\\ \hline
+20 & & Guys \newline from \newline hell &  Алмат Малик \newline Кайратулы Темирлан & \accept{+}{1:17}   & \accept{+4}{1:29}   & \reject{-2} & \reject{-6} &  &  &  &  &  &  &  &   & 2  & 246\\ \hline
+21 & 9  & Черные \newline Сердечки &  Керопян Агаси (ВМ-2) \newline Кобекбай Бауыржан (ВМ-2) \newline  Турукпаев Исламбек (ВМ-2)  & \accept{+5}{1:49}   & \accept{+6}{1:13}   &  &  &  &  & \reject{-11} &  &  &  &  & \reject{-1}  & 2  & 402\\ 
+\hline    
+  22 & 10  & Complicate &  Бекмаганбетов Бекарыс \newline (ММ-1) \newline Кунакбаев Рамазан (ММ-1) \newline  Киселёв Илья  (ММ-2) &  & \accept{+}{0:19}   & \reject{-1} & \reject{-2} &  & \reject{-3} &  &  &  & \reject{-2} & \reject{-4} & \reject{-2}  & 1  & 19\\ 
+\hline
+23 & 11 & Sorax &  Кожемяк Виталий (ВМ-2) \newline Бексугуров Азамат (ММ-1) \newline   &  & \accept{+1}{0:41}   &  &  &  &  &  &  & \reject{-1} &  &  & \reject{-2}  & 1  & 61\\ \hline
+  24 & & BMTI \newline AL 1 &  Ергашев Адизбек \newline Гайратов Мухриддин \newline Ергашев Лазизбек & \reject{-9} & \accept{+1}{1:10}   &  &  &  &  &  &  &  &  &  &   & 1  & 90\\ \hline
+  25 & & Qwerty &  Исабеков Еркебулан \newline Надирбек Нурлыбеков \newline   Аманбаев Асыл   & \reject{-4} & \accept{+}{2:48}   &  &  &  &  &  &  &  &  &  &   & 1  & 168\\ \hline
+  26 & 12 & uni.CORN &   Садыкова Сымбат (ММ-1) \newline Сланова Айгерим (ММ-1) \newline   Жунусова Асыллия (ММ-1) &  & \accept{+4}{2:55}   &  &  &  &  &  & -6 &  &  &  &   & 1  & 255\\ \hline
+%  27-28  & Evil Genius &  Манақбаев Әділхан Ұлықбекұлы \newline Алтаев Райымбек Маратович    Ахмет Темірлан Мақсұтұлы   & -2 &  &  &  &  &  &  &  &  &  &  &   & 0  & 0\\ \hline
+%*  27-28  & NBP &  Sapaev Shukur \newline Shoumaroff Bosit \newline   Kim Arsen   & -3 &  &  &  &  &  &  & -1 &  &  &  &   & 0  & 0\\ \hline
+&  & Успешных \newline попыток  & 9 & 12 & 1 & 3 & 0 & 2 & 1    & 0 & 4 & 2 & 3 & 7  & 44  & & \\ \hline
+&  & Всего \newline попыток   & 19 & 26 & 8 & 19 & 0 & 12 & 14 & 12 & 14 & 23 & 24 & 30 & 195  & &\\ \hline
+\end{longtable} 
+\end{center}
+
+\end{document} 

@@ -1,0 +1,213 @@
+\documentclass[10pt, a4paper, landscape]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{longtable}			%long table
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\sloppy							%correct overfull
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{#3 \\ #2}
+	\rhead{#1}
+	
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+}
+\newcommand{\accept}[2]{
+	\centerline{\boxed{#1}}
+	\newline
+	\centerline{\scriptsize{#2}}
+}
+\newcommand{\reject}[1]{
+	\centerline{#1}
+}
+\def\arraystretch{1.5}
+
+\begin{document}
+
+\head{Открытая олимпиада по программированию \\ Весенний тур 2015}{18 марта 2015}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\begin{center}
+\begin{longtable}{|c|p{0.2\linewidth}|p{0.2\linewidth}|*{10}{p{0.025\linewidth}|}c|c|}
+\hline 
+№ & Команда & Состав & A & B & C & D & E & F & G & H & I & J & Итог & Штраф \\
+\hline
+\endhead
+1 & Lord Bendtner Team	 & Седякин Илья (ВМ-21) \newline Таскынов Ануар (ВМ-21) \newline Вержбицкий Владислав (ВМ-21) & 
+\accept{+2}{0:39}&
+  &
+\accept{+}{3:01}&
+\accept{+}{3:08}&
+  &
+  &
+  &
+\accept{+2}{1:16}&
+  &
+\accept{+2}{1:49}&
+5 &
+713
+\\
+\hline
+2 & prosti Denis	 & Шокетаева Надира (ММ-21) \newline Жусупов Али (ММ-11) & 
+\accept{+1}{0:05}&
+\reject{-1} &
+  &
+\accept{+}{1:14}&
+  &
+  &
+  &
+\accept{+6}{3:55}&
+\accept{+4}{2:03}&
+\accept{+2}{0:46}&
+5 &
+743
+\\
+\hline
+3 & Snow	 & Журавская Александра (ВМ-11) \newline Камалбеков Тимур (ВМ-11) \newline Абайулы Ерулан (ВМ-11) & 
+\accept{+}{0:27}&
+\accept{+2}{1:38}&
+  &
+\accept{+4}{1:04}&
+\accept{+4}{3:48}&
+  &
+  &
+\accept{+5}{3:06}&
+  &
+\reject{-5} &
+5 &
+903
+\\
+\hline
+4 & МАРЖЫ	 & Таранов Денис (ВМ-21) \newline Васильев Андрей (ВМ-21) & 
+\accept{+1}{0:07}&
+\accept{+}{1:46}&
+\reject{-1} &
+\accept{+7}{0:58}&
+  &
+  &
+  &
+\reject{-47} &
+  &
+\reject{-1} &
+3 &
+331
+\\
+\hline
+5 & A contrario	 & Омаров Темирхан (ВМ-11) \newline Иглымов Алишер (ВМ-11) \newline Колесников Владислав (ВМ-11) &
+\accept{+1}{0:23}&
+\reject{-1} &
+  &
+\accept{+1}{1:13}&
+  &
+\reject{-4} &
+  &
+\accept{+2}{3:33}&
+\reject{-2} &
+  &
+3 &
+389
+\\ 
+\hline
+6 & 012	 & Амир Мирас (ВМ-21) \newline Шабхатов Асылжан (ВМ-21) \newline Жусупекова Зинель (ВМ-21) & 
+\accept{+}{0:20}&
+  &
+\reject{-7} &
+\accept{+}{3:21}&
+  &
+  &
+  &
+\reject{-28} &
+\reject{-4} &
+\reject{-1} &
+2 &
+221
+\\
+\hline
+7 & FATAL ERROR! & Ганиев Адилет (ММ-11) \newline Малик Алмат (ММ-11) \newline Абдильманов Ернар (ММ-11) & 
+\accept{+}{0:32}&
+  &
+  &
+\reject{-4} &
+  &
+  &
+  &
+\reject{-2} &
+  &
+  &
+1 &
+32
+\\
+\hline
+8 & The Big Bang	 & Вишневский Виктор (ММ-11) \newline Исакова Жаркын (ММ-11) \newline Ким Виолетта (ММ-11) & 
+\accept{+1}{0:37}&
+\reject{-1} &
+  &
+  &
+  &
+  &
+  &
+\reject{-2} &
+  &
+  &
+1 &
+57
+\\
+\hline
+9 & DKA	& Даку Ансар (ВМ-11) &
+\accept{+1}{1:40}&
+  &
+  &
+\reject{-1} &
+  &
+  &
+  &
+\reject{-7} &
+  &
+  &
+1 &
+120
+\\
+\hline
+ & & Успешных попыток &
+9  &
+2  &
+1  &
+6  &
+1  &
+0  &
+0  &
+4  &
+1  &
+2  &
+26 & \\
+\hline 
+ & & Всего попыток &
+16  &
+7  &
+9  &
+23  &
+5  &
+4  &
+0  &
+105  &
+11  &
+13  &
+193 & \\
+\hline 
+\end{longtable}
+\end{center}
+
+\end{document} 

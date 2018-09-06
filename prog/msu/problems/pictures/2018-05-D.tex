@@ -1,0 +1,32 @@
+\begin{tikzpicture}[scale=0.75]
+\draw (-1, -1) rectangle (6, 2);
+\node at (-0.5, 1.5) {$1$};
+\draw (0,-1) -- (0,2);
+\draw[very thick, ->] (0, 1) -- (2, 1) node[below left] {$2/6$};
+\draw[very thick, ->] (0, 0) -- (2, 0) node[below left] {$6/6$};
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.75]
+\draw (-1, -1) rectangle (6, 2);
+\node at (-0.5, 1.5) {$2$};
+\draw (0,-1) -- (0,2);
+\draw[very thick, ->] (2, 1) -- (0, 1) node[below right] {$0/6$};
+\draw[dashed, very thick, ->] (0, 0) -- (2, 0);
+\draw[very thick, ->] (2, 0) -- (5, 0) node[below] {$3/6$};
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=0.75]
+\draw (-1, -1) rectangle (6, 2);
+\node at (-0.5, 1.5) {$3$};
+\draw (0,-1) -- (0,2);
+\draw[very thick, ->] (0, 1) -- (2, 1) node[below right] {$4/6$};
+\draw[dashed, very thick, ->] (0, 0) -- (2, 0);
+\draw[very thick, ->] (5, 0) -- (2, 0) node[below] {$0/6$};
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.75]
+\draw (-1, -1) rectangle (6, 2);
+\node at (-0.5, 1.5) {$4$};
+\draw (0,-1) -- (0,2);
+\draw[very thick, ->] (2, 1) -- (0, 1) node[below right] {$0/6$};
+\draw[dashed, very thick, ->] (5, 0) -- (2, 0);
+\draw[very thick, ->] (2, 0) -- (0, 0) node[below right] {$0/6$};
+\end{tikzpicture}

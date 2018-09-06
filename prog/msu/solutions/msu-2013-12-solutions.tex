@@ -1,0 +1,141 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{calc}			%draw pictures: coordinate calc
+% \usetikzlibrary{external}		%draw pictures: cache pitcures
+% \tikzexternalize				%cache pictures
+\usepackage{listings}			%code
+\usepackage{enumitem}			%noindent
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\newcommand{\subsectionbreak}{\clearpage} %new section
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{#3 \\ #2}
+	\rhead{#1}
+	
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+}
+
+\lstset{language=C++}
+\lstset{basicstyle=\footnotesize\ttfamily} 
+\lstset{keywordstyle=\color{blue}}
+\lstset{frame=single}
+\lstset{numbers=left}
+
+\sloppy
+
+\newcommand{\problemauthor}[1]{
+\begin{flushright}
+\textit{Автор: #1}
+\end{flushright}
+}
+
+\newcommand{\problemofferer}[1]{
+\begin{flushright}
+\textit{Предложил: #1}
+\end{flushright}
+}
+
+
+\begin{document}
+
+\head{Открытая олимпиада по программированию \\ Зимний тур 2013}{11 декабря 2013}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\subsubsection*{A. A}
+
+\problemofferer{ Баев А.Ж.}
+
+Ограничение на длину входной строки позволяют написать наивное решение.
+
+Асимптотика: $O(n)$.
+
+\subsubsection*{B. Beautiful tree}
+
+\problemofferer{ Баев А.Ж.}
+
+Запустив обход в глубину из вершины 1, построим компоненту связности. Если в компоненте будет менее $n$ вершин или $m \neq n - 1$, то граф не является деревом. В противном случае, выведем все вершины степени 1 за исключением корня (в случае, если это тоже вершина степени 1).
+
+Асимптотика: $O(n^2)$.
+
+\subsubsection*{C. Cube}
+
+\problemauthor{ Баев А.Ж.}
+
+Если $a^3 = k = b^2$, то $k$ --- это шестая степень некоторого числа. Обозначим $n_2$, $n_3$ и $n_6$ ---количество квадратов, кубов и шестых степеней на отрезке $[1; n]$ соответственно, которые можно найти перебором за $O(\sqrt{n})$. Имеется $(n - n_2) \cdot (n - n_3)$ различных пар чисел, которые могут загадать ребята. При этом  $(n - n_6)$ --- количество подходящих пар. Вероятность того, что ребята загадают одну и ту же пару равно: $$\frac{n-n_6}{(n - n_2)(n - n_3)}.$$
+
+Асимптотика: $O(\sqrt{n})$.
+
+
+\subsubsection*{D. Difficult geometry}
+
+\problemauthor{ Баев А.Ж.}
+
+Обозначим вершины исходного треугольника $A$, $B$, $C$. Тогда, траектория будет представлять собой подобный ему треугольник $A_1$, $B_1$, $C_1$. Центр вписанной в треугольник $A_1B_1C_1$ окружности равноудален от сторон треугольника $ABC$, поэтому является центром гомотетии этих треугольников. Радиус вписанной в треугольник $A_1B_1C_1$ окружности меньше радиуса вписанной в треугольник $ABC$ окружности на величину $R$. То есть радиус вписанной в $ABC$ окружности равен $r = \frac{S}{p}$, а радиус вписанной в $A_1B_1C_1$ окружности равен $r_1 = r - R$. Если $r_1 < 0$, то решения нет, иначе ответ $(a + b + c) \frac{r - R}{r}$.
+
+Асимптотика: $O(1)$.
+
+
+\subsubsection*{E. Easy number}
+
+\problemofferer{ Баев А.Ж.}
+
+Посчитаем количество решений уравнения $x y = n$, где $x = a - b$, $y = a + b$. Пусть $n = 2^s p_1^{k_1} p_2^{k_2} ... p_m^{k^m}$, где $s \geqslant 0$, $k_i > 0$. Данное разложение можно сделать стандартным перебором минимальных делителей за $O(\sqrt{n})$. Каждый из делителей $p_1$, ... $p_k$ может быть либо множителем $x$, либо множителем $y$. Общее количество вариантов $(k_1 + 1) ... (k_m + 1)$. Так как $a-b$ и $a+b$ должны быть одной четности, то в разложении $x$ и $y$ на простые должно содержать как минимум по одной двойке (или не быть вообще двоек). Оставшиеся двойки раскладываются $s - 1$ способом. С учетом знаков $x$ и $y$ (могут быть оба отрицательными или оба положительными), ответ:
+$$
+\begin{cases}
+2 (s - 1) (k_1 + 1) ... (k_m + 1), \text{ если } s \geqslant 1 \\
+2 (k_1 + 1) ... (k_m + 1), \text{ если } s < 1 \\
+\end{cases}
+$$
+
+Асимптотика: $O(\sqrt{n})$.
+
+
+
+\subsubsection*{F. Friends}
+
+\problemofferer{ Баев А.Ж.}
+
+Количество магнитов должно делиться на все числа от 1 до $n$, то есть ответом должен быть наибольший общий делитель 1, 2, ..., $n$, который можно найти вычислить алгоритмом Евклида, примененный $n-1$ раз.
+
+Асимптотика: $O(n \log{n})$.
+
+
+
+\subsubsection*{G. Game}
+
+\problemofferer{ Баев А.Ж.}
+
+Пусть $d[i] = 1$ --- выигрышная позиция (то есть при правильной игре из $i$ брусков выигрывает начинающий) и $d[i] = 0$ --- проигрышная позиция (то есть при правильной игре выигрывает продолжающий). Определим $d[i]$ рекуррентно. Если среди $d[i-1]$, $d[i-2]$ и $d[i / 2]$, есть хотя бы одна проигрышная позиция, то $d[i]$ --- выигрышная позиция. Если среди $d[i-1]$, $d[i-2]$ и $d[i / 2]$ все позиции выигрышные, то $d[i]$ --- проигрышная позиция. Начальные позиции: $d[1]$ --- выигрышная, $d[2]$ --- проигрышная.
+
+Асимптотика: $O(n)$.
+
+
+\subsubsection*{H. Hypnoses}
+
+\problemauthor{ Баев А.Ж.}
+
+Напишем уравнения траекторий движения для всех машин: $x_i + v_i t$. Пусть $k$ --- номер машины, за которой сейчас следит Надира, а $d$ --- текущее время. Найдем времена $t_{ik}$ и точки пересечения $k$-й траектории со всеми остальными траекториями $i$: $x_k + v_k t_{ik} = x_i + v_i t_{ik}$. Из всех $t_{ik}$ выберем минимальное, которое больше $d$, но меньше $t$. Если такое значение есть, то соответствующий номер машины возьмем в качестве следующего $k$, иначе выведем ответ $x_k + v_k t$. Отдельно стоит найти первую траекторию. Стоит отметить, что каждая траектория будет встречаться не более 1 раза.
+
+Аcимптотика: $O(n^2)$.
+
+\end{document} 

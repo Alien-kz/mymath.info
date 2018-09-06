@@ -1,0 +1,174 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{calc}			%draw pictures: coordinate calc
+% \usetikzlibrary{external}		%draw pictures: cache pitcures
+% \tikzexternalize				%cache pictures
+\usepackage{listings}			%code
+\usepackage{enumitem}			%noindent
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\newcommand{\subsectionbreak}{\clearpage} %new section
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{#3 \\ #2}
+	\rhead{#1}
+	
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+}
+
+\lstset{language=C++}
+\lstset{basicstyle=\footnotesize\ttfamily} 
+\lstset{keywordstyle=\color{blue}}
+\lstset{frame=single}
+\lstset{numbers=left}
+
+\sloppy
+
+\newcommand{\problemauthor}[1]{
+\begin{flushright}
+\textit{Автор: #1}
+\end{flushright}
+}
+
+\newcommand{\problemofferer}[1]{
+\begin{flushright}
+\textit{Предложил: #1}
+\end{flushright}
+}
+
+
+\begin{document}
+
+\head{Открытая олимпиада по программированию \\ Зимний тур 2017}{19 декабря 2017}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\subsubsection*{A. Askhana}
+
+\problemauthor{Бекмаганбетов Бекарыс (ММ-2016).}
+
+Обозначим $$A = \left[ \frac{N}{3} \right] \Bigl(1000 (Q_1 + Q_2 + Q_3) - (P_1 + P_2 + P_3) \Bigr).$$
+
+Тогда ответ равен:
+$$
+\begin{cases}
+A, & N \equiv 0 \bmod 3,\\
+A + 1000 Q_1 - P_1, & N \equiv 1 \bmod 3,\\
+A + 1000 (Q_1 + Q_2) - (P_1 + P_2), & N \equiv 2 \bmod 3.\\
+\end{cases}
+$$
+
+Асимптотика: $O(1)$. 
+
+Решение за $O(N)$ было лишь частичным.
+
+\subsubsection*{B. Binecraft}
+
+\problemauthor{Шарипов Азат (ВМК-2016).}
+
+
+Обозначим $d_{i,j}$ --- количество свободных клеток в прямоугольнике $(0; 0) - (i; j)$. Вычислить все $d_{i,j}$ можно за $O(W \cdot H)$ с помощью формулы включения-исключения:
+$$
+d_{i,j} = 
+\begin{cases}
+d_{i-1, j} + d_{i, j-1} - d_{i, j}, & \text{ если } a_{ij} \text{ --- занята,}\\
+d_{i-1, j} + d_{i, j-1} - d_{i, j} + 1, & \text{ если } a_{ij} \text{ --- свободна.}\\
+\end{cases}
+$$
+
+Для каждой клетки $(i, j)$ исходной парковки можно за $O(1)$ проверить, сколько свободных клеток находится в прямоугольнике $N \times M$ c правым нижним углов в $(i, j)$:
+$$d_{i,j} - d_{i - N, j} - d_{i, j - M} + d_{i - N, j - M}.$$
+Если эта величина равна $N \cdot M$, то данное расположение подходит (прибавляем к ответу 1). В случае, если машина не квадратная ($N \neq M$), то выполняем такие же действия для прямоугольника $M \times N$.
+
+Асимптотика: $O(W \cdot H)$. 
+
+Решение за $O(N \cdot M \cdot W \cdot H)$ было лишь частичным.
+
+\subsubsection*{C. Course}
+
+
+\problemauthor{Шарипов Азат (ВМК-2016).}
+
+Сделаем предпросчет для каждого дня {\tt d}: {\tt t[i]} --- время прихода {\tt i}-го студента в день {\tt d}. Отсортируем массив пар {\tt (t[i], i)} (не более 36 пар) и заполним массив ответов {\tt ans[d][r][c] = t[6 * (r - 1) - (c - 1)]}. Далее отвечаем на каждый запрос за $O(1)$.
+
+Асимптотика: $O(M + D)$. 
+
+Решение за $O(M \cdot D)$ было лишь частичным.
+
+\subsubsection*{D. Decoration}
+
+
+\problemauthor{Седякин Илья (ВМК-2013).}
+
+Посчитаем аккумулированные префиксные суммы $s_m = \sum_{i=0}^m a_i$, при $m$ от 0 до $N$. Заметим, что сумма $a_{i} + ... + a_{j} = s_j - s_{i-1}$ делится на $K$ тогда, и только тогда, когда $s_j$ и $s_{i-1}$ дают одинаковые остатки. 
+
+Посчитаем, $d_r$ --- количество префиксных сумм, которые дают в точности остаток $r$ при делении на $K$ (с подсчетом перебрав все префиксные суммы) при $r$ от 0 до $K-1$. 
+
+Ответ легко найти за $O(K)$: $$\sum\limits_{r = 0}^{K-1} \frac{d_r(d_r - 1)}{2}.$$
+
+Асимптотика: $O(N + K)$. 
+
+Решение за $O(N^2)$ было лишь частичным.
+
+\subsubsection*{E. Easy shifting}
+
+
+\problemofferer{Шарипов Азат (ВМК-2016).}
+
+Число инверсий данной перестановки можно вычислить за $O(N \log N)$ с помощью известной модификации сортировки слиянием. Посчитаем как изменится число инверсий после циклического сдвига влево.
+
+Допустим дана некоторая перестановка, в которой известно $P$ --- число инверсий. Обозначим $X$ --- первое слева число перестановки. Если убрать число $X$ из перестановки, то количество инверсий уменьшится на $(X - 1)$ (все числа меньшие $X$). Если добавить число $X$ справа, то добавится $(N - X)$ инверсий. Таким образом общее количество инверсий станет $$P - 2 X + 1 - N.$$ 
+То есть за $O(1)$ можно узнать на сколько изменится число инверсий при циклическом сдвиге влево. Максимальное число инверсий среди всех сдвигов можно найти перебором всех элементов массива без явного сдвига (за $O(N)$).
+
+Асимптотика: $O(N \log N)$. 
+
+Решение за $O(N^2)$ было лишь частичным.
+
+\subsubsection*{F. Fix position}
+
+
+\problemofferer{Аскергали Ануар (ВМК-2016).}
+
+Заметим, что если расстояние между $i$-й точкой первого ряда и $j$-й точкой второго ряда минимальное, то и разница координат по оси $OX$ между этими точками будет минимальная (так как разница координат по оси $OY$ равна 1). 
+
+Отсортируем точки в первом и втором ряду за $O(N \log N + M \log M)$. Обозначим $u_i$ и $d_j$ полученные координаты в первом и втором ряду соответственно.
+
+\textbf{Решение 1.} Для каждой точки $u_i$ из первого ряда запустим целочисленный тернарный поиск минимума для выпуклой вниз функции $f(j) = |u_i  - d_j|$.
+
+Асиптотика: $(N + M) \log (M N)$.
+
+\textbf{Решение 2.} Заметим, что если $u_i < u_{i+1} < d_j$, то $|u_i - d_j|> |u_{i+1} - d_j|$. Заведем 2 указателя $i = 0$ и $j = 0$. Если $u_{i+1} < d_{j + 1}$ то двигаем указатель $i = i + 1$, иначе двигаем указатель $j = j + 1$. Среди всех таких пар находим минимальную. Таким образом за $O(N + M)$ найдем ответ с помощью двух указателей.
+
+Асиптотика: $O(N \log N + M \log M)$.
+
+Решение за $O(N \cdot M)$ было лишь частичным.
+
+\subsubsection*{G. Graphland}
+
+
+\problemauthor{Бекмаганбетов Бекарыс (ММ-2016).}
+
+
+Построим компоненты связности обходом в ширину или в глубину за $O(N + M)$. Для каждой вершины запомним номер компоненты связности, в которой она находится. Далее переберем все ребра, которые можно добавить и которые при этом соединяют вершины из разных компонент связности. Среди таких ребер выберем наиболее дешевое.
+
+Асиптотика: $O(N + M + T)$.
+
+\end{document} 

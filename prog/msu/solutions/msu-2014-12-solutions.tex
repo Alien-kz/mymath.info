@@ -1,0 +1,180 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{calc}			%draw pictures: coordinate calc
+% \usetikzlibrary{external}		%draw pictures: cache pitcures
+% \tikzexternalize				%cache pictures
+\usepackage{listings}			%code
+\usepackage{enumitem}			%noindent
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\newcommand{\subsectionbreak}{\clearpage} %new section
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{#3 \\ #2}
+	\rhead{#1}
+	
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+}
+
+\lstset{language=C++}
+\lstset{basicstyle=\footnotesize\ttfamily} 
+\lstset{keywordstyle=\color{blue}}
+\lstset{frame=single}
+\lstset{numbers=left}
+
+\sloppy
+
+\newcommand{\problemauthor}[1]{
+\begin{flushright}
+\textit{Автор: #1}
+\end{flushright}
+}
+
+\newcommand{\problemofferer}[1]{
+\begin{flushright}
+\textit{Предложил: #1}
+\end{flushright}
+}
+
+
+\begin{document}
+
+\head{Открытая олимпиада по программированию \\ Зимний тур 2014}{9 декабря 2014}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\subsubsection*{A. Automultiplicative numbers} 
+
+\problemauthor{Абдикалыков А.К.}
+
+Автомультипликативными числами будут только однозначные числа, так как если число разрядов $n \geqslant 1$, то $$\overline{a_1 a_2 ... a_n} \geqslant 10^{n-1} \cdot a_1  > 9^{n-1} \cdot a_1 \geqslant a_1 \cdot a_2 \cdot a_1 \cdot ... \cdot a_n.$$ 
+Ответ: $\max( \min(b, 9) - a + 1, 0 )$.
+
+Асимптотика: $O(1)$.
+
+
+
+\subsubsection*{B. BNF} 
+
+\problemauthor{Абдикалыков А.К.}
+
+Символ $c$ может находиться на любой из $N$ позиций. Остальные позиции могут быть заняты одним из 2 символов: $a$ или $b$. Общее количество строк: $2^{N-1} N$. Стоит отметить, что ответ должен быть вычислен по модулю, соответственно, все умножения производятся по модулю. Ограничения $N$ не позволяют вычислять $2^{N-1}$ наивно --- следовало воспользоваться бинарным возведением в степень:
+$$2^K =
+\begin{cases}
+2^{K/2}, \text{ если K --- четное, } \\
+2^{K/2} \cdot 2, \text{ если K --- нечетное, } \\
+1, \text{ если K = 0 }
+\end{cases}$$
+
+Асимптотика: $O(\log{N})$.
+
+
+
+\subsubsection*{C. Cheer up!} 
+
+Обозначим $dp[n][s]$ --- вероятность того, что после $n$ бросков выпадет сумма $s$. По определению полной вероятности:
+$$dp[n][s] = \frac16 \sum_{i \in [1;6], x[i] \leqslant s}^{6} dp[n-1][s-x[i]].$$
+Начальные значения: $dp[0][0] = 1.0$, $dp[i][0] = 0.0$ при всех $i > 0$.
+
+Асимптотика: $O(n s)$.
+
+
+
+\subsubsection*{D. Decks} 
+
+\problemauthor{Баев А.Ж.}
+
+Для каждой строки подсчитаем $count[i][c]$ сколько раз в $i$-й строке встречается символ $c$ (каждая из 26 возможных букв). Далее для каждой буквы выберем минимальное значение среди всех строк $ans[c] = \min\limits_{1 \leqslant i \leqslant n} {count[i][c]}$. Выведем каждый символ $c$ в количестве $ans[c]$.
+
+Асимптотика: $O(n)$.
+
+
+
+\subsubsection*{E. Ellipse} 
+
+\problemauthor{Баев А.Ж.}
+
+Эллипс с полуосями $a$ и $b$ (где $a > b$) получается из окружности радиуса $a$ параллельным проектированием, при котором все площади умножаются $\frac{b}{a}$. Соответственно, достаточно решить задачу для окружности. Максимальную площадь будет иметь правильный $n$-угольник, вписанный в окружность радиуса~$a$: $\frac{n a^2}{2} \sin\left( \frac{2 \pi}{n} \right).$ Ответ: $\frac{n a b}{2} \sin\left( \frac{2 \pi}{n} \right).$
+
+Асимптотика: $O(1)$.
+
+
+
+\subsubsection*{F. Flip}
+
+\problemauthor{Баев А.Ж.}
+
+Необходимо было посчитать количество совпадающих символов в исходной и перевернутой строке.
+
+Асимптотика: $O(n)$.
+
+
+
+\subsubsection*{G. GOR} 
+
+\problemauthor{Баев А.Ж.}
+
+Реализовать наивное решение можно с помощью рекурсивного определения: 
+$$gor(x, y) = 
+\begin{cases}
+gor([\frac{x}{g}], [\frac{y}{g}]) \cdot g  + (x + y ) \bmod g, \text{ если } x > 0, y > 0 \\
+x + y, \text{ если } x = 0 \text{ или } y = 0 \\
+\end{cases}
+$$
+Но ограничения по времени не дают возможности просчитать всё наивно, поэтому оптимизируем операцию. Основная идея заключается в том, что операция производится независимо по всем разрядам (при записи чисел в $g$-чной системе счисления). Поэтому результат можно вычислить отдельно по каждому разряду.
+
+Вычислим за $O(1)$ сумму из $N$ подряд идущих чисел от $g k$ до $g k + (g - 1)$. Рассмотрим некоторый разряд, отличный от младшего. У всех $g$ чисел он будет одинаковым. Так как сумма $g$ одинаковых чисел при делении на $g$ дает остаток ноль, то все разряды результата, отличные от младшего, равны нулю. Рассмотрим самый младший разряд: это сумма чисел от $0$ до $g-1$ по модулю $g$. Если $g$ нечетно, то сумма равна нулю, если $g$ четно --- $g / 2$. 
+
+Теперь можно суммировать все числа эффективно: ищем минимальное $L \geqslant A$ и максимальное $R \leqslant B$, которые кратны $g$. Находим результат вычисления от $A$ до $L-1$ наивно, от $L$ до $R-1$ эффективно и от $R$ до $B$ наивно.  
+
+Асимптотика: $O(g \log{n} / \log{g})$.
+
+
+
+\subsubsection*{H. Holes} 
+
+\problemauthor{Абдикалыков А.К.}
+
+Рассмотрим граф, у которого вершины --- клетки, а ребрами соединены либо соседние по границе клетки, либо  клетки с одинаковым буквенным обозначением. Запустим обход в ширину или в глубину из левого верхнего угла и проверим, достижим ли правый нижний угол.
+
+Асимптотика: $O(n m)$.
+
+
+
+\subsubsection*{I. Interesting permutation} 
+
+\problemauthor{Абдикалыков А.К.}
+
+Пусть $(q-1)^2 < n \leqslant q^2$. Построим решение жадно: для $n$ выберем позицию $a_n$ так, что $n + a_n = q^2$. Следует принять во внимание, что $a_n$ определяется корректно ($a_n \leqslant n$), так как 
+$$(q-1)^2 \leqslant n - 1$$
+$$q \leqslant \sqrt{n-1} + 1$$
+$$q^2 - n \leqslant 2 \sqrt{n-1} \leqslant n$$
+так как $4 n - 4 \leqslant n^2$. Таким же образом можно расставить числа $(n-k)$ на позиции $a_{n-k} = q^2 - (n-k)$, для которых $a_{n-k} \leqslant n$, то есть $k \leqslant 2 n - q^2$. 
+
+Среди еще не расставленных чисел (это все числа от 0 до $q^2 - n - 1$) выберем максимальное и проведем такую процедуру.
+
+Асимптотика: $O(n)$.
+
+Замечание: ответов может несколько, данное решение строит только один из вариантов.
+
+\newpage
+
+\end{document} 

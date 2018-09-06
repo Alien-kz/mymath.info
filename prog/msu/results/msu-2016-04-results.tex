@@ -1,0 +1,112 @@
+\documentclass[10pt, a4paper, landscape]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{longtable}			%long table
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\sloppy							%correct overfull
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{#3 \\ #2}
+	\rhead{#1}
+	
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+}
+\newcommand{\accept}[2]{
+	\centerline{\boxed{#1}}
+	\newline
+	\centerline{\scriptsize{#2}}
+}
+\newcommand{\reject}[1]{
+	\centerline{#1}
+}
+\def\arraystretch{1.5}
+
+\begin{document}
+
+\head{Открытая олимпиада по программированию \\ Весенний тур 2016}{30 апреля 2016}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\begin{center}
+\begin{longtable}{|c|c|p{0.2\linewidth}|p{0.2\linewidth}|*{10}{p{0.025\linewidth}|}c|c|}
+\hline
+№  & КФ & Команда & Состав & A & B & C & D & E & F & G & H & I & J & Итог & Штраф \\
+\hline
+\endhead
+1 &  & А+Б & Шаварш Бадалян (Ташкент)   \newline  The art of war (Ташкент) \newline    & \accept{+}{0:04}  & \accept{+}{0:52}  & \accept{+5}{3:05}  & \accept{+}{0:17}  & \accept{+}{0:36}  & \accept{+26}{3:20}  & \accept{+}{1:04}  & \accept{+3}{1:43}  & \accept{+}{0:40}  & \accept{+}{2:08}  & 10 & 1509\\
+\hline
+2 &  & NU: Pretty Huge \newline D Riot & Улугбек Адильбеков (НУ) \newline  Сергазы Калмурзаев (НУ) \newline Бекжан Кассенов  (НУ) & \accept{+}{0:06}  & \accept{+}{0:10}  & \accept{+1}{1:29}  & \accept{+1}{0:53}  & \accept{+}{0:28}  & \reject{-39} & \accept{+}{0:41}  & \accept{+}{0:34}  & \accept{+}{1:06}  & \accept{+}{1:46}  & 9 & 473\\
+\hline
+3 &  & NU: Джулия & Батырхан Орынқұл (НУ)   \newline  Нурсултан Джубатыров (НУ) \newline Нұрдаулет Кеңес (НУ)  & \accept{+1}{0:04}  & \accept{+}{0:13}  & \accept{+}{2:46}  & \accept{+1}{0:32}  & \accept{+1}{1:20}  & \reject{-2} & \accept{+}{1:26}  & \accept{+}{2:07}  & \accept{+2}{1:45}  & \reject{-1} & 8 & 713\\
+\hline
+4 & 1 & Snowy Cube & Абайулы Ерулан (ВМ-2)   \newline  Журавская Александра (ВМ-2)   \newline Камалбеков Тимур (ВМ-2)  & \accept{+}{0:04}  & \accept{+}{0:38}  & \accept{+}{1:05}  & \reject{-3} &   & \reject{-1} & \accept{+1}{0:57}  &   &   & \accept{+3}{3:36}  & 5 & 460\\
+\hline
+5 & 2 & Big Dipper & Шокетаева Надира (ММ-3) \newline Таранов Денис (ВМ-3) \newline Тлеубаев Адиль (ВМ-4) & \accept{+}{0:19}  & \accept{+1}{0:25}  &   & \accept{+14}{3:58}  &   & \reject{-24} & \accept{+1}{1:43}  &   &   & \accept{+}{3:08}  & 5 & 893\\
+\hline
+6 & 3 & Mad Cow & Турганбаев Сатбек (ВМ-2)\newline  Омаров Темирхан (ВМ-2) \newline Жусупов Али (ММ-2)  & \accept{+1}{0:13}  & \accept{+}{0:57}  & \accept{+3}{2:49}  &   &   & \reject{-6} & \accept{+}{0:42}  &   &   & \reject{-2} & 4 & 361\\
+\hline
+7 &  & Небесная \newline Касатка & Шин Кирилл (Ташкент) \newline Ахмедшин Раиф (Ташкент) \newline    & \accept{+}{0:08}  & \accept{+1}{0:20}  & \reject{-1} & \reject{-12} &   & \reject{-7} & \accept{+1}{2:54}  & \accept{+}{3:47}  &   &   & 4 & 469\\
+\hline
+8 &  & Pullers & toyo    \newline  ilnur the best    \newline farzand3   & \accept{+1}{0:14}  & \accept{+}{0:46}  &   &   &   & \accept{+}{3:39}  & \reject{-5} &   & \reject{-4} &   & 3 & 299\\
+\hline
+9 &  & proGram1st & Up-2-110H \newline \mbox{}  \newline    & \accept{+}{0:09}  & \accept{+}{0:29}  & \reject{-2} &   &   &   &   &   &   &   & 2 & 38\\
+\hline
+10 &  & TPCIT \newline Programmers & mytwinkg    \newline  ilkhom98    \newline progerkiller97   & \accept{+}{0:20}  & \accept{+}{0:27}  &   & \reject{-2} &   & \reject{-1} & \reject{-4} &   & \reject{-5} &   & 2 & 47\\
+\hline 
+11 & 4 & Bad habit & Колесников Владислав (ВМ-2)    \newline  Иглымов Алишер (ВМ-2)    \newline Болотников Димитрий   (ММ-1) & \accept{+}{0:14}  & \accept{+1}{0:51}  &   & \reject{-1} &   & \reject{-12} &   &   &   &   & 2 & 85\\
+\hline
+12 & 5 & It is 42! & Малик Алмат (ММ-2) \newline  Ганиев Адлет (ММ-2) \newline Кертаев Темирлан (ММ-2)  & \accept{+}{0:58}  & \accept{+2}{1:15}  &   & \reject{-2} &   & \reject{-1} & \reject{-2} &   &   &   & 2 & 173\\
+\hline
+13 & 6 & A+K & Амир Мирас (ВМ-3) \newline  Шабхатов Асылжан (ВМ-3)   \newline    & \accept{+1}{0:46}  & \accept{+2}{1:36}  &   &   &   &   &   &   &   &   & 2 & 202\\
+\hline
+14 &  & M1-14 & Dior r    \newline  The force of codes    \newline firdavs   & \accept{+}{0:51}  & \accept{+4}{1:22}  &   & \reject{-8} &   &   &   &   &   &   & 2 & 213\\
+\hline
+15 &  & NBP & Shaumaroff    \newline  chollak    \newline Killl   & \accept{+}{1:05}  & \accept{+1}{2:19}  &   &   &   &   &   &   & \reject{-5} &   & 2 & 224\\
+\hline
+16 & 7 & Lord Bendtner Team & Вержбицкий Владислав (ВМ-3)   \newline  Седякин Илья (ВМ-3)   \newline Таскынов Ануар (ВМ-3)   & \accept{+3}{1:25}  & \accept{+2}{1:24}  &   &   & \reject{-3} & \reject{-9} &   &   &   & \reject{-1} & 2 & 269\\
+\hline
+17 & 8 & Association of Angry Coderz & Ким Владимир (ВМ-1) \newline  Абдыкалик Чингиз (ВМ-1)   \newline Турукпаев Исламбек (ВМ-1)  & \accept{+4}{2:52}  & \accept{+}{3:20}  &   &   &   & \reject{-1} &   &   & \reject{-6} &   & 2 & 452\\
+\hline
+18 & 9 & Михалыч & Автайкин Мария (ВМ-4)   \newline  Журавлев Вадим (ВМ-4) \newline Оспанов Аят (ВМ-4) & \accept{+8}{2:01}  & \accept{+2}{3:18}  & \reject{-2} &   &   & \reject{-10} &   &   &   &   & 2 & 519\\
+\hline
+19 & 10 & Cow Hunters & Коробов Павел (ММ-1) \newline  Газизов Куат (ММ-1)    \newline Киселёв Илья (ММ-1)  & \accept{+8}{2:42}  & \accept{+}{3:56}  &   & \reject{-2} &   & \reject{-1} &   &   &   &   & 2 & 558\\
+\hline
+20 & 11 & Черные  cердечки & Алимгазиев Сержан (ВМ-1)   \newline  Kобекбай Бауыржан (ВМ-1)   \newline Керопян Агаси (ВМ-1)  & \accept{+17}{2:54}  & \accept{+1}{1:28}  &   &   &   & \reject{-2} &   &   &   &   & 2 & 622\\
+\hline
+21 &  & NU\#1 & Aidarbek Suleimenov    \newline  Rasul Khasen    \newline    & \accept{+}{0:22}  &   &   &   &   &   &   &   &   &   & 1 & 22\\
+\hline
+22 &  & Awesome  \newline Team & Capitan    \newline   \mbox{}   \newline    & \accept{+2}{0:47}  &   &   &   &   &   &   &   &   &   & 1 & 87\\
+\hline
+23 &  & Accepted & Раушан Ергожиева    \newline  Айзада Кабиденова    \newline Победа Багдат   & \accept{+2}{1:22}  &   &   & \reject{-12} &   &   &   &   &   &   & 1 & 122\\
+\hline
+24 & 12 & Traitors & Пикулина Алиса (ММ-1)   \newline  Сеилов Айтмухаммед (ММ-1)   \newline Михно Ксения (ММ-1)  & \accept{+4}{1:58}  &   &   & \reject{-5} &   &   &   &   & \reject{-1} &   & 1 & 198\\
+\hline
+25 & 13 & VIK & Виктор Вишневский (ММ-2)    \newline    \mbox{}    \newline    & \accept{+3}{3:37}  &   &   &   &   &   &   &   &   &   & 1 & 277\\
+\hline
+26 & 14 & Prog  \newline club M & Казбекова Диана (ВМ-1)   \newline  Кемпирова Наргиз (ВМ-1)   \newline Купенова Лариса (ВМ-1)  & \accept{+5}{3:27}  &   &   & \reject{-3} &   &   &   &   & \reject{-1} &   & 1 & 307\\
+\hline
+%27 &  & JTX & Татин Алмаз    \newline  Мырзабеков Руслан    \newline Кожемяк Виталий   & \reject{-5} & \reject{-4} &   &   &   &   &   &   &   &   & 0 & 0\\
+%\hline
+  &  & Успешных \newline попыток &   & 26 & 20 & 5 & 4 & 3 & 2 & 7 & 4 & 3 & 4 & 78 &  \\
+\hline
+  &  & Всего \newline попыток &   & 91 & 41 & 19 & 70 & 7 & 144 & 21 & 7 & 27 & 11 & 438 &  \\
+\hline
+  &  & \% &   & 29\% & 49\% & 26\% & 6\% & 43\% & 1\% & 33\% & 57\% & 11\% & 36\% & 18\% &  \\
+\hline
+\end{longtable}
+\end{center}
+
+\end{document} 

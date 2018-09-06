@@ -25,6 +25,7 @@
 			$buttons = array("../index.php" => "Главная",
 							"../abiturient/show.php" => "Абитуриентам", 
 							"../math/show.php" => "Олимпиады по математике",
+							"../prog/show.php" => "Олимпиады по программированию",
 							"../books/show.php" => "Книги");
 			$css = "colomns_in_header";
 			print_buttons("", "../books/show.php", $buttons, $css, "");

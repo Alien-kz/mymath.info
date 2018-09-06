@@ -1,0 +1,208 @@
+\documentclass[10pt, a4paper, landscape]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{longtable}			%long table
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\sloppy							%correct overfull
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{#3 \\ #2}
+	\rhead{#1}
+	
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+}
+\newcommand{\accept}[2]{
+	\centerline{\boxed{#1}}
+	\newline
+	\centerline{\scriptsize{#2}}
+}
+\newcommand{\reject}[1]{
+	\centerline{#1}
+}
+\def\arraystretch{1.5}
+
+\begin{document}
+
+\head{Открытая олимпиада по программированию \\ Зимний тур 2013}{11 декабря 2013}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\begin{center}
+\begin{longtable}{|c|p{0.2\linewidth}|p{0.2\linewidth}|*{8}{p{0.025\linewidth}|}c|c|}
+\hline 
+№ & Команда & Состав & A & B & C & D & E & F & G & H & Итог & Штраф \\
+\hline
+\endhead
+1 & Big Dipper 	&	Шокетаева Надира (ММ-11) 	\newline Таранов Денис (ВМ-11)		\newline Тлеубаев Адиль (ВМ-21) &
+\accept{+1}{0:20} & 
+\accept{+1}{0:50} &
+\accept{+3}{2:10} & 
+\accept{+2}{0:37} &
+\accept{+}{1:44} & 
+\accept{+}{0:56} &
+\accept{+2}{2:20} & 
+\reject{-5} & 
+7 & 
+717 \\
+\hline 
+2 & MSU Team &	Васильев Андрей (ВМ-11)		\newline Таскынов Ануар (ВМ-11) &
+\accept{+2}{1:20} &
+\accept{+2}{3:22} &
+\accept{+1}{1:49} &
+\accept{+}{1:07} &
+\accept{+1}{2:49} &
+\accept{+1}{1:14} &
+\accept{+1}{2:15} &
+  &
+7 &
+996 \\
+\hline 
+3 & CMC AID &	Оспанов Аят (ВМ-21)			\newline Ламонов Иван (ВМ-21)		\newline Солтанова Дана (ВМ-21) &
+ \accept{+}{0:28} &
+ \accept{+}{2:22} &
+\reject{-3} &
+\accept{+1}{1:52} &
+\accept{+1}{3:30} &
+\accept{+1}{1:09} &
+  &
+  &
+5 &
+621 \\
+\hline 
+4 & msu\_03		&	Вержбицкий Владислав (ВМ-11)\newline Амир Мирас (ВМ-11)		\newline Матвеева Виктория (ВМ-11) &
+\accept{+1}{2:28} &
+\accept{+1}{1:07} &
+ \accept{+}{1:37} &
+  &
+  &
+ \accept{+}{2:40} &
+\accept{+5}{3:07} &
+  &
+5 &
+799 \\
+\hline 
+5 & msu\_04		&	Седякин Илья (ВМ-11) &
+\reject{-1} &
+ \accept{+}{1:51} &
+ \accept{+}{1:39} &
+ \accept{+}{0:53} &
+  &
+\accept{+1}{2:14} &
+\accept{+3}{3:13} &
+  &
+5 &
+670 \\
+\hline 
+6 & msu\_06		&	Автайкина Мария (ВМ-21)		\newline Журавлев Вадим (ВМ-21)	\newline Овчинников Дмитрий (ВМ-21) &
+\accept{+1}{0:23} &
+ \accept{+}{3:00} &
+ \accept{+}{1:13} &
+  &
+\reject{-2} &
+\accept{+2}{2:27} &
+\reject{-1} &
+  &
+4 &
+483 \\
+\hline 
+7 & Повары ЕНУ	&	Пашовкин Никита (ЕНУ)		\newline Тукубаев Эльдар (ЕНУ)		\newline Утюганов Никита (ЕНУ) &
+ \accept{+}{1:09} &
+  &
+  &
+  &
+  &
+ \accept{+}{1:49} &
+  &
+  &
+2 &
+178 \\
+\hline 
+8 & INFO32		&	Артем (ЕНУ)					\newline Никита (ЕНУ)  &
+ \accept{+}{0:36} &
+  &
+  &
+  &
+  &
+  &
+  &
+  &
+1 &
+36 \\
+\hline 
+9 & Unknown		&	Мамазов Мирхия (ММ-11)		\newline Искаков Амиран (ММ-21)	\newline Зейникешева Индира (ММ-21) &
+ \accept{+}{0:44} &
+  &
+  &
+  &
+  &
+\reject{-2} &
+  &
+  &
+1 &
+44 \\
+\hline 
+10 & msu\_08		&	Айбол (ЕНУ)					\newline Нурсултан (ЕНУ)			\newline Олег (ЕНУ) &
+\accept{+1}{1:58} &
+  &
+  &
+  &
+  &
+\reject{-3} &
+  &
+  &
+1 &
+138 \\
+\hline 
+11 & msu\_16		&	Шагадатов Нурлан (ММ-11)	\newline Турашев Ербол (ММ-11)		\newline Сальменов Нурсултан (ММ-11) &
+  &
+  &
+\reject{-1} &
+  &
+  &
+\accept{+1}{2:35} &
+  &
+  &
+1 &
+175 \\
+\hline
+ & & Успешных попыток &
+9  &
+6  &
+5  &
+4  &
+3  &
+8  &
+4  &
+0  &
+39  &
+  \\
+\hline 
+ & & Всего попыток &
+16  &
+10  &
+12  &
+7  &
+7  &
+19  &
+16  &
+5  &
+92  &
+  \\
+\hline 
+\end{longtable} 
+\end{center}
+
+\end{document} 

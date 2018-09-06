@@ -1,0 +1,233 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{calc}			%draw pictures: coordinate calc
+% \usetikzlibrary{external}		%draw pictures: cache pitcures
+% \tikzexternalize				%cache pictures
+\usepackage{listings}			%code
+\usepackage{enumitem}			%noindent
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\newcommand{\subsectionbreak}{\clearpage} %new section
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{#3 \\ #2}
+	\rhead{#1}
+	
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+}
+
+\lstset{language=C++}
+\lstset{basicstyle=\footnotesize\ttfamily} 
+\lstset{keywordstyle=\color{blue}}
+\lstset{frame=single}
+\lstset{numbers=left}
+
+\sloppy
+
+\newcommand{\problemauthor}[1]{
+\begin{flushright}
+\textit{Автор: #1}
+\end{flushright}
+}
+
+\newcommand{\problemofferer}[1]{
+\begin{flushright}
+\textit{Предложил: #1}
+\end{flushright}
+}
+
+
+\begin{document}
+
+\head{Открытая олимпиада по программированию \\ Весенний тур 2015}{18 марта 2015}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\subsubsection*{A. Аdamant digit} 
+
+\problemauthor{Абдикалыков А.К.}
+
+Число будет состоять из $m$ одинаковых цифр $(n-1) \bmod 9 + 1$, где $m = \left[\frac{n-1}{9}\right] + 1$.
+
+Асимптотика: $O(n)$.
+
+
+
+\subsubsection*{B. Binary palindromes} 
+
+\problemauthor{ Баев А.Ж.}
+
+Обозначим $f(k)$ --- число, полученное перевернутой битовой записью числа $k$.
+
+Пусть двоичная запись числа $n$ состоит из $2d$ бит. Отразим  первую половину битов (число $k = \left[\frac{n}{2^d}\right]$) на вторую зеркально:
+$$g_1(n) = 2^d k + f(k)$$
+Если $g_1(n) \leqslant n$, то $g_1(n)$ является ответом. Иначе уменьшим на единицу первую битовую половину числа $n$ и также отразим на вторую зеркально:
+$$g_2(n) = 2^d (k - 1) + f(k - 1)$$
+
+Если двочиная запись числа $n$ состоит из $2d+1$ бит, то поступаем аналогично:
+$$g_1(n) = 2^d k + f\left(\left[ \frac{k}{2} \right]\right)$$
+$$g_2(n) = 2^d (k - 1) + f\left(\left[ \frac{k-1}{2} \right]\right)$$
+
+Асимптотика: $O(\log n)$.
+
+
+
+\subsubsection*{C. Composition of matrices} 
+
+\problemauthor{ Баев А.Ж.}
+
+Вектор не изменит свою длину, если перед операцией проектирования на ось, он параллелен этой оси. Переберем все возможные целочисленные углы поворота $\alpha$ от 0 до 179 (градусов). Перед каждым оператором проецирования, начиная со второго, проверим величину текущего угла по модулю 180. Если перед проецированием на $OX$ угол отличен от 0, то $\alpha$ не подходит. Если перед проецированием на $OY$ угол отличен от 90, то $\alpha$ не подходит.
+
+Асимптотика: $O(n)$.
+
+
+
+\subsubsection*{D. Deep tree} 
+
+\problemauthor{ Абдикалыков А.К.}
+
+Заметим, что переходы по дереву соответствуют нахождению наибольшего общего делители чисел. Причем, если наибольший общий делитель $(p, q)$ отличен от 1, то решения нет. Значит, ответом будет количество итераций в алгоритме Евклида. Если $gcd(a, b)$ --- количество действий для получения чисел $(a, b)$, то
+$$gcd(a, b) = gcd(b, a \bmod b) + a / b.$$
+
+Амиптотика: $O(\log{\max(a, b)})$.
+
+Указание: алгоритм Евклида с вычитанием не проходил из-за ограничений по времени.
+
+
+
+\subsubsection*{E. Empty сornet} 
+
+\problemauthor{ Баев А.Ж.}
+
+Если хотя бы у одной из трех точек координата $z_i < 0$, то решения нет. В противном случае, достаточно найти объем тетраэдра
+$$V = \frac{1}{6} \det
+\begin{pmatrix}
+x_1 & y_1 & z_1 \\
+x_2 & y_2 & z_2 \\
+x_3 & y_3 & z_3 \\
+\end{pmatrix}
+$$
+Так как уровень должен быть параллелен плоскости $XOY$, то необходимо произвести нормировку векторов $(x_1, y_1, z_1)$, $(x_2, y_2, z_2)$ и $(x_3, y_3, z_3)$ так, чтобы их $z$-координата была равна $h = \min{z_1, z_2, z_3}$ --- минимальной из трех. Таким образом, объем равен:
+$$\tilde{V} = V \cdot \frac{h^3}{z_1 z_2 z_3}.$$
+
+Асимптотика: $O(1)$.
+
+
+
+\subsubsection*{F. Fantastic system} 
+
+\problemauthor{ Абдикалыков А.К.}
+
+Пусть $d[i]$ --- количество способов записать $i$ в фантастической системе счисления. 	
+
+Если $i = 2 k + 1$, то разряд единиц может быть только 1, а остальные разряды являются разрядами числа $k$. 
+
+Если $i = 2 k$, то разряд единиц может быть либо 0, либо 2. Если это 0, то остальные разряды соответствуют разрядам числа $k$. Если это 2, то остальные разряды соответствуют числу $k - 1$.
+
+Итог:
+$$
+\begin{cases}
+d[2 k + 1] = d[k]\\
+d[2 k] = d[k] + d[k - 1]
+\end{cases}
+$$
+Начальные значения: $d[0] = 1$, $d[1] = 1$.
+
+
+
+\subsubsection*{G. Great graph} 
+
+\problemauthor{ Абдикалыков А.К., Баев А.Ж.}
+
+Строим решето Эратосфена для первых $10 000$ чисел. Фиксируем $n$. Числа будем искать обходом в глубину или ширину, где переход между числами проверяется по решету Эратосфена. Ясно, что если задача имеет решение при некотором $n$, то она имеет решение и при больших $n$. Аналогично, если она не выполнима при $n$, то и не выполнима при меньших. Значит ответ можно найти бинарным поиском по $n$ из диапазона от 0 до 10 000.
+
+Стоит отметить, что число ребер не превышает $n^2$.
+
+Асимптотика: $O( m \log m + n^2 \log m)$ 
+
+
+
+\subsubsection*{H. H} 
+
+\problemauthor{ Абдикалыков А.К., Баев А.Ж.}
+
+Ответом на задачу было название задачи этой олимпиады: 'Adamant digit', 'Binary palindromes', 'Composition of matrices', 'Deep tree', 'Empty cornet', 'Fantastic system', 'Great graph', 'H', 'Insidious time limit', 'Jagged sequence'.
+
+Асимптотика: $O(1)$.
+
+\subsubsection*{I. Insidious time limit}
+
+\problemauthor{ Абдикалыков А.К.}
+
+Используем матричное умножение:
+$$
+\begin{pmatrix}
+a_{n} \\
+a_{n-1} \\
+a_{n-2} \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 & 1 & 1 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+\end{pmatrix}
+\begin{pmatrix}
+a_{n-1} \\
+a_{n-2} \\
+a_{n-3} \\
+\end{pmatrix}
+$$
+Такие образом $(a_n, a_{n-1}, a_{n_2})^{T} = A^{n-2} (a_2, a_1, a_0)^{T}$. Осталось вычислить степень матрицы $A^{n-2}$, что можно сделать бинарным возведением в степень:
+$
+A^m =
+\begin{cases}
+E, \text{ если m = 0}\\
+\left(A^{[n/2]}\right) ^ 2, \text{ если } m \text{ --- четное, }m > 0\\
+\left(A^{[n/2]}\right) ^ 2 \cdot A, \text{ если } m \text{ --- нечетное}\\
+\end{cases}
+$
+
+Асимптотика: $O(\log n)$ 
+
+Замечание 1: все умножения в матричных действиях необходимо производить по модулю.
+
+Замечание 2: наивное решение не проходит по ограничениям времени.
+
+
+
+\subsubsection*{J. Jagged sequence} 
+
+\problemauthor{ Абдикалыков А.К.}
+
+Рассмотрим вспомогательную последовательность $b_i = a_i - i$. Необходимо изменить ее числа так, чтобы все числа стали равными.
+
+Решение 1. Отсортируем числа по возрастанию $\tilde{b}_i$. Искомым числом будет медиана $\tilde{b}[n / 2]$. Действительно, если искомое число меньше, то каждое число $\tilde{b}[i]$ при $i \geqslant [n / 2]$ необходимо уменьшить дополнительно на 1, а числа $\tilde{b}[i]$ при $i < [n / 2]$ необходимо увеличить дополнительно на 1. Тогда общее количество изменений увеличится, так как чисел первой группы больше, чем чисел второй группы.
+
+Асимптотика: $O(n \log{n})$.
+
+Решение 2. Рассмотрим $m$ --- итоговое значение всех чисел. Тогда количество изменений равно
+$$ f(m) = \sum_{i=1}^{n} |b_i - m|$$
+Данная функция является кусочно-линейной и выпуклой вниз. Поэтому ее минимум можно найти тернарным поиском по $m$ на отрезке от $\min{b_i}$ до $\max{b_i}$.
+
+Асимптотика: $O( m \log(\max|a_i|+n))$.
+
+\end{document} 

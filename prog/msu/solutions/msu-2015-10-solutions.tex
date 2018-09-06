@@ -1,0 +1,159 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{calc}			%draw pictures: coordinate calc
+% \usetikzlibrary{external}		%draw pictures: cache pitcures
+% \tikzexternalize				%cache pictures
+\usepackage{listings}			%code
+\usepackage{enumitem}			%noindent
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\newcommand{\subsectionbreak}{\clearpage} %new section
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{#3 \\ #2}
+	\rhead{#1}
+	
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+}
+
+\lstset{language=C++}
+\lstset{basicstyle=\footnotesize\ttfamily} 
+\lstset{keywordstyle=\color{blue}}
+\lstset{frame=single}
+\lstset{numbers=left}
+
+\sloppy
+
+\newcommand{\problemauthor}[1]{
+\begin{flushright}
+\textit{Автор: #1}
+\end{flushright}
+}
+
+\newcommand{\problemofferer}[1]{
+\begin{flushright}
+\textit{Предложил: #1}
+\end{flushright}
+}
+
+
+\begin{document}
+
+\head{Открытая олимпиада по программированию \\ Осенний тур 2015}{20 октября 2015}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\subsubsection*{A. Alternative result} 
+
+\problemauthor{Абдикалыков А.К.}
+
+Несложно убедиться, что можно получить все значения от 0 до $3n$, кроме $3n-1$.
+
+Асимптотика: $O(n)$.
+
+
+
+\subsubsection*{B. Boolean} 
+
+\problemauthor{Абдикалыков А.К.}
+
+Необходимо было вывести $N$-е слово из текста.
+
+Асимптотика: $O(1)$.
+
+
+
+\subsubsection*{C. Car collection} 
+
+\problemauthor{Баев А.Ж.}
+
+Ответом на задачу является:
+$$\sum_{i=1}^{n-1} \sum_{j=i+1}^{n} a_i a_j = \frac{1}{2} \left( (\sum_{i=1}^{n} {a_i})^2 - \sum_{i=1}^{n} a_i^2 \right).$$
+
+Асимптотика: $O(n)$.
+
+Замечание: наивное решение не проходит ограничения по времени.
+
+
+
+\subsubsection*{D. Domino} 
+
+\problemauthor{Баев А.Ж.}
+
+Промоделируем падения слева направо и справа налево. Для этого найдем максимальную длину положительной подстроки массива $l_i$, где $l_i = a_i - a_{i-1} - h_{i-1}$, и максимальную длину положительной подстроки массива $r_i$, где $r_i = a_i - a_{i+1} - h_{i+1}$. Ответов будет максимум из первого и второго случая.
+
+Асимптотика: $O(n)$.
+
+
+
+\subsubsection*{E. Enlarged triangle} 
+
+\problemauthor{Баев А.Ж.}
+
+Пусть $S(a, b, c)$ --- площадь треугольника со сторонами $a$, $b$, $c$. Несложно проверить, что функция $f(m) = S(a + m, b + m, c + m)$ является монотонно возрастающей (при условии, что $m > 0$ и треугольник с данными сторонами существует). Значит, ответ можно найти бинарным поиском по $m$ на отрезке $[0; \sqrt{2 S}]$.
+
+Асимптотика: $O(\log S)$.
+
+
+
+\subsubsection*{F. Footprints} 
+
+\problemauthor{Баев А.Ж.}
+
+Обозначим начальную позицию (0, 0). Далее промоделируем шаги $(x_i, y_i)$. Минимальные размеры лабиринта будут $(\max\limits_{1 \leqslant i \leqslant n} x_i - \min\limits_{1 \leqslant i \leqslant n} x_i)$ и $(\max\limits_{1 \leqslant i \leqslant n} y_i - \min\limits_{1 \leqslant i \leqslant n} y_i)$ соответственно.
+
+Асимптотика: $O(N)$.
+
+
+
+\subsubsection*{G. Great divisors} 
+
+\problemauthor{Абдикалыков А.К.}
+
+Максимальный собственный делитель числа $n$ равен $n / p_n$, где $p_n$ --- минимальное простое число, на которое делится $n$. Последовательность $p_n$ легко построить, используя стандартный алгоритм решета Эратосфена (у всех еще не вычеркнутых чисел вида $p^2 + p \cdot j$ минимальным простым делителем будет $p$).
+
+Асимптотика: $O(n \log n)$.
+
+
+
+\subsubsection*{H. Honest gifts} 
+
+\problemauthor{Баев А.Ж.}
+
+Ясно, что максимальным количество наборов с общим количество $p$ синих и $q$ красных карандашей будет $(p, q)$ --- наибольший общий делитель $p$ и $q$. Поэтому достаточно перебрать все числа $i$ от 0 до $k$ и выбрать максимум из $gcd(a - i, b - (k - i))$.
+
+Асимптотика: $O(k \log \max(a, b))$.
+
+
+
+\subsubsection*{I. Inner subset} 
+
+\problemauthor{Баев А.Ж.}
+
+Необходимо посчитать количество способов выбрать подпоследовательность так, чтобы сумма чисел была кратна $k$. Обозначим $d[i][r]$ --- количество подпоследовательностей из первых $i$ элементов, которые в сумму дают остаток $r$ при делении на $k$. Каждое такое подножество можно получить, либо добавив $a[i]$ элемент к подножествами множества из первых $i-1$ с остатком суммы равным $(r - a[i]) \bmod k$, либо не добавляя $a[i]$ элемент:
+$$d[i][r] = d[i-1][r] + d[i-1][(r - a[i]) \bmod k].$$
+Инициализировать динамику можно $d[0][0] = 1$ и $d[0][r] = 0$ при $r$ от 1 до $k-1$.
+
+Асимптотика: $O(n k)$.
+
+Замечание: не стоит забывать производить каждое сложение по модулю $10^9 + 7$, иначе произойдет переполнение ответа.
+
+\end{document} 

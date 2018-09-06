@@ -12,11 +12,11 @@
 			$agent = get_user_agent_type();
 			
 			if ($agent == 'desktop') {
-				echo "<link href='table.css?ver=2018-09-02-4' rel='stylesheet' type='text/css' >";
-				echo "<link href='../main.css?ver=2018-09-02-4' rel='stylesheet' type='text/css' >";
+				echo "<link href='table.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
+				echo "<link href='../main.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
 			} else {
-				echo "<link href='table_m.css?ver=2018-09-02-4' rel='stylesheet' type='text/css' >";
-				echo "<link href='../main_m.css?ver=2018-09-02-4' rel='stylesheet' type='text/css' >";
+				echo "<link href='table_m.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
+				echo "<link href='../main_m.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
 			}
 		?>
 		
@@ -26,6 +26,7 @@
 			$buttons = array("../index.php" => "Главная",
 							"../abiturient/show.php" => "Абитуриентам", 
 							"../math/show.php" => "Олимпиады по математике",
+							"../prog/show.php" => "Олимпиады по программированию",
 							"../books/show.php" => "Книги");
 			print_buttons("", "../math/show.php", $buttons, "colomns_in_header", "");
 

@@ -1,0 +1,137 @@
+\documentclass[10pt, a4paper, landscape]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{longtable}			%long table
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\sloppy							%correct overfull
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{#3 \\ #2}
+	\rhead{#1}
+	
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+}
+\newcommand{\accept}[2]{
+	\centerline{\boxed{#1}}
+	\newline
+	\centerline{\scriptsize{#2}}
+}
+\newcommand{\reject}[1]{
+	\centerline{#1}
+}
+\def\arraystretch{1.5}
+
+\begin{document}
+
+\head{Открытая олимпиада по программированию \\ Весенний тур 2014}{17 марта 2014}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\begin{center}
+\begin{longtable}{|c|p{0.2\linewidth}|p{0.2\linewidth}|*{8}{p{0.025\linewidth}|}c|c|}
+\hline 
+№ & Команда & Состав & A & B & C & D & E & F & G & H & Итог & Штраф \\
+\hline
+\endhead
+1 & Big Dipper &	Шокетаева Надира (ММ-11) 	\newline Таранов Денис (ВМ-11)		\newline Тлеубаев Адиль (ВМ-21) &
+\accept{+}{0:09}  &
+\accept{+}{0:12}  &
+\accept{+}{2:33}  &
+\accept{+2}{0:55}  &
+\accept{+10}{2:07}  &
+  &
+  &
+  &
+5 &
+596
+ \\
+\hline 
+2 & msu\_25		&	Автайкина Мария (ВМ-21)		\newline Журавлев Вадим (ВМ-21)	\newline Овчинников Дмитрий (ВМ-21) &
+\accept{+4}{1:11}  &
+\accept{+}{0:12}  &
+\accept{+1}{2:49}  &
+  &
+\accept{+}{2:01}  &
+\reject{-3} &
+  &
+  &
+4 &
+473 \\
+\hline 
+3 & CMC AID		&	Оспанов Аят (ВМ-21)			\newline Ламонов Иван (ВМ-21)		\newline Солтанова Дана (ВМ-21) &
+\accept{+1}{0:36}  &
+\accept{+1}{0:09}  &
+\accept{+}{1:33}  &
+\reject{-1} &
+  &
+  &
+  &
+  &
+3 &
+178 \\
+\hline 
+4 & msu\_23		&	Седякин Илья (ВМ-11) \newline Васильев Андрей (ВМ-11)		\newline Таскынов Ануар (ВМ-11) &
+\accept{+1}{0:08}  &
+\accept{+}{0:10}  &
+\accept{+1}{2:21}  &
+  &
+\reject{-2} &
+  &
+  &
+  &
+3 &
+199 \\
+\hline
+5 & VM		&	Амир Мирас (ВМ-11)		\newline Матвеева Виктория (ВМ-11) &
+\reject{-4} &
+\accept{+1}{0:25}  &
+\reject{-4} &
+  &
+  &
+  &
+  &
+  &
+1 &
+45 \\
+\hline
+ & & Успешных попыток &
+4  &
+5  &
+4  &
+1  &
+2  &
+0  &
+0  &
+0  &
+16  &
+  \\
+\hline 
+ & & Всего попыток &
+14  &
+7  &
+10  &
+4  &
+14  &
+3  &
+0  &
+0  &
+52  &
+  \\
+\hline 
+\end{longtable} 
+\end{center}
+
+\end{document} 

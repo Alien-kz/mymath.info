@@ -1,0 +1,208 @@
+\documentclass[10pt, a4paper, landscape]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{longtable}			%long table
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\sloppy							%correct overfull
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{#3 \\ #2}
+	\rhead{#1}
+	
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+}
+\newcommand{\accept}[2]{
+	\centerline{\boxed{#1}}
+	\newline
+	\centerline{\scriptsize{#2}}
+}
+\newcommand{\reject}[1]{
+	\centerline{#1}
+}
+\def\arraystretch{1.5}
+
+\begin{document}
+
+\head{Открытая олимпиада по программированию \\ Зимний тур 2014}{9 декабря 2014}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\begin{center}
+\begin{longtable}{|c|p{0.2\linewidth}|p{0.2\linewidth}|*{9}{p{0.025\linewidth}|}c|c|}
+\hline 
+№ & Команда & Состав & A & B & C & D & E & F & G & H & I & Итог & Штраф \\
+\hline
+\endhead
+1 & Lord Bendtner Team	 & Седякин Илья (ВМ-21)\newline Таскынов Ануар (ВМ-21)\newline Вержбицкий Владислав (ВМ-21) & 
+\accept{+1}{0:44}  &
+\accept{+3}{1:33}  &
+  &
+\accept{+2}{2:05}  &
+\accept{+}{3:30}  &
+\accept{+}{0:18}  &
+  &
+\accept{+}{2:52}  &
+\accept{+1}{3:12}  &
+7 &
+994\\
+\hline
+2 & Снежный Куб	 & Журавская Александра (ВМ-11)\newline Камалбеков Тимур (ВМ-11)\newline Абайулы Ерулан (ВМ-11) & 
+\accept{+}{0:24}  &
+\accept{+3}{1:19}  &
+  &
+\accept{+}{1:35}  &
+  &
+\accept{+}{0:20}  &
+  &
+\accept{+7}{2:47}  &
+\accept{+3}{2:31}  &
+6 &
+796\\
+\hline
+3 & A\}K	 & Амир Мирас (ВМ-21)\newline Шабхатов Асылжан (ВМ-21)\newline Советхан Амина (ВМ-21) & 
+\accept{+}{0:42}  &
+\accept{+1}{2:47}  &
+  &
+\accept{+1}{2:03}  &
+\accept{+}{1:51}  &
+\accept{+}{1:13}  &
+  &
+-1 &
+\accept{+3}{3:15}  &
+6 &
+811\\
+\hline
+4 &	Big Dipper & Шокетаева Надира (ММ-21)\newline Жусупов Али (ММ-11)\newline Таранов Денис (ВМ-21) & 
+\accept{+2}{0:10}  &
+\accept{+3}{0:40}  &
+  &
+\accept{+1}{1:18}  &
+\accept{+}{2:05}  &
+\accept{+}{0:23}  &
+  &
+\reject{-1} &
+  &
+5 &
+396\\
+\hline
+5 &	XaveScor	& Васильев Андрей (ВМ-21) & 
+\accept{+}{0:36}  &
+\accept{+1}{2:42}  &
+  &
+  &
+  &
+\accept{+1}{0:48}  &
+  &
+\accept{+2}{2:19}  &
+  &
+4 &
+465\\
+\hline
+6 & Фанаты Гарри Поттера	 & Омаров Темирхан (ВМ-11)\newline Иглымов Алишер (ВМ-11)\newline Менжесаров Ермек (ВМ-11) & 
+\accept{+2}{0:33}  &
+\reject{-2} &
+  &
+  &
+  &
+\accept{+}{1:21}  &
+  &
+  &
+  &
+2 &
+154\\
+\hline
+7 & The Big Bang	 & Вишневский Виктор (ММ-11)\newline Исакова Жаркын (ММ-11)\newline Ким Виолетта (ММ-11) & 
+\accept{+}{1:30}  &
+  &
+  &
+  &
+  &
+\accept{+}{2:04}  &
+  &
+\reject{-1} &
+  &
+2 &
+214\\
+\hline
+8 & Sheldon	 & Ганиев Адилет (ММ-11)\newline Кертаев Темирлан (ММ-11)\newline Абдильманов Ернар (ММ-11) & 
+\accept{+}{0:46}  &
+  &
+  &
+  &
+  &
+\accept{+1}{3:13}  &
+  &
+  &
+  &
+2 &
+259\\
+\hline
+9 & Команда ЕНУ \#1	 & Синьков (ЕНУ) \newline Новожилов (ЕНУ) \newline Омирзак (ЕНУ)& 
+\accept{+}{0:46}  &
+\reject{-9} &
+  &
+  &
+  &
+  &
+  &
+  &
+  &
+1 &
+46\\
+\hline
+10 & Still Remaining	 & Колесников Владислав (ВМ-11)\newline Смагулов Мирас (ВМ-11)\newline Даку Ансар (ВМ-11) & 
+\accept{+3}{3:17}  &
+  &
+  &
+  &
+  &
+  &
+  &
+  &
+  &
+1 &
+257\\
+\hline
+ & & Успешных попыток &
+10  &
+5  &
+0  &
+4  &
+3  &
+8  &
+0  &
+3  &
+3  &
+36  &
+  \\
+\hline 
+ & & Всего попыток &
+18 &
+16  &
+0  &
+8  &
+3  &
+10  &
+0  &
+12  &
+10  &
+77  &
+  \\
+\hline 
+\end{longtable} 
+\end{center}
+
+\end{document} 

@@ -1,0 +1,81 @@
+\documentclass[10pt, a4paper, landscape]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{longtable}			%long table
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\sloppy							%correct overfull
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{#3 \\ #2}
+	\rhead{#1}
+	
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+}
+\newcommand{\accept}[2]{
+	\centerline{\boxed{#1}}
+	\newline
+	\centerline{\scriptsize{#2}}
+}
+\newcommand{\reject}[1]{
+	\centerline{#1}
+}
+\def\arraystretch{1.5}
+
+\begin{document}
+
+\head{Открытая олимпиада по программированию \\ Весенний тур 2017}{31 мая 2017}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\begin{center}
+\begin{longtable}{|c|c|p{0.2\linewidth}|p{0.2\linewidth}|*{9}{p{0.025\linewidth}|}c|c|}
+\hline
+№  & КФ  & Команда & Состав & A & B & C & D & E & F & G & H & I & Итог & Штраф 
+\\
+\hline
+\endhead
+1 &  & WeeD & Орынкул Батырхан (НУ) \newline  Иманмалик Ержан (НУ)  & \accept{+}{0:07}  & \accept{+1}{2:08}  & \accept{+}{0:18}  & \accept{+}{1:14}  & \accept{+3}{1:21}  & \accept{+1}{3:44}  & \accept{+}{0:34}  & \accept{+43}{2:28}  & \accept{+}{0:51}  & 9 & 1725\\
+\hline
+2 & 1 & гРиБы & Аскергали Ануар (ВМ-1) \newline  Бекмаганбетов Бекарыс (ММ-1) \newline Шарипов Азат (ВМ-1)  & \accept{+}{0:11}  & \reject{-1} & \accept{+}{1:50}  & \accept{+}{1:28}  & \accept{+}{0:42}  &   & \accept{+}{0:52}  & \reject{-4} & \accept{+1}{1:37}  & 6 & 420\\
+\hline
+3 &  & Premium  Basher & Сайланбаев Алибек   (НУ) \newline  Жусупов Али (ЕНУ) \newline Дуйсенбаев Азамат (ЕНУ) & \accept{+}{0:11}  & \reject{-5} & \accept{+}{1:01}  & \accept{+}{1:48}  & \accept{+1}{0:44}  &   & \accept{+}{2:39}  & \reject{-29} & \accept{+2}{1:26}  & 6 & 529\\
+\hline
+4 & 2 & Snowy Cube & Журавская Александра (ВМ-3) \newline  Абайулы Ерулан (ВМ-3)   \newline Камалбеков Тимур (ВМ-3)  & \accept{+}{0:07}  &   & \accept{+2}{1:41}  & \accept{+1}{0:41}  & \accept{+}{0:21}  &   &   &   & \accept{+5}{1:30}  & 5 & 420\\
+\hline
+5 &  & FM-coders & Айкен (ЕНУ)   \newline  Адилет (ЕНУ) \newline Нурлан (ЕНУ)& \accept{+}{0:28}  &   & \accept{+3}{2:49}  & \accept{+1}{2:17}  & \accept{+6}{3:18}  &   & \accept{+}{1:22}  & \reject{-24} & \reject{-2} & 5 & 814\\
+\hline
+6 & 3 & Жизнь за Нерзула & Болотников Димитрий   (ММ-2) \newline  Газизов Куат (ММ-2) \newline Кунакбаев Рамазан (ММ-1)  & \accept{+}{2:45}  &   & \reject{-2} & \accept{+2}{3:15}  & \accept{+}{2:00}  &   & \accept{+}{2:51}  &   & \accept{+1}{3:41}  & 5 & 932\\
+\hline
+7 &  & Тот самый  бэт-спрей  \newline против акул & Погребная Александра  \newline (6 гимназия)   \newline  Сапаргалиев Олжас (60 лицей)    \newline Агаси Керопян (ВМ-2) & \accept{+}{1:29}  &   &   & \accept{+1}{2:20}  & \accept{+5}{1:15}  & \reject{-1} & \reject{-2} & \accept{+43}{3:56}  & \reject{-16} & 4 & 1520\\
+\hline
+8 & 4 & AAC & Козган Айжас (ВМ-2) \newline  Ким Владимир (ВМ-2) \newline Абдыклик Чингиз (ВМ-2) & \accept{+}{2:10}  & \reject{-1} &   & \accept{+1}{2:58}  & \reject{-6} &   & \accept{+}{2:51}  &   & \reject{-7} & 3 & 499\\
+\hline
+9 & 5 & VirusVAR & Татин Алмаз  (ВМ-2)  \newline  Кожемяк Виталий (ВМ-2)   \newline Мырзабеков Руслан (ВМ-2)  & \accept{+}{0:37}  &   &   &   & \reject{-1} &   & \accept{+1}{3:03}  &   &   & 2 & 240\\
+\hline
+10 & 6 & tomorrow exam & Омаров Темирхан (ВМ-3) & \accept{+}{0:41}  &   &   &   & \reject{-3} &   &   &   &   & 1 & 41\\
+\hline
+11 & 7 & ZhalgasIChiki & Ержанов Жалгас (ВМ-1)  & \accept{+1}{1:37}  &   &   &   & \reject{-5} &   &   &   &   & 1 & 117\\
+\hline
+  &  & Успешных попыток &   & 11 & 1 & 5 & 8 & 7 & 1 & 7 & 2 & 5 & 47 &  \\
+\hline
+  &  & Всего попыток &   & 13 & 9 & 12 & 14 & 50 & 4 & 10 & 148 & 46 & 306 &  \\
+\hline
+  &  & \%: &   & 85\% & 11\% & 42\% & 57\% & 14\% & 25\% & 70\% & 1\% & 11\% & 15\% &  \\
+\hline
+\end{longtable}
+\end{center}
+
+\end{document} 

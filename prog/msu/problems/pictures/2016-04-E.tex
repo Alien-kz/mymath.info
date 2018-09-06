@@ -1,0 +1,116 @@
+\setsepchar{\\/ }
+\readlist\levelA{%
+1 1 1 1 1 1 1\\%
+1 1 1 1 1 1 1\\%
+1 1 1 1 1 1 1\\%
+1 1 1 0 1 1 1\\%
+1 1 1 1 1 1 1\\%
+1 1 1 1 1 1 1\\%
+1 1 1 1 1 1 1\\%
+}
+\readlist\levelB{%
+1 1 1 1 1 0 0\\%
+1 0 0 0 1 0 0\\%
+1 0 1 1 1 1 1\\%
+1 0 1 0 1 0 1\\%
+1 0 1 1 1 0 1\\%
+1 0 0 0 0 0 1\\%
+1 1 1 1 1 1 1\\%
+}
+\readlist\levelC{%
+1 1 1 1 1 0 0\\%
+1 2 2 2 1 0 0\\%
+1 2 2 2 1 1 1\\%
+1 2 2 2 2 2 1\\%
+1 2 2 2 2 2 1\\%
+1 2 2 2 2 2 1\\%
+1 1 1 1 1 1 1\\%
+}
+\readlist\levelD{%
+1 1 1 1 1 0 0\\%
+1 0 0 0 0 0 0\\%
+1 0 0 0 1 0 1\\%
+1 0 0 0 0 0 1\\%
+1 0 0 0 0 0 1\\%
+1 0 0 0 0 0 1\\%
+1 1 1 1 1 1 1\\%
+}
+
+\newcommand{\cubeshift}[3]{ 
+\coordinate (O) at (0, 0);
+\coordinate (R) at (3, 1);
+\coordinate (L) at (-1, 3);
+\coordinate (D) at (0, -1.5);
+\coordinate (Shift) at ($-#1*(R)-#2*(L)-#3*(D)$);
+}
+
+\newcommand{\cube}{ 
+\begin{scope}
+\draw[fill=black!60!white]
+	($(O) + (Shift)$) -- 
+	($(R) + (Shift)$) -- 
+	($(R) + (D) + (Shift)$) -- 
+	($(D) + (Shift)$) -- 
+	cycle;
+\draw[fill=black!60!white]
+	($(O) + (Shift)$) -- 
+	($(L) + (Shift)$) -- 
+	($(L) + (D) + (Shift)$) -- 
+	($(D) + (Shift)$) -- 
+	cycle;
+\draw[fill=black!30!white]
+	($(O) + (Shift)$) -- 
+	($(L) + (Shift)$) -- 
+	($(L) + (R) + (Shift)$) -- 
+	($(R) + (Shift)$) -- 
+	cycle;
+\end{scope}
+}
+
+\newcommand{\plane}{ 
+\begin{scope}
+\fill[opacity=0.7]
+	($(O) + (Shift)$) -- 
+	($(L) + (Shift)$) -- 
+	($(L) + (R) + (Shift)$) -- 
+	($(R) + (Shift)$) -- 
+	cycle;
+\end{scope}
+}
+\newcommand{\layout}[3]{
+	\def\showwater{#3}
+	\foreach \x in {1, ..., 7} {
+		\foreach \y in {1, ..., 7} {
+			\def\iscube{#1[\y,8 - \x]}
+			\ifnum\iscube=1
+				\cubeshift{\x}{\y}{#2}
+				\cube
+			\fi
+			\ifnum\showwater=1
+				\ifnum\iscube=2
+					\cubeshift{\x}{\y}{#2}
+					\plane
+				\fi
+			\fi
+		}
+	}
+}
+
+\begin{center}
+\resizebox{0.45\linewidth}{!}{
+\begin{tikzpicture}
+\layout{\levelA}{1}{0}
+\layout{\levelB}{2}{0}
+\layout{\levelC}{3}{0}
+\layout{\levelD}{4}{0}
+\end{tikzpicture}
+}
+\resizebox{0.45\linewidth}{!}{
+\begin{tikzpicture}
+\layout{\levelA}{1}{0}
+\layout{\levelB}{2}{0}
+\layout{\levelC}{3}{1}
+\layout{\levelD}{4}{0}
+\end{tikzpicture}
+}
+\end{center}

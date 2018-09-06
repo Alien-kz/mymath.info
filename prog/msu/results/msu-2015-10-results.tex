@@ -1,0 +1,154 @@
+\documentclass[10pt, a4paper, landscape]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{longtable}			%long table
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\sloppy							%correct overfull
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{#3 \\ #2}
+	\rhead{#1}
+	
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+}
+\newcommand{\accept}[2]{
+	\centerline{\boxed{#1}}
+	\newline
+	\centerline{\scriptsize{#2}}
+}
+\newcommand{\reject}[1]{
+	\centerline{#1}
+}
+\def\arraystretch{1.5}
+
+\begin{document}
+
+\head{Открытая олимпиада по программированию \\ Осенний тур 2015}{20 октября 2015}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\begin{center}
+\begin{longtable}{|c|p{0.2\linewidth}|p{0.2\linewidth}|*{9}{p{0.025\linewidth}|}c|c|}
+\hline 
+№ & Команда & Состав & A & B & C & D & E & F & G & H & I & Итог & Штраф\\
+\hline
+\endhead
+1 & Snowy Cube	 & Камалбеков Тимур (ВМ-2) \newline Абайулы Ерулан (ВМ-2) & 
+\accept{+2}{0:27}  &
+\accept{+}{0:10}  &
+\accept{+}{0:47}  &
+\accept{+1}{2:44}  &
+\accept{+2}{1:11}  &
+\accept{+}{0:44}  &
+\accept{+2}{1:23}  &
+\accept{+}{1:31}  &
+  &
+8 &
+677\\
+\hline
+2 & Банка огурцов	 & Турганбаев Сатбек (ВМ-2) \newline Омаров Темирхан (ВМ-2) \newline Жусупов Али (ММ-2) & 
+\accept{+2}{2:11}  &
+\accept{+6}{1:57}  &
+\accept{+1}{1:09}  &
+\reject{-3} &
+  &
+\accept{+3}{2:17}  &
+\accept{+1}{2:33}  &
+\accept{+1}{2:46}  &
+  &
+6 &
+1053\\
+\hline
+3 & School Dominators	 & Сёмочкин Константин (школа) \newline Ещанов Данияр (школа) \newline Сапаргалиев Олжас (школа) & 
+\accept{+1}{0:32}  &
+\reject{-4} &
+\reject{-2} &
+  &
+\accept{+}{1:20}  &
+\accept{+}{1:46}  &
+  &
+\reject{-5} &
+  &
+3 &
+238\\
+\hline
+4 & Pascal/C++	 & Абдыкалик Чингиз (ВМ-1) \newline Кожемяк Виталий (ВМ-1) \newline Малик Алмат (ММ-2) & 
+\accept{+}{0:32}  &
+\reject{-7} &
+\reject{-2} &
+  &
+  &
+  &
+\reject{-5} &
+  &
+  &
+1 &
+32\\
+\hline
+5 & HAWK	 & Керопян Агаси (ВМ-1) \newline Ахметов Дастан (ВМ-1) \newline Мырзабеков Руслан (ВМ-1) & 
+\accept{+1}{1:45}  &
+\reject{-8} &
+  &
+  &
+  &
+  &
+  &
+  &
+  &
+1 &
+125\\
+\hline
+6 & Avadakedavra	 & Болотников Дмитрий (ММ-1) \newline Савицкая Нина (ММ-1) \newline Коробов Павел (ММ-1) & 
+\accept{+}{2:45}  &
+\reject{-5} &
+  &
+  &
+  &
+  &
+  &
+  &
+  &
+1 &
+165\\
+\hline
+ & & Успешных попыток &
+6  &
+2  &
+2  &
+1  &
+2  &
+3  &
+2  &
+2  &
+0  &
+20 & \\
+\hline 
+ & & Всего попыток &
+12  &
+34  &
+8  &
+5  &
+4  &
+6  &
+14  &
+8  &
+0  &
+91 & \\
+\hline 
+\end{longtable} 
+\end{center}
+
+\end{document} 

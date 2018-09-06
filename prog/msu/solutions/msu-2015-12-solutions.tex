@@ -1,0 +1,144 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{calc}			%draw pictures: coordinate calc
+% \usetikzlibrary{external}		%draw pictures: cache pitcures
+% \tikzexternalize				%cache pictures
+\usepackage{listings}			%code
+\usepackage{enumitem}			%noindent
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\newcommand{\subsectionbreak}{\clearpage} %new section
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{#3 \\ #2}
+	\rhead{#1}
+	
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+}
+
+\lstset{language=C++}
+\lstset{basicstyle=\footnotesize\ttfamily} 
+\lstset{keywordstyle=\color{blue}}
+\lstset{frame=single}
+\lstset{numbers=left}
+
+\sloppy
+
+\newcommand{\problemauthor}[1]{
+\begin{flushright}
+\textit{Автор: #1}
+\end{flushright}
+}
+
+\newcommand{\problemofferer}[1]{
+\begin{flushright}
+\textit{Предложил: #1}
+\end{flushright}
+}
+
+
+\begin{document}
+
+\head{Открытая олимпиада по программированию \\ Зимний тур 2015}{18 декабря 2015}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\subsubsection*{A. Alexandra and Exam} 
+
+\problemauthor{Жусупов Али}
+
+Вычислим четыре значения $x \pm y \pm z$ и прибавим к ответу те из них, которые делятся на 10.
+
+Асимптотика: $O(1)$.
+
+
+
+\subsubsection*{B. Ball and Snowy Cube} 
+
+\problemauthor{Журавская Александра}
+
+Если сфера целиком лежит в одном из октантов ($|x| \geqslant r$, $|y| \geqslant r$ и $|z| \geqslant r$), то минимальная возможная сторона куба равна
+$$\max(|x| + r, |y| + r, |z| + r).$$
+В противном случае, такого куба не существует.
+
+Асимптотика: $O(1)$.
+
+
+
+\subsubsection*{С. Calculation of Erulan Numbers} 
+
+\problemauthor{Абайулы Ерулан}
+
+Легко найти, что при $k$ равном 1, 2, 3 и 4 подходящих чисел будет $num[k]:$ 9, 14, 56 и 260, соответственно. Что сразу позволяет отсеять неподходящие варианты, если $n > num[k]$.
+
+При $k < 6$ ответы можно сгенерировать вручную, проверяя каждое число. При $k = 6$ подходящих чисел набирается достаточно среди чисел одного из двух видов: из цифр 1, 2, 4 и 8 и из цифр 1 и 5. В частности, 1000-ное число такого вида равно 884488 (если оставить только числа первого вида, то их будет всего 984, что недостаточно для крайнего случая). Таким образом, можно сгенерировать 1000 подходящих шестизначных чисел.
+
+Заметим, что при добавлении ведущих единиц, делимость на 1, 2, 4, 5 и 8 не изменяется. Соответственно, при $k > 6$, можно дописать к полученным числам слева $(k-6)$ единиц.
+
+Асимптотика: $O(n k)$.
+
+
+
+\subsubsection*{D. Do Rain Dance} 
+
+\problemauthor{Жусупов Али}
+
+$$\sum_{i=1}^{N} \sum_{j=1}^{M} (i + j^2) = \frac{m n (n+1)}{2} + \frac{n m (m+1) (2m+1)}{6}.$$
+
+Асимптотика: $O(1)$.
+
+Замечание: наивное решение не проходит ограничения по времени.
+
+
+
+\subsubsection*{E. ECM and Cognitive Dissonance} 
+
+\problemofferer{Камалбеков Тимур}
+
+Если $k > \frac{n (n-1)}{2}$, то такой перестановки не существует. А если $k < n$, то достаточно расставить все числа по возрастанию от 2 до $n$, а число 1 поставить между $k$-м и $(k+1)$-м числом. 
+
+Иначе будем размещать числа от 1 до $n$ в массиве с конца в начало ($a[n + 1 - i] = i$) до тех пор, пока количество инверсий, которые образуют уже расставленные числа со всеми остальными и между собой не превосходит $k$. Это легко сделать, так как число $i$ на позиции $n + 1 - i$ образует $n-i$ инверсию c числами, которые стоят на позициях с 1 по $n - i$. После того, как данные числа будут расставлены останутся $t$ чисел, на которых останется менее $t$ инверсий между этими $t$ числами. Достаточно расставить их также как и в случае $k < n$.
+
+Асимптотика: $O(n)$.
+
+
+
+\subsubsection*{F. Fibonacci and Prime Number} 
+
+\problemauthor{Жусупов Али, Васильев А.Н.}
+
+Достаточно заметить, что простых чисел в диапазоне от 1 до $N$ порядка $O(N / \log{N})$ (при указанных ограничениях задачи их около $4\cdot 10^{10}$). В то время как чисел Фибоначчи порядка $O(\log{N})$ (при указанных ограничениях задачи их не более 60). Поэтому разумно перебирать числа Фибоначчи $F_k$, которые не превосходят $n$ и проверять, является ли число $N - F_k$ простым наивным способом (делители до корня из числа).
+
+Асимптотика: $O(\sqrt{N} \log{N})$.
+
+Замечание: перебор всех простых от 1 до $N$ не укладывается по ограничениям времени.
+
+
+
+\subsubsection*{G. Game of Castles} 
+
+\problemauthor{Камалбеков Тимур}
+
+В задаче необходимо было промоделировать  то, что написано в условии. Для этого достаточно хранить статус ($status[k] = 1$, если $k$-й замок уставший и $status[k] = 0$ --- иначе). Если при ходе $i \rightarrow j$ известно, что $a_i > 0$, то необходимо уменьшить здоровье $j$-го на $1 - status[i] + status[j]$.
+
+Асимптотика: $O(N + M)$.
+
+\end{document} 

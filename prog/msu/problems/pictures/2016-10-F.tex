@@ -1,0 +1,37 @@
+\begin{center}
+\newcommand{\drawblack}[4]{
+\draw[line width=20, color=black]
+(#1, #2) -- (#3, #4);
+}
+\newcommand{\drawwhite}[4]{
+\draw[line width=18, color=white] 
+(#1, #2) -- (#3, #4);
+}
+
+\def\picwidth{0.9\linewidth}
+\resizebox{\picwidth}{!}{
+\begin{tikzpicture}
+\drawblack{0}{7}{20}{7}
+\drawblack{0}{3}{20}{3}
+
+\drawblack{2}{7}{5}{3}
+\drawblack{5}{7}{8}{3}
+\drawblack{8}{7}{11}{3}
+\drawblack{11}{3}{14}{7}
+\drawblack{14}{7}{17}{3}
+
+\drawwhite{-1}{7}{21}{7}
+\drawwhite{-1}{3}{21}{3}
+
+\drawwhite{2}{7}{5}{3}
+\drawwhite{5}{7}{8}{3}
+\drawwhite{8}{7}{11}{3}
+\drawwhite{11}{3}{14}{7}
+\drawwhite{14}{7}{17}{3}
+
+\node (1) at (0, 7){МГУ};
+\node (2) at (20, 3){ЕДА};
+
+\end{tikzpicture}
+}
+\end{center}

@@ -1,0 +1,26 @@
+\begin{center}
+\def\picwidth{0.45\linewidth}
+\resizebox{\picwidth}{!}{
+\begin{tikzpicture}[
+	every node/.style={
+		draw=black, 
+		rounded corners=1mm,
+		align=center,
+		minimum size=20
+	}
+]
+      
+\node (T0) {1}
+	child {node (T5) {5}
+		child {node[fill=gray] (T2) {2}
+		}
+	}
+	child {node (T3) {3}
+		child {node[fill=gray] (T4) {4}
+		}
+	}
+	child {node (T6) {6}}
+	;
+\end{tikzpicture}
+}
+\end{center}
