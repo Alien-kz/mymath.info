@@ -1,0 +1,98 @@
+Rank	Team	A	B	C	D	E	F	G	H	I	J	K	L	=	Time
+1	IITU 1 (Kutybaev, Chzhen, Bolshakov)	+ (13:01)	+ (33:04)	.	+ (19:38)	+ (44:23)	+ (155:06)	+ (37:37)	+2 (293:05)	.	+1 (281:49)	+3 (130:59)	.	9	1125
+2	NU 1 (Kanapin, Dikhanov, Zhaxybay)	+ (7:34)	+ (24:40)	.	+ (34:51)	+ (48:04)	+ (198:23)	+1 (63:30)	.	.	+ (147:29)	-4	.	7	541
+3	Kaz NU 1 (Kovalev, Dautalinov, Berdibekov)	+ (15:22)	+ (27:09)	-5	+ (10:05)	+1 (44:19)	+ (213:59)	+ (59:39)	.	.	+4 (218:38)	.	.	7	686
+4	Kazakh-British TU 2 (Dyussenaliyev, Mussayev, Utkelbayev)	+ (8:00)	+ (36:08)	-2	+ (46:22)	+ (40:52)	+ (104:38)	+ (23:01)	-2	.	.	-3	.	6	257
+5	NU 0 (Akzholov, Islam, Orynkul)	+ (20:55)	+1 (21:40)	.	+ (30:24)	+2 (53:45)	-7	+ (25:07)	.	.	.	+5 (218:18)	.	6	527
+6	Kazakh-British TU 6 (Nurmash, Khametov, Kairbekov)	+1 (9:15)	+1 (87:19)	.	+2 (39:49)	+1 (48:49)	+ (210:40)	+1 (106:23)	-4	.	.	.	.	6	619
+7	Kazakh-British TU 3 (Zhunussova, Ibraimov, Sultan)	+ (9:29)	+3 (85:00)	.	+ (25:10)	+1 (61:10)	-23	+ (47:58)	.	.	.	+3 (254:58)	.	6	621
+8	IITU 2 (Kim, Dauirkhan, Mukay)	+ (12:15)	+2 (58:33)	.	+ (20:47)	+ (28:29)	+1 (291:10)	+4 (105:28)	.	.	.	.	.	6	654
+9	IITU Ultramarine (Kurmangaliev, Frolov, Nurushev)	+ (7:12)	+ (21:27)	.	+1 (54:19)	+1 (32:02)	.	+ (62:57)	.	.	+14 (262:54)	.	.	6	758
+10	Kazakh-British TU 1 (Orazbayev, Satybaldiyev, Akhmetzhanov)	+ (7:52)	+ (56:50)	.	+5 (265:13)	+ (22:58)	+3 (222:57)	+ (34:15)	.	.	.	-31	.	6	766
+11	Aktau SU (Chungulova, Grishin, Orazaliyev)	+1 (13:12)	+ (95:30)	.	+1 (81:37)	+1 (118:02)	+ (262:10)	+1 (150:04)	-2	.	.	.	.	6	799
+12	NU 2 (Serikov, Zarlyk, Kassenov)	+ (5:23)	+1 (21:23)	.	+5 (183:18)	+ (34:27)	.	+2 (101:00)	.	.	.	+11 (278:21)	.	6	1002
+13	NU 4 (Muratov, Sariyev, Zhumanov)	+ (12:47)	+ (46:12)	.	+ (40:02)	+ (6:35)	-1	+1 (47:10)	.	.	.	-4	.	5	171
+14	NU 5 (Serekov, Khassenova, Ibragimov)	+ (6:34)	+ (43:54)	.	+ (49:13)	+ (40:49)	.	+ (64:35)	-3	.	.	.	.	5	202
+15	SDU 3 (Abilda, Madeniyat, Naurzaliyev)	+ (36:29)	+ (23:37)	.	+ (58:52)	+ (89:17)	.	+ (67:07)	.	.	.	.	.	5	273
+16	SDU 1 (Akhmetov, Maksotov, Aimakov)	+ (34:24)	+ (21:51)	.	+1 (83:21)	+1 (50:57)	.	+ (77:42)	.	.	.	.	.	5	305
+17	Kazakh-British TU 4 (Sultanov, Duisenbayev, Utemuratov)	+ (7:24)	+ (75:49)	.	+1 (47:42)	+2 (57:31)	.	+ (63:57)	-1	.	.	-2	.	5	309
+18	Kazakh-British TU 7 (Beketayev, Mukhamejanov, Odilzoda)	+1 (10:18)	+1 (38:48)	.	+1 (48:32)	+1 (22:41)	-1	+2 (88:35)	-2	.	.	-4	.	5	326
+19	Kazakh-British TU 5 (Amanov, Yerezhepov, Dyussenaliyev)	+ (5:33)	+ (37:51)	.	+1 (101:53)	+ (19:37)	.	+2 (142:09)	.	.	.	.	.	5	364
+20	IITU 5 (Abuov, Maksut, Tlegen)	+ (14:51)	+1 (71:42)	.	+2 (30:13)	+1 (92:34)	.	+ (78:34)	.	.	.	.	.	5	365
+21	Kazakh-British TU 11 (Rakhmet, Tishin, Attapkhanov)	+1 (8:49)	+1 (60:30)	.	+ (73:36)	+3 (41:22)	.	+ (84:35)	-2	.	.	-8	.	5	366
+22	IITU 3 (Utemuratov, Idelbayev, Nigay)	+1 (18:14)	+ (82:37)	.	+ (208:38)	+1 (39:15)	.	+1 (117:52)	.	.	.	.	.	5	524
+23	SDU 10 (Mametov, Prokopyev, Tibeyev)	+1 (9:48)	+4 (70:54)	.	+4 (110:39)	+1 (32:02)	-4	+1 (85:53)	.	.	-7	.	.	5	526
+24	KSTU Researchers (Gekkel, Zalutskiy, Kotov)	+ (58:24)	+ (47:08)	.	+2 (166:34)	+ (87:10)	.	+1 (121:47)	-2	.	.	.	.	5	539
+25	SDU 2 (Turapbekov, Issembergenov, Baypakpayev)	+1 (29:54)	+ (61:45)	.	+2 (152:00)	+ (75:48)	.	+2 (133:52)	.	.	.	.	.	5	550
+26	Kazakh NU MATRIX (Kapezov, Dmitriyeva, Amangeldi)	+1 (13:15)	+2 (61:10)	.	+ (148:06)	+1 (90:45)	.	+2 (138:00)	.	.	.	.	.	5	570
+27	SDU 4 (Khabirov, Abdraimov, Shibikhanov)	+ (10:12)	+1 (38:19)	.	+3 (211:50)	+ (75:21)	.	+1 (138:32)	-1	.	.	.	.	5	572
+28	Kazakh-British TU 10 (Satylkhanov, Tolegenov, Yermakhanov)	+ (7:57)	+1 (38:14)	.	+3 (182:14)	+ (129:11)	.	+2 (99:46)	.	.	.	.	.	5	575
+29	MSU Kaz Branch 1 (Shoketayeva, Tleubayev, Taranov)	+2 (33:46)	+1 (71:50)	.	+ (89:04)	+5 (123:30)	-3	+ (105:40)	.	.	.	.	.	5	581
+30	ENU 1 (Tussenov, Aiymbay, Amandosov)	+1 (26:40)	+ (91:44)	.	+ (180:51)	+1 (143:34)	.	+ (108:47)	.	.	.	.	.	5	588
+31	IITU 4 (Chesnokov, Magavina, Dushayev)	+1 (25:35)	+4 (77:05)	.	+4 (231:11)	+1 (34:57)	.	+1 (82:58)	.	.	.	-14	.	5	669
+32	IITU 8 (Kushibar, Toiteyev, Kayranbay)	+ (17:22)	+ (77:43)	.	+ (37:35)	+3 (169:26)	.	+4 (292:55)	.	.	.	.	.	5	732
+33	NU 3 (Kalidolda, Sailanbayev, Nurgabylov)	+8 (49:25)	+1 (144:28)	.	+ (81:41)	+2 (121:06)	.	+2 (180:37)	.	.	.	.	.	5	835
+34	Kazakh NU 4 (Masyrov, Saiym, Abiltaev)	+4 (46:16)	+ (82:34)	.	+8 (294:55)	+1 (97:34)	.	+ (123:59)	.	.	.	.	.	5	902
+35	NU #7 (Suleymen, Tailakov, Zhiyenbek)	+3 (18:58)	+2 (52:22)	.	+7 (182:38)	+3 (178:10)	.	+2 (161:22)	.	.	.	.	.	5	931
+36	Enu Rangers (Kabdysalyam, Mukhametkali, Amanbayev)	+ (22:22)	+1 (122:39)	.	+2 (225:57)	+2 (167:49)	.	+2 (262:34)	.	.	.	.	.	5	938
+37	Kazakh-British TU 9 (Adaev, Erlanov, Zhunussov)	+5 (114:01)	+2 (154:18)	.	+3 (166:42)	+2 (103:41)	.	+5 (90:56)	-19	.	.	.	.	5	967
+38	Kostanay SU 2 (Zolotukhina, Kairbekova, Shimanskiy)	+ (17:58)	+1 (79:54)	.	+ (270:20)	+7 (189:20)	.	+6 (276:03)	.	.	.	.	.	5	1111
+39	SDU 6 (Chapayev, Kenel, Kaskabayev)	+4 (130:15)	+ (89:49)	.	+4 (232:27)	+2 (299:22)	.	+ (175:19)	.	.	.	.	.	5	1125
+40	SDU 5 (Dzhunebayev, Nurgaziyev, Zhaksalikov)	+3 (58:07)	+5 (114:26)	.	+13 (292:28)	+1 (181:17)	.	+1 (83:01)	.	.	.	.	.	5	1188
+41	SDU 7 (Almukhametov, Utegen, Begadil)	+3 (174:11)	+4 (128:35)	.	+1 (263:42)	+1 (252:20)	.	+4 (199:47)	.	.	.	.	.	5	1276
+42	Kazakh NU 2 (Salieva, Usan, Dadykina)	+8 (274:15)	+ (112:50)	.	+6 (237:30)	+2 (191:03)	.	+ (222:31)	.	.	.	.	.	5	1356
+43	Turan U (Sharafudinov, Rose, Carp)	+4 (26:28)	+ (118:05)	.	-8	+ (70:37)	.	+5 (177:46)	.	.	.	.	.	4	571
+44	Kostanay SU 1 (Litsenberger, Belov, Lim)	+3 (69:00)	+1 (50:16)	.	-8	+1 (175:50)	.	+3 (189:43)	.	.	.	.	.	4	643
+45	Kazakh-British TU 12 (Shalgymbay, Pak, Yesbolganov)	+ (16:25)	+ (117:07)	.	+7 (226:12)	-4	.	+4 (264:29)	.	.	.	.	.	4	843
+46	MSU Kaz Branch 2 (Vassilyev, Taskynov, Sedyakin)	+5 (168:58)	-4	.	+7 (295:16)	+1 (144:44)	.	+ (196:26)	.	.	.	.	.	4	1063
+47	IKTU (Abduhalikov, Syzdykov, Serdaliev)	-9	+1 (94:47)	.	-4	+1 (178:54)	.	+1 (134:10)	.	.	.	.	.	3	466
+48	ENU Inform 1 (Utyuganov, Rybalchenko, Tukubaev)	+5 (84:20)	+1 (120:35)	.	-1	-4	.	+4 (255:48)	.	.	.	.	.	3	659
+49	IITU 7 (Kami, Manaspayev, Dautov)	+5 (98:58)	+3 (263:01)	.	-3	+7 (243:36)	.	.	.	.	.	.	.	3	904
+50	Kazakh NU KYAG (Karibayeva, Gaisin, Kaipoldaev)	+24 (281:13)	+1 (102:07)	.	.	-5	.	+2 (155:13)	.	.	.	.	.	3	1078
+51	Kazakh NU 9 (Abdolda, Alipbek, Kulzhabai)	+10 (169:26)	+10 (214:29)	.	+7 (298:49)	.	.	.	.	.	.	.	.	3	1221
+52	ENU Inform 2 (Artem, Nikita, Pashovkin)	+ (19:30)	+1 (110:52)	.	-5	.	.	.	.	.	.	.	.	2	149
+53	Taraz SU 2 (Kuntubaev, Sharifulin, Shevtsov)	-4	+1 (97:36)	.	+1 (59:10)	.	.	-10	.	.	.	.	.	2	196
+54	KazNTU 4 (Gnatchenko, Gnatchenko, Alpysbayev)	+1 (68:24)	+ (115:25)	.	-3	.	.	.	.	.	.	.	.	2	203
+55	Kazakh-British TU 8 (Dauletbayev, Shildebay, Baimbetov)	+7 (231:21)	.	.	.	-3	.	+ (235:41)	.	.	.	.	.	2	606
+56	KazNU 8 (Tagabayev, Kuanyshbekov, Kasym)	+ (38:17)	-17	.	-11	-1	.	-1	.	.	.	.	.	1	38
+57	Atyrau SU (Orynbayev, Ergozhieva, Ikhsanov)	-4	+ (89:14)	.	.	.	.	.	.	.	.	.	.	1	89
+58	IITU 9 (Korovkin, Sadenov, Bakin)	-7	+ (123:49)	.	-1	-2	.	-2	.	.	.	.	.	1	123
+59	Taraz SU 1 (Kaimeke, Prmahan, Bespalov)	.	-1	.	+ (152:40)	.	.	.	.	.	.	.	.	1	152
+60	KazNTU 2 (Kozbolov, Turemuratov, Golovin)	+ (182:21)	.	.	.	.	.	-16	.	.	.	.	.	1	182
+61	ENU 5 (Sarsembi, Nabiev, Satuov)	-5	+2 (156:51)	.	.	.	.	-6	.	.	.	.	.	1	196
+62	KazNTU 1 (Aubakirova, Onaibay, Ponomarev)	+2 (159:58)	.	.	-3	.	.	.	.	.	.	.	.	1	199
+63	AIPET (Gorbatovskiy, Yar-Mukhamedov, Popenko)	-9	+2 (172:43)	.	.	-18	.	-3	-1	.	.	.	.	1	212
+64	KazNTU KiPI 1 (Akhmetsha, Suleimen, Myrzabekova)	-5	+ (215:04)	.	.	.	.	-2	.	.	.	.	.	1	215
+65	KazNTU 5 (Baymaganbetova, Seilov, Kasimov)	+1 (249:35)	.	.	.	.	.	.	.	.	.	.	.	1	269
+66	KazNTU 3 (Kossynbay , Zhykenov, Aikimbayev)	+7 (225:28)	-3	.	.	.	.	-6	.	.	.	.	.	1	365
+67	Aktobe U (Zorbayev, Alishbayev, Kenzhebekov)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+67	East Kazakhstan STU (Astafyev, Rib, Karpets)	-8	.	.	.	.	.	-1	.	.	.	.	.	0	0
+67	KazNTU AMKU 1 (Baikonurov, Kostogladov, Komlev)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+67	KazNTU Inf 1 (Zholseit, Altynbek, Balzhan)	-1	.	.	.	.	.	.	.	.	.	.	.	0	0
+67	KazNTU KiPI 2 (Abaiuly, Shyndaly, Kanapiya)	.	.	.	.	.	.	-3	.	.	.	.	.	0	0
+67	KazNTU KiPI 3 (Nurkamit, Zhanat, Adilbekov)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+67	KazNTU KiPI 4 (Abiyev, Baiken, Baibosynov)	.	.	.	.	.	-2	.	.	.	.	.	.	0	0
+67	Kazakh NU 1 (Ikhsanov, Baskakov, Dadashev-Jussupov)	-9	.	.	.	.	.	.	.	-1	.	.	.	0	0
+67	Kaz NU 2 (Bolatov, Angsabay, Arystanov)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+67	Kaz NU 3 (Aytzhan, Erzhan, Bekbaganbetov)	-17	-3	.	.	.	.	.	.	.	.	.	.	0	0
+67	Kyzylorda SU (Zhandos, Mugalov, Ulzhan)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+67	RII (Rahmetov, Popov, Dmitriy)	-4	.	.	.	.	.	.	.	.	.	.	.	0	0
+67	SDU 9 (Kuantayev, Zainilabdin, Ponomaryov)	-1	-3	.	.	.	.	.	.	.	.	.	.	0	0
+67	Taraz SPI (Alexander, Shevtsov, Kalyuka)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+67	WK ATU (Nurbol, Gulshat, Kuspangaliev)	.	.	.	.	.	.	-5	.	.	.	.	.	0	0
+67	WK SMU (Kozhayeva, Dabeyeva, Stepanova)	-1	.	.	.	.	.	.	.	.	.	.	.	0	0
+67	Zhetysu SU (Kurmanali, Tursynova, Myrzai)	.	-1	.	.	.	.	.	.	.	.	.	.	0	0
+67	KATU 1: Labored Team (Kobzhassarov, Mahmetov, Abayev)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+67	KATU 2: Hidden Team (Tsai, Vayckr, Kaiyr)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+67	KazNU 5 (Darzhanova, Tleuova, Bisengalieva)	-11	-3	-1	.	.	.	.	.	.	.	.	.	0	0
+67	Atyrau IOG (Zagumenov, Taulanbaev, Kabdulov)	-2	-1	-1	.	.	.	.	.	.	-1	-4	-2	0	0
+67	KazNTU 6 (Shamgun, Zhalelov, Ismagulov)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+67	KzSU (Mugalov, Zhandos, Ulzhan)	-3	.	.	.	.	.	-6	.	.	.	.	.	0	0
+67	Kazakh NU MKM12-2A (Kurbanbek, Nysan, Kaldan)	-1	.	.	.	.	.	.	.	.	.	.	.	0	0
+67	Kazakh NU MASA (Musirep, Esenkozha, Alpar)	-5	-2	.	.	.	.	-3	.	.	.	.	.	0	0
+67	 (, , )	-2	.	.	.	.	.	.	.	.	.	.	.	0	0
+	Total runs	292	162	9	198	145	53	186	42	1	31	100	2
+	Accepted	58	59	0	47	47	8	50	1	0	4	4	0
+	Rejected	234	103	9	151	98	45	136	41	1	27	96	2
+	First Accept	5:23	21:23		10:05	6:35	104:38	23:01	293:05		147:29	130:59	
+	Last Accept	281:13	263:01		298:49	299:22	291:10	292:55	293:05		281:49	278:21	

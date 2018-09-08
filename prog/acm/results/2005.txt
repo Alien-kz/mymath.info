@@ -1,0 +1,81 @@
+Rank	Team	A	B	C	D	E	F	G	H	I	J	K	=	Time
+1	Kazakh NU 6	.	-2	+ (8:45)	-8	+ (139:56)	+ (110:51)	+ (23:13)	.	.	.	-3	4	280
+2	Kazakh NTU 1	-2	.	+ (18:09)	-3	+ (242:41)	+1 (149:51)	+1 (51:08)	.	.	.	-1	4	500
+3	Suleyman Demirel U 2	.	.	+ (9:32)	-2	+1 (209:34)	-3	+ (69:32)	.	.	.	.	3	307
+4	Kazakh-British TU: Fiz-Mat	-1	.	+ (27:10)	.	.	+3 (176:42)	-6	.	.	.	.	2	263
+5	Suleyman Demirel U 3	.	.	+2 (26:05)	+2 (187:27)	.	-2	.	.	.	.	.	2	293
+6	Suleyman Demirel U 1: Aktobe	-1	.	+ (39:02)	+ (285:43)	.	-6	-3	.	.	.	.	2	324
+7	Astana Eurasian NU 2	.	.	+1 (35:50)	-1	.	+5 (256:51)	-4	.	-4	.	.	2	411
+8	Kazakh NU 14	.	.	+ (23:14)	.	.	+7 (283:36)	-1	.	.	.	-1	2	446
+9	Kazakh-British TU 1	-4	-5	+ (10:10)	.	.	.	-2	.	.	.	.	1	10
+10	Suleyman Demirel U 4	.	.	+ (20:57)	.	.	-4	-3	.	.	.	.	1	20
+11	Karaganda STU 1	-2	.	+ (22:19)	-6	.	-4	.	.	.	-3	-2	1	22
+12	Kazakh-British TU: EDA	-1	.	+ (30:25)	.	-16	.	-9	.	.	.	.	1	30
+13	Astana Eurasian NU 4	.	.	+ (37:47)	-4	.	.	-4	.	.	.	.	1	37
+14	Kazakh-British TU: AKA	-2	.	+ (43:52)	-4	.	.	-2	.	.	.	.	1	43
+15	Karaganda STU 3	.	.	+ (62:11)	-1	.	.	.	.	.	.	.	1	62
+16	Kazakh NU 7	.	.	+ (66:31)	.	.	-15	-6	.	.	.	.	1	66
+17	Kazakh NU 8	.	.	+1 (60:58)	.	.	.	-4	.	.	.	.	1	80
+18	Kazakh NU 1	.	.	+2 (55:38)	-3	.	-3	-1	.	.	.	.	1	95
+19	Kazakh-British TU: FIT	.	.	+ (97:16)	-3	.	-9	.	.	.	.	.	1	97
+20	East Kazakhstan STU 1	.	.	+ (101:09)	.	.	.	.	.	.	.	-1	1	101
+21	Karaganda STU 2	.	.	+1 (96:10)	.	.	-5	-3	.	.	.	.	1	116
+22	East Kazakhstan SU	.	.	+ (130:39)	-1	.	.	-2	.	.	.	-1	1	130
+23	Kazakh-British TU: OXID	-1	.	+5 (50:28)	.	.	.	-5	.	-1	.	-3	1	150
+24	South Kazakhstan SU: Immortals	.	.	+1 (135:16)	.	.	.	.	.	.	-2	.	1	155
+25	Kazakh NTU 6	.	.	+ (176:38)	-4	-1	.	-2	.	.	.	.	1	176
+26	Kazakh NTU 8	.	.	+2 (143:50)	-6	.	.	-2	.	.	.	-1	1	183
+27	Astana Eurasian NU 3	.	.	+2 (151:38)	-4	.	.	-6	.	.	.	.	1	191
+28	Astana Eurasian NU 1	.	.	+5 (102:26)	-5	.	-3	.	.	.	.	.	1	202
+29	Kazakh NTU 4	.	-1	+ (203:19)	.	.	.	.	.	.	.	-1	1	203
+30	Kazakh-British TU: KazATF	-2	.	+1 (185:24)	-7	.	-1	-1	.	.	.	.	1	205
+31	Kazakh NU 3	-3	.	+3 (185:17)	.	.	.	.	.	.	.	.	1	245
+32	Kazakh NU 5	-5	.	+ (247:55)	.	.	.	-5	.	.	.	-2	1	247
+33	Suleyman Demirel U 5	.	.	+ (253:04)	-4	.	-9	.	.	.	.	-4	1	253
+34	West Kazakhstan SU 1	.	.	+4 (248:06)	-3	.	.	.	.	.	.	.	1	328
+35	Kazakh NU 17	.	.	+9 (170:41)	.	.	.	.	.	-3	.	.	1	350
+36	Aktobe SU: InformTeam	-2	.	.	-10	.	.	-3	.	.	.	.	0	0
+36	Atyrau SU	-1	.	.	-2	.	-2	.	.	.	.	.	0	0
+36	East Kazakhstan STU 2	.	.	-1	.	.	-5	-1	.	.	.	-2	0	0
+36	Astana Eurasian NU 5	.	.	.	.	.	.	.	.	.	.	.	0	0
+36	Kazakh NTU 2	.	.	.	-2	.	-5	-3	.	.	.	.	0	0
+36	Kazakh NTU 3	.	.	.	.	.	.	.	.	.	.	.	0	0
+36	Kazakh NTU 5	.	.	.	.	.	.	-2	.	.	.	.	0	0
+36	Kazakh NTU 9	.	.	.	-3	.	.	-6	.	.	.	.	0	0
+36	Kazakh NTU 7	-1	.	.	.	.	.	-2	.	.	.	.	0	0
+36	Kazakh NTU 10	.	.	-5	-1	.	.	-1	.	.	.	.	0	0
+36	Kazakh NTU 11	.	.	.	.	.	.	.	.	.	.	.	0	0
+36	Kazakh NTU 13	.	.	.	-3	.	.	-8	.	.	.	-1	0	0
+36	Kazakh NTU 12	.	.	-1	-1	.	.	.	.	.	.	-1	0	0
+36	Kazakh NU 2	.	.	-8	-4	-2	.	-5	.	.	.	.	0	0
+36	Kazakh NU 4	.	.	-5	.	.	.	.	.	.	.	.	0	0
+36	Kazakh NU 15	-1	.	-2	.	.	-1	-2	.	.	.	.	0	0
+36	Kazakh NU 9	-7	.	.	.	.	.	.	.	.	.	.	0	0
+36	Kazakh NU 10	.	.	-1	-2	.	.	.	.	.	.	-8	0	0
+36	Kazakh NU 11	.	.	-4	.	.	.	-12	.	.	.	.	0	0
+36	Kazakh NU 12	.	.	.	.	.	.	.	.	.	.	.	0	0
+36	Kazakh NU 13	.	.	-4	.	.	.	.	.	.	.	.	0	0
+36	Kazakh NU 16	.	.	-1	.	.	.	.	.	.	.	.	0	0
+36	Kokshetau SU:Virtuosos	.	.	.	-5	.	-1	-2	.	.	.	-3	0	0
+36	Kostanay STU 1	.	.	.	.	.	-2	-3	.	.	.	.	0	0
+36	Kostanay STU 2	.	.	.	.	.	.	.	.	.	.	.	0	0
+36	Kostanay SU	.	.	.	.	.	.	.	.	.	.	.	0	0
+36	Kyzylorda SU	.	.	.	.	.	.	-1	.	.	.	.	0	0
+36	Pavlodar SU 1	.	.	.	.	.	.	.	.	.	.	.	0	0
+36	Pavlodar SU 2	.	.	.	.	.	.	.	.	.	.	.	0	0
+36	Pavlodar SU 3	.	.	.	.	.	.	.	.	.	.	.	0	0
+36	Pavlodar SU 4	.	.	.	.	.	.	.	.	.	.	.	0	0
+36	Rudny II	.	.	.	-1	-2	-3	-2	.	.	.	-5	0	0
+36	Semey SPI	-1	-1	.	-23	.	.	.	.	.	.	.	0	0
+36	Semey SU	-1	.	.	.	-2	-13	.	.	.	.	.	0	0
+36	South Kazakhstan SU: SmartDev	.	.	.	.	.	.	-4	.	.	.	.	0	0
+36	South Kazakhstan SU: Warriors	.	.	.	.	.	.	.	.	.	.	-1	0	0
+36	West Kazakhstan SU 2	.	.	.	.	.	.	-5	.	.	.	.	0	0
+36	Zhetysu SU	.	.	.	.	.	.	.	.	.	.	.	0	0
+36	Zhezkazgan U	.	.	.	.	.	.	.	.	.	.	-7	0	0
+36	Kazakh NU 18	-2	-1	-1	-1	-1	-1	-1	-1	-1	-1	-1	0	0
+	Total runs	40	10	107	131	28	118	138	1	9	6	49
+	Accepted	0	0	35	2	3	5	3	0	0	0	0
+	Rejected	40	10	72	129	25	113	135	1	9	6	49
+	First Accept			8:45	187:27	139:56	110:51	23:13				
+	Last Accept			253:04	285:43	242:41	283:36	69:32				

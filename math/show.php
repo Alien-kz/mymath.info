@@ -8,26 +8,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<?php
 			include_once "../routine/html.php";
-			include_once "table.php";
+			include_once "../routine/table.php";
 			$agent = get_user_agent_type();
 			
 			if ($agent == 'desktop') {
-				echo "<link href='table.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
-				echo "<link href='../main.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
+				echo "<link href='../css/table.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
+				echo "<link href='../css/main.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
 			} else {
-				echo "<link href='table_m.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
-				echo "<link href='../main_m.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
+				echo "<link href='../css/table_m.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
+				echo "<link href='../css/main_m.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
 			}
 		?>
 		
 	</head>
 	<body>
 		<?php
-			$buttons = array("../index.php" => "Главная",
-							"../abiturient/show.php" => "Абитуриентам", 
-							"../math/show.php" => "Олимпиады по математике",
-							"../prog/show.php" => "Олимпиады по программированию",
-							"../books/show.php" => "Книги");
+			$buttons = get_main_buttons("../");
 			print_buttons("", "../math/show.php", $buttons, "colomns_in_header", "");
 
 			$olymp = "";
@@ -75,7 +71,7 @@
 					$header = "Республиканская студенческая олимпиада по направлениям 'Математика' и 'МКМ'.";
 					$buttons["math-2006"] = "М 2006 год";
 					for ($y = 2014; $y <= 2018; $y++) {
-						$buttons["math-".strval($y)] = "М ".$y. " год";
+						$buttons["math-".strval($y)] = "Матем ".$y. " год";
 					}
 					for ($y = 2014; $y <= 2018; $y++) {
 						$buttons["mcm-".strval($y)] = "МКМ ".$y." год";
@@ -129,10 +125,8 @@
 							$problems_link = $site."/?show=day1";
 						}					
 
-						print_buttons("", "", 
-										array($problems_link => "Задачи", 
-											$results_link => "Результаты"), 
-									"colomns3", "");
+						print_buttons("", "", array($problems_link => "Задачи", $results_link => "Результаты"), 
+									"colomns3 external_link", "");
 					} else {
 						show_link_file("$directory/problems/$olymp-$year-problems", "Задачи ".$buttons[$year]);
 						show_link_file("$directory/solutions/$olymp-$year-solutions", "Решения ".$buttons[$year]);

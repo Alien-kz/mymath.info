@@ -14,6 +14,16 @@ p {
 	font-size: 1em;
 }
 
+.external_link {
+	color: black;
+	background: linear-gradient(to bottom, white, lightblue);
+}
+
+.download_link {
+	color: black;
+	background: linear-gradient(to bottom, white, lightgreen);
+}
+
 .selected {
 	color: white;
 	background: linear-gradient(to bottom, green, black);
@@ -23,14 +33,14 @@ p {
     border: 1px solid gray;
 	border-radius: 10px;
 	text-align: center;
+    padding: 10px;
 	margin: 10px;
 	width: 90%;
 }
 
 .hello_div, .text_div {
-	font-size: 1em;
-    padding: 5px;
-	margin: 5px;
+    padding: 10px;
+	margin: 10px;
 	width: 90%;
 }
 
@@ -50,43 +60,40 @@ p {
 	padding: 5px;
 }
 
-.image_fit {
-	max-width: 100%;
-}
-
 .colomns2 {
-	min-width: 70%;
+	min-width: 30%;
 }
 
 .colomns3 {
-	min-width: 70%;
+	min-width: 25%;
 }
 
 .colomns4 {
-	min-width: 40%;
+	min-width: 18%;
 }
 
 .colomns5 {
-	min-width: 40%;
+	min-width: 15%;
 }
 
 .colomns6 {
-	min-width: 40%;
+	min-width: 13%;
 }
 
 .colomns7 {
-	min-width: 20%;
+	min-width: 10%;
 }
 
+
 .colomns_in_header {
-	min-width: 90%;
-	padding: 10px 5px;
+	min-width: 17%;
+	padding: 10px 10px;
 }
 
 .buttons_div {
 	border-radius: 10px;
-	padding: 5px;
-/*	border: 1px solid gray;*/
+	padding: 0px;
+	margin: 0px;
 	width: 80%;
 }
 

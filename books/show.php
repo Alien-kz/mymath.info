@@ -12,23 +12,18 @@
 			
 			if ($agent == 'desktop') {
 				echo "<link href='books.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
-				echo "<link href='../main.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
+				echo "<link href='../css/main.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
 			} else {
 				echo "<link href='books_m.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
-				echo "<link href='../main_m.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
+				echo "<link href='../css/main_m.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
 			}
 		?>
 		
 	</head>
 	<body>
 		<?php
-			$buttons = array("../index.php" => "Главная",
-							"../abiturient/show.php" => "Абитуриентам", 
-							"../math/show.php" => "Олимпиады по математике",
-							"../prog/show.php" => "Олимпиады по программированию",
-							"../books/show.php" => "Книги");
-			$css = "colomns_in_header";
-			print_buttons("", "../books/show.php", $buttons, $css, "");
+			$buttons = get_main_buttons("../");
+			print_buttons("", "../books/show.php", $buttons, "colomns_in_header", "");
 
 		?>
 		

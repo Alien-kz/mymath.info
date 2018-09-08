@@ -1,85 +1,130 @@
+<!doctype html>
+<html>
 <head>
 <style>
-button, input, .block {
-	padding:10px; 
-	margin-bottom:10px; 
-	font-size:2em;
+label {
+	display:block;
 }
-.div_block {
-	display: inline-block;
+textarea {
+	display:block;
+}
+.row {
+	display:inline-block;
+}
+a {
+	border:1px solid blue;
+	padding:5px;
 }
 </style>
-
 <?php
-function convert($input) {
-	$output = $input."\n";
-	$output = str_replace("$","", $output);
-	$output = str_replace("\\Sigma","Итог", $output);
-	$output = str_replace("&","\t", $output);
-	$output = str_replace("\\\\","", $output);
-	$output = preg_replace("/\\\\[^\n]*\n/", "", $output);
-	$output = preg_replace("/%[^\n]*\n/", "", $output);
-	$output = preg_replace("/#[^\n]*\n/", "", $output);
-	$output = preg_replace("/{[^\n]*\n/", "", $output);
-	$output = preg_replace("/}[^\n]*\n/", "", $output);
-	$output = preg_replace('/^[ \t]*[\r\n]+/m', '', $output);
-	$output = str_replace("\r","", $output);
-	return $output;
-}
+include_once "tex2txt.php";
+include_once "html2txt.php";
 
-function check_attribute($attr) {
+function check_post($attr) {
 	return isset($_POST[$attr]) && $_POST[$attr] != "";
 }
+function check_get($attr) {
+	return isset($_GET[$attr]) && $_GET[$attr] != "";
+}
 
-$input = "";
-
-$output = "";
-$file_output = "";
-if (check_attribute('input')) {
-	$input  = $_POST['input'];
-	$output = convert($input);
-	if (check_attribute('file')) {
-		$file = $_POST['file'];
-		$file_output = "../".$file;
-		file_put_contents($file_output.".txt", $output);
+$converter_type = "";
+$converter_name = "";
+$suffix_input = "";
+$suffix_output = "";
+if (check_get('type')){
+	$converter_type = $_GET['type'];
+	if ($converter_type == "tex2txt") {
+		$converter_name = "TeX-таблица | txt-таблица";
+		$suffix_input = ".tex";
+		$suffix_output = ".txt";
+	}
+	if ($converter_type == "html2txt") {
+		$converter_name = "html-таблица | txt-таблица";
+		$suffix_input = ".html";
+		$suffix_output = ".txt";
 	}
 }
-$file = "";
-$file_input = "";
-if (check_attribute('file')){
-	$file = $_POST['file'];
-	$file_input = "../".$file;
-	$input = file_get_contents($file_input.".tex");
+
+$file_input= "";
+$file_output = "";
+$text_input = "";
+$text_output = "";
+
+if (check_post('file_input')){
+	$file_input = $_POST['file_input'];
 }
+if (check_post('file_output')){
+	$file_output = $_POST['file_output'];
+} else {
+	$file_output = $file_input;
+}
+
+
+if (check_get('load')) {
+	if (check_post('file_input')){
+		$text_input = file_get_contents("../".$file_input.$suffix_input);
+		$text_input = iconv("windows-1251", "utf-8", $text_input);
+	}
+} else {
+	if (check_post('text_input')) {
+		$text_input = $_POST['text_input'];
+		if ($converter_type == "tex2txt") {
+			$text_output = convert_tex_txt($text_input);
+		}
+		if ($converter_type == "html2txt") {
+			$text_output = $text_input;
+			$text_output = html_results_crop($text_output);
+			$text_output = convert_html_txt($text_output);
+		}
+		if (check_post('file_output')) {
+			$file_output = $_POST['file_output'];
+			file_put_contents("../".$file_output.$suffix_output, $text_output);
+		}
+	}
+}
+
+$show_input = show_html($text_input);
+$show_output = show_html($text_output);
 ?>
 </head>
 
 <body>
-<h1 align='center'> TeX таблица в TXT таблицу </h1>
 
 <div align='center'>
-<form action="run.php" method="post">
-<div> <input type="hidden" id="input" name="input" value="<?php echo $input;?>" hidden> </div>
-<div> <input name="file" size="50" value="<?php echo $file;?>"> </div>
-<div><button>Загрузить</button></div>
-</form>
-
-<form action="run.php" method="post">
-<div><button>Преобразовать</button></div>
-
-<div>
-<div class='div_block'> 
-<div class='block'> <?php echo $file_input.".tex";?> </div>
-<textarea name="input" cols="80" rows="50"><?php echo $input;?></textarea>
-<div> <input type="hidden" id="file" name="file" value="<?php echo $file;?>" hidden> </div>
+<a href='run.php?type=tex2txt'>tex | txt</a>
+<a href='run.php?type=html2txt'>html | txt</a>
 </div>
 
-<div class='div_block'> 
-<div class='block'> <?php echo $file_output.".txt";?>  </div>
-<textarea cols="80" rows="50" autofocus readonly><?php echo $output;?></textarea> 
-</div>
+<h1 align='center'> <?php echo $converter_name;?> </h1>
+
+<div align='center'>
+ <form action="run.php?load=file&amp;type=<?php echo $converter_type;?>" method="post">
+ <div>
+ <span> <input name="file_input" size="20" value="<?php echo $file_input;?>"> <?php echo $suffix_input;?> </span>
+ <span> <button>Загрузить</button></span>
+ </div>
+ </form>
 </div>
 
-</form>
+<div align='center'>
+ <form action="run.php?type=<?php echo $converter_type;?>" method="post">
+ <div>
+ <input type="hidden" id="file_input" name="file_input" value="<?php echo $file_input;?>" hidden>
+ <span> <input name="file_output" size="20" value="<?php echo $file_output;?>"> <?php echo $suffix_output;?> </span>
+ <span> <button>Преобразовать</button> </span>
+ </div>
+
+ <div class="row">
+ <label for="input"> <?php echo $file_input.$suffix_input;?> </label>
+ <textarea id="text_input" name="text_input" cols="80" rows="50"><?php echo $show_input;?></textarea>
+ </div>
+
+ <div class="row"> 
+ <label for="output"> <?php echo $file_output.$suffix_output;?> </label>
+ <textarea id="text_output" cols="80" rows="50" autofocus readonly><?php echo $show_output;?></textarea>
+ </div>
+ </form>
 </div>
+
 </body>
+</html>

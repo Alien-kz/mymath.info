@@ -1,5 +1,13 @@
 <?php
 
+function get_main_buttons($prefix) {
+	return array($prefix."index.php" => "Главная",
+				$prefix."abiturient/show.php" => "Абитуриентам", 
+				$prefix."math/show.php" => "Математика",
+				$prefix."prog/show.php" => "Программирование",
+				$prefix."books/show.php" => "Книги");
+}
+
 function get_user_agent_type() { 
 	if (preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]))
 		return 'mobile';
@@ -43,6 +51,51 @@ function print_text($text) {
 	$text = str_replace("<a ", "<a class='button external_link' target='blank_' ", $text);
 	echo "<div align='left'>\n";
 	echo $text."\n";
+	echo "</div>\n";
+}
+
+function print_form($link, $value, $text, $key, $button_name) {
+	echo "<div align='center'>\n";
+	echo "<form action='$link' method='post'>\n";
+	echo "<button>$button_name</button>\n";
+	echo "<input type='number' name='$key' min='1' max='9' size='2' value='$value'>\n";
+	echo $text;
+	echo "</form>\n";
+	echo "</div>\n";
+}
+
+function print_form_two_action($link, $text, $value_name, $value, $keys, $button_names) {
+	echo "<div align='center'>\n";
+	echo "<form action='$link' method='post'>\n";
+	echo $text;
+	echo "<input name='$value_name' size='20' value='$value'>\n";
+	
+	echo "<input type='submit' name='$keys[0]' value='$button_names[0]'>";
+	echo "<input type='submit' name='$keys[1]' value='$button_names[1]'>";
+	echo "<input type='submit' name='' value='Сброс'>";
+	
+	echo "</form>\n";
+	echo "</div>\n";
+}
+
+function print_form_select_two_action($link, $values, $value_name, $selected_value, $keys, $button_names) {
+	echo "<div align='center'>\n";
+	echo "<form action='$link' method='post'>\n";
+
+	echo "<select name='$value_name' autofocus>\n";
+	foreach ($values as $value) {
+		$is_selected = "";
+		if ($value === $selected_value)
+			$is_selected = " selected";
+		echo "<option $is_selected value='$value'> $value </option> \n";
+	}
+	echo "</select>\n";
+	
+	echo "<input type='submit' name='$keys[0]' value='$button_names[0]'>";
+	echo "<input type='submit' name='$keys[1]' value='$button_names[1]'>";
+	echo "<input type='submit' name='' value='Сброс'>";
+	
+	echo "</form>\n";
 	echo "</div>\n";
 }
 
@@ -95,10 +148,10 @@ function show_link_file($file, $link_text) {
 	{
 		echo "<div align='center'>\n";
 		echo "<span>\n";
-		echo "<a class='button' href='$file.tex' download> $link_text (.tex) </a>";
+		echo "<a class='button download_link' href='$file.tex' download> $link_text (.tex) </a>";
 		echo "</span>\n";
 		echo "<span>\n";
-		echo "<a class='button' href='$file.pdf' download> $link_text (.pdf) </a>";
+		echo "<a class='button download_link' href='$file.pdf' download> $link_text (.pdf) </a>";
 		echo "</span>\n";
 		echo "</div>\n";
 	}
