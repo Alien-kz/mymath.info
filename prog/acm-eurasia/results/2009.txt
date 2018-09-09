@@ -1,0 +1,205 @@
+Rank	Team	A	B	C	D	E	F	G	H	I	J	K	=	Time
+1	Petrozavodsk SU 1 (Denisov, Nikolaevskiy, Nikolaevskiy)	+ (80:26)	+ (10:04)	+3 (277:19)	+1 (58:40)	.	+ (95:15)	+4 (255:25)	+ (15:10)	+1 (187:50)	+ (164:21)	.	9	1321
+2	Moscow SU 1 (Gusakov, Kornakov, Razenshteyn)	+1 (252:56)	+ (14:58)	.	+ (48:56)	-7	+ (79:40)	+ (125:33)	+ (18:32)	+4 (208:59)	+ (123:21)	.	8	967
+3	SPb IFMO 2 (Akhi, Bannykh, Poromov)	+2 (275:53)	+1 (13:19)	-4	+ (38:58)	.	+3 (103:56)	+ (67:24)	+ (18:28)	+1 (224:08)	+1 (145:09)	.	8	1043
+4	SPb IFMO 1 (Buzdalov, Isenbaev, Kapun)	+ (135:13)	+ (8:28)	+ (246:02)	+4 (60:00)	.	+2 (133:18)	+ (198:08)	+ (17:38)	-16	+ (142:27)	-5	8	1059
+5	Saratov SU 1 (Bondarenko, Matov, Yakunin)	+ (291:51)	+ (16:27)	.	+ (25:34)	.	+2 (137:31)	+ (206:51)	+ (9:27)	+1 (210:42)	+1 (96:39)	.	8	1070
+6	SPb SU 1 (Antipov, Levin, Smirnov)	+1 (243:30)	+1 (12:47)	+ (125:17)	+ (41:26)	.	+ (104:00)	+ (258:21)	+ (21:18)	.	+ (291:45)	.	8	1135
+7	Belarusian SU 2 (Bahdanau, Labanau, Tolstsikau)	+4 (298:13)	+ (17:34)	-3	+ (35:48)	.	+3 (119:23)	+ (225:57)	+1 (15:41)	+2 (257:36)	+ (168:52)	.	8	1334
+8	Saratov SU 2 (Ivanov, Kreys, Rakhov)	.	+1 (18:36)	-2	+1 (67:10)	+ (202:45)	+3 (99:50)	+1 (230:54)	+ (26:33)	.	+ (51:42)	.	7	813
+9	Samara SAU 1 (Drozdov, Egorov, Semushin)	.	+1 (18:30)	+1 (273:20)	+2 (65:13)	.	+1 (86:37)	+2 (193:00)	+ (23:42)	.	+ (126:00)	.	7	924
+10	Ural SU 2 (Burmistrov, Dublennykh, Kurpilyansky)	.	+1 (16:15)	.	+ (53:29)	.	+1 (117:16)	+1 (193:47)	+ (18:50)	+ (164:20)	+3 (246:45)	.	7	927
+11	Moscow SU 4 (Kaluzhin, Kharitonov, Rogulenko)	.	+ (10:01)	+ (263:32)	+ (39:46)	.	+ (78:33)	+2 (215:36)	+ (20:46)	-4	+3 (212:30)	.	7	937
+12	Ufa SATU 1 (Akhmetzyanov, Marin, Nefedov)	+1 (288:45)	+1 (18:02)	.	+ (65:04)	.	+1 (100:36)	+1 (288:35)	+ (22:17)	-1	+2 (194:20)	.	7	1095
+13	SPb IFMO 3 (Kever, Melnikov, Nigmatullin)	-1	+1 (35:15)	+2 (208:24)	+ (80:37)	.	+3 (110:58)	+ (252:43)	+ (20:01)	+ (280:45)	.	.	7	1105
+14	Belarusian SU 3 (Yarats, Pisarchyk, Udavichenka)	.	+ (14:49)	.	+ (55:23)	.	+ (66:42)	+ (198:38)	+ (19:48)	-4	+ (146:32)	.	6	498
+15	Izhevsk STU (Chudinovskikh, Kamashev, Kuzyakov)	-6	+1 (13:12)	+2 (241:19)	+ (65:47)	.	+ (56:19)	.	+ (23:41)	-2	+2 (102:19)	.	6	600
+16	HS of Economics (Babin, Samoylych, Tkachev)	+ (258:23)	+1 (17:57)	.	+1 (58:51)	.	+ (136:51)	.	+ (31:47)	+ (92:25)	-8	.	6	632
+17	Belarusian SU 1 (Pronin, Rudol, Tsikhan)	+ (252:13)	+1 (24:42)	.	+1 (38:28)	.	+1 (153:21)	-7	+ (23:12)	-1	+1 (162:36)	.	6	732
+18	Novosibirsk SU 1 (Kurtov, Sorokin, Atuchin)	.	+ (15:13)	-9	+ (40:25)	.	+2 (115:50)	+8 (289:23)	+ (20:05)	.	+ (128:51)	.	6	807
+19	Moscow SU 2 (Kolesnichenko, Kumok, Tikhomirov)	.	+1 (26:00)	-1	+1 (40:28)	.	+3 (163:38)	+ (236:23)	+ (10:53)	.	+1 (252:33)	.	6	847
+20	Siberian SUTI 1 (Bakhturin, Rakitskiy, Bakh)	-2	+1 (23:31)	.	+ (56:04)	.	+ (167:15)	.	+ (33:56)	.	+2 (142:34)	.	5	481
+21	Orel STU (Kouprin, Valukhova, Vetrov)	.	+1 (12:04)	.	+1 (59:03)	.	+ (90:26)	.	+ (21:34)	.	+2 (253:47)	.	5	515
+22	Saratov SU 3 (Fefer, Kudryashov, Stepanenko)	.	+ (26:49)	.	+ (48:40)	.	+2 (231:02)	-1	+ (11:05)	.	+1 (159:04)	.	5	535
+23	Tomsk SU of CSR 1 (Park, Boyko, Bazhinov)	.	+ (25:22)	-1	+ (38:56)	.	+2 (167:21)	.	+ (16:59)	.	+3 (194:23)	.	5	540
+24	Magnitogorsk STU (Dyatlov, Lobanov, Weiss)	.	+ (13:43)	.	+ (41:13)	.	+ (106:15)	.	+ (23:59)	-2	+6 (246:36)	.	5	549
+25	South Ural SU 1 (Bich, Mayorov, Vasilenko)	-3	+1 (16:02)	+1 (187:57)	+1 (38:45)	.	+ (257:03)	.	+ (21:27)	.	-6	-2	5	579
+26	Tomsk SU 1 (Chadnov, Kolupaev, Panin)	.	+1 (38:44)	.	+ (76:04)	.	+4 (145:00)	.	+ (21:19)	.	+1 (243:58)	.	5	643
+27	SPb SU 2 (Serebryakov, Vorobyev, Zemlyanskiy)	.	+1 (18:19)	.	+ (63:20)	.	+2 (215:32)	-10	+ (27:55)	.	+ (292:56)	.	5	675
+28	Moscow EPhI 1 (Alyushin, Egorov, Osmakov)	.	+2 (56:21)	.	+1 (87:42)	.	+ (192:01)	.	+ (40:38)	.	+ (247:53)	.	5	682
+29	SPb SU 3 (Boykiy, Fondaratov, Gladysheva)	.	+3 (32:10)	+1 (229:45)	+1 (55:31)	.	+3 (173:33)	.	+ (41:09)	.	.	.	5	690
+30	Acad Phys Tech U (Mishunin, Sokolov, Yaroslavtsev)	.	+ (18:22)	.	+3 (100:37)	.	+1 (194:18)	.	+ (25:09)	.	+ (275:11)	.	5	692
+31	Far Eastern NU 1 (Burago, Tuphanov, Zhuplev)	.	+ (15:58)	.	+ (53:30)	.	+4 (231:10)	.	+ (23:29)	.	+2 (287:50)	.	5	729
+32	Yerevan RAU 1 (Saribekyan, Saribekyan, Yeghiazaryan)	.	+ (21:09)	.	+2 (76:36)	.	.	+ (243:40)	+ (45:53)	.	+1 (286:29)	.	5	731
+33	Nizhny Novgorod SU (Lapshin, Matrosov, Shmelev)	.	+1 (29:37)	.	+ (75:20)	.	+4 (243:25)	.	+ (21:39)	-5	+4 (248:25)	.	5	796
+34	Belarusian SU 4 (Beloglazov, Skuratovich, Valynets)	-4	+2 (55:05)	+5 (289:17)	+ (106:43)	.	+ (153:00)	.	+1 (35:25)	.	.	.	5	798
+35	Moscow IPT 1 (Davydow, Gorshenin, Pimenov)	.	+1 (30:35)	+6 (282:01)	+ (70:42)	.	+7 (290:01)	-3	+ (29:44)	.	.	.	5	981
+36	Moscow IPT 2 (Degtyarev, Morgun, Tolmachev)	.	+ (20:19)	+14 (298:02)	+2 (96:09)	.	+14 (222:43)	.	+ (17:58)	.	.	.	5	1253
+37	Kaunas TU 1 (Banaitis, Mitkus, Viktorcik)	.	+ (17:43)	.	+ (73:52)	.	+ (103:52)	-4	+ (23:19)	-3	.	.	4	216
+38	Volgograd STU 1 (Chalyshev, Kokonkov, Zhorin)	.	+ (38:13)	.	+ (53:37)	.	.	.	+ (22:51)	-5	+ (135:07)	.	4	248
+39	Tomsk S Pol U 1 (Khaustov, Ryzhov, Alipov)	.	+ (29:11)	.	+ (63:46)	.	+ (137:34)	.	+ (36:53)	.	-2	.	4	265
+40	Nizhny Novgorod STU (Lazarev, Lopatkin, Mkhitaryan)	.	+1 (38:12)	.	+ (54:39)	.	+2 (187:29)	.	+ (16:15)	.	.	.	4	355
+41	Tyumen SU (Chernenkov, Pidzhakov, Prudaev)	.	+2 (49:06)	.	+ (27:03)	.	-24	.	+ (12:51)	.	+ (238:54)	.	4	366
+42	Perm SU (Ponomarev, Sergeev, Serovikov)	.	+1 (44:30)	.	+ (55:34)	.	+3 (158:42)	.	+1 (27:37)	-4	-2	.	4	384
+43	Petrozavodsk SU 2 (Basunkov, Fedulin, Filippov)	.	+1 (17:19)	.	+ (61:31)	.	-1	.	+ (38:02)	-2	+ (257:32)	.	4	393
+44	SPb SU 4 (Merabishvili, Samojlov, Udalov)	.	+1 (23:37)	.	+ (44:21)	.	+3 (222:29)	.	+ (26:57)	.	.	.	4	395
+45	Yerevan SU 1 (Hakobyan, Shatakhtsyan, Aslanyan)	.	+2 (28:08)	.	+2 (64:25)	.	+1 (203:44)	.	+ (15:14)	.	.	.	4	410
+46	Saratov SU 4 (Akimov, Kuznetsov, Levshunov)	.	+ (21:07)	.	+ (54:38)	.	-10	.	+ (28:47)	-1	+4 (233:56)	.	4	416
+47	SPb IFMO 4 (Alexandrov, Kazakov, Sergushichev)	.	+1 (28:45)	.	+3 (88:26)	.	-4	.	+ (24:10)	.	+1 (189:36)	.	4	429
+48	Belarusian SUIR 1 (Ropan, Tkachenka, Zhlobich)	.	+1 (49:10)	.	+ (69:10)	.	-7	.	+ (43:35)	.	+3 (205:05)	.	4	446
+49	Altai STU 1 (Izbyshev, Boychenko, Esipenko)	.	+ (53:24)	.	+1 (68:46)	.	-3	.	+ (42:47)	.	+2 (258:52)	.	4	481
+50	Kazakh-British TU 1 (Yeliussizov, Yessenamanov, Baizhikenov)	.	+ (26:16)	.	+ (67:00)	.	+8 (198:05)	.	+ (32:21)	.	-1	.	4	483
+51	Moscow AI (Dubinin, Risenberg, Safonov)	.	+ (53:08)	.	+1 (77:01)	.	+4 (190:33)	.	+1 (45:20)	.	-4	.	4	485
+52	Bauman Moscow STU (Akolzin, Bugaevsky, Verkhoglyadov)	.	+ (26:09)	.	+1 (64:33)	.	+8 (169:42)	.	+1 (37:21)	.	-2	.	4	496
+53	Rybinsk SAAT 2 (Kiselyov, Mirzoyan, Mirzoyan)	.	+4 (35:10)	+2 (221:31)	+ (103:52)	.	-3	.	+ (31:01)	.	-1	.	4	510
+54	Tbilisi SANGU 1 (Benidze, Rukhadze, Rachvelishvili)	.	+ (15:51)	.	+ (74:37)	.	+6 (286:36)	.	+ (30:26)	.	-3	.	4	525
+55	Volgograd STU 2 (Borodinov, Kryzanovsky, Musman)	.	+1 (26:33)	.	+ (77:11)	.	+3 (276:47)	.	+2 (37:19)	.	.	.	4	536
+56	Kaunas TU 2 (Kasperavicius, Kazlauskas, Neverauskas)	.	+2 (131:18)	.	+ (88:24)	.	-3	.	+ (38:59)	.	+1 (240:23)	.	4	557
+57	Ural SU 3 (Dolgorukov, Soboleva, Tekhazheva)	-1	+2 (55:29)	.	+ (113:43)	.	.	.	+1 (45:45)	.	+1 (266:32)	.	4	559
+58	Novosibirsk SU 2 (Golubev, Vasilevsky, Scherbina)	-5	+1 (29:39)	.	+ (60:09)	.	.	.	+1 (48:00)	.	+6 (282:05)	.	4	579
+59	Pomor SU (Osichev, Tchurov, Zabolotskaya)	.	+ (26:41)	.	+1 (113:00)	.	+6 (263:37)	.	+2 (20:06)	-3	-3	.	4	602
+59	Kant SU of Russia 2 (Balychev, Vashchegin, Zhasan)	.	+ (55:04)	.	+1 (76:55)	.	-1	.	+ (35:16)	.	+6 (296:46)	.	4	602
+61	Ural SU 1 (Efremov, Fominykh, Kantorov)	.	+2 (24:00)	.	+2 (67:55)	.	+8 (249:33)	.	+ (30:53)	.	.	.	4	610
+62	Udmurt SU (Abizyaev, Bikov, Urbanovich)	.	+3 (50:58)	.	+ (74:31)	.	-2	.	+1 (27:14)	-1	+6 (260:47)	.	4	611
+63	Tbilisi SU 3 (Gabisonia, Barbakadze, Kutsia)	.	+5 (73:46)	.	+2 (123:40)	.	+1 (227:04)	.	+ (31:51)	.	-1	.	4	614
+64	Novosibirsk STU 1 (Dubovik, Ukolov, Anisimov)	.	+1 (40:24)	.	+2 (75:01)	.	.	.	+ (39:18)	.	+6 (293:48)	.	4	627
+65	Yerevan RAU 3 (Davtyan, Hovsepyan, Shahinyan)	.	+3 (63:14)	.	+ (123:26)	.	.	.	+ (57:05)	.	+4 (269:29)	.	4	652
+66	Gomel SU (Korzhik, Timoshkov, Veraksich)	.	+2 (127:59)	.	+ (87:01)	.	-5	.	+ (51:19)	.	+7 (256:18)	.	4	701
+67	Belarusian SUIR 2 (Benko, Vorobyov, Yushkevich)	.	+3 (99:24)	.	+1 (127:42)	.	+5 (229:31)	.	+3 (81:03)	.	-13	.	4	776
+68	Moscow SU 3 (Lerner, Salikhov, Valiev)	-1	+1 (40:54)	.	+4 (125:42)	.	+6 (260:56)	-1	+5 (47:57)	.	.	.	4	792
+69	Moscow I of El Tech (Greshilov, Mishin, Suleymanov)	.	+2 (23:08)	.	+16 (137:24)	.	+2 (216:17)	-1	+ (65:56)	.	.	-2	4	841
+70	Kazan SU 1 (Enkov, Habibrahmanov, Kornienko)	.	+ (28:35)	.	+ (50:05)	-1	-4	.	+ (18:51)	-4	.	.	3	96
+71	Tbilisi SU 2 (Mamageishvili, Saghinadze, Lutsenko)	-1	+ (20:08)	.	+ (70:40)	.	-3	.	+ (27:33)	.	-9	.	3	117
+72	Orenburg SU (Chertkova, Savelyev, Semenov)	.	+1 (27:54)	.	+1 (54:05)	.	-5	.	+ (15:01)	.	-1	.	3	136
+73	Ural STU 2 (Fetisov, Kiselev, Yakob)	.	+1 (28:10)	.	+ (60:14)	.	-5	.	+ (35:42)	.	.	.	3	143
+74	Latvia U 1 (Balodis, Vihrovs, Virza)	.	+1 (35:04)	.	+ (68:38)	.	.	.	+ (24:58)	.	.	.	3	147
+75	Pskov SPI (Dvoinev, Marchenko, Shvarkunov)	.	+1 (30:04)	.	+ (51:23)	.	.	.	+1 (29:03)	.	-8	.	3	150
+75	Tbilisi SU 4 (Managadze, Skhirtladze, Varamashvili)	.	+ (26:59)	.	+ (78:44)	.	-3	.	+ (46:18)	.	.	.	3	150
+77	Tyumen SOGU (Drobyshev, Kobelev, Kostyanetsky)	.	+2 (24:36)	.	+ (60:38)	.	-5	.	+ (38:15)	-1	.	.	3	162
+77	Petrozavodsk SU 3 (Bezdelnikov, Myavrya, Senichev)	.	+1 (31:22)	.	+ (73:09)	.	-11	.	+ (38:55)	.	.	.	3	162
+79	Ufa SATU 2 (Gumerov, Lezhankin, Ripatti)	-5	+2 (39:25)	.	+ (65:25)	.	-4	.	+ (19:12)	.	.	.	3	163
+80	Novosibirsk SU 3 (Morozov, Stenenko, Zaicev)	.	+ (27:03)	.	+ (69:47)	.	-10	.	+2 (28:58)	.	.	.	3	164
+81	Yerevan RAU 2 (Hovsepyan, Tsirunyan, Gevorgyan)	.	+ (19:20)	.	+1 (65:56)	.	-8	.	+1 (41:46)	.	.	.	3	165
+82	Latvia U 2 (Iraids, Opmanis, Stepanovs)	.	+ (45:11)	.	+1 (65:20)	.	.	.	+ (36:42)	-1	.	.	3	166
+83	Tomsk SU 2 (Doskoch, Perikov, Stefantsov)	.	+2 (37:50)	.	+ (67:58)	.	-2	.	+ (33:31)	.	-10	.	3	177
+83	Kant SU of Russia 1 (Kostrikov, Mitrofanov, Varnavskikh)	.	+ (43:41)	.	+1 (88:48)	.	-30	.	+ (26:47)	.	.	.	3	177
+85	Tartu U 2 (Heinsoo, Loot, Repan)	.	+ (16:00)	.	+2 (75:27)	.	-2	.	+1 (34:37)	.	.	.	3	185
+86	South Ural SU 2 (Bogatirev, Gaynetdinov, Litichevskiy)	.	+2 (38:28)	.	+ (103:23)	.	.	.	+ (14:00)	.	.	.	3	195
+87	Yerevan SU 2 (Karapetyan, Kostandyan, Mnatsakanyan)	.	+ (15:30)	.	+3 (103:23)	.	-14	.	+ (23:37)	.	.	.	3	201
+88	Siberian SUTI 2 (Miroshnikov, Albrekht, Rogatnev)	.	+1 (55:53)	.	+ (104:25)	.	.	.	+ (28:47)	-1	-2	.	3	207
+89	Moscow EPhI 2 (Ayrapetyan, Kolmar, Vilkin)	.	+1 (27:43)	.	+1 (106:05)	.	-7	.	+ (39:40)	.	.	.	3	212
+90	Siberian Fed U 1 (Minkin, Chudov, Snetkov)	.	+ (38:40)	.	+1 (108:05)	.	-5	.	+ (50:18)	.	.	.	3	216
+91	Siberian Fed U 2 (Tcvetcih, Tcvetcih, Grizan)	.	+ (49:55)	.	+1 (94:51)	.	-1	.	+1 (34:03)	.	.	.	3	217
+91	Vilnius U (Budriunas, Paltanavicius, Visockas)	.	+2 (98:06)	.	+ (27:30)	.	-1	.	+ (52:56)	-2	-3	.	3	217
+93	SPb SPU 1 (Churinov, Mashinsky, Timofeev)	.	+1 (33:44)	.	+ (102:17)	.	.	.	+ (63:16)	.	.	.	3	218
+94	Vyatka SU 1 (Chistyakov, Stolbova, Vyaznikov)	.	+2 (54:20)	.	+ (75:51)	.	.	.	+1 (32:51)	.	-11	.	3	221
+95	Kyrgyz-Russian Slav U 1 (Mansurov, Semenov, Babenko)	.	+1 (21:49)	.	+3 (103:35)	.	-6	.	+ (35:40)	.	-6	.	3	239
+96	Taganrog TI of SFU (Chumachenko, Mozgovoy, Tarasov)	.	+1 (58:11)	.	+1 (108:59)	.	-2	.	+ (34:01)	.	.	.	3	240
+97	SPb Mozhaisky MSA (Bobkov, Grinenko, Mochalov)	.	+1 (26:31)	.	+1 (113:49)	.	-3	.	+1 (46:40)	.	.	.	3	245
+98	SPb SPU 2 (Beltukov, Kozhevnikov, Silakov)	.	+ (42:26)	.	+2 (142:07)	.	-2	.	+ (28:22)	.	.	.	3	252
+99	Ulyanovsk SU (Kruglova, Penzentsev, Usov)	.	+ (31:18)	.	+2 (141:55)	.	.	.	+ (43:13)	.	.	.	3	255
+100	Far Eastern NU 2 (Malyavin, Sosnov, Stepanets )	.	+ (80:46)	.	+ (72:57)	.	-2	.	+4 (43:36)	-3	.	.	3	275
+101	Tashkent B of MSU 1 (Storozhev, Lazarev, Ashirmatov)	.	+ (58:24)	.	+1 (151:14)	.	-1	.	+1 (27:06)	.	.	.	3	276
+102	Tartu U 1 (Belous, Nikiforov, Selajev)	.	+2 (69:36)	.	+1 (116:16)	.	.	.	+ (32:37)	.	.	.	3	277
+103	Rybinsk SAAT 1 (Barkhonina, Klepikov, Manzharov)	.	+3 (43:05)	.	+ (93:28)	.	.	.	+1 (64:37)	.	-7	.	3	280
+103	Tashkent U of IT 3 (Atadjanov, Atadjanov, Erjonov)	.	+ (43:30)	.	+ (151:58)	.	-2	.	+ (86:49)	.	.	.	3	280
+105	Kyrgyz-Russian Slav U 3 (Bachevskiy, Balay, Fedotov)	.	+ (38:10)	.	+1 (142:56)	.	-1	.	+1 (64:45)	.	.	.	3	284
+106	Tbilisi SU 1 (Lekveishvili, Nadiradze, Tvaltchrelidze)	.	+1 (35:07)	.	+4 (145:30)	.	.	.	+ (16:57)	-3	-3	.	3	296
+107	Omsk SU (Evdokimov, Pozdnyakov, Nepomnyashih)	.	+ (20:29)	.	+ (222:32)	.	-9	.	+1 (36:19)	.	.	.	3	298
+108	Kazakh-British TU 2 (Utkelbayev, Yesmukhanov, Li)	.	+1 (32:42)	-2	+5 (100:24)	.	.	.	+1 (40:24)	.	-21	-1	3	312
+109	Novosibirsk STU 2 (Shtanko, Kuznetsov, Shatrov)	.	+ (32:42)	.	+3 (201:38)	.	.	.	+ (23:49)	.	-3	.	3	316
+110	Kazan SU 2 (Antonjuck, Ulyanov, Yarullin)	.	+2 (65:56)	.	+2 (132:28)	.	-9	.	+1 (21:39)	.	.	.	3	318
+111	Far Eastern NU 3 (Nazarov, Terentyev, Solovets)	.	+ (68:29)	.	+2 (161:32)	.	.	.	+ (55:43)	.	.	.	3	324
+112	Samara SAU 2 (Abdulvaliev, Glashenko, Zimichev)	.	+3 (74:17)	.	+ (112:11)	.	.	.	+2 (39:07)	.	.	.	3	325
+113	Ural STU 1 (Kildyushov, Ryabov, Skuridin)	.	+2 (77:30)	.	+1 (155:37)	.	.	.	+ (42:22)	.	.	.	3	334
+114	Volgograd SU (Karpov, Stepanov, Udalova)	.	+1 (36:01)	.	+3 (220:40)	.	.	.	+ (10:04)	-3	.	.	3	346
+115	Tomsk SU of CSR 2 (Berdnikov, Kraynyak, Pan)	.	+ (37:47)	.	+ (185:05)	.	.	.	+2 (88:56)	.	.	.	3	350
+116	Suleyman Demirel U 4 (Zhurtbayev, Tainov, Gorskiy)	.	+2 (51:31)	.	+5 (164:32)	.	.	.	+ (19:21)	.	.	.	3	374
+117	Novgorod SU (Khokhlovsky, Klimushenkova, Mukhina)	.	+2 (127:44)	.	+2 (104:30)	.	.	.	+1 (55:37)	.	.	.	3	386
+118	Buryat SU (Bragin, Skvortsov, Baldanova)	.	+2 (35:46)	.	+3 (179:47)	.	-4	.	+1 (70:10)	.	-2	.	3	404
+119	I of Math Siberian Fed U 1 (Kucherenko, Vorotynov, Kormyshov)	.	+1 (35:58)	.	+7 (169:12)	.	.	.	+ (54:30)	.	.	.	3	418
+120	Kazakh-British TU 3 (Myrzahanov, Bekibaev, Sahariev)	.	+1 (51:23)	.	+5 (227:47)	.	.	.	+ (21:49)	-1	.	.	3	419
+121	Ivanovo SPU (Amirbekov, Lebedev, Terrov)	.	+4 (98:49)	.	+ (195:14)	.	.	.	+ (63:24)	.	.	.	3	436
+122	Yaroslavl SU 1 (Afanasyev, Bykova, Delyukin)	-2	+4 (85:41)	.	+1 (118:54)	.	.	.	+4 (80:54)	.	.	.	3	463
+123	Vyatka SU 2 (Korchemkina, Prozorova, Suhih)	.	+2 (84:11)	.	+1 (136:14)	.	.	.	+ (200:04)	.	.	.	3	480
+124	Urgench B of TUIT 1 (Yusupov, Shulepov, Annamuratov)	.	+ (38:35)	.	+5 (267:33)	.	.	.	+2 (76:20)	.	.	.	3	521
+125	Irkutsk STU (Breusov, Guseinov, Gerasimov)	.	+6 (102:14)	.	+3 (197:03)	.	.	.	+1 (31:55)	.	-2	.	3	530
+126	Baikal SU of EL (Mikeshin, Chepchenko, Gladkih)	.	+ (66:10)	.	+8 (248:39)	.	.	.	+1 (82:10)	-3	.	.	3	576
+127	Yerevan RAU 4 (Gevorgyan, Martirosyan, Yeghiazaryan)	.	+4 (132:19)	.	+1 (296:57)	.	.	.	+ (53:38)	.	.	.	3	581
+128	Kazakh NTU 1 (Tolenbekov, Kozhayev, Tilenshieva)	.	+2 (133:21)	.	+1 (274:58)	.	-1	.	+2 (124:41)	.	.	.	3	631
+129	Vologda STU (Komarov, Telkov, Tolstov)	.	+5 (207:25)	.	+5 (158:23)	.	.	.	+1 (73:51)	.	.	.	3	658
+130	Belarusian SU of Transport (Kapusta, Kuznetsov, Shats)	.	+6 (212:15)	.	+4 (201:50)	.	.	.	+2 (178:49)	.	-1	.	3	831
+131	Obninsk STU for NPE (Agibalov, Kozlovskij, Gorskikh)	.	+1 (58:52)	.	-10	.	.	.	+ (23:59)	.	.	.	2	101
+132	Tashkent U of IT 2 (Khayruddinov, Tyan, Puchkin)	.	+1 (52:35)	.	-1	.	.	.	+ (84:03)	.	.	.	2	156
+133	Khakas SU (Konyaev, Gladishev, Sakerin)	.	+1 (82:33)	.	-5	.	.	.	+1 (45:49)	.	.	.	2	167
+134	Tbilisi IBSU 2 (Chelishvili, Maisuradze, Gandilyan)	.	+2 (62:35)	.	.	.	.	.	+ (94:01)	.	.	.	2	196
+135	Tbilisi IBSU 1 (Beridze, Kupatadze, Zarqua)	.	+1 (40:05)	.	-3	.	.	.	+5 (90:09)	.	.	.	2	250
+136	Siberian SAU (Baranov, Bolgov, Kazmiruk)	.	+4 (85:53)	.	.	.	.	.	+ (127:10)	.	.	.	2	292
+137	Kyrgyz-Russian Slav U 2 (Uulu Azamat, Mironov, Kim)	.	+2 (38:15)	.	-17	.	.	.	+7 (117:23)	.	.	.	2	335
+138	Tbilisi SANGU 3 (Gulitashvili, Kvirkvia, Kokaia)	.	+3 (144:14)	.	-3	.	.	.	+1 (116:48)	.	.	.	2	340
+139	Tomsk S Pol U 2 (Danilov, Goltsov, Rusinov)	.	+6 (146:41)	.	-1	.	.	.	+ (75:58)	.	.	.	2	341
+140	Kyrgyz-Turkey Manas U (Urayimov, Chymbaev, Torobekov)	.	+5 (87:38)	.	-6	.	.	.	+1 (146:44)	.	.	.	2	353
+141	Kemerovo SU (Koksin, Averchenko, Filippov)	.	+4 (193:02)	.	-4	.	.	.	+2 (47:00)	.	.	.	2	360
+141	East-Siberian SAE (Reymerov, Kvast, Gumenyuk)	.	+3 (66:42)	.	-5	.	.	.	+2 (194:32)	.	.	.	2	360
+143	Rubtsovsk II (Skorobogatov, Shveychuk, Samoylov)	.	+3 (89:37)	.	-6	.	.	.	+2 (183:25)	.	.	.	2	372
+144	Suleyman Demirel U 2 (Mukashev, Nogayev, Bayturinov)	.	+9 (145:11)	.	-6	.	-1	.	+2 (48:58)	.	.	.	2	413
+145	Tashkent I of Arch and Cons (Asyamov, Yuliev, Khisamitov)	.	-12	.	+2 (260:43)	.	.	.	+1 (108:17)	.	.	.	2	428
+146	NU of Uzbekistan 2 (Ahmedov, Fedorkin, Sadikov)	.	+7 (224:24)	.	.	.	.	.	+ (67:37)	.	.	.	2	431
+147	Caucasus U (Sovdagrishvili, Amashukeli, Chkareuli)	.	+3 (139:34)	.	.	.	.	.	+1 (214:41)	.	.	.	2	433
+148	Altai STU 3 (Zakurdaev, Lutsenko, Zherebyatyeva)	.	+6 (288:29)	.	-2	.	.	.	+ (33:15)	.	.	.	2	441
+149	I of Math Siberian Fed U 2 (Truba, Losev, Kudashov)	.	+ (49:52)	.	+7 (265:03)	.	.	.	-7	.	.	.	2	454
+150	Yerevan SU 3 (Khachatryan, Yengoyan, Chorokhyan)	.	+8 (183:33)	.	.	.	.	.	+2 (81:21)	.	.	.	2	464
+151	Altai SU (Anisimov, Tepikin, Yuzhkova)	.	+3 (268:55)	.	-16	.	.	.	+1 (124:20)	.	.	.	2	472
+152	International IT U 2 (Zhumazhanov, Kayranbay, Mustafina)	.	+10 (254:12)	.	-3	.	.	.	+ (55:35)	.	.	.	2	509
+153	International IT U 3 (Kim, Zemel, Nigay)	.	+5 (214:28)	.	.	.	.	.	+5 (128:00)	.	-4	.	2	542
+154	Kazakh NU 2 (Turar, Isabaev, Seitkozhaev)	.	+13 (277:23)	-3	.	.	.	.	+ (38:38)	.	.	.	2	575
+155	Kazakh NU 3 (Proskurjakov, Kharasaev, Chulkov)	.	+2 (177:08)	.	.	.	.	.	+8 (208:54)	.	.	.	2	585
+156	American U Central Asia (Takyrbashev, Dzhakishev, Stus)	.	+8 (280:02)	.	.	.	.	.	+2 (106:59)	.	.	.	2	586
+157	Tashkent U of IT 1 (Valiev, Tsoy, Platonov)	.	+ (57:38)	.	-6	.	.	.	+14 (274:49)	.	.	.	2	611
+158	Yaroslavl SU 2 (Bogaevskaya, Cherkasov, Nefedov)	.	+14 (173:27)	.	-9	.	.	.	+ (160:06)	.	.	.	2	613
+159	International IT U 4 (Zhantasov, Arystanbayev, Akhmetov)	.	+3 (231:17)	.	.	.	.	.	+3 (294:43)	.	.	.	2	645
+160	Tbilisi SANGU 4 (Mania, Jamburia, Shonia)	.	+7 (208:44)	.	.	.	.	.	+2 (264:12)	.	.	.	2	652
+161	Tashkent Auto and Road Cons I (Yoldoshev, Jamolov, Yoldoshev)	.	+4 (294:23)	.	.	.	.	.	+3 (248:14)	.	.	.	2	682
+162	East Siberian STU (Vershinin, Gilev, Zorikto)	.	+7 (199:21)	.	-4	.	.	.	+7 (279:20)	.	.	.	2	758
+163	Siberian SIU (Milovanov, Goncharov, Naymark)	.	+12 (267:17)	.	.	.	.	.	+6 (288:56)	.	.	.	2	915
+164	Almaty IPET 2 (Sarsenov, Kulmakhanov, Dauletbekov)	.	+9 (75:15)	.	.	.	.	.	+28 (255:26)	.	.	.	2	1070
+165	Baku Qafqaz U 1 (Abbasov, Hasanov, Javadov)	.	+ (36:45)	.	.	.	.	.	-17	.	.	.	1	36
+166	Ugra SU (Aristov, Karelin, Sinitsyn)	.	-7	.	.	.	.	.	+ (62:53)	.	.	.	1	62
+167	Novosibirsk STU 3 (Astapova, Akberov, Kosminova)	.	-3	.	-4	.	.	.	+1 (50:08)	.	.	.	1	70
+168	Kazakh-British TU 4 (Kossumov, Satybaldiyev, Alipov)	.	+2 (31:44)	.	-9	.	-1	.	-5	.	.	.	1	71
+169	Kazakh NTU 3 (Babich, Zubashev, Seidahmetov)	.	-3	.	.	.	.	.	+ (98:05)	.	.	.	1	98
+170	NU of Uzbekistan 1 (Kadamov, Shersheyev, Bobrov)	.	+3 (54:26)	.	.	.	.	.	-5	.	-1	.	1	114
+171	Tbilisi SANGU 2 (Meladze, Zarkua, Nemsadze)	.	+ (124:58)	.	.	.	.	.	-7	.	.	.	1	124
+172	U of World Econ and Diplomacy (Ishmatov, Mirzaqulov, Hasanov)	.	+5 (84:05)	.	-4	.	.	.	-8	.	.	.	1	184
+173	Urgench B of TUIT 3 (Azizbek, Javlonbek, Shamsutdinov)	.	-5	.	-3	.	.	.	+3 (128:50)	.	.	.	1	188
+174	Bukhara SU (Mustafoyev, Boboyev, Kasimov)	.	-24	.	.	.	.	.	+2 (167:07)	.	.	.	1	207
+175	Eurasian NU (Andreeva, Adiyatov, Ozaev)	.	-11	.	.	.	.	.	+2 (179:03)	.	.	.	1	219
+176	Novosibirsk SPU (Viacheslav, Dmitry, Viacheslav)	.	-9	.	.	.	.	.	+2 (186:27)	.	.	.	1	226
+177	Kazakh NU 1 (Abdykulov, Satenov, Kutybaev)	.	+4 (164:36)	.	.	.	.	.	-10	.	.	.	1	244
+178	Tbilisi Geo-French SU (Kasradze, Jojua, Apkhaidze)	.	+3 (188:42)	.	.	.	.	.	-10	.	.	.	1	248
+179	Altai STU 4 (Tsepennikov, Zalogina, Kazantsev)	.	-12	.	.	.	.	.	+1 (258:00)	.	.	.	1	278
+180	Tashkent U of IT 4 (Shpakov, Yuldasheva, Shlafin)	.	+6 (177:51)	.	.	.	.	.	-7	.	.	.	1	297
+181	Yakutsk SU (Struchkov, Zakharov, Maximov)	.	+7 (193:22)	.	.	.	.	.	-3	.	.	.	1	333
+182	Baku Qafqaz U 3 (Maharov, Agayev, Agayev)	.	+12 (104:40)	.	.	.	.	.	-19	.	.	.	1	344
+183	International IT U 1 (Toiteyev, Shokobalinov, Mramornov)	.	+7 (255:56)	.	-3	.	.	.	-9	.	.	.	1	395
+184	Issyk-Kul SU (Kapustin, Reshetnikov, Turkin)	.	-1	.	.	.	.	.	-2	.	.	.	0	0
+184	East Kazakhstan STU (Bublikov, Smailov, Lazutin)	.	-8	.	.	.	.	.	-3	.	.	.	0	0
+184	Altai STU 2 (Zinchenko, Malakhov, Dyatlov)	.	-8	.	.	.	.	.	.	.	.	.	0	0
+184	Baku Qafqaz U 2 (Aliyev, Hajiyev, Qurbanov)	.	-20	.	.	.	.	.	-3	.	.	.	0	0
+184	Georgian TU (Chkheidze, Shonia, Julakidze)	.	-1	-6	.	.	.	.	-5	.	.	.	0	0
+184	West Kazakhstan SU 1 (Zhumakhmet, Rakhmankulov, Mussina)	.	-1	.	.	.	.	.	-1	.	.	.	0	0
+184	Kazakh S Ped U (Khegai, Chernov, Kurbanova)	.	-8	.	.	.	.	.	-7	.	.	.	0	0
+184	West Kazakhstan SU 2 (Kabasov, Sergeev, Doskarayev)	.	.	.	.	.	.	.	.	.	.	.	0	0
+184	Almaty IPET 1 (Koilybayev, Tokmoldayev, Abdrahmanov)	.	-4	.	.	.	.	.	-1	.	.	.	0	0
+184	Atyrau I of Oil and Gas (Amangali, Alipov, Sarsen)	.	-9	.	.	.	.	.	.	.	.	.	0	0
+184	Samarkand SU (Safarov, Holmatov, Holmatov)	.	.	.	.	.	.	.	.	.	.	.	0	0
+184	Urgench B of TUIT 4 (Davlatov, Artikov, Yakubov)	.	-10	.	.	.	.	.	-2	.	.	.	0	0
+184	Urgench B of TUIT 2 (Quromboyev, Botirov, Yusupov)	.	-4	.	.	.	.	.	-6	.	.	.	0	0
+184	Samarkand B of TUIT (Erkaev, Saidvaliev, Saidov)	.	-4	.	-4	.	.	.	.	.	.	.	0	0
+184	Gulistan SU (Xolmatov, Nurtayev, Kechurukova)	.	-3	.	.	.	.	.	-1	.	.	.	0	0
+184	Almaty IPET 3 (Kovalenko, Son, Fedoseev)	.	.	.	.	.	.	.	.	.	.	.	0	0
+	Total runs	51	703	82	431	9	414	63	483	94	268	10
+	Accepted	10	175	14	132	1	53	17	171	9	45	0
+	Rejected	41	528	68	299	8	361	46	312	85	223	10
+	First Accept	80:26	8:28	125:17	25:34	202:45	56:19	67:24	9:27	92:25	51:42	
+	Last Accept	298:13	294:23	298:02	296:57	202:45	290:01	289:23	294:43	290:24	297:18	

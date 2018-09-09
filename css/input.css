@@ -1,0 +1,25 @@
+input[type=number] {
+	padding:5px;
+	margin: 0px;
+	display:inline-block;
+	border:none;
+#	border:1px solid gray;
+	width: 30px;
+	text-align: center
+}
+
+.half{
+	display:inline-block;
+	width: 45%;
+	vertical-align: middle;
+	margin: 5px;
+}
+
+select
+{
+	padding:4px;
+	display:inline-block;
+	border:none;
+	border-bottom:1px solid #ccc;
+	width: 100%;
+}

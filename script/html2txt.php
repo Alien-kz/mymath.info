@@ -20,13 +20,13 @@ function convert_html_txt($input) {
 	
 	$output = str_replace("\n","", $output);
 	$output = str_replace("\r","", $output);
-	$output = preg_replace("/<tr.*?>/", "", $output);
-	$output = preg_replace("/<\/(tr|thead)>/", "\n", $output);
-	$output = preg_replace("/<(td|th).*?>/", "", $output);
-	$output = preg_replace("/<\/(td|th)>/", "\t", $output);
-	$output = str_replace("<s>", " (", $output);
-	$output = str_replace("</s>", ")", $output);
-	$output = preg_replace("/<.+?>/", "", $output);
+	$output = preg_replace("/<tr.*?>/", "", $output);			#remove <tr>
+	$output = preg_replace("/<\/(tr|thead)>/", "\n", $output);	#replace </tr> or </thead> to newline
+	$output = preg_replace("/<(td|th).*?>/", "", $output);		#remove <td> and <th>
+	$output = preg_replace("/<\/(td|th)>/", "\t", $output);		#replace </td> to tabulation
+	$output = str_replace("<s>", " (", $output);				#replace <s> to ( - team members start
+	$output = str_replace("</s>", ")", $output);				#replace </s> to ) - team members fin
+	$output = preg_replace("/<.+?>/", "", $output);				#remove all tags
 
 	$output = str_replace("\t\n","\n", $output);
 	$output = str_replace("\n\n","\n", $output);

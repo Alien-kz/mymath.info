@@ -1,5 +1,11 @@
 <?php
 
+function get_array_from_file($filename) {
+	$data = file($filename, 
+				FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES);
+	return $data;
+}
+
 function get_table_from_file($filename) {
 	if (!file_exists($filename))
 		return array();
@@ -80,9 +86,10 @@ function get_university_list($table, $colomn) {
 	for ($i = 0; $i < $height; $i++) {
 		$row = $table[$i][$colomn];
 		$name = cut_university($row);
-		if ($name == "Total runs")
+		if ($table[$i][0] == "")
 			break;
-		array_push($list, $name);
+		if ($name)
+			array_push($list, $name);
 	}
 	sort($list);
 	$list = array_unique($list);
@@ -99,7 +106,7 @@ function mark_top($table, $colomn, $top) {
 			$counter[$name] += 1;
 		else
 			$counter[$name] = intval(1);
-		if ($counter[$name] <= $top) {
+		if ($counter[$name] <= $top and $table[$i][0] != "") {
 			$table[$i]['row_type'] = "silver";
 		}
 	}
@@ -125,7 +132,10 @@ function select_top($table, $colomn, $top) {
 			$counter[$name] = intval(1);
 		if ($counter[$name] <= $top) {
 			$str = $table[$i];
-			array_unshift($str, $current);
+			if ($str[0] == "")
+				array_unshift($str, "");
+			else
+				array_unshift($str, $current);
 			array_push($new_table, $str);
 			$current += 1;
 		}
@@ -136,10 +146,12 @@ function select_top($table, $colomn, $top) {
 function mark_row($table, $colomn, $needle) {
 	$height = count($table) - 1;
 	for ($i = 0; $i < $height; $i++) {
-		$row = $table[$i][$colomn];
-		$marker = stripos(" ".$row, $needle);
-		if ($marker) {
-			$table[$i]['row_type'] = "silver";
+		if ($table[$i][0] != "") {
+			$row = $table[$i][$colomn];
+			$marker = stripos($row, $needle);
+			if ($marker === 0) {
+				$table[$i]['row_type'] = "silver";
+			}
 		}
 	}
 	return $table;
@@ -158,10 +170,13 @@ function select_row($table, $colomn, $needle) {
 	$current = 1;
 	for ($i = 0; $i < $height; $i++) {
 		$row = $table[$i][$colomn];
-		$marker = stripos(" ".$row, $needle);
-		if ($marker) {
+		$marker = stripos($row, $needle);
+		if ($marker === 0) {
 			$str = $table[$i];
-			array_unshift($str, $current);
+			if ($str[0] == "")
+				array_unshift($str, "");
+			else
+				array_unshift($str, $current);
 			array_push($new_table, $str);
 			$current += 1;
 		}
@@ -169,6 +184,77 @@ function select_row($table, $colomn, $needle) {
 	return $new_table;
 }
 
+function mark_kaz($table, $colomn, $needles) {
+	$height = count($table) - 1;
+	for ($i = 0; $i < $height; $i++) {
+		if ($table[$i][0] != "") {
+			$row = $table[$i][$colomn];
+			$found = false;
+			foreach ($needles as $needle) {
+				$marker = stripos($row, $needle);
+				if ($marker === 0) {
+					$found = true;
+					break;
+				}
+			}
+			if ($found === true) {
+				$table[$i]['row_type'] = "silver";
+			}
+		}
+	}
+	return $table;
+}
+
+function select_kaz($table, $colomn, $needles) {
+	if ($needles == "")
+		return $table;
+	$height = count($table) - 1;
+	$new_table = array();
+	if (isset($table['header'])) {
+		$header = $table['header'];
+		array_unshift($header, "№");
+		$new_table['header'] = $header;
+	}
+	$current = 1;
+	for ($i = 0; $i < $height; $i++) {
+		$row = $table[$i][$colomn];
+		$found = true;
+		if ($table[$i][0] != "") {
+			$found = false;
+			foreach ($needles as $needle) {
+				$marker = stripos($row, $needle);
+				if ($marker === 0) {
+					$found = true;
+					break;
+				}
+			}
+		}
+		if ($found === true) {
+			$str = $table[$i];
+			if ($str[0] == "")
+				array_unshift($str, "");
+			else
+				array_unshift($str, $current);
+			array_push($new_table, $str);
+			$current += 1;
+		}
+	}
+	return $new_table;
+}
+
+function mark_plus($table) {
+	$height = count($table) - 1;
+	for ($i = 0; $i < $height; $i++) {
+		$width = count($table[$i]) - 1;
+		for ($j = 2; $j < $width; $j++) {
+			$cell = $table[$i][$j];
+			$cell = preg_replace("/\+(\d*)/", "<span class='accepted'>+$1</span>", $cell);
+			$cell = preg_replace("/\-(\d*)/", "<span class='rejected'>-$1</span>", $cell);
+			$table[$i][$j] = $cell;
+		}
+	}
+	return $table;
+}
 
 function replace_brackets_to_label($table) {
 	$height = count($table) - 1;
@@ -190,7 +276,7 @@ function print_table($table) {
 	$row = current($table);
 	$width = count($row);
 	if (isset($row['row_type'])) {
-		$row -= 1;
+		$width -= 1;
 	}
 
 # print preambulas
@@ -214,13 +300,17 @@ function print_table($table) {
 	echo "<tbody>\n";
 	for ($i = 0; $i < $height; $i++) {
 		$row = $table[$i];
+
 		$color = "";
 		if (isset($row['row_type'])) {
 			$color = " class='bg_".$row['row_type']."'";
 		}
 		echo "<tr$color>";
 		for ($j = 0; $j < $width; $j++) {
-			echo "<td>".$row[$j]."</td>"; 
+			$value = "";
+			if (isset($row[$j]))
+				$value = $row[$j];
+			echo "<td>".$value."</td>"; 
 		}
 		echo "</tr>\n";
 	}

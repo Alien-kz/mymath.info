@@ -11,13 +11,13 @@
 		<?php
 			include_once "routine/html.php";
 			$agent = get_user_agent_type();
-			
+			# echo $agent;
 			if ($agent == 'desktop') {
-				echo "<link href='css/main.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
+				echo "<link href='css/main.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
 			} else {
-				echo "<link href='css/main_m.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
+				echo "<link href='css/main_m.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
 			}
-			echo "<link href='css/chars.css?ver=2018-09-02-1' rel='stylesheet' type='text/css' >";
+			echo "<link href='css/chars.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
 		?>
 		
 	</head>

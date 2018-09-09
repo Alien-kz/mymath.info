@@ -14,11 +14,6 @@ p {
 	font-size: 1em;
 }
 
-.selected {
-	color: white;
-	background: linear-gradient(to bottom, green, black);
-}
-
 .external_link {
 	color: black;
 	background: linear-gradient(to bottom, white, lightblue);
@@ -29,8 +24,25 @@ p {
 	background: linear-gradient(to bottom, white, lightgreen);
 }
 
+.selected {
+	color: white;
+	background: linear-gradient(to bottom, green, black);
+}
+
+.head_div {
+    border: 2px solid gray;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	display: inline-block;
+	margin-top: -2px;
+	margin-bottom: 10px;
+	color: white;
+	background: gray;
+	width: 80%
+}
+
 .content_div {
-    border: 1px solid gray;
+    border: 2px solid gray;
 	border-radius: 10px;
 	text-align: center;
 	margin: 10px;
@@ -96,7 +108,6 @@ p {
 .buttons_div {
 	border-radius: 10px;
 	padding: 5px;
-/*	border: 1px solid gray;*/
 	width: 80%;
 }
 

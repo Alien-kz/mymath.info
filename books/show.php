@@ -27,11 +27,8 @@
 
 		?>
 		
-		<div align="center">
-		<div class="content_div" align="center">
-			<p align='center'>
-			Изданное
-			</p>
+		<?php div_open("Изданное"); ?>
+			<div>
 			<div class="book_div">
 					<a href="2008_2018_msu_olympiad_in_math.pdf">
 					<img class='img_in_div' src="2008_2018_msu_olympiad_in_math_logo_mini.jpg">
@@ -81,13 +78,11 @@
 					Объем: 219 страниц.
 				</p>
 			</div>
-		</div>
-		</div>
-		<div align="center">
-		<div class="content_div" align="center">
-			<p align='center'>
-			Неизданное
-			</p>
+			</div>
+		<?php div_close(); ?>
+
+		<?php div_open("Неизданное"); ?>
+			<div>
 			<div class="book_div">
 				<a href="2014_2018_republic_olympiad_in_math_for_student.pdf">
 					<p align="center">
@@ -106,7 +101,7 @@
 					Объем: 16 страниц.
 				</p>
 			</div>
-		</div>
-		</div>
+			</div>
+		<?php div_close(); ?>
 	</body>
 </html>

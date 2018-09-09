@@ -38,6 +38,19 @@ th {
 	color: goldenrod;
 }
 
+.accepted {
+	border: 2px solid gray;
+	background: green;
+	color: white;
+	border-radius: 5px;
+    display: inline-block;
+	width: 100%
+}
+
+.rejected {
+	color: red;
+}
+
 .bg_gold {
 	background: gold;
 }

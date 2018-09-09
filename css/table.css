@@ -1,7 +1,7 @@
 table {
 	border: 2px solid gray;
 	border-collapse: collapse;
-	white-space: nowrap;
+#	white-space: nowrap;
 	width: 100%;
 	font-size: 0.75em;
 }
@@ -14,6 +14,7 @@ td, th {
 	padding: 5px;
 	border: 1px solid gray;
 	text-align: center;
+	max-width: 20%;
 }
 
 td:last-child {
@@ -37,6 +38,19 @@ th {
 
 .bronze {
 	color: goldenrod;
+}
+
+.accepted {
+	border: 2px solid gray;
+	background: green;
+	color: white;
+	border-radius: 5px;
+    display: inline-block;
+	width: 100%
+}
+
+.rejected {
+	color: red;
 }
 
 .bg_gold {

@@ -26,7 +26,7 @@ function div_close() {
 }
 
 function print_header($text) {
-	echo "<div align='center'>\n";
+	echo "<div align='center' class='head_div'>\n";
 	echo "<p>$text</p>\n";
 	echo "</div>\n";
 }
@@ -64,15 +64,39 @@ function print_form($link, $value, $text, $key, $button_name) {
 	echo "</div>\n";
 }
 
-function print_form_two_action($link, $text, $value_name, $value, $keys, $button_names) {
+function print_form_two_action($link, $text_before, $text_after, $value_name, $value, $keys, $button_names) {
 	echo "<div align='center'>\n";
 	echo "<form action='$link' method='post'>\n";
-	echo $text;
-	echo "<input name='$value_name' size='20' value='$value'>\n";
+
+	echo "<div class='half'>";
+	echo $text_before;
+	echo "<input type='number' min='1' max='9' name='$value_name' value='$value'>";
+	echo $text_after;
+	echo "</div>";
 	
-	echo "<input type='submit' name='$keys[0]' value='$button_names[0]'>";
-	echo "<input type='submit' name='$keys[1]' value='$button_names[1]'>";
-	echo "<input type='submit' name='' value='Сброс'>";
+	echo "<div class='half'>";
+	echo "<input class='button' type='submit' name='$keys[0]' value='$button_names[0]'>";
+	echo "<input class='button' type='submit' name='$keys[1]' value='$button_names[1]'>";
+	echo "<input class='button' type='submit' name='' value='сброс'>";
+	echo "</div>";
+	
+	echo "</form>\n";
+	echo "</div>\n";
+}
+
+function print_form_checkbox_two_action($link, $text, $keys, $button_names) {
+	echo "<div align='center'>\n";
+	echo "<form action='$link' method='post'>\n";
+
+	echo "<div class='half'>";
+	echo $text;
+	echo "</div>";
+	
+	echo "<div class='half'>";
+	echo "<input class='button' type='submit' name='$keys[0]' value='$button_names[0]'>";
+	echo "<input class='button' type='submit' name='$keys[1]' value='$button_names[1]'>";
+	echo "<input class='button' type='submit' name='' value='сброс'>";
+	echo "</div>";
 	
 	echo "</form>\n";
 	echo "</div>\n";
@@ -82,6 +106,7 @@ function print_form_select_two_action($link, $values, $value_name, $selected_val
 	echo "<div align='center'>\n";
 	echo "<form action='$link' method='post'>\n";
 
+	echo "<div class='half'>";
 	echo "<select name='$value_name' autofocus>\n";
 	foreach ($values as $value) {
 		$is_selected = "";
@@ -90,12 +115,29 @@ function print_form_select_two_action($link, $values, $value_name, $selected_val
 		echo "<option $is_selected value='$value'> $value </option> \n";
 	}
 	echo "</select>\n";
+	echo "</div>";
 	
-	echo "<input type='submit' name='$keys[0]' value='$button_names[0]'>";
-	echo "<input type='submit' name='$keys[1]' value='$button_names[1]'>";
-	echo "<input type='submit' name='' value='Сброс'>";
+	echo "<div class='half'>";
+	echo "<input class='button' type='submit' name='$keys[0]' value='$button_names[0]'>";
+	echo "<input class='button' type='submit' name='$keys[1]' value='$button_names[1]'>";
+	echo "<input class='button' type='submit' name='' value='сброс'>";
+	echo "</div>";
 	
 	echo "</form>\n";
+	echo "</div>\n";
+}
+
+function print_buttons_external($material_buttons, $options) {
+	echo "<div align='center'>\n";
+	echo "<div class='buttons_div'>\n";
+	foreach ($material_buttons as $link => $text) {
+		if ($options == "vertical")
+			echo "<div class='buttons_div'>\n";
+		echo "<a class='button $options external_link' target='_blank' href='$link'>$text</a> \n";
+		if ($options == "vertical")
+			echo "</div>\n";
+	}
+	echo "</div>\n";
 	echo "</div>\n";
 }
 
@@ -121,12 +163,14 @@ function print_select_buttons($link, $key_name, $selected_key, $buttons, $defaul
 	echo "<form action='$link' method='get'>";
 	echo "<select class='button colomns5' name='$key_name' autofocus>";
 	
+	$text = "";
 	foreach ($buttons as $key => $text) {
 		$is_selected = "";
 		if (strval($key) === $selected_key)
 			$is_selected = " selected";
-		echo "<option class='$is_selected' $is_selected value='$key'> $text </option> \n";
+		$text = "<option class='$is_selected' $is_selected value='$key'> $text </option> \n".$text;
 	}
+	echo $text;
 	echo "</select>";
 	foreach ($defaults_keys as $key => $value) {
 		echo "<input type='hidden' name='$key' value='$value'>\n";

@@ -1,0 +1,234 @@
+Rank	Team	A	B	C	D	E	F	G	H	I	J	K	L	M	=	Time
+1	SPb State University 1 (Ershov, Pyshkin, Sayranov)	+ (31:15)	+4 (205:11)	+ (261:02)	.	+ (61:19)	+ (37:39)	.	+1 (58:33)	.	+2 (123:56)	.	+3 (294:14)	+2 (215:03)	9	1525
+2	SPb ITMO University 1 (Belonogov, Smykalov, Zban)	+ (16:25)	-7	+1 (196:37)	.	+ (128:51)	+ (41:24)	+2 (205:13)	+1 (55:09)	.	+3 (86:07)	.	+ (108:08)	.	8	975
+3	Moscow Institute of Physics and Technology 1 (Semenov, Smirnov, Zhuk)	+ (52:27)	-11	+1 (273:06)	.	+1 (104:17)	+ (25:11)	.	+ (20:00)	.	+ (55:11)	+ (258:21)	+1 (161:01)	.	8	1008
+4	SPb ITMO University 2 (Budin, Putilin, Yakutov)	+ (44:59)	+3 (254:14)	.	.	+ (115:47)	+ (28:11)	.	+ (23:35)	.	+2 (102:45)	+1 (213:32)	+1 (272:22)	.	8	1191
+5	Ural Federal University 1 (Borozdin, Kungurtsev, Leskov)	+ (49:13)	.	.	.	+ (81:40)	+ (87:07)	.	+1 (68:06)	.	+1 (141:51)	+ (164:41)	+ (253:22)	.	7	883
+6	Perm State University 1 (Kuchumov, Mayorov, Pryshchenko)	+ (38:51)	+1 (204:22)	.	.	+ (90:27)	+1 (31:00)	.	+1 (91:44)	.	+2 (159:38)	-3	+1 (294:23)	.	7	1027
+7	Moscow Institute of Physics and Technology 3 (Belykh, Popovkin, Proskurin)	+1 (35:38)	.	+1 (285:40)	.	+1 (157:01)	+1 (84:59)	.	+1 (65:33)	.	+3 (144:57)	+3 (252:03)	.	.	7	1242
+8	SPb State University 3 (Makarov, Ryazanov, Savchenkov)	+ (80:50)	+1 (206:57)	.	.	+ (138:06)	+ (30:07)	.	+ (54:50)	.	+1 (124:08)	.	.	.	6	672
+9	Belarusian SU of Informatics and Radioelectronics 1 (Sobal, Valchok, Vistiazh)	+1 (32:35)	-3	+ (194:31)	.	+2 (105:20)	+ (56:23)	.	+1 (65:54)	.	+2 (104:31)	.	.	.	6	676
+10	Vilnius University (Jadenkus, Klimavičius, Traškevičius)	+ (73:46)	.	+ (142:26)	.	+ (261:37)	+ (23:38)	.	+2 (44:49)	.	+1 (163:59)	-1	.	.	6	766
+11	Novosibirsk State University 1 (Smirnov, Viktorov, Vishnevskiy)	+ (38:50)	.	+2 (288:18)	.	+ (111:13)	+ (44:47)	.	+1 (79:18)	.	+ (159:43)	.	.	.	6	779
+12	SPb Academic University 2 (Stepanov, Zhidkov, Zuev)	+ (62:39)	.	.	.	+ (88:04)	+ (70:47)	.	+1 (54:09)	.	+2 (138:14)	.	+2 (295:32)	.	6	807
+13	SPb Academic University 1 (Bogomolov, Podguzov, Smirnov)	+ (49:24)	-2	.	.	+2 (268:22)	+ (32:16)	.	+ (59:40)	.	+1 (127:29)	.	.	+ (227:37)	6	822
+14	Latvia University 1 (Kuznecovs, Pakalns, Zajakins)	+ (124:17)	.	.	.	+ (158:53)	+ (83:55)	+1 (221:13)	+ (57:56)	.	+ (199:20)	-3	.	.	6	862
+14	Moscow Institute of Physics and Technology 4 (Komendantyan, Kulkov, Machula)	+1 (38:46)	.	+3 (275:47)	.	+ (143:14)	+ (105:59)	.	+ (51:35)	.	+ (170:45)	.	.	.	6	862
+16	Saratov State University 2 (Kireev, Ripinen, Smirnov)	+ (37:17)	.	.	.	+ (246:55)	+2 (75:04)	.	+ (55:54)	.	+2 (151:34)	.	+ (263:05)	.	6	907
+17	Yerevan State University 1 (Harutyunyan, Mamikonyan, Sahakyan)	+ (54:54)	.	.	+ (123:43)	+ (289:29)	+ (121:52)	.	+ (84:27)	.	+2 (249:05)	.	.	.	6	960
+18	Perm State University 2 (Lizunov, Tsaplin, Tsaplin)	+ (68:18)	.	.	.	+2 (117:56)	+ (57:40)	.	+2 (50:19)	.	+5 (192:11)	.	+1 (280:37)	.	6	964
+19	Ural Federal University 2 (Pivko, Samodelkin, Zuev)	+ (40:38)	.	.	.	+ (107:50)	+ (100:45)	.	+ (76:41)	.	+ (136:28)	.	-2	.	5	459
+20	Moscow Institute of Physics and Technology 2 (Kalinichenko, Sergunin, Stepanov)	+ (87:56)	.	-1	.	+ (152:14)	+ (75:25)	.	+ (61:39)	.	+ (118:39)	.	.	.	5	493
+21	Samara National Research University 1 (Bezrukov, Muravjev, Ponomarev)	+ (55:15)	.	.	.	+ (127:49)	+ (76:37)	.	+ (35:24)	.	+2 (201:42)	.	.	.	5	534
+22	Tomsk Polytechnic University 1 (Golub, Kuzivanov, Vetrov)	+ (26:41)	.	.	.	+3 (170:10)	+ (60:42)	.	+ (54:26)	.	+3 (179:48)	-2	-1	.	5	609
+23	Petrozavodsk State University 1 (Ermishin, Filev, Starkov)	+2 (73:28)	.	-2	.	+1 (167:02)	+ (72:01)	.	+ (57:54)	.	+ (190:17)	.	.	.	5	619
+24	Saratov State University 1 (Finiutin, Los, Sagunov)	+ (62:54)	+2 (232:59)	.	.	-8	+ (39:14)	.	+ (69:42)	.	+2 (141:58)	.	.	.	5	623
+25	Moscow State University 3 (Bagrov, Kuplyakov, Lakhtanov)	+ (58:33)	.	.	.	+1 (232:09)	+ (65:11)	.	+ (92:56)	.	+ (159:36)	.	.	.	5	626
+26	Higher School of Economics 2 (Aleksandrov, Kashin, Zetilov)	+ (39:43)	.	.	.	+ (168:55)	+1 (87:26)	.	+ (59:17)	.	+2 (220:08)	-4	.	.	5	633
+27	Moscow State University 1 (Martynov, Olshanskii, Yagudin)	+ (48:52)	.	.	.	+1 (153:22)	+ (102:56)	.	+1 (106:29)	.	+ (194:58)	.	.	.	5	643
+28	Moscow Aviation Institute 1 (Korovin, Mingalev, Trofimov)	+ (30:31)	.	.	.	-3	+1 (106:10)	.	+2 (59:10)	.	+1 (174:08)	.	+1 (206:15)	.	5	675
+29	Belarusian State University 4 (Hrechykha, Medyanikov, Natalevich)	+1 (73:48)	.	.	.	+1 (212:06)	+1 (93:28)	.	+ (64:28)	.	-6	+1 (155:20)	.	.	5	677
+29	Tartu University (Lill, Nisumaa, Unt)	+ (20:36)	.	.	.	+ (180:06)	+ (96:56)	.	+1 (58:46)	.	-1	+2 (263:03)	.	.	5	677
+31	SPb State University 2 (Hulikau, Kulikov, Yuryev)	+ (42:53)	.	.	.	+ (241:03)	+2 (57:47)	.	+3 (91:43)	.	+ (149:51)	.	.	.	5	680
+32	Rybinsk State Aviation Technical University 1 (Bolotin, Kamenko, Skrynnik)	+ (47:29)	.	.	.	+1 (237:39)	+ (122:32)	.	+1 (90:07)	-5	+1 (163:38)	.	.	.	5	719
+33	Latvia University 2 (Civkulis, Klevickis, Larka)	+ (43:53)	.	.	.	+2 (194:43)	+ (46:53)	.	+3 (136:54)	.	+ (210:05)	.	.	.	5	729
+34	Saratov State University 3 (Androsov, Dalabaev, Petrov)	+ (59:19)	.	.	.	+ (218:16)	+ (97:25)	.	+ (86:00)	.	+2 (238:05)	.	.	.	5	738
+35	Moscow Institute of Physics and Technology 6 (Murzin, Romanenko, Ulyanin)	+1 (91:03)	.	.	.	+1 (216:27)	+ (153:04)	.	+ (62:07)	.	+1 (174:02)	.	.	.	5	756
+36	SPb Academic University 3 (Fedorov, Tukh, Yutman)	+ (34:37)	.	.	.	.	+ (47:04)	.	+2 (81:49)	.	+4 (145:40)	.	+3 (286:32)	.	5	773
+37	Immanuel Kant Baltic Federal University (Balobanov, Knizhnik, Mosyagin)	+ (102:42)	.	.	.	+1 (163:51)	+ (63:38)	.	+2 (108:28)	.	+ (282:11)	.	.	.	5	778
+38	Higher School of Economics 3 (Iskhakov, Khadaev, Lazarev)	+ (82:02)	.	.	.	+1 (289:12)	+ (136:50)	.	+1 (123:45)	.	+1 (95:15)	.	.	.	5	785
+39	Volgograd State Technical University (Nosov, Nozdrenkov, Penskoy)	+1 (81:10)	.	.	.	+ (127:44)	+ (91:46)	.	+ (73:58)	.	+7 (264:23)	.	.	.	5	796
+40	Belarusian State University 1 (Kulik, Sataneuski, Vilcheuski)	+1 (52:47)	.	.	.	+ (218:09)	+ (78:42)	.	+ (21:51)	.	+11 (198:24)	-9	.	.	5	807
+41	Moscow Aviation Institute 2 (Bezrukov, Grigoriev, Mokin)	+5 (96:31)	.	.	.	+ (159:36)	+ (114:37)	.	+ (90:09)	.	+2 (229:43)	.	.	.	5	828
+42	SPb ITMO University 4 (Berinchik, Kisialiou, Korchagin)	+ (42:57)	.	.	.	+3 (248:47)	+1 (58:09)	.	+1 (88:24)	.	+7 (224:46)	.	.	.	5	900
+43	SPb State University 4 (Alekseev, Novikov, Petrov)	+3 (62:40)	.	.	.	+2 (254:29)	+ (138:40)	.	+4 (119:50)	.	-8	-1	+ (212:49)	.	5	965
+44	South Ural State University 1 (Ashikhmin, Sapronov, Shaveinikov)	+2 (204:31)	.	.	.	+1 (166:46)	+ (131:59)	.	+2 (105:25)	.	+1 (250:58)	.	.	.	5	976
+45	Izhevsk State Technical University 1 (Bulatov, Filimonov, Tatarinov)	+ (64:25)	.	.	.	+1 (271:19)	+ (99:42)	.	+2 (107:21)	.	+8 (275:57)	.	.	.	5	1036
+46	SPb State University 5 (Bochkov, Gaevoy, Ginzburg)	+4 (178:29)	.	.	.	+ (267:31)	+ (110:03)	.	+2 (83:41)	.	+3 (224:04)	.	.	.	5	1042
+47	Ural Federal University 3 (Khanova, Mullabaev, Permyakov)	+2 (158:43)	.	.	.	+ (295:39)	+1 (166:18)	.	+3 (153:34)	.	+1 (258:19)	.	.	.	5	1170
+48	South Ural State University 2 (Lyzhin, Petrov, Romass)	+3 (149:45)	.	.	.	+ (281:47)	+ (180:40)	.	+1 (137:07)	.	+3 (288:31)	.	.	.	5	1175
+49	Northern (Arctic) Federal University (Guriev, Popovich, Sysoeva)	+ (26:01)	.	.	.	.	+1 (73:23)	.	+ (51:35)	.	+ (161:26)	.	.	.	4	331
+50	Free University of Tbilisi 1 (Guliashvili, Skhirtladze, Tskhovrebov)	+ (88:49)	.	.	.	.	+ (68:34)	.	+ (49:45)	.	+ (138:51)	-1	.	.	4	343
+51	Belarusian State University 3 (Kim, Lukyanov, Vityaz)	+ (89:55)	.	.	.	-8	+ (58:29)	.	+1 (62:30)	.	+ (164:18)	.	.	.	4	393
+52	SPb ITMO University 3 (Latyshev, Naumov, Turaev)	+1 (83:50)	.	.	.	.	+ (86:05)	.	+ (64:37)	.	+2 (165:01)	.	.	.	4	458
+53	NU of Science and Technology MISiS 1 (Lopatnikov, Lopukhov, Ovchinkin)	+ (83:44)	.	.	.	+ (115:51)	+ (157:37)	.	+3 (59:47)	.	-5	.	.	.	4	474
+54	Far Eastern State Transportation University (Pisaniy, Seredkin, Usmanov)	+ (44:01)	.	.	.	+ (175:31)	+3 (145:36)	.	+ (75:51)	.	-7	.	.	.	4	499
+55	Yaroslavl State University 1 (Akhremenko, Krainov, Toropova)	+ (48:37)	.	.	.	.	+ (107:02)	.	+ (95:22)	.	+1 (237:25)	.	.	.	4	507
+56	Higher School of Economics 4 (Mokriy, Posobin, Sabyanin)	+ (52:04)	.	.	.	-3	+ (73:29)	.	+1 (109:15)	.	+3 (194:36)	.	.	.	4	508
+57	Qafqaz University 1 (Allahverdiyev, Mammadli, Mammadov)	+ (60:12)	.	.	.	+ (235:37)	+ (139:54)	.	+ (89:02)	.	-3	.	.	.	4	523
+58	Higher School of Economics 5 (Fedorov, Gladkov, Zimin)	+2 (121:48)	.	.	.	+ (164:44)	+ (56:14)	.	+1 (130:10)	.	-8	.	.	.	4	531
+59	Kazakh-British Technical University 2 (Aitzhan, Kenzhegaliyev, Mussinov)	+ (63:30)	.	.	.	+ (253:08)	+ (126:11)	.	+ (97:36)	.	-1	.	.	.	4	539
+60	Moscow Institute of Physics and Technology 5 (Kalinin, Makarov, Mosyagin)	+1 (35:28)	.	.	.	.	+2 (112:15)	.	+1 (85:18)	.	+2 (198:23)	.	.	.	4	550
+61	Orenburg State University (Larin, Moskaleva, Pilipenko)	+1 (64:01)	.	.	.	+1 (210:00)	+ (117:30)	.	+1 (100:32)	.	-4	.	.	.	4	551
+62	Voronezh State University 2 (Kuznetsov, Minaev, Perunov)	+ (101:15)	.	.	.	+1 (224:02)	+1 (123:58)	.	+ (64:39)	.	-14	.	.	.	4	552
+63	Belarusian SU of Informatics and Radioelectronics 2 (Darashkevich, Razhkou, Tsiliupa)	+1 (44:20)	.	.	.	+ (190:01)	+1 (141:03)	.	+3 (85:05)	.	-1	.	.	.	4	560
+64	American University of Armenia 1 (Gevorgyan, Hayrapetyan, Mirakyan)	+ (68:18)	.	.	.	+3 (231:39)	+ (56:52)	.	+1 (130:17)	.	-6	.	.	.	4	565
+65	Kazakh-British Technical University 5 (Tolegenov, Toremuratuly, Zhussupov)	+ (55:36)	.	.	.	+1 (183:37)	+ (129:04)	.	+3 (132:04)	.	-15	.	.	.	4	579
+66	International IT University 1 (Kim, Satylkhanov, Sultan)	+2 (95:16)	.	.	.	+ (198:02)	+ (112:38)	.	+2 (97:46)	.	-4	.	.	.	4	582
+67	Voronezh State University 1 (Nogikh, Skobaneva, Zemlyanuhin)	+3 (81:08)	.	.	.	.	+ (90:54)	.	+2 (86:20)	.	+3 (200:50)	.	.	.	4	617
+68	Belarusian State University 2 (Shaftsialevich, Vasileuski, Zdanovich)	+ (109:50)	.	.	.	.	+ (92:11)	.	+ (48:31)	.	+7 (230:49)	.	.	.	4	619
+69	Ulyanovsk State Technical University (Gorshkov, Kashichkin, Kondratiev)	+2 (111:08)	.	.	.	+ (210:36)	+ (214:14)	.	+ (70:26)	.	.	.	.	.	4	645
+70	Astrakhan State University (Ilmensky, Kolesnikov, Sidorov)	+ (60:12)	.	.	.	.	+2 (149:48)	.	+ (143:33)	-4	+1 (271:28)	.	.	.	4	683
+71	International ATATURK-ALATOO University 1 (Isaev, Kenzhaliev, Zhusubaliev)	+4 (158:15)	.	.	.	+ (196:33)	+ (118:39)	.	+ (156:56)	.	-2	.	.	.	4	708
+72	Moscow State University 2 (Chufarovskiy, Khalin, Ozhiganov)	+ (45:41)	.	.	.	.	+4 (141:25)	.	+ (120:15)	.	+2 (287:03)	.	.	.	4	713
+73	Tyumen Industrial University (Artemov, Mambetov, Nevtyra)	+2 (138:56)	.	.	.	.	+ (158:44)	.	+2 (79:29)	.	+2 (244:01)	.	.	.	4	739
+74	Ural Federal University 5 (Arapova, Bazun, Smirnov)	+ (106:00)	.	.	.	.	+2 (124:34)	.	+1 (77:25)	.	+7 (294:53)	.	.	.	4	801
+75	Tyumen State University (Avriskin, Ivanov, Yagudin)	+1 (191:51)	.	.	.	+2 (249:13)	+1 (208:30)	.	+ (74:55)	-1	.	.	.	.	4	802
+76	Free University of Tbilisi 2 (Abuladze, Pataraia, Sakhelashvili)	+ (76:27)	.	.	.	+5 (285:13)	+ (161:31)	.	+2 (146:36)	.	.	.	.	.	4	808
+77	Crimean Federal University 1 (Alekseeva, Bidanets, Voinovsky)	+ (122:20)	.	.	.	+3 (297:17)	+ (210:39)	.	+6 (137:00)	.	.	.	.	.	4	946
+78	Higher School of Economics 1 (Danilyuk, Kalashnikov, Svyatokum)	+ (277:53)	-13	.	.	.	+ (286:02)	+6 (174:23)	.	-3	.	+ (133:40)	.	.	4	990
+79	Ural Federal University 4 (Ankudinov, Borzunov, Stikhin)	+ (19:18)	.	.	.	-1	+ (78:05)	.	+1 (68:31)	.	-9	.	.	.	3	185
+80	Udmurt State University (Korablinov, Nikitin, Sidorov)	+ (47:58)	.	.	.	.	+ (75:36)	.	+ (130:57)	.	.	.	.	.	3	252
+81	Kazakh-British Technical University 1 (Aman, Amanov, Nurmash)	+ (92:04)	-11	.	.	.	+ (76:59)	.	+1 (80:00)	.	.	.	.	.	3	268
+82	Samara National Research University 2 (Dimitrov, Fattakhov, Nugmanov)	+1 (52:16)	.	.	.	.	+ (97:10)	.	+ (112:37)	.	.	.	.	.	3	281
+83	Ufa State Aviation Technical University 1 (Agishev, Fatkhiev, Surkov)	+ (141:13)	.	.	.	.	+ (87:10)	.	+ (72:32)	.	-3	.	.	.	3	300
+84	International Black Sea University 1 (Mamaiashvili, Morchiladze, Svanidze)	+1 (37:49)	.	.	.	.	+ (120:07)	.	+4 (80:59)	.	-39	.	.	.	3	337
+85	Russian-Armenian (Slavonick) State University 2 (Ioanisyan, Lalayan, Oganesyan)	+ (109:04)	.	.	.	.	+1 (210:52)	.	+1 (59:56)	.	-1	.	.	.	3	418
+85	Altai State Technical University 3 (Lopatin, Renjov, Zyablitskiy)	+ (77:37)	.	.	.	.	+ (222:50)	.	+ (119:23)	.	-4	.	.	.	3	418
+87	NU of Science and Technology MISiS 2 (Kualgin, Romanov, Tropin)	+ (102:31)	.	.	.	-4	+ (206:45)	.	+ (123:48)	.	.	.	.	.	3	431
+88	Kazakh-British Technical University 3 (Bolatbekov, Amanov, Akhanov)	+ (147:30)	.	.	.	.	+ (214:21)	.	+1 (78:03)	.	.	.	.	.	3	459
+89	Yerevan State University 2 (Gomktsyan, Mkrtumyan, Muradyan)	+1 (184:24)	.	.	.	.	+2 (142:19)	.	+1 (60:21)	.	-6	.	.	.	3	466
+90	Russian-Armenian (Slavonick) State University 1 (Arakelyan, Grigoryan, Saryan)	+ (204:30)	.	.	.	.	+ (143:34)	.	+1 (102:14)	.	-2	.	.	.	3	469
+91	Kazakh-British Technical University 4 (Bekbergen, Nezametdinov, Seydazimov)	+ (39:03)	.	.	.	.	+ (201:08)	.	+2 (204:52)	.	.	.	.	.	3	484
+91	Nazarbayev University 4 (Ilyassov, Kabdygali, Manabayev)	+2 (110:29)	.	.	.	-3	+1 (224:57)	.	+ (90:46)	.	.	.	.	.	3	484
+93	Kazakhstan Branch of Moscow SU 1 (Abaiuly, Kamalbekov, Zhuravskaya)	+1 (158:14)	.	.	.	-1	+ (178:22)	.	+1 (119:21)	.	.	.	.	.	3	495
+94	Nazarbayev University 1 (Adilbekov, Aitzhanov, Kalmurzayev)	+2 (248:02)	.	.	.	.	+ (95:13)	.	+1 (97:46)	.	-3	.	.	.	3	500
+95	Vyatka State University (Dehterev, Prozorova, Vorobyev)	+ (200:17)	.	.	.	.	+ (153:21)	.	+1 (128:05)	.	-3	.	.	.	3	501
+96	Moscow Engineering Physics Institute (Akimutin, Korotkikh, Romanov)	+2 (102:57)	.	.	.	-1	+ (215:52)	.	+ (150:55)	.	.	.	.	.	3	507
+97	Nazarbayev University 2 (Jubatyrov, Khagay, Orynkul)	+1 (191:01)	.	.	.	.	+1 (148:46)	.	+1 (109:41)	.	-5	.	.	.	3	508
+97	Skolkovo I of Science and Technology (Belov, Burkov, Karpenko)	+ (122:59)	.	.	.	.	+2 (200:54)	.	+2 (106:59)	.	.	.	.	.	3	508
+99	Saratov State University 4 (Demina, Kurylev, Slutskiy)	+ (125:57)	.	.	.	.	+2 (217:39)	.	+1 (107:13)	.	.	.	.	.	3	509
+100	Suleyman Demirel University 1 (Seitov, Zharkyn, Zigangirov)	+ (196:32)	.	.	.	-3	+3 (203:08)	.	+ (81:15)	.	.	.	.	.	3	540
+101	Kazakh National University named Al-Farabi 3 (Baydaliyev, Salimkhan, Zholmukhanov)	+ (123:41)	.	.	.	-2	+ (241:56)	.	+ (185:32)	.	.	.	.	.	3	549
+102	Kaunas University of Technology (Garbonis, NaruЕЎis, NauДЌius)	+1 (84:14)	.	.	.	+ (282:37)	.	.	+1 (158:04)	.	.	.	.	.	3	564
+103	Tomsk State University 1 (Ryakin, Varlakov, Victor)	+ (106:41)	.	.	.	-2	+1 (256:45)	.	+ (185:08)	.	.	.	.	.	3	567
+104	Vologda State University (Gerkulesov, Kukushkin, Nazarov)	+ (79:44)	.	.	.	.	+1 (292:08)	.	+2 (169:04)	.	.	.	.	.	3	600
+105	Tomsk State University of Control Systems and Radioelectronics 1 (Bogomolov, Bukreyev, Zakharov)	+2 (28:16)	.	.	.	-1	+ (242:37)	.	+6 (197:14)	.	-4	.	.	.	3	627
+106	Kazan Federal University 1 (Azimov, Savelyev, Zhumaniyozov)	+3 (135:03)	.	.	.	.	+ (281:28)	.	+1 (149:26)	.	.	.	.	.	3	645
+107	Yerevan State University 3 (Abrahamyan, Tamazyan, Topchyan)	+1 (178:52)	.	.	.	.	.	.	+1 (87:05)	.	+4 (265:24)	.	.	.	3	650
+108	Free University of Tbilisi 4 (Bukhnikashvili, Popkhadze, Tsutskhashvili)	+ (181:23)	.	.	.	.	+5 (299:03)	.	+1 (72:48)	.	.	.	.	.	3	672
+109	Belarusian SU of Informatics and Radioelectronics 3 (Kulichok, Medunetski, Novikov)	+2 (152:32)	.	.	.	.	+1 (238:52)	.	+ (225:12)	.	.	.	.	.	3	675
+110	South Ural State University 3 (Basmanov, Mironov, Obukhov)	+2 (140:56)	.	.	.	.	+2 (234:20)	.	+1 (207:11)	.	.	.	.	.	3	681
+111	Buryat State University 1 (Bykova, Filippov, Maltsev)	+4 (196:58)	.	.	.	.	+ (287:32)	.	+2 (99:04)	.	-4	.	.	.	3	702
+112	Izhevsk State Technical University 2 (Maksimov, Poskrebyshev, Sebeldin)	+ (53:30)	.	.	.	-2	+12 (218:31)	.	+3 (132:23)	.	.	.	.	.	3	703
+113	Qafqaz University 2 (Hajili, Kerimov, Klyestov)	+5 (174:57)	.	-1	.	-2	+ (215:03)	.	+3 (226:44)	.	.	.	.	.	3	775
+114	Bauman Moscow State Technical University (Kudryavtsev, Rudnev, Zashikhin)	+8 (292:30)	.	.	.	.	+ (210:32)	.	+5 (258:27)	.	.	.	.	.	3	1020
+115	Siberian State University of Telecommunication & Informatics 1 (Boldakov, Turtsev, Velichko)	+ (26:55)	.	.	.	-4	-2	.	+1 (75:57)	.	.	.	.	.	2	121
+116	Perm Higher School of Economics (Faletov, Gaynetdinova, Kuchev)	+ (47:26)	.	.	.	.	.	.	+ (107:09)	.	-1	.	.	.	2	154
+117	Alexander Pushkin Brest State University (Paliukhovich, Patsiomkin, Sobin)	+1 (68:36)	.	.	.	.	.	.	+ (100:33)	.	-15	.	.	.	2	188
+118	Tomsk State University 2 (Grudinin, Kotov, Zhukovskaja)	-1	.	.	.	.	+1 (105:09)	.	+ (83:07)	.	.	.	.	.	2	208
+119	Ufa State Aviation Technical University 2 (Kryukov, Manaev, Valiev)	+ (74:53)	.	.	.	.	-2	.	+1 (121:16)	.	.	.	.	.	2	215
+120	Nizhny Novgorod State Technical University (Kazantaev, Neimuschev, Tikhonov)	+ (96:59)	.	.	.	.	.	.	+ (132:45)	.	.	.	.	.	2	228
+121	Omsk State University 2 (Krivosheeva, Sakhno, Shatov)	+ (108:14)	.	.	.	.	.	.	+ (174:49)	.	.	.	.	.	2	282
+122	Novosibirsk State University 4 (Arkhipov, Matveev, Permyashkin)	+ (49:28)	.	.	.	.	.	.	+4 (154:52)	.	-7	.	.	.	2	283
+123	Kazan Federal University 2 (Balakirev, Gazizov, Nigmatullin)	+1 (145:01)	.	.	.	.	.	.	+ (122:53)	.	.	.	.	.	2	287
+123	Irkutsk State Technical University (Chekan, Fefelov, Skorobogatov)	+ (82:55)	.	.	.	.	-4	.	+1 (185:34)	.	.	.	.	.	2	287
+125	French-Georgian Institute (Gozalishvili, Rekhviashvili, Sultanishvili)	+ (120:15)	.	.	.	.	.	.	+ (189:41)	.	.	.	.	.	2	309
+126	North-Eastern Federal University (Dobretsov, Khokholov, Petrov)	+2 (132:54)	.	.	.	-1	.	.	+2 (101:09)	.	.	.	.	.	2	313
+127	Mordovian State University (Korovin, Kuznetsov, Nemchinova)	+2 (176:55)	.	.	.	.	.	.	+1 (89:55)	.	.	.	.	.	2	325
+128	Chelyabinsk State University (Anfalov, Anfalova, Voronin)	+ (107:46)	.	.	.	.	.	.	+1 (209:46)	.	.	.	.	.	2	336
+129	Samara National Research University 3 (Grinina, Murtazin, Rykov)	+4 (156:54)	.	.	.	.	.	.	+ (103:11)	.	.	.	.	.	2	339
+130	Eurasian National University named L.N. Gumilev 2 (Karakozha, Muslim, Yessenbayev)	+2 (170:05)	.	.	.	.	.	.	+ (152:15)	.	.	.	.	.	2	362
+131	Suleyman Demirel University 4 (Kabirov, Nadyrmagambet, Orazgalieva)	+1 (116:08)	.	.	.	.	.	.	+2 (202:49)	.	.	.	.	.	2	378
+132	Altai State Technical University 2 (Galkin, Kozlov, Kozlov)	+ (200:42)	.	.	.	.	.	.	+3 (123:16)	.	-3	.	.	.	2	383
+133	Free University of Tbilisi 5 (Donadze, Khaduri, Magaltadze)	+1 (77:56)	.	.	.	-1	.	.	+5 (191:45)	.	.	.	.	.	2	388
+134	Altai State Technical University 4 (Babushkin, Dyadushenko, Nekrasov)	+2 (183:16)	.	.	.	.	.	.	+1 (147:47)	.	.	.	.	.	2	390
+135	Southern FU Institute of CompTech and InfoSec (Manych, Minasyan, Mitina)	+3 (194:16)	.	.	.	.	.	.	+ (139:44)	.	.	.	.	.	2	393
+136	Nazarbayev University 3 (Mademikhanov, Muryshkin, Toktasynov)	-7	.	.	.	.	+ (228:53)	.	+ (167:40)	.	.	.	.	.	2	395
+137	I. Javakhishvili Tbilisi State University 3 (Chelidze, Gobronidze, Modrekiladze)	+ (248:04)	.	.	.	.	.	.	+ (172:06)	.	-1	.	.	.	2	420
+138	Novosibirsk State University 3 (Litvinov, Sklyarov, Skresanov)	+ (114:30)	.	.	.	-1	-1	.	+4 (232:21)	.	.	.	.	.	2	426
+139	International IT University 3 (Abdysalam, Bakhoduri, Chesnokov)	+3 (160:58)	.	.	.	.	.	.	+3 (151:05)	.	.	.	.	.	2	431
+140	Izhevsk State Technical University 3 (Gorodilov, Musin, Naymushin)	+1 (292:11)	.	.	.	.	-4	.	+1 (100:10)	.	.	.	.	.	2	432
+141	Tomsk Polytechnic University 2 (Iovlev, Kuznetsova, Maksimova)	+3 (258:30)	.	.	.	.	-1	.	+1 (103:43)	.	.	.	.	.	2	441
+142	Tomsk Polytechnic University 4 (Bakulin, Komarov, Nesterenko)	+1 (182:11)	.	.	.	.	-2	.	+3 (198:16)	.	.	.	.	.	2	460
+143	Kutaisi State University (Butskhrikidze, Gogsadze, Khantadze)	+1 (262:23)	.	.	.	.	-12	.	+ (213:04)	.	.	.	.	.	2	495
+144	Buryat State University 2 (Badagarov, Guslyakov, Tsydypova)	+8 (272:36)	.	.	.	.	.	.	+ (72:44)	.	.	.	.	.	2	504
+145	American University - Central Asia 1 (Derkenbaev, Kim, Kydyraliev)	+ (168:31)	.	.	.	.	.	.	+5 (243:28)	.	.	.	.	.	2	511
+146	East-Siberian State Technological University (Bolsoboev, Timofeev, Zhigdorzhiev)	+4 (185:36)	.	.	.	.	.	.	+4 (170:30)	.	-4	.	.	.	2	515
+147	Far Eastern Federal University 1 (Kuznetcov, Miroedov, Zubarev)	+5 (211:37)	.	.	.	-8	.	.	+5 (149:15)	.	.	.	.	.	2	560
+148	Eurasian National University named L.N. Gumilev 1 (Duisenbayev, Nurbek, Sultan)	+1 (215:59)	.	.	.	.	.	.	+3 (273:27)	.	.	.	.	.	2	568
+149	I. Javakhishvili Tbilisi State University 2 (Babunashvili, Bukuri, Gachechiladze)	+5 (275:17)	.	.	.	-1	.	.	+1 (197:57)	.	.	.	.	.	2	592
+150	Moscow State University - Tashkent 1 (Akhmedshin, Kosimov, Shin)	+ (155:12)	.	.	.	.	.	.	+10 (242:08)	.	.	.	.	.	2	597
+151	Orel State University (Baranov, Strygin, Vorobjov)	+8 (230:09)	.	.	.	.	.	.	+1 (213:34)	.	.	.	.	.	2	623
+152	South Ural State University 4 (Belyaev, Klopov, Shurunov)	+2 (290:05)	.	.	.	.	.	.	+3 (262:43)	.	.	.	.	.	2	652
+153	Novosibirsk State University 2 (Baranov, Karpovsky, Naumenko)	+4 (292:28)	.	.	.	.	-1	.	+5 (286:39)	.	.	.	.	.	2	758
+154	Petrozavodsk State University 2 (Alkin, Ermolin, Titov)	-7	.	.	.	-5	+14 (281:21)	.	+3 (254:04)	.	.	.	.	.	2	875
+155	Suleyman Demirel University 2 (Aimakov, Akhmetov, Damiyev)	+1 (74:00)	.	.	.	.	.	.	-5	.	.	.	.	.	1	94
+156	Crimean Federal University 3 (Dudko, Opryshko, Saada)	.	.	.	.	-3	.	.	+ (126:55)	.	.	.	.	.	1	126
+157	Eurasian National University named L.N. Gumilev 3 (Abdilmanov, Zhaksylyk, Zhussupov)	+1 (155:52)	.	.	.	.	.	.	-4	.	.	.	.	.	1	175
+158	Far Eastern Federal University 2 (Danilov, Shchurov, Zhikhareva)	.	.	.	.	.	.	.	+2 (140:32)	.	.	.	.	.	1	180
+159	Altai State Technical University 1 (Ananev, Fast, Lozhkina)	+4 (105:43)	.	.	.	.	-9	.	-17	.	.	.	.	.	1	185
+160	Novosibirsk State Technical University 2 (Katunov, Potapeyko, Sitnikov)	.	.	.	.	.	-2	.	+1 (169:25)	.	.	.	.	.	1	189
+161	Surgut State University (Bobrovskaya, Derkach, Yakovlev)	+5 (104:14)	.	.	.	.	.	.	-18	.	.	.	.	.	1	204
+162	Siberian Federal University 3 (Samodelov, Shapovalov, Yovenko)	-1	.	.	.	.	.	.	+2 (169:43)	.	.	.	.	.	1	209
+163	Russian-Armenian (Slavonick) State University 4 (Grigoryan, Korolev, Safrastyan)	.	.	.	.	.	.	.	+4 (143:57)	.	.	.	.	.	1	223
+164	Qafqaz University 4 (Abbasov, Aghayev, Murtuzaliyev)	+1 (218:05)	.	.	.	.	.	.	.	.	.	.	.	.	1	238
+165	Siberian State University of Telecommunication & Informatics 2 (Dubinin, Pletyuhin, Sakharov)	.	.	.	.	-2	.	.	+1 (219:15)	.	.	.	.	.	1	239
+166	Free University of Tbilisi 3 (Azizyan, Nishnianidze, Silagadze)	-7	.	.	.	.	.	.	+2 (201:08)	.	.	.	.	.	1	241
+167	National Research University of Electronic Tech. (Kalyagina, Kolesnikova, Terentyev)	-6	.	.	.	.	.	.	+1 (226:38)	.	.	.	.	.	1	246
+168	Siberian Federal University 2 (Melnikov, Platonov, Zelenin)	+1 (227:09)	.	.	.	.	.	.	.	.	.	.	.	.	1	247
+169	Siberian Federal University 1 (Gritsiv, Halturin, Levanyuk)	-1	.	.	.	.	.	.	+3 (196:25)	.	.	.	.	.	1	256
+169	Omsk State University 1 (Evsyukov, Kudyk, Valchuk)	.	.	.	.	.	.	.	+1 (236:58)	.	-2	.	.	.	1	256
+171	Tomsk Polytechnic University 3 (Babichev, Chursina, Mnatsakanyan)	-4	.	.	.	.	.	.	+1 (238:53)	.	.	.	.	.	1	258
+172	International IT University 2 (Auganov, Dauirkhan, Oral)	+2 (238:47)	.	.	.	.	.	.	-1	.	.	.	.	.	1	278
+173	Novosibirsk State Technical University 1 (Ilinykh, Kunts, Prokopyev)	+1 (262:17)	.	.	.	.	-4	.	-5	.	.	.	.	.	1	282
+174	Rubtsovsk Industrial Institute (Kopylova, Lunev, Nagih)	.	.	.	.	.	.	.	+4 (210:43)	.	-1	.	.	.	1	290
+175	Kazakh National University named Al-Farabi 2 (Dossanov, Kadyrbek, Mambetniyazov)	-1	.	.	.	.	-4	.	+5 (200:42)	.	.	.	.	.	1	300
+176	Rybinsk State Aviation Technical University 2 (Kozhevnikov, Obolensky, Smirnov)	+4 (225:25)	.	.	.	.	.	.	-6	.	.	.	.	.	1	305
+177	Baku State University 1 (Badalov, Mirzayev, Sofiyev)	+3 (295:01)	.	.	.	.	.	.	-6	.	.	.	.	.	1	355
+177	Baikal State University of Economics and Law (Fontosh, Golyandin, Savin)	.	.	.	.	.	.	.	+3 (295:51)	.	.	.	.	.	1	355
+179	Yaroslavl State University 2 (Fedulov, Lyutenkov, Maslenikov)	-3	.	.	.	.	.	.	+8 (278:22)	.	.	.	.	.	1	438
+180	Novosibirsk State Technical University 4 (Kozhekin, Sypko, Utyuganov)	.	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	Irkutsk State University 1 (Kondakov, Latyshev, Manich)	-2	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	Transbaikal State University (Baklanov, Khazagarov, Yatsenko)	.	.	.	.	.	-2	.	.	.	.	.	.	.	0	0
+180	Kyrgyz Technical University (Bolotbek, Askar, Danil)	-1	.	.	.	.	.	.	-1	.	.	.	.	.	0	0
+180	Kyrgyz Russian Slavic University 1 (Akparaliev, Mustafin, Sapozhnikov)	-14	.	.	.	-2	.	.	-5	.	.	.	.	.	0	0
+180	Khakas State University (Dron, Tumoyakov, Zemlyanikin)	-2	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	Kemerovo State University (Bashkirova, Chernousov, Yuskeev)	.	.	.	.	-12	.	.	.	.	.	.	.	.	0	0
+180	Kyrgyz Russian Slavic University 2 (Abdirazakov, Aldaiarov, Bubnov)	.	.	.	.	-8	.	.	.	.	.	.	.	.	0	0
+180	Krasnoyarsk State Pedagogical University (Gilyazov, Stankovskii, Strelnikova)	.	.	.	.	.	.	.	.	.	-2	.	.	.	0	0
+180	Novosibirsk State Pedagogical University (Rozov, Semenova, Taraskin)	.	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	Irkutsk State University 2 (Antonov, Chumachenko, Sosnerzh)	.	.	.	.	.	-5	.	-3	.	.	.	.	.	0	0
+180	Tomsk State University of Control Systems and Radioelectronics 2 (Biryukova, Reshetov, Skryl)	-5	.	.	.	.	.	.	-4	.	.	.	.	.	0	0
+180	Novosibirsk State Technical University 3 (Kochneva, Koptev, Makarov)	-6	.	.	.	.	.	.	-2	.	.	.	.	.	0	0
+180	Qafqaz University 3 (Ashrafov, Suleymanli, Yagublu)	-2	.	.	.	.	.	.	-1	.	.	.	.	.	0	0
+180	Baku State University 2 (Mammadov, Nabiyev, Talibov)	.	.	.	.	.	.	.	-8	.	.	.	.	.	0	0
+180	I. Javakhishvili Tbilisi State University 1 (Salia, Svanadze, Zabakhidze)	.	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	Azerbaijan Technical University (Agabeyli, Hajiyev, Maharramli)	-6	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	Saint Andrew the First-Called Georgian University of the Patriarchy of Georgia (Didbaridze, Mikautidze, Tsotsoria)	.	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	American University of Armenia 2 (Ashughyan, Hayruni, Martirosyan)	.	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	ADA University 4 (Isgandarli, Ismikhanov, Rahimli)	-6	.	.	.	.	.	.	-1	.	.	.	.	.	0	0
+180	Georgian Technical University 2 (Shinjikashvili, Sirbiladze, Varamashvili)	.	-11	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	I. Javakhishvili Tbilisi State University 4 (Doliashvili, Ghughunishvili, Sepiashvili)	.	.	.	.	.	.	.	-2	.	.	.	.	.	0	0
+180	Caucasus University 2 (Jijelava, Maruashvili, Pacacia)	-1	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	International Black Sea University 2 (Khagulashvili, Merabov, Tskhvediani)	.	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	American University of Armenia 3 (Margaryan, Muradyan, Muradyan)	.	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	ADA University 2 (Gasimov, Hasanov, Mustafali)	.	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	Azerbaijan State Oil and Industry University (Heydarli, Ismatulin, Suleymanov)	-2	.	.	.	.	.	.	-3	.	.	.	.	.	0	0
+180	Batumi State University 1 (Beria, Khalvashi, Khozrevanidze)	.	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	American University of Armenia 4 (Arakelyan, Hakobyan, Serobyan)	.	.	.	.	.	.	.	-1	.	.	.	.	.	0	0
+180	Caucasus University 1 (Chelidze, chkhetiani, kakhiani)	.	.	.	.	.	.	.	-4	.	.	.	.	.	0	0
+180	ADA University 1 (Farzaliyev, Gadirzada, Huseynzade)	.	.	.	.	.	.	.	-1	.	.	.	.	.	0	0
+180	Batumi State University 2 (Giorgadze, Kakhidze, Meskhidze)	.	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	Georgian Technical University 1 (Arveladze, Gasanov, Madzgarashvili)	.	.	.	.	-4	.	.	-2	.	.	.	.	.	0	0
+180	American University - Central Asia 2 (Akramov, Khasanza, Talantbekov)	-1	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	International ATATURK-ALATOO University 2 (Akylbek, Kamil, Omurbek)	-1	.	.	.	.	.	.	-7	.	.	.	.	.	0	0
+180	International IT University 4 (Abdrakhman, Kabdoldin, Mukhtarkhanuly)	.	.	.	.	.	-2	.	-3	.	.	.	.	.	0	0
+180	Karaganda State Technical University 1 (Daukishov, Frolov, Kim)	.	.	.	.	.	.	.	.	.	-3	.	.	.	0	0
+180	Kazakh National University named Al-Farabi 1 (Kassymbek, Mustafin, Torekul)	.	.	.	-1	.	.	.	-1	.	.	.	.	.	0	0
+180	Kyrgyz -Turkey Manas University (Alybaev, Kubanychbekov, Kudaiberdi)	.	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	Moscow State University - Tashkent 2 (Karaev, Komilova, Pak)	-6	.	.	.	.	.	.	-2	.	.	.	.	.	0	0
+180	Moscow State University - Tashkent 3 (Kudratullayev, Makhsudov, Suyunbekova)	.	.	.	.	.	.	.	-8	.	.	.	.	.	0	0
+180	Suleyman Demirel University 3 (Mussin, Omar, Tursynbek)	.	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	University of International Business (Karkazan, Zhigmytov, Zhuman)	.	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	Westminster International University in Tashkent (Ikramov, Saidkhodjaev, Umidov)	-4	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	Atyrau State University (Ergozhieva, Kabidenova, Zhanbolayev)	.	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	D. Serikbayev East Kazakhstan State Technical University (Aulbekov, Kolotvinov, Shakenov)	-1	.	.	.	.	-5	.	-1	.	.	.	.	.	0	0
+180	Karaganda State Technical University 2 (Marushka, Omar, Velinskiy)	.	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+180	Mozhaisky Military Space Academy (Ilatovskiy, Kravchenko, Vladislav)	.	.	.	.	-3	.	.	-4	.	.	.	.	.	0	0
+180	Crimean Federal University 2 (Berezin, Farikov, Shtanko)	-3	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+	Total runs	463	76	23	2	210	261	12	531	13	396	38	28	4
+	Accepted	162	5	8	1	63	115	3	169	0	59	7	12	2
+	Rejected	301	71	15	1	147	146	9	362	13	337	31	16	2
+	First Accept	16:25	204:22	142:26	123:43	61:19	23:38	174:23	20:00		55:11	133:40	108:08	215:03
+	Last Accept	295:01	254:14	288:18	123:43	297:18	299:03	221:13	295:51		294:53	263:03	295:32	227:37

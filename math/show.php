@@ -12,11 +12,11 @@
 			$agent = get_user_agent_type();
 			
 			if ($agent == 'desktop') {
-				echo "<link href='../css/table.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
-				echo "<link href='../css/main.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
+				echo "<link href='../css/table.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
+				echo "<link href='../css/main.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
 			} else {
-				echo "<link href='../css/table_m.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
-				echo "<link href='../css/main_m.css?ver=2018-09-07' rel='stylesheet' type='text/css' >";
+				echo "<link href='../css/table_m.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
+				echo "<link href='../css/main_m.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
 			}
 		?>
 		
@@ -103,7 +103,7 @@
 					print_buttons("show.php?olymp=$olymp&amp;year=", $year, array("about" => "Подробнее об олимпиаде ..."), "colomns3", "#header");
 
 				}
-				print_header("Выберите год");
+				print_centered_text("Выберите год");
 				if ($agent == "mobile")
 					print_select_buttons("show.php", "year", $year, $buttons, array("olymp" => $olymp), "problems");
 				else
@@ -123,15 +123,13 @@
 							$site = "http://imc-math.ddns.net";
 							$results_link = $site."/?show=results";
 							$problems_link = $site."/?show=day1";
-						}					
-
-						print_buttons("", "", array($problems_link => "Задачи", $results_link => "Результаты"), 
-									"colomns3 external_link", "");
+						}
+						$material_buttons = array($problems_link => "Задачи", $results_link => "Результаты");
+						print_buttons_external($material_buttons, "colomns3");
 					} else {
 						show_link_file("$directory/problems/$olymp-$year-problems", "Задачи ".$buttons[$year]);
 						show_link_file("$directory/solutions/$olymp-$year-solutions", "Решения ".$buttons[$year]);
-						show_link_file("$directory/results/$olymp-$year-results", "Результаты ".$buttons[$year]);
-						print_header("Задачи");
+						print_centered_text("Задачи");
 						show_png_file("$directory/problems/$olymp-$year-$agent");
 					}
 
@@ -146,12 +144,15 @@
 													$needles,
 													$marks);
 					}
+					div_close();
 					
 					if ($table) {
+						div_open("Результаты");
+						show_link_file("$directory/results/$olymp-$year-results", "Результаты ".$buttons[$year]);
 						if ($olymp == "imc") {
-							print_header("Результаты участников из Казахстана");
+							print_centered_text("Результаты участников из Казахстана");
 							print_table($table);
-							print_header("Результаты команд из Казахстана");
+							print_centered_text("Результаты команд из Казахстана");
 							$table = get_table_from_file("$directory/results/$olymp-$year-teams.txt");
 							$marks = array();
 							$table = replace_prize_text($table, 
@@ -162,14 +163,13 @@
 														$marks);
 							print_table($table);
 						} else {
-							print_header("Результаты участников");
 							print_table($table);
 						}
 						echo "<a name='data_results'></a>";
-						print_header("Выберите год");
+						print_centered_text("Выберите год");
 						print_buttons("show.php?olymp=$olymp&amp;year=", $year, $buttons, $year_colomn_width, "#data_results");
+						div_close();
 					}
-					div_close();
 				}
 			}
 		?>
