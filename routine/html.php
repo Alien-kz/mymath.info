@@ -15,11 +15,11 @@ function attr_post($attr_name) {
 }
 
 function get_main_buttons($prefix) {
-	return array($prefix."index.php" => "Главная",
-				$prefix."abiturient/show.php" => "Абитуриентам", 
-				$prefix."math/show.php" => "Математика",
-				$prefix."prog/show.php" => "Программирование",
-				$prefix."books/show.php" => "Книги");
+	return array($prefix."" => "Главная",
+				$prefix."abiturient/" => "Абитуриентам", 
+				$prefix."math/" => "Математика",
+				$prefix."prog/" => "Программирование",
+				$prefix."books/" => "Книги");
 }
 
 function gen_buttons_from_file($file) {

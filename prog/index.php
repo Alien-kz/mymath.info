@@ -27,12 +27,12 @@
 			$about 		= attr_get("about");
 			
 			$buttons = get_main_buttons("../");
-			print_buttons("", "../prog/show.php", $buttons, "colomns_in_header", "");
+			print_buttons("", "../prog/", $buttons, "colomns_in_header", "");
 
 			#################################################### LEVEL 1
 
 			div_open("Студенческие олимпиады по~программированию", "top");
-			print_buttons("show.php?olymp=", 
+			print_buttons("index.php?olymp=", 
 							$olymp, 
 							array("msu" => "КФ МГУ", "acm-kaz" => "Четвертьфинал ACM", "acm-eurasia" => "Полуфинал ACM"),
 							"colomns3",
@@ -59,7 +59,7 @@
 				
 				div_open($header, "about");
 				print_about($about, $directory, "show.php?olymp=$olymp", "about", "colomns3");
-				print_select_buttons("show.php", "year", $year, $buttons, array("olymp" => $olymp), "about");
+				print_select_buttons("index.php", "year", $year, $buttons, array("olymp" => $olymp), "about");
 				div_close();
 				
 				#################################################### LEVEL 3
@@ -164,7 +164,7 @@
 						}
 						$table = replace_brackets_to_label($table);
 						$table = mark_plus($table);
-						print_form_select("show.php?#problems",
+						print_form_select("index.php?#problems",
 											$universities,
 											"mask",
 											$mask,
@@ -173,7 +173,7 @@
 											array("отметить", "фильтр"),
 											$defaults_keys
 										);
-						print_form_number("show.php?#problems",
+						print_form_number("index.php?#problems",
 											"Лучшие <number> команд(ы) университета",
 											"top",
 											$top,
@@ -183,7 +183,7 @@
 											$defaults_keys
 										);
 						if ($olymp == "acm-eurasia") {
-							print_form("show.php?#results",
+							print_form("index.php?#results",
 											"Команды из Казахстана",
 											"filterkaz", 
 											array("mark", "select"),
@@ -195,7 +195,7 @@
 					}
 					print_centered_text("Выберите год");
 					$year_colomn_width = "colomns5";
-					print_buttons("show.php?olymp=$olymp&amp;year=", $year, $buttons, $year_colomn_width, "#header");
+					print_buttons("index.php?olymp=$olymp&amp;year=", $year, $buttons, $year_colomn_width, "#header");
 					div_close();
 				}
 			}

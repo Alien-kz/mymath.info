@@ -21,12 +21,12 @@
 			$year 		= attr_get("year");
 			$about 		= attr_get("about");
 			$buttons = get_main_buttons("../");
-			print_buttons("", "../abiturient/show.php", $buttons, "colomns_in_header", "");
+			print_buttons("", "../abiturient/", $buttons, "colomns_in_header", "");
 
 			######################################## LEVEL 1
 
 			div_open("Вступительные экзамены в~Казахстанский филиал МГУ", "top");
-			print_buttons("show.php?subject=", 
+			print_buttons("index.php?subject=", 
 							$subject, 
 							array("math" => "Математика",
 								  "phys" => "Физика"),
@@ -47,8 +47,8 @@
 				$buttons = gen_buttons_from_file("$subject/list.txt");
 
 				div_open($header, "about");
-				print_about($about, $directory, "show.php?subject=$subject", "about", "colomns3");
-				print_select_buttons("show.php", "year", $year, $buttons, array("subject" => $subject), "about");
+				print_about($about, $directory, "index.php?subject=$subject", "about", "colomns3");
+				print_select_buttons("index.php", "year", $year, $buttons, array("subject" => $subject), "about");
 				div_close();
 
 				######################################## LEVEL 3

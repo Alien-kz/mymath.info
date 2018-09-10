@@ -19,7 +19,7 @@
 	<body>
 		<?php
 			$buttons = get_main_buttons("");
-			print_buttons("", "index.php", $buttons, "colomns_in_header", "");
+			print_buttons("", "", $buttons, "colomns_in_header", "");
 		?>
 	
 		<div align="center">

@@ -24,8 +24,8 @@
 		<?php div_open("Изданное"); ?>
 			<div>
 			<div class="book_div">
-					<a href="2008_2018_msu_olympiad_in_math.pdf">
-					<img class='img_in_div' src="2008_2018_msu_olympiad_in_math_logo_mini.jpg">
+					<a href="src/2008_2018_msu_olympiad_in_math.pdf">
+					<img class='img_in_div' src="src/2008_2018_msu_olympiad_in_math_logo_mini.jpg">
 					<p>
 					Cтуденческие олимпиады <br/>
 					Казахстанского филиала МГУ <br/>
@@ -49,9 +49,9 @@
 			</div>
 
 			<div class="book_div">
-					<a href="2013_2018_msu_olympiad_in_programming.pdf">
+					<a href="src/2013_2018_msu_olympiad_in_programming.pdf">
 				
-					<img class='img_in_div' src="2013_2018_msu_olympiad_in_programming_logo_mini.jpg">
+					<img class='img_in_div' src="src/2013_2018_msu_olympiad_in_programming_logo_mini.jpg">
 					<p>
 					Cтуденческие олимпиады <br/>
 					Казахстанского филиала МГУ <br/>
@@ -78,7 +78,7 @@
 		<?php div_open("Неизданное"); ?>
 			<div>
 			<div class="book_div">
-				<a href="2014_2018_republic_olympiad_in_math_for_student.pdf">
+				<a href="src/2014_2018_republic_olympiad_in_math_for_student.pdf">
 					<p align="center">
 					Cтуденческие республиканские олимпиады <br/>
 					по математике и по математическому и компьютерному моделированию <br/>

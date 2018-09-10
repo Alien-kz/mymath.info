@@ -18,7 +18,7 @@
 	<body>
 		<?php
 			$buttons = get_main_buttons("../");
-			print_buttons("", "../math/show.php", $buttons, "colomns_in_header", "");
+			print_buttons("", "../math/", $buttons, "colomns_in_header", "");
 
 			$olymp	= attr_get("olymp");
 			$year 	= attr_get("year");
@@ -27,7 +27,7 @@
 			#################################################### LEVEL 1
 		
 			div_open("Студенческие олимпиады по математике", "top");
-			print_buttons("show.php?olymp=", 
+			print_buttons("index.php?olymp=", 
 							$olymp, 
 							array("msu" => "КФ МГУ",
 									"republic" => "Республиканская", 
@@ -63,12 +63,12 @@
 
 				####################################################
 				div_open($header, "about");
-				print_about($about, $directory, "show.php?olymp=$olymp", "about", "colomns3");
+				print_about($about, $directory, "index.php?olymp=$olymp", "about", "colomns3");
 				if ($olymp == "republic") {
-					print_select_buttons("show.php", "year", $year, $buttons_math, array("olymp" => $olymp), "about");
-					print_select_buttons("show.php", "year", $year, $buttons_mcm, array("olymp" => $olymp), "about");
+					print_select_buttons("index.php", "year", $year, $buttons_math, array("olymp" => $olymp), "about");
+					print_select_buttons("index.php", "year", $year, $buttons_mcm, array("olymp" => $olymp), "about");
 				} else {
-					print_select_buttons("show.php", "year", $year, $buttons, array("olymp" => $olymp), "about");
+					print_select_buttons("index.php", "year", $year, $buttons, array("olymp" => $olymp), "about");
 				}
 				div_close();
 
@@ -128,7 +128,7 @@
 						}
 						print_centered_text("Выберите год");
 						$year_colomn_width = "colomns6";
-						print_buttons("show.php?olymp=$olymp&amp;year=", $year, $buttons, $year_colomn_width, "#results");
+						print_buttons("index.php?olymp=$olymp&amp;year=", $year, $buttons, $year_colomn_width, "#results");
 						div_close();
 					}
 				}
