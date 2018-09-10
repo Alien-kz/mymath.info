@@ -16,11 +16,11 @@ input[type=number] {
 
 .left{
 	text-align: right;
-	width: 45%;
+	width: 50%;
 }
 .right{
 	text-align: left;
-	width: 45%;
+	width: 40%;
 }
 
 select

@@ -1,5 +1,19 @@
 <?php
 
+function attr_get($attr_name) {
+	if (isset($_GET[$attr_name])) {
+		return $_GET[$attr_name];
+	}
+	return "";
+}
+
+function attr_post($attr_name) {
+	if (isset($_POST[$attr_name])) {
+		return $_POST[$attr_name];
+	}
+	return "";
+}
+
 function get_main_buttons($prefix) {
 	return array($prefix."index.php" => "Главная",
 				$prefix."abiturient/show.php" => "Абитуриентам", 
@@ -8,34 +22,68 @@ function get_main_buttons($prefix) {
 				$prefix."books/show.php" => "Книги");
 }
 
+function gen_buttons_from_file($file) {
+	$buttons = array();
+	$array = get_table_from_file($file);
+	$number = count($array) - 1;
+	for ($i = 0; $i < $number; $i++) {
+		$row = $array[$i];
+		$buttons[$row[0]] = $row[1];
+	}
+	return $buttons;
+}
+
+function load_css($prefix, $css_array, $agent) {
+	$ver = "2018-09-09-02";
+	$prefix = $prefix."css/";
+	if ($agent == 'mobile') {
+		foreach ($css_array as $css) {
+			$file = $prefix.$css.".css";
+			$file_m = $prefix.$css."_m.css";
+			if (file_exists($file_m)) {
+				echo "<link href='$file_m?ver=$ver' rel='stylesheet' type='text/css' >\n";
+			} else {
+				echo "<link href='$file?ver=$ver' rel='stylesheet' type='text/css' >\n";
+			}
+		}
+	} else {
+		foreach ($css_array as $css) {
+			$file = $prefix.$css.".css";
+			echo "<link href='$file?ver=$ver' rel='stylesheet' type='text/css' >\n";
+		}
+	}
+}
+
 function get_user_agent_type() { 
 	if (preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]))
 		return 'mobile';
 	return 'desktop';
 }
 
-function div_open($text) {
-	echo "<div align='center'>";
-	echo "<div class='content_div'>";
-	print_header($text);
+function div_open($text, $anchor) {
+	echo "<div align='center' id='$anchor'>\n";
+	echo "<div class='content_div'>\n";
+	if ($text) {
+		print_header($text);
+	}
 }
 
 function div_close() {
-	echo "</div>";
-	echo "</div>";
+	echo "</div>\n";
+	echo "</div>\n\n";
 }
 
 function print_header($text) {
-	echo "<div align='center' class='head_div'>\n";
-	echo "<p>$text</p>\n";
-	echo "</div>\n";
+	echo " <div align='center' class='head_div'>\n";
+	$text = str_replace("~", "&nbsp;", $text);
+	echo " $text\n";
+	echo " </div>\n";
 }
 
 function print_centered_text($text) {
-	echo "<div align='center'>\n";
-	echo "<div class='text_div'>\n";
+	echo "<div align='center' class='text_div'>\n";
+	$text = str_replace("~", "&nbsp;", $text);
 	echo "$text\n";
-	echo "</div>\n";
 	echo "</div>\n";
 }
 
@@ -54,83 +102,105 @@ function print_text($text) {
 	echo "</div>\n";
 }
 
-function print_form($link, $value, $text, $key, $button_name) {
+############################################# FORMS 
+
+function input_hidden($default_keys, $current_keys) {
+	foreach ($default_keys as $key => $value) {
+		if ($value !== "false" and $value !== "") {
+			$used = false;
+			foreach ($current_keys as $ckey) {
+				if ($key == $ckey) {
+					$used = true;
+					break;
+				}
+			}
+			if ($used == false) {
+				echo "<input type='hidden' name='$key' value='$value'>\n";
+			}
+		}
+	}
+}
+
+function input_buttons($button_key, $button_values, $button_names, $default_keys) {
+	$is_selected = "";
+	if (isset($default_keys[$button_key]) and ($default_keys[$button_key] == $button_values[0]))
+		$is_selected = " selected";
+	echo "<button class='button $is_selected' type='submit' name='$button_key' value='$button_values[0]'> $button_names[0] </button>";
+	
+	$is_selected = "";
+	if (isset($default_keys[$button_key]) and ($default_keys[$button_key] == $button_values[1]))
+		$is_selected = " selected";
+	echo "<button class='button $is_selected' type='submit' name='$button_key' value='$button_values[1]'> $button_names[1] </button>";
+	
+	echo "<button class='button' type='submit' name=''>сброс</button>";
+}
+
+function print_form($action, $text, $button_key, $button_values, $button_names, $default_keys) {
 	echo "<div align='center'>\n";
-	echo "<form action='$link' method='post'>\n";
-	echo "<button>$button_name</button>\n";
-	echo "<input type='number' name='$key' min='1' max='9' size='2' value='$value'>\n";
+	echo "<form action='$action' method='get'>\n";
+	input_hidden($default_keys, array($button_key));
+
+	echo "<div class='left inline'>";
 	echo $text;
+	echo "</div>";
+	
+	echo "<div class='right inline'>";
+	input_buttons($button_key, $button_values, $button_names, $default_keys);
+	echo "</div>";
 	echo "</form>\n";
+
 	echo "</div>\n";
 }
 
-function print_form_two_action($link, $text_before, $text_after, $value_name, $value, $keys, $button_names) {
+function print_form_number($action, $text, $field_key, $value, $button_key, $button_values, $button_names, $default_keys) {
 	echo "<div align='center'>\n";
-	echo "<form action='$link' method='post'>\n";
+	echo "<form action='$action' method='get'>\n";
+	input_hidden($default_keys, array($field_key, $button_key));
 
-	echo "<div class='half'>";
-	echo $text_before;
-	echo "<input type='number' min='1' max='9' name='$value_name' value='$value'>";
-	echo $text_after;
-	echo "</div>";
-	
-	echo "<div class='half'>";
-	echo "<input class='button' type='submit' name='$keys[0]' value='$button_names[0]'>";
-	echo "<input class='button' type='submit' name='$keys[1]' value='$button_names[1]'>";
-	echo "<input class='button' type='submit' name='' value='сброс'>";
-	echo "</div>";
-	
-	echo "</form>\n";
-	echo "</div>\n";
-}
-
-function print_form_checkbox_two_action($link, $text, $keys, $button_names) {
-	echo "<div align='center'>\n";
-	echo "<form action='$link' method='post'>\n";
-
-	echo "<div class='half'>";
+	echo "<div class='left inline'>";
+	$input = "<input type='number' min='1' max='9' name='$field_key' value='$value'>";
+	$text = str_replace("<number>", $input, $text); 
 	echo $text;
 	echo "</div>";
 	
-	echo "<div class='half'>";
-	echo "<input class='button' type='submit' name='$keys[0]' value='$button_names[0]'>";
-	echo "<input class='button' type='submit' name='$keys[1]' value='$button_names[1]'>";
-	echo "<input class='button' type='submit' name='' value='сброс'>";
+	echo "<div class='right inline'>";
+	input_buttons($button_key, $button_values, $button_names, $default_keys);
 	echo "</div>";
 	
 	echo "</form>\n";
 	echo "</div>\n";
 }
 
-function print_form_select_two_action($link, $values, $value_name, $selected_value, $keys, $button_names) {
+function print_form_select($action, $values, $field_key, $value, $button_key, $button_values, $button_names, $default_keys) {
 	echo "<div align='center'>\n";
-	echo "<form action='$link' method='post'>\n";
+	echo "<form action='$action' method='get'>\n";
+	input_hidden($default_keys, array($field_key, $button_key));
 
-	echo "<div class='half'>";
-	echo "<select name='$value_name' autofocus>\n";
-	foreach ($values as $value) {
+	echo "<div class='left inline'>";
+	echo "<select name='$field_key' autofocus>\n";
+	foreach ($values as $current_value) {
 		$is_selected = "";
-		if ($value === $selected_value)
+		if ($current_value === $value)
 			$is_selected = " selected";
-		echo "<option $is_selected value='$value'> $value </option> \n";
+		echo "<option $is_selected value='$current_value'> $current_value </option> \n";
 	}
 	echo "</select>\n";
 	echo "</div>";
 	
-	echo "<div class='half'>";
-	echo "<input class='button' type='submit' name='$keys[0]' value='$button_names[0]'>";
-	echo "<input class='button' type='submit' name='$keys[1]' value='$button_names[1]'>";
-	echo "<input class='button' type='submit' name='' value='сброс'>";
+	echo "<div class='right inline'>";
+	input_buttons($button_key, $button_values, $button_names, $default_keys);
 	echo "</div>";
 	
 	echo "</form>\n";
 	echo "</div>\n";
+
 }
 
-function print_buttons_external($material_buttons, $options) {
-	echo "<div align='center'>\n";
-	echo "<div class='buttons_div'>\n";
-	foreach ($material_buttons as $link => $text) {
+############################################# BUTTONS
+
+function print_buttons_external($buttons, $options) {
+	echo "<div align='center' class='buttons_div'>\n";
+	foreach ($buttons as $link => $text) {
 		if ($options == "vertical")
 			echo "<div class='buttons_div'>\n";
 		echo "<a class='button $options external_link' target='_blank' href='$link'>$text</a> \n";
@@ -138,12 +208,28 @@ function print_buttons_external($material_buttons, $options) {
 			echo "</div>\n";
 	}
 	echo "</div>\n";
-	echo "</div>\n";
+}
+
+function print_about($about, $directory, $link, $anchor, $options) {
+	$text = "";
+	if ($about) {
+		$text =  "Скрыть";
+		$link = $link."#".$anchor;
+	} else {
+		$text =  "Подробнее";
+		$link = $link."&amp;about=true#".$anchor;
+	}
+	echo "<div align='center' class='buttons_div'>\n";
+	echo "<a class='button $options' href='$link'>$text</a> \n";
+	if ($about) {
+		print_text(file_get_contents($directory."/about.txt")); 
+	}
+	echo "</div>\n";	
 }
 
 function print_buttons($link, $selected_key, $buttons, $options, $anchor) {
-	echo "<div align='center'>\n";
-	echo "<div class='buttons_div'>\n";
+	echo "\n";
+	echo "<div align='center' class='buttons_div'>\n";
 	foreach ($buttons as $key => $text) {
 		$is_selected = "";
 		if (strval($key) === $selected_key)
@@ -154,31 +240,38 @@ function print_buttons($link, $selected_key, $buttons, $options, $anchor) {
 		if ($options == "vertical")
 			echo "</div>\n";
 	}
-	echo "</div>\n";
-	echo "</div>\n";
+	echo "</div>\n\n";
 }
 
-function print_select_buttons($link, $key_name, $selected_key, $buttons, $defaults_keys, $anchor) {
+function print_select_buttons($link, $key_name, $key_selected, $buttons, $default_keys, $anchor) {
 	echo "<div align='center'>\n";
 	echo "<form action='$link' method='get'>";
-	echo "<select class='button colomns5' name='$key_name' autofocus>";
-	
-	$text = "";
-	foreach ($buttons as $key => $text) {
+	input_hidden($default_keys);
+
+	echo "<div align='right' class='inline'>";
+	echo "<select name='$key_name' autofocus>";	
+	$html = "";
+	foreach ($buttons as $key => $value) {
 		$is_selected = "";
-		if (strval($key) === $selected_key)
+		if (strval($key) === $key_selected)
 			$is_selected = " selected";
-		$text = "<option class='$is_selected' $is_selected value='$key'> $text </option> \n".$text;
+		$html = "<option $is_selected value='$key'> $value </option> \n".$html;
 	}
-	echo $text;
+	echo $html;
 	echo "</select>";
-	foreach ($defaults_keys as $key => $value) {
-		echo "<input type='hidden' name='$key' value='$value'>\n";
-	}
-	echo "<input class='button colomns5' type='submit' value='выбрать'>\n";
+	echo "</div>\n";
+
+	echo "<div align='left' class='inline'>";
+	echo "<input class='button' type='submit' value='показать'>\n";
+	echo "</div>\n";
+
+	
 	echo "</form>\n";
 	echo "</div>\n";
 }
+
+############################################# SHOW LINK AND FILE
+
 function show_pdf_file($file) {
 	echo "<div align='center'>\n";
 	echo "<div>\n";

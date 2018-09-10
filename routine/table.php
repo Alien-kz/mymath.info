@@ -119,7 +119,7 @@ function select_top($table, $colomn, $top) {
 	$new_table = array();
 	if (isset($table['header'])) {
 		$header = $table['header'];
-		array_unshift($header, "№");
+		array_unshift($header, "Top");
 		$new_table['header'] = $header;
 	}
 	$current = 1;
@@ -164,7 +164,7 @@ function select_row($table, $colomn, $needle) {
 	$new_table = array();
 	if (isset($table['header'])) {
 		$header = $table['header'];
-		array_unshift($header, "№");
+		array_unshift($header, "Uni");
 		$new_table['header'] = $header;
 	}
 	$current = 1;
@@ -212,7 +212,7 @@ function select_kaz($table, $colomn, $needles) {
 	$new_table = array();
 	if (isset($table['header'])) {
 		$header = $table['header'];
-		array_unshift($header, "№");
+		array_unshift($header, "Kaz");
 		$new_table['header'] = $header;
 	}
 	$current = 1;

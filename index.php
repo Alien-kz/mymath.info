@@ -11,13 +11,8 @@
 		<?php
 			include_once "routine/html.php";
 			$agent = get_user_agent_type();
-			# echo $agent;
-			if ($agent == 'desktop') {
-				echo "<link href='css/main.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
-			} else {
-				echo "<link href='css/main_m.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
-			}
-			echo "<link href='css/chars.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
+			$css = array("main", "chars");
+			load_css("../", $css, $agent);
 		?>
 		
 	</head>
@@ -37,12 +32,11 @@
 		</div>
 
 		<div align="center">
-		<div class="content_div">
-			<h3 align='center'> Последнее обновление </h3>
-			<p align='left'> 
-				<?php print_text(replace_level(file_get_contents("news.txt"))); ?>
-			</p>
-		</div>
+			<?php 
+			div_open("Последнее обновление");
+			print_text(replace_level(file_get_contents("news.txt"))); 
+			div_close();
+			?>
 		</div>
 		<p>
 			<!-- Yandex.Metrika counter -->

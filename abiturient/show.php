@@ -9,34 +9,23 @@
 		
 		<?php
 			include_once "../routine/html.php";
+			include_once "../routine/table.php";
 			$agent = get_user_agent_type();
-			
-			if ($agent == 'desktop') {
-				echo "<link href='../css/main.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
-			} else {
-				echo "<link href='../css/main_m.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
-			}
-			echo "<link href='../css/chars.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
+			$css = array("main", "input", "chars");
+			load_css("../", $css, $agent);
 		?>
 	</head>
 	<body>
 		<?php
+			$subject	= attr_get("subject");
+			$year 		= attr_get("year");
+			$about 		= attr_get("about");
 			$buttons = get_main_buttons("../");
 			print_buttons("", "../abiturient/show.php", $buttons, "colomns_in_header", "");
 
-		
-			$subject = "";
-			if (isset($_GET["subject"])) {
-				$subject = $_GET["subject"];
-			}
-			$year = "";
-			if (isset($_GET["year"])) {
-				$year = $_GET["year"];
-			}
-		?>
-		
-		<?php
-			div_open("Вступительные экзамены в Казахстанский филиал МГУ");
+			######################################## LEVEL 1
+
+			div_open("Вступительные экзамены в~Казахстанский филиал МГУ", "top");
 			print_buttons("show.php?subject=", 
 							$subject, 
 							array("math" => "Математика",
@@ -44,47 +33,28 @@
 							"colomns3", "");
 			div_close();
 
-			########################################
+			######################################## LEVEL 2
 			
 			if ($subject == "math" or $subject  == "phys") {
 				$header = "";
-				$buttons = array();
-				$directory = $subject;
-				$variant = "";
 				if ($subject == "math") {
-					for ($y = 2011; $y <= 2017; $y++) {
-						$buttons[$y] = $y." год";
-					}
-					$variant = "1";
-					$header = "Экзамен по математике";
+					$header = "Экзамен по~математике";
 				}
 				if ($subject == "phys") {
-					for ($y = 2015; $y <= 2017; $y++) {
-						$buttons[$y] = $y." год";
-					}
-					$variant = "2";
-					$header = "Экзамен по физике";
+					$header = "Экзамен по~физике";
 				}
+				$directory = $subject;
+				$buttons = gen_buttons_from_file("$subject/list.txt");
 
-
-				echo "<a name='material'></a>";
-				div_open($header);
-				if ($year == "about") {
-					print_buttons("show.php?subject=$subject&amp;year=", $subject, array("" => "Скрыть ..."), "colomns3", "#material");
-					print_text(file_get_contents("$subject/about.txt")); 
-				} else {
-					print_buttons("show.php?subject=$subject&amp;year=", $year, array("about" => "Подробнее об экзамене ..."), "colomns3", "#material");
-			
-				
-				}
-				print_centered_text("Выберите год");
-				print_buttons("show.php?subject=$subject&amp;year=", $year, $buttons, "colomns7", "#material");
+				div_open($header, "about");
+				print_about($about, $directory, "show.php?subject=$subject", "about", "colomns3");
+				print_select_buttons("show.php", "year", $year, $buttons, array("subject" => $subject), "about");
 				div_close();
 
-				########################################
+				######################################## LEVEL 3
 
 				if ($year != "" and $year != "about") {
-					div_open("Материалы экзамена");
+					div_open("Материалы экзамена", "problems");
 					$file_name_1 = "$directory/problems/msu-$subject-$year-1";
 					$file_name_2 = "$directory/problems/msu-$subject-$year-2";
 					

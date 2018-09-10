@@ -10,44 +10,28 @@
 			include_once "../routine/html.php";
 			include_once "../routine/table.php";
 			$agent = get_user_agent_type();
-			
-			if ($agent == 'desktop') {
-				echo "<link href='../css/table.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
-				echo "<link href='../css/main.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
-			} else {
-				echo "<link href='../css/table_m.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
-				echo "<link href='../css/main_m.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
-			}
-			echo "<link href='../css/input.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
+			$css = array("main", "input", "table");
+			load_css("../", $css, $agent);
 		?>
 		
 	</head>
 	<body>
 		<?php
+			$olymp		= attr_get("olymp");
+			$year 		= attr_get("year");
+			$filterkaz 	= attr_get("filterkaz");
+			$filtermask = attr_get("filtermask");
+			$mask 		= attr_get("mask");
+			$filtertop 	= attr_get("filtertop");
+			$top 		= attr_get("top");
+			$about 		= attr_get("about");
+			
 			$buttons = get_main_buttons("../");
 			print_buttons("", "../prog/show.php", $buttons, "colomns_in_header", "");
 
-			$olymp = "";
-			if (isset($_GET["olymp"])) {
-				$olymp = $_GET["olymp"];
-			}
-			$year = "";
-			if (isset($_GET["year"])) {
-				$year = strval($_GET["year"]);
-			}
-			$mask = "";
-			if (isset($_POST["mask"])) {
-				$mask = strval($_POST["mask"]);
-			}
-			$top = "";
-			if (isset($_POST["top"])) {
-				$top = strval($_POST["top"]);
-			}
-			?>
-		
-		<?php
-			echo "<a name='type'></a>";
-			div_open("Студенческие олимпиады по программированию");
+			#################################################### LEVEL 1
+
+			div_open("Студенческие олимпиады по~программированию", "top");
 			print_buttons("show.php?olymp=", 
 							$olymp, 
 							array("msu" => "КФ МГУ", "acm-kaz" => "Четвертьфинал ACM", "acm-eurasia" => "Полуфинал ACM"),
@@ -55,53 +39,33 @@
 							"#type");
 			div_close();
 			
-			####################################################
+			#################################################### LEVEL 2
 							
 			if ($olymp == "msu" or $olymp == "acm-kaz" or $olymp == "acm-eurasia") {
-				$buttons = array();
 				$directory = $olymp;
 				$header = "";
-				$year_colomn_width = "colomns5";
 				if ($olymp == "msu") {
-					$header = "Открытая студенческая олимпиада Казахстанского филиала МГУ по программированию";
+					$header = "Открытая студенческая олимпиада Казахстанского филиала МГУ по~программированию";
 				}
 				if ($olymp == "acm-kaz") {
-					$header = "Казахстанский четвертьфинал чемпионата мира по программированию ACM ICPC";
+					$header = "Казахстанский четвертьфинал чемпионата мира по~программированию ACM~ICPC";
 				}
 				if ($olymp == "acm-eurasia") {
-					$header = "Полуфинал чемпионата мира по программированию ACM ICPC в регионе 'Северная Евразия'";
+					$header = "Полуфинал чемпионата мира по~программированию ACM~ICPC (Северная~Евразия)";
 				}
-				$array = get_table_from_file("$olymp/list.txt");
-				$number = count($array) - 1;
-				for ($i = 0; $i < $number; $i++) {
-					$row = $array[$i];
-					$buttons[$row[0]] = $row[1];
-				}
-				$year_colomn_width = "colomns5";
+				$buttons = gen_buttons_from_file("$olymp/list.txt");
 				
 				####################################################
 				
-				echo "<a name='header'></a>";
-				div_open($header);
-				if ($year == "about") {
-					print_buttons("show.php?olymp=$olymp&amp;year=", $year, array("" => "Скрыть ..."), "colomns3", "#header");
-					print_text(file_get_contents($directory."/about.txt")); 
-				} else {
-					print_buttons("show.php?olymp=$olymp&amp;year=", $year, array("about" => "Подробнее об олимпиаде ..."), "colomns3", "#header");
-
-				}
-				print_centered_text("Выберите год");
-				if ($agent == "mobile")
-					print_select_buttons("show.php", "year", $year, $buttons, array("olymp" => $olymp), "problems");
-				else
-					print_buttons("show.php?olymp=$olymp&amp;year=", $year, $buttons, $year_colomn_width, "#header");
+				div_open($header, "about");
+				print_about($about, $directory, "show.php?olymp=$olymp", "about", "colomns3");
+				print_select_buttons("show.php", "year", $year, $buttons, array("olymp" => $olymp), "about");
 				div_close();
-
-				####################################################
+				
+				#################################################### LEVEL 3
 				
 				if ($year != "about" and $year != "") {
-					echo "<a name='problems'></a>";
-					div_open("Материалы олимпиады");
+					div_open("Материалы олимпиады", "problems");
 					if ($olymp == "acm-kaz") {
 						$site = "https://neerc.ifmo.ru/archive/";
 						$results_link = $site."$year/kazakhstan/standings.html";
@@ -130,14 +94,13 @@
 					div_close();
 	
 					
-					div_open("Результаты участников");
+					div_open("Результаты участников", "results");
 					if ($olymp == "msu") {
 						show_link_file("$directory/results/$olymp-$year-results", "Результаты ".$buttons[$year]);
 					}
 					
 					$table = get_table_from_file("$directory/results/$year.txt");
 					if ($table) {
-						echo "<a name='results'></a>";
 						if ($mask == "") {
 							if ($olymp == "acm-kaz") {
 								if ($year > 2013)
@@ -148,15 +111,9 @@
 									$mask = "Astana MSU";
 							}
 							if ($olymp == "acm-eurasia") {
-#								if ($year >= 2015)
 								$mask = "Kazakhstan Branch of Moscow SU";
 								if ($year == 2006 or $year == 2007)
 									$mask = "Astana Moscow SU";
-#									Kazakhstan Branch of Moscow State University
-#								if ($year == 2015)
-#									$mask = "Kazakhstan br of MSU";
-#								if ($year == 2006 or $year == 2007)
-#									$mask = "Astana MSU";
 							}
 						}
 						if ($top == "") {
@@ -170,67 +127,74 @@
 
 						$colomn = 1;
 						$universities = get_university_list($table, $colomn);
-							
+						$defaults_keys = array("olymp" => $olymp, "year" => $year);
+
+						if ($filterkaz == "mark" || $filterkaz == "select") {
+							$defaults_keys["filterkaz"] = $filterkaz;
+							$kaz_universities = get_array_from_file("acm-eurasia/results/$year-kaz.txt");
+							if ($filterkaz == "mark") {
+								$table = mark_kaz($table, $colomn, $kaz_universities);
+							}
+							if ($filterkaz == "select") {
+								$table = select_kaz($table, $colomn, $kaz_universities);
+								$colomn += 1;
+							}
+						}
+						if ($filtermask == "mark" || $filtermask == "select") {
+							$defaults_keys["filtermask"] = $filtermask;
+							$defaults_keys["mask"] = $mask;
+							if ($filtermask == "mark") {
+								$table = mark_row($table, $colomn, $mask);
+							}
+							if ($filtermask == "select") {
+								$table = select_row($table, $colomn, $mask);
+								$colomn += 1;
+							}
+						}
+						if ($filtertop == "mark" || $filtertop == "select") {
+							$defaults_keys["filtertop"] = $filtertop;
+							$defaults_keys["top"] = $top;
+							if ($filtertop == "mark") {
+								$table = mark_top($table, $colomn, $top);
+							}
+							if ($filtertop == "select") {
+								$table = select_top($table, $colomn, $top);
+								$colomn += 1;
+							}
+						}
 						$table = replace_brackets_to_label($table);
 						$table = mark_plus($table);
-						if (isset($_POST['kazhighlight'])) {
-							$kaz_universities = get_array_from_file("acm-eurasia/results/$year-kaz.txt");
-							$table = mark_kaz($table, $colomn, $kaz_universities);
-						}
-						if (isset($_POST['kazselect'])) {
-							$kaz_universities = get_array_from_file("acm-eurasia/results/$year-kaz.txt");
-							$table = select_kaz($table, $colomn, $kaz_universities);
-						}
-						if (isset($_POST['highlight'])) {
-							$table = mark_row($table, $colomn, $mask);
-						}
-						if (isset($_POST['select'])) {
-							$table = select_row($table, $colomn, $mask);
-						}
-						if (isset($_POST['tophighlight'])) {
-							$table = mark_top($table, $colomn, $top);
-						}
-						if (isset($_POST['topselect'])) {
-							$table = select_top($table, $colomn, $top);
-#							$text = "";
-#							foreach($table as $row) {
-#								$text .= $row[2]."\n";
-#							}
-#							file_put_contents("acm-eurasia/results/$year-kaz.txt", $text);
-						}
-						div_open("Фильтр");
-						print_form_select_two_action("show.php?olymp=$olymp&amp;year=$year#problems",
-													$universities,
-													"mask",
-													$mask,
-													array("highlight", "select"), 
-													array("отметить", "выбрать"));
-						print_form_two_action("show.php?olymp=$olymp&amp;year=$year#problems",
-													"Лучшие",
-													"команды университета",
-													"top",
-													$top,
-													array("tophighlight", "topselect"), 
-													array("отметить", "выбрать"));
+						print_form_select("show.php?#problems",
+											$universities,
+											"mask",
+											$mask,
+											"filtermask", 
+											array("mark", "select"),
+											array("отметить", "фильтр"),
+											$defaults_keys
+										);
+						print_form_number("show.php?#problems",
+											"Лучшие <number> команд(ы) университета",
+											"top",
+											$top,
+											"filtertop", 
+											array("mark", "select"),
+											array("отметить", "фильтр"),
+											$defaults_keys
+										);
 						if ($olymp == "acm-eurasia") {
-							print_form_checkbox_two_action("show.php?olymp=$olymp&amp;year=$year#problems",
-														"Команды из Казахстана",
-														array("kazhighlight", "kazselect"), 
-														array("отметить", "выбрать"));
+							print_form("show.php?#results",
+											"Команды из Казахстана",
+											"filterkaz", 
+											array("mark", "select"),
+											array("отметить", "фильтр"),
+											$defaults_keys
+										);
 						}
-						div_close();
-						#print_form("show.php?olymp=$olymp&amp;year=$year#problems",
-						#			$top,
-						#			"лучшие команды из университета",
-						#			"top",
-						#			"Отметить");
-						#print_form_two_action("show.php?olymp=$olymp&amp;year=$year#problems",
-						#						$mask,
-						#						array("highlight", "select"), 
-						#						array("Отметить", "Отфильтровать")); 
 						print_table($table);
 					}
 					print_centered_text("Выберите год");
+					$year_colomn_width = "colomns5";
 					print_buttons("show.php?olymp=$olymp&amp;year=", $year, $buttons, $year_colomn_width, "#header");
 					div_close();
 				}

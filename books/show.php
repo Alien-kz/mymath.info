@@ -9,14 +9,8 @@
 		<?php
 			include_once "../routine/html.php";
 			$agent = get_user_agent_type();
-			
-			if ($agent == 'desktop') {
-				echo "<link href='books.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
-				echo "<link href='../css/main.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
-			} else {
-				echo "<link href='books_m.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
-				echo "<link href='../css/main_m.css?ver=2018-09-01-2' rel='stylesheet' type='text/css' >";
-			}
+			$css = array("main", "books");
+			load_css("../", $css, $agent);
 		?>
 		
 	</head>

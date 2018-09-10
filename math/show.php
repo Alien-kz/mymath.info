@@ -10,15 +10,9 @@
 			include_once "../routine/html.php";
 			include_once "../routine/table.php";
 			$agent = get_user_agent_type();
-			
-			if ($agent == 'desktop') {
-				echo "<link href='../css/table.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
-				echo "<link href='../css/main.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
-			} else {
-				echo "<link href='../css/table_m.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
-				echo "<link href='../css/main_m.css?ver=2018-09-09' rel='stylesheet' type='text/css' >";
-			}
-		?>
+			$css = array("main", "input", "table");
+			load_css("../", $css, $agent);
+		?> 
 		
 	</head>
 	<body>
@@ -26,95 +20,62 @@
 			$buttons = get_main_buttons("../");
 			print_buttons("", "../math/show.php", $buttons, "colomns_in_header", "");
 
-			$olymp = "";
-			if (isset($_GET["olymp"])) {
-				$olymp = $_GET["olymp"];
-			}
-			$year = "";
-			if (isset($_GET["year"])) {
-				$year = strval($_GET["year"]);
-			}
-			
-		?>
+			$olymp	= attr_get("olymp");
+			$year 	= attr_get("year");
+			$about 	= attr_get("about");
+
+			#################################################### LEVEL 1
 		
-		<?php
-			echo "<a name='type'></a>";
-			div_open("Студенческие олимпиады по математике");
+			div_open("Студенческие олимпиады по математике", "top");
 			print_buttons("show.php?olymp=", 
 							$olymp, 
 							array("msu" => "КФ МГУ",
 									"republic" => "Республиканская", 
 									"imc" => "IMC"),
 							"colomns3",
-							"#type");
+							"");
 			div_close();
 			
-			####################################################
+			#################################################### LEVEL 2
 							
 			if ($olymp == "republic" or $olymp == "msu" or $olymp == "imc") {
 				$buttons = array();
 				$directory = $olymp;
 				$header = "";
 				if ($olymp == "msu") {
-					$header = "Открытая студенческая олимпиада Казахстанского филиала МГУ по математике.";
-					for ($y = 2008; $y <= 2017; $y++) {
-						$buttons[strval($y)] = $y." год";
-					}
-					$buttons['2014-train'] = "2014 год (тренировка)";
-					$buttons['2018-train'] = "2018 год (тренировка)";
-					$needles = array("1" => "gold", 
-									"2" => "silver", 
-									"3" => "bronze");
-					$year_colomn_width = "colomns5";
+					$header = "Открытая студенческая олимпиада Казахстанского филиала МГУ по математике";
+					$buttons = gen_buttons_from_file("$olymp/list.txt");
+					$needles = array("1" => "gold", "2" => "silver", "3" => "bronze");
 				}
 				if ($olymp == "republic") {
-					$header = "Республиканская студенческая олимпиада по направлениям 'Математика' и 'МКМ'.";
-					$buttons["math-2006"] = "М 2006 год";
-					for ($y = 2014; $y <= 2018; $y++) {
-						$buttons["math-".strval($y)] = "Матем ".$y. " год";
-					}
-					for ($y = 2014; $y <= 2018; $y++) {
-						$buttons["mcm-".strval($y)] = "МКМ ".$y." год";
-					}
-					$needles = array("1" => "gold", 
-									"2" => "silver", 
-									"3" => "bronze");
-					$year_colomn_width = "colomns6";
+					$header = "Республиканская студенческая олимпиада по направлениям 'Математика' и 'МКМ'";
+					$buttons_math = gen_buttons_from_file("$olymp/list-math.txt");
+					$buttons_mcm = gen_buttons_from_file("$olymp/list-mcm.txt");
+					$buttons = array_merge($buttons_math, $buttons_mcm);
+					$needles = array("1" => "gold", "2" => "silver", "3" => "bronze");
 				}
 				if ($olymp == "imc") {
-					$header = "Международная студенческая олимпиада International Mathematics Competition.";
-					for ($y = 2013; $y <= 2018; $y++) {
-						$buttons[strval($y)] = $y." год";
-					}
-					$needles = array("First" => "gold", 
-									"Second" => "silver", 
-									"Third" => "bronze");
-					$year_colomn_width = "colomns6";
+					$header = "Международная студенческая олимпиада International Mathematics Competition";
+					$buttons = gen_buttons_from_file("$olymp/list.txt");
+					$needles = array("First" => "gold", "Second" => "silver", "Third" => "bronze");
 				}
-				
-				####################################################
-				
-				echo "<a name='header'></a>";
-				div_open($header);
-				if ($year == "about") {
-					print_buttons("show.php?olymp=$olymp&amp;year=", $year, array("" => "Скрыть ..."), "colomns3", "#header");
-					print_text(file_get_contents($directory."/about.txt")); 
-				} else {
-					print_buttons("show.php?olymp=$olymp&amp;year=", $year, array("about" => "Подробнее об олимпиаде ..."), "colomns3", "#header");
 
+
+				####################################################
+				div_open($header, "about");
+				print_about($about, $directory, "show.php?olymp=$olymp", "about", "colomns3");
+				if ($olymp == "republic") {
+					print_select_buttons("show.php", "year", $year, $buttons_math, array("olymp" => $olymp), "about");
+					print_select_buttons("show.php", "year", $year, $buttons_mcm, array("olymp" => $olymp), "about");
+				} else {
+					print_select_buttons("show.php", "year", $year, $buttons, array("olymp" => $olymp), "about");
 				}
-				print_centered_text("Выберите год");
-				if ($agent == "mobile")
-					print_select_buttons("show.php", "year", $year, $buttons, array("olymp" => $olymp), "problems");
-				else
-					print_buttons("show.php?olymp=$olymp&amp;year=", $year, $buttons, $year_colomn_width, "#header");
 				div_close();
 
-				####################################################
+				####################################################  LEVEL 3
 				
 				if ($year != "about" and $year != "") {
-					echo "<a name='problems'></a>";
-					div_open("Материалы олимпиады");
+					div_open("Материалы олимпиады", "problems");
 					if ($olymp == "imc") {
 						$site = "http://imc-math.org.uk";
 						$results_link = $site."/index.php?year=$year&amp;item=results";
@@ -147,7 +108,7 @@
 					div_close();
 					
 					if ($table) {
-						div_open("Результаты");
+						div_open("Результаты", "results");
 						show_link_file("$directory/results/$olymp-$year-results", "Результаты ".$buttons[$year]);
 						if ($olymp == "imc") {
 							print_centered_text("Результаты участников из Казахстана");
@@ -165,9 +126,9 @@
 						} else {
 							print_table($table);
 						}
-						echo "<a name='data_results'></a>";
 						print_centered_text("Выберите год");
-						print_buttons("show.php?olymp=$olymp&amp;year=", $year, $buttons, $year_colomn_width, "#data_results");
+						$year_colomn_width = "colomns6";
+						print_buttons("show.php?olymp=$olymp&amp;year=", $year, $buttons, $year_colomn_width, "#results");
 						div_close();
 					}
 				}
