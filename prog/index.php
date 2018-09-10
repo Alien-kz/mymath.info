@@ -58,7 +58,7 @@
 				####################################################
 				
 				div_open($header, "about");
-				print_about($about, $directory, "show.php?olymp=$olymp", "about", "colomns3");
+				print_about($about, $directory, "index.php?olymp=$olymp", "about", "colomns3");
 				print_select_buttons("index.php", "year", $year, $buttons, array("olymp" => $olymp), "about");
 				div_close();
 				
