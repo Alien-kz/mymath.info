@@ -12,7 +12,7 @@
 			include_once "routine/html.php";
 			$agent = get_user_agent_type();
 			$css = array("main", "chars");
-			load_css("../", $css, $agent);
+			load_css("", $css, $agent);
 		?>
 		
 	</head>
