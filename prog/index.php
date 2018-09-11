@@ -10,7 +10,7 @@
 			include_once "../routine/html.php";
 			include_once "../routine/table.php";
 			$agent = get_user_agent_type();
-			$css = array("main", "input", "table");
+			$css = array("main", "header", "input", "table");
 			load_css("../", $css, $agent);
 		?>
 		
@@ -27,16 +27,13 @@
 			$about 		= attr_get("about");
 			
 			$buttons = get_main_buttons("../");
-			print_buttons("", "../prog/", $buttons, "colomns_in_header", "");
+			print_head_buttons("../prog/", $buttons);
 
 			#################################################### LEVEL 1
 
 			div_open("Студенческие олимпиады по~программированию", "top");
-			print_buttons("index.php?olymp=", 
-							$olymp, 
-							array("msu" => "КФ МГУ", "acm-kaz" => "Четвертьфинал ACM", "acm-eurasia" => "Полуфинал ACM"),
-							"colomns3",
-							"#type");
+			$buttons = array("msu" => "КФ МГУ", "acm-kaz" => "1/4 ACM", "acm-eurasia" => "1/2 ACM");
+			print_buttons("index.php", "olymp", $olymp, $buttons, "", "");
 			div_close();
 			
 			#################################################### LEVEL 2
@@ -44,8 +41,12 @@
 			if ($olymp == "msu" or $olymp == "acm-kaz" or $olymp == "acm-eurasia") {
 				$directory = $olymp;
 				$header = "";
+				$buttons_ind = array();
+				$buttons_team = array();
 				if ($olymp == "msu") {
 					$header = "Открытая студенческая олимпиада Казахстанского филиала МГУ по~программированию";
+					$buttons_ind = gen_buttons_from_file("$olymp/list-ind.txt");
+					$buttons_team = gen_buttons_from_file("$olymp/list-team.txt");
 				}
 				if ($olymp == "acm-kaz") {
 					$header = "Казахстанский четвертьфинал чемпионата мира по~программированию ACM~ICPC";
@@ -58,8 +59,15 @@
 				####################################################
 				
 				div_open($header, "about");
-				print_about($about, $directory, "index.php?olymp=$olymp", "about", "colomns3");
-				print_select_buttons("index.php", "year", $year, $buttons, array("olymp" => $olymp), "about");
+				print_about($about, $directory, "index.php?olymp=$olymp", "about");
+				if ($olymp == "msu") {
+					print_centered_text("Индивидуальная олимпиада");
+					print_buttons("index.php", "year", $year, $buttons_ind, array("olymp" => $olymp), "#about");
+					print_centered_text("Командная олимпиада");
+					print_buttons("index.php", "year", $year, $buttons_team, array("olymp" => $olymp), "#about");
+				} else {
+					print_buttons("index.php", "year", $year, $buttons, array("olymp" => $olymp), "#about");
+				}
 				div_close();
 				
 				#################################################### LEVEL 3
@@ -77,13 +85,13 @@
 							}
 							$material_buttons = array($problems_link => "Задачи", $results_link => "Результаты");
 						}
-						print_buttons_external($material_buttons, "colomns3");
+						print_buttons_external($material_buttons);
 					}
 					if ($olymp == "acm-eurasia") {
 						$site = "https://neerc.ifmo.ru/archive/";
 						$link = "https://neerc.ifmo.ru/archive/index.html";
 						$material_buttons = array($link => "Задачи и результаты");
-						print_buttons_external($material_buttons, "colomns3");
+						print_buttons_external($material_buttons);
 					}
 					if ($olymp == "msu") {
 						show_link_file("$directory/problems/$olymp-$year-problems", "Задачи ".$buttons[$year]);
@@ -164,7 +172,7 @@
 						}
 						$table = replace_brackets_to_label($table);
 						$table = mark_plus($table);
-						print_form_select("index.php?#problems",
+						print_form_select("index.php?#results",
 											$universities,
 											"mask",
 											$mask,
@@ -173,7 +181,7 @@
 											array("отметить", "фильтр"),
 											$defaults_keys
 										);
-						print_form_number("index.php?#problems",
+						print_form_number("index.php?#results",
 											"Лучшие <number> команд(ы) университета",
 											"top",
 											$top,
@@ -193,9 +201,6 @@
 						}
 						print_table($table);
 					}
-					print_centered_text("Выберите год");
-					$year_colomn_width = "colomns5";
-					print_buttons("index.php?olymp=$olymp&amp;year=", $year, $buttons, $year_colomn_width, "#header");
 					div_close();
 				}
 			}

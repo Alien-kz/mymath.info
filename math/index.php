@@ -10,7 +10,7 @@
 			include_once "../routine/html.php";
 			include_once "../routine/table.php";
 			$agent = get_user_agent_type();
-			$css = array("main", "input", "table");
+			$css = array("main", "header", "input", "table");
 			load_css("../", $css, $agent);
 		?> 
 		
@@ -18,7 +18,7 @@
 	<body>
 		<?php
 			$buttons = get_main_buttons("../");
-			print_buttons("", "../math/", $buttons, "colomns_in_header", "");
+			print_head_buttons("../math/", $buttons);
 
 			$olymp	= attr_get("olymp");
 			$year 	= attr_get("year");
@@ -27,13 +27,8 @@
 			#################################################### LEVEL 1
 		
 			div_open("Студенческие олимпиады по математике", "top");
-			print_buttons("index.php?olymp=", 
-							$olymp, 
-							array("msu" => "КФ МГУ",
-									"republic" => "Республиканская", 
-									"imc" => "IMC"),
-							"colomns3",
-							"");
+			$buttons = array("msu" => "КФ МГУ", "republic" => "Республиканская", "imc" => "IMC");
+			print_buttons("index.php", "olymp", $olymp, $buttons, "", "");
 			div_close();
 			
 			#################################################### LEVEL 2
@@ -45,10 +40,11 @@
 				if ($olymp == "msu") {
 					$header = "Открытая студенческая олимпиада Казахстанского филиала МГУ по математике";
 					$buttons = gen_buttons_from_file("$olymp/list.txt");
+					$buttons_train = gen_buttons_from_file("$olymp/list-train.txt");
 					$needles = array("1" => "gold", "2" => "silver", "3" => "bronze");
 				}
 				if ($olymp == "republic") {
-					$header = "Республиканская студенческая олимпиада по направлениям 'Математика' и 'МКМ'";
+					$header = "Республиканская студенческая предметная олимпиада";
 					$buttons_math = gen_buttons_from_file("$olymp/list-math.txt");
 					$buttons_mcm = gen_buttons_from_file("$olymp/list-mcm.txt");
 					$buttons = array_merge($buttons_math, $buttons_mcm);
@@ -63,12 +59,18 @@
 
 				####################################################
 				div_open($header, "about");
-				print_about($about, $directory, "index.php?olymp=$olymp", "about", "colomns3");
-				if ($olymp == "republic") {
-					print_select_buttons("index.php", "year", $year, $buttons_math, array("olymp" => $olymp), "about");
-					print_select_buttons("index.php", "year", $year, $buttons_mcm, array("olymp" => $olymp), "about");
+				print_about($about, $directory, "index.php?olymp=$olymp", "about");
+				if ($olymp == "msu") {
+					print_buttons("index.php", "year", $year, $buttons, array("olymp" => $olymp), "#about");
+					print_centered_text("Тренировки");
+					print_buttons("index.php", "year", $year, $buttons_train, array("olymp" => $olymp), "#about");
+				} else if ($olymp == "republic") {
+					print_centered_text("Математика");
+					print_buttons("index.php", "year", $year, $buttons_math, array("olymp" => $olymp), "#about");
+					print_centered_text("Математическое и компьютерное моделирование");
+					print_buttons("index.php", "year", $year, $buttons_mcm, array("olymp" => $olymp), "#about");
 				} else {
-					print_select_buttons("index.php", "year", $year, $buttons, array("olymp" => $olymp), "about");
+					print_buttons("index.php", "year", $year, $buttons, array("olymp" => $olymp), "#about");
 				}
 				div_close();
 
@@ -86,7 +88,7 @@
 							$problems_link = $site."/?show=day1";
 						}
 						$material_buttons = array($problems_link => "Задачи", $results_link => "Результаты");
-						print_buttons_external($material_buttons, "colomns3");
+						print_buttons_external($material_buttons);
 					} else {
 						show_link_file("$directory/problems/$olymp-$year-problems", "Задачи ".$buttons[$year]);
 						show_link_file("$directory/solutions/$olymp-$year-solutions", "Решения ".$buttons[$year]);
@@ -126,9 +128,6 @@
 						} else {
 							print_table($table);
 						}
-						print_centered_text("Выберите год");
-						$year_colomn_width = "colomns6";
-						print_buttons("index.php?olymp=$olymp&amp;year=", $year, $buttons, $year_colomn_width, "#results");
 						div_close();
 					}
 				}

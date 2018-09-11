@@ -9,7 +9,7 @@
 		<?php
 			include_once "../routine/html.php";
 			$agent = get_user_agent_type();
-			$css = array("main", "books");
+			$css = array("main", "header", "books");
 			load_css("../", $css, $agent);
 		?>
 		
@@ -17,11 +17,11 @@
 	<body>
 		<?php
 			$buttons = get_main_buttons("../");
-			print_buttons("", "../books/show.php", $buttons, "colomns_in_header", "");
+			print_head_buttons("../books/", $buttons);
 
 		?>
 		
-		<?php div_open("Изданное"); ?>
+		<?php div_open("Изданное", ""); ?>
 			<div>
 			<div class="book_div">
 					<a href="src/2008_2018_msu_olympiad_in_math.pdf">
@@ -75,7 +75,7 @@
 			</div>
 		<?php div_close(); ?>
 
-		<?php div_open("Неизданное"); ?>
+		<?php div_open("Неизданное", ""); ?>
 			<div>
 			<div class="book_div">
 				<a href="src/2014_2018_republic_olympiad_in_math_for_student.pdf">

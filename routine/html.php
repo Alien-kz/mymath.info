@@ -22,6 +22,18 @@ function get_main_buttons($prefix) {
 				$prefix."books/" => "Книги");
 }
 
+function print_head_buttons($selected_link, $buttons) {
+	echo "\n";
+	echo "<div align='center' class='buttons_div'>\n";
+	foreach ($buttons as $link => $text) {
+		$is_selected = "";
+		if ($link === $selected_link)
+			$is_selected = " selected";
+		echo "<a class='$is_selected colomns_in_header button' href='$link'>$text</a> \n";
+	}
+	echo "</div>\n\n";
+}
+
 function gen_buttons_from_file($file) {
 	$buttons = array();
 	$array = get_table_from_file($file);
@@ -61,7 +73,9 @@ function get_user_agent_type() {
 }
 
 function div_open($text, $anchor) {
-	echo "<div align='center' id='$anchor'>\n";
+	if ($anchor)
+		$anchor = "id='$anchor'";
+	echo "<div align='center' $anchor>\n";
 	echo "<div class='content_div'>\n";
 	if ($text) {
 		print_header($text);
@@ -74,7 +88,7 @@ function div_close() {
 }
 
 function print_header($text) {
-	echo " <div align='center' class='head_div'>\n";
+	echo " <div align='center' class='head_div bgcolor'>\n";
 	$text = str_replace("~", "&nbsp;", $text);
 	echo " $text\n";
 	echo " </div>\n";
@@ -198,47 +212,45 @@ function print_form_select($action, $values, $field_key, $value, $button_key, $b
 
 ############################################# BUTTONS
 
-function print_buttons_external($buttons, $options) {
+function print_buttons_external($buttons) {
 	echo "<div align='center' class='buttons_div'>\n";
 	foreach ($buttons as $link => $text) {
-		if ($options == "vertical")
-			echo "<div class='buttons_div'>\n";
-		echo "<a class='button $options external_link' target='_blank' href='$link'>$text</a> \n";
-		if ($options == "vertical")
-			echo "</div>\n";
+		echo "<a class='button external_link' target='_blank' href='$link'>$text</a> \n";
 	}
 	echo "</div>\n";
 }
 
-function print_about($about, $directory, $link, $anchor, $options) {
+function print_about($about, $directory, $link, $anchor) {
 	$text = "";
 	if ($about) {
-		$text =  "Скрыть";
+		$text =  "скрыть";
 		$link = $link."#".$anchor;
 	} else {
-		$text =  "Подробнее";
+		$text =  "подробнее...";
 		$link = $link."&amp;about=true#".$anchor;
 	}
-	echo "<div align='center' class='buttons_div'>\n";
-	echo "<a class='button $options' href='$link'>$text</a> \n";
+	echo "<div align='center'>\n";
+	echo "<a class='head_div minibutton' href='$link'>$text</a> \n";
 	if ($about) {
 		print_text(file_get_contents($directory."/about.txt")); 
 	}
 	echo "</div>\n";	
 }
 
-function print_buttons($link, $selected_key, $buttons, $options, $anchor) {
+function print_buttons($link, $key_name, $key_selected, $buttons, $default_keys, $anchor) {
 	echo "\n";
-	echo "<div align='center' class='buttons_div'>\n";
+	echo "<div align='center'>\n";
+	$attributes = "";
+	if ($default_keys) {
+		foreach ($default_keys as $key => $value) {
+			$attributes = $attributes.$key."=".$value."&amp;";
+		}
+	}
 	foreach ($buttons as $key => $text) {
 		$is_selected = "";
-		if (strval($key) === $selected_key)
+		if (strval($key) === $key_selected)
 			$is_selected = " selected";
-		if ($options == "vertical")
-			echo "<div class='buttons_div'>\n";
-		echo "<a class='button $is_selected $options' href='$link$key$anchor'>$text</a> \n";
-		if ($options == "vertical")
-			echo "</div>\n";
+		echo "<a class='$is_selected minibutton' href='$link?$attributes$key_name=$key$anchor'>$text</a> \n";
 	}
 	echo "</div>\n\n";
 }
@@ -296,15 +308,12 @@ function show_link_file($file, $link_text) {
 
 function show_png_file($file) {
 	if (file_exists($file.".png")) {
-		div_open();
 		echo "<div align='center' class='image_div'>\n";
 		echo "<img class='image_fit' src='$file.png'>";
 		echo "</div>\n";
-		div_close();
 	}
 	else if (file_exists($file."-0.png")) {
 		echo "<div align='center'>\n";
-		div_open();
 		$part = 0;
 		$file_name = $file."-".$part.".png";
 		do {
@@ -316,7 +325,6 @@ function show_png_file($file) {
 		} while (file_exists($file_name));
 
 		echo "</div>\n";
-		div_close();
 	}
 }
 

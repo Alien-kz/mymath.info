@@ -11,7 +11,7 @@
 		<?php
 			include_once "routine/html.php";
 			$agent = get_user_agent_type();
-			$css = array("main", "chars");
+			$css = array("main", "header", "chars");
 			load_css("", $css, $agent);
 		?>
 		
@@ -19,7 +19,7 @@
 	<body>
 		<?php
 			$buttons = get_main_buttons("");
-			print_buttons("", "", $buttons, "colomns_in_header", "");
+			print_head_buttons("", $buttons);
 		?>
 	
 		<div align="center">
@@ -33,7 +33,7 @@
 
 		<div align="center">
 			<?php 
-			div_open("Последнее обновление");
+			div_open("Последнее обновление", "");
 			print_text(replace_level(file_get_contents("news.txt"))); 
 			div_close();
 			?>

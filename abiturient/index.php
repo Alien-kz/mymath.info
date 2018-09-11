@@ -11,26 +11,24 @@
 			include_once "../routine/html.php";
 			include_once "../routine/table.php";
 			$agent = get_user_agent_type();
-			$css = array("main", "input", "chars");
+			$css = array("main", "header", "input", "chars");
 			load_css("../", $css, $agent);
 		?>
 	</head>
 	<body>
 		<?php
-			$subject	= attr_get("subject");
-			$year 		= attr_get("year");
-			$about 		= attr_get("about");
 			$buttons = get_main_buttons("../");
-			print_buttons("", "../abiturient/", $buttons, "colomns_in_header", "");
+			print_head_buttons("../abiturient/", $buttons);
+			
+			$subject= attr_get("subject");
+			$year 	= attr_get("year");
+			$about 	= attr_get("about");
 
 			######################################## LEVEL 1
 
 			div_open("Вступительные экзамены в~Казахстанский филиал МГУ", "top");
-			print_buttons("index.php?subject=", 
-							$subject, 
-							array("math" => "Математика",
-								  "phys" => "Физика"),
-							"colomns3", "");
+			$buttons = array("math" => "Математика", "phys" => "Физика");
+			print_buttons("index.php", "subject", $subject, $buttons, "", "");
 			div_close();
 
 			######################################## LEVEL 2
@@ -47,8 +45,8 @@
 				$buttons = gen_buttons_from_file("$subject/list.txt");
 
 				div_open($header, "about");
-				print_about($about, $directory, "index.php?subject=$subject", "about", "colomns3");
-				print_select_buttons("index.php", "year", $year, $buttons, array("subject" => $subject), "about");
+				print_about($about, $directory, "index.php?subject=$subject", "about");
+				print_buttons("index.php", "year", $year, $buttons, array("subject" => $subject), "#about");
 				div_close();
 
 				######################################## LEVEL 3
