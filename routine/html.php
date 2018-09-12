@@ -17,6 +17,7 @@ function attr_post($attr_name) {
 function get_main_buttons($prefix) {
 	return array($prefix."" => "Главная",
 				$prefix."abiturient/" => "Абитуриентам", 
+				$prefix."student/" => "Студентам", 
 				$prefix."math/" => "Математика",
 				$prefix."prog/" => "Программирование",
 				$prefix."books/" => "Книги");
@@ -46,7 +47,7 @@ function gen_buttons_from_file($file) {
 }
 
 function load_css($prefix, $css_array, $agent) {
-	$ver = "2018-09-09-02";
+	$ver = "2018-09-12-01";
 	$prefix = $prefix."css/";
 	if ($agent == 'mobile') {
 		foreach ($css_array as $css) {
@@ -109,11 +110,24 @@ function replace_level($text) {
 }
 
 function print_text($text) {
+	$text = preg_replace("/h3>[\r\n]+/", "h3>", $text);
+	$text = preg_replace("/<\/tr>[\r\n]+/", "</tr>", $text);
+	$text = preg_replace("/<table>[\r\n]+/", "<table>", $text);
+	$text = preg_replace("/[\r\n]+/", "\n", $text);
 	$text = nl2br($text);
 	$text = str_replace("<a ", "<a class='button external_link' target='blank_' ", $text);
+	$text = preg_replace("/<file (.*?)>/", "<a class='button download_link' target='blank_' href=$1> &#128190;", $text);
+	$text = str_replace("</file>", "</a>", $text);
 	echo "<div align='left'>\n";
 	echo $text."\n";
 	echo "</div>\n";
+}
+
+function print_text_with_code($text) {
+	$text = str_replace("<code>\n", "<div class='code'>", $text);
+	$text = str_replace("</code>", "</div>", $text);
+	$text = str_replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;", $text);
+	print_text($text);
 }
 
 ############################################# FORMS 
@@ -297,10 +311,10 @@ function show_link_file($file, $link_text) {
 	{
 		echo "<div align='center'>\n";
 		echo "<span>\n";
-		echo "<a class='button download_link' href='$file.tex' download> $link_text (.tex) </a>";
+		echo "<a class='button download_link' href='$file.tex' download> &#128190; $link_text (.tex) </a>";
 		echo "</span>\n";
 		echo "<span>\n";
-		echo "<a class='button download_link' href='$file.pdf' download> $link_text (.pdf) </a>";
+		echo "<a class='button download_link' href='$file.pdf' download> &#128190; $link_text (.pdf) </a>";
 		echo "</span>\n";
 		echo "</div>\n";
 	}

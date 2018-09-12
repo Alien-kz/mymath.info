@@ -25,9 +25,7 @@
 		<div align="center">
 		<div class="content_div">
 			<h3 align='center'> Здравствуйте, уважаемые посетители! </h3>
-			<p align='left'> 
-				<?php print_text(file_get_contents("hello.txt")); ?>
-			</p>
+			<?php print_text(file_get_contents("hello.txt")); ?>
 		</div>
 		</div>
 

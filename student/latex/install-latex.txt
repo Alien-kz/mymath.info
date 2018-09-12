@@ -1,0 +1,36 @@
+Предмет: "Практикум на ЭВМ" (магистранты).
+
+Аннотация: ссылки на учебные материалы, технические аспекты, связанные с установкой и минимальной настройкой latex.
+
+<h3> Учим LaTeX </h3>
+Коротко и понятно почитать про LaTeX можно здесь
+<a href='http://www.stolyarov.info/books/latex3days'> www.stolyarov.info </a>
+
+Также для начального обучения рекомендую посмотреть много конкретных примеров с пояснениями
+<a href='https://www.sharelatex.com/learn'> sharelatex.com </a>
+Здесь же можно при регистрации использовать облачный компилятор LaTeX.
+
+
+<h3> LaTeX в Ubuntu </h3>
+Если у Вас установлена Ubuntu 16.04, ставим latex (80 Мб), кириллические шрифты (20 Мб) и редактор (200 Мб):
+<code>
+sudo apt install texlive
+sudo apt install texlive-lang-cyrillic
+sudo apt install texmaker
+</code>
+
+Чтобы была проверка орфографии на лету cкачиваем словарик dict_ru_ru-0.3.7.oxt с сайта:
+<a href='https://extensions.openoffice.org/en/project/slovari-dlya-russkogo-yazyka-dictionaries-russian'> extensions.openoffice.org </a>
+
+Распаковываем и отправляем в соответствующую директорию
+<code>
+unzip dict_ru_ru-0.3.7.oxt
+sudo cp dict_ru_ru-0.3.7/ru_RU.dic /usr/share/myspell/dicts/
+</code>
+
+Далее в редакторе выбираем данный файл: настройка - настроить - редактор - словарь - ru_RU.dic.
+
+<h3> LaTeX в Windows </h3>
+
+Просто оставлю ссылку
+<a href='https://www.tug.org/texlive/windows.html'> www.tug.org </a>
