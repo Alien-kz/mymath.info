@@ -26,24 +26,39 @@
 
 			div_open("Материалы по курсам", "top");
 			$buttons = array("python" => "python",
-							"latex" => "LaTeX");
+							"latex" => "LaTeX",
+							"master" => "ВМК (магистранты)");
 			print_buttons("index.php", "subject", $subject, $buttons, "", "");
 			div_close();
 
 			######################################## LEVEL 2
 			
 			if ($subject == "python") {
-				$header = "Программирование на python";
-				$directory = $subject;
-				div_open($header, "content");
-				print_text_with_code(file_get_contents($directory."/install-python.txt")); 
+				div_open("Информация", "content");
+				print_text_with_code(file_get_contents($subject."/learn-python.txt")); 
+				div_close();
+				
+				div_open("Устанавливаем python + matplotlib", "content");
+				print_text_with_code(file_get_contents($subject."/install-python.txt")); 
+				div_close();
+				
+				div_open("Устанавливаем jupyter", "content");
+				print_text_with_code(file_get_contents($subject."/install-jupyter.txt")); 
 				div_close();
 			}
 			if ($subject == "latex") {
-				$header = "Вёрстка отчёта в LaTeX";
-				$directory = $subject;
-				div_open($header, "content");
-				print_text_with_code(file_get_contents($directory."/install-latex.txt")); 
+				div_open("Вёрстка отчёта в LaTeX", "content");
+				print_text_with_code(file_get_contents($subject."/install-latex.txt")); 
+				div_close();
+			}
+			if ($subject == "master") {
+				div_open("1 семестр", "content");
+				print_text_with_code(file_get_contents($subject."/sem_1.txt")); 
+				print_code(file_get_contents($subject."/sem_1_0.py")); 
+				div_close();
+				div_open("3 семестр", "content");
+				print_text_with_code(file_get_contents($subject."/sem_3.txt")); 
+				print_code(file_get_contents($subject."/sem_3_0.py")); 
 				div_close();
 			}
 		?>

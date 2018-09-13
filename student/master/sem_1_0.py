@@ -1,16 +1,17 @@
 # coding: utf-8
 
-# Начальные условия $u_0(x)$
+# Начальные условия u0(x)
 def u0(x):
 	return 1.0 - (x - 0.5)**2
 
-# Граничные условия $\varphi_1(x)$, $\varphi_2(x)$
+# Граничные условия phi1(x), phi2(x)
 def phi1(t):
 	return 0.0
 def phi2(t):
 	return 0.0
 
-# Параметры задачи: $\mu$ - коэффициент теплопроводности, $T$ - время искомого распределения температуры
+# mu - коэффициент теплопроводности
+# T - время искомого распределения температуры
 mu = 0.1
 T = 1.0
 
@@ -47,6 +48,6 @@ print(x)
 print(y)
 
 # График
-from matplotlib import pylab as plt
-plt.plot(x, y)
+import matplotlib.pyplot as plt
+lines = plt.plot(x, y)
 plt.show()

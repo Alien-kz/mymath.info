@@ -71,15 +71,14 @@ body {
 
 
 .code {
-    border: 2px solid gray;
-	background: black;
-	color: lightgray;
-    padding: 0px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-	margin: 0px;
+    border: 2px solid #aaaaaa;
+    border-left: 10px solid #aaaaaa;
+	background: #333333;
+	color: #dddddd;
+    padding: 5px;
+	margin: 5px;
 	text-align: left;
-	width: 100%;
+	width: 90%;
 	font-family: monospace;
 }
 

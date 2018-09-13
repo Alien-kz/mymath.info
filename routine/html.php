@@ -110,22 +110,34 @@ function replace_level($text) {
 }
 
 function print_text($text) {
-	$text = preg_replace("/h3>[\r\n]+/", "h3>", $text);
-	$text = preg_replace("/<\/tr>[\r\n]+/", "</tr>", $text);
-	$text = preg_replace("/<table>[\r\n]+/", "<table>", $text);
 	$text = preg_replace("/[\r\n]+/", "\n", $text);
-	$text = nl2br($text);
+	$text = str_replace("<table>\n", "<table align='center' border='1'>", $text);
+	$text = str_replace("</table>\n", "</table>", $text);
+	$text = str_replace("<tr>\n", "<tr>", $text);
+	$text = str_replace("</tr>\n", "</tr>", $text);
+	$text = str_replace("<h3>\n", "<h3>", $text);
+	$text = str_replace("</h3>\n", "</h3>", $text);
 	$text = str_replace("<a ", "<a class='button external_link' target='blank_' ", $text);
+	$text = preg_replace("/<picture (.*?)>/", "<div align='center'><img src=$1></div>", $text);
 	$text = preg_replace("/<file (.*?)>/", "<a class='button download_link' target='blank_' href=$1> &#128190;", $text);
 	$text = str_replace("</file>", "</a>", $text);
+
+	$text = nl2br($text);
 	echo "<div align='left'>\n";
 	echo $text."\n";
 	echo "</div>\n";
 }
 
+function print_code($text) {
+	$text = nl2br($text);
+	$text = str_replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;", $text);
+	$text = "<div align='center'><div class='code'>".$text."</div></div>";
+	echo $text;
+}
+
 function print_text_with_code($text) {
-	$text = str_replace("<code>\n", "<div class='code'>", $text);
-	$text = str_replace("</code>", "</div>", $text);
+	$text = str_replace("<code>\n", "<div align='center'><div class='code'>", $text);
+	$text = str_replace("</code>\n", "</div></div>", $text);
 	$text = str_replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;", $text);
 	print_text($text);
 }
