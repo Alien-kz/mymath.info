@@ -97,3 +97,9 @@ body {
 .xscroll {
 	overflow-x: auto;
 }
+
+.resized {
+    border: 2px solid gray;	
+    max-width: 100%;
+    max-height: 100%;
+}

@@ -118,7 +118,7 @@ function print_text($text) {
 	$text = str_replace("<h3>\n", "<h3>", $text);
 	$text = str_replace("</h3>\n", "</h3>", $text);
 	$text = str_replace("<a ", "<a class='button external_link' target='blank_' ", $text);
-	$text = preg_replace("/<picture (.*?)>/", "<div align='center'><img src=$1></div>", $text);
+	$text = preg_replace("/<picture (.*?)>/", "<div align='center'><img class='resized' src=$1></div>", $text);
 	$text = preg_replace("/<file (.*?)>/", "<a class='button download_link' target='blank_' href=$1> &#128190;", $text);
 	$text = str_replace("</file>", "</a>", $text);
 
