@@ -1,5 +1,26 @@
 <?php
 
+function load_css($prefix, $css_array, $agent) {
+	$ver = "2018-09-13";
+	$prefix = $prefix."css/";
+	if ($agent == 'mobile') {
+		foreach ($css_array as $css) {
+			$file = $prefix.$css.".css";
+			$file_m = $prefix.$css."_m.css";
+			if (file_exists($file_m)) {
+				echo "<link href='$file_m?ver=$ver' rel='stylesheet' type='text/css' >\n";
+			} else {
+				echo "<link href='$file?ver=$ver' rel='stylesheet' type='text/css' >\n";
+			}
+		}
+	} else {
+		foreach ($css_array as $css) {
+			$file = $prefix.$css.".css";
+			echo "<link href='$file?ver=$ver' rel='stylesheet' type='text/css' >\n";
+		}
+	}
+}
+
 function attr_get($attr_name) {
 	if (isset($_GET[$attr_name])) {
 		return $_GET[$attr_name];
@@ -44,27 +65,6 @@ function gen_buttons_from_file($file) {
 		$buttons[$row[0]] = $row[1];
 	}
 	return $buttons;
-}
-
-function load_css($prefix, $css_array, $agent) {
-	$ver = "2018-09-12-01";
-	$prefix = $prefix."css/";
-	if ($agent == 'mobile') {
-		foreach ($css_array as $css) {
-			$file = $prefix.$css.".css";
-			$file_m = $prefix.$css."_m.css";
-			if (file_exists($file_m)) {
-				echo "<link href='$file_m?ver=$ver' rel='stylesheet' type='text/css' >\n";
-			} else {
-				echo "<link href='$file?ver=$ver' rel='stylesheet' type='text/css' >\n";
-			}
-		}
-	} else {
-		foreach ($css_array as $css) {
-			$file = $prefix.$css.".css";
-			echo "<link href='$file?ver=$ver' rel='stylesheet' type='text/css' >\n";
-		}
-	}
 }
 
 function get_user_agent_type() { 
