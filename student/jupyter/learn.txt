@@ -1,0 +1,34 @@
+Запустить локальный веб-сервер jupyter с интерпетатором python в браузере можно в командной строке или терминале:
+<bash>
+jupyter notebook
+</bash>
+В открывшемся бразуере будет запущена страница localhost:8888/tree, которая показывает структуру в домашней директории. 
+<picture 'python/pictures/jupyter-home.png'>
+В дереве каталогов выберем директорию, в которой будем работать. Создадим notebook - нажимаем New в правом верхнем углу и выбираем Python 3. Теперь можем набирать описание (markup) или код (code) в виде блоков. 
+<picture 'python/pictures/jupyter-code.png'>
+Для ввода есть 2 режима: набора и управления (прям как в знаменитом vim). 
+<table>
+<tr><td> Режим набора </td><td> enter  </td></tr>
+<tr><td> Режим управления </td><td> escape </td></tr> 
+<tr><td> Все горячие клавиши </td><td> h </td></tr>
+<tr><td> Добавить блок сверху </td><td> a </td></tr>
+<tr><td> Добавить блок снизу </td><td> b </td></tr>
+<tr><td> Сделать блок описанием </td><td> m </td></tr>
+<tr><td> Сделать блок кодом </td><td> y </td></tr>
+<tr><td> Сделать заголовок </td><td> 1 </td></tr>
+<tr><td> Запустить и перейти ниже </td><td> shift + enter </td></tr>
+<tr><td> Запустить и остаться </td><td> ctrl + enter </td></tr>
+</table>
+Замечания по matplotlib. Чтобы графики строились неспоредственно в notebook необходимо: указать магическую команду notebook inline, запускать соответствующий блок дважды (возможно это частная проблема) и можно не вызывать plt.show().
+<code>
+import matplotlib.pyplot as plt
+%notebook inline
+y = [1, 5, 2, 4, 3]
+lines = plt.plot(y)
+</code>
+Данная штука дает две интересных возможности - удобная отладка и сопровождение читаемым текстом с поддержкой LaTeX. После выполнения кода получаем результат на месте:
+<picture 'python/pictures/jupyter-result.png'>
+Код можно скачать в разных форматах. Формат по умолчанию ipynb (Interactive PYthon NoteBook).
+Более наглядная и подробная информация есть по ссылкам:
+<a href='https://devpractice.ru/python-lesson-6-work-in-jupyter-notebook/'> devpractice.ru </a>
+<a href='https://habr.com/company/wunderfund/blog/316826/'> habr.com </a>

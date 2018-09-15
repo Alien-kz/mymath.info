@@ -1,86 +1,30 @@
-Если Вы хотите, чтобы вся работа python интерпретировалась в браузере, то следует установить отдельный пакет для веб-интерфейса: jupyter.
-
 <h3> Ubuntu </h3>
-
 Вариант 1. В терминале установливаем соответствующий пакет
 <bash>
 sudo apt install jupyter
 </bash>
-
 Вариант 2. Авторы крайне рекомендуют ставить не просто юпитер, а целую анаконду (сборник всех пакетов на 600 Мб, который при распаковке даст 3 Гб). Можно повторить данные команды, где вместо user будет имя вашего пользователя
-
 <bash>
 cd /tmp
 wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh
 bash Anaconda3-5.2.0-Linux-x86_64.sh
 export PATH="/home/user/anaconda3/bin:$PATH"
 </bash>
-
 Теперь можно запустить локальный веб-сервер с интерпетатором python в терминале:
 <bash>
 jupyter notebook
 </bash>
-
 На этом установка завершена.
 
-
-
 <h3> Windows </h3>
-
 Вариант 1. В командной строке (cmd.exe) установливаем соответствующий пакет
 <cmd>
 pip install jupyter
 </cmd>
-
 Вариант 2. Авторы крайне рекомендуют ставить не просто юпитер, а целую анаконду (сборник всех пакетов на 600 Мб, который при распаковке даст 3 Гб). 
 <a href='https://conda.io/docs/user-guide/install/windows.html'> conda.io </a>
-
 Теперь можно запустить локальный веб-сервер с интерпетатором python в командной строке:
 <cmd>
 jupyter notebook
 </cmd>
-
 На этом установка завершена.
-
-
-
-<h3> Работа в jupyter </h3>
-
-В открывшемся бразуере будет запущена страница localhost:8888/tree, которая показывает структуру в домашней директории. 
-<picture 'python/pictures/jupyter-home.png'>
-
-В дереве каталогов выберем директорию, в которой будем работать. Создадим notebook - нажимаем New в правом верхнем углу и выбираем Python 3. Теперь можем набирать описание (markup) или код (code) в виде блоков. 
-<picture 'python/pictures/jupyter-code.png'>
-
-Для ввода есть 2 режима: набора и управления (прям как в знаменитом vim). 
-<table>
-<tr><td> Режим набора </td><td> enter  </td></tr>
-<tr><td> Режим управления </td><td> escape </td></tr> 
-<tr><td> Все горячие клавиши </td><td> h </td></tr>
-<tr><td> Добавить блок сверху </td><td> a </td></tr>
-<tr><td> Добавить блок снизу </td><td> b </td></tr>
-<tr><td> Сделать блок описанием </td><td> m </td></tr>
-<tr><td> Сделать блок кодом </td><td> y </td></tr>
-<tr><td> Сделать заголовок </td><td> 1 </td></tr>
-<tr><td> Запустить и перейти ниже </td><td> shift + enter </td></tr>
-<tr><td> Запустить и остаться </td><td> ctrl + enter </td></tr>
-</table>
-
-Замечания по matplotlib. Чтобы графики строились неспоредственно в notebook необходимо: указать магическую команду notebook inline, запускать соответствующий блок дважды (возможно это частная проблема) и можно не вызывать plt.show().
-<code>
-import matplotlib.pyplot as plt
-%notebook inline
-y = [1, 5, 2, 4, 3]
-lines = plt.plot(y)
-</code>
-Данная штука дает две интересных возможности - удобная отладка и сопровождение читаемым текстом с поддержкой LaTeX. После выполнения кода получаем результат на месте:
-<picture 'python/pictures/jupyter-result.png'>
-
-Код можно скачать в разных форматах. Формат по умолчанию ipynb (Interactive PYthon NoteBook).
-
-Более наглядная и подробная информация есть по ссылкам:
-<a href='https://devpractice.ru/python-lesson-6-work-in-jupyter-notebook/'> devpractice.ru </a>
-<a href='https://habr.com/company/wunderfund/blog/316826/'> habr.com </a>
-
-
-

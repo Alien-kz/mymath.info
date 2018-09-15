@@ -1,23 +1,18 @@
 <h3> Ubuntu </h3>
-Если у Вас установлена Ubuntu 16.04, ставим latex (80 Мб), кириллические шрифты (20 Мб) и редактор (200 Мб):
+Если у Вас установлена Ubuntu 16.04, ставим компилятор texlive (80 Мб), кириллические шрифты (20 Мб) и редактор texmaker (200 Мб):
 <code>
 sudo apt install texlive
 sudo apt install texlive-lang-cyrillic
 sudo apt install texmaker
 </code>
-
-Чтобы была проверка орфографии на лету cкачиваем словарик dict_ru_ru-0.3.7.oxt с сайта:
-<a href='https://extensions.openoffice.org/en/project/slovari-dlya-russkogo-yazyka-dictionaries-russian'> extensions.openoffice.org </a>
-
+Чтобы была проверка орфографии на лету cкачиваем словарик dict_ru_ru-0.3.7.oxt с сайта: <a href='https://extensions.openoffice.org/en/project/slovari-dlya-russkogo-yazyka-dictionaries-russian'> extensions.openoffice.org </a>
 Распаковываем и отправляем в соответствующую директорию
 <code>
 unzip dict_ru_ru-0.3.7.oxt
 sudo cp dict_ru_ru-0.3.7/ru_RU.dic /usr/share/myspell/dicts/
 </code>
-
-Далее в редакторе выбираем данный файл: настройка - настроить - редактор - словарь - ru_RU.dic.
+Осталось выбрать в texmaker данный файл для проверки орфографии: настройка - настроить - редактор - словарь - ru_RU.dic.
 
 <h3> Windows </h3>
-
-Просто оставлю ссылку
-<a href='https://www.tug.org/texlive/windows.html'> www.tug.org </a>
+Скачиваем texlive-установщик install-tl-windows.exe: <a href='https://www.tug.org/texlive/acquire-netinstall.html'> www.tug.org/texlive </a>
+Скачиваем редактор texmaker: <a href='www.xm1math.net/texmaker/download.html'> www.xm1math.net/texmaker </a>

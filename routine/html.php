@@ -111,8 +111,8 @@ function replace_level($text) {
 
 
 function prepare_text($text) {
-	# double newline
-	$text = preg_replace("/[\r\n]+/", "\n", $text);
+#	# double newline
+#	$text = preg_replace("/[\r\n]+/", "\n", $text);
 
 	# table
 	$text = str_replace("<table>\n", "<table align='center' border='1'>", $text);
@@ -247,6 +247,7 @@ function replace_code_tag($text, $first_tags, $last_tags, $css_class) {
 		$text_in_block = substr($text, 
 								$text_start_positions[$i], 
 								$text_finish_positions[$i] - $text_start_positions[$i]);
+		$text_in_block = trim($text_in_block);
 		$text_in_block = prepare_text($text_in_block);
 		$result = $result.$text_in_block;
 

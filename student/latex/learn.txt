@@ -1,11 +1,5 @@
 Предмет: "Практикум на ЭВМ" (магистранты).
 
-Аннотация: ссылки на учебные материалы, технические аспекты, связанные с установкой и минимальной настройкой latex.
-
-<h3> Учим LaTeX </h3>
-Коротко и понятно почитать про LaTeX можно здесь
-<a href='http://www.stolyarov.info/books/latex3days'> www.stolyarov.info </a>
-
-Также для начального обучения рекомендую посмотреть много конкретных примеров с пояснениями
-<a href='https://www.sharelatex.com/learn'> sharelatex.com </a>
-Здесь же можно при регистрации использовать облачный компилятор LaTeX.
+Коротко и понятно почитать про LaTeX можно здесь <a href='http://www.stolyarov.info/books/latex3days'> www.stolyarov.info </a>
+Для начального обучения рекомендую посмотреть примеры с пояснениями <a href='https://www.sharelatex.com/learn'> sharelatex.com/learn </a>
+Данный сервис при регистрации позволяет использовать облачный компилятор LaTeX <a href='https://www.sharelatex.com'> sharelatex.com</a>
