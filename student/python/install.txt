@@ -1,36 +1,36 @@
 <h3> Ubuntu </h3>
-1) На Ubuntu 16.04 и выше интерпретатор python уже есть в стандартной комплектации. Запустим его в терминале:
-<code>
- python3
-</code>
+1) На Ubuntu 16.04 и выше интерпретатор python3 уже есть в стандартной комплектации. Запустим его в терминале:
+<bash>
+python3
+</bash>
 Теперь в терминале вместо приветственного символа доллара ($) будет три символа больше (>>>), что показывает о запуске сессии python. Найдем сумму двух чисел
-<code>
- 2 + 3
-</code>
+<python>
+2 + 3
+</python>
 Не забываем подтвердить наши буйные намерения клавишей enter. В правильной вселенной в терминале появится число 5 в ответ. Завершить сессию можно комбинацией Ctrl + D.
 
 2) Чтобы не работать в интерпретаторе, наберем команды в файле с помощью любого текстового редактора (gedit, nano, vim и далее) и сохраним (например, под названием 'sem_0.py'). Запустить выполнение можно командой:
-<code>
- python3 sem_0.py
-</code>
+<bash>
+python3 sem_0.py
+</bash>
 
 3) Для установки библиотек python лучше использовать pip - менеджер пакетов для python. Установим его:
-<code>
- sudo apt install python3-pip
-</code>
+<bash>
+sudo apt install python3-pip
+</bash>
 
 Для отрисовки графики нужна библиотека matplotlib:
-<code>
- sudo pip3 install matplotlib
-</code>
+<bash>
+sudo pip3 install matplotlib
+</bash>
 
 Теперь убедимся, что мы можем рисовать графики. Подключим класс pyplot из matplotlib (и обзовем его plt). Подготовим список значений, которые хотим отрисовать. Добавим соответствующие точки на плоскость методом plt.plot() и посмотрим на результат методом plt.show().
-<code>
+<python>
 import matplotlib.pyplot as plt
 y = [1, 5, 2, 4, 3]
 plt.plot(y)
 plt.show()
-</code>
+</python>
 
 Получаем отдельное окно
 <picture 'python/pictures/matplotlib.png'>
@@ -62,9 +62,9 @@ print(a)
 <picture 'python/pictures/cmd.png'>
 
 В командной строке появится приветствие "C:\Users\Пользователь>". Вводим команду установки через pip менеджер пакетов для python:
-<code>
+<bash>
 pip install matplotlib
-</code>
+</bash>
 
 Подождем несколько минут (загрузится около 20 Мб)
 <picture 'python/pictures/pip-matplotlib.png'>

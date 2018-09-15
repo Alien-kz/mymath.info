@@ -109,37 +109,179 @@ function replace_level($text) {
 	return $text;
 }
 
-function print_text($text) {
+
+function prepare_text($text) {
+	# double newline
 	$text = preg_replace("/[\r\n]+/", "\n", $text);
+
+	# table
 	$text = str_replace("<table>\n", "<table align='center' border='1'>", $text);
 	$text = str_replace("</table>\n", "</table>", $text);
 	$text = str_replace("<tr>\n", "<tr>", $text);
 	$text = str_replace("</tr>\n", "</tr>", $text);
+
+	# header
 	$text = str_replace("<h3>\n", "<h3>", $text);
 	$text = str_replace("</h3>\n", "</h3>", $text);
-	$text = str_replace("<a ", "<a class='button external_link' target='blank_' ", $text);
-	$text = preg_replace("/<picture (.*?)>/", "<div align='center'><img class='resized' src=$1></div>", $text);
-	$text = preg_replace("/<file (.*?)>/", "<a class='button download_link' target='blank_' href=$1> &#128190;", $text);
-	$text = str_replace("</file>", "</a>", $text);
 
+	# external link
+	$text = str_replace("<a ", "<a class='button external_link' target='blank_' ", $text);
+	
+	# picture
+	$text = preg_replace("/<picture (.*?)>/", "<div align='center'><img class='resized' src=$1></div>", $text);
+
+	# file
+	$text = preg_replace("/<file (.*?)>/", "<a class='button download_link' target='blank_' href=$1 download> &#128190;", $text);
+	$text = str_replace("</file>", "</a>", $text);
+	
+	# newline
 	$text = nl2br($text);
+	
+	return $text;
+}
+function print_text($text) {
+	$text = prepare_text($text);
+	
 	echo "<div align='left'>\n";
 	echo $text."\n";
 	echo "</div>\n";
 }
 
-function print_code($text) {
-	$text = nl2br($text);
+function prepare_code($text, $left_class) {
+	$code_line_begin = "<p class='mycode $left_class'>";
+	$code_line_end = "</p>\n";
+
+	$text = str_replace("\n", $code_line_end.$code_line_begin, $text);
 	$text = str_replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;", $text);
-	$text = "<div align='center'><div class='code'>".$text."</div></div>";
-	echo $text;
+	$text = $code_line_begin.$text.$code_line_end;
+	$text = "<div class='code_div'>\n".$text."</div>\n";
+	return $text;
+}
+
+function print_code($text) {
+	echo prepare_code($text, "line_number");
+}
+
+function find_positions($text, $needle) {
+	$last_pos = 0;
+	$positions = array();
+
+	while (($last_pos = strpos($text, $needle, $last_pos))!== false) {
+		$positions[] = $last_pos;
+		$last_pos = $last_pos + strlen($needle);
+	}
+	return $positions;
+}
+
+function replace_code($text, $first_tag, $last_tag, $css_class) {
+	$first_tag = "<code>";
+	$last_tag = "</code>";
+	$first_tag_length = strlen($first_tag);
+	$last_tag_length = strlen($last_tag);
+	$start = find_positions($text, $first_tag);
+	$finish = find_positions($text, $last_tag);
+	$blocks = count($start);
+
+	$result = "";
+	$finish[-1] = 0;
+	for ($i = 0; $i < $blocks; $i++) {
+		$code = substr($text, $start[$i], $finish[$i] - $start[$i] + $last_tag_length);
+		$code = substr($code, $first_tag_length);
+		$code = substr($code, 0, -$last_tag_length);
+		$code = trim($code);
+		$code = prepare_code($code, $css_class);
+		
+		$text_in_block = substr($text, $finish[$i - 1], $start[$i] - $finish[$i - 1]);
+		$text_in_block = prepare_text($text_in_block);
+		$result = $result.$text_in_block.$code;
+	}
+	$text_in_block = substr($text, $finish[$blocks - 1]);
+	$text_in_block = prepare_text($text_in_block);
+	$result = $result.$text_in_block;
+	return $result;
+}
+
+function replace_code_tag($text, $first_tags, $last_tags, $css_class) {
+	// code start, code finish, code type
+	$tag_type_number = count($first_tags);
+	$tag_type = array();
+	$code_start_positions = array();
+	$code_finish_positions = array();
+	for ($i = 0; $i < $tag_type_number; $i++) {
+		$first_tag = $first_tags[$i];
+		$last_tag = $last_tags[$i];
+		$first_tag_positions = find_positions($text, $first_tag);
+		$last_tag_positions = find_positions($text, $last_tag);
+		$first_tag_length = strlen($first_tag);
+		$last_tag_length = strlen($last_tag);
+		$first_tag_number = count($first_tag_positions);
+		$last_tag_number = count($last_tag_positions);
+		if ($first_tag_number != $last_tag_number) {
+			return $text;
+		}
+		for ($j = 0; $j < $first_tag_number; $j++) {
+			array_push($code_start_positions , $first_tag_positions[$j] + $first_tag_length);
+			array_push($code_finish_positions, $last_tag_positions[$j]);
+			$tag_type[$first_tag_positions[$j]] = $i;
+		}
+	}
+	//sort
+	sort($code_start_positions);
+	sort($code_finish_positions);
+	ksort($tag_type);
+	$tag_type = array_values($tag_type);
+	// text start, text finish
+	$blocks = count($code_start_positions);
+	$text_start_positions = array();
+	$text_finish_positions = array();
+	$text_start_positions[0] = 0;
+	for ($i = 0; $i < $blocks; $i++) {
+		$current_type = $tag_type[$i];
+		$text_finish_positions[$i] = $code_start_positions[$i] - strlen($first_tags[$current_type]);
+		$text_start_positions[$i + 1] = $code_finish_positions[$i] + strlen($last_tags[$current_type]);
+	}
+	$text_finish_positions[$blocks] = strlen($text);
+	// replacing
+	$result = "";
+	for ($i = 0; $i < $blocks; $i++) {
+		$text_in_block = substr($text, 
+								$text_start_positions[$i], 
+								$text_finish_positions[$i] - $text_start_positions[$i]);
+		$text_in_block = prepare_text($text_in_block);
+		$result = $result.$text_in_block;
+
+		$current_type = $tag_type[$i];
+		$code_in_block = substr($text, 
+						$code_start_positions[$i], 
+						$code_finish_positions[$i] - $code_start_positions[$i]);
+		$code_in_block = trim($code_in_block);
+		$code_in_block = prepare_code($code_in_block, $css_class[$current_type]);
+		$result = $result.$code_in_block;
+	}
+	$text_in_block = substr($text, 
+							$text_start_positions[$blocks], 
+							$text_finish_positions[$blocks] - $text_start_positions[$blocks]);
+	$text_in_block = prepare_text($text_in_block);
+	$result = $result.$text_in_block;
+	return $result;
 }
 
 function print_text_with_code($text) {
-	$text = str_replace("<code>\n", "<div align='center'><div class='code'>", $text);
-	$text = str_replace("</code>\n", "</div></div>", $text);
-	$text = str_replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;", $text);
-	print_text($text);
+	$text = replace_code_tag($text, 
+							array("<code>", "<bash>", "<python>", "<cmd>"), 
+							array("</code>", "</bash>", "</python>", "</cmd>"), 
+							array("line_number", "line_bash", "line_python", "line_cmd"));
+	echo "<div align='left'>\n";
+	echo $text."\n";
+	echo "</div>\n";
+}
+
+function print_post($header, $anchor, $file) {
+	if (file_exists($file)) {
+		div_open($header, $anchor);
+		print_text_with_code(file_get_contents($file)); 
+		div_close();
+	}
 }
 
 ############################################# FORMS 

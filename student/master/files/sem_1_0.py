@@ -30,7 +30,6 @@ r = 2 * mu * tau / h / h
 print(tau, h, r)
 
 # Инициализация начального слоя
-y = [u0(x[i]) for i in range(0, n + 1)]
 for i in range(0, n + 1):
 	y[i] = u0(x[i])
 

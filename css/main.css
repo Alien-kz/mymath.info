@@ -70,22 +70,55 @@ body {
 }
 
 
-.code {
-    border: 2px solid #aaaaaa;
-    border-left: 10px solid #aaaaaa;
-	background: #333333;
+.code_div {
+	font-family: monospace;
+	background: gray;
 	color: #dddddd;
-    padding: 5px;
+	padding: 5px;
 	margin: 5px;
 	text-align: left;
-	width: 90%;
-	font-family: monospace;
+}
+
+.line_number {
+	counter-increment: line;
+}
+
+.line_number:before {
+	content: counter(line);
+}
+
+.line_bash:before {
+	content: " $ ";
+}
+
+.line_cmd:before {
+	content: " > ";
+}
+
+.line_python:before {
+	content: " >>> ";
+}
+
+
+.mycode:before {
+	display: inline-block;
+	width: 2em;
+	text-align: right;
+	padding: 0px;
+	margin-right: 5px;
+	padding-right: 5px;
+	background: linear-gradient(to left, gray, #333333);
+}
+
+.mycode {
+	background: #333333;
+	padding: 0px;
+	margin: 0px;
 }
 
 .text_div {
-    padding: 0px;
+	padding: 0px;
 	margin-top: 10px;
-
 	text-align: center;
 }
 
@@ -99,6 +132,8 @@ body {
 }
 
 .resized {
+	padding: 5px;
+	margin: 5px;
     border: 2px solid gray;	
     max-width: 100%;
     max-height: 100%;
