@@ -63,7 +63,9 @@ if (check_post('file_output')){
 if (check_get('load')) {
 	if (check_post('file_input')){
 		$text_input = file_get_contents("../".$file_input.$suffix_input);
-		$text_input = iconv("windows-1251", "utf-8", $text_input);
+		if ($converter_type == "html2txt") {
+			$text_input = iconv("windows-1251", "utf-8", $text_input);
+		}
 	}
 } else {
 	if (check_post('text_input')) {
