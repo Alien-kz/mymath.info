@@ -1,0 +1,111 @@
+\documentclass[11pt, a5paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage[inline]{enumitem}	%itemize in row
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usepackage{wrapfig}			%text around figure
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=15pt}
+\sloppy							%correct overfull
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 --- #2
+	\end{large}
+	\end{center}
+
+}
+
+\newcommand{\variant}[2]{
+	\begin{center}
+	\textit{Вариант #2}
+	\end{center}
+}
+
+\newcommand{\unit}[1]{
+	\text{\textit{ #1}}
+}
+\newcommand{\units}[2]{ 
+	\frac{\text{\textit{#1}}}{\text{\textit{#2}}}
+}
+
+\begin{document}
+
+\head{Вступительный экзамен по физике}{2015}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
+
+\variant{2015}{2}
+
+\begin{enumerate}[wide]
+\item Дайте определение равномерного движения материальной точки по окружности. Каково по величине и направлению ускорение материальной точки при ее равномерном движении по окружности.
+
+\item Сформулируйте основные положения мо\-ле\-ку\-ляр\-но--ки\-не\-ти\-чес\-кой теории. Какова масса и размер молекул по порядку величины.
+
+\item Дайте определение потенциала электростатического поля. Запишите формулу для потенциала электростатического поля точечного заряда.
+
+\item Какие линзы называются тонкими? Приведите примеры построения изображений в собирающей и рассеивающей линзах.
+
+\item \textbf{Задача}. Маленький груз, подвешенный к потолку на невесомой, нерастяжимой нити, вращается в горизонтальной плоскости, отстоящей от потолка на расстоянии $h = 1,1 \unit{м}$. Найдите частоту $v$ вращения груза. Ускорение свободного падения примите равным $g = 10 \frac{\unit{м}}{\unit{c}^2}$.
+
+\item \textbf{Задача}.
+
+\noindent \begin{minipage}{0.6\linewidth}
+С одним молем идеального одноатомного газа проводят цикл, показанный на рисунке. На участке 1--2 объем газа увеличивается в $m = 2$ раза. Процесс 2--3 --- адиабатическое расширение, процесс 3--1 --- изотермическое сжатие при температуре $T_0 = 300 \unit{К}$. Найдите работу $A$ на участке 2--3. Универсальную газовую постоянную примите равной $R = 8,3 \frac{\unit{Дж}}{\unit{моль} \cdot \unit{K}}$.
+\end{minipage}
+\begin{minipage}{0.3\linewidth}
+\begin{tikzpicture}[x=10, y=10, line width = 2]
+\draw[->] (0,0) node[below left]{O} --(0,10) node[above]{P};
+\draw[->] (0,0)--(10,0) node[right]{V};
+
+\draw[dashed, line width = 1] (0,0)--(2,4) node[left]{1};
+\draw (2,4)--(4,8) node[above]{2};
+\path[draw] (4,8) .. controls (5,5.6) and (6,4) .. (8,2) node[right]{3};%48/x-4
+\path[draw] (8,2) .. controls (6,2.1) and (4,2.7) .. (2,4);
+%16/3x + 4/3
+\end{tikzpicture}
+\end{minipage}
+
+\item \textbf{Задача}. Пластины плоского воздушного конденсатора расположены горизонтально. Верхняя пластина сделана подвижной и удерживается в начальном состоянии на высоте $h = 1 \unit{мм}$ над верхней пластиной, которая закреплена. Конденсатор зарядили до разности потенциалов $U = 1000 \unit{В}$, отключили от источника и освободили верхнюю пластину. Какую скорость $v$ приобретет падающая пластина к моменту соприкосновения с нижней пластиной? Масса верхней пластины $m = 4,4 \unit{г}$, площадь каждой из пластин $S = 0,01 \unit{м}^2$, электрическая постоянная $\varepsilon_0 = 8,85 \cdot 10^{-12} \units{Ф}{м}$. Ускорение свободного падения примите равным $g = 10 \frac{\unit{м}}{\unit{c}}$. Сопротивлением воздух можно пренебречь.
+
+\item \textbf{Задача}. На стеклянный шар радиуса $R = 10 \unit{см}$ с показателем преломления $n = 1,41$ падает узкий пучок света, образуя угол $\alpha = 30^\circ$ с осью, проведенной через точку падения и центр шара. На каком расстоянии $d$ от этой оси пучок выйдет из шара?
+
+\item \textbf{Задача}. 
+
+\noindent \begin{minipage}{0.6\linewidth}
+На рисунке представлена схема энергетических уровней электронной оболочки атом и указаны частоты фотонов, излучаемых и поглощаемых при переходах между этими уровнями. Какова минимальная длина волны фотонов, излучаемых атомом при любых возможных переходах между уровнями $E_1$, $E_2$, $E_3$ и $E_4$, если $v_{13} = 7 \cdot 10^{14} \unit{Гц}$, $v_{24} = 5 \cdot 10^{14} \unit{Гц}$, $v_{32} = 3 \cdot 10^{14} \unit{Гц}$? Скорость света $c = 3 \cdot 10^8 \units{м}{c}$.
+\end{minipage}
+\begin{minipage}{0.3\linewidth}
+\begin{center}
+\begin{tikzpicture}[x=10, y=10, line width = 2]
+\draw[line width = 1] (0,0) -- (10, 0) node[right]{$E_1$};
+\draw[line width = 1] (0,3) -- (10, 3) node[right]{$E_2$};
+\draw[line width = 1] (0,6) -- (10, 6) node[right]{$E_3$};
+\draw[line width = 1] (0,9) -- (10, 9) node[right]{$E_4$};
+
+\draw[->] (2, 0) -- (2, 6) node[below left]{$v_{13}$};
+\draw[->] (5, 3) -- (5, 9) node[below left]{$v_{24}$};
+\draw[->] (8, 6) -- (8, 3) node[above left]{$v_{31}$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\item \textbf{Задача}. Радиоактивный препарат с большим периодом полураспада помещен в медный контейнер массой $M = 0,5 \unit{кг}$. За $\tau = 2$ часа температура контейнера повысилась на $\Delta T = 5,2 \unit{К}$. Известно, что данный препарат испускает $\alpha$--частицы с энергией $E = 5,3 \unit{МэВ}$ ($1 \unit{эВ} = 1,6 \cdot 10^{-19} \unit{Дж}$), причем энергия всех испущенных $\alpha$--частиц полностью переходит во внутреннюю энергию контейнера. Определите активность препарата $A$, т.е. количество $\alpha$--частиц, рождающихся в нем за 1 с. Удельная теплоемкость меди $c = 0,385 \frac{\unit{кДж}}{\unit{кг } \cdot \unit{К}}$. Теплоемкостью препарата и теплообменом с окружающей средой пренебречь.
+\end{enumerate}
+
+\newpage
+
+
+\end{document} 

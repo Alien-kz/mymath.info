@@ -59,6 +59,8 @@
 					show_link_file($file_name_1, $buttons[$year]." 1 вариант");
 					show_link_file($file_name_2, $buttons[$year]." 2 вариант");
 
+					$file_name_1 = "$directory/png/msu-$subject-$year-1";
+					$file_name_2 = "$directory/png/msu-$subject-$year-2";
 					show_png_file($file_name_1."-".$agent);
 					show_png_file($file_name_2."-".$agent);
 					div_close();
