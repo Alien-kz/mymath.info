@@ -116,7 +116,7 @@ function prepare_text($text) {
 	$text = str_replace("\n<h3>", "<h3>", $text);
 
 	# table
-	$text = str_replace("<table>\n", "<table align='center' border='1'>", $text);
+	$text = str_replace("<table>\n", "<table>", $text);
 	$text = str_replace("</table>\n", "</table>", $text);
 	$text = str_replace("<tr>\n", "<tr>", $text);
 	$text = str_replace("</tr>\n", "</tr>", $text);
@@ -124,8 +124,10 @@ function prepare_text($text) {
 	$text = str_replace("</td>\n", "</td>", $text);
 	$text = str_replace("<th>\n", "<th>", $text);
 	$text = str_replace("</th>\n", "</th>", $text);
+	$text = str_replace("<table>", "<div class='xscroll'><table align='center' border='1'>", $text);
+	$text = str_replace("</table>", "</table></div>", $text);
 
-	# header
+	# header0
 	$text = str_replace("<h3>\n", "<h3>", $text);
 	$text = str_replace("</h3>\n", "</h3>", $text);
 
