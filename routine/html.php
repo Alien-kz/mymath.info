@@ -1,7 +1,7 @@
 <?php
 
 function load_css($prefix, $css_array, $agent) {
-	$ver = "2018-09-25";
+	$ver = "2018-09-26";
 	$prefix = $prefix."css/";
 	if ($agent == 'mobile') {
 		foreach ($css_array as $css) {

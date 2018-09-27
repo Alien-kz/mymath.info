@@ -1,8 +1,8 @@
 table {
 	border: 2px solid gray;
 	border-collapse: collapse;
-	white-space: nowrap;
-	width: 100%;
+#	white-space: nowrap;
+	max-width: 100%;
 	font-size: 0.75em;
 }
 
