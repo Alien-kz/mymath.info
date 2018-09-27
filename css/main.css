@@ -148,9 +148,10 @@ body {
 }
 
 .resized {
+	border-radius: 10px;
 	padding: 5px;
 	margin: 5px;
     border: 2px solid gray;	
-    max-width: 100%;
+    max-width: 80%;
     max-height: 100%;
 }
