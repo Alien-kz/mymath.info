@@ -6,9 +6,13 @@ sudo apt install texlive-lang-cyrillic
 sudo apt install texmaker
 </bash>
 Чтобы была проверка орфографии на лету cкачиваем словарик dict_ru_ru-0.3.7.oxt с сайта: <a href='https://extensions.openoffice.org/en/project/slovari-dlya-russkogo-yazyka-dictionaries-russian'> extensions.openoffice.org </a>
+<bash>
+wget https://sourceforge.net/projects/aoo-extensions/files/3233/3/dict_ru_ru-0.3.7.oxt/download -O dict_ru_ru-0.3.7.oxt
+</bash>
+
 Распаковываем и отправляем в соответствующую директорию
 <bash>
-unzip dict_ru_ru-0.3.7.oxt
+unzip dict_ru_ru-0.3.7.oxt -d dict_ru_ru-0.3.7
 sudo cp dict_ru_ru-0.3.7/ru_RU.dic /usr/share/myspell/dicts/
 </bash>
 Осталось выбрать в texmaker данный файл для проверки орфографии: настройка - настроить - редактор - словарь - ru_RU.dic.

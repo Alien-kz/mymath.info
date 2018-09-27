@@ -86,8 +86,8 @@ body {
 .code_div {
 	font-size: large;
 	font-family: monospace;
-	background: gray;
-	color: #dddddd;
+	background: #555555;
+#	color: #dddddd;
 	padding: 2px;
 	margin: 10px;
 	text-align: left;
@@ -121,11 +121,11 @@ body {
 	padding: 0px;
 	margin-right: 5px;
 	padding-right: 5px;
-	background: linear-gradient(to left, gray, #333333);
+	background: linear-gradient(to left, #dddddd, #333333);
 }
 
 .mycode {
-	background: #333333;
+	background: #dddddd;
 	padding: 0px;
 	margin: 0px;
     width: 100%

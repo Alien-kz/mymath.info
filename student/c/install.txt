@@ -1,6 +1,6 @@
 Самая полезная ссылка: <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
 
-<h3> Про gcc </h3>
+<h3> Установка gcc </h3>
 <bash>
 sudo apt-get update
 sudo apt-get install build-essential
