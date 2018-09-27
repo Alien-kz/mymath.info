@@ -40,7 +40,7 @@ gdb 01
 <h3> Про Makefile </h3>
 Читаем: <a href='https://habr.com/post/155201/'> habr.com </a>
 
-Пример компиляции и првоерки кода (Makefile):
+Makefile для компиляции и проверки кода:
 <code>
 %: %.c
 &xrarr;gcc $@.c -o $@ -Wall -Werror -lm

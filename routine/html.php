@@ -122,6 +122,8 @@ function prepare_text($text) {
 	$text = str_replace("</tr>\n", "</tr>", $text);
 	$text = str_replace("<td>\n", "<td>", $text);
 	$text = str_replace("</td>\n", "</td>", $text);
+	$text = str_replace("<th>\n", "<th>", $text);
+	$text = str_replace("</th>\n", "</th>", $text);
 
 	# header
 	$text = str_replace("<h3>\n", "<h3>", $text);
@@ -134,7 +136,7 @@ function prepare_text($text) {
 	$text = preg_replace("/<picture (.*?)>/", "<div align='center'><img class='resized' src=$1></div>", $text);
 
 	# file
-	$text = preg_replace("/<file (.*?)>/", "<a class='button download_link' target='blank_' href=$1 download> &#128190;", $text);
+	$text = preg_replace("/<file (.*?)>/", "<a class='microbutton download_link' target='blank_' href=$1 download> &#128190;", $text);
 	$text = str_replace("</file>", "</a>", $text);
 	
 	# newline

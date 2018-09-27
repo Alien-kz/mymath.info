@@ -2,15 +2,17 @@
 
 <table>
 <tr>
-<td> Дата </td>
-<td> Тема </td>
-<td> Презентация </td>
-<td> Домашнее задание </td>
+<th> Дата </th>
+<th> Тема </th>
+<th> Презентация </th>
+<th> Домашнее задание </th>
+<th> Ссылка ejudge.msu.kz </th>
 </tr>
 <tr>
 <td> 27/09/2018 </td>
 <td> План на семестр. Техническое вступление. Вспоминаем С. </td>
 <td> <file 'cmc/files/cmc-present-01.pdf'> cmc-present-01.pdf </file>  </td>
 <td> <file 'cmc/files/cmc-home-01.pdf'> cmc-home-01.pdf </file>  </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> ВМК (дом): до массивов </a> </td>
 </tr>
 </table>

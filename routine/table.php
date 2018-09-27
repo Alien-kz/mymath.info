@@ -248,8 +248,8 @@ function mark_plus($table) {
 		$width = count($table[$i]) - 1;
 		for ($j = 2; $j < $width; $j++) {
 			$cell = $table[$i][$j];
-			$cell = preg_replace("/\+(\d*)/", "<span class='accepted'>+$1</span>", $cell);
-			$cell = preg_replace("/\-(\d*)/", "<span class='rejected'>-$1</span>", $cell);
+			$cell = preg_replace("/\+(\d*)/", "<div class='accepted'>+$1</div>", $cell);
+			$cell = preg_replace("/\-(\d*)/", "<div class='rejected'>-$1</div>", $cell);
 			$table[$i][$j] = $cell;
 		}
 	}
@@ -262,8 +262,8 @@ function replace_brackets_to_label($table) {
 		$width = count($table[$i]) - 1;
 		for ($j = 0; $j < $width; $j++) {
 			$cell = $table[$i][$j];
-			$cell = str_replace("(", "<br/><small>", $cell);
-			$cell = str_replace(")", "</small>", $cell);
+			$cell = str_replace("(", "<div><small>", $cell);
+			$cell = str_replace(")", "</small></div>", $cell);
 			$table[$i][$j] = $cell;
 		}
 	}

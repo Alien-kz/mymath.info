@@ -11,7 +11,7 @@
 			include_once "../routine/html.php";
 			include_once "../routine/table.php";
 			$agent = get_user_agent_type();
-			$css = array("main", "header", "input", "chars");
+			$css = array("main", "header", "input", "chars", "table");
 			load_css("../", $css, $agent);
 		?>
 	</head>

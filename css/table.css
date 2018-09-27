@@ -1,8 +1,8 @@
 table {
 	border: 2px solid gray;
 	border-collapse: collapse;
-	width: 100%;
-	font-size: 0.75em;
+	max-width: 100%;
+	font-size: 1em;
 }
 
 tr {
@@ -40,7 +40,7 @@ th {
 }
 
 .accepted {
-	border: 2px solid gray;
+	border: 0px solid gray;
 	background: green;
 	color: white;
 	border-radius: 5px;
