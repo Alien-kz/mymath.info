@@ -1,0 +1,54 @@
+Самая полезная ссылка: <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
+
+<h3> Про gcc </h3>
+<bash>
+sudo apt-get update
+sudo apt-get install build-essential
+</bash>
+
+<h3> Про стиль кода </h3>
+Читаем: <a href='https://tproger.ru/translations/stanford-cpp-style-guide/'> tproger.ru </a>
+
+Вариант 1. Чекер cpplint (на python). Ставим из pip-репозитория:
+<bash>
+sudo apt install python3-pip
+pip install cpplint
+</bash>
+Проверка кода:
+<bash>
+cpplint --filter=-legal/copyright file.c
+</bash>
+Вариант 2. Чекер checkpatch (на perl). Скачиваем из github: 
+<bash>
+wget https://raw.githubusercontent.com/torvalds/linux/master/scripts/checkpatch.pl
+chmod +x checkpatch.pl
+</bash>
+Проверка кода:
+<bash>
+./checkpatch.pl --no-tree -f file.c
+</bash>
+
+<h3> Про отладку кода </h3>
+Читаем: <a href='https://server.179.ru/tasks/gdb/'> server.179.ru </a>
+
+Пример строки компиляции:
+<bash>
+gcc 01.c -o 01 -Wall -Werror -lm -g
+gdb 01
+</bash>
+
+<h3> Про Makefile </h3>
+Читаем: <a href='https://habr.com/post/155201/'> habr.com </a>
+
+Пример компиляции и првоерки кода (Makefile):
+<code>
+%: %.c
+&xrarr;gcc $@.c -o $@ -Wall -Werror -lm
+&xrarr;cpplint --filter=-legal/copyright $@.c
+</code>
+Вместо стрелок подставьте табуляцию (с пробелами работать не будет).
+
+Запуск:
+<bash>
+make 01
+</bash>

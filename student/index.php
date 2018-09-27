@@ -24,17 +24,27 @@
 
 			######################################## LEVEL 1
 
-			div_open("Материалы по курсам", "top");
-			$buttons = array("python" => "Python + matplotlib",
-                            "jupyter" => "Jupyter",
+			div_open("Материалы", "top");
+			print_centered_text("Технические");
+			$buttons = array("c" => "gcc",
+                            "python" => "python + matplotlib",
+                            "jupyter" => "jupyter",
 							"latex" => "LaTeX",
-							"master" => "ВМК (магистранты)");
+							"git" => "git");
+            print_buttons("index.php", "subject", $subject, $buttons, "", "");
+			print_centered_text("Учебные");
+			$buttons = array("cmc" => "ВМК (2 курс)",
+									"master" => "ВМК (магистранты)");
 			print_buttons("index.php", "subject", $subject, $buttons, "", "");
 			div_close();
 
 			######################################## LEVEL 2
 			
-			if ($subject == "python" or $subject == "latex" or $subject == "jupyter") {
+			if ($subject == "python" or 
+                $subject == "latex" or 
+                $subject == "jupyter" or
+                $subject == "c" or
+                $subject == "git") {
 				print_post("Знакомство", "content", $subject."/learn.txt"); 
 				print_post("Установка", "install", $subject."/install.txt"); 
 			}
@@ -48,6 +58,9 @@
 				print_text_with_code(file_get_contents($subject."/sem_3.txt")); 
 				print_code(file_get_contents($subject."/files/sem_3_0.py")); 
 				div_close();
+			}
+			if ($subject == "cmc") {
+				print_post("Практикум на ЭВМ 3 семестр", "content", $subject."/content.txt"); 
 			}
 		?>
 		<p>

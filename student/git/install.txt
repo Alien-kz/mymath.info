@@ -1,0 +1,50 @@
+Источник: <a href='http://rgblog.ru/page/git-dlja-chajnika-komandy-kotorye-pomogut-nachat-rabotu'> http://rgblog.ru </a>
+
+Установка:
+<bash>
+sudo apt-get install git
+</bash>
+
+<bash>
+git config --global user.name "Alien-kz"
+git config --global user.email "a-l-e-n@mail.ru"
+git config --global core.autocrlf input
+git config --global core.safecrlf true
+</bash>
+
+1. Создаем репозиторий на сайте.
+
+2. Инициализируем папку для Git репозитория. Это нужно сделать только один раз для каждого проекта.
+<bash>
+git init
+</bash>
+
+3. Связываем папку с удаленным репозиторием
+<bash>
+git remote add origin https://github.com/Alien-kz/mymath.info
+</bash>
+
+4. Добавляем все новые и измененные файлы
+<bash>
+git add .
+</bash>
+
+5. Помечаем все новые и измененные файлы сообщением (commit)
+<bash>
+git commit -m "message"
+</bash>
+
+6. Закачиваем код на удаленный репозиторий
+<bash>
+git push -u origin master
+</bash>
+в таком виде используем только первый раз, потом используем команду без флагов
+git push
+
+7*.
+<bash>
+git pull origin master
+git config --global push.default simple
+git push --set-upstream origin master
+git push
+</bash>

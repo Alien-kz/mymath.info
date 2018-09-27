@@ -1,0 +1,16 @@
+<h3> Презентации с лекций </h3>
+
+<table>
+<tr>
+<td> Дата </td>
+<td> Тема </td>
+<td> Презентация </td>
+<td> Домашнее задание </td>
+</tr>
+<tr>
+<td> 27/09/2018 </td>
+<td> План на семестр. Техническое вступление. Вспоминаем С. </td>
+<td> <file 'cmc/files/cmc-present-01.pdf'> cmc-present-01.pdf </file>  </td>
+<td> <file 'cmc/files/cmc-home-01.pdf'> cmc-home-01.pdf </file>  </td>
+</tr>
+</table>

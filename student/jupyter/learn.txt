@@ -9,7 +9,7 @@ jupyter notebook
 Для ввода есть 2 режима: набора и управления (прям как в знаменитом vim). 
 <table>
 <tr><td> Режим набора </td><td> enter  </td></tr>
-<tr><td> Режим управления </td><td> escape </td></tr> 
+<tr><td> Режим управления </td><td> escape </td></tr>
 <tr><td> Все горячие клавиши </td><td> h </td></tr>
 <tr><td> Добавить блок сверху </td><td> a </td></tr>
 <tr><td> Добавить блок снизу </td><td> b </td></tr>

@@ -1,0 +1,19 @@
+Добавить все изменения в данной директории:
+<bash>
+git add .
+</bash>
+
+Подготовить к отправке:
+<bash>
+git commit -m "correction info"
+</bash>
+
+Отправить:
+<bash>
+git push
+</bash>
+
+Забрать:
+<bash>
+git pull
+</bash>

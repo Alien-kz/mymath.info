@@ -1,7 +1,7 @@
 <?php
 
 function load_css($prefix, $css_array, $agent) {
-	$ver = "2018-09-13";
+	$ver = "2018-09-25";
 	$prefix = $prefix."css/";
 	if ($agent == 'mobile') {
 		foreach ($css_array as $css) {
@@ -112,20 +112,23 @@ function replace_level($text) {
 
 function prepare_text($text) {
 #	# double newline
-#	$text = preg_replace("/[\r\n]+/", "\n", $text);
+#	$text = preg_replace("/[\n]+/", "\n", $text);
+	$text = str_replace("\n<h3>", "<h3>", $text);
 
 	# table
 	$text = str_replace("<table>\n", "<table align='center' border='1'>", $text);
 	$text = str_replace("</table>\n", "</table>", $text);
 	$text = str_replace("<tr>\n", "<tr>", $text);
 	$text = str_replace("</tr>\n", "</tr>", $text);
+	$text = str_replace("<td>\n", "<td>", $text);
+	$text = str_replace("</td>\n", "</td>", $text);
 
 	# header
 	$text = str_replace("<h3>\n", "<h3>", $text);
 	$text = str_replace("</h3>\n", "</h3>", $text);
 
 	# external link
-	$text = str_replace("<a ", "<a class='button external_link' target='blank_' ", $text);
+	$text = str_replace("<a ", "<a class='microbutton external_link' target='blank_' ", $text);
 	
 	# picture
 	$text = preg_replace("/<picture (.*?)>/", "<div align='center'><img class='resized' src=$1></div>", $text);
@@ -148,8 +151,8 @@ function print_text($text) {
 }
 
 function prepare_code($text, $left_class) {
-	$code_line_begin = "<p class='mycode $left_class'>";
-	$code_line_end = "</p>\n";
+	$code_line_begin = "<div class='mycode $left_class'>";
+	$code_line_end = "</div>\n";
 
 	$text = str_replace("\n", $code_line_end.$code_line_begin, $text);
 	$text = str_replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;", $text);
