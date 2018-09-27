@@ -8,6 +8,7 @@ jupyter notebook
 <picture 'python/pictures/jupyter-code.png'>
 Для ввода есть 2 режима: набора и управления (прям как в знаменитом vim). 
 <table>
+<tr><th> Действие</th><th> Клавиша </th></tr>
 <tr><td> Режим набора </td><td> enter  </td></tr>
 <tr><td> Режим управления </td><td> escape </td></tr>
 <tr><td> Все горячие клавиши </td><td> h </td></tr>
@@ -19,6 +20,7 @@ jupyter notebook
 <tr><td> Запустить и перейти ниже </td><td> shift + enter </td></tr>
 <tr><td> Запустить и остаться </td><td> ctrl + enter </td></tr>
 </table>
+
 Замечания по matplotlib. Чтобы графики строились неспоредственно в notebook необходимо: указать магическую команду notebook inline, запускать соответствующий блок дважды (возможно это частная проблема) и можно не вызывать plt.show().
 <code>
 import matplotlib.pyplot as plt
