@@ -7,6 +7,8 @@
 <th> Презентация </th>
 <th> Домашнее задание </th>
 <th> Ссылка ejudge.msu.kz </th>
+<th> Стоимость </th>
+<th> Срок </th>
 </tr>
 <tr>
 <td> 27/09/2018 </td>
@@ -14,5 +16,350 @@
 <td> <file 'cmc/files/cmc-present-01.pdf'> cmc-present-01.pdf </file>  </td>
 <td> <file 'cmc/files/cmc-home-01.pdf'> cmc-home-01.pdf </file>  </td>
 <td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> ВМК (дом): до массивов </a> </td>
+<td> 10 </td>
+<td> 30/09/2018 21:00:00 </td>
+</tr>
+<tr>
+<td> 01/10/2018 </td>
+<td> Практика </td>
+<td> </td>
+<td> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=21'> ВМК (класс): до массивов </noa> </td>
+<td> 10 </td>
+<td> 01/10/2018 11:50:00 </td>
+</tr>
+<tr>
+<td> 04/10/2018 </td>
+<td> Строки, указатели, динамические массивы, функции. </td>
+<td> <nofile 'cmc/files/cmc-present-02.pdf'> cmc-present-02.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-02.pdf'> cmc-home-02.pdf </nofile>  </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=22'> ВМК (дом): указатели </noa> </td>
+<td> 10 </td>
+<td> 04/10/2018 21:00:00 </td>
+</tr>
+<tr>
+<td> 05/10/2018 </td>
+<td> Практика </td>
+<td> </td>
+<td> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=23'> ВМК (класс): указатели </a> </td>
+<td> 10 </td>
+<td> 05/10/2018 11:50:00 </td>
+</tr>
+<tr>
+<td> 06/10/2018 </td>
+<td> Структуры, динамические структуры, аргументы командной строки. </td>
+<td> <nofile 'cmc/files/cmc-present-03.pdf'> cmc-present-03.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-03.pdf'> cmc-home-03.pdf </nofile>  </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=24'> ВМК (дом): дин.структуры </noa> </td>
+<td> 10 </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Практика </td>
+<td> </td>
+<td> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=25'> ВМК (класс): дин.структуры </noa> </td>
+<td> 10 </td>
+<td>  </td>
+</tr>
+<tr>
+<td> </td>
+<td> Системные вызовы (fork, exec, pipe). </td>
+<td> <nofile 'cmc/files/cmc-present-04.pdf'> cmc-present-04.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-04.pdf'> cmc-home-04.pdf </nofile>  </td>
+<td> </td>
+<td> 10 </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Практика </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> 10 </td>
+<td>  </td>
+</tr>
+<tr>
+<td> </td>
+<td> Семестровая 1: shell </td>
+<td> <nofile 'cmc/files/cmc-present-05.pdf'> cmc-present-05.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-05.pdf'> cmc-home-05.pdf </nofile>  </td>
+<td> </td>
+<td>  </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Семестровая 1: shell (простой) </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> 50 </td>
+<td>  </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Семестровая 1: shell (конвейер) </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> 50 </td>
+<td>  </td>
+</tr>
+<tr>
+<td> </td>
+<td> Семестровая 2: тестирующая система </td>
+<td> <nofile 'cmc/files/cmc-present-06.pdf'> cmc-present-06.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-06.pdf'> cmc-home-06.pdf </nofile>  </td>
+<td> </td>
+<td>  </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Семестровая 2: тестирующая система (тест одной программы) </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> 50 </td>
+<td>  </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Семестровая 2: тестирующая система (тест контеста) </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> 50 </td>
+<td>  </td>
+</tr>
+<tr>
+<td> </td>
+<td> Системные вызовы (сеть). </td>
+<td> <nofile 'cmc/files/cmc-present-07.pdf'> cmc-present-07.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-07.pdf'> cmc-home-07.pdf </nofile>  </td>
+<td> </td>
+<td> 10 </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Практика </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> 10 </td>
+<td>  </td>
+</tr>
+<tr>
+<td> </td>
+<td> Семестровая 3: web-сервер </td>
+<td> <nofile 'cmc/files/cmc-present-08.pdf'> cmc-present-08.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-08.pdf'> cmc-home-08.pdf </nofile>  </td>
+<td> </td>
+<td>  </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Семестровая 3: web-сервер (текстовые документы) </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> 50 </td>
+<td>  </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Семестровая 3: web-сервер (скрипты) </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> 50 </td>
+<td>  </td>
+</tr>
+
+<tr>
+<td> </td>
+<td> С++. Классы. Методы </td>
+<td> <nofile 'cmc/files/cmc-present-09.pdf'> cmc-present-09.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-09.pdf'> cmc-home-09.pdf </nofile>  </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=24'> ВМК (дом): классы </noa> </td>
+<td> 10 </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Практика </td>
+<td> </td>
+<td> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=25'> ВМК (класс): классы </noa> </td>
+<td> 10 </td>
+<td>  </td>
+</tr>
+<tr>
+<td> </td>
+<td> С++. Перегрузка. Полиморфизм. </td>
+<td> <nofile 'cmc/files/cmc-present-10.pdf'> cmc-present-10.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-10.pdf'> cmc-home-10.pdf </nofile>  </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=24'> ВМК (дом): перегрузка </noa> </td>
+<td> 10 </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Практика </td>
+<td> </td>
+<td> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=25'> ВМК (класс): перегрузка </noa> </td>
+<td> 10 </td>
+<td>  </td>
+</tr>
+<tr>
+<td> </td>
+<td> С++. Наследование. </td>
+<td> <nofile 'cmc/files/cmc-present-11.pdf'> cmc-present-11.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-11.pdf'> cmc-home-11.pdf </nofile>  </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=24'> ВМК (дом): наследование </noa> </td>
+<td> 10 </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Практика </td>
+<td> </td>
+<td> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=25'> ВМК (класс): наследование </noa> </td>
+<td> 10 </td>
+<td>  </td>
+</tr>
+<tr>
+<td> </td>
+<td> С++. Шаблоны. </td>
+<td> <nofile 'cmc/files/cmc-present-12.pdf'> cmc-present-12.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-12.pdf'> cmc-home-12.pdf </nofile>  </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=24'> ВМК (дом): шаблоны </noa> </td>
+<td> 10 </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Практика </td>
+<td> </td>
+<td> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=25'> ВМК (класс): шаблоны </noa> </td>
+<td> 10 </td>
+<td>  </td>
+</tr>
+<tr>
+<td> </td>
+<td> С++. STL. </td>
+<td> <nofile 'cmc/files/cmc-present-12.pdf'> cmc-present-12.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-12.pdf'> cmc-home-12.pdf </nofile>  </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=24'> ВМК (дом): STL </noa> </td>
+<td> 10 </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Практика </td>
+<td> </td>
+<td> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=25'> ВМК (класс): STL </noa> </td>
+<td> 10 </td>
+<td>  </td>
+</tr>
+<tr>
+<td> </td>
+<td> С++. QT </td>
+<td> <nofile 'cmc/files/cmc-present-13.pdf'> cmc-present-13.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-13.pdf'> cmc-home-13.pdf </nofile>  </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Калькулятор </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> 20 </td>
+<td>  </td>
+</tr>
+<tr>
+<td> </td>
+<td> С++. QT </td>
+<td> <nofile 'cmc/files/cmc-present-14.pdf'> cmc-present-14.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-14.pdf'> cmc-home-14.pdf </nofile>  </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Изображения </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> 20 </td>
+<td>  </td>
+</tr>
+<tr>
+<td> </td>
+<td> С++. QT </td>
+<td> <nofile 'cmc/files/cmc-present-15.pdf'> cmc-present-15.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-15.pdf'> cmc-home-15.pdf </nofile>  </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Рисовалка </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> 20 </td>
+<td>  </td>
+</tr>
+<tr>
+<td> </td>
+<td> С++. QT </td>
+<td> <nofile 'cmc/files/cmc-present-16.pdf'> cmc-present-16.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-16.pdf'> cmc-home-16.pdf </nofile>  </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Арканоид </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> 20 </td>
+<td>  </td>
+</tr>
+<tr>
+<td> </td>
+<td> С++. QT </td>
+<td> <nofile 'cmc/files/cmc-present-16.pdf'> cmc-present-16.pdf </nofile>  </td>
+<td> <nofile 'cmc/files/cmc-home-16.pdf'> cmc-home-16.pdf </nofile>  </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>  </td>
+<td> Изометрическая игра </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> 20 </td>
+<td>  </td>
 </tr>
 </table>

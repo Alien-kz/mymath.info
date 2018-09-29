@@ -33,7 +33,7 @@
 							"git" => "git");
             print_buttons("index.php", "subject", $subject, $buttons, "", "");
 			print_centered_text("Учебные");
-			$buttons = array("cmc" => "ВМК (2 курс)",
+			$buttons = array("mm" => "ММ (1 курс)", "cmc" => "ВМК (2 курс)",
 									"master" => "ВМК (магистранты)");
 			print_buttons("index.php", "subject", $subject, $buttons, "", "");
 			div_close();
@@ -49,18 +49,21 @@
 				print_post("Установка", "install", $subject."/install.txt"); 
 			}
 			if ($subject == "master") {
-				div_open("1 семестр", "content");
+				div_open("Практикум по специализации 1 семестр", "content");
 				print_text_with_code(file_get_contents($subject."/sem_1.txt")); 
 				print_code(file_get_contents($subject."/files/sem_1_0.py")); 
 				div_close();
 
-				div_open("3 семестр", "content");
+				div_open("Практикум по специализации 3 семестр", "content");
 				print_text_with_code(file_get_contents($subject."/sem_3.txt")); 
 				print_code(file_get_contents($subject."/files/sem_3_0.py")); 
 				div_close();
 			}
 			if ($subject == "cmc") {
 				print_post("Практикум на ЭВМ 3 семестр", "content", $subject."/content.txt"); 
+			}
+			if ($subject == "mm") {
+				print_post("Технология программирования на ЭВМ 1 семестр", "content", $subject."/content.txt"); 
 			}
 		?>
 		<p>

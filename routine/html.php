@@ -126,7 +126,7 @@ function prepare_text($text) {
 	$text = str_replace("</th>\n", "</th>", $text);
 	$text = str_replace("<table>", "<div class='xscroll'><table align='center' border='1'>", $text);
 	$text = str_replace("</table>", "</table></div>", $text);
-
+	
 	# header0
 	$text = str_replace("<h3>\n", "<h3>", $text);
 	$text = str_replace("</h3>\n", "</h3>", $text);
@@ -140,6 +140,14 @@ function prepare_text($text) {
 	# file
 	$text = preg_replace("/<file (.*?)>/", "<a class='microbutton download_link' target='blank_' href=$1 download> &#128190;", $text);
 	$text = str_replace("</file>", "</a>", $text);
+
+	# no file
+	$text = preg_replace("/<nofile (.*?)>/", "", $text);
+	$text = str_replace("</nofile>", "", $text);
+	# no external link
+	$text = preg_replace("/<noa (.*?)>/", "", $text);
+	$text = str_replace("</noa>", "", $text);
+	
 	
 	# newline
 	$text = nl2br($text);

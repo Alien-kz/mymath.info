@@ -24,13 +24,17 @@ sudo apt-get install build-essential
 </li><li> Пробелами выделяются все логические бинарные операторы: '&&', '||'.
 </li><li> Пробелами выделяются все битовые бинарные операторы: '&', '|', '>>', '<<', '&=', '|=', '>>=', '<<='. </li></ol>
 
-<ol><li> Вариант 1. Чекер cstyle (самописный, рекомендуется 1 курсу). Скачиваем здесь: 
-<file 'c/files/cstyle.py'> cstyle.py </file>
+Варианты чекеров стиля:
+<ol><li> Чекер cstyle (самописный, рекомендуется 1 курсу). Скачиваем здесь: <file 'c/files/cstyle.py'> cstyle.py </file> или прямо в терминале командой wget. Не забываем разрешить выполнение.
+<bash>
+wget http://mymath.info/student/c/files/cstyle.py
+chmod +x ./cstyle.py
+</bash>
 Проверка кода:
 <bash>
-python3 cstyle file.c
+./cstyle.py file.c
 </bash>
-</li><li>Вариант 2. Чекер cpplint (от google). Ставим из pip-репозитория:
+</li><li> Чекер cpplint (от google). Ставим из pip-репозитория:
 <bash>
 sudo apt install python3-pip
 pip install cpplint
@@ -39,7 +43,7 @@ pip install cpplint
 <bash>
 cpplint --filter=-legal/copyright file.c
 </bash>
-</li><li>Вариант 3. Чекер checkpatch (от разработчиков ядра LINUX, рекомендуется 2 курсу). Скачиваем из github: 
+</li><li> Чекер checkpatch (от разработчиков ядра LINUX, рекомендуется 2 курсу). Скачиваем из github: 
 <bash>
 wget https://raw.githubusercontent.com/torvalds/linux/master/scripts/checkpatch.pl
 chmod +x checkpatch.pl
@@ -70,7 +74,7 @@ Makefile для компиляции и проверки кода:
 <code>
 %: %.c
 &xrarr;gcc $@.c -o $@ -Wall -Werror -lm
-&xrarr;python3 cstyle $@.c
+&xrarr;./cstyle.py $@.c
 </code>
 Вместо стрелок подставьте табуляцию (с пробелами работать не будет).
 
