@@ -9,7 +9,28 @@ sudo apt-get install build-essential
 <h3> Про стиль кода </h3>
 Читаем: <a href='https://tproger.ru/translations/stanford-cpp-style-guide/'> tproger.ru </a>
 
-Вариант 1. Чекер cpplint (на python). Ставим из pip-репозитория:
+Краткие требования:
+<ol><li> Отступы - 4 пробела.
+</li><li> Вложение в оперторы if, while, for, else идет с отступом.
+</li><li> Нет строк, оканчивающихся пробелом.
+</li><li> Перед запятой нет пробела, после запятой пробел есть.
+</li><li> После '{' идет новая строка.
+</li><li> После '}' идет новая строка (кроме объявления структур и классов, else, while).
+</li><li> После ';' идет новая строка (кроме условий внтури for).
+</li><li> После ';' в цикле for идут пробелы: 'for (start; condition; post)'.
+</li><li> После '}' в else и do-while идут пробелы: '} else', '} while'.
+</li><li> Пробелами выделяются все арифметические бинарные операторы: '+', '-', '*', '/', '%', '+=', '-=', '*=', '/=', '%='.
+</li><li> Пробелами выделяются все операторы сравнения: '>', '<', '==', '>=', '<=', '!='.
+</li><li> Пробелами выделяются все логические бинарные операторы: '&&', '||'.
+</li><li> Пробелами выделяются все битовые бинарные операторы: '&', '|', '>>', '<<', '&=', '|=', '>>=', '<<='. </li></ol>
+
+<ol><li> Вариант 1. Чекер cstyle (самописный, рекомендуется 1 курсу). Скачиваем здесь: 
+<file 'c/files/cstyle.py'> cstyle.py </file>
+Проверка кода:
+<bash>
+python3 cstyle file.c
+</bash>
+</li><li>Вариант 2. Чекер cpplint (от google). Ставим из pip-репозитория:
 <bash>
 sudo apt install python3-pip
 pip install cpplint
@@ -18,7 +39,7 @@ pip install cpplint
 <bash>
 cpplint --filter=-legal/copyright file.c
 </bash>
-Вариант 2. Чекер checkpatch (на perl). Скачиваем из github: 
+</li><li>Вариант 3. Чекер checkpatch (от разработчиков ядра LINUX, рекомендуется 2 курсу). Скачиваем из github: 
 <bash>
 wget https://raw.githubusercontent.com/torvalds/linux/master/scripts/checkpatch.pl
 chmod +x checkpatch.pl
@@ -26,6 +47,11 @@ chmod +x checkpatch.pl
 Проверка кода:
 <bash>
 ./checkpatch.pl --no-tree -f file.c
+</bash>
+</li></ol>
+Скрипт быстрой конвертации табуляции в пробелы:
+<bash>
+cat $file | sed 's/\t/    /g' > $file
 </bash>
 
 <h3> Про отладку кода </h3>
@@ -44,7 +70,7 @@ Makefile для компиляции и проверки кода:
 <code>
 %: %.c
 &xrarr;gcc $@.c -o $@ -Wall -Werror -lm
-&xrarr;cpplint --filter=-legal/copyright $@.c
+&xrarr;python3 cstyle $@.c
 </code>
 Вместо стрелок подставьте табуляцию (с пробелами работать не будет).
 
