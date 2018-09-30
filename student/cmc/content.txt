@@ -24,7 +24,7 @@
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=21'> ВМК (класс): до массивов </noa> </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=21'> ВМК (класс): до массивов </a> </td>
 <td> 10 </td>
 <td> 01/10/2018 11:50:00 </td>
 </tr>
