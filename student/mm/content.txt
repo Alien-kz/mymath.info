@@ -42,7 +42,7 @@
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (класс): условный оператор  </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id='> Мехмат (класс): условный оператор  </noa> </td>
 <td> 10 </td>
 <td> 21/09/2018 10:20:00  </td>
 </tr>
@@ -51,7 +51,7 @@
 <td> Цикл while. </td>
 <td> <nofile 'mm/files/present-03.pdf'> present-03.pdf </nofile>  </td>
 <td> <nofile 'mm/files/home-03.pdf'> home-03.pdf </nofile>  </td>
-<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (дом): цикл while</a> </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=12'> Мехмат (дом): цикл while</a> </td>
 <td> 5 </td>
 <td> 02/10/2018 21:00:00 </td>
 </tr>
@@ -60,7 +60,7 @@
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (класс): цикл while</noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id='> Мехмат (класс): цикл while</noa> </td>
 <td> 10 </td>
 <td> 03/10/2018 11:50:00 </td>
 </tr>
@@ -69,7 +69,7 @@
 <td> Символьный тип. </td>
 <td> <nofile 'mm/files/present-04.pdf'> present-04.pdf </nofile>  </td>
 <td> <nofile 'mm/files/home-04.pdf'> home-04.pdf </nofile>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (дом): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id='> Мехмат (дом): </noa> </td>
 <td> 5 </td>
 <td> </td>
 </tr>
