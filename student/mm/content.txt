@@ -49,11 +49,11 @@
 <tr>
 <td> 02/10/2018 </td>
 <td> Цикл while. </td>
-<td> <nofile 'mm/files/present-03.pdf'> present-03.pdf </nofile>  </td>
-<td> <nofile 'mm/files/home-03.pdf'> home-03.pdf </nofile>  </td>
+<td> <file 'mm/files/present-03.pdf'> present-03.pdf </file>  </td>
+<td> <file 'mm/files/home-03.pdf'> home-03.pdf </file>  </td>
 <td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=12'> Мехмат (дом): цикл while</a> </td>
 <td> 5 </td>
-<td> 02/10/2018 21:00:00 </td>
+<td> 03/10/2018 21:00:00 </td>
 </tr>
 <tr>
 <td> 03/10/2018 </td>
