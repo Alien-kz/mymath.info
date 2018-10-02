@@ -32,7 +32,7 @@
 <td> 04/10/2018 </td>
 <td> Строки, указатели, динамические массивы, функции. </td>
 <td> <nofile 'cmc/files/cmc-present-02.pdf'> cmc-present-02.pdf </nofile>  </td>
-<td> <nofile 'cmc/files/cmc-home-02.pdf'> cmc-home-02.pdf </nofile>  </td>
+<td> <file 'cmc/files/cmc-home-02.pdf'> cmc-home-02.pdf </file>  </td>
 <td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=22'> ВМК (дом): указатели </a> </td>
 <td> 10 </td>
 <td> 04/10/2018 21:00:00 </td>
