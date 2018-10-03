@@ -31,9 +31,9 @@
 <tr>
 <td> 04/10/2018 </td>
 <td> Строки, указатели, динамические массивы, функции. </td>
-<td> <nofile 'cmc/files/cmc-present-02.pdf'> cmc-present-02.pdf </nofile>  </td>
+<td> <file 'cmc/files/cmc-present-02.pdf'> cmc-present-02.pdf </file>  </td>
 <td> <file 'cmc/files/cmc-home-02.pdf'> cmc-home-02.pdf </file>  </td>
-<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=22'> ВМК (дом): указатели </a> </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=22'> ВМК (дом): до указателей </a> </td>
 <td> 10 </td>
 <td> 04/10/2018 21:00:00 </td>
 </tr>
@@ -42,13 +42,13 @@
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=23'> ВМК (класс): указатели </a> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=23'> ВМК (класс): до указателей </a> </td>
 <td> 10 </td>
 <td> 05/10/2018 11:50:00 </td>
 </tr>
 <tr>
 <td> 06/10/2018 </td>
-<td> Структуры, динамические структуры, аргументы командной строки. </td>
+<td> Структуры, динамические структуры. </td>
 <td> <nofile 'cmc/files/cmc-present-03.pdf'> cmc-present-03.pdf </nofile>  </td>
 <td> <nofile 'cmc/files/cmc-home-03.pdf'> cmc-home-03.pdf </nofile>  </td>
 <td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=24'> ВМК (дом): дин.структуры </noa> </td>
