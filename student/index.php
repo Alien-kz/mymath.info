@@ -26,7 +26,7 @@
 
 			div_open("Материалы", "top");
 			print_centered_text("Технические");
-			$buttons = array("c" => "gcc",
+			$buttons = array("c" => "C",
                             "python" => "python + matplotlib",
                             "jupyter" => "jupyter",
 							"latex" => "LaTeX",

@@ -1,4 +1,5 @@
-Самая полезная ссылка: <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
+<h3> Полезная ссылка для полных новичков: </h3>
+Читаем: <a href='https://younglinux.info/c'> younglinux.info </a>
 
 <h3> Установка gcc </h3>
 <bash>
@@ -63,8 +64,8 @@ sed -i.bak 's/\t/    /g' file.c
 
 Пример строки компиляции:
 <bash>
-gcc 01.c -o 01 -Wall -Werror -lm -g
-gdb 01
+gcc file.c -o file.c -Wall -Werror -lm -g
+gdb file
 </bash>
 
 <h3> Про Makefile </h3>
@@ -80,5 +81,5 @@ Makefile для компиляции и проверки кода:
 
 Запуск:
 <bash>
-make 01
+make file
 </bash>

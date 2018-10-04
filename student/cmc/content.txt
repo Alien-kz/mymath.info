@@ -1,4 +1,5 @@
 <h3> Материалы 2018-2019 </h3>
+Самая полезная ссылка: <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
 
 <table>
 <tr>
