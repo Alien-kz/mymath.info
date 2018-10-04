@@ -168,6 +168,7 @@ function prepare_code($text, $left_class) {
 
 	$text = str_replace("\n", $code_line_end.$code_line_begin, $text);
 	$text = str_replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;", $text);
+	$text = str_replace("    ", "&nbsp;&nbsp;&nbsp;&nbsp;", $text);
 	$text = $code_line_begin.$text.$code_line_end;
 	$text = "<div class='code_div'>\n".$text."</div>\n";
 	return $text;

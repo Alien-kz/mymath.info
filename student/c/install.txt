@@ -53,9 +53,9 @@ chmod +x checkpatch.pl
 ./checkpatch.pl --no-tree -f file.c
 </bash>
 </li></ol>
-Скрипт быстрой конвертации табуляции в пробелы:
+Скрипт быстрой конвертации табуляции в пробелы (создает резервную копию):
 <bash>
-cat $file | sed 's/\t/    /g' > $file
+sed -i.bak 's/\t/    /g' file.c
 </bash>
 
 <h3> Про отладку кода </h3>
