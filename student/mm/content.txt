@@ -67,20 +67,20 @@
 <tr>
 <td> 05/10/2018 </td>
 <td> Символьный тип. </td>
-<td> <nofile 'mm/files/present-04.pdf'> present-04.pdf </nofile>  </td>
-<td> <nofile 'mm/files/home-04.pdf'> home-04.pdf </nofile>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id='> Мехмат (дом): </noa> </td>
+<td> <file 'mm/files/present-04.pdf'> present-04.pdf </file>  </td>
+<td> <file 'mm/files/home-04.pdf'> home-04.pdf </file>  </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=13'> Мехмат (дом): символьный тип</a> </td>
 <td> 5 </td>
-<td> </td>
+<td> 08/10/2018 21:00:00 </td>
 </tr>
 <tr>
-<td> </td>
+<td> 09/10/2018 </td>
 <td> Практика </td>
 <td> </td>
 <td> </td>
 <td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (класс): </noa> </td>
 <td> 10 </td>
-<td>  </td>
+<td> 09/10/2018 10:20:00 </td>
 </tr>
 <tr>
 <td> Цикл for </td>
