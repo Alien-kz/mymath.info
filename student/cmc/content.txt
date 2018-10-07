@@ -49,10 +49,10 @@
 </tr>
 <tr>
 <td> 06/10/2018 </td>
-<td> Структуры, динамические структуры. </td>
+<td> Динамические матрицы, динамические структуры. </td>
 <td> <file 'cmc/files/cmc-present-03.pdf'> cmc-present-03.pdf </file>  </td>
-<td> <nofile 'cmc/files/cmc-home-03.pdf'> cmc-home-03.pdf </nofile>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=24'> ВМК (дом): дин.структуры </noa> </td>
+<td> <file 'cmc/files/cmc-home-03.pdf'> cmc-home-03.pdf </file>  </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=24'> ВМК (дом): до динамических структур</a> </td>
 <td> 10 </td>
 <td> 11/10/2018 21:00:00 </td>
 </tr>
@@ -61,7 +61,7 @@
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=25'> ВМК (класс): дин.структуры </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=25'> ВМК (класс): до динамических структур </noa> </td>
 <td> 10 </td>
 <td> 12/10/2018 11:50:00  </td>
 </tr>
