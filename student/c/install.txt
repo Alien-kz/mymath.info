@@ -26,7 +26,7 @@ sudo apt-get install build-essential
 </li><li> Пробелами выделяются все битовые бинарные операторы: '&', '|', '>>', '<<', '&=', '|=', '>>=', '<<='. </li></ol>
 
 Варианты чекеров стиля:
-<ol><li> Чекер cstyle (самописный, рекомендуется 1 курсу). Скачиваем здесь: <file 'c/files/cstyle.py'> cstyle.py </file> или прямо в терминале командой wget. Не забываем разрешить выполнение.
+<ol><li> Чекер cstyle (самописный, рекомендуется 1 курсу). Скачиваем здесь: <file 'c/files/cstyle.py'> cstyle.py </file> (английская версия <file 'c/files/cstyle.py'> cstyle-en.py </file>) или прямо в терминале командой wget. Не забываем разрешить выполнение.
 <bash>
 wget http://mymath.info/student/c/files/cstyle.py
 chmod +x ./cstyle.py
