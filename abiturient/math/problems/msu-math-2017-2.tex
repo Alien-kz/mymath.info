@@ -1,0 +1,80 @@
+\documentclass[11pt, a5paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage[inline]{enumitem}	%itemize in row
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usepackage{wrapfig}			%text around figure
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=15pt}
+\sloppy							%correct overfull
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 --- #2
+	\end{large}
+	\end{center}
+
+}
+
+\newcommand{\variant}[2]{
+	\begin{center}
+	\textit{Вариант #2}
+	\end{center}
+}
+
+\newcommand{\unit}[1]{
+	\text{\textit{ #1}}
+}
+\newcommand{\units}[2]{ 
+	\frac{\text{\textit{#1}}}{\text{\textit{#2}}}
+}
+
+\begin{document}
+
+\head{Вступительный экзамен по математике}{2017}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г.~Астана}
+
+\variant{2017}{2}
+
+\begin{enumerate}
+\item Найдите все целые числа, которые лежат между числами $\sqrt{5} \cdot \sqrt{39}$ и $\frac{15-2{,}6}{2-1{,}2}$.
+
+\item Решите уравнение $|x^2-15x+56| = 15x - 52 - x^2$.
+
+\item В 10 коробках с номерами от 1 до 10 лежат только красные и синие шары. Число красных шаров во второй коробке в $\frac54$ раз больше, чем в первой. Количества красных шаров в коробках образуют арифметическую прогрессию, а количества синих шаров в коробках образуют геометрическую прогрессию (в порядке номеров коробок). Количество синих шаров в первой коробке составляет 20\%, а в третьей --- 40\% от числа всех шаров в данной коробке. Найти отношение общего числа синих шаров к общему числу красных шаров.
+
+\item Решите уравнение 
+$$\cos\left(2x + \frac{\pi}{4}\right) + \cos{x} = -\frac{1}{\sqrt{2}}.$$
+
+\item Решите систему уравнений
+$$
+\begin{cases}
+\frac{1}{y^2} \cdot x^{\log_y{x}} = x,\\
+\left( \log_{2} x^3 \right) \cdot \log_{x} \left( 5x - 6y \right) = 9
+\end{cases}
+$$
+
+\item В выпуклом четырехугольнике $ABCD$ $\angle{A} = \angle{D} = 60^{\circ}$, $AD = 24$, $BC = 13$. Окружность с центром на стороне $AD$ касается сторон $AB$, $BC$ и $CD$. Найдите длины сторон $AB$ и $CD$.
+
+\item Найдите все значения параметра $a$, при которых неравенство $$11 + \cos^2{x} > 3 a^2 + 5 a - (4a - 1) \sin{x}$$ выполняется для всех $x$.
+
+\item В правильную четырехугольную пирамиду $SABCD$ ($S$ --- вершина пирамиды) вписан шар. Через центр шара и ребро $AB$ проведена плоскость, которая в пересечении с пирамидой дает четырехугольник $ABMN$. Объемы пирамид $SABMN$ и $SABCD$ относятся как $7 : 25$. Найдите косинус двугранного угла между боковой гранью и основанием исходной пирамиды.
+\end{enumerate}
+
+\newpage
+
+
+\end{document} 
