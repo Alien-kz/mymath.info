@@ -78,16 +78,16 @@
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (класс): </noa> </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=27'> Мехмат (класс): символьный тип</a> </td>
 <td> 10 </td>
 <td> 09/10/2018 10:20:00 </td>
 </tr>
 <tr>
+<td> 16/10/2018 </td>
 <td> Цикл for </td>
-<td> </td>
 <td> <nofile 'mm/files/present-05.pdf'> present-05.pdf </nofile>  </td>
-<td> <nofile 'mm/files/home-05.pdf'> home-05.pdf </nofile>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (дом): </noa> </td>
+<td> <file 'mm/files/home-05.pdf'> home-05.pdf </file>  </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=14'> Мехмат (дом): for </a> </td>
 <td> 5 </td>
 <td> </td>
 </tr>
@@ -96,16 +96,16 @@
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (класс): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=28'> Мехмат (класс): for</noa> </td>
 <td> 10 </td>
 <td>  </td>
 </tr>
 <tr>
-<td> Массивы </td>
-<td> </td>
+<td>  </td>
+<td> Массивы</td>
 <td> <nofile 'mm/files/present-06.pdf'> present-06.pdf </nofile>  </td>
 <td> <nofile 'mm/files/home-06.pdf'> home-06.pdf </nofile>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (дом): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=15'> Мехмат (дом): </noa> </td>
 <td> 5 </td>
 <td> </td>
 </tr>
@@ -114,16 +114,16 @@
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (класс): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=29'> Мехмат (класс): </noa> </td>
 <td> 10 </td>
 <td>  </td>
 </tr>
 <tr>
-<td> Строки и указатели </td>
-<td> </td>
+<td>  </td>
+<td> Строки и указатели</td>
 <td> <nofile 'mm/files/present-07.pdf'> present-07.pdf </nofile>  </td>
 <td> <nofile 'mm/files/home-07.pdf'> home-07.pdf </nofile>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (дом): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=16'> Мехмат (дом): </noa> </td>
 <td> 5 </td>
 <td> </td>
 </tr>
@@ -132,16 +132,16 @@
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (класс): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=30'> Мехмат (класс): </noa> </td>
 <td> 10 </td>
 <td>  </td>
 </tr>
 <tr>
+<td>  </td>
 <td> Функции </td>
-<td> </td>
 <td> <nofile 'mm/files/present-08.pdf'> present-08.pdf </nofile>  </td>
 <td> <nofile 'mm/files/home-08.pdf'> home-08.pdf </nofile>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (дом): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=17'> Мехмат (дом): </noa> </td>
 <td> 5 </td>
 <td> </td>
 </tr>
@@ -150,16 +150,16 @@
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (класс): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=31'> Мехмат (класс): </noa> </td>
 <td> 10 </td>
 <td>  </td>
 </tr>
 <tr>
-<td> Рекурсия </td>
-<td> </td>
+<td>  </td>
+<td> Рекурсия</td>
 <td> <nofile 'mm/files/present-09.pdf'> present-09.pdf </nofile>  </td>
 <td> <nofile 'mm/files/home-09.pdf'> home-09.pdf </nofile>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (дом): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=18'> Мехмат (дом): </noa> </td>
 <td> 5 </td>
 <td> </td>
 </tr>
@@ -168,16 +168,16 @@
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (класс): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=32'> Мехмат (класс): </noa> </td>
 <td> 10 </td>
 <td>  </td>
 </tr>
 <tr>
-<td> Структуры </td>
-<td> </td>
+<td>  </td>
+<td> Структуры</td>
 <td> <nofile 'mm/files/present-10.pdf'> present-10.pdf </nofile>  </td>
 <td> <nofile 'mm/files/home-10.pdf'> home-10.pdf </nofile>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (дом): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=19'> Мехмат (дом): </noa> </td>
 <td> 5 </td>
 <td> </td>
 </tr>
@@ -186,13 +186,13 @@
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (класс): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=33'> Мехмат (класс): </noa> </td>
 <td> 10 </td>
 <td>  </td>
 </tr>
 <tr>
-<td> Динамическая память </td>
-<td> </td>
+<td>  </td>
+<td> Динамическая память</td>
 <td> <nofile 'mm/files/present-11.pdf'> present-11.pdf </nofile>  </td>
 <td> <nofile 'mm/files/home-11.pdf'> home-11.pdf </nofile>  </td>
 <td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (дом): </noa> </td>
@@ -209,8 +209,8 @@
 <td>  </td>
 </tr>
 <tr>
-<td> Двумерная динамическая память </td>
-<td> </td>
+<td>  </td>
+<td> Двумерная динамическая память</td>
 <td> <nofile 'mm/files/present-12.pdf'> present-12.pdf </nofile>  </td>
 <td> <nofile 'mm/files/home-12.pdf'> home-12.pdf </nofile>  </td>
 <td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (дом): </noa> </td>
@@ -227,8 +227,8 @@
 <td>  </td>
 </tr>
 <tr>
+<td>  </td>
 <td> Работа с файлами </td>
-<td> </td>
 <td> <nofile 'mm/files/present-13.pdf'> present-13.pdf </nofile>  </td>
 <td> <nofile 'mm/files/home-13.pdf'> home-13.pdf </nofile>  </td>
 <td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (дом): </noa> </td>

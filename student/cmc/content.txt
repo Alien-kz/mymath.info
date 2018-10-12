@@ -61,7 +61,7 @@
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=25'> ВМК (класс): до динамических структур </noa> </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=25'> ВМК (класс): до динамических структур </a> </td>
 <td> 10 </td>
 <td> 12/10/2018 11:50:00  </td>
 </tr>
