@@ -67,9 +67,9 @@
 </tr>
 <tr>
 <td> 13/10/2018 </td>
-<td> Системные вызовы (read, write, file, dir, fork, exec). </td>
+<td> Системные вызовы (read, write, file, fork, exec). </td>
 <td> <file 'cmc/files/cmc-present-04.pdf'> cmc-present-04.pdf </file>  </td>
-<td> <nofile 'cmc/files/cmc-home-04.pdf'> cmc-home-04.pdf </nofile>  </td>
+<td> <file 'cmc/files/cmc-home-04.pdf'> cmc-home-04.pdf </file>  <file 'cmc/files/avatar.bmp'> avatar.bmp </file></td>
 <td> </td>
 <td> 10 </td>
 <td> 18/10/2018 21:00:00 </td>
