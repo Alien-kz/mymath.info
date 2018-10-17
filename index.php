@@ -21,6 +21,14 @@
 			$buttons = get_main_buttons("");
 			print_head_buttons("", $buttons);
 		?>
+		<div align="center">
+		<div class="content_div">
+			<h3 align='center'> Олимпиада Казахстанского филиала МГУ 20 октября 2018! </h3>
+			<?php
+			print_text(replace_level(file_get_contents("news0.txt"))); 
+			?>
+		</div>
+		</div>
 	
 		<div align="center">
 		<div class="content_div">
@@ -31,8 +39,12 @@
 
 		<div align="center">
 			<?php 
+			div_open("Олимпиада Казахстанского филиала МГУ 20 октября 2018", "");
+			print_text(replace_level(file_get_contents("news0.txt"))); 
+			div_close();
+
 			div_open("Последнее обновление", "");
-			print_text(replace_level(file_get_contents("news.txt"))); 
+			print_text(replace_level(file_get_contents("news1.txt"))); 
 			div_close();
 			?>
 		</div>
