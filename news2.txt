@@ -1,0 +1,18 @@
+Завершилась очередной осенний тур олимпиады Казахстанского филиала МГУ!
+
+Условия задач доступны здесь:
+<file 'prog/msu/problems/msu-2018-10-problems.pdf'> msu-2018-10-problems.pdf </file>
+
+Разбор решений можно найти здесь:
+<file 'prog/msu/solutions/msu-2018-10-solutions.pdf'> msu-2018-10-solutions.pdf </file>
+
+Перейти к дорешиванию можно на сайте олимпиады:
+<a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=40&locale_id=1'> ejudge.msu.kz </a>
+
+Посмотреть финальные результаты можно на сайте олимпиады:
+<a href='http://ejudge.msu.kz/18-10/standings.html'> ejudge.msu.kz  </a>
+
+Не забывайте участвовать в опросе на самую интересную задачу и самое интересное решение
+<a href='https://vk.com/aperture_time'> vk.com/aperture_time </a>
+
+Спасибо большое за участие!

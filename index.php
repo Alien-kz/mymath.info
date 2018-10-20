@@ -25,7 +25,7 @@
 		<div class="content_div">
 			<h3 align='center'> Олимпиада Казахстанского филиала МГУ 20 октября 2018! </h3>
 			<?php
-			print_text(replace_level(file_get_contents("news0.txt"))); 
+			print_text(replace_level(file_get_contents("news2.txt"))); 
 			?>
 		</div>
 		</div>
