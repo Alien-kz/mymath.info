@@ -75,7 +75,7 @@
 <td> 18/10/2018 21:00:00 </td>
 </tr>
 <tr>
-<td>  </td>
+<td> </td>
 <td> Практика </td>
 <td> </td>
 <td> </td>
@@ -86,8 +86,8 @@
 <tr>
 <td> </td>
 <td> Семестровая 1: shell </td>
-<td> <nofile 'cmc/files/cmc-present-05.pdf'> cmc-present-05.pdf </nofile>  </td>
-<td> <nofile 'cmc/files/cmc-home-05.pdf'> cmc-home-05.pdf </nofile>  </td>
+<td> <file 'cmc/files/cmc-present-05.pdf'> cmc-present-05.pdf </file>  </td>
+<td> </td>
 <td> </td>
 <td>  </td>
 <td> </td>
