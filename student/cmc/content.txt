@@ -75,7 +75,7 @@
 <td> 18/10/2018 21:00:00 </td>
 </tr>
 <tr>
-<td> </td>
+<td> 19/10/2018 </td>
 <td> Практика </td>
 <td> </td>
 <td> </td>
@@ -84,7 +84,7 @@
 <td>  </td>
 </tr>
 <tr>
-<td> </td>
+<td> 20/10/2018 </td>
 <td> Семестровая 1: shell </td>
 <td> <file 'cmc/files/cmc-present-05.pdf'> cmc-present-05.pdf </file>  </td>
 <td> </td>
