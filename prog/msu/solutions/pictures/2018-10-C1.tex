@@ -1,0 +1,26 @@
+\begin{tikzpicture}[scale=0.25]
+%\fill[gray] (0, 0) rectangle (4, 2);
+%\fill[gray] (2, 2) rectangle (6, 4);
+
+\fill[gray] (6, 4) rectangle (10, 6);
+\fill[gray] (8, 6) rectangle (14, 8);
+\fill[gray] (12, 8) rectangle (16, 10);
+
+\fill[gray] (16, 10) rectangle (20, 12);
+\fill[gray] (18, 12) rectangle (24, 14);
+\fill[gray] (22, 14) rectangle (26, 16);
+\draw[very thick, step = 2] (0, 0) grid (22, 14);
+\draw[very thick, step = 2] (20, 12) grid (26, 16);
+
+\pgftransformshift{\pgfpoint{1cm}{1cm}}
+\draw[very thin] (0, 0) -- (20, 12);
+\draw[very thin] (20, 12) -- (25, 15);
+\fill[] (0, 0) circle (0.2);
+\fill[] (20, 12) circle (0.2);
+
+\pgftransformshift{\pgfpoint{-1cm}{-1cm}}
+\draw[fill=white] (6, 4) circle (0.4);
+\draw[fill=white] (16, 10) circle (0.4);
+\draw[fill=white] (26, 16) circle (0.4);
+
+\end{tikzpicture}

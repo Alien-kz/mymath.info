@@ -1,0 +1,19 @@
+\begin{center}
+\begin{tikzpicture}[scale=0.25]
+\fill[gray] (0, 0) rectangle (4, 2);
+\fill[gray] (2, 2) rectangle (8, 4);
+\fill[gray] (6, 4) rectangle (12, 6);
+\fill[gray] (10, 6) rectangle (16, 8);
+\fill[gray] (14, 8) rectangle (20, 10);
+\fill[gray] (18, 10) rectangle (22, 12);
+
+\draw[very thick, step = 2] (0, 0) grid (22, 12);
+
+\pgftransformshift{\pgfpoint{1cm}{1cm}}
+\draw[very thin] (0, 0) -- (20, 10);
+\fill[] (0, 0) circle (0.2);
+\fill[] (20, 10) circle (0.2);
+\fill[] (0, 0) circle (0.2);
+\fill[] (20, 10) circle (0.2);
+\end{tikzpicture}
+\end{center}

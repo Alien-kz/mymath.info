@@ -93,7 +93,7 @@
 						show_link_file("$directory/problems/$olymp-$year-problems", "Задачи ".$buttons[$year]);
 						show_link_file("$directory/solutions/$olymp-$year-solutions", "Решения ".$buttons[$year]);
 						print_centered_text("Задачи");
-						show_png_file("$directory/problems/$olymp-$year-$agent");
+						show_png_file("$directory/problems-png/$olymp-$year-$agent");
 					}
 
 					

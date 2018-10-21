@@ -1,7 +1,7 @@
 \documentclass[12pt, a4paper]{article}
 
 \usepackage[T2A]{fontenc}		%cyrillic output
-\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic input
 \usepackage[english, russian]{babel}	%word wrap
 \usepackage{amssymb, amsfonts, amsmath}	%math symbols
 \usepackage{mathtext}			%text in formulas
@@ -9,16 +9,25 @@
 \usepackage{fancyhdr}			%header
 \usepackage{graphicx}			%input pictures
 \usepackage{tikz}				%draw pictures
+\usepackage{pgfplots}			%draw graphics
 \usetikzlibrary{patterns}		%draw pictures: fill
 \usetikzlibrary{calc}			%draw pictures: coordinate calc
-% \usetikzlibrary{external}		%draw pictures: cache pitcures
+% \usetikzlibrary{external}		%draw pictures: cache pictures
 % \tikzexternalize				%cache pictures
 \usepackage{listofitems}		%list of arguments (pictures)
 \usepackage{enumitem}			%enumarate parameters
 \usepackage{titlesec}			%new subsection option
 
+\newcommand{\accept}[2]{
+	\centerline{\boxed{#1}}
+	\newline
+	\centerline{\scriptsize{#2}}
+}
+\newcommand{\reject}[1]{
+	\centerline{#1}
+}
 
-\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=15pt}
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
 \setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
 \sloppy							%correct overfull
 \newcommand{\subsectionbreak}{\clearpage} %new section
