@@ -1,0 +1,109 @@
+\documentclass[10pt, a4paper, landscape]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{longtable}			%long table
+
+\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\sloppy							%correct overfull
+
+\newcommand{\head}[4]
+{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\lhead{#3 \\ #2}
+	\rhead{#1}
+	
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+}
+\newcommand{\accept}[2]{
+	\centerline{\boxed{#1}}
+	\newline
+	\centerline{\scriptsize{#2}}
+}
+\newcommand{\reject}[1]{
+	\centerline{#1}
+}
+\def\arraystretch{1.5}
+
+\begin{document}
+
+\head{Открытая олимпиада по программированию \\ Осенний тур 2018}{20 октября 2018}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\begin{longtable}{|c|c|p{0.12\linewidth}|p{0.25\linewidth}|*{9}{p{0.033\linewidth}|}c|c|}
+\hline
+№ & КФ & Команда & Состав & A & B & C & D & E & F & G & H & I & Итог & Штраф\\
+\hline
+\endhead
+1 &  & IITU 1 & Temirlan Satylkhanov  (МУИТ) \newline  Abay Baimukanov  (МУИТ) \newline Aibar Kuanyshbay  (МУИТ)  & \accept{+}{0:11} & \accept{+1}{0:17} & \accept{+4}{1:33} & \accept{+2}{1:15} & \reject{-21} & \accept{+}{0:29} & \reject{-2} & \accept{+}{0:38} & \accept{+1}{0:22} & 7 & 445\\
+\hline
+2 &  & Чудо Зверята! & Руслан Джанкуразов  (РФМШ) \newline  Батыр Сардарбеков  (РФМШ) \newline Данияр Закарин  (РФМШ)  & \accept{+}{0:30} & \accept{+2}{0:10} & \accept{+}{0:47} &   & \reject{-14} & \accept{+}{0:37} & \accept{+5}{1:55} & \accept{+1}{0:49} & \accept{+1}{0:44} & 7 & 512\\
+\hline
+3 &  & So Seductive & Akhanov Nurdaulet  (KBTU) \newline  Kenen Almat  (KBTU) \newline Omarov Temirlan  (KBTU)  & \accept{+}{0:30} & \accept{+}{0:26} &   & \accept{+1}{2:37} &   & \accept{+}{1:05} &   & \accept{+}{1:51} & \accept{+1}{0:44} & 6 & 473\\
+\hline
+4 &  & Snowy Cube & Журавская Александра  (МГУ) \newline  Камалбеков Тимур  (МГУ) \newline Абайулы Ерулан  (МГУ)  & \accept{+2}{0:24} & \accept{+}{0:14} &   & \reject{-1} &   & \accept{+}{1:05} & \accept{+2}{2:26} & \accept{+3}{2:34} & \accept{+2}{1:44} & 6 & 687\\
+\hline
+5 & 1 & Brain Burst & Бекмаганбетов Бекарыс  (КФ МГУ, ММ-3) \newline  Шарипов Азат  (КФ МГУ, ВМК-3) \newline Аскергалиев Ануар  (КФ МГУ, ВМК-3)  & \accept{+}{0:10} & \accept{+}{0:17} &   &   &   & \accept{+1}{1:24} &   &   & \accept{+1}{0:35} & 4 & 186\\
+\hline
+6 &  & Кокошин Эль & Жусупов  (ЕНУ) \newline  wait for it...  (ЕНУ) \newline Али  (ЕНУ)  & \accept{+2}{0:11} & \accept{+}{0:18} &   &   &   & \accept{+}{0:48} &   &   & \accept{+3}{1:37} & 4 & 274\\
+\hline
+7 &  & dreamer & Ali Soldatbay  (178 лицей)  & \accept{+3}{0:16} & \accept{+4}{0:27} &   &   & \reject{-12} & \accept{+1}{1:06} &   &   & \accept{+}{0:39} & 4 & 308\\
+\hline
+8 & 2 & It's alive! & Болотников Димитрий  (КФ МГУ, ММ-4) \newline  Газизов Куат  (КФ МГУ, ММ-4) \newline Коробов Павел  (КФ МГУ, ММ-4)  & \accept{+1}{0:32} & \accept{+}{0:28} &   &   & \reject{-1} & \accept{+}{2:16} &   &   & \accept{+3}{1:48} & 4 & 384\\
+\hline
+9 & 3 & Murmaider & Азатов Таир  (КФ МГУ, ВМК-2) \newline  Вагнер Алан  (КФ МГУ, ВМК-2) \newline Понамарёв Валерий  (КФ МГУ, ВМК-2)  & \accept{+3}{0:31} & \accept{+1}{0:26} &   &   &   & \accept{+2}{2:09} &   &   & \accept{+4}{1:26} & 4 & 472\\
+\hline
+10 &  & Пыхтельня Скрытого Листа & Естемесов Руслан  (IITU) \newline  Михалко Абдрасул  (IITU) \newline Шатаев Динмухаммед  (IITU)  & \accept{+1}{0:12} & \accept{+}{0:24} &   &   & \reject{-4} & \accept{+3}{2:58} &   &   & \accept{+3}{2:25} & 4 & 499\\
+\hline
+11 &  & Thanos & Muslim N  (IITU) \newline  Abdrakhmanov T  (IITU)  & \accept{+2}{1:32} & \accept{+1}{0:56} &   &   &   & \accept{+1}{2:58} &   &   & \accept{+1}{2:30} & 4 & 576\\
+\hline
+12 & 4 & JGI & Сатыбалды Арсен  (КФ МГУ, ММ-2) \newline  Дукенбай Аслан  (КФ МГУ, ММ-2) \newline Есбай Еркын  (КФ МГУ, ММ-2)  & \accept{+}{0:10} & \accept{+2}{1:00} &   &   &   &   &   &   &   & 2 & 110\\
+\hline
+13 &  & WE ARE VENOM & Sultan A  (ENU) \newline  Yessenbayev A  (ENU) \newline Amandos N  (ENU)  & \accept{+2}{1:18} & \accept{+}{0:41} &   &   & \reject{-3} &   &   & \reject{-1} &   & 2 & 159\\
+\hline
+14 &  & LEUTE & BEKBAYEV AIBEK  (KBTU) \newline  KOZLOV ANDREI  (KBTU) \newline DANIIL OPEL  (KBTU)  & \accept{+3}{0:22} & \accept{+1}{1:13} &   &   & \reject{-1} &   &   &   & \reject{-3} & 2 & 175\\
+\hline
+15 & 5 & Angry Coderz from Moscow & Абдыкалик Чингиз  (КФ МГУ, ВМК-4) \newline  Керопян Агаси  (КФ МГУ, ВМК-4) \newline Татин Алмаз  (КФ МГУ, ВМК-4)  & \accept{+}{1:26} & \accept{+1}{1:13} &   &   & \reject{-72} &   &   & \reject{-3} & \reject{-7} & 2 & 179\\
+\hline
+16 &  & Лучше чем Джиги & Жумахан Меруерт  (Кф МГУ, ММ-2) \newline  Джексембаев Руслан  (Кф МГУ, ММ-2) \newline Жусупов Темирлан  (Кф МГУ, ВМК-2)  & \accept{+3}{0:39} & \accept{+1}{1:01} &   &   &   & \reject{-2} &   & \reject{-7} &   & 2 & 180\\
+\hline
+17 &  & there is no name & D  (KBTU) \newline  B  (KBTU) \newline A  (KBTU)  & \accept{+2}{0:30} & \accept{+1}{1:31} &   &   &   &   &   & \reject{-3} &   & 2 & 181\\
+\hline
+18 & 6 & Boole & Булгаков Анатолий  (КФ МГУ, ВМКМ) \newline  Заричанский Давид (КФ МГУ, ВМКМ)  & \accept{+}{0:49} & \accept{+}{2:16} &   &   &   &   &   &   &   & 2 & 185\\
+\hline
+19 & 7 & Мастерны & Айтасова Нуриза  (КФ МГУ, ВМК-1) \newline  Айкын Алишер  (КФ МГУ, ММ-1) \newline Ережепов Гламжан  (КФ МГУ, ММ-1)  & \accept{+}{1:21} & \accept{+1}{2:19} &   &   &   &   &   &   &   & 2 & 240\\
+\hline
+20 &  & msu & pole 1  (vmk)  & \accept{+4}{1:01} & \accept{+2}{1:23} &   &   &   &   &   &   &   & 2 & 264\\
+\hline
+21 &  & i = i + 1 & Ногаев Нурас  (ЕНУ)  & \accept{+2}{1:50} & \accept{+3}{1:22} &   &   & \reject{-2} & \reject{-1} &   &   &   & 2 & 292\\
+\hline
+22 & 8 & saynyshka & Ихсанов Ахас  (КФ МГУ, ВМК-1) \newline  Кинжитаев Саян  (КФ МГУ, ВМК-1)  & \accept{+}{0:24} &   &   & \reject{-2} &   &   &   & \reject{-1} &   & 1 & 24\\
+\hline
+23 & 9 & Рептилоиды & Молдахметова Индира  (КФ МГУ, ВМК-1) \newline  Кабиден Данияр  (КФ МГУ, ВМК-2) \newline Ялалетдинов Идрис  (КФ МГУ, ВМК-2)  & \accept{+}{0:25} &   &   & \reject{-2} &   &   &   &   &   & 1 & 25\\
+\hline
+24 & 10 & jagdinsky & Мурзабаев  (КФ МГУ, ВМК-1) \newline  Местай  (КФ МГУ, ВМК-1)  & \accept{+1}{1:33} &   &   &   &   &   &   & \reject{-1} &   & 1 & 113\\
+\hline
+25 & 11 & gcc & Жанмуканбетова Гульден  (КФ МГУ, ВМК-1) \newline  Кошкаров Азамат  (КФ МГУ, ВМК-1) \newline Альбек Мади  (КФ МГУ, ВМК-1)  & \accept{+2}{1:30} &   &   & \reject{-2} &   &   &   & \reject{-1} &   & 1 & 130\\
+\hline
+26 & 12 & RitchieTeam & Алиханов Тимур  (КФ МГУ, ВМК-1) \newline  Селевенко Роман  (КФ МГУ, ВМК-1) \newline Айтеев Альнур  (КФ МГУ, ВМК-1)  & \accept{+4}{1:44} &   &   & \reject{-1} &   &   &   & \reject{-3} &   & 1 & 184\\
+\hline
+  &  & Total: &   & 63 & 42 & 6 & 13 & 130 & 22 & 11 & 28 & 41 & 356 &  \\
+\hline
+  &  & Success: &   & 26 & 21 & 2 & 2 & 0 & 11 & 2 & 4 & 11 & 79 &  \\
+\hline
+  &  & \%: &   & 41\% & 50\% & 33\% & 15\% & 0\% & 50\% & 18\% & 14\% & 27\% & 22\% &  \\
+\hline
+\end{longtable}
+
+
+\end{document} 
