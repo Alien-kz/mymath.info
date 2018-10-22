@@ -89,14 +89,14 @@
 <td> <file 'mm/files/home-05.pdf'> home-05.pdf </file>  </td>
 <td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=14'> Мехмат (дом): for </a> </td>
 <td> 5 </td>
-<td> > 22/10/2018 21:00:00 </td>
+<td> 22/10/2018 21:00:00 </td>
 </tr>
 <tr>
-<td> </td>
+<td> 23/10/2018 </td>
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=28'> Мехмат (класс): for</noa> </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=28'> Мехмат (класс): for</a> </td>
 <td> 10 </td>
 <td>  </td>
 </tr>
