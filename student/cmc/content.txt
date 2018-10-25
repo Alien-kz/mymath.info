@@ -89,22 +89,13 @@
 <td> <file 'cmc/files/cmc-present-05.pdf'> cmc-present-05.pdf </file>  </td>
 <td> </td>
 <td> </td>
-<td>  </td>
-<td> </td>
-</tr>
-<tr>
-<td>  </td>
-<td> Семестровая 1: shell (простой) </td>
-<td> </td>
-<td> </td>
-<td> </td>
 <td> 50 </td>
 <td>  </td>
 </tr>
 <tr>
-<td>  </td>
+<td> 26/10/2018 </td>
 <td> Семестровая 1: shell (конвейер) </td>
-<td> </td>
+<td> <file 'cmc/files/cmc-present-06.pdf'> cmc-present-06.pdf </file> </td>
 <td> </td>
 <td> </td>
 <td> 50 </td>
