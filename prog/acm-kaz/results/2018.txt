@@ -1,0 +1,135 @@
+Rank	Team	A	B	C	D	E	F	G	H	I	J	K	L	=	Time
+1	Kazakh-British Technical University 1 (Amanov, Zhussupov, Aman)	+ (7:36)	+1 (30:45)	+ (140:56)	+ (153:46)	+ (13:21)	+ (131:56)	+ (41:25)	+1 (247:37)	+2 (75:34)	+ (49:27)	+ (33:30)	+8 (286:18)	12	1445
+2	Republic physical and mathematical school 1 (Zakarin, Sardarbekov, Dzhankurazov)	+ (15:31)	+ (19:25)	+1 (85:36)	+2 (93:19)	+ (35:41)	+ (167:11)	+ (27:34)	+1 (226:54)	+2 (143:59)	+1 (54:58)	+ (44:18)	-6	11	1048
+3	International IT University 1 (Kuanyshbay, Baimukanov, Satylkhanov)	+ (10:42)	+1 (23:54)	+ (55:52)	-6	+ (32:10)	+ (183:59)	+ (74:43)	.	+1 (241:08)	+ (85:17)	+ (47:10)	.	9	790
+4	Nazarbayev University 1 (Omarov, Batyrkhan, Kairly)	+ (20:29)	+ (52:09)	+ (205:50)	+3 (242:54)	+ (41:44)	-2	+ (33:57)	.	+ (118:40)	+ (86:01)	+ (26:22)	-2	9	883
+5	Kazakh-British Technical University 2 (Kenen, Omarov, Akhanov)	+ (9:18)	+1 (22:35)	-3	.	+1 (27:09)	+ (299:13)	+ (67:48)	.	+ (62:45)	+4 (176:55)	+1 (37:04)	.	8	839
+6	Nazarbayev University 2 (Manabayev, Aitzhanov, Ilyassov)	+ (25:51)	+1 (30:42)	.	.	+ (53:55)	+ (225:23)	+ (21:18)	.	+1 (293:10)	+1 (201:45)	+1 (73:23)	.	8	1001
+7	Kazakhstan Branch of Moscow State University 1 (Bekmaganbetov, Sharipov, Askergali)	+ (43:27)	+ (36:05)	.	.	+ (26:13)	.	+ (68:58)	.	+ (144:53)	+ (89:15)	+ (55:20)	-6	7	461
+8	Nazarbayev University 3 (Iyembergen, Asmatullayev, Khassen)	+ (14:38)	+1 (37:06)	-3	.	+ (26:00)	.	+ (65:30)	-7	+1 (178:07)	+1 (139:56)	+1 (71:33)	.	7	610
+9	Nazarbayev University 6 (Aluadin, Rakhmatullin, Khaireden)	+ (37:02)	+1 (56:33)	.	.	+1 (41:26)	.	+ (67:41)	.	+2 (238:48)	+ (90:40)	+ (63:31)	.	7	672
+10	Kazakh-British Technical University 5 (Ayapbergen, Kali, Bolatbekov)	+ (25:07)	+ (41:23)	.	.	+1 (43:29)	.	+ (56:44)	.	+1 (284:51)	+1 (118:22)	+ (49:38)	-2	7	676
+11	Nazarbayev University 4 (Bolatov, Sariyev, Temir)	+ (19:59)	+ (54:50)	.	.	+ (68:41)	.	+ (108:56)	.	+ (241:05)	+ (181:11)	+ (37:36)	-3	7	708
+12	Kazakh-British Technical University 4 (Aimagambetov, Zhumashev, Kussainov)	+ (28:02)	+ (44:59)	.	.	+ (10:06)	+1 (151:50)	+ (51:42)	.	.	+6 (296:09)	+ (83:56)	.	7	803
+13	Nazarbayev University 10 (Suleimenov, Khuzyakhmetova, Adambek)	+ (34:38)	+ (22:52)	.	.	+1 (51:29)	.	+ (75:49)	-2	+ (258:29)	+1 (137:06)	+2 (192:03)	.	7	849
+14	Nazarbayev University 19 (Tarpanov, Ilyas, Khamiyev)	+ (13:47)	+ (62:03)	.	.	+3 (137:04)	.	+ (77:11)	.	+ (220:34)	+ (165:53)	+2 (99:13)	.	7	873
+15	Kazakh-British Technical University 6 (Okas, Ormanov, Balzhanov)	+ (14:51)	+ (27:35)	.	.	+ (108:29)	.	+2 (214:47)	.	+ (160:10)	+ (260:06)	+ (98:35)	.	7	921
+16	International IT University 2 (Tussupbekov, Khlynovskiy, Chesnokov)	+1 (38:29)	+1 (61:47)	.	+ (169:56)	+1 (102:07)	.	+ (138:23)	.	-8	+ (285:47)	+ (81:47)	.	7	934
+17	Nazarbayev University 7 (Yussupov, Kozhakhmet, Batyrbek)	+ (80:33)	+2 (49:50)	-2	.	+3 (129:11)	.	+ (159:53)	.	+ (88:34)	+1 (231:16)	+5 (228:39)	.	7	1184
+18	Kazakh-British Technical University 3 (Kozhakhmetov, Nuptebek, Seitzhan)	+ (14:29)	+1 (39:54)	.	.	+ (23:34)	-1	+1 (90:10)	.	.	+1 (140:20)	+ (30:48)	.	6	396
+19	Eurasian National University named L.N. Gumilev 3 (Zhussupov, Abdilmanov, Nogayev)	+ (26:52)	+ (56:40)	.	.	+ (43:07)	.	+ (91:43)	.	.	+ (144:05)	+2 (98:35)	.	6	498
+20	International IT University 3 (Oral, Auganov, Sarsenov)	+ (20:51)	+2 (63:50)	.	-5	+ (41:01)	.	+ (103:43)	.	-2	+1 (141:21)	+1 (88:30)	.	6	536
+21	Kazakh-British Technical University 9 (Baigenzhin, Khinatolla, Absatov)	+ (7:58)	+ (38:04)	.	-21	+ (41:40)	.	+ (47:02)	.	.	+2 (199:29)	+4 (105:38)	.	6	557
+22	Nazarbayev University 5 (Muryshkin, Maratkhan, Jubatyrov)	+ (31:46)	+ (42:23)	.	.	+ (60:08)	.	+ (83:50)	.	.	+1 (119:00)	+3 (162:50)	.	6	577
+23	Kazakh-British Technical University 7 (Tulebayeva, Prenov, Toremuratuly)	+ (15:03)	+ (50:23)	-1	.	+3 (123:59)	.	+ (30:39)	.	-5	+2 (167:46)	+2 (112:53)	.	6	637
+24	Kazakh-British Technical University 27 (Zhaskairatov, Mirzagaliyev, Baudinbay)	+1 (74:51)	+ (82:39)	.	.	+ (76:38)	.	+ (88:37)	.	.	+ (222:11)	+ (124:02)	.	6	686
+25	Kazakh-British Technical University 8 (Safargaliyev, Abdullayev, Utebaliyev)	+ (25:09)	+1 (55:33)	.	.	+1 (92:40)	.	+2 (86:10)	.	.	+1 (219:17)	+1 (129:14)	.	6	726
+26	Kazakh-British Technical University 12 (Dairov, Sabit, Saidagali)	+ (25:10)	+3 (216:22)	.	.	+ (48:48)	.	+ (114:09)	.	.	+1 (203:47)	+ (121:28)	.	6	807
+27	Kazakh-British Technical University 10 (Supiyev, Turmukhanbet, Yesbay)	+ (69:56)	+ (25:19)	-1	.	+3 (137:32)	.	+2 (72:45)	.	.	+3 (247:46)	+1 (123:46)	.	6	853
+28	Kazakhstan Branch of Moscow State University 2 (Azatov, Vagner, Ponamaryov)	+ (54:04)	+1 (29:37)	.	.	+ (89:56)	.	+ (247:13)	.	.	+ (284:25)	+3 (181:53)	.	6	964
+29	Suleyman Demirel University 2 (Yernat, Sapayev, Maraimov)	+3 (93:20)	+ (38:32)	.	.	+5 (116:01)	.	+ (120:33)	.	.	+3 (234:49)	+ (178:30)	.	6	999
+30	Nazarbayev University 17 (Aimenov, Zhursinbek, Kuanysh)	+ (25:04)	+3 (133:57)	.	.	+2 (119:28)	.	+ (159:55)	.	.	+ (183:54)	+7 (267:19)	.	6	1126
+31	Nazarbayev University 9 (Konstantinov, Almas, Nabiyeva)	+ (25:46)	+ (189:26)	-1	-2	+ (233:49)	.	+ (234:28)	.	.	+ (232:37)	+ (235:16)	.	6	1148
+32	International IT University 4 (Abdrashim, Bakhoduri, Abdysalam)	+5 (179:39)	+2 (69:16)	.	.	+ (107:20)	.	+1 (245:13)	.	.	+1 (297:44)	+1 (210:07)	.	6	1307
+33	Karaganda State Technical University 1 (Daukishov, Kim, Velinskiy)	+ (17:03)	+ (28:11)	.	.	+ (44:05)	.	+1 (147:14)	.	.	.	+4 (114:49)	-1	5	450
+34	Kazakh-British Technical University 28 (Temirbay, Umarov, Kurmanbay)	+ (30:36)	+1 (77:56)	.	.	+ (53:51)	.	+ (164:33)	.	.	-3	+1 (124:57)	.	5	488
+35	Kazakh National University named Al-Farabi 3 (Mambetniyazov, Yerimbetov, Kutlymurat)	+ (24:06)	+1 (10:00)	.	.	+1 (69:28)	.	+1 (271:26)	-3	.	-4	+1 (129:59)	-2	5	583
+36	Suleyman Demirel University 1 (Lekerov, Sovet, Yerlan)	+1 (33:44)	+1 (76:26)	.	.	+ (102:27)	.	+ (151:57)	.	.	-2	+2 (227:57)	.	5	669
+37	Nazarbayev University 20 (Mussagali, Almukhan, Seit)	+ (20:57)	+ (44:00)	.	.	+ (182:16)	.	+ (231:09)	.	.	-2	+2 (178:05)	.	5	695
+38	Nazarbayev University 8 (Mussa, Seilkhanov, Ginet)	+1 (27:59)	+2 (115:09)	.	.	+ (79:02)	.	+1 (134:05)	.	.	.	+3 (205:47)	.	5	700
+39	Kazakh-British Technical University 11 (Duskaliyev, Bekbayev, Li)	+ (27:16)	+1 (172:27)	.	.	+ (127:19)	.	+ (152:28)	.	.	.	+ (243:51)	.	5	741
+39	Nazarbayev University 26 (Kunzhol, Babanov, Azimkhan)	+1 (72:06)	+ (89:58)	.	.	+ (188:58)	.	+ (171:36)	.	.	-3	+2 (161:45)	.	5	741
+41	Nazarbayev University 16 (Dairabay, Doskul, Baisyn)	+ (54:31)	+3 (135:51)	.	.	+1 (193:55)	.	+ (224:01)	.	.	.	+1 (249:04)	.	5	955
+42	Kazakh-British Technical University 15 (Beshimov, Smailov, Ospanova)	+1 (83:18)	+3 (167:37)	.	.	+ (149:05)	.	+ (134:33)	.	.	.	+8 (232:59)	.	5	1005
+43	Nazarbayev University 21 (Kazbek, Shakipov, Turysbek)	+ (45:08)	+ (27:27)	.	.	+ (69:53)	.	+ (113:53)	.	.	-2	-6	.	4	254
+44	Aktau State University named after Sh. Yessenov 2 (Zhantileuov, Sarsenbek, Kassanov)	+ (38:37)	+1 (47:40)	.	.	+1 (73:28)	.	-23	.	.	.	+ (104:14)	.	4	302
+45	Eurasian National University named L.N. Gumilev 2 (Zakrikchinov, Tleubergenov, Abdikalikova)	+ (96:26)	+ (19:00)	.	.	+ (127:16)	.	.	.	.	-8	+ (263:15)	.	4	505
+46	Karaganda State Technical University 3 (Lekhman, Tissen, Omar)	+1 (56:03)	+ (132:25)	.	.	+1 (112:15)	.	+ (205:02)	.	.	.	-3	.	4	545
+47	Eurasian National University named L.N. Gumilev 4 (Pulanbekov, Nagmetulla, Orynbassar)	+ (52:09)	+ (52:49)	.	-2	+6 (199:01)	.	.	.	.	.	+2 (155:25)	.	4	618
+48	Kazakh Turkish University named Hoja Akhmed Yassawe 1 (Tashkyn, Taspolat, )	+ (24:08)	+2 (108:54)	.	.	+2 (196:31)	.	+1 (247:13)	.	.	.	-1	.	4	675
+49	Nazarbayev University 18 (Zeinulla, Sultanov, Bekbayeva)	+ (37:03)	+1 (99:20)	.	.	-4	.	+ (192:14)	.	.	.	+2 (292:47)	.	4	680
+50	International IT University 5 (Shataev, Mikhalko, Yestemessov)	+ (66:37)	+ (56:29)	.	.	+12 (267:32)	.	-1	.	.	.	+1 (129:53)	.	4	778
+51	Kazakh-British Technical University 16 (Musaev, Duisen, Sarybayev)	+ (43:51)	+3 (128:55)	.	.	+5 (296:17)	.	-1	.	.	.	+6 (195:01)	.	4	942
+52	Nazarbayev University 11 (Alimbay, Azimov, Umetov)	+ (32:31)	+ (82:59)	.	.	.	.	+2 (246:18)	.	.	.	-11	.	3	400
+53	Nazarbayev University 24 (Akhynov, Khalimov, Turtayev)	+ (25:19)	+1 (124:26)	.	.	-4	.	+1 (236:24)	.	.	.	.	.	3	425
+54	International IT University 8 (Kurbanali, Ziyatbek, Baimbet)	+ (32:58)	+2 (244:55)	.	.	+ (128:45)	.	.	.	.	.	-5	.	3	444
+55	Eurasian National University named L.N. Gumilev 1 (Yessenbayev, Amandos, Sultan)	+ (27:03)	+ (125:38)	-2	.	-7	.	-1	.	.	.	+1 (289:07)	.	3	461
+56	Nazarbayev University 13 (Otaniyozov, Amantayev, Semedyarov)	+2 (21:59)	+1 (144:46)	.	.	-3	.	-2	.	.	.	+3 (212:59)	.	3	497
+57	Nazarbayev University 12 (Nazir, Kaldykhanov, Issatayev)	+ (27:25)	+1 (213:48)	.	-1	+ (265:09)	.	-1	-3	.	.	.	.	3	525
+58	Eurasian National University named L.N. Gumilev 5 (Zhumagaliyev, Damysbek, Zhalelov)	+ (36:30)	+3 (205:16)	.	.	+4 (154:51)	.	.	.	.	.	.	.	3	535
+59	Kazakh-British Technical University 13 (Karasayev, Dyussyumbayev, Baqytnuruly)	+ (19:23)	-2	.	.	+4 (155:33)	.	-1	.	.	.	+10 (292:29)	.	3	746
+60	Kazakh Turkish University named Hoja Akhmed Yassawe 2 (Tashkyn, Taspolat, Usen)	+6 (67:43)	+ (238:10)	.	.	+4 (296:14)	.	.	.	.	.	.	.	3	801
+61	Aktau State University named after Sh. Yessenov 1 (Junebayev, Amangos, )	+1 (120:30)	+7 (286:27)	.	.	+6 (221:33)	.	.	.	.	.	-4	.	3	907
+62	Kazakh National Technical University named Satpayev 2 (Sapargaliev, Sejіtmat, Tasybekov)	+1 (77:22)	+3 (72:02)	.	-10	.	.	.	.	.	.	.	.	2	229
+63	Kazakh-British Technical University 19 (Abdykarim, Kokpanbayev, Shakirtkhanov)	+1 (52:55)	.	.	.	+ (203:23)	.	.	.	.	.	.	.	2	275
+64	Kazakh National Technical University named Satpayev 1 (Dauletya, Tүjmebay, Daniyanov)	+2 (55:39)	+2 (147:18)	.	.	-5	.	.	.	.	.	.	.	2	282
+65	Semipalatinsk State University named Shakarim 2 (Oralbayev Ernar)	+ (135:43)	+ (159:45)	.	.	.	.	.	.	.	.	.	.	2	294
+66	Suleyman Demirel University 4 (Akhmetkerey, Bersugir, Khuan)	+1 (130:54)	+2 (143:14)	.	.	-1	.	.	.	.	.	.	.	2	333
+67	Semipalatinsk State University named Shakarim (Oralbaev, Sumbembaev, Mellatova)	+ (173:09)	+ (222:38)	-2	-4	-1	.	.	.	.	.	.	.	2	395
+68	Suleyman Demirel University 5 (Akilbek, Parmanov, Gaidarov)	+4 (138:06)	+1 (193:48)	.	-1	.	.	.	.	.	.	.	.	2	431
+69	Suleyman Demirel University 3 (Satemirov, Baigarayev, Mustakhov)	+1 (111:47)	+6 (266:36)	.	.	.	.	-2	.	.	.	.	.	2	517
+70	Kazakh-British Technical University 14 (Kozhakova, Alipbayev, Suleiman)	+ (27:03)	.	.	.	-1	.	.	.	.	.	-3	.	1	27
+71	Karaganda State University named Buketov (Erkin, Daku, Sarsembaev)	+ (28:38)	-2	.	.	-2	.	.	-3	.	.	.	.	1	28
+71	Nazarbayev University 22 (Biman, Kudaibergen, Toktassyn)	+ (28:25)	.	.	-6	.	.	.	.	.	.	.	.	1	28
+73	Kazakh-British Technical University 18 (Bolat, Nassyrkhan, Zhumagaziyeva)	+ (29:22)	-2	.	-1	-2	.	.	.	.	.	.	.	1	29
+74	International IT University 20 (Kairliev Alibek, Kenes Bainur, Sultan Kuanysh)	+ (38:27)	.	.	.	-5	.	.	.	.	.	.	.	1	38
+75	International IT University 7 (Kalibek, Sartayev, Sariyev)	+ (41:47)	.	.	.	.	.	.	.	.	.	.	.	1	41
+76	Kazakh-German University (Batov, Shlegel, Stukalova)	+1 (28:14)	.	.	-2	.	.	-1	.	.	.	-1	.	1	48
+77	Nazarbayev University 23 (Akylbekov, Shaiholla, Chan)	+ (49:11)	.	.	-3	-6	.	-4	.	.	.	-1	.	1	49
+78	International IT University 18 (Assem, Yerden, Alisher)	+ (60:23)	.	.	.	.	.	.	.	.	.	.	.	1	60
+79	International IT University 11 (Kairat, Sembi, Kuatbek)	+ (65:14)	.	.	.	.	.	.	.	.	.	.	.	1	65
+80	International IT University 14 (Abutalip, Қyryқbaev, ZHanazhan)	+1 (46:30)	.	.	-4	-2	.	.	.	.	.	-3	.	1	66
+81	Kazakh-British Technical University 17 (Sidakina, Omarov, Baibolatova)	+2 (33:18)	.	.	.	-5	.	.	.	.	.	-7	.	1	73
+82	Kazakh-British Technical University 22 (Khibadullin, Shakabayev, Mukhametkazin)	+ (74:30)	.	.	.	-19	.	-2	.	.	.	.	.	1	74
+83	International IT University 23 (Makubek Narkozy, Merkebaiuly Medet, Pazyl Erbolat)	+ (76:32)	.	.	.	.	.	.	.	.	.	.	.	1	76
+84	International IT University 21 (Abdolla, Zhumabek, Namiyaly)	+1 (65:16)	.	.	.	.	.	.	.	.	.	.	.	1	85
+85	International IT University 22 (Zhubaniazov Sultan, Baimbet Daurzhan, Nurlan Daryn)	+1 (69:09)	.	.	.	.	.	.	.	.	.	.	.	1	89
+86	International IT University 9 (Uteshev, Salimzhan, Madyshanov)	+ (108:31)	.	.	.	.	.	.	.	.	.	.	.	1	108
+87	Kazakh-British Technical University 20 (Eldes, Kairatuly, Seifulla)	+2 (70:49)	-5	.	.	-2	.	.	.	.	.	-1	.	1	110
+88	International IT University 26 (Moldakhmet Assel, Sultanova Nazerke, Shabdanbek Moldir)	+ (113:54)	.	.	.	.	.	.	.	.	.	.	.	1	113
+89	Kazakh National University named Al-Farabi 6 (Sabit, Kanat, Rүstem)	+2 (74:54)	.	.	.	.	.	.	.	.	.	.	.	1	114
+90	International IT University 25 (Bolatov Dias, Serikbay Duman, Turganbai Sabyrzhan)	+ (123:59)	.	.	.	.	.	.	.	.	.	.	.	1	123
+91	International IT University 24 (Dauytbekova Meruert, Berdigalieva Albina, Satyshova Dana)	+ (127:40)	.	.	.	.	.	.	.	.	.	.	.	1	127
+92	Pavlodar State University named S. Toraigyrov 1 (Myssak, Myssak, Khodyrev)	-2	.	.	.	.	.	+ (169:12)	.	.	.	.	.	1	169
+92	International IT University 15 (Bolatzhanuly, Kelsingazin, Baidulla)	+4 (89:56)	.	.	.	-4	.	.	.	.	.	.	.	1	169
+94	International IT University 17 (Amirzhan, Alikhan, Kuanysh)	+1 (150:18)	.	.	.	.	.	.	.	.	.	.	.	1	170
+95	Kazakh-British Technical University 23 (Assimov, Mynbay, Ganiyev)	+4 (104:18)	.	.	.	.	.	.	.	.	.	.	.	1	184
+96	Kostanay State University named A. Baitursynov (Kulmahan, Tulegenov, Manakov)	+5 (99:34)	.	.	-2	-2	.	-1	.	.	.	.	.	1	199
+96	Narxoz University 1 (Mambetkulov, Orynbayev, Beibitova)	+2 (159:18)	-1	.	.	.	.	.	.	.	.	.	.	1	199
+98	International IT University 19 (Demeubaeva, Bіlіmzhorova, Kuandyk)	+4 (130:49)	.	.	.	.	.	.	.	.	.	.	.	1	210
+99	Almaty University of Power Engineering & Telecommunications 1 (Miroshnikov, Kyzdarbekov, Simonov)	-1	.	.	.	.	.	-2	.	.	.	.	.	0	0
+99	Almaty University of Power Engineering & Telecommunications 2 (Timuruly, Melis, Akashov)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Almaty University of Power Engineering & Telecommunications 3 (Ten, , )	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Almaty University of Power Engineering & Telecommunications 4 (, , )	-2	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Almaty University of Power Engineering & Telecommunications 5 (, , )	-2	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Almaty University of Power Engineering & Telecommunications 6 (Ksovreli, Svanidze, )	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	International IT University 6 (Shaizhan, Alibek, Rsaliyev)	-6	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Karaganda Economic University of Kazpotrebsoyuz 1 (Ptitsyn, Spitsyn, Zhukov)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Karaganda Economic University of Kazpotrebsoyuz 2 (Weber, Bugayets, Almambetov)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Karaganda State Technical University 2 (Axanov, Saden, Seitkaliyev)	-1	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Kazakh National University named Al-Farabi 1 (Abilov, Bektursyn, Toyekin)	-3	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Kazakh National University named Al-Farabi 2 (Kabyken, Mukhambetov, Tolekov)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Kazakh National University named Al-Farabi 4 (Khodzhabekov, , )	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Kazakh-British Technical University 21 (Imangaly, Nugmanova, Atabay)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Kazakh-British Technical University 25 (Akhmetov, Temirbek, Ospan)	-12	-2	.	.	.	.	.	.	.	.	.	.	0	0
+99	Kazakh-British Technical University 26 (Ramazan, Kurmangali, Zhussipov)	-8	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Kazakhstan Branch of Moscow State University 3 (Gazizov, Korobov, Bolotnikov)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Military Engineering Institute of Radioelectronics and Communication (Segizbay, , )	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Narxoz University 2 (Azizov, Mordacheva, )	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Nazarbayev University 14 (Sapraliyev, Smagulov, Amirkhanov)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Nazarbayev University 15 (Amangeldiyev, Mukashov, Sagynov)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Nazarbayev University 25 (Kaspakov, Yeskabyl, Sakenov)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Nazarbayev University 27 (Yeltayev, Shamil, Zhanbek)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	North Kazakhstan State University (Kurmashev, , )	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Pavlodar State University named S. Toraigyrov 2 (Sabitov, Kadyrbay, Karayev)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	South Kazakhstan State University named M. Auezov (Kenzhebayeva, , )	-2	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	The Institute of New Information Technologies at KSUCTA (Boiutov, , )	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	International IT University 12 (Marlan, Lepsybaeva, Kumarbek)	.	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	International IT University 13 (Копбосын, Байымбет)	-3	.	.	.	.	.	.	.	.	.	.	.	0	0
+99	Kazakh National Technical University named Satpayev 3 (Zaurbekov, Kemalov)	.	.	.	.	-2	.	.	.	.	.	.	.	0	0
+99	International IT University 16 (Smagulov, Kadirov)	-2	.	.	.	.	.	.	.	.	.	.	.	0	0
+	Total runs	243	160	21	81	209	10	107	23	40	91	192	31
+	Accepted	99	67	4	4	58	6	50	2	15	34	52	1
+	Rejected	144	93	17	77	151	4	57	21	25	57	140	30
+	First Accept	7:36	10:00	55:52	93:19	10:06	131:56	21:18	226:54	62:45	49:27	26:22	286:18
+	Last Accept	179:39	286:27	205:50	242:54	296:17	299:13	294:32	247:37	293:10	297:44	298:29	286:18

@@ -243,10 +243,21 @@ function select_kaz($table, $colomn, $needles) {
 }
 
 function mark_plus($table) {
+	$start = 0;
+	$found = true;
+	foreach ($table['header'] as $header) {
+		if ($header == "A") {
+			$found = true;
+			break;
+		}
+		$start += 1;
+	}
+	if (!$found)
+		$start = 2;
 	$height = count($table) - 1;
 	for ($i = 0; $i < $height; $i++) {
 		$width = count($table[$i]) - 1;
-		for ($j = 2; $j < $width; $j++) {
+		for ($j = $start; $j < $width; $j++) {
 			$cell = $table[$i][$j];
 			$cell = preg_replace("/\+(\d*)/", "<div class='accepted'>+$1</div>", $cell);
 			$cell = preg_replace("/\-(\d*)/", "<div class='rejected'>-$1</div>", $cell);
