@@ -111,7 +111,7 @@
 <file 'mm/files/work-1-2017.pdf'> Контрольная 2017 год </file>
 </td>
 <td> </td>
-<td> 40 </td>
+<td> 30 </td>
 <td>  </td>
 </tr>
 <tr>
