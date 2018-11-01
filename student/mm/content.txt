@@ -117,7 +117,7 @@
 <tr>
 <td>  </td>
 <td> Массивы</td>
-<td> <nofile 'mm/files/present-06.pdf'> present-06.pdf </nofile>  </td>
+<td> <file 'mm/files/present-06.pdf'> present-06.pdf </file>  </td>
 <td> <nofile 'mm/files/home-06.pdf'> home-06.pdf </nofile>  </td>
 <td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=15'> Мехмат (дом): </noa> </td>
 <td> 5 </td>
