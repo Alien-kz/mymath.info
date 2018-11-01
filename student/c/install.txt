@@ -77,7 +77,6 @@ gcc file.c -o file.c -Wall -Werror -lm -fsanitize=undefined -fsanitize=address
 </bash>
 
 
-
 <h3> Про Makefile </h3>
 Читаем: <a href='https://habr.com/post/155201/'> habr.com </a>
 
