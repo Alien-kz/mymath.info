@@ -121,32 +121,32 @@
 <td> <file 'mm/files/home-06.pdf'> home-06.pdf </file>  </td>
 <td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=15'> Мехмат (дом): массивы </a> </td>
 <td> 5 </td>
-<td> >05/11/2018 21:00:00 </td>
+<td> 05/11/2018 21:00:00 </td>
 </tr>
 <tr>
-<td> </td>
+<td> 05/11/2018 </td>
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=29'> Мехмат (класс): </noa> </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=29'> Мехмат (класс): массивы </a> </td>
 <td> 10 </td>
-<td>  </td>
+<td> 05/11/2018 11:50:00 </td>
 </tr>
 <tr>
-<td>  </td>
+<td> 07/11/2018 </td>
 <td> Строки и указатели</td>
 <td> <nofile 'mm/files/present-07.pdf'> present-07.pdf </nofile>  </td>
 <td> <nofile 'mm/files/home-07.pdf'> home-07.pdf </nofile>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=16'> Мехмат (дом): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=16'> Мехмат (дом): строки </noa> </td>
 <td> 5 </td>
-<td> </td>
+<td> >12/11/2018 21:00:00  </td>
 </tr>
 <tr>
 <td> </td>
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=30'> Мехмат (класс): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=30'> Мехмат (класс): строки </noa> </td>
 <td> 10 </td>
 <td>  </td>
 </tr>
