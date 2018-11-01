@@ -115,11 +115,11 @@
 <td>  </td>
 </tr>
 <tr>
-<td>  </td>
+<td> 02/11/2018 </td>
 <td> Массивы</td>
 <td> <file 'mm/files/present-06.pdf'> present-06.pdf </file>  </td>
-<td> <nofile 'mm/files/home-06.pdf'> home-06.pdf </nofile>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=15'> Мехмат (дом): </noa> </td>
+<td> <file 'mm/files/home-06.pdf'> home-06.pdf </file>  </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=15'> Мехмат (дом): </a> </td>
 <td> 5 </td>
 <td> </td>
 </tr>
