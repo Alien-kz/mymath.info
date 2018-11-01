@@ -137,7 +137,7 @@
 <td> Строки и указатели</td>
 <td> <nofile 'mm/files/present-07.pdf'> present-07.pdf </nofile>  </td>
 <td> <nofile 'mm/files/home-07.pdf'> home-07.pdf </nofile>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=16'> Мехмат (дом): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=16'> Мехмат (дом): массивы </noa> </td>
 <td> 5 </td>
 <td> </td>
 </tr>
