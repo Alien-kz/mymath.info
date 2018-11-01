@@ -68,6 +68,16 @@ gcc file.c -o file.c -Wall -Werror -lm -g
 gdb file
 </bash>
 
+<h3> Про санитайзеры </h3>
+Читаем: <a href='https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html'> gcc.gnu.org </a>
+
+Сберечь время и нервы помогут санитайзеры (выход за границы массивы и некорретное разыменования указателей):
+<bash>
+gcc file.c -o file.c -Wall -Werror -lm -fsanitize=undefined -fsanitize=address
+</bash>
+
+
+
 <h3> Про Makefile </h3>
 Читаем: <a href='https://habr.com/post/155201/'> habr.com </a>
 
