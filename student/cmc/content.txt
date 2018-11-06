@@ -102,12 +102,12 @@
 <td>  </td>
 </tr>
 <tr>
+<td> 06/11/2018  </td>
+<td> Семестровая 1: shell (дополнения) </td>
+<td> <file 'cmc/files/cmc-present-07.pdf'> cmc-present-07.pdf </file>  </td>
 <td> </td>
-<td> Семестровая 2: тестирующая система </td>
-<td> <nofile 'cmc/files/cmc-present-06.pdf'> cmc-present-06.pdf </nofile>  </td>
-<td> <nofile 'cmc/files/cmc-home-06.pdf'> cmc-home-06.pdf </nofile>  </td>
 <td> </td>
-<td>  </td>
+<td> </td>
 <td> </td>
 </tr>
 <tr>
