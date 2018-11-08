@@ -111,9 +111,9 @@
 <td> </td>
 </tr>
 <tr>
-<td>  </td>
+<td> 08/11/2018  </td>
 <td> Семестровая 2: тестирующая система (тест одной программы) </td>
-<td> </td>
+<td> <file 'cmc/files/cmc-present-08.pdf'> cmc-present-08.pdf </file> </td>
 <td> </td>
 <td> </td>
 <td> 50 </td>
