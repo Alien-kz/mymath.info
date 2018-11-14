@@ -133,21 +133,30 @@
 <td> 05/11/2018 11:50:00 </td>
 </tr>
 <tr>
-<td> 07/11/2018 </td>
+<td> 14/11/2018 </td>
 <td> Строки и указатели</td>
-<td> <nofile 'mm/files/present-07.pdf'> present-07.pdf </nofile>  </td>
-<td> <nofile 'mm/files/home-07.pdf'> home-07.pdf </nofile>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=16'> Мехмат (дом): строки </noa> </td>
+<td> <file 'mm/files/present-07.pdf'> present-07.pdf </file>  </td>
+<td> <file 'mm/files/home-07.pdf'> home-07.pdf </file>  </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=16'> Мехмат (дом): строки </a> </td>
 <td> 5 </td>
 <td> >12/11/2018 21:00:00  </td>
 </tr>
 <tr>
-<td> </td>
+<td> 15/11/2018 </td>
 <td> Практика </td>
 <td> </td>
 <td> </td>
 <td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=30'> Мехмат (класс): строки </noa> </td>
-<td> 10 </td>
+<td> 5 </td>
+<td>  </td>
+</tr>
+<tr>
+<td> 15/11/2018 </td>
+<td> Практика </td>
+<td> </td>
+<td> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=30'> Мехмат (класс): строки </noa> </td>
+<td> 5 </td>
 <td>  </td>
 </tr>
 <tr>
