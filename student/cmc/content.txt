@@ -112,68 +112,24 @@
 </tr>
 <tr>
 <td> 08/11/2018  </td>
-<td> Семестровая 2: тестирующая система (тест одной программы) </td>
+<td> Семестровая 2: тестирующая система </td>
 <td> <file 'cmc/files/cmc-present-08.pdf'> cmc-present-08.pdf </file> </td>
 <td> </td>
 <td> </td>
-<td> 50 </td>
+<td> 100 </td>
 <td>  </td>
 </tr>
 <tr>
-<td>  </td>
-<td> Семестровая 2: тестирующая система (тест контеста) </td>
+<td> 16/11/2018 </td>
+<td> Семестровая 3: игровой сервер </td>
+<td> <file 'cmc/files/cmc-present-09.pdf'> cmc-present-09.pdf </file>  </td>
+<td> <a href='https://ejudge.ru/study/3sem/term.pdf'> А.В.Чернов <br/>"Неканонический режим терминала"</a>
+<a href='https://ejudge.ru/study/3sem/sem15.pdf'> А.В.Чернов <br/>"Пример клиент-сервер"</a>
+</td>
 <td> </td>
-<td> </td>
-<td> </td>
-<td> 50 </td>
-<td>  </td>
-</tr>
-<tr>
-<td> </td>
-<td> Системные вызовы (сеть). </td>
-<td> <nofile 'cmc/files/cmc-present-07.pdf'> cmc-present-07.pdf </nofile>  </td>
-<td> <nofile 'cmc/files/cmc-home-07.pdf'> cmc-home-07.pdf </nofile>  </td>
-<td> </td>
-<td> 10 </td>
+<td> 100 </td>
 <td> </td>
 </tr>
-<tr>
-<td>  </td>
-<td> Практика </td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> 10 </td>
-<td>  </td>
-</tr>
-<tr>
-<td> </td>
-<td> Семестровая 3: web-сервер </td>
-<td> <nofile 'cmc/files/cmc-present-08.pdf'> cmc-present-08.pdf </nofile>  </td>
-<td> <nofile 'cmc/files/cmc-home-08.pdf'> cmc-home-08.pdf </nofile>  </td>
-<td> </td>
-<td>  </td>
-<td> </td>
-</tr>
-<tr>
-<td>  </td>
-<td> Семестровая 3: web-сервер (текстовые документы) </td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> 50 </td>
-<td>  </td>
-</tr>
-<tr>
-<td>  </td>
-<td> Семестровая 3: web-сервер (скрипты) </td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> 50 </td>
-<td>  </td>
-</tr>
-
 <tr>
 <td> </td>
 <td> С++. Классы. Методы </td>
