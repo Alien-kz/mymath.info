@@ -131,26 +131,26 @@
 <td> </td>
 </tr>
 <tr>
+<td> 24/11/2018 </td>
+<td> С++. Классы. Введение. </td>
 <td> </td>
-<td> С++. Классы. Методы </td>
-<td> <nofile 'cmc/files/cmc-present-09.pdf'> cmc-present-09.pdf </nofile>  </td>
-<td> <nofile 'cmc/files/cmc-home-09.pdf'> cmc-home-09.pdf </nofile>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=24'> ВМК (дом): классы </noa> </td>
+<td> <file 'cmc/files/cpp-home-1.pdf'> cpp-home-1.pdf </file>  </td>
+<td> </td>
 <td> 10 </td>
 <td> </td>
 </tr>
 <tr>
-<td>  </td>
-<td> Практика </td>
+<td> 26/11/2018 </td>
+<td> С++. Классы. Детали. </td>
+<td> <file 'cmc/files/cpp-examples.zip'> cpp-examples.zip </file></td>
+<td> <file 'cmc/files/cpp-home-2.pdf'> cpp-home-2.pdf </file>  </td>
 <td> </td>
-<td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=25'> ВМК (класс): классы </noa> </td>
 <td> 10 </td>
 <td>  </td>
 </tr>
 <tr>
-<td> </td>
-<td> С++. Перегрузка. Полиморфизм. </td>
+<td> 27/11/2018 </td>
+<td> С++. Шаблоны. </td>
 <td> <nofile 'cmc/files/cmc-present-10.pdf'> cmc-present-10.pdf </nofile>  </td>
 <td> <nofile 'cmc/files/cmc-home-10.pdf'> cmc-home-10.pdf </nofile>  </td>
 <td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=24'> ВМК (дом): перегрузка </noa> </td>
