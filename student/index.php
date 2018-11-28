@@ -28,6 +28,7 @@
 			print_centered_text("Технические");
 			$buttons = array("c" => "C",
                             "python" => "python + matplotlib",
+                            "opencv" => "python + opencv",
                             "jupyter" => "jupyter",
 							"latex" => "LaTeX",
 							"git" => "git");
@@ -41,6 +42,7 @@
 			######################################## LEVEL 2
 			
 			if ($subject == "python" or 
+                $subject == "opencv" or 
                 $subject == "latex" or 
                 $subject == "jupyter" or
                 $subject == "c" or

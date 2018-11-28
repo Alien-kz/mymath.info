@@ -1,0 +1,23 @@
+<h3> Ubuntu </h3>
+Для установки библиотек python лучше использовать pip - менеджер пакетов для python. Установим его:
+<bash>
+sudo apt install python3-pip
+</bash>
+
+Ставим opencv:
+<bash>
+sudo pip3 install opencv-python
+</bash>
+
+<h3> Windows </h3>
+
+1) Скачиваем с официального сайта (сейчас доступна версия 3.7.0)
+<a href='https://www.python.org/downloads/'> www.python.org </a>
+
+В начале установки не забудьте отметить галочкой “Add Python 3.x to PATH” и жмём "Install Now"
+<picture 'python/pictures/python-install.png'>
+
+2) В командной строке появится приветствие "C:\Users\Пользователь>". Вводим команду установки через pip менеджер пакетов для python:
+<cmd>
+pip install matplotlib
+</cmd>
