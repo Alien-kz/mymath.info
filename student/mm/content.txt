@@ -101,7 +101,6 @@
 <td> 23/10/2018 10:20:00 </td>
 </tr>
 <tr>
-<tr>
 <td> 29/10/2018 </td>
 <td> Контрольная работа </td>
 <td> </td>
@@ -167,6 +166,19 @@
 <td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=31'> Мехмат (класс): функции </a> </td>
 <td> 10 </td>
 <td> 30/11/2018 11:50:00 </td>
+</tr>
+<tr>
+<td> 03/12/2018 </td>
+<td> Контрольная работа </td>
+<td> </td>
+<td>
+<file 'mm/files/work-2-2015.pdf'> Контрольная 2015 год </file>
+<file 'mm/files/work-2-2016.pdf'> Контрольная 2016 год </file>
+<file 'mm/files/work-2-2017.pdf'> Контрольная 2017 год </file>
+</td>
+<td> </td>
+<td> 45 </td>
+<td>  </td>
 </tr>
 <tr>
 <td>  </td>
