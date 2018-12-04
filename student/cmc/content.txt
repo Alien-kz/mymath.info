@@ -167,10 +167,10 @@
 <td>  </td>
 </tr>
 <tr>
-<td>  </td>
-<td> Изометрическая игра </td>
-<td> </td>
-<td> </td>
+<td> 04/12/2018  </td>
+<td> Qt. Изометрическая игра </td>
+<td> <file 'cmc/files/cmc-present-12.pdf'> cmc-present-12.pdf </file> </td>
+<td> <file 'cmc/files/billiard.zip'> billiard.zip </file> </td>
 <td> </td>
 <td> 20 </td>
 <td>  </td>
