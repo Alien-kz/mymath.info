@@ -19,5 +19,5 @@ sudo pip3 install opencv-python
 
 2) В командной строке появится приветствие "C:\Users\Пользователь>". Вводим команду установки через pip менеджер пакетов для python:
 <cmd>
-pip install matplotlib
+pip install opencv-python
 </cmd>

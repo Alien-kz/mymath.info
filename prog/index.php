@@ -122,6 +122,8 @@
 								$mask = "Kazakhstan Branch of Moscow SU";
 								if ($year == 2006 or $year == 2007)
 									$mask = "Astana Moscow SU";
+								if ($year == 2018)
+									$mask = "Kazakhstan br of MSU";
 							}
 						}
 						if ($top == "") {
