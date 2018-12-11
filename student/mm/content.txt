@@ -187,34 +187,34 @@
 <td> <file 'mm/files/home-09.pdf'> home-09.pdf </file>  </td>
 <td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=18'> Мехмат (дом): рекурсия </a> </td>
 <td> 5 </td>
-<td> 10/12/2018 21:00:00 </td>
+<td> 20/12/2018 21:00:00 </td>
 </tr>
 <tr>
-<td> </td>
+<td> 06/12/2018 </td>
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=32'> Мехмат (класс): </noa> </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=32'> Мехмат (класс): рекурсия </a> </td>
 <td> 10 </td>
-<td>  </td>
+<td> 06/12/2018 11:50:00</td>
 </tr>
 <tr>
-<td>  </td>
+<td> 12/12/2018 </td>
 <td> Структуры</td>
-<td> <nofile 'mm/files/present-10.pdf'> present-10.pdf </nofile>  </td>
-<td> <nofile 'mm/files/home-10.pdf'> home-10.pdf </nofile>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=19'> Мехмат (дом): </noa> </td>
+<td> <file 'mm/files/present-10.pdf'> present-10.pdf </file>  </td>
+<td> <file 'mm/files/home-10.pdf'> home-10.pdf </file>  </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=19'> Мехмат (дом): структуры </a> </td>
 <td> 5 </td>
-<td> </td>
+<td> 20/12/2018 21:00:00 </td>
 </tr>
 <tr>
-<td> </td>
+<td> 13/12/2018</td>
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=33'> Мехмат (класс): </noa> </td>
+<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=33'> Мехмат (класс): структуры </noa> </td>
 <td> 10 </td>
-<td>  </td>
+<td> 15/12/2018 10:20:00 </td>
 </tr>
 <tr>
 <td>  </td>
