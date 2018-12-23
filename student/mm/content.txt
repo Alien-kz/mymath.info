@@ -221,7 +221,7 @@
 <td> Динамическая память</td>
 <td> <file 'mm/files/present-11.pdf'> present-11.pdf </file>  </td>
 <td> <file 'mm/files/home-11.pdf'> home-11.pdf </file>  </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (дом): </noa> </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=34'> Мехмат (дом): динамическая память </a> </td>
 <td> 5 </td>
 <td> 24/12/2018 10:20:00 </td>
 </tr>
@@ -230,7 +230,7 @@
 <td> Практика </td>
 <td> </td>
 <td> </td>
-<td> <noa href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=20'> Мехмат (класс): </noa> </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/register?action=210&contest_id=35'> Мехмат (класс): динамическая память</a> </td>
 <td> 10 </td>
 <td> 21/12/2018 15:00:00 </td>
 </tr>
