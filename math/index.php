@@ -41,6 +41,7 @@
 					$header = "Открытая студенческая олимпиада Казахстанского филиала МГУ по математике";
 					$buttons = gen_buttons_from_file("$olymp/list.txt");
 					$buttons_train = gen_buttons_from_file("$olymp/list-train.txt");
+					$buttons_notpro = gen_buttons_from_file("$olymp/list-notpro.txt");
 					$needles = array("1" => "gold", "2" => "silver", "3" => "bronze");
 				}
 				if ($olymp == "republic") {
@@ -64,6 +65,8 @@
 					print_buttons("index.php", "year", $year, $buttons, array("olymp" => $olymp), "#about");
 					print_centered_text("Тренировки");
 					print_buttons("index.php", "year", $year, $buttons_train, array("olymp" => $olymp), "#about");
+					print_centered_text("Для непрофильных специальностей");
+					print_buttons("index.php", "year", $year, $buttons_notpro, array("olymp" => $olymp), "#about");
 				} else if ($olymp == "republic") {
 					print_centered_text("Математика");
 					print_buttons("index.php", "year", $year, $buttons_math, array("olymp" => $olymp), "#about");

@@ -1,0 +1,182 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{enumitem}			%enumarate parameters
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
+
+\newcommand{\head}[4]
+{
+	\thispagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{Открытая студенческая олимпиада по математике \\ Казахстанского филиала МГУ \\ для непрофильных специальностей}{8 декабря 2018}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
+
+\begin{enumerate}
+\item 
+$$
+\begin{vmatrix}
+2019 & 2018 & 2018 \\
+2018 & 2019 & 2018 \\
+2018 & 2018 & 2019 \\
+\end{vmatrix}
+=
+\begin{vmatrix}
+2019 & 2018 & 2018 \\
+-1 & 1 & 0 \\
+-1 & 0 & 1 \\
+\end{vmatrix}
+=
+\begin{vmatrix}
+6055 & 2018 & 2018 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{vmatrix}
+=
+6055
+$$
+
+
+\item 
+Пусть $y = z = 1$. Тогда получим числа вида $x + 2$. То есть любое число $n$ начиная с 3 можно представить в таком виде, кроме $x = n - 2, y = 1, z = 1$. Числа 1 и 2 представить нельзя, так как $x^y \geqslant 1$, $y^z \geqslant 1$ $z^x \geqslant 1$.
+
+Ответ: $n \geqslant 3$.
+
+
+\item 
+Сумма бесконечной геометрической прогрессии
+$$
+\sqrt{5 \cdot \sqrt{5 \cdot \sqrt{5 \cdot \sqrt{5 \cdot \ldots}}}}
+=
+5^{\frac12 + \frac14 + \frac18 + \ldots + \frac{1}{2^n} + \ldots} = 5
+$$
+
+
+\item 
+
+Заметим, что функция $f(x) = e^{\sin{x}} - e^{-\sin{x}}$ является нечетной, то есть
+$$f(-x) = e^{\sin{-x}} - e^{-\sin{-x}} = e^{-\sin{x}} - e^{\sin{x}} = -f(x)$$
+
+А функция $g(x) = e^{\cos{x}} - e^{-\cos{x}}$ является четной, то есть
+$$g(-x) = e^{\cos{-x}} - e^{-\cos{-x}} = e^{\cos{x}} - e^{-\cos{x}} = g(x)$$
+
+Их произведение $f(x) g(x)$ является нечетной функцией. Значит интеграл по симметричному интервалу $[-2018; 2018]$ равен нулю.
+
+Ответ: 0.
+
+
+\item Примеры
+\begin{center}
+\begin{tikzpicture}
+\foreach \a in {0,60,...,300} {
+  \coordinate (A\a) at (\a:2);
+  \draw (\a:2) -- (\a + 60:2);
+}
+\foreach \a in {0,60,...,300} {
+  \coordinate (B\a) at (\a:1);
+  \draw[dashed] (\a:1) -- (\a + 60:1);
+  \draw[dashed] (A\a) -- (B\a);
+}
+\draw[dashed] (B0) -- (B180);
+\end{tikzpicture}
+\begin{tikzpicture}
+\foreach \a in {0,60,...,300} {
+  \coordinate (A\a) at (\a:2);
+  \draw (\a:2) -- (\a + 60:2);
+}
+\draw[dashed] (A0) -- (0, 0);
+\draw[dashed] (A120) -- (0, 0);
+\draw[dashed] (A240) -- (0, 0);
+
+\draw[dashed] (0:0.5) -- (75:1.8);
+\draw[dashed] (120:0.5) -- (120+75:1.8);
+\draw[dashed] (240:0.5) -- (240+75:1.8);
+
+\end{tikzpicture}
+\end{center}
+
+\item Во--первых, так как расстояние между $A$ и $B$ по общей параллели равно четверти длины этой параллели, то $\angle ACB = \angle ACO = \angle BCO = 90^{\circ}$.
+
+Во--вторых, так как кратчайшее расстояние между $A$ и $B$ по общей параллели равно $frac16$ длины экватора, то $\angle AOB = 60^{\circ}$. Таким образом, $AOB$ --- равносторонний треугольник.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5, node distance=0cm]
+
+\tikzstyle{point}=[circle, fill, minimum size=1pt, inner sep=1]
+
+\draw (0, 0) circle (6);
+
+\draw (-4, 4.3) arc (-180:0:4 and 1);
+\draw[dashed] (-4, 4.3) arc (180:0:4 and 1);
+
+\draw (-6, 0) arc (-180:0:6 and 1.5);
+\draw[dashed] (-6, 0) arc (180:0:6 and 1.5);
+
+\draw (-6, 0) arc (180:0:6 and 4);
+
+\node[point] (O) at (0, 0) {};
+\node[below =of O] {$O$}; 
+
+\node[point] (C) at (0, 4.3) {};
+\node[above =of C] {$C$}; 
+
+\node[point] (A) at (-2.7, 3.6) {};
+\node[above =of A] {$A$}; 
+
+\node[point] (B) at (2.7, 3.6) {};
+\node[above =of B] {$B$}; 
+
+\node[point] (D) at (-3.5, -1.2) {};
+\node[below =of D] {$D$}; 
+
+\draw[dashed](A) -- (C) -- (B) -- (A);
+\draw[dashed](A) -- (O) -- (B);
+\draw[dashed](C) -- (O) -- (D);
+\end{tikzpicture}
+\end{center}
+
+Из полученных утверждений имеем, что $CA = CB = CO$. Значит, $\angle AOC = \frac{\pi}{4} = \angle AOD$. То есть расстояние от параллели до экватора ровно $\frac18$ длины экватора.
+
+\item 
+$$ k(r) \int_{0}^{+\infty} t \cdot e^{-rt} dt = 1$$
+Интегрируем по частям:
+$$
+\int_{0}^{+\infty} t \cdot e^{-rt} dt = 
+- \frac{1}{r} \int_{0}^{+\infty} t \cdot d e^{-rt}  = 
+- \left. \frac{t \cdot e^{-rt} }{r} \right|_{t=0}^{t=+\infty} + \frac{1}{r} \int_{0}^{+\infty} e^{-rt} \cdot dt   = 
+$$
+$$
+= - \left. \frac{t \cdot e^{-rt} }{r} \right|_{t=0}^{t=+\infty} - \left. \frac{e^{-rt} }{r^2} \right|_{t=0}^{t=+\infty} = \frac{1}{r^2}
+$$
+
+Значит $k(r) = r^2$. График --- парабола.
+
+\end{enumerate}
+
+\end{document} 

@@ -1,0 +1,151 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{enumitem}			%enumarate parameters
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
+
+\newcommand{\head}[4]
+{
+	\thispagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{Открытая студенческая олимпиада по математике \\ Казахстанского филиала МГУ}{8 декабря 2018}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
+
+\begin{enumerate}
+
+\item (Васильев А.Н.) Для произвольного $b \in B(x)$ построим $a \in N(x)$ как дополнение до $S$, то есть $a = S \setminus b$. Действительно, $x \in b$ тогда и только тогда, когда $x \not \in a$. Значит, $|B(x)| = |N(x)|$.
+
+\item (Абдикалыков А.К.) Это утверждение не верно. Условию удовлетворяет любая функция вида $f(x) = g(x) + h(x)$, где $g(x)$ --- возрастающая, $h(x)$ --- периодическая, например, не являющиеся возрастающими $f_1(x) = x + \{x\}$ и $f_2(x) = x + 2\sin{x}$.
+
+\item (Баев А.Ж.) Свойство 1. Если $XY = E$, то $YX = E$.
+
+Свойство 2. Если $XYZ = E$, то $ZXY = E$ и $YZX = E$.
+
+
+Преобразуем условие
+$$(E-A^2) (B+E) = E.$$
+
+Заметим, что $(E-A)(E+A) = (E+A)(E-A)$.
+
+Получаем, что
+$$
+\begin{cases}
+(E - A^2) ( B + E) = E \\
+( B + E) (E - A^2) = E \\
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+(E - A) (E + A) ( B + E) = E \\
+( B + E) (E + A) (E - A) = E \\
+\end{cases}
+$$
+$$
+\begin{cases}
+(E + A) ( B + E) (E - A)= E \\
+(E - A) ( B + E) (E + A)  = E \\
+\end{cases}
+\Leftrightarrow
+$$
+$$
+\Leftrightarrow
+\begin{cases}
+-A^2B - A^2 + AB - BA + B = 0 \\
+-A^2B - A^2 + BA - AB + B = 0 \\
+\end{cases}
+$$
+
+
+\item (Абдикалыков А.К.) Заметим, что 1001 делится на 13. Значит, для любого $k$ можно составить кратное 13 число с суммой цифр $2k$~---~$10011001...1001$ ($k$ раз подряд записанная последовательность цифр 1001). Заметим, что и число 10101 также делится на 13. Значит, можно получить число с суммой цифр $2k+3$, кратное 13 --- $10011001...100110101$ ($k$ раз подряд 1001, затем 10101 в конце).
+
+Остается проверить $n = 1$. Если число имеет сумму цифр 1, то это степень десятки --- не делится на 13.
+
+Ответ: все $n > 1$.
+
+\item (Абдикалыков А.К.) Пусть $M'$ --- матрица, полученная из <<особенной>> матрицы $M$ увеличением на 1 двух элементов на позициях $(i, j_1)$ и $(i, j_2)$. Тогда по свойствам определителей $|M'| = |M| + A_{ij_1} + A_{ij_2}$, из чего следует, что алгебраические дополнения любых двух элементов одной строки должны быть противоположны. Аналогично выводится то, что противоположны алгебраические дополнения любых двух элементов одного столбца.
+
+(a) Для случая $n = 2$ это означает просто, что все элементы матрицы равны друг другу. Осталось теперь подобрать такой $x$, что
+$$
+\begin{vmatrix}
+  x & x \\
+  x & x
+\end{vmatrix} =
+\begin{vmatrix}
+  x + 1 & x \\
+  x & x + 1
+\end{vmatrix} =
+\begin{vmatrix}
+  x & x + 1 \\
+  x + 1 & x
+\end{vmatrix}.
+$$
+Получаем, что единственной <<особенной>> матрицей порядка 2 является матрица
+$$
+\begin{pmatrix}
+  -\frac12 & -\frac12 \\
+  -\frac12 & -\frac12
+\end{pmatrix}
+$$
+
+Если $n > 2$, то это означает, что $A_{ij} = 0$ для всех элементов матрицы. Пусть теперь $M'$ --- матрица, полученная из $M$ увеличением на 1 двух элементов на позициях $(i_1, j_1)$ и $(i_2, j_2)$. Тогда $|M'| = |M| + A_{ij_1} + A_{ij_2} + A_{i_1i_2}^{j_1j_2}$; таким образом, $A_{i_1i_2}^{j_1j_2} = 0$ для любых $i_1, i_2, j_1, j_2$, следовательно, ${\mathrm{rg}}~M\leqslant n - 3$.
+
+(b) Для случая $n = 3$ это означает, что $M$ может быть только нулевой. Нетрудно проверить, что нулевая матрица порядка 3 является <<особенной>>, причём, она является единственной <<особенной>> матрицей порядка 3.
+
+(c) Для случая $n = 4$ подходящей ненулевой матрицей может быть только матрица ранга~1. Возьмём, например, матрицу
+$$
+M = \begin{pmatrix}
+      1 & 1 & 1 & 1 \\
+      1 & 1 & 1 & 1 \\
+      1 & 1 & 1 & 1 \\
+      1 & 1 & 1 & 1
+    \end{pmatrix}.
+$$
+При изменении любых двух её элементов останутся как минимум две одинаковые строки, и значит, её определитель останется равным нулю.
+
+\item (Васильев А.Н.) 
+\begin{enumerate}
+\item Неверно, например, $a_n = \frac{1}{n(n+1)}$. Ряд из $\{a_n\}_{n=1}^{+\infty}$ сходится к $1$, так как
+$$a_n = \sum_{k=1}^{n} \frac{1}{k(k +1)} = \sum_{k=1}^n  \left( \frac{1}{k} - \frac{1}{k + 1} \right) = 1 - \frac{1}{n+1}.$$  Тогда ряд из $\{r_n\}_{n=1}^{+\infty}$ расходится:
+$$r_n = 1 - \sum_{k=1}^{n} \frac{1}{k(k +1)} = 1 -  \sum_{k=1}^{n} \left( \frac{1}{k} - \frac{1}{k + 1} \right) = \frac{1}{n + 1}.$$
+\item Верно, так как $|a_n| = |r_{n-1} - r_n| \leqslant |r_{n-1}| + |r_n|$.
+\end{enumerate}
+
+\item (Баев А.Ж.)
+Заметим, что
+$$
+\int\limits_{0}^{1} \Bigl(f '(x) - x \Bigr)^2 dx \geqslant 0
+\Leftrightarrow
+\int\limits_{0}^{1} \Bigl((f '(x))^2 - 2 x f'(x) \Bigr) dx + \frac{1}{3} \geqslant 0.
+$$
+
+После интегрирования по частям $\int\limits_{0}^{1} 2 x f'(x) dx = \frac{4}{3} - \int\limits_{0}^{1} 2 f(x) dx$ получаем требуемое. Равенство будет достигаться, если $f'(x) = x$, значит, единственной подходящей функцией является $f(x) = \frac{3x^2+1}{6}$.
+
+\end{enumerate}
+
+\end{document} 

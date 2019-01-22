@@ -10,15 +10,18 @@
 \usepackage{graphicx}			%input pictures
 \usepackage{tikz}				%draw pictures
 \usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
 \usepackage{enumitem}			%enumarate parameters
 
-\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=15pt}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
 \setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
 \sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
 
 \newcommand{\head}[4]
 {
-	\pagestyle{fancy}
+	\thispagestyle{fancy}
 	\fancyhf{}
 	\chead{#3, #4}
 
@@ -82,8 +85,7 @@ $$
 б) $e^{-1}$.
 
 \item Ответ: $k = 2$. Замена: $t = \ln{x}$. Тогда
-$$\int\limits_{1}^{2} \left( 1 + k \ln{x} \right) x^{x^k + k - 1} dx = \int\limits_{0}^{\ln{2}} \left(e^{te^{kt}} \right)' dt = $$
-$$=\left. e^{te^{kt}} \right|_{0}^{\ln{2}} = 2^{2^k} - 1.$$
+$$\int\limits_{1}^{2} \left( 1 + k \ln{x} \right) x^{x^k + k - 1} dx = \int\limits_{0}^{\ln{2}} \left(e^{te^{kt}} \right)' dt =\left. e^{te^{kt}} \right|_{0}^{\ln{2}} = 2^{2^k} - 1.$$
 
 \item a) Для любого целого $n$ куб $n$ может давать при делении на 9 только следующие остатки: 0, 1 или 8. Следовательно, числа вида $9k \pm 4$ не могут быть представлены в виде суммы трех кубов.
 
@@ -97,9 +99,11 @@ $$(n-2) \cdot  (n-6) \cdot  ... \cdot  6 \cdot 2 = \frac{(2m)!}{m!}.$$
 
 \item Ответ: $2 - \frac{1}{2^n}$.
 
-Ясно, что многочлен $x P(x) - 1$ имеет степень $n+1$. Его корнями при этом будет $n+1$ число: $2^k$ при $k$ от $0$ до $n$. Значит, этот многочлен представляется в виде 
+Многочлен $x P(x) - 1$ имеет степень $n+1$. Его корнями при этом будет $n+1$ число: $2^k$ при $k$ от $0$ до $n$. Значит, этот многочлен представляется в виде 
 $$x P(x) - 1 = A (x - 1) (x - 2) ... (x - 2^n).$$
-Коэффициент $A$ можно найти, приравнивая свободный член: $A = (-1)^{n+1} \frac{1}{2^{1+2+...+n}}$. Свободный член $P(x)$ равен коэффициенту при $x^1$ в правой части:
+Коэффициент $A$ можно найти, приравнивая свободный член: 
+$$A = (-1)^{n+1} \frac{1}{2^{1+2+...+n}}.$$
+Свободный член $P(x)$ равен коэффициенту при $x^1$ в правой части:
 $$ - \left(1 + \frac{1}{2} + ... + \frac{1}{2^n} \right).$$
 
 \item Ответ: $\frac{k^2 + k + 2}{2}$. Выберем некоторую вершину $A$: на расстоянии 1 от неё расположено $k$ вершин (обозначим это множество вершин $B$), а на расстоянии 2 ---  $(n - 1 - k)$ вершин (обозначим это множество вершин $C$). Посчитаем количество различных четырехугольников. 

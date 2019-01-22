@@ -1,0 +1,110 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tabularx}			%smart table
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{enumitem}			%enumarate parameters
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
+
+\newcommand{\head}[4]
+{
+	\thispagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{Открытая студенческая олимпиада по математике \\ Казахстанского филиала МГУ}{8 декабря 2018}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{|l|l|l|l|c|*{7}{X|}c|c|}
+\hline
+№ & Участник & ВУЗ & Спец & Курс & 1 & 2 & 3 & 4 & 5 & 6 & 7 & $\Sigma$ & Диплом\\
+ \hline 
+1 & Полищук Руслан  & НУ & МАТ & 4 & 10 & 9 & 0 & 10 & 5 & 0 & 0 & 34 & 1\\ 
+ \hline 
+2 & Вагнер Алан & МГУ & ВМК & 2 & 10 & 10 & 0 & 0 & 7 & 0 & 0 & 27 & 2\\ 
+ \hline 
+3 & Есбай Еркын & МГУ & ММ & 2 & 10 & 10 & 0 & 0 & 6 & 0 & 0 & 26 & 2\\ 
+ \hline 
+4 & Ильясов Акниет & ЕНУ & ММ & 3 & 10 & 0 & 0 & 9 & 4 & 0 & 0 & 23 & 3\\ 
+ \hline 
+5 & Понамарев Валерий  & МГУ & ВМК & 2 & 10 & 0 & 0 & 0 & 7 & 5 & 0 & 22 & 3\\ 
+ \hline 
+6 & Максат Куанышбай & НУ & ПМ & 3 & 10 & 0 & 0 & 0 & 4 & 7 & 1 & 22 & 3\\ 
+ \hline 
+7 & Мурзабаев Местай & МГУ & ВМК & 1 & 9 & 0 & 0 & 7 & 4 & 0 & 0 & 20 & 3\\ 
+ \hline 
+8 & Булгаков Анатолий & МГУ & ВМК & маг & 0 & 1 & 7 & 0 & 6 & 5 & 0 & 19 & грамота\\ 
+ \hline 
+9 & Айкын Алишер & МГУ & ММ & 1 & 10 & 0 & 1 & 0 & 5 & 0 & 0 & 16 & грамота\\ 
+ \hline 
+10 & Басаров Сержан & ЕНУ & ММ & 3 & 10 & 0 & 0 & 0 & 0 & 0 & 1 & 11 & \\ 
+ \hline 
+11 & Алимгазиев Сержан & МГУ & ВМК & 2 & 9 & 0 & 0 & 0 & 0 & 0 & 0 & 9 & \\ 
+ \hline 
+12 & Кошкаров Азамат & МГУ & ВМК & 1 & 0 & 0 & 0 & 0 & 8 & 0 & 0 & 8 & \\ 
+ \hline 
+13 & Кожемяк Василий & МГУ & ВМК & 1 & 0 & 0 & 0 & 0 & 4 & 0 & 0 & 4 & \\ 
+ \hline 
+14 & Акпан Димухаммед & МГУ & ММ & 1 & 1 & 0 & 0 & 0 & 3 & 0 & 0 & 4 & \\ 
+ \hline 
+15 & Майкенов Отанхан & НУ & ММ & 1 & 0 & 0 & 3 & 0 & 0 & 0 & 0 & 3 & \\ 
+ \hline 
+16 & Дукенбай Аслан  & МГУ & ММ & 2 & 0 & 0 & 0 & 0 & 3 & 0 & 0 & 3 & \\ 
+ \hline 
+17 & Айтеев Альнур & МГУ & ВМК & 1 & 0 & 0 & 0 & 0 & 3 & 0 & 0 & 3 & \\ 
+ \hline 
+18 & Кинжитаев Саян  & МГУ & ВМК & 1 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 2 & \\ 
+ \hline 
+19 & Жақанов Бауыржан  & НУ & РМ & 2 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 2 & \\ 
+ \hline 
+20 & Цыгельный Константин & МГУ & ВМК & 1 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 2 & \\ 
+ \hline 
+21 & Жамишжанов Аскар & ЕНУ & ММ & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 2 & \\ 
+ \hline 
+22 & Айтасова Нуриза & МГУ & ВМК & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & \\ 
+ \hline 
+23 & Бисенгалиева Айбану  & ЕНУ & ММ & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & \\ 
+ \hline 
+24 & Уразалинов Миржан & ЕНУ & ММ & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & \\ 
+ \hline 
+25 & Селевенко Роман  & МГУ & ВМК & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \\ 
+ \hline 
+26 & Альжанов Динмухаммед & МГУ & ММ & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \\ 
+ \hline 
+27 & Абдипатта Акмарал & НУ & РМ & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \\ 
+ \hline 
+28 & Жумаженис Дайрабай & НУ & ЭКИ & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \\ 
+ \hline 
+29 & Сакен Сандыбай & НУ & ГС & 3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \\ 
+ \hline 
+30 & Жанарбекулы Алмаз  & ЕНУ & ММ & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \\ 
+ \hline 
+\end{tabularx}
+\end{center}
+
+\end{document} 

@@ -1,0 +1,80 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{enumitem}			%enumarate parameters
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
+
+\newcommand{\head}[4]
+{
+	\thispagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{Открытая студенческая олимпиада по математике \\ Казахстанского филиала МГУ \\ для непрофильных специальностей}{8 декабря 2018}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
+
+\begin{enumerate}
+\item Вычислите определитель
+$$
+\begin{vmatrix}
+2019 & 2018 & 2018 \\
+2018 & 2019 & 2018 \\
+2018 & 2018 & 2019 \\
+\end{vmatrix}
+$$
+
+\item Найдите все натуральные числа $n$, представимые в виде 
+$$n = x^y + y^z + z^x,$$
+где $x$, $y$, $z$ --- натуральные числа.
+
+
+\item Вычислите
+$$
+\sqrt{5 \cdot \sqrt{5 \cdot \sqrt{5 \cdot \sqrt{5 \cdot \ldots}}}}
+$$
+
+\item Вычислите интеграл
+$$
+\int_{-2018}^{2018} \left(e^{\sin{x}} - e^{-\sin{x}} \right) \left(e^{\cos{x}} - e^{-\cos{x}} \right)dx
+$$
+
+\item Разрежьте правильный шестиугольник:
+\begin{enumerate}
+\item на 8 равных трапеций;
+\item на 6 равных трапеций.
+\end{enumerate}
+
+\item Два города находятся на одной параллели Земли. Расстояние между ними по этой параллели равно четверти длины этой параллели, а кратчайшее расстояние по поверхности равно $\frac16$ длины экватора. Вычислите, какую часть от экватора составляет расстояние от первого города до экватора. Землю считать идеальным шаром.
+
+\item Совокупный ожидаемый приведенный доход индивида рассчитывается по формуле
+$$I = \int_{0}^{+\infty} k \cdot t \cdot e^{-rt} dt,$$
+где $k\cdot t$ --- ставка дохода индивида в момент времени $t$ ($k > 0$ --- коэффициент), $r$ --- ставка дисконтирования. Найдите зависимость коэффициента $k(r)$ от ставки дисконтирования $r$, который обеспечивает совокупный ожидаемый приведенный доход индивида $I$ равным 1. Нарисуйте график зависимости $k(r)$.
+
+\end{enumerate}
+
+\end{document} 

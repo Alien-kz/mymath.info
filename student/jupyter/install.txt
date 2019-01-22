@@ -1,7 +1,9 @@
 <h3> Ubuntu </h3>
 Вариант 1. В терминале установливаем соответствующий пакет
 <bash>
-sudo apt install jupyter
+sudo apt install python3-pip
+sudo apt install ipython ipython-notebook
+sudo pip3 install jupyter
 </bash>
 Вариант 2. Авторы крайне рекомендуют ставить не просто юпитер, а целую анаконду (сборник всех пакетов на 600 Мб, который при распаковке даст 3 Гб). Можно повторить данные команды, где вместо user будет имя вашего пользователя
 <bash>

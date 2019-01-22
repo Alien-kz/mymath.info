@@ -8,17 +8,21 @@
 \usepackage{geometry}			%paper format attributes
 \usepackage{fancyhdr}			%header
 \usepackage{graphicx}			%input pictures
+\usepackage{tabularx}			%smart table
 \usepackage{tikz}				%draw pictures
 \usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
 \usepackage{enumitem}			%enumarate parameters
 
-\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=15pt}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
 \setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
 \sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
 
 \newcommand{\head}[4]
 {
-	\pagestyle{fancy}
+	\thispagestyle{fancy}
 	\fancyhf{}
 	\chead{#3, #4}
 
@@ -36,7 +40,7 @@
 \head{Тренировочная студенческая олимпиада по математике \\ Казахстанского филиала МГУ}{13 марта 2018}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
 
 \begin{center}
-\begin{tabular}{|l|l|l|c|*{5}{p{0.3cm}|}c|}
+\begin{tabularx}{\textwidth}{|l|l|l|c|*{5}{X|}c|}
 \hline
 № & Участник & Факультет & Курс & 1 & 2 & 3 & 4 & 5 & $\Sigma$ \\
 \hline
@@ -60,7 +64,7 @@
 \hline
 10 & Кунакбаев Рамазан & ММ & 2 & 0 & 0 & 0 & 0 & 0 & 0 \\
 \hline
-\end{tabular}
+\end{tabularx}
 \end{center}
 
 \end{document} 

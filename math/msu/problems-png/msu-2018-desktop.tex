@@ -1,0 +1,74 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{enumitem}			%enumarate parameters
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
+
+\newcommand{\head}[4]
+{
+	\thispagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+\begin{document}
+
+\head{Открытая студенческая олимпиада по математике \\ Казахстанского филиала МГУ}{8 декабря 2018}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
+
+\begin{enumerate}
+
+\item В множестве $S$ выбран элемент $x$. Обозначим через $B(x)$ множество всех подмножеств, которые содержат $x$, а через $N(x)$ --- множество всех подмножеств, которые не содержат $x$. Докажите, что множества $B(x)$ и $N(x)$ равномощны, то есть $|B(x)| = |N(x)|$.
+
+\item Для некоторой непрерывной на $\mathbb{R}$ функции $f(x)$ существует бесконечно много положительных чисел $t$ таких, что для любого $x$ 
+$$f(x+t) > f(x).$$
+Можно ли утверждать, что $f(x)$ --- возрастающая функция?
+
+\item Даны две вещественные квадратные матрицы $A$ и $B$ порядка $n$ такие, что $$A^2 ( B + E) = B,$$
+где $E$ --- единичная матрица порядка $n$. Докажите, что $AB = BA$.
+
+\item Для каких натуральных $n$ существует кратное 13 натуральное число, сумма цифр которого равна $n$? Например, $n = 8$ подходит, потому что $26$ делится на 13 и сумма его цифр  равна 8.
+
+\item Назовём вещественную квадратную матрицу порядка $n$ <<особенной>>, если при увеличении на 1 любых двух её элементов определитель не меняется.
+\begin{enumerate}
+\item Найдите все <<особенные>> матрицы порядка 2;
+\item Найдите все <<особенные>> матрицы порядка 3;
+\item Найдите одну <<особенную>> ненулевую матрицу порядка 4. Покажите, что условие действительно выполняется.
+\end{enumerate}
+
+\item Дан ряд $\sum_{n = 1}^{+\infty} a_n$. Обозначим $r_n = \sum_{k = n + 1}^{+\infty} a_k$. Докажите, или опровергните утверждения:
+\begin{enumerate}
+\item если $\sum_{n = 1}^{+\infty} a_n$ --- абсолютно сходящийся ряд, то $\sum_{n = 1}^{+\infty} r_n$ --- тоже абсолютно сходящийся ряд;
+\item если $\sum_{n = 1}^{+\infty} r_n$ --- абсолютно сходящийся ряд, то $\sum_{n = 1}^{+\infty} a_n$ --- тоже абсолютно сходящийся ряд.
+\end{enumerate}
+
+\item Дана дифференцируемая на $[0;1]$ функция $f(x)$ такая, что $f(1) = \frac23$. Докажите, что 
+$$\int_{0}^{1} \Bigl((f '(x))^2 + 2 f(x) \Bigr) dx \geqslant 1$$
+Найдите все функции $f(x)$, при которых достигается равенство.
+
+\end{enumerate}
+
+
+\end{document} 
