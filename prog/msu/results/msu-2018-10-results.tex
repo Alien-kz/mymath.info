@@ -7,25 +7,21 @@
 \usepackage{mathtext}			%text in formulas
 \usepackage{geometry}			%paper format attributes
 \usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tabularx}			%smart table
 \usepackage{longtable}			%long table
+\usepackage{tikz, pgfplots}		%draw pictures and graphics
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{listofitems}		%draw from tex-list
+\usepackage{enumitem}			%enumarate parameters
 
-\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
 \sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
 
-\newcommand{\head}[4]
-{
-	\pagestyle{fancy}
-	\fancyhf{}
-	\lhead{#3 \\ #2}
-	\rhead{#1}
-	
-	\begin{center}
-	\begin{large}
-	#1 \\
-	\textit{#2}\\
-	\end{large}
-	\end{center}
-}
 \newcommand{\accept}[2]{
 	\centerline{\boxed{#1}}
 	\newline
@@ -34,13 +30,175 @@
 \newcommand{\reject}[1]{
 	\centerline{#1}
 }
-\def\arraystretch{1.5}
+
+
+\newcommand{\head}[4]
+{
+	\thispagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+
+% format
+
+\newcommand{\informat}[1]
+{
+	\subsubsection*{Ввод} #1
+}
+
+\newcommand{\outformat}[1]
+{
+	\subsubsection*{Вывод} #1
+}
+
+
+\newcommand{\example}[2]
+{
+	\subsubsection*{Пример}
+	{\tt
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод & Вывод \\
+	\hline
+	#1 & #2		\\
+	\hline
+	\end{tabularx}
+	}
+}
+
+\newcommand{\examplee}[4]
+{
+	\subsubsection*{Пример}
+	{\tt
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	#1 		& #2 		\\
+	\hline
+	#3		& #4		\\
+	\hline
+	\end{tabularx}
+	}
+}
+
+\newcommand{\exampleee}[6]
+{
+	\subsubsection*{Пример}
+	{\tt
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	#1 		& #2 		\\
+	\hline
+	#3		& #4		\\
+	\hline
+	#5		& #6		\\
+	\hline
+	\end{tabularx}
+	}
+}
+
+\newcommand{\exampleeee}[8]
+{
+	\subsubsection*{Пример}
+	{\tt
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	#1 		& #2 		\\
+	\hline
+	#3		& #4		\\
+	\hline
+	#5		& #6		\\
+	\hline
+	#7		& #8		\\
+	\hline
+	\end{tabularx}
+	}
+}
+
+\newcommand{\exampleeeee}[5]
+{
+	\subsubsection*{Пример}
+	{\tt
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	#1		\\
+	\hline
+	#2		\\
+	\hline
+	#3		\\
+	\hline
+	#4		\\
+	\hline
+	#5		\\
+	\hline
+	\end{tabularx}
+	}
+}
+
+\newcommand{\examplepic}[3]
+{
+	\subsubsection*{Пример}
+	{\tt
+	\noindent
+	\begin{tabularx}{\linewidth}{|X|X|X|}
+	\hline
+	Ввод 	& Вывод  	& Пояснение\\
+	\hline
+	#1 		& #2 		& #3\\
+	\hline
+	\end{tabularx}
+	}
+}
+
+
+\newcommand{\excomm}[1]
+{
+	\subsubsection*{Комментарий}
+	\textit{#1}
+}
+
+\newcommand{\problemauthor}[1]{
+\begin{flushright}
+\textit{Автор: #1}
+\end{flushright}
+}
+
+\newcommand{\problemofferer}[1]{
+\begin{flushright}
+\textit{Предложил: #1}
+\end{flushright}
+}
+
+\usepackage{listings}
+\lstset{language=C,
+        basicstyle=\ttfamily,
+        keywordstyle=\color{blue},
+        frame=single,
+        numbers=left,
+        tabsize=4}
 
 \begin{document}
 
-\head{Открытая олимпиада по программированию \\ Осенний тур 2018}{20 октября 2018}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+\head{Открытая командная олимпиада по программированию \\ Осенний тур 2018}{20 октября 2018}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
 
-\begin{longtable}{|c|c|p{0.12\linewidth}|p{0.25\linewidth}|*{9}{p{0.033\linewidth}|}c|c|}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{|c|c|p{0.15\linewidth}|p{0.3\linewidth}|*{9}{p{0.033\linewidth}|}c|c|}
 \hline
 № & КФ & Команда & Состав & A & B & C & D & E & F & G & H & I & Итог & Штраф\\
 \hline
@@ -63,7 +221,7 @@
 \hline
 9 & 3 & Murmaider & Азатов Таир  (КФ МГУ, ВМК-2) \newline  Вагнер Алан  (КФ МГУ, ВМК-2) \newline Понамарёв Валерий  (КФ МГУ, ВМК-2)  & \accept{+3}{0:31} & \accept{+1}{0:26} &   &   &   & \accept{+2}{2:09} &   &   & \accept{+4}{1:26} & 4 & 472\\
 \hline
-10 &  & Пыхтельня Скрытого Листа & Естемесов Руслан  (IITU) \newline  Михалко Абдрасул  (IITU) \newline Шатаев Динмухаммед  (IITU)  & \accept{+1}{0:12} & \accept{+}{0:24} &   &   & \reject{-4} & \accept{+3}{2:58} &   &   & \accept{+3}{2:25} & 4 & 499\\
+10 &  & Пыхтельня \newline Скрытого \newline  Листа & Естемесов Руслан  (IITU) \newline  Михалко Абдрасул  (IITU) \newline Шатаев Динмухаммед  (IITU)  & \accept{+1}{0:12} & \accept{+}{0:24} &   &   & \reject{-4} & \accept{+3}{2:58} &   &   & \accept{+3}{2:25} & 4 & 499\\
 \hline
 11 &  & Thanos & Muslim N  (IITU) \newline  Abdrakhmanov T  (IITU)  & \accept{+2}{1:32} & \accept{+1}{0:56} &   &   &   & \accept{+1}{2:58} &   &   & \accept{+1}{2:30} & 4 & 576\\
 \hline
@@ -73,7 +231,7 @@
 \hline
 14 &  & LEUTE & BEKBAYEV AIBEK  (KBTU) \newline  KOZLOV ANDREI  (KBTU) \newline DANIIL OPEL  (KBTU)  & \accept{+3}{0:22} & \accept{+1}{1:13} &   &   & \reject{-1} &   &   &   & \reject{-3} & 2 & 175\\
 \hline
-15 & 5 & Angry Coderz from Moscow & Абдыкалик Чингиз  (КФ МГУ, ВМК-4) \newline  Керопян Агаси  (КФ МГУ, ВМК-4) \newline Татин Алмаз  (КФ МГУ, ВМК-4)  & \accept{+}{1:26} & \accept{+1}{1:13} &   &   & \reject{-72} &   &   & \reject{-3} & \reject{-7} & 2 & 179\\
+15 & 5 & Angry Coderz \newline from Moscow & Абдыкалик Чингиз  (КФ МГУ, ВМК-4) \newline  Керопян Агаси  (КФ МГУ, ВМК-4) \newline Татин Алмаз  (КФ МГУ, ВМК-4)  & \accept{+}{1:26} & \accept{+1}{1:13} &   &   & \reject{-72} &   &   & \reject{-3} & \reject{-7} & 2 & 179\\
 \hline
 16 &  & Лучше чем Джиги & Жумахан Меруерт  (Кф МГУ, ММ-2) \newline  Джексембаев Руслан  (Кф МГУ, ММ-2) \newline Жусупов Темирлан  (Кф МГУ, ВМК-2)  & \accept{+3}{0:39} & \accept{+1}{1:01} &   &   &   & \reject{-2} &   & \reject{-7} &   & 2 & 180\\
 \hline
@@ -105,5 +263,6 @@
 \hline
 \end{longtable}
 
+\renewcommand{\arraystretch}{1}
 
 \end{document} 

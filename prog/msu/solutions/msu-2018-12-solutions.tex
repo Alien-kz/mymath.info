@@ -1,0 +1,330 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tabularx}			%smart table
+\usepackage{longtable}			%long table
+\usepackage{tikz, pgfplots}		%draw pictures and graphics
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{listofitems}		%draw from tex-list
+\usepackage{enumitem}			%enumarate parameters
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
+
+\newcommand{\accept}[2]{
+	\centerline{\boxed{#1}}
+	\newline
+	\centerline{\scriptsize{#2}}
+}
+\newcommand{\reject}[1]{
+	\centerline{#1}
+}
+
+
+\newcommand{\head}[4]
+{
+	\thispagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+
+% format
+
+\newcommand{\informat}[1]
+{
+	\subsubsection*{Ввод} #1
+}
+
+\newcommand{\outformat}[1]
+{
+	\subsubsection*{Вывод} #1
+}
+
+\newcommand{\example}[2]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод & Вывод \\
+	\hline
+	{\tt #1} & {\tt #2}		\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\examplelong}[2]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\textwidth}{|l|X|}
+	\hline
+	Ввод & Вывод \\
+	\hline
+	#1 & #2		\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\examplee}[4]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	{\tt #1} & {\tt #2}	\\
+	\hline
+	{\tt #3} & {\tt #4}	\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\exampleee}[6]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	{\tt #1} & {\tt #2}	\\
+	\hline
+	{\tt #3} & {\tt #4}	\\
+	\hline
+	{\tt #5} & {\tt #6}	\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\exampleeee}[8]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	{\tt #1} & {\tt #2}	\\
+	\hline
+	{\tt #3} & {\tt #4}	\\
+	\hline
+	{\tt #5} & {\tt #6}	\\
+	\hline
+	{\tt #7} & {\tt #8}	\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\exampleeeee}[5]
+{
+	\subsubsection*{Пример}
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	#1		\\
+	\hline
+	#2		\\
+	\hline
+	#3		\\
+	\hline
+	#4		\\
+	\hline
+	#5		\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\examplepic}[3]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|l|l|X|}
+	\hline
+	Ввод 	& Вывод  	& Пояснение\\
+	\hline
+	{\tt #1} 		& {\tt #2} 		& #3\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+
+\newcommand{\excomm}[1]
+{
+	\subsubsection*{Комментарий}
+	\textit{#1}
+}
+
+\newcommand{\problemauthor}[1]{
+\begin{flushright}
+\textit{Автор: #1}
+\end{flushright}
+}
+
+\newcommand{\problemofferer}[1]{
+\begin{flushright}
+\textit{Предложил: #1}
+\end{flushright}
+}
+
+\usepackage{listings}
+\lstset{language=C,
+        basicstyle=\ttfamily,
+        keywordstyle=\color{blue},
+        frame=single,
+        numbers=left,
+        tabsize=4}
+
+\begin{document}
+
+\head{Открытая личная олимпиада по программированию \\ Зимний тур 2018}{12 декабря 2018}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\subsection*{A. Around the problems}
+
+\problemauthor{ Баев А.Ж.}
+
+Сгруппируем периоды по парам, чтобы найти суммарное количество минут, которое прошло от начала олимпиады. Если $p$ нечетное, то количество минут от начала олимпиады равно 
+$$t = \left[ \frac{p-1}{2} \right] * (n_1 + n_2) + m.$$
+Если $p$ четное, то количество минут от начала олимпиады равно 
+$$t = \left[ \frac{p-1}{2} \right] * (n_1 + n_2) + n_1 + m.$$
+
+Ответ зависит от остатка при делении $t$ на 7. Если $t$ делится на 7, то ответ  $G$, иначе это ответ $(t - 1) \bmod 7$-я задача.
+
+Асимптотика по времени $O(1)$.
+
+\lstinputlisting{code/2018-12-A.cpp}
+
+
+
+
+\subsection*{B. Be lazy}
+
+\problemauthor{ Абдикалыков А.К.}
+
+Найдем расстояния до ближайших к числам $p$ и $q$ элементов: $mp = \min_{i} |a_i - p|$ и $mq = \min_{i} |a_i - q|$. Ответом будет $\min( mp + mq, |p - q|)$.
+
+Асимптотика по времени $O(n)$.
+
+\lstinputlisting{code/2018-12-B.cpp}
+
+
+
+
+\subsection*{C. Calculator}
+
+\problemauthor{ Жусупов Али}
+
+Переберём все числа $k$ от 0 до $2^n - 1$, где $n$ --- количество символов данной строки. Число $k$ не подходит, если хотя бы в одной позиции $i$ в строке $s$ будут символ отличный от вопроса (то есть 0 или 1) и он не будет совпадать с $i$-м битом числа $k$. Выбор соответствующего бита удобны сделать через битовый сдвиг числа.
+
+Асимптотика по времени $O(2^n \cdot n)$.
+
+\lstinputlisting{code/2018-12-C.cpp}
+
+
+
+
+\subsection*{D. Deep rolling}
+
+\problemauthor{ Баев А.Ж.}
+
+\input{pictures/2018-12-D}
+
+Если $[a]$ и $[b]$ одной четности, то это либо белый, либо красный цвет. Белый цвет бывает в случае, если $[a]$ --- четное и $\{a\} + \{b\} < 1$ или если $[a]$ --- нечетное и $\{a\} + \{b\} > 1$. В противном случае, цвет --- красный.
+
+Если $[a]$ и $[b]$ разной четности, то это либо синий, либо зеленый цвет. Зеленый цвет бывает в случае, если $[a]$ --- четное и $\{a\} + \{b\} < 1$ или если $[a]$ --- нечетное и $\{a\} + \{b\} > 1$. В противном случае, цвет --- зеленый.
+
+Асимптотика по времени $O(1)$.
+
+\lstinputlisting{code/2018-12-D.cpp}
+
+
+
+
+\subsection*{E. Elementary balance}
+
+\problemauthor{ Баев А.Ж.}
+
+Суффиксные суммы считаем за один проход слева направо. 
+$$l_i = l_{i - 1} + a_i$$
+
+Сумма всего массива $s$ равна сумме префиксной суммы $l_k$, элемента $a_k$ и суффиксной суммы $r_k$.
+$$s = \sum_{i=1}^{k - 1} a_i + a_k + \sum_{i=k + 1}^{n} a_i = l_k + a_k + r_k $$
+Значит префиксные суммы можно выразить через суффиксные.
+
+Ответ $ans = \min_i |l_i - r_i|$ --- минимум модуля их разности. Несложно заметить, что префиксные и суффиксные суммы можно не хранить в массивах, а вычислять <<на лету>>.
+
+Асимптотика по времени $O(n)$.
+
+\lstinputlisting{code/2018-12-E.cpp}
+
+
+
+
+\subsection*{F. Full overlapping}
+
+\problemofferer{ Жусупов Али}
+
+Сохраним все левые концы в один массив $l$, все правые концы --- в массив $r$. Отсортируем оба массива по возрастанию. Заведем переменную-счетчик $c$ для вычисления количества наложений. Теперь пройдемся сканирующей прямой по объединению значений в обоих массивов слева направо. Для этого модифицируем алгоритм слияния двух отсортированных массивов через два указателя $i$ и $j$. Если текущий правый конец $l_i$ не меньше текущего левого конца $r_j$, то указатель $i$ передвигаем к следующему правому концу и уменьшаем счетчик $c$. В противном случае, указатель $j$ передвигаем к следующему левому концу и увеличиваем счетчик $c$. Максимальное значение $c$ за всё время --- ответ на задачу. Обратите внимание, если $l_i = r_j$, то необходимо сдвигать указатель $j$.
+
+Асимптотика по времени $O(n)$.
+
+\lstinputlisting{code/2018-12-F.cpp}
+
+
+
+
+\subsection*{G. Galaxy number}
+
+\problemauthor{ Абдикалыков А.К.}
+
+Пусть $m$ --- искомое число. Тогда $m - 10^{41} < k$ и $m \bmod k \equiv 0$. То есть $m = 10^{41} + r$, где $r$ остаток, дополняющий остаток при делении $10^{41}$ на $k$ до $0$ или $k$. Таким образом:
+$$ m = 10^{41} + (k - r) \bmod k$$
+где $r = 10^{41} \bmod k$, который можно вычислить наивным алгоритмом, не забывая вычислить остаток при делении на $k$ после каждого умножения.
+
+Стоит обратить внимание, что наличие встроенной длинной арифметики на python позволяет очень написать ответ прямой формулой.
+
+Асимптотика по времени $O(1)$.
+
+\lstinputlisting{code/2018-12-G.cpp}
+
+
+
+
+
+\end{document} 

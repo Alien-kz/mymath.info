@@ -1,0 +1,389 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tabularx}			%smart table
+\usepackage{longtable}			%long table
+\usepackage{tikz, pgfplots}		%draw pictures and graphics
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{listofitems}		%draw from tex-list
+\usepackage{enumitem}			%enumarate parameters
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
+
+\newcommand{\accept}[2]{
+	\centerline{\boxed{#1}}
+	\newline
+	\centerline{\scriptsize{#2}}
+}
+\newcommand{\reject}[1]{
+	\centerline{#1}
+}
+
+
+\newcommand{\head}[4]
+{
+	\thispagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+
+% format
+
+\newcommand{\informat}[1]
+{
+	\subsubsection*{Ввод} #1
+}
+
+\newcommand{\outformat}[1]
+{
+	\subsubsection*{Вывод} #1
+}
+
+\newcommand{\example}[2]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод & Вывод \\
+	\hline
+	{\tt #1} & {\tt #2}		\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\examplelong}[2]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\textwidth}{|l|X|}
+	\hline
+	Ввод & Вывод \\
+	\hline
+	#1 & #2		\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\examplee}[4]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	{\tt #1} & {\tt #2}	\\
+	\hline
+	{\tt #3} & {\tt #4}	\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\exampleee}[6]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	{\tt #1} & {\tt #2}	\\
+	\hline
+	{\tt #3} & {\tt #4}	\\
+	\hline
+	{\tt #5} & {\tt #6}	\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\exampleeee}[8]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	{\tt #1} & {\tt #2}	\\
+	\hline
+	{\tt #3} & {\tt #4}	\\
+	\hline
+	{\tt #5} & {\tt #6}	\\
+	\hline
+	{\tt #7} & {\tt #8}	\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\exampleeeee}[5]
+{
+	\subsubsection*{Пример}
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	#1		\\
+	\hline
+	#2		\\
+	\hline
+	#3		\\
+	\hline
+	#4		\\
+	\hline
+	#5		\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\examplepic}[3]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|l|l|X|}
+	\hline
+	Ввод 	& Вывод  	& Пояснение\\
+	\hline
+	{\tt #1} 		& {\tt #2} 		& #3\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+
+\newcommand{\excomm}[1]
+{
+	\subsubsection*{Комментарий}
+	\textit{#1}
+}
+
+\newcommand{\problemauthor}[1]{
+\begin{flushright}
+\textit{Автор: #1}
+\end{flushright}
+}
+
+\newcommand{\problemofferer}[1]{
+\begin{flushright}
+\textit{Предложил: #1}
+\end{flushright}
+}
+
+\usepackage{listings}
+\lstset{language=C,
+        basicstyle=\ttfamily,
+        keywordstyle=\color{blue},
+        frame=single,
+        numbers=left,
+        tabsize=4}
+
+\begin{document}
+
+\head{Открытая личная олимпиада по программированию \\ Зимний тур 2018}{12 декабря 2018}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+
+\subsection*{A. Around the problems}
+
+На очередной олимпиаде по программированию Валера обнаружил 7 задач с кодовыми названиями $A$, $B$, $C$, $D$, $E$, $F$, $G$. Валера хочет решить все задачи, поэтому он каждую минуту переходит к следующей задаче. Как только список задач заканчивается, Валера возвращается к задаче $A$, то есть он решает в таком порядке: $A$, $B$, $C$, $D$, $E$, $F$, $G$, $A$, $B$, $C$, $D$, $\ldots$. Чтобы не сбиться со счету, Валера время измеряет периодами, причем длины периодов чередуются: нечетные периоды содержат $n_1$ минут, а четные периоды --- $n_2$ минут. Какую задачу будет решать Валера в $m$-ю минуту $p$-го периода?
+
+\informat{В первой строке 2 целых числа $n_1$ и $n_2$ от 1 до 1000. Во второй строке 2 целых числа $p$ и $m$  от 1 до 1000, где $m \leqslant n_1$ при нечетном $p$ и $m \leqslant n_2$ при четном $p$.}
+
+\outformat{Одна заглавная буква английского алфавита от $A$ до $G$, соответствующая некоторой задаче.}
+
+\exampleee{
+10 5 \newline
+5 8
+}{
+C
+}{
+31 30 \newline
+2 1
+}{
+D
+}{
+700 1 \newline
+11 11
+}{
+B
+}
+
+\excomm{В первом примере периоды идут в порядке 10 минут, 5 минут, 10 минут, 5 минут, 10 минут и т.д. То есть восьмая минута пятого периода --- это 38 минута от начала, что соответствует задаче С.}
+
+\newpage
+
+
+\subsection*{B. Be lazy}
+
+Чтобы сэкономить сегодня как можно больше энергии для решения задач, Алан решил как можно меньше использовать лестницы. К великому разочарованию Алана, лифт в учебном корпусе останавливается только на некоторых этажах. Какое минимальное число этажей ему надо пройти пешком, чтобы попасть с этажа под номером $P$ на этаж под номером $Q$, если он при необходимости может воспользоваться лифтом?
+
+\informat{В первой строке два целых числа $P$, $Q$ от 1 до $10^9$. Во второй строке одно целое число $n$ от 1 до 100000. На третьей строке даны $n$ различных целых чисел от $1$ до $10^{9}$, отсортированных по возрастанию}
+
+\outformat{Одно целое неотрицательное число --- минимальное количество этажей, которое необходимо пройти пешком.}
+
+\examplee
+{2 5
+4\newline
+1 6 7 8\newline}
+{2}
+{2 5\newline
+2\newline
+1 8}
+{3}
+
+
+\excomm{В первом примере Алану надо спуститься со 2-го этажа на 1-й, далее подняться на лифте с 1-го этажа на 6-й и спуститься пешком с 6-го этажа на 5-й.}
+
+\newpage
+
+
+\subsection*{C. Calculator}
+
+Таир нашел раритетный калькулятор, который отображает числа в двоичной системе счисления. Таир восстановил последнее сохраненное число в калькуляторе, но из-за высокой степени <<раритетности>> экрана не всё на экране отображается хорошо. Таир точно распознал, какие из двоичных цифр числа равны 0, какие равны 1, а какие невозможно определить однозначно. Может ли Вы вывести список всех подходящих кандидатов? Имейте в виду, что ведущие нули допустимы!
+
+\informat{Строка из символов '0', '1' и '?' длиной не более 10 символов (ввод заканчивается переносом строки).}
+
+\outformat{Все подходящие целые числа, отсортированные по возрастанию, с переносом строки после каждого числа.}
+
+\exampleee{1?1?}{10\newline
+11\newline
+14\newline
+15}
+{??}
+{0\newline
+1\newline
+2\newline
+3}
+{10}
+{2}
+
+\excomm{В первом примере подходят числа $1010_2 = 10$, $1011_2 = 11$, $1110_2 = 14$, $1111_2 = 15$.}
+
+\newpage
+
+
+\subsection*{D. Deep rolling}
+
+Али  стал обладателем головоломки <<Тетраэдр Рубика>>, которая представляет собой правильный тетраэдр со стороной 2 и гранями, раскрашенными в белый, синий, красный и зеленый цвета. Собрав головоломку, Али обеспокоился вопросом: что с ней можно сделать. После нескольких перекатываний через ребра по плоскости он заметил удивительный факт: на любую точку плоскости всегда попадает грань одного и того же цвета! А можно ли узнать цвет грани, которая попадет на данную точку плоскости, не производя самих перекатываний?
+
+\input{pictures/2018-12-D}
+
+Изначально нижняя грань тетраэдра стоит в точках с координатами $(0, 0)$, $(2, 0)$, $(1, \sqrt{3})$. Нижняя грань окрашена в белый цвет, а боковые соответственно в красный, зеленый и синий (смотрите картинку). Координаты точки плоскости $(X, Y)$, для которой необходимо узнать цвет, задаются через два параметра $A$ и $B$:
+
+$$
+\begin{pmatrix}
+X \\
+Y
+\end{pmatrix}
+= 
+A * 
+\begin{pmatrix}
+2 \\
+0
+\end{pmatrix}
++ B * 
+\begin{pmatrix}
+1 \\
+\sqrt{3}
+\end{pmatrix}
+$$
+
+\informat{Два вещественных числа $A$ и $B$ от 0 до 100 с точностью в 1 знак после запятой. Гарантируется, что числа $A$, $B$ и $A + B$ не являются целыми.}
+
+\outformat{Одну из четырех строк: white, red, green или blue.}
+
+\exampleee{11.1 11.1}{red}{12.3 45.6}{green}{65.4 32.1}{blue}
+
+\excomm{$A$ и $B$ являются координатами данной точки в системе координат с базисными векторами $e_1(2, 0)$ и $e_2(1, \sqrt{3})$. В таком базисе начальные координаты вершин нижней грани будут равны $(0, 0)$, $(1, 0)$, $(0, 1)$.}
+
+\newpage
+
+
+\subsection*{E. Elementary balance}
+
+Ануар очень любит придумывать различные термины. Вот его последнее творение: элементарный балансир массива --- это такой элемент массива, что сумма всех элементов справа и сумма всех чисел слева от этого элемента отличаются на минимальное число. Осталось дело за малым --- найти позиции всех элементарных балансиров данного массива!
+
+
+\informat{В первой строке одно целое число $n$ от 1 до 100000. Во второй строке $n$ целых чисел, по модулю не превосходящих $10^{9}$.}
+
+\outformat{Одно или несколько целых чисел через пробел --- позиции элементарных балансиров массива.}
+
+\exampleee{7\newline
+7 6 5 4 3 2 1}{3}
+{2 \newline
+3 4}{2}
+{3 \newline
+1 -1 1}
+{1 2 3}
+
+\excomm{В первом примере слева от третьего числа сумма равна 13, справа от него --- 10. Между этими числами разница равна 3 --- минимальная возможная.}
+
+\newpage
+
+
+\subsection*{F. Full overlapping}
+
+Первое, чему удивился Азат, когда приступил к учебе в Москве, --- это количество одновременно выданных домашних заданий. За семестр ему выдали $n$ домашних заданий. Причем $i$-e домашнее задание Азату выдали в 12:00 $L_i$-го дня, а сдать его нужно было не позднее 12:00 $R_i$-го дня. Азат уверен, что иногда были моменты, когда количество актуальных домашних работ было просто космическим! Правда ли это? Найдите, какое максимальное количество перекрывающихся домашних заданий было у Азата. Два задания являются перекрывающимися, если существует интервал времени ненулевой длины, который принадлежит временным отрезкам обоих заданий.
+
+\informat{В первой строке одно целое число $n$ от 1 до 100000. Во второй строке $n$ пар целых чисел $L_i < R_i$ от 1 до $10^{18}$.}
+
+\outformat{Одно целое неотрицательное число --- максимальное количество перекрывающихся домашних заданий.}
+
+\example{
+5\newline
+1 5\newline
+2 6\newline
+3 4\newline
+1 4\newline
+1 2
+}{4}
+
+\excomm{В примере интервал $(3; 4)$ принадлежит временным отрезкам первых четырех заданий.}
+
+\newpage
+
+
+\subsection*{G. Galaxy number}
+
+Бекарыс знает ответ на <<главный вопрос жизни, вселенной и всего такого>>. Поэтому он может найти минимальное 42-значное число, кратное данному $k$. А вы можете?
+
+\informat{Одно целое число $k$ от 1 до $10^{15}$.}
+
+\outformat{Одно целое 42-значное число.}
+
+\examplelong{2019}{100000000000000000000000000000000000000218}
+
+
+\end{document} 

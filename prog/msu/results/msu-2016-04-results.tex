@@ -7,25 +7,21 @@
 \usepackage{mathtext}			%text in formulas
 \usepackage{geometry}			%paper format attributes
 \usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tabularx}			%smart table
 \usepackage{longtable}			%long table
+\usepackage{tikz, pgfplots}		%draw pictures and graphics
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{listofitems}		%draw from tex-list
+\usepackage{enumitem}			%enumarate parameters
 
-\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
 \sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
 
-\newcommand{\head}[4]
-{
-	\pagestyle{fancy}
-	\fancyhf{}
-	\lhead{#3 \\ #2}
-	\rhead{#1}
-	
-	\begin{center}
-	\begin{large}
-	#1 \\
-	\textit{#2}\\
-	\end{large}
-	\end{center}
-}
 \newcommand{\accept}[2]{
 	\centerline{\boxed{#1}}
 	\newline
@@ -34,14 +30,176 @@
 \newcommand{\reject}[1]{
 	\centerline{#1}
 }
-\def\arraystretch{1.5}
+
+
+\newcommand{\head}[4]
+{
+	\thispagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+
+% format
+
+\newcommand{\informat}[1]
+{
+	\subsubsection*{Ввод} #1
+}
+
+\newcommand{\outformat}[1]
+{
+	\subsubsection*{Вывод} #1
+}
+
+
+\newcommand{\example}[2]
+{
+	\subsubsection*{Пример}
+	{\tt
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод & Вывод \\
+	\hline
+	#1 & #2		\\
+	\hline
+	\end{tabularx}
+	}
+}
+
+\newcommand{\examplee}[4]
+{
+	\subsubsection*{Пример}
+	{\tt
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	#1 		& #2 		\\
+	\hline
+	#3		& #4		\\
+	\hline
+	\end{tabularx}
+	}
+}
+
+\newcommand{\exampleee}[6]
+{
+	\subsubsection*{Пример}
+	{\tt
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	#1 		& #2 		\\
+	\hline
+	#3		& #4		\\
+	\hline
+	#5		& #6		\\
+	\hline
+	\end{tabularx}
+	}
+}
+
+\newcommand{\exampleeee}[8]
+{
+	\subsubsection*{Пример}
+	{\tt
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	#1 		& #2 		\\
+	\hline
+	#3		& #4		\\
+	\hline
+	#5		& #6		\\
+	\hline
+	#7		& #8		\\
+	\hline
+	\end{tabularx}
+	}
+}
+
+\newcommand{\exampleeeee}[5]
+{
+	\subsubsection*{Пример}
+	{\tt
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	#1		\\
+	\hline
+	#2		\\
+	\hline
+	#3		\\
+	\hline
+	#4		\\
+	\hline
+	#5		\\
+	\hline
+	\end{tabularx}
+	}
+}
+
+\newcommand{\examplepic}[3]
+{
+	\subsubsection*{Пример}
+	{\tt
+	\noindent
+	\begin{tabularx}{\linewidth}{|X|X|X|}
+	\hline
+	Ввод 	& Вывод  	& Пояснение\\
+	\hline
+	#1 		& #2 		& #3\\
+	\hline
+	\end{tabularx}
+	}
+}
+
+
+\newcommand{\excomm}[1]
+{
+	\subsubsection*{Комментарий}
+	\textit{#1}
+}
+
+\newcommand{\problemauthor}[1]{
+\begin{flushright}
+\textit{Автор: #1}
+\end{flushright}
+}
+
+\newcommand{\problemofferer}[1]{
+\begin{flushright}
+\textit{Предложил: #1}
+\end{flushright}
+}
+
+\usepackage{listings}
+\lstset{language=C,
+        basicstyle=\ttfamily,
+        keywordstyle=\color{blue},
+        frame=single,
+        numbers=left,
+        tabsize=4}
 
 \begin{document}
 
-\head{Открытая олимпиада по программированию \\ Весенний тур 2016}{30 апреля 2016}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+\head{Открытая командная олимпиада по программированию \\ Весенний тур 2016}{30 апреля 2016}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
 
+\renewcommand{\arraystretch}{1.5}
 \begin{center}
-\begin{longtable}{|c|c|p{0.2\linewidth}|p{0.2\linewidth}|*{10}{p{0.025\linewidth}|}c|c|}
+\begin{longtable}{|c|c|p{0.15\linewidth}|p{0.25\linewidth}|*{10}{p{0.028\linewidth}|}c|c|}
 \hline
 №  & КФ & Команда & Состав & A & B & C & D & E & F & G & H & I & J & Итог & Штраф \\
 \hline
@@ -78,7 +236,7 @@
 \hline
 16 & 7 & Lord Bendtner Team & Вержбицкий Владислав (ВМ-3)   \newline  Седякин Илья (ВМ-3)   \newline Таскынов Ануар (ВМ-3)   & \accept{+3}{1:25}  & \accept{+2}{1:24}  &   &   & \reject{-3} & \reject{-9} &   &   &   & \reject{-1} & 2 & 269\\
 \hline
-17 & 8 & Association of Angry Coderz & Ким Владимир (ВМ-1) \newline  Абдыкалик Чингиз (ВМ-1)   \newline Турукпаев Исламбек (ВМ-1)  & \accept{+4}{2:52}  & \accept{+}{3:20}  &   &   &   & \reject{-1} &   &   & \reject{-6} &   & 2 & 452\\
+17 & 8 & Association \newline of Angry Coderz & Ким Владимир (ВМ-1) \newline  Абдыкалик Чингиз (ВМ-1)   \newline Турукпаев Исламбек (ВМ-1)  & \accept{+4}{2:52}  & \accept{+}{3:20}  &   &   &   & \reject{-1} &   &   & \reject{-6} &   & 2 & 452\\
 \hline
 18 & 9 & Михалыч & Автайкин Мария (ВМ-4)   \newline  Журавлев Вадим (ВМ-4) \newline Оспанов Аят (ВМ-4) & \accept{+8}{2:01}  & \accept{+2}{3:18}  & \reject{-2} &   &   & \reject{-10} &   &   &   &   & 2 & 519\\
 \hline
@@ -108,5 +266,6 @@
 \hline
 \end{longtable}
 \end{center}
+\renewcommand{\arraystretch}{1}
 
 \end{document} 

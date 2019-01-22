@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
 
 \usepackage[T2A]{fontenc}		%cyrillic output
 \usepackage[utf8]{inputenc}		%cyrillic output
@@ -8,42 +8,188 @@
 \usepackage{geometry}			%paper format attributes
 \usepackage{fancyhdr}			%header
 \usepackage{graphicx}			%input pictures
-\usepackage{tikz}				%draw pictures
-\usepackage{pgfplots}			%draw graphics
+\usepackage{tabularx}			%smart table
+\usepackage{longtable}			%long table
+\usepackage{tikz, pgfplots}		%draw pictures and graphics
 \usetikzlibrary{patterns}		%draw pictures: fill
-\usetikzlibrary{calc}			%draw pictures: coordinate calc
-% \usetikzlibrary{external}		%draw pictures: cache pitcures
-% \tikzexternalize				%cache pictures
-\usepackage{listings}			%code
-\usepackage{enumitem}			%noindent
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{listofitems}		%draw from tex-list
+\usepackage{enumitem}			%enumarate parameters
 
-\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
 \setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
 \sloppy							%correct overfull
-\newcommand{\subsectionbreak}{\clearpage} %new section
+\pagestyle{empty}				%no page numbers
+
+\newcommand{\accept}[2]{
+	\centerline{\boxed{#1}}
+	\newline
+	\centerline{\scriptsize{#2}}
+}
+\newcommand{\reject}[1]{
+	\centerline{#1}
+}
+
 
 \newcommand{\head}[4]
 {
-	\pagestyle{fancy}
+	\thispagestyle{fancy}
 	\fancyhf{}
-	\lhead{#3 \\ #2}
-	\rhead{#1}
-	
+	\chead{#3, #4}
+
 	\begin{center}
 	\begin{large}
 	#1 \\
 	\textit{#2}\\
 	\end{large}
 	\end{center}
+
 }
 
-\lstset{language=C++}
-\lstset{basicstyle=\footnotesize\ttfamily} 
-\lstset{keywordstyle=\color{blue}}
-\lstset{frame=single}
-\lstset{numbers=left}
 
-\sloppy
+% format
+
+\newcommand{\informat}[1]
+{
+	\subsubsection*{Ввод} #1
+}
+
+\newcommand{\outformat}[1]
+{
+	\subsubsection*{Вывод} #1
+}
+
+\newcommand{\example}[2]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод & Вывод \\
+	\hline
+	{\tt #1} & {\tt #2}		\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\examplelong}[2]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\textwidth}{|l|X|}
+	\hline
+	Ввод & Вывод \\
+	\hline
+	#1 & #2		\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\examplee}[4]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	{\tt #1} & {\tt #2}	\\
+	\hline
+	{\tt #3} & {\tt #4}	\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\exampleee}[6]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	{\tt #1} & {\tt #2}	\\
+	\hline
+	{\tt #3} & {\tt #4}	\\
+	\hline
+	{\tt #5} & {\tt #6}	\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\exampleeee}[8]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	{\tt #1} & {\tt #2}	\\
+	\hline
+	{\tt #3} & {\tt #4}	\\
+	\hline
+	{\tt #5} & {\tt #6}	\\
+	\hline
+	{\tt #7} & {\tt #8}	\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\exampleeeee}[5]
+{
+	\subsubsection*{Пример}
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	#1		\\
+	\hline
+	#2		\\
+	\hline
+	#3		\\
+	\hline
+	#4		\\
+	\hline
+	#5		\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\examplepic}[3]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|l|l|X|}
+	\hline
+	Ввод 	& Вывод  	& Пояснение\\
+	\hline
+	{\tt #1} 		& {\tt #2} 		& #3\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+
+\newcommand{\excomm}[1]
+{
+	\subsubsection*{Комментарий}
+	\textit{#1}
+}
 
 \newcommand{\problemauthor}[1]{
 \begin{flushright}
@@ -57,10 +203,17 @@
 \end{flushright}
 }
 
+\usepackage{listings}
+\lstset{language=C,
+        basicstyle=\ttfamily,
+        keywordstyle=\color{blue},
+        frame=single,
+        numbers=left,
+        tabsize=4}
 
 \begin{document}
 
-\head{Открытая олимпиада по программированию \\ Осенний тур 2018}{20 октября 2018}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+\head{Открытая командная олимпиада по программированию \\ Осенний тур 2018}{20 октября 2018}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
 
 
 \subsection*{A. Archeologist’s find}
@@ -71,7 +224,7 @@
 
 \lstinputlisting{code/2018-10-A.cpp}
 
-\newpage
+
 
 \subsection*{B. Board rotating }
 
@@ -81,11 +234,11 @@
 
 Асимптотика по времени: $O(1)$.
 
-\newpage
+
 
 \subsection*{C. Counting pixels}
 
-Пусть $A$ --- начало отрезка, $B$ --- конец отрезка; $a$ -- смещение по одной оси, $b$ --- по другой оси. Рассмотрим два случая: отрезок не проходит ни через один из углов пикселей и отрезок проходит через какой-либо угол.
+Пусть точка $A$ --- начало отрезка, а точка $B$ --- конец отрезка. Обозначим смещения по осям $a$ и $b$ соответственно. Рассмотрим два случая: отрезок не проходит ни через один из углов пикселей и отрезок проходит через какой-либо угол.
 
 В первом случае
 \input{pictures/2018-10-C2}
@@ -96,6 +249,7 @@ $$a + b + 1$$
 Во втором случае каждый из узлов уменьшает ответ первого случая на 1 (так как переход происходит сразу по 2 осям). Посчитаем количество узлов. Выберем любой из узлов $C$, через который проходит отрезок. И перенесем параллельным переносом часть отрезка $AC$ и все сопутствующие ему пиксели так, чтобы $A$ совпало с $B$. 
 
 \input{pictures/2018-10-C}
+
 \input{pictures/2018-10-C1}
 
 
@@ -106,7 +260,7 @@ $$a + b + 1$$
 Асимптотика по времени: $O(\log \max(i_1, i_2, j_1, j_2))$.
 
 \lstinputlisting{code/2018-10-C.cpp}
-\newpage
+
 
 \subsection*{D. Digits again}
 
@@ -170,7 +324,7 @@ $$
 
 \lstinputlisting{code/2018-10-D.cpp}
 
-\newpage
+
 
 \subsection*{E. Emirates}
 По внешнем виду можно угадать график функции $$a x + \frac{b}{x},$$ где $a > 0$, $b > 0$. Коэффициенты подбираются из примеров:
@@ -181,20 +335,20 @@ $$f(x) = 2 x + \frac{12}{x}$$
 
 \lstinputlisting{code/2018-10-E.cpp}
 
-\newpage
+
 
 \subsection*{F. Finding battleships}
 
 Запустим обход в глубину (dfs) на графе, соответствующем таблице (переходить можно на соседнюю по вертикали или горизонтали клетку) для каждой еще не посещенной клетки. При этом будет вычислить 5 параметров: $size$ --- количество клеток в компоненте связности, $i_{min}$, $i_{max}$ --- минимальная и максимальная строка, до которой дошел обход в данной компоненте, $j_{min}$, $j_{max}$ --- минимальный и максимальный столбец, до которого дошел обход в данной компоненте. Обозначим $height = i_{max} - i_{min} + 1$, $width = j_{max} - j_{min} + 1$. 
 Область будет прямоугольной тогда, и только тогда, когда:
 $$ height * width = size$$
-Определить тип прямоугольника можно естественным образом.
+Определить тип прямоугольника несложно через стороны.
 
 Асимптотика по времени: $O(n \cdot m)$.
 
 \lstinputlisting{code/2018-10-F.cpp}
 
-\newpage
+
 
 \subsection*{G. Geometrying}
 
@@ -210,7 +364,8 @@ check(x_1, y_1, z_1) < 0 \\
 check(x_2, y_2, z_2) > 0 \\
 \end{cases}
 $$
-Осталось посчитать сколько из 12 ребер куба строго пересекают плоскость и прибавить к ним количество вершин, которые лежат на плоскости $check(x, y, z) = 0$. 
+Осталось посчитать сколько из 12 ребер куба строго пересекают плоскость и прибавить к ним количество вершин, которые лежат на плоскости, то есть такие, что
+$$check(x, y, z) = 0.$$
 
 Сгенерировать координаты вершин куба можно с помощью битовых операций. Проверить, какие из вершин образуют ребро можно с помощью условия, что расстояние (вдоль ребер) равно 1.
 
@@ -218,7 +373,7 @@ $$
 
 \lstinputlisting{code/2018-10-G.cpp}
 
-\newpage
+
 
 \subsection*{H. Highest and greatest only}
 
@@ -234,7 +389,7 @@ $$ s(r) - s(l - 1).$$
 
 \lstinputlisting{code/2018-10-H.cpp}
 
-\newpage
+
 
 \subsection*{I. Into the mountains}
 

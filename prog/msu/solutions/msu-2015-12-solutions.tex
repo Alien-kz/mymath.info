@@ -1,4 +1,4 @@
-\documentclass[11pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
 
 \usepackage[T2A]{fontenc}		%cyrillic output
 \usepackage[utf8]{inputenc}		%cyrillic output
@@ -8,41 +8,188 @@
 \usepackage{geometry}			%paper format attributes
 \usepackage{fancyhdr}			%header
 \usepackage{graphicx}			%input pictures
-\usepackage{tikz}				%draw pictures
+\usepackage{tabularx}			%smart table
+\usepackage{longtable}			%long table
+\usepackage{tikz, pgfplots}		%draw pictures and graphics
 \usetikzlibrary{patterns}		%draw pictures: fill
-\usetikzlibrary{calc}			%draw pictures: coordinate calc
-% \usetikzlibrary{external}		%draw pictures: cache pitcures
-% \tikzexternalize				%cache pictures
-\usepackage{listings}			%code
-\usepackage{enumitem}			%noindent
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{listofitems}		%draw from tex-list
+\usepackage{enumitem}			%enumarate parameters
 
-\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=28pt}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
 \setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
 \sloppy							%correct overfull
-\newcommand{\subsectionbreak}{\clearpage} %new section
+\pagestyle{empty}				%no page numbers
+
+\newcommand{\accept}[2]{
+	\centerline{\boxed{#1}}
+	\newline
+	\centerline{\scriptsize{#2}}
+}
+\newcommand{\reject}[1]{
+	\centerline{#1}
+}
+
 
 \newcommand{\head}[4]
 {
-	\pagestyle{fancy}
+	\thispagestyle{fancy}
 	\fancyhf{}
-	\lhead{#3 \\ #2}
-	\rhead{#1}
-	
+	\chead{#3, #4}
+
 	\begin{center}
 	\begin{large}
 	#1 \\
 	\textit{#2}\\
 	\end{large}
 	\end{center}
+
 }
 
-\lstset{language=C++}
-\lstset{basicstyle=\footnotesize\ttfamily} 
-\lstset{keywordstyle=\color{blue}}
-\lstset{frame=single}
-\lstset{numbers=left}
 
-\sloppy
+% format
+
+\newcommand{\informat}[1]
+{
+	\subsubsection*{Ввод} #1
+}
+
+\newcommand{\outformat}[1]
+{
+	\subsubsection*{Вывод} #1
+}
+
+\newcommand{\example}[2]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод & Вывод \\
+	\hline
+	{\tt #1} & {\tt #2}		\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\examplelong}[2]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\textwidth}{|l|X|}
+	\hline
+	Ввод & Вывод \\
+	\hline
+	#1 & #2		\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\examplee}[4]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	{\tt #1} & {\tt #2}	\\
+	\hline
+	{\tt #3} & {\tt #4}	\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\exampleee}[6]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	{\tt #1} & {\tt #2}	\\
+	\hline
+	{\tt #3} & {\tt #4}	\\
+	\hline
+	{\tt #5} & {\tt #6}	\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\exampleeee}[8]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	{\tt #1} & {\tt #2}	\\
+	\hline
+	{\tt #3} & {\tt #4}	\\
+	\hline
+	{\tt #5} & {\tt #6}	\\
+	\hline
+	{\tt #7} & {\tt #8}	\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\exampleeeee}[5]
+{
+	\subsubsection*{Пример}
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|X|X|}
+	\hline
+	Ввод 	& Вывод  	\\
+	\hline
+	#1		\\
+	\hline
+	#2		\\
+	\hline
+	#3		\\
+	\hline
+	#4		\\
+	\hline
+	#5		\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+\newcommand{\examplepic}[3]
+{
+	\subsubsection*{Пример}
+	\noindent
+	\begin{center}
+	\begin{tabularx}{\linewidth}{|l|l|X|}
+	\hline
+	Ввод 	& Вывод  	& Пояснение\\
+	\hline
+	{\tt #1} 		& {\tt #2} 		& #3\\
+	\hline
+	\end{tabularx}
+	\end{center}
+}
+
+
+\newcommand{\excomm}[1]
+{
+	\subsubsection*{Комментарий}
+	\textit{#1}
+}
 
 \newcommand{\problemauthor}[1]{
 \begin{flushright}
@@ -56,10 +203,17 @@
 \end{flushright}
 }
 
+\usepackage{listings}
+\lstset{language=C,
+        basicstyle=\ttfamily,
+        keywordstyle=\color{blue},
+        frame=single,
+        numbers=left,
+        tabsize=4}
 
 \begin{document}
 
-\head{Открытая олимпиада по программированию \\ Зимний тур 2015}{18 декабря 2015}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
+\head{Открытая личная олимпиада по программированию \\ Зимний тур 2015}{18 декабря 2015}{Казахстанский филиал МГУ имени М.В.Ломоносова}{г.~Астана}
 
 \subsubsection*{A. Alexandra and Exam} 
 
