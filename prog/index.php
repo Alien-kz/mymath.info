@@ -94,6 +94,10 @@
 						print_buttons_external($material_buttons);
 					}
 					if ($olymp == "msu") {
+						$codeforces = $directory."/codeforces/msu-$year.txt";
+						$codeforces_link = file_get_contents($codeforces);
+						if ($codeforces_link != "")
+							print_buttons_external(array($codeforces_link => "Тренировка на codeforces"));
 						show_link_file("$directory/problems/$olymp-$year-problems", "Задачи ".$buttons[$year]);
 						show_link_file("$directory/solutions/$olymp-$year-solutions", "Решения ".$buttons[$year]);
 						print_centered_text("Задачи");

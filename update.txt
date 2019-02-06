@@ -1,5 +1,60 @@
-Добавлены олимпиады КФ МГУ:
-- командная олимпиада <a href='prog/index.php?olymp=msu&year=2018-10'> по программированию (осень 2018) </a>
-- личная олимпиада <a href='prog/index.php?olymp=msu&year=2018-12'> по программированию (зима 2018) </a>
-- личная олимпиада <a href='math/index.php?olymp=msu&year=2018'> по математике (декабрь 2018) </a>
-- личная олимпиада <a href='math/index.php?olymp=msu&year=2018-light'> по математике для непрофильных специальностей (декабрь 2018) </a>
+10 последних командных олимпиад Казахстанского филиала МГУ по программированию добавлены на codeforces:
+
+<table>
+<tr>
+<td><a href='prog/index.php?olymp=msu&year=2018-10'> осень 2018 </a> </td>
+<td><a href='https://codeforces.com/gym/102094'> тренировка на codeforces </a></td>
+<td><a href='https://codeforces.com/gym/102094/virtual'> виртуальное участие на codeforces (3 часа)</a></td>
+</tr>
+<tr>
+<td><a href='prog/index.php?olymp=msu&year=2018-05'> весна 2018 </a> </td>
+<td><a href='https://codeforces.com/gym/102095'> тренировка на codeforces </a></td>
+<td><a href='https://codeforces.com/gym/102095/virtual'> виртуальное участие на codeforces (3 часа)</a></td>
+</tr>
+<tr>
+<tr>
+<td><a href='prog/index.php?olymp=msu&year=2017-10'> осень 2017 </a> </td>
+<td><a href='https://codeforces.com/gym/102096'> тренировка на codeforces </a></td>
+<td><a href='https://codeforces.com/gym/102096/virtual'> виртуальное участие на codeforces (4 часа)</a></td>
+</tr>
+<tr>
+<td><a href='prog/index.php?olymp=msu&year=2017-05'> весна 2017 </a> </td>
+<td><a href='https://codeforces.com/gym/102098'> тренировка на codeforces </a></td>
+<td><a href='https://codeforces.com/gym/102098/virtual'> виртуальное участие на codeforces (4 часа)</a></td>
+</tr>
+<tr>
+<tr>
+<td><a href='prog/index.php?olymp=msu&year=2016-10'> осень 2016 </a> </td>
+<td><a href='https://codeforces.com/gym/102099'> тренировка на codeforces </a></td>
+<td><a href='https://codeforces.com/gym/102099/virtual'> виртуальное участие на codeforces (4 часа)</a></td>
+</tr>
+<tr>
+<td><a href='prog/index.php?olymp=msu&year=2016-04'> весна 2016 </a> </td>
+<td><a href='https://codeforces.com/gym/102100'> тренировка на codeforces </a></td>
+<td><a href='https://codeforces.com/gym/102100/virtual'> виртуальное участие на codeforces (4 часа)</a></td>
+</tr>
+<tr>
+<tr>
+<td><a href='prog/index.php?olymp=msu&year=2015-10'> осень 2015 </a> </td>
+<td><a href='https://codeforces.com/gym/102102'> тренировка на codeforces </a></td>
+<td><a href='https://codeforces.com/gym/102102/virtual'> виртуальное участие на codeforces (3 часа)</a></td>
+</tr>
+<tr>
+<td><a href='prog/index.php?olymp=msu&year=2015-03'> весна 2015 </a> </td>
+<td><a href='https://codeforces.com/gym/102103'> тренировка на codeforces </a></td>
+<td><a href='https://codeforces.com/gym/102103/virtual'> виртуальное участие на codeforces (4 часа)</a></td>
+</tr>
+<tr>
+<tr>
+<td><a href='prog/index.php?olymp=msu&year=2014-12'> зима 2014 </a> </td>
+<td><a href='https://codeforces.com/gym/102104'> тренировка на codeforces </a></td>
+<td><a href='https://codeforces.com/gym/102104/virtual'> виртуальное участие на codeforces (4 часа)</a></td>
+</tr>
+<tr>
+<td><a href='prog/index.php?olymp=msu&year=2014-03'> весна 2014 </a> </td>
+<td><a href='https://codeforces.com/gym/102105'> тренировка на codeforces </a></td>
+<td><a href='https://codeforces.com/gym/102105/virtual'> виртуальное участие на codeforces (3 часа)</a></td>
+</tr>
+<tr>
+
+</table>
