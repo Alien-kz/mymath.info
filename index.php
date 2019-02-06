@@ -35,7 +35,13 @@
 //			print_text(replace_level(file_get_contents("news0.txt"))); 
 //			div_close();
         div_open("Последнее обновление", "");
-        print_text(replace_level(file_get_contents("update.txt")));
+        print_text(replace_level(file_get_contents("update0.txt")));
+        div_close();
+        div_open("Последнее обновление", "");
+        print_text(replace_level(file_get_contents("update1.txt")));
+        div_close();
+        div_open("Последнее обновление", "");
+        print_text(replace_level(file_get_contents("update2.txt")));
         div_close();
 			?>
 		</div>
