@@ -2,9 +2,9 @@
 
 <table>
 <tr>
-<td style="text-align:center">Олимпиада (mymath.info)</td>
-<td style="text-align:center">Тренировка (codeforces.com)</td>
-<td style="text-align:center">Виртуальное участие (codeforces.com)</td>
+<th style="text-align:center">Олимпиада (mymath.info)</th>
+<th style="text-align:center">Тренировка (codeforces.com)</th>
+<th style="text-align:center">Виртуальное участие (codeforces.com)</th>
 </tr>
 <tr>
 <td style="text-align:center"><a href='prog/index.php?olymp=msu&year=2018-10'> осень 2018 </a> </td>
