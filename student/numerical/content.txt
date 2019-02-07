@@ -1,0 +1,14 @@
+<h3> Материалы 2018-2019 </h3>
+
+<table>
+<tr>
+<th> Дата </th>
+<th> Тема </th>
+<th> Презентация </th>
+</tr>
+<tr>
+<td> 07/02/2019 </td>
+<td> План на семестр. Линейная алгебра. Метод Гаусса. LU и LPU разложения. </td>
+<td> <file 'cmc/files/cmc-present-01.pdf'> cmc-present-01.pdf </file>  </td>
+</tr>
+</table>

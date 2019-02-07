@@ -1,0 +1,839 @@
+\documentclass[10pt]{beamer}
+\usetheme{Madrid}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{comment}
+
+%\newtheorem{theorem}{Теорема}
+
+\author{Баев А.Ж.}
+\title{Введение в численные методы. \\ Точные методы решения СЛАУ}
+\institute{Казахстанский филиал МГУ} 
+\date{07 февраля 2019}
+%\subject{} 
+
+\usepackage{tikz}
+\usetikzlibrary{patterns} 
+\usetikzlibrary{arrows, matrix, positioning, decorations.pathreplacing}
+
+\usepackage{listings}
+\lstset{language=python}
+\lstset{basicstyle=\ttfamily}  
+\lstset{keywordstyle=\color{blue}}
+\lstset{frame=single}
+\lstset{numbers=left}
+\lstset{tabsize=4}
+
+
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{frame}[fragile]
+\frametitle{План на семестр}
+
+\begin{enumerate}
+\item СЛАУ (точные методы)
+\item СЛАУ (итерационные методы)
+\item решение нелинейных уравнений
+\item интерполяция 
+\item аппроксимация
+\item интегрирование
+\item дифференцирование
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Линейная алгебра}
+
+Решение системы линейных алгебраических уравнений:
+
+$$A x = f$$
+
+где $A \in \mathbb{R}^{n \times n}$, $x \in \mathbb{R}^{n}$, $f \in \mathbb{R}^{n}$.
+
+Дано $A$, $f$. Найти $x$.
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Линейная алгебра (точные методы)}
+
+\begin{enumerate}
+\item Метод Гаусса.
+\item Метод прогонки (если $A$ --- трёхдиагональная).
+\item Метод Холецкого (если $A > 0$).
+\end{enumerate}
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса}
+
+Пусть $A = L U$, где $L$ --- нижнетреугольная (lower), $U$ --- верхнетреугольная (upper) матрица с единицами на диагонали:
+$$ L U x = f$$
+
+Прямой ход: привести матрицу к улучшенному верхнетреугольному виду элементарными преобразованиями строк.
+$$ U x = L^{-1} f$$
+
+Обратный ход: привести матрицу к диагональному виду элементарными преобразованиями строк.
+$$ x = U^{-1} L^{-1} f$$
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса}
+$$
+\begin{pmatrix}
+1 & 1 & 1 & 1  \\
+1 & 3 & 2 & 2 \\
+2 & 3 & 3 & 3 \\
+-1 & 0 & 0 & 1 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+2 \\
+3 \\
+4 \\
+-3
+\end{pmatrix}
+$$
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (прямой ход)}
+
+Шаг 1. Ведущий элемент $a_{1,1} = 1$. 
+$$
+\begin{pmatrix}
+1 & 1 & 1 & 1 \\
+1 & 3 & 2 & 2 \\
+2 & 3 & 3 & 3 \\
+-1 & 0 & 0 & 1 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+2 \\
+3 \\
+4 \\
+-3
+\end{pmatrix}
+\Rightarrow
+\begin{pmatrix}
+1 & 1 & 1 & 1 \\
+0 & 2 & 1 & 1 \\
+0 & 1 & 1 & 1 \\
+0 & 1 & 1 & 2 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+2 \\
+1 \\
+0 \\
+-1
+\end{pmatrix}
+$$
+
+Действие эквивалентно умножению уравнения слева на матрицу:
+$$
+L_1 = 
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+-1 & 1 & 0 & 0 \\
+-2 & 0 & 1 & 0 \\
+1 & 0 & 0 & 1 
+\end{pmatrix}
+$$
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (прямой ход)}
+
+Шаг 2. Ведущий элемент $a_{2,2} = 2$. 
+
+$$
+\begin{pmatrix}
+1 & 1 & 1 & 1 \\
+0 & 2 & 1 & 1 \\
+0 & 1 & 1 & 1 \\
+0 & 1 & 1 & 2 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+2 \\
+1 \\
+0 \\
+-1
+\end{pmatrix}
+\Rightarrow
+\begin{pmatrix}
+1 & 1 & 1 & 1 \\
+0 & 1 & \frac{1}{2} & \frac{1}{2} \\
+0 & 0 & \frac{1}{2} & \frac{1}{2} \\
+0 & 0 & \frac{1}{2} & \frac{3}{2} 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+2 \\
+\frac{1}{2} \\
+-\frac{1}{2} \\
+-\frac{3}{2}
+\end{pmatrix}
+$$
+Действие эквивалентно умножению уравнения слева на матрицу:
+$$
+L_2 = 
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & \frac{1}{2} & 0 & 0 \\
+0 & -\frac12 & 1 & 0 \\
+0 & -\frac12 & 0 & 1 
+\end{pmatrix}
+$$
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (прямой ход)}
+
+Шаг 3. Ведущий элемент $a_{3,3} = \frac{1}{2}$.
+
+$$
+\begin{pmatrix}
+1 & 1 & 1 & 1 \\
+0 & 1 & \frac{1}{2} & \frac{1}{2} \\
+0 & 0 & \frac{1}{2} & \frac{1}{2} \\
+0 & 0 & \frac{1}{2} & \frac{3}{2} 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+2 \\
+\frac{1}{2} \\
+-\frac{1}{2} \\
+-\frac{3}{2}
+\end{pmatrix}
+\Rightarrow
+\begin{pmatrix}
+1 & 1 & 1 & 1 \\
+0 & 1 & \frac{1}{2} & \frac{1}{2} \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 1 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+2 \\
+\frac{1}{2} \\
+-1 \\
+-1
+\end{pmatrix}
+$$
+Действие эквивалентно умножению уравнения слева на матрицу:
+$$
+L_3 = 
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 2 & 0 \\
+0 & 0 & -1 & 1 
+\end{pmatrix}
+$$
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (прямой ход)}
+Прямой ход сводится к действиям:
+$$
+L_3 L_2 L_1 A x = L_3 L_2 L_1 f
+$$
+
+Обозначим $L_3 L_2 L_1 = L^{-1}$, то есть 
+$$ L = L_1^{-1} L_2^{-1} L_3^{-1}$$
+
+После прямого хода остается матричное уравнение
+
+$$U x = \tilde{f}$$
+где $U = L^{-1} A$, $\tilde{f} = L^{-1} f$.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (обратный ход)}
+$$x_4 = f_4 = -1$$
+$$x_3 = f_3 - u_{3,4} x_4 = 0$$
+$$x_2 = f_2 - u_{2,3} x_3 - u_{2,4} x_4 = 1$$
+$$x_1 = f_1 - u_{1,2} x_2 - u_{1,3} x_3 - u_{1,4} x_4 = 2$$
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (прямой ход)}
+
+Прямой ход: привести матрицу к треугольному виду элементарными преобразованиями строк.
+
+Для ведущего элемента $a_{k, k}$:
+$$
+\begin{pmatrix}
+a_{1,1} & a_{1,2} &  \dots & a_{1,k-1}   & a_{1,k}     & \dots & a_{1,j} & \dots & a_{1,n}   \\
+0       & a_{2,2} &  \dots & a_{2,k-1}   & a_{2,k}     & \dots & a_{2,j}& \dots & a_{2,n}   \\
+\dots   & \dots   &  \dots & \dots       & \dots       & \dots & \dots& \dots & \dots     \\
+0       & 0       &  \dots & a_{k-1,k-1} & a_{k-1,k}   & \dots & a_{3,j}& \dots & a_{3,n}   \\
+0       & 0       &  \dots & 0           & a_{k,k}     & \dots & a_{k,j}& \dots & a_{k,n}   \\
+0       & 0       &  \dots & 0           & a_{k+1,k}   & \dots & a_{k+1,j}& \dots & a_{k+1,n} \\
+\dots   & \dots   &  \dots & \dots       & \dots       & \dots & \dots& \dots & \dots     \\
+0       & 0       &  \dots & 0           & a_{i,k}     & \dots & a_{i,j}& \dots & a_{i,n}   \\
+\dots   & \dots   &  \dots & \dots       & \dots       & \dots & \dots& \dots & \dots     \\
+0       & 0       &  \dots & 0           & a_{n,k}     & \dots & a_{n,j}& \dots & a_{n,n}
+\end{pmatrix}
+$$
+
+$$ \tilde{a}_{k,j} := \frac{a_{k,j}}{a_{k,k}} $$
+$$ \tilde{a}_{i,j} := a_{i,j} - \tilde{a}_{k,j} a_{i,k}$$
+
+для всех $i$ от $(k+1)$ до $n$ и для всех $j$ от $(k+1)$ до $n$.
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (обратный ход)}
+
+Обратный ход: обращаем улучшенную верхне--треугольную матрицу.
+
+Для искомого $x_{i}$:
+
+$$x_i = \tilde{f_i} - \sum_{j=i+1}^{n} u_{i,j} x_j$$
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (псевдокод и асимптотика)}
+
+1. Прямой ход:
+
+\begin{lstlisting}
+for k := 1 .. n
+    for j := k+1 .. n
+	    A[k][j] := A[k][j] / A[k][k]
+
+    for i := k+1 .. n
+        for j := k+1 .. n
+            A[i][j] := A[i][j] - A[i][k] * A[k][j]
+        f[i] := f[i] - A[i][k] * f[k]
+        A[i][k] := 0
+\end{lstlisting}
+
+$$f_1(n) = \sum_{k=1}^{n} \sum_{i=k+1}^{n} \left(2 + \sum_{j=k+1}^{n} 1 \right) = 
+\sum_{k=1}^{n} \sum_{i=k+1}^{n} (2 + n - k) = 
+\sum_{k=1}^{n} (n - k)(n + 2 - k)$$
+
+Сделаем замену $k = n + 1 - s$:
+$$f_1(n) = \sum_{s=1}^{n} (s - 1)(s + 1) = \sum_{s=1}^{n} s^2 - \sum_{s=1}^{n} 1 =\frac{n(n+1)(2n+1)}{6} - n = \frac{2 n^3 + 3 n^2 - 5 n}{6}$$
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (псевдокод и асимптотика)}
+
+2. Обратный ход:
+
+\begin{lstlisting}
+for i := n .. 1
+    x[i] := f[i]
+    for j := i+1 .. n
+        x[i] := x[i] - A[i][j] * x[j]
+\end{lstlisting}
+
+
+$$f_2(n) = \sum_{i=1}^{n} \left(1 + \sum_{j=i+1}^{n} 1 \right) = 
+\sum_{i=1}^{n} (1 + n - i)$$
+
+Сделаем замену $i = n + 1 - s$:
+$$f_2(n) = \sum_{s=1}^{n} s = \frac{n^2 + n}{2}$$
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (асимптотика)}
+
+Алгоритмическая сложность метода Гаусса для решения СЛАУ:
+
+$$f(n) = f_1(n) + f_2(n) = \frac{2 n^3 + 3 n^2 - 5 n}{6} + \frac{n^2 + n}{2} = \frac{n^3 + 3 n^2 - n}{3}$$
+ 
+Асимптотика алгоритмической сложности:
+\begin{enumerate}
+\item прямого хода метода Гаусса $f_1(n) = \Theta(n^3)$;
+\item обратного хода метода Гаусса $f_2(n) = \Theta(n^2)$;
+\item метода Гаусса для решения СЛАУ $f(n) = \Theta(n^3)$.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (теорема об $LU$--разложении)}
+
+\begin{theorem}[теорема об $LU$--разложении]
+Пусть все угловые миноры матрицы $A$ отличны от нуля. Тогда матрицу $A$ можно представить единственным образом в виде произведения
+$$A = L U$$
+где $L$ --- нижняя треугольная матрица с ненулевыми диагональными элементами и $U$ --- верхняя треугольная матрица с единичной диагональю.
+\end{theorem}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (теорема об $LU$--разложении)}
+
+\begin{proof}
+
+Существование.
+
+Математическая индукция. База: $n = 2$.
+
+$$
+\begin{pmatrix}
+a_{1,1} & a_{1,2} \\
+a_{2,1} & a_{2,2} \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+l_{1,1} & 0 \\
+l_{2,1} & l_{2,2} \\
+\end{pmatrix}
+\begin{pmatrix}
+1 & u_{1,2} \\
+0 & 1 \\
+\end{pmatrix}
+$$
+
+Решается в явном виде:
+$$
+\begin{cases}
+l_{1, 1} = a_{1, 1}\\
+l_{2, 1} = a_{2, 1}\\
+l_{2, 2} = \frac{\Delta}{a_{1, 1}}\\
+u_{1, 2} = \frac{a_{1, 2}}{a_{1, 1}}\\
+\end{cases}
+$$
+\end{proof}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (теорема об $LU$--разложении)}
+
+\begin{proof}[]
+Обозначим: 
+
+$A_k$ --- угловой минор матрицы,
+
+$b_{k-1}$ --- часть нижней вектор--строки, 
+
+$a_{k-1}$ --- часть правого вектор--столбца.
+
+Предположение $n = k - 1$: $A_{k-1} = L_{k-1} U_{k-1}$. Переход $n = k$: $A_{k} = L_{k} U_{k}$. 
+
+
+
+$$
+\begin{pmatrix}
+A_{k-1} & a_{k-1} \\
+b_{k-1} & a_{k,k} \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+L_{k-1} & 0 \\
+l_{k-1} & l_{k,k} \\
+\end{pmatrix}
+\begin{pmatrix}
+U_{k-1} & u_{k-1} \\
+0 & 1 \\
+\end{pmatrix}
+$$
+
+Решается в явном виде:
+$$
+\begin{cases}
+L_{k - 1} u_{k-1} = a_{k - 1}\\
+l_{k - 1} U_{k-1} = b_{k - 1}\\
+l_{k - 1} u_{k-1} + l_{k, k} = a_{k, k}\\
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+u_{k-1} = L_{k - 1}^{-1} a_{k - 1}\\
+l_{k - 1} = b_{k - 1} U_{k-1}^{-1}\\
+l_{k, k} = a_{k, k} - l_{k - 1} u_{k-1}\\
+\end{cases}
+$$
+
+По условию $det A \neq 0 \Leftrightarrow l_{k, k} \neq 0$ 
+
+$\Rightarrow$ 
+
+Разложение $A_k = L_k U_k$ существует, причем $L_{k}$ и $U_{k}$ имеют ненулевые диагональные элементы.
+\end{proof}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (теорема об $LU$--разложении)}
+
+\begin{proof}[]
+Единственность.
+
+$$ L_1 U_1 = L_2 U_2$$
+
+$$ U_1 U_2^{-1} = L_1^{-1} L_2$$
+
+Слева верхнетреугольная, справа нижнетреугольная $\Rightarrow$ 
+
+все матрицы диагональные $\Rightarrow$ 
+
+слева единичная матрица $\Rightarrow$ 
+
+$L_1 = L_2$.
+
+\end{proof}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (перестановка ведущего элемента)}
+
+Прямой ход метод Гаусса. Усиленно делим на нуль:
+
+$$
+\begin{pmatrix}
+0 & 3 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 4 & 0 \\
+2 & 0 & 0 & 5 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 \\
+2 \\
+3 \\
+4
+\end{pmatrix}
+\Rightarrow
+\begin{pmatrix}
+2 & 0 & 0 & 5 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 4 & 0 \\
+0 & 3 & 0 & 0 \\
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+4 \\
+2 \\
+3 \\
+1
+\end{pmatrix}$$
+Действие эквивалентно умножению уравнения слева на матрицу:
+$$
+P = 
+\begin{pmatrix}
+0 & 0 & 0 & 1 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+1 & 0 & 0 & 0 
+\end{pmatrix}
+$$
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (перестановка ведущего элемента)}
+Обобщение $LU$ разложения: 
+
+$$A = PLU$$
+где 
+$P$ --- перестановочная матрица, 
+
+$L$ --- нижнетреугольная, 
+
+$U$ --- верхнетругольная c единицами.
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Гаусса (перестановка ведущего элемента)}
+
+$$L_nP_nL_{n-1}P_{n-1}\ldots L_2P_2L_1P_1 A = U$$
+
+Введём новые матрицы
+$$
+\begin{cases}
+L'_n &= L_n\\
+L'_{n-1} &= P_nL_nP_{n}^{-1}\\
+L'_{n-2} &= P_nP_{n-1}L_{n-1}P_n^{-1}P_{n-1}^{-1}\\
+&\ldots\\
+L'_1 &= P_nP_{n-1}\ldots P_2L_1P_2^{-1}\ldots P_{n-1}^{-1}P_n^{-1}
+\end{cases}
+$$
+
+Получаем
+$$\underbrace{L'_nL'_{n-1}\ldots L'_1}_{L^{-1}}\underbrace{P_nP_{n-1}\ldots P_1}_{P^{-1}}\cdot A$$
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{python}
+
+Список списков
+\begin{lstlisting}
+l = [ [1, 1, 1, 1],
+      [1, 3, 2, 2],
+      [2, 3, 3, 3],
+      [-1, 0, 0, 1] ]
+\end{lstlisting}
+не поддерживает матричных действий.
+
+Массивы numpy
+\begin{lstlisting}
+import numpy as np
+...
+a = np.array(l)
+\end{lstlisting}
+поддерживает матричные действия
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{python}
+
+Список списков
+\begin{lstlisting}
+l = [ [1, 1, 1, 1],
+      [1, 3, 2, 2],
+      [2, 3, 3, 3],
+      [-1, 0, 0, 1] ]
+print(l[3][0])
+\end{lstlisting}
+не поддерживает матричных действий.
+
+Массивы numpy
+\begin{lstlisting}
+import numpy as np
+...
+a = np.array(l)
+print(a[3][0])
+\end{lstlisting}
+поддерживает матричные действия
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Примитивы numpy}
+Вектор из 5 единиц
+\begin{lstlisting}
+a = np.ones(5)
+\end{lstlisting}
+
+Матрица 5 на 6 из чисел 7.0
+\begin{lstlisting}
+a = np.ones((5, 6)) * 7.0
+\end{lstlisting}
+
+
+Единичная матрица размера 5
+\begin{lstlisting}
+a = np.eye(5)
+\end{lstlisting}
+
+Диагональная матрица 5 на 5 с 2 по диагонали и 1 в остальных позициях:
+\begin{lstlisting}
+a = np.eye(5) + np.ones((5, 5))
+\end{lstlisting}
+
+Найти сумму и максимум всех элементов матрицы
+\begin{lstlisting}
+v = np.sum(a)
+m = np.maximum(a)
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Срезы numpy}
+Создать матрицу размера $n \times n$ со случайными значениями:
+\begin{lstlisting}
+n = 5
+a = np.random.rand(n,n)
+\end{lstlisting}
+
+Применить первую строку ко второй строке
+\begin{lstlisting}
+a[:,1] += a[:,0]
+\end{lstlisting}
+
+Обнулить все элемент первого столбца кроме $a[0][0]$:
+\begin{lstlisting}
+a[1:,0] = np.zeros(n - 1)
+\end{lstlisting}
+
+Найти максимальный по модулю элемент в последнем столбце матрицы
+\begin{lstlisting}
+m = np.maximum(np.abs(a[-1,:]))
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Треугольные матрицы numpy}
+Оставляет нижнетреугольную матрицу
+\begin{lstlisting}
+np.tril([[1, 2, 3],
+         [4, 5, 6],
+         [7, 8, 9]])
+np.tril([[1, 2, 3],
+         [4, 5, 6],
+         [7, 8, 9]],
+         -1)
+\end{lstlisting}
+
+Получаем
+\begin{lstlisting}
+1 0 0
+4 5 0
+7 8 9
+\end{lstlisting}
+и
+\begin{lstlisting}
+0 0 0
+4 0 0
+7 8 0
+\end{lstlisting}
+
+Аналогично {\tt np.triu} --- верхнетреугольная.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{linalg}
+\begin{lstlisting}
+import scipy.linalg as sla
+\end{lstlisting}
+
+Разложение матрицы
+\begin{lstlisting}
+P, L, U = sla.lu(A)
+\end{lstlisting}
+
+Проверка матриц на равенство: $A = LU$ и $P = E$.
+\begin{lstlisting}
+np.allclose(A, L.dot(U))
+np.allclose(P, np.eye(n))
+\end{lstlisting}
+
+Решение уравнения $Ax = b$ методом Гаусса:
+\begin{lstlisting}
+x = numpy.linalg.solve(A, b)
+\end{lstlisting}
+
+Обратная матрица $C = A^{-1}$:
+\begin{lstlisting}
+C = numpy.linalg.inv(A)
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Упражнение}
+Упражнение 1. Обратная матрица к нижнетреугольной матрице --- нижнетреугольная матрица.
+
+Упражнение 2. Даны две верхнетреугольные матрицы $n \times n$. Определить количество умножений пар элементов матриц при перемножении этих матриц.
+
+Упражнение 3. Доказать соотношения для $PLU$ разложения.
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{reference}
+
+Допуск к зачету:
+
+\url{https://pythontutor.ru/}
+
+\vfill{2cm}
+
+К первой домашней работе:
+
+\url{https://docs.scipy.org/doc/numpy/reference/}
+
+\end{frame}
+\end{document}

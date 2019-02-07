@@ -34,8 +34,10 @@
 							"git" => "git");
             print_buttons("index.php", "subject", $subject, $buttons, "", "");
 			print_centered_text("Учебные");
-			$buttons = array("mm" => "ММ (1 курс)", "cmc" => "ВМК (2 курс)",
-									"master" => "ВМК (магистранты)");
+			$buttons = array("mm" => "ММ (1 курс)",
+			                 "cmc" => "ВМК (2 курс)",
+			                 "numerical" => "ВМК (введение в численные методы)",
+			                 "master" => "ВМК (магистранты)");
 			print_buttons("index.php", "subject", $subject, $buttons, "", "");
 			div_close();
 
@@ -66,6 +68,9 @@
 			}
 			if ($subject == "mm") {
 				print_post("Технология программирования на ЭВМ 1 семестр", "content", $subject."/content.txt"); 
+			}
+			if ($subject == "numerical") {
+				print_post("Введение в численные методы", "content", $subject."/content.txt"); 
 			}
 		?>
 		<p>
