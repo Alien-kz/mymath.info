@@ -11,4 +11,9 @@
 <td> План на семестр. Линейная алгебра. Метод Гаусса. LU и LPU разложения. </td>
 <td> <file 'numerical/files/num-present-01.pdf'> num-present-01.pdf </file>  </td>
 </tr>
+<tr>
+<td> 07/02/2019 </td>
+<td> Линейная алгебра. Метод прогонки. Метод Холецкого. Практическое задание №1. </td>
+<td> <file 'numerical/files/num-present-02.pdf'> num-present-02.pdf </file>  </td>
+</tr>
 </table>
