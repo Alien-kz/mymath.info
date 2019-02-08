@@ -9,6 +9,6 @@
 <tr>
 <td> 07/02/2019 </td>
 <td> План на семестр. Линейная алгебра. Метод Гаусса. LU и LPU разложения. </td>
-<td> <file 'cmc/files/cmc-present-01.pdf'> cmc-present-01.pdf </file>  </td>
+<td> <file 'numerical/files/num-present-01.pdf'> num-present-01.pdf </file>  </td>
 </tr>
 </table>
