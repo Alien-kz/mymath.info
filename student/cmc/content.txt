@@ -1,4 +1,20 @@
 <h3> Материалы 2018-2019 </h3>
+
+Самая полезная ссылка: <a href='http://cmcmsu.info/2course/'> cmcmsu.info </a>
+
+<table>
+<tr>
+<th> Дата </th>
+<th> Тема </th>
+<th> Презентация </th>
+</tr>
+<tr>
+<td> 08/02/2019 </td>
+<td> План на семестр. Полиз </td>
+<td> <file 'cmc/files/cmc-present-21.pdf'> cmc-present-21.pdf </file>  </td>
+</tr>
+</table>
+
 Самая полезная ссылка: <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
 
 <table>
