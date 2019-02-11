@@ -1,0 +1,256 @@
+\documentclass[10pt]{beamer}
+\usetheme{Madrid}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[all]{xy}
+
+%\newtheorem{theorem}{Теорема}
+
+\author{Баев А.Ж.}
+\title{Введение в численные методы. \\ Итерационные методы решения СЛАУ}
+\institute{Казахстанский филиал МГУ} 
+\date{11 февраля 2019}
+%\subject{} 
+
+\usepackage{tikz}
+\usetikzlibrary{patterns} 
+\usetikzlibrary{arrows, matrix, positioning, decorations.pathreplacing}
+
+\usepackage{listings}
+\lstset{language=python}
+\lstset{basicstyle=\ttfamily}  
+\lstset{keywordstyle=\color{blue}}
+\lstset{frame=single}
+\lstset{numbers=left}
+\lstset{tabsize=4}
+
+
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{frame}[fragile]
+\frametitle{План на семестр}
+
+\begin{enumerate}
+\item СЛАУ (точные методы)
+\item \textbf{СЛАУ (итерационные методы)}
+\item решение нелинейных уравнений
+\item интерполяция 
+\item аппроксимация
+\item интегрирование
+\item дифференцирование
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Линейная алгебра}
+
+Решение системы линейных алгебраических уравнений:
+
+$$A x = f$$
+
+где $A \in \mathbb{R}^{n \times n}$, $x \in \mathbb{R}^{n}$, $f \in \mathbb{R}^{n}$.
+
+Дано $A$, $f$. Найти $x$.
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Каноническая форма}
+
+\vfill
+$x_0$ --- задается произвольным образом.
+
+\vfill
+$$ B \frac{x_{k+1} - x_k}{\tau} + A x_k = f$$
+где $A$ --- исходная матрица, $B$ --- невырожденная матрица, зависящая от метода, $\tau$ --- итерационный параметр.
+
+\vfill
+$x_k$ сходится к решению.
+
+\vfill
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Каноническая форма}
+
+$$ B x_{k+1} = B x_k - \tau A x_k + f \tau$$
+где $A$ --- исходная матрица, $B$ --- невырожденная матрица, зависящая от метода, $\tau$ --- итерационный параметр.
+
+\vfill
+
+Необходимо выбирать $B$ такую, что её можно обратить быстрее, чем матрицу $A$.
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Определения}
+
+\vfill
+$A^*$ --- сопряженный к $A$ оператор, если $(Ax, y) = (x, A^* y)$.
+
+\vfill
+$A$ --- самосопряженный оператор, если $A = A^*$.
+
+Свойство: все собственные значения самосопряженного оператора вещественны и существует базис из собственных векторов.
+
+\vfill
+
+$A$ --- положительно определённый оператор, если $(A x, x) > 0$ для всех $x \neq 0$.
+
+Свойство: все собственные значения положительно определённого самосопряжённого оператора вещественны и положительны.
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Вспомогательные свойства}
+
+\begin{theorem}[1]
+Для любого самосопряженного положительно определенного оператора $A$ справедлива оценка
+$$ \gamma_1 \cdot ||x||_2^2 \leqslant (Ax, x) \leqslant \gamma_2 \cdot ||x||_2^2 $$
+где $\gamma_1$, $\gamma_2$ --- наименьшее и наибольшее собственные значения оператора.
+
+\end{theorem}
+
+\begin{proof}
+
+Разложим произвольный вектор в базис из собственных векторов:
+$$x = c_1 \vec{e}_1 + c_2 \vec{e}_2 + \ldots + c_n \vec{e}_n$$
+
+$$||x||_2 = c_1^2 + c_2^2 + \ldots + c_n^2$$
+
+$$(Ax, x) = \lambda c_1^2 + \lambda c_2^2 + \ldots + \lambda c_n^2$$
+
+\end{proof}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Вспомогательные свойства}
+
+\begin{theorem}[2]
+Для любого положительно определенного оператора $A$ существует $\delta_1 > 0$ такое, что
+$$\delta_1 \cdot ||x||_2^2 \leqslant (Ax, x) \leqslant \delta_2 \cdot ||x||_2^2$$
+
+\end{theorem}
+
+\begin{proof}
+
+Если $A = A^*$, то $\delta = \gamma_1$. В противном случае введём самосопряжённый оператор:
+$$ 
+A_1 = \frac{A + A^*}{2} > 0 
+$$
+
+Тогда 
+$$(A x, x) = (A^* x, x) = \frac12 ( (A x, x) + (A^* x, x) ) = (A_1 x, x)$$
+
+\end{proof}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Энергетическая норма}
+
+\vfill
+Можно рассматривать энергетическую норму $||x||_A = (Ax, x)$, индуцированную оператором $A>0$.
+\vfill
+Получаем, что для последоветельности векторов $z_k$ верно:
+$$||z_k||_A \to 0 \Leftrightarrow ||z_k||_2 \to 0$$
+\vfill
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Теорема Самарского}
+
+\begin{theorem}[Теорема Самарского]
+Пусть $A$ --- самосопряженная положительно определенная матрица и
+$$ B > \frac{\tau}{2} A$$
+Тогда при любом выборе начального приближения $x_0$ итерационный процесс, который определяется формулой
+$$ B \frac{x_{k+1} - x_k}{\tau} + A x_k = f$$
+сходится к решению системы $Ax = f$.
+
+\end{theorem}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Теорема Самарского}
+\begin{proof}
+
+Пусть $x_k = x + z_k$, где $x$ --- точное решение, $z_k$ --- погрешность.
+
+
+$$ B \frac{z_{k+1} - z_k}{\tau} + A z_k = 0$$
+
+$$ z_{k+1} = z_k - \tau B^{-1} A z_k = (E - \tau B^{-1} A) z_k$$
+
+Рассмотрим последовательность:
+$$ 
+c_{k} = (A z_k, z_k)
+$$
+
+Покажем, что:
+\begin{enumerate}
+\item $c_k > 0$;
+\item $c_{k+1} < c_k$;
+\item $c_k \to 0$.
+\end{enumerate}
+\end{proof}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Теорема Самарского}
+\begin{proof}[]
+1) По условию $A > 0$, значит $c_{k} = (A z_k, z_k) > 0$.
+
+2) Монотонность:
+$$c_{k+1} = (A z_{k + 1}, z_{k+1}) = (A z_k - \tau A B^{-1} A z_k, z_k - \tau B^{-1} A z_k) =  $$
+$$ = c_k - 2 \tau ( A z_k, B^{-1} A z_k) + \tau^2 (A B^{-1} A z_k, B^{-1} A z_k)$$
+Замена $\omega_k = B^{-1} A z_k$, то есть $B \omega_k = A z_k$
+
+$$ c_{k+1} = c_k - 2 \tau (B \omega_k, \omega_k) + \tau^2 (A \omega_k, \omega_k) = c_k - 2 \tau \left((B - \frac{\tau}{2} A) \omega_k, \omega_k\right)$$
+С учётом того, что $B - \frac{\tau}{2} A > 0$, получим, что $c_{k+1} < c_k$.
+\end{proof}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Теорема Самарского}
+\begin{proof}[]
+3) Сходимость:
+
+$$\left((B - \frac{\tau}{2} A) \omega_k, \omega_k\right) \to 0$$
+
+Из эквивалентности энергетической нормы, индуцированной положительно определённым оператором $G = B - \frac{\tau}{2} A > 0 $, и нормы $||\cdot||_2$:
+$$ (G \omega_k, \omega_k) \to 0 \Leftrightarrow (\omega_k, \omega_k) \to 0$$
+получаем $||\omega_k||_2 \to 0$.
+
+Оценим норму оператора
+$$||x|| = ||H^{-1} H x|| \leqslant ||H^{-1}|| \cdot ||H x|| \Leftrightarrow ||H x|| \geqslant \frac{||x||}{||H^{-1}||}$$
+для $H = B^{-1} A$:
+$$||\omega_k||_2 = ||B^{-1} A z_k||_2 \geqslant \frac{||z_k||_2}{||A^{-1} B||_2}$$
+Получили $||z_k||_2 \to 0$.
+\end{proof}
+
+\end{frame}
+
+
+\end{document}
