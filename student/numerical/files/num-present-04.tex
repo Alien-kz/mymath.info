@@ -1,0 +1,576 @@
+\documentclass[10pt]{beamer}
+\usetheme{Madrid}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[all]{xy}
+
+%\newtheorem{theorem}{Теорема}
+
+\author{Баев А.Ж.}
+\title{Введение в численные методы. \\ Итерационные методы решения СЛАУ}
+\institute{Казахстанский филиал МГУ} 
+\date{12 февраля 2019}
+%\subject{} 
+
+\usepackage{tikz}
+\usetikzlibrary{patterns} 
+\usetikzlibrary{arrows, matrix, positioning, decorations.pathreplacing}
+
+\usepackage{listings}
+\lstset{language=python}
+\lstset{basicstyle=\ttfamily}  
+\lstset{keywordstyle=\color{blue}}
+\lstset{frame=single}
+\lstset{numbers=left}
+\lstset{tabsize=4}
+
+
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{frame}[fragile]
+\frametitle{План на семестр}
+
+\begin{enumerate}
+\item СЛАУ (точные методы)
+\item \textbf{СЛАУ (итерационные методы)}
+\item решение нелинейных уравнений
+\item интерполяция 
+\item аппроксимация
+\item интегрирование
+\item дифференцирование
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Линейная алгебра}
+
+Решение системы линейных алгебраических уравнений:
+
+$$A x = f$$
+
+где $A \in \mathbb{R}^{n \times n}$, $x \in \mathbb{R}^{n}$, $f \in \mathbb{R}^{n}$.
+
+Дано $A$, $f$. Найти $x$.
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Каноническая форма}
+
+\vfill
+$x_0$ --- задается произвольным образом.
+
+\vfill
+$$ B \frac{x_{k+1} - x_k}{\tau} + A x_k = f$$
+где $A > 0$ --- исходная матрица, $B$ --- невырожденная матрица, зависящая от метода, $\tau$ --- итерационный параметр.
+
+\vfill
+$x_k$ сходится к решению.
+
+\vfill
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Каноническая форма}
+
+$$ B x_{k+1} = B x_k - \tau A x_k + f \tau$$
+где $A$ --- исходная матрица, $B$ --- невырожденная матрица, зависящая от метода, $\tau$ --- итерационный параметр.
+
+\vfill
+
+Необходимо выбирать $B$ такую, что её можно обратить быстрее, чем матрицу $A$.
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод простой итерации}
+
+\vfill
+$$B = E$$
+$$ x_{k+1} = x_k - \tau A x_k + \tau f$$
+
+Определим $\tau$.
+\vfill
+
+Достаточное условие сходимости (теорема Самарского):
+$$ E - \frac{\tau}{2} A > 0 \Leftrightarrow 1 - \frac{\tau}{2} \lambda_i > 0 \Leftrightarrow \tau < \frac{2}{\lambda_i}$$
+
+Необходимое и достаточное условие сходимости:
+$$ z_{k+1} = z_k - \tau A z_k = (E - \tau A) z_k \Leftrightarrow |1 - \tau \lambda_i| < 1 \Leftrightarrow \tau < \frac{2}{\lambda_i}$$
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод простой итерации (скорость сходимости)}
+
+Обозначим $S  = E - \tau A$.
+
+$$ z_{k+1} = S z_k $$
+
+$$ ||z_{k+1}|| \leqslant ||S|| \cdot ||z_k|| $$
+
+Чем меньше $||S||$, тем быстрее сходится метод. 
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод простой итерации (скорость сходимости)}
+Рассмотрим спектр $A$ ($\lambda_i > 0$):
+
+\begin{center}
+\begin{tikzpicture}
+\draw[->] (-5, 0) -- (5, 0);
+\node[draw, circle, fill=white, inner sep = 2] (l) at (-4, 0){};
+\node[draw, circle, fill=white, inner sep = 2] (0) at (0, 0){};
+\node[draw, circle, fill=black, inner sep = 2] (1) at (1.0, 0){};
+\node[draw, circle, fill=black, inner sep = 2] (2) at (1.5, 0){};
+\node[draw, circle, fill=black, inner sep = 2] (i) at (2.5, 0){};
+\node[draw, circle, fill=black, inner sep = 2] (n) at (3.5, 0){};
+\node[draw, circle, fill=white, inner sep = 2] (r) at (4, 0){};
+
+\node[below of=l] {$-1$};
+\node[below of=0] {$0$};
+\node[below of=1] {$\lambda_1$};
+\node[below of=2] {$\lambda_2$};
+\node[below of=i] {$\lambda_i$};
+\node[below of=n] {$\lambda_n$};
+\node[below of=r] {$1$};
+
+\end{tikzpicture}
+\end{center}
+
+
+Рассмотрим спектр $S$ ($\mu_i = 1 - \tau \lambda_i$):
+
+\begin{center}
+\begin{tikzpicture}
+\draw[->] (-5, 0) -- (5, 0);
+\node[draw, circle, fill=white, inner sep = 2] (l) at (-4, 0){};
+\node[draw, circle, fill=white, inner sep = 2] (0) at (0, 0){};
+\node[draw, circle, fill=black, inner sep = 2] (1) at (2.0, 0){};
+\node[draw, circle, fill=black, inner sep = 2] (2) at (1.0, 0){};
+\node[draw, circle, fill=black, inner sep = 2] (i) at (-1.0, 0){};
+\node[draw, circle, fill=black, inner sep = 2] (n) at (-3.0, 0){};
+\node[draw, circle, fill=white, inner sep = 2] (r) at (4, 0){};
+
+\node[below of=l] {$-1$};
+\node[below of=0] {$0$};
+\node[below of=1] {$\mu_1$};
+\node[below of=2] {$\mu_2$};
+\node[below of=i] {$\mu_i$};
+\node[below of=n] {$\mu_n$};
+\node[below of=r] {$1$};
+
+\end{tikzpicture}
+\end{center}
+
+Максимальная скорость сходимости:
+$$ \mu_1 + \mu_n = 0$$
+$$ 1 - \tau_o \lambda_1 + 1 - \tau_o \lambda_n = 0$$
+$$ \tau_o = \frac{2}{\lambda_1 + \lambda_n}$$
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод простой итерации}
+
+Коэффициент сходимости
+$$ \rho = 1 - \tau_o \lambda_n = \frac{\lambda_1 - \lambda_n}{\lambda_1 + \lambda_n} = \frac{1 - \xi}{1 + \xi}$$
+где $\xi = \frac{\lambda_n}{\lambda_1} = M_A$ --- число обусловленности матрицы $A$.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод верхней и нижней релаксации}
+\vfill
+
+Пусть $A = L + D + U$, где 
+
+$L$ --- строго нижнетреугольная, 
+
+$D$ --- диагональная, 
+
+$U$ --- строго верхнетреугольная.
+
+\vfill
+Так как $A = A^*$, то $L^* = U \Leftrightarrow (Lx, x) = (x, Ux) = (Ux, x)$.
+
+\vfill
+Верхняя релаксация:
+$$B = \tau L + D$$
+
+Нижняя релаксация:
+$$B =  D + \tau U$$
+\vfill
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод верхней релаксации}
+
+Проверим условие из теоремы Самарского
+$$\tau L + D - \frac{\tau}{2} (L + D + U) > 0$$
+$$ L + \frac{2 - \tau}{2 \tau} D - U > 0$$
+$$ (L x, x) + \frac{2 - \tau}{2 \tau} (D x, x) - (U x, x) > 0$$
+
+С учётом, что $(Lx, x) = (Ux, x)$.
+$$ \frac{2 - \tau}{2 \tau} (D x, x) > 0$$
+
+Так как $A > 0$, то $D > 0$ (для этого подставим $(Ax, x) > 0$ поочерёдно все базовые вектора).
+\vfill
+
+Получаем, что $0 < \tau < 2$.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод Зейделя}
+
+$$B \frac{x^{k+1} - x^k}{\tau} + A x^k = f$$
+
+\vfill
+При $\tau = 1$ --- метод Зейделя.
+
+$$(L + D) (x^{k+1} - x^k) + (L + D + U) x^k = f$$
+
+$$(L + D) x^{k+1} + U x^k = f$$
+
+\vfill
+
+Выпишем поэлементно:
+$$\sum_{j=1}^{i-1} a_{i,j} x_{j}^{k+1} + a_{i,i} x_{i}^{k+1} + \sum_{j=i+1}^{n} a_{i,j} x_{j}^k = f_i$$
+Выразим $x^{k+1}$:
+$$x_{i}^{k+1} = \frac{1}{a_{i,i}} \left( f_i - \sum_{j = 1}^{i-1} a_{i,j} x_{j}^{k+1} - \sum_{j = i+1}^{n} a_{i,j} x_{j}^k \right) $$
+Заметим, что при реализации нет необходимо хранить все слои, кроме последнего.
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод Зейделя}
+\begin{lstlisting}
+seidel(A, f, x)
+	xnew[1:n]
+    for i := 1 .. n
+        s := 0
+        for j := 1 .. i-1
+            s := s + A[i][j] * xnew[j]
+        for j := i+1 .. n
+            s := s + A[i][j] * x[j]
+        xnew[i] := (f[i] - s) / A[i][i]
+    return xnew
+
+solve(A, f)
+	xnew[1:n]
+	do
+		x = xnew
+		xnew = seidel(A, f, x)
+	while diff(x, xnew) > eps
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод Зейделя}
+
+$$
+\begin{pmatrix}
+2 & -1 & 0 & -1 \\
+0 & 2 & -1 & 0 \\
+-1 & 1 & 3 & -0 \\
+1 & 0 & -2 & 4 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\	
+x_3 \\
+x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+4 \\
+3 \\
+2 \\
+1
+\end{pmatrix}
+$$
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Зейделя}
+Представим $A$ как сумму диагональной и треугольных матриц:
+$$
+\begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+-1 & 1 & 0 & 0 \\
+1 & 0 & -2 & 0 
+\end{pmatrix}
+\begin{pmatrix}
+\tilde{x}_1 \\
+\tilde{x}_2 \\
+\tilde{x}_3 \\
+\tilde{x}_4
+\end{pmatrix}
++
+\begin{pmatrix}
+2 & 0 & 0 & 0 \\
+0 & 2 & 0 & 0 \\
+0 & 0 & 3 & 0 \\
+0 & 0 & 0 & 4 
+\end{pmatrix}
+\begin{pmatrix}
+\tilde{x}_1 \\
+\tilde{x}_2 \\
+\tilde{x}_3 \\
+\tilde{x}_4
+\end{pmatrix}
++$$
+$$
++
+\begin{pmatrix}
+0 & -1 & 0 & -1 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+4 \\
+3 \\
+2 \\
+1
+\end{pmatrix}
+$$
+
+Выразим явно:
+$$\tilde{x}_1 = \frac{ 4 - (-1) * x_2 - 0 * x_3 - (-1) * x_4 }{2} $$
+$$\tilde{x}_2 = \frac{ 3 - 0 * \tilde{x}_1 - (-1) * x_3 - 0 * x_4 }{2} $$
+$$\tilde{x}_3 = \frac{ 2 - (-1) * \tilde{x}_1 - 1 * \tilde{x}_2 - 0 * x_4 }{3} $$
+$$\tilde{x}_4 = \frac{ 1 - 1 * \tilde{x}_1 - 0 * x_2 - (-2) * x_3 }{4} $$
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Зейделя}
+В качестве начального приближения выберем нулевой вектор, а допустимую точность выберем $\varepsilon = 0.2$ Выпишем итерации:
+$$
+(0, 0, 0, 0)  \rightarrow
+\left( 2, \frac{3}{2}, \frac{5}{6}, \frac{1}{6} \right) \rightarrow
+\left( \frac{17}{6}, \frac{23}{12}, \frac{35}{36}, \frac{1}{36} \right)
+$$
+
+Разница между последними двумя векторами $||x - \tilde{x}||^2 < \varepsilon^2$. 
+
+Ответ: 
+$$x = (2.83333, 1.91667, 0.972222, 0.027778)^T$$ 
+(точное решение $(3, 2, 1, 0)$).
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Якоби}
+
+$$B \frac{x^{k+1} - x^k}{\tau} + A x^k = f$$
+
+\vfill
+При $B = D$ --- метод Якоби.
+
+$$D (x^{k+1} - x^k) + (L + D + U) x^k = f$$
+
+$$D x^{k+1} + (L + U) x^k = f$$
+
+\vfill
+
+Выпишем поэлементно:
+$$\sum_{j=1}^{i-1} a_{i,j} x_{j}^k + a_{i,i} x_{i}^{k+1} + \sum_{j=i+1}^{n} a_{i,j} x_{j}^k = f_i$$
+Выразим $x^{k+1}$:
+$$x_{i}^{k+1} = \frac{1}{a_{i,i}} \left( f_i - \sum_{j = 1}^{i-1} a_{i,j} x_{j}^{k} - \sum_{j = i+1}^{n} a_{i,j} x_{j}^k \right) $$
+Заметим, что при реализации нет необходимо хранить все слои, кроме последнего.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод Якоби}
+
+Проверим условие из теоремы Самарского
+$$ D - \frac{\tau}{2} (L + D + U) > 0$$
+$$ \frac{2 - \tau}{2 \tau} D > L + U$$
+
+Скорость сходимости:
+$$\rho = ||E - D^{-1}A|| = ||D^{-1}(D - A)||$$
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод Якоби}
+\begin{lstlisting}
+jacobi(A, f, x)
+	xnew[1:n]
+    for i := 1 .. n
+        s := 0
+        for j := 1 .. i-1
+            s := s + A[i][j] * xnew[j]
+        for j := i+1 .. n
+            s := s + A[i][j] * xnew[j]
+        xnew[i] := (f[i] - s) / A[i][i]
+    return xnew
+
+solve(A, f)
+	xnew[1:n]
+	do
+		x = xnew
+		xnew = jacobi(A, f, x)
+	while diff(x, xnew) > eps
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Якоби}
+
+$$
+\begin{pmatrix}
+2 & -1 & 0 & -1 \\
+0 & 2 & -1 & 0 \\
+-1 & 1 & 3 & -0 \\
+1 & 0 & -2 & 4 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\	
+x_3 \\
+x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+4 \\
+3 \\
+2 \\
+1
+\end{pmatrix}
+$$
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Якоби}
+Представим $A$ как сумму диагональной и треугольных матриц:
+$$
+\begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+-1 & 1 & 0 & 0 \\
+1 & 0 & -2 & 0 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{pmatrix}
++
+\begin{pmatrix}
+2 & 0 & 0 & 0 \\
+0 & 2 & 0 & 0 \\
+0 & 0 & 3 & 0 \\
+0 & 0 & 0 & 4 
+\end{pmatrix}
+\begin{pmatrix}
+\tilde{x}_1 \\
+\tilde{x}_2 \\
+\tilde{x}_3 \\
+\tilde{x}_4
+\end{pmatrix}
++
+$$
+$$
++
+\begin{pmatrix}
+0 & -1 & 0 & -1 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+4 \\
+3 \\
+2 \\
+1
+\end{pmatrix}
+$$
+
+Выразим явно:
+$$\tilde{x}_1 = \frac{ 4 - (-1) * x_2 - 0 * x_3 - (-1) * x_4 }{2} $$
+$$\tilde{x}_2 = \frac{ 3 - 0 * x_1 - (-1) * x_3 - 0 * x_4 }{2} $$
+$$\tilde{x}_3 = \frac{ 2 - (-1) * x_1 - 1 * x_2 - 0 * x_4 }{3} $$
+$$\tilde{x}_4 = \frac{ 1 - 1 * x_1 - 0 * x_2 - (-2) * x_3 }{4} $$
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Метод Якоби}
+В качестве начального приближения выберем нулевой вектор, а допустимую точность выберем $\varepsilon = 0.2$ Выпишем итерации:
+$$
+(0, 0, 0, 0)  \rightarrow
+\left( 2, \frac{3}{2}, \frac{2}{3}, \frac{1}{4} \right) \rightarrow
+\left( \frac{23}{8}, \frac{11}{6}, \frac{5}{6}, \frac{1}{12} \right) \rightarrow
+\left( \frac{71}{24}, \frac{23}{12}, \frac{73}{72}, -\frac{5}{96} \right)
+$$
+
+Разница между последними двумя векторами $||x - \tilde{x}||^2 < \varepsilon^2$. 
+
+Ответ: 
+$$x = (2.95833, 1.91667, 1.01389, -0.052083)^T$$
+(точное решение $(3, 2, 1, 0)$).
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Собственные значения}
+
+Простая итерация
+$$x_{k+1} = A x_k$$
+
+вытягивает вектор вдоль собственного вектора с максимальным по модулю собственным значением.
+
+$$ \lambda \approx \frac{(Ax_k, x_k)}{(x_k, x_k)}$$
+
+\end{frame}
+
+\end{document}

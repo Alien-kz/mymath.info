@@ -18,6 +18,11 @@
 <td> Переменные </td>
 <td> <file 'cmc/files/cmc-present-22.pdf'> cmc-present-22.pdf </file>  </td>
 </tr>
+<tr>
+<td> 12/02/2019 </td>
+<td> Бинарные операторы </td>
+<td> <file 'cmc/files/cmc-present-23.pdf'> cmc-present-23.pdf </file>  </td>
+</tr>
 </table>
 
 Самая полезная ссылка: <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
