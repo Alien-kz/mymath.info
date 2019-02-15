@@ -26,4 +26,9 @@
 <td> Линейная алгебра. Итерационные методы. Примеры. </td>
 <td> <file 'numerical/files/num-present-04.pdf'> num-present-04.pdf </file>  </td>
 </tr>
+<tr>
+<td> 12/02/2019 </td>
+<td> Нелинейные уравнения. Итерационные методы. </td>
+<td> <file 'numerical/files/num-present-05.pdf'> num-present-05.pdf </file>  </td>
+</tr>
 </table>

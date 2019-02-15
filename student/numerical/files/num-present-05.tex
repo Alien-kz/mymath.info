@@ -1,0 +1,496 @@
+\documentclass[10pt]{beamer}
+\usetheme{Madrid}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[all]{xy}
+
+%\newtheorem{theorem}{Теорема}
+
+\author{Баев А.Ж.}
+\title{Введение в численные методы. \\ Нелиныйные уравнения}
+\institute{Казахстанский филиал МГУ} 
+\date{16 февраля 2019}
+%\subject{} 
+
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{patterns} 
+\usetikzlibrary{arrows, matrix, positioning, decorations.pathreplacing}
+
+\usepackage{listings}
+\lstset{language=python}
+\lstset{basicstyle=\ttfamily}  
+\lstset{keywordstyle=\color{blue}}
+\lstset{frame=single}
+\lstset{numbers=left}
+\lstset{tabsize=4}
+
+
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{frame}[fragile]
+\frametitle{План на семестр}
+
+\begin{enumerate}
+\item СЛАУ (точные методы)
+\item СЛАУ (итерационные методы)
+\item \textbf{решение нелинейных уравнений}
+\item интерполяция 
+\item аппроксимация
+\item интегрирование
+\item дифференцирование
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Линейная алгебра}
+
+Дана функция $f \in C[a, b]$. Найти решение:
+
+$$f(x) = 0$$
+
+на отрезке $[a, b]$. Считаем, что корень существует и единственный. Необходимо вычислить корень $x$ с заранее заданной точностью $\varepsilon$:
+
+$$|x^{*} - x| < \varepsilon, f(x) = 0.$$
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод деления отрезка пополам}
+
+Этот метод также называется <<бинарный поиск>> или <<дихотомия>>.
+
+Пусть
+$$f(l) f(r) < 0,$$
+если $l < x < r$, где $x$ --- корень. 
+
+\vfill
+Вычислим значение в середине отрезка $m = \frac{l+r}{2}$. 
+
+\vfill
+
+Если $f(m)$ и $f(r)$ одного знака, то $x^* \in [l; m]$.
+
+\vfill
+
+Если $f(m)$ и $f(r)$ разного знака, то $x^* \in [m; r]$.
+
+\vfill
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод деления отрезка пополам (пример)}
+
+Найдем решение уравнения $x^2 - 2 = 0$ на отрезке $[0; 2]$ с точностью $\varepsilon = 0.2$.
+
+\begin{minipage}{0.4\linewidth}
+\begin{tikzpicture}
+\begin{axis}
+[
+unit vector ratio*=1 1 1,
+xlabel=x,
+ylabel=y,
+ytick={-3.0, -2.0, ..., 5.0},
+xmin=0, xmax=3,
+ymin=-2, ymax=2,
+grid=major,
+axis lines = middle
+]
+\addplot[mark=none,samples=100]{x*x - 2};
+\draw[fill=black] (axis cs:0.0, 0.0) circle (0.3);
+\draw[fill=black] (axis cs:1.0, 0.0) circle (0.3);
+\draw[fill=black] (axis cs:1.25, 0.0) circle (0.3);
+\draw[fill=white] (axis cs:1.5, 0.0) circle (0.3);
+\draw[fill=white] (axis cs:2.0, 0.0) circle (0.3);
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.51\linewidth}
+Рассмотрим $f(x) = x^2 - 2$. Знаки на границах: $f(0) = -2 < 0$, $f(2) = 2 > 0$.
+
+\begin{enumerate}
+
+\item $l = 0$, $r = 2$. $f(m) = f(1) = -1$. Уменьшаем отрезок до $[1; 2]$.
+
+\item $l = 1$, $r = 2$. $f(m) = f\left(\frac{3}{2}\right) = \frac{1}{4}$. Уменьшаем отрезок до $\left[1; \frac{3}{2} \right]$.
+
+\item $l = 1$, $r = \frac{3}{2}$, $f(m) = f\left(\frac{5}{4}\right) = - \frac{7}{16}$. Уменьшаем отрезок до $\left[\frac{5}{4}; \frac{3}{2} \right]$.
+
+\item $l = \frac{5}{4}$, $r = \frac{3}{2}$, $f(m) = f\left(\frac{11}{8}\right) = - \frac{7}{64}$. Уменьшаем отрезок до $\left[\frac{11}{8}; \frac{3}{2} \right]$.
+
+\item $\left| \frac{7}{5} - \frac{4}{3} \right| = \frac{1}{15} < 0.2$. 
+
+\item Ответ: $\frac{23}{16}$ с точностью до $0.2$.
+
+\end{enumerate}
+\end{minipage}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод деления отрезка пополам (код)}
+
+\begin{lstlisting}
+l := a
+r := b
+s := f(b)
+while |r - l| > eps
+    m := (r + l) / 2
+    if s * f(m) > 0
+        l := m
+    else
+        r := m
+return (l + r) / 2
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод деления отрезка пополам (сходимость)}
+
+Количество итераций можно определить из неравенства:
+
+$$ \frac{b - a}{2^n} \le \varepsilon .$$
+
+Откуда легко найти количество итераций:
+
+$$ n \ge \left[ \log_2 {\frac{b - a}{\varepsilon}} \right].$$
+
+Скорость сходимости <<линейная>> с параметром $\frac{1}{2}$:
+
+$$|x - x_{k+1}| \le \frac{1}{2} |x - x_{k}|.$$
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод хорд}
+
+Дана функцию $f(x) \in C^{2}[a, b]$. Функции $f'(x)$ и $f''(x)$ не изменяет знак на всем отрезке. 
+
+\vfill
+
+Проведем хорду через точки $(a; f(a))$ и $(b; f(b))$:
+$$\frac{x-a}{b-a} = \frac{y-f(a)}{f(b)-f(a)}.$$
+
+\vfill
+
+Если $f'(x) f''(x) > 0$: 
+$$
+\begin{cases}
+x_0 &= a,\\
+x_{k+1} &= b - f(b) \frac{b-x_k}{f(b)-f(x_k)}
+\end{cases}
+$$
+
+\vfill
+
+Если $f'(x) f''(x) < 0$: 
+$$
+\begin{cases}
+x_0 &= b,\\
+x_{k+1} &= a - f(a) \frac{x_k-a}{f(x_k)-f(a)}
+\end{cases}
+$$
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Метод хорд (пример)}
+Найдем решение уравнения $x^2 - 2 = 0$ на отрезке $[0; 2]$ с точностью $\varepsilon = 0.2$. Так как $f'(x) f''(x) > 0$,  итерации слева направо ($x_0 = 0$) с фиксированным правым концом хорд. 
+
+\begin{minipage}{0.4\linewidth}
+\begin{tikzpicture}
+\begin{axis}
+[
+unit vector ratio*=1 1 1,
+xlabel=x,
+ylabel=y,
+ytick={-3.0, -2.0, ..., 5.0},
+xmin=0, xmax=3,
+ymin=-2, ymax=2,
+grid=major,
+axis lines = middle
+]
+\addplot[mark=none,samples=100]{x*x - 2};
+\draw[red] (axis cs:0.0, -2.0) -- (axis cs:2.0, 2.0);
+\draw[red] (axis cs:1.0, -1.0) -- (axis cs:2.0, 2.0);
+\draw[fill=black] (axis cs:1.0, 0.0) circle (0.3);
+\draw[fill=black] (axis cs:1.33, 0.0) circle (0.3);
+\draw[fill=white] (axis cs:1.0, -1.0) circle (0.3);
+\draw[fill=white] (axis cs:0.0, -2.0) circle (0.3);
+\draw[fill=white] (axis cs:2.0, 2.0) circle (0.3);
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.51\linewidth}
+
+Вычисления:
+$$x_{k+1} = 2 - 2 * \frac{2 - x_k}{2 - f(x_k)}.$$
+
+\begin{enumerate}
+\item $x_0 = 0$, $f(x_0) = -2$.
+
+$x_{1} = 2 - 2 * \frac{2-x_0}{2-f(x_0)} = 1$.
+
+\item $x_1 = 1$, $f(x_1) = -1$.
+
+$x_{2} = 2 - 2 * \frac{2-x_1}{2-f(x_1)} = \frac{4}{3}$.
+
+\item $x_1 = \frac{4}{3}$, $f(x_1) = -\frac{2}{9}$.
+
+$x_{3} = 2 - 2 * \frac{2-x_2}{2-f(x_2)} = \frac{7}{5}$.
+
+\item $\left| \frac{7}{5} - \frac{4}{3} \right| = \frac{1}{15} < 0.2$. 
+
+\item Ответ: $\frac{7}{5}$ с точностью до $0.2$.
+\end{enumerate}
+\end{minipage}
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Метод хорд (код)}
+{\tt f(x)} --- исходную функцию,
+
+{\tt f1(x)} --- производная (вычисленная аналитически),
+
+{\tt f2(x)} --- вторая производная (вычисленная аналитически).
+
+\begin{lstlisting}
+m := (r + l) / 2
+if f1(m) * f2(m) > 0
+    xnew := a
+    fb := f(b)
+    do
+        xold := xnew
+        xnew := b - fb * (b - xold) / (fb - f(xold))
+    while |xold - xnew| > eps
+else
+    xnew := b
+    fa := f(a)
+    do
+        xold := xnew
+        xnew := a - fa * (xold - a) / (f(xold) - fa)
+    while |xold - xnew| > eps
+\end{lstlisting}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Метод хорд (сходимость)}
+
+Скорость сходимости <<линейная>>, то есть, существует такая $0 < L < 1$, что:
+
+$$|x - x_{k+1}| \le L |x - x_{k}|.$$
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Метод касательных}
+
+Дана функцию $f(x) \in C^{2}[a, b]$. Функции $f'(x)$ и $f''(x)$ не изменяет знак на всем отрезке. 
+
+\vfill
+
+Проведем касательную к графику через точку $(x_k; f(x_k))$. Уравнение соответствующей прямой:
+
+$$y = f'(x_k) (x - x_k) + f(x_k).$$
+
+\vfill
+
+Найдем точку пересечения хорды и с осью абсцисс ($y = 0$). Откуда легко получить формулу для вычисления корня методом касательных:
+
+$$x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}.$$
+
+Если $f'(x) f''(x) > 0$ на всем отрезке $[a; b]$, то $x_0 = b$, а иначе $x_0 = a$. 
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Метод касательных (пример)}
+
+Найдем решение уравнения $x^2 - 2 = 0$ на отрезке $[0; 2]$ с точностью $\varepsilon = 0.2$. Так как $f'(x) = 2 x > 0$ и $f''(x) = 2 > 0$ итерации справа налево ($x_0 = 2$).
+
+\begin{minipage}{0.4\linewidth}
+\begin{tikzpicture}
+\begin{axis}
+[
+unit vector ratio*=1 1 1,
+xlabel=x,
+ylabel=y,
+ytick={-3.0, -2.0, ..., 5.0},
+xmin=0, xmax=3,
+ymin=-2, ymax=2,
+grid=major,
+axis lines = middle
+]
+\addplot[mark=none,samples=100]{x*x - 2};
+\draw[red] (axis cs:1.50, 0.0) -- (axis cs:2.0, 2.0);
+\draw[red] (axis cs:1.42, 0.0) -- (axis cs:1.5, 0.25);
+\draw[fill=black] (axis cs:1.50, 0.0) circle (0.3);
+\draw[fill=black] (axis cs:1.42, 0.0) circle (0.3);
+\draw[fill=white] (axis cs:2.0, 2.0) circle (0.3);
+\draw[fill=white] (axis cs:1.5, 0.25) circle (0.3);
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+Вычисления:
+
+$$x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}.$$
+
+\begin{enumerate}
+\item $x_0 = 2$, $f(x_0) = 2$, $f'(x_0) = 4$.
+
+$x_{1} = x_0 - \frac{f(x_0)}{f'(x_0)} = \frac{3}{2}$.
+
+\item $x_1 = \frac{3}{2}$, $f(x_1) = \frac{1}{4}$, $f'(x_1) = 3$.
+
+$x_{2} = x_1 - \frac{f(x_1)}{f'(x_1)} = \frac{17}{12} $.
+
+\item $\left| \frac{17}{12} - \frac{3}{2} \right| = \frac{1}{12} < 0.2$
+
+\item Ответ: $\frac{17}{12}$ с точностью до $0.2$.
+\end{enumerate}
+\end{minipage}
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Метод касательных (код)}
+\begin{lstlisting}
+m := (r + l) / 2
+if f1(m) * f2(m) > 0
+    xnew := a
+else
+    xnew := b
+do
+    xold := xnew
+    xnew := b - f(xold) / f1(xold)
+while |xold - xnew| > eps
+\end{lstlisting}
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Метод касательных}
+
+Скорость сходимости <<квадратичная>>, то есть, существует такой $0 < L < 1$, что:
+
+$$|x - x_{k+1}| \le L |x - x_{k}|^2.$$
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод касательных}
+
+\begin{theorem}
+Пусть в некоторой окрестности корня $x^*$ выполнены следующие условия:
+$$ |f'(x)| \geqslant m_1 > 0$$
+$$ |f''(x)| \leqslant M_2$$
+$$ \frac{M_2}{2 m_1} |x_0 - x^*| \leqslant q < 1$$
+где $x_0$ --- начальное приближение. Тогда итерационный метод Ньютона
+$$x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}$$
+сходится и справедлива оценка:
+
+$$|x_n - x^*| \le C q^{2^n}$$
+\end{theorem}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод касательных}
+
+\begin{proof}
+Разложим $f(x)$ в ряд Тейлора в окрестности точки $x_k$
+$$f(x) = f(x_k) + (x - x_k) f'(x_k) + \frac{(x - x_k)^2}{2} f''(\xi)$$
+
+Подставим вместо $x$ корень уравнения $f(x^*) = 0$.
+$$0 = f(x_k) + (x^* - x_k) f'(x_k) + \frac{(x^* - x_k)^2}{2} f''(\xi)$$
+
+Подставим $x_{k+1}$.
+$$x_{k+1} - x^{*} = \frac{(x^* - x_k)^2}{2 f'(x_k)} f''(\xi)$$
+\end{proof}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Метод простой итерации}
+Итерационный процесс
+$$x_{k+1} = \varphi(x_k) $$
+где $ \varphi(x) = x + \rho(x) f(x)$, $\rho(x)$ постоянного знака.
+
+\begin{theorem}
+Пусть $x^*$ --- корень уравнения $\varphi(x) = x$ и функция  
+$\varphi(x)$ удовлетворяет на отрезке $[a, b]$ условию Липшица 
+$$ |\varphi(x_1) - \varphi(x_2)| \leqslant L |x_1 - x_2| $$
+с константой $L < 1$. Тогда при любом выборе $x_O$ итерационный процесс сходится к $x^*$.
+\end{theorem}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Литература}
+Подробно с методами можно ознакомить в книге \cite[стр. 138]{Kalitkin} и \cite[стр. 130]{Samarsky}
+
+
+\begin{thebibliography}{99}
+
+\bibitem{Kalitkin}
+Калиткин Н.Н. Численные методы. - Спб.: БХВ-Петербург, 2014.
+
+\bibitem{Samarsky}
+Самарский А.А., Гулин А.В. Численные методы. - М.: Наука, 1989.
+
+\end{thebibliography}
+\end{frame}
+
+\end{document}
