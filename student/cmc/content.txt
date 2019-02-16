@@ -23,6 +23,11 @@
 <td> Бинарные операторы </td>
 <td> <file 'cmc/files/cmc-present-23.pdf'> cmc-present-23.pdf </file>  </td>
 </tr>
+<tr>
+<td> 14/02/2019 </td>
+<td> GOTO </td>
+<td> <file 'cmc/files/cmc-present-24.pdf'> cmc-present-24.pdf </file>  </td>
+</tr>
 </table>
 
 Самая полезная ссылка: <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
