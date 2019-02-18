@@ -36,4 +36,9 @@
 <td> Интерполяция. </td>
 <td> <file 'numerical/files/num-present-06.pdf'> num-present-06.pdf </file>  </td>
 </tr>
+<tr>
+<td> 19/02/2019 </td>
+<td> Аппроксимация. </td>
+<td> <file 'numerical/files/num-present-07.pdf'> num-present-07.pdf </file>  </td>
+</tr>
 </table>

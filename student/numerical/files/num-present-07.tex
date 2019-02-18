@@ -1,0 +1,801 @@
+\documentclass[10pt]{beamer}
+\usetheme{Madrid}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[all]{xy}
+
+%\newtheorem{theorem}{Теорема}
+
+\author{Баев А.Ж.}
+\title{Введение в численные методы. \\ Интерполяция и аппроксимация}
+\institute{Казахстанский филиал МГУ} 
+\date{18 февраля 2019}
+%\subject{} 
+
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{patterns} 
+\usetikzlibrary{arrows, matrix, positioning, decorations.pathreplacing}
+
+\usepackage{listings}
+\lstset{language=python}
+\lstset{basicstyle=\ttfamily}  
+\lstset{keywordstyle=\color{blue}}
+\lstset{frame=single}
+\lstset{numbers=left}
+\lstset{tabsize=4}
+
+
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{frame}[fragile]
+\frametitle{План на семестр}
+
+\begin{enumerate}
+\item СЛАУ (точные методы)
+\item СЛАУ (итерационные методы)
+\item решение нелинейных уравнений
+\item интерполяция
+\item \textbf{аппроксимация}
+\item интегрирование
+\item дифференцирование
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Аппроксимация}
+
+Аппроксимация --- математический метод, состоящий в замене одних математических объектов другими, в том или ином смысле близкими к исходным. 
+
+\vfill
+Дана сетка порядка $n$: 
+$$x_0 < x_1 < \ldots < x_n$$
+
+\vfill
+Дан набор измерений:
+$$y_i = f(x_i)$$
+
+\vfill
+Необходимо восстановить вид функции $f$.
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Линейное нормирование пространство}
+
+Линейное пространство $L$ нормировано, если каждому элементу $v \in L$ поставлено в соответствие вещественное число $||v||$ такое, что:
+\begin{enumerate}
+\item $||v|| \geqslant 0$;
+\item $||\alpha v|| = |\alpha| \cdot ||v||$;
+\item $||v_1 + v_2|| \leqslant ||v_1|| + ||v_2||$.
+\end{enumerate}
+
+\vfill
+Линейное пространство $L$ строго нормировано, если из равенства $||v_1 + v_2|| = ||v_1|| + ||v_2||$ следует, что $v_1 = \alpha v_2$.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Задача наилучшего приближения}
+
+Пусть имеется некоторое линейное нормированное пространство $L$, элемент $f \in L$ и набор линейно--независимых элементов $\varphi_i \in L$, где $i = 1, \dots, n$. Требует найти наилучшее линейное приближение по норме, то есть:
+$$g = \underset{c_i}{Argmin} ||f - \sum_{i=1}^{n} c_i \varphi_i|| .$$
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Задача наилучшего приближения}
+
+\begin{theorem}
+В любом нормированном пространстве существует элемент наилучшего приближения.
+\end{theorem}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Задача наилучшего приближения}
+
+\begin{proof}
+1) Функционал
+$$G_f(c_1, ..., c_n) = ||f - \sum_{i=1}^{n} c_i \varphi_i||$$
+является непрерывной функцией переменных $c_i$ (по неравенству треугольника).
+
+2) Рассмотрим функционал на $f = 0$ на единичном шаре $a_1^2 + \cdot + a_n^2 = 1$. $G_0(a_1, ..., a_n)$ достигает нижней грани $\tilde{G}_0$ в некоторой точке $(\tilde{a}_1, ..., \tilde{a}_n)$.
+
+3) Рассмотрим функционал на произвольной функции $f$ в шаре радиуса $\alpha$. $G_f(c_1, ..., c_n)$ достигает нижней грани $\tilde{G}_f$ в некоторой точке $(\hat{c}_1, ..., \hat{c}_n)$:
+$$ G_f(\hat{c}) \leqslant G_f(0) = ||f|| $$
+
+4) Рассмотрим функционал на произвольной функции $f$ вне шара радиуса $\alpha$.
+$$ G_f(c) = ||c_1 \varphi_1 + ... + c_n \varphi_n - f || \geqslant ||c_1 \varphi_1 + ... + c_n \varphi_n || - || f || = $$
+$$ = |c| \cdot ||a_1 \varphi_1 + ... + a_n \varphi_n || - ||f|| \geqslant \alpha \tilde{G}_0 - ||f|| \geqslant \{ \text{ Определим $\alpha$ } \} \geqslant ||f|| \geqslant G_f(\hat{c})$$
+\end{proof}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Задача наилучшего приближения}
+
+\begin{theorem}
+В любом строго нормированном пространстве элемент наилучшего приближения единственный.
+\end{theorem}
+
+\begin{proof}
+Пусть $\varphi_1 \neq \varphi_2$ --- различные элементы наилучшего приближения. Рассмотрим элемент $\frac12 (\varphi_1 + \varphi_2)$. Тогда 
+$$\Delta \leqslant ||\frac12 (f - \varphi_1)  + \frac12 (f - \varphi_2)|| \leqslant ||\frac12 (f - \varphi_1)|| + ||\frac12 (f - \varphi_2)|| = \Delta$$
+
+Из строгой нормированности
+$$\frac12 (f - \varphi_1) = \alpha \frac12 (f - \varphi_2)$$
+
+Получаем, что $\alpha = 1$ и $\varphi_1 = \varphi_2$.
+\end{proof}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Гильбертово пространство}
+
+Линейной пространство со скалярным произведением.
+
+\vfill
+
+$$||f||^2 = (f, f)$$
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Гильбертово пространство}
+
+\begin{multline*}
+F(c_0, c_1, ..., c_n) = (f - \sum_{i=0}^{n} c_i \varphi_i, f - \sum_{j=0}^{n} c_j \varphi_j) = \\
+= (f, f) - 2 \sum_{i=0}^{n} c_i (\varphi_i, f) + \sum_{i=0}^{n} \sum_{j=0}^{n} c_i c_j (\varphi_i, \varphi_j)
+\end{multline*}
+
+Производные по $c_k$ должны обнулиться:
+$$ - 2 (\varphi_k, f) + 2 \sum_{j=0}^{n} c_j (\varphi_k, \varphi_j) = 0$$.
+
+Получаем систему с матрицей Грамма:
+$$
+\begin{pmatrix}
+(\varphi_0, \varphi_0) & (\varphi_0, \varphi_1) & ... & (\varphi_0, \varphi_n) \\
+(\varphi_1, \varphi_0) & (\varphi_1, \varphi_1) & ... & (\varphi_1, \varphi_n) \\
+...						& ...					  & ... & ...					  \\
+(\varphi_n, \varphi_0) & (\varphi_n, \varphi_1) & ... & (\varphi_n, \varphi_n) \\
+\end{pmatrix}
+\begin{pmatrix}
+c_0 \\
+c_1 \\
+... \\
+c_n \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+(\varphi_0, f) \\
+(\varphi_1, f) \\
+... \\
+(\varphi_n, f) \\
+\end{pmatrix}
+$$
+
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Пример 1}
+
+Рассмотрим кусочно--линейную аппроксимацию $f(x) \in C[0, 1]$ по норме, согласованной со скалярным произведением:
+
+$$(f, g) = \int_{0}^{1} f(x) g(x) dx .$$
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Пример 1}
+
+В качестве функции для ядра выберем:
+
+$$
+\varphi(x) = 
+\left\{
+\begin{aligned}
+& 1 - x ,&& x \in [0; 1]\\ 
+& 1 + x ,&& x \in [-1; 0)\\
+& 0 ,&& x \not\in [-1; 1]\\
+\end{aligned}
+\right.
+$$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+[
+unit vector ratio*=1 1 1,
+xlabel=x,
+ylabel=y,
+xmin=-3, xmax=3,
+ymin=0, ymax=2,
+ytick={0.0, 1.0, 2.0},
+grid=major,
+axis lines = middle
+]
+
+
+\addplot coordinates { (-2, 0) (-1, 0) (0, 1) (1, 0) (2, 0) };
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Пример 1}
+Базисные функции построим на равномерной сетке с шагом $h = \frac{1}{n}$.
+
+\vfill
+Данную базисную функцию сожмем до интервала $[-h; h]$ и сдвинем на $x_i$ для всех $i = 0, ..., n$. Получим базис:
+\begin{equation*}
+\varphi_i(x) = \varphi \left( \frac{x - x_i}{h} \right)
+\end{equation*}
+ 
+ \begin{center}
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}
+[
+%unit vector ratio*=1 1 1,
+xlabel=x,
+ylabel=y,
+xmin=0.0, xmax=1.0,
+ymin=-0.5, ymax=1.5,
+grid=major,
+axis lines = middle
+]
+\addplot coordinates { (0, 1) (1/3, 0) (1, 0) };
+\addlegendentry{$\varphi_0$}
+
+
+\addplot coordinates { (0, 0) (1/3, 1) (2/3, 0) (1, 0) };
+\addlegendentry{$\varphi_1$}
+
+
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}
+[
+%unit vector ratio*=1 1 1,
+xlabel=x,
+ylabel=y,
+xmin=0.0, xmax=1.0,
+ymin=-0.5, ymax=1.5,
+grid=major,
+axis lines = middle
+]
+
+\addplot coordinates { (0, 0) (1/3, 0) (2/3, 1) (1, 0) };
+\addlegendentry{$\varphi_0$}
+
+
+\addplot coordinates { (0, 0) (2/3, 0) (1, 1) };
+\addlegendentry{$\varphi_1$}
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Пример 1}
+Вычислим элементы матрицы Грамма. Легко увидеть, что: 
+$$\int_{-1}^{1} \varphi^2(x) dx = 2 \int_{0}^{1} \varphi^2(x) dx = 2 \int_{0}^{1} x^2 dx = \frac{2}{3} .$$
+
+Значит диагональные элементы равны ($i = 1, ..., n-1$):
+$$(\varphi_i(x), \varphi_i(x)) = \frac{2h}{3} .$$
+
+Для первого и последнего элемента ответ будет в 2 раза меньше:
+$$(\varphi_0(x), \varphi_0(x)) = (\varphi_n(x), \varphi_n(x)) = \frac{h}{3} .$$
+
+Далее посмотрим скалярное произведение 2 подряд идущих базисных функций (над и под главной диагональю):
+$$(\varphi_i(x), \varphi_{i+1}(x)) = h \int_{0}^{1} (1 - x) x dx = \frac{h}{6} .$$
+
+Скалярное произведение элементов при $|i-j|>1$ будет нулевое:
+$$(\varphi_i(x), \varphi_j(x)) = 0.$$
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Пример 1}
+В итоге, необходимо найти решение СЛАУ (все строки матрицы умножены на $\frac{6}{h}$) с трехдиагональной матрицей:
+\begin{equation}
+\begin{pmatrix}
+2 & 1 & 0 & \cdots & 0 & 0 & 0 \\
+1 & 4 & 1 & \cdots & 0 & 0 & 0 \\
+0 & 1 & 4 & \cdots & 0 & 0 & 0 \\
+\cdots & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots\\
+0 & 0 & 0 & \cdots & 4 & 1 & 0\\
+0 & 0 & 0 & \cdots & 1 & 4 & 1\\
+0 & 0 & 0 & \cdots & 0 & 1 & 2\\
+\end{pmatrix}
+\begin{pmatrix}
+c_0 \\
+c_1 \\
+c_2 \\
+\cdots \\
+c_{n-2} \\
+c_{n-1} \\
+c_{n} \\
+\end{pmatrix}
+=
+\frac{6}{h} 
+\begin{pmatrix}
+(\varphi_0, f) \\
+(\varphi_1, f) \\
+(\varphi_2, f) \\
+\cdots \\
+(\varphi_{n-2}, f) \\
+(\varphi_{n-1}, f) \\
+(\varphi_n, f) \\
+\end{pmatrix}
+\end{equation}
+
+Интегралы для правых частей надо вычислять численно. Причем для первой и последней компоненты с особенными границами:
+$$(\varphi_i, f) = 
+\begin{cases}
+\int_{x_{i}}^{x_{i+1}} \varphi_i(x) f(x) dx, i = 0\\
+\int_{x_{i-1}}^{x_{i+1}} \varphi_i(x) f(x) dx, i = 1 .. (n-1)\\
+\int_{x_{i-1}}^{x_{i}} \varphi_i(x) f(x) dx, i = n
+\end{cases}
+.$$
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Пример 1}
+Дана сетка размером $n=3$ на отрезке $[0;1]$. Построить кусочно--линейную аппроксимацию функции 
+$$f(x) = 54 x^2$$
+ методом наименьших квадратов с минимальным интегральным отклонением.
+
+$$
+\varphi_0 (x) = \varphi \left(\frac{x - 0}{1/3} \right) =
+\begin{cases}
+1 - 3x &, x \in \left[0, \frac{1}{3} \right]\\
+0      &, x \not \in \left[0, \frac{1}{3} \right]\\
+\end{cases}
+$$
+
+$$
+\varphi_1 (x) = \varphi \left(\frac{x - 1/3}{1/3} \right) =
+\begin{cases}
+0 + 3x &, x \in \left[0, \frac{1}{3} \right]\\
+2 - 3x &, x \in \left[\frac{1}{3}, \frac{2}{3} \right]\\
+0      &, x \not \in \left[0, \frac{2}{3} \right]\\
+\end{cases}
+$$
+
+$$
+\varphi_2 (x) = \varphi \left(\frac{x - 2/3}{1/3} \right) =
+\begin{cases}
+-1 + 3x &, x \in \left[\frac{1}{3}, \frac{2}{3} \right]\\
+3 - 3x &, x \in \left[\frac{2}{3}, 1 \right]\\
+0      &, x \not \in \left[\frac{1}{3}, 1 \right]\\
+\end{cases}
+$$
+
+$$
+\varphi_3 (x) = \varphi \left(\frac{x - 1}{1/3} \right) =
+\begin{cases}
+-2 + 3x &, x \in \left[ \frac{2}{3}, 1 \right]\\
+0      &, x \not \in \left[\frac{2}{3}, 1 \right]\\
+\end{cases}
+$$
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Пример 1}
+Вычислим проекции функции $f(x) = 54 x^2$ на базисные функции $\varphi_i(x)$:
+\begin{equation*}
+\begin{aligned}
+&(f, \varphi_0) = \int_{\frac{0}{3}}^{\frac{1}{3}} 54 x^2 (1 - 3x) dx = \frac{1}{6} \approx 0.16667\\
+&(f, \varphi_1) = \int_{\frac{0}{3}}^{\frac{1}{3}} 54 x^2 (0 + 3x) dx + \int_{\frac{1}{3}}^{\frac{2}{3}} 54 x^2 (2 - 3x) dx= \frac{7}{3} \approx 2.33333\\
+&(f, \varphi_2) = \int_{\frac{1}{3}}^{\frac{2}{3}} 54 x^2 (-1 + 3x) dx + \int_{\frac{2}{3}}^{\frac{3}{3}} 54 x^2 (3 - 3x) dx= \frac{25}{3} \approx 8.33333\\
+&(f, \varphi_3) = \int_{\frac{2}{3}}^{\frac{3}{3}} 54 x^2 (-2 + 3x) dx = \frac{43}{6} \approx 7.16667\\
+\end{aligned}
+\end{equation*}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Пример 1}
+Умножаем полученные значения на $\frac{6}{h} = 18$ и получаем вектор--столбец $(3, 42, 150, 129)^T$ для СЛАУ, определяющая коэффициенты аппрокосимации:
+
+$$
+\begin{pmatrix}
+2 & 1 & 0 & 0 \\
+1 & 4 & 1 & 0 \\
+0 & 1 & 4 & 1 \\
+0 & 0 & 1 & 2\\
+\end{pmatrix}
+\begin{pmatrix}
+c_0 \\
+c_1 \\
+c_2 \\
+c_3 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+3\\
+42\\
+150\\
+129\\
+\end{pmatrix}
+$$
+Решая данную систему методом прогонки, находим коэффициенты:
+$$
+\begin{cases}
+c_0 = -1 \\
+c_1 = 5 \\
+c_2 = 23 \\
+c_3 = 53 \\
+\end{cases}
+$$
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Пример 1}
+Аппроксимирующая функция выглядит так:
+$$
+p(x) = -\varphi_0(x) + 5 \varphi_1(x) + 23 \varphi_2(x) + 53 \varphi_3(x).
+$$
+
+Это кусочно линейная функция, которая проходит через узлы: $(0, -1)$, $\left(\frac{1}{3}, 5 \right)$, $\left( \frac{2}{3}, 23 \right)$, $(1, 53)$.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+[
+%unit vector ratio*=1 1 1,
+xlabel=x,
+ylabel=y,
+domain=0:1,
+%xmin=0.00, xmax=1.00,
+ymin=-10, ymax=60,
+grid=major,
+axis lines = middle
+]
+
+\addplot[blue, solid] { 54 * x * x };
+\addlegendentry{$f(x)$}
+
+\addplot coordinates { (0, -1) (1/3, 5) (2/3, 23) (1, 53) };
+\addlegendentry{$p(x)$}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Пример 1}
+Аппроксимирующая функция выглядит так:
+$$
+p(x) = -\varphi_0(x) + 5 \varphi_1(x) + 23 \varphi_2(x) + 53 \varphi_3(x).
+$$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+[
+%unit vector ratio*=1 1 1,
+xlabel=x,
+ylabel=y,
+domain=0.3:0.7,
+xmin=0.3, xmax=0.7,
+ymin=0, ymax=40,
+grid=major,
+axis lines = middle
+]
+
+\addplot[blue, solid] { 54 * x * x };
+\addlegendentry{$f(x)$}
+
+\addplot coordinates { (0, -1) (1/3, 5) (2/3, 23) (1, 53) };
+\addlegendentry{$p(x)$}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Пример 1}
+
+Образ базиса и базисные функции:
+\begin{lstlisting}
+n = int()
+xi = linspace(0.0, 1.0, n + 1)
+h = 1.0 / n
+
+def phi(x):
+    if -1 <= x <= 0:
+        return 1 + x
+    if 0 <= x <= 1:
+        return 1 - x
+    return 0
+
+def phi(i, x)
+    return phi((x - xi[i]) / h)
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Пример 1}
+Функция, которая вычисляет интеграл
+$$\int_{0}^{1} f(t) \varphi_i(t) dt= \int_{x_i-h}^{x_i+h} f(t) \varphi_i(t) dt$$
+методом трапеций (1000 трапеций).
+\begin{lstlisting}
+def integral(f, i):
+    m = 1000
+    l = 0 if i == 0 else xi[i] - h
+    r = 1 if i == n else xi[i] + h
+
+    s = 0.5 * (f(l) * phi(i, l) + f(r) * phi(i, r))
+    for t in linspace(l, r, m + 1)[1: -1]:
+        s = s + f(t) * phi(i, t)
+    return s * (r - l) / m
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Пример 1}
+Функция вычисления весовых коэффициентов $c_i$ с помощью функций $integral$ --- численное интегрирование и $sweep$ --- метод прогонки.
+\begin{lstlisting}
+def generateLeastSquares():
+    a = np.array([0] + [1] * (n - 1) + [1])
+    b = np.array([2] + [4] * (n - 1) + [2])
+    c = np.array([1] + [1] * (n - 1) + [0])
+    f = np.zeros(n + 1)
+    for i in range(n + 1):
+        f[i] = 6 / h * integral(f, i)
+    
+    return sweep(n+1, a, b, c, f)[:-1]
+\end{lstlisting}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Пример 2}
+
+Рассмотрим аппроксимацию $f \in R^n$ элементами из подпространства ($m < n$):
+$$v = c_1 \varphi_1 + ... + c_m \varphi_m$$
+по норме, согласованной со скалярным произведением:
+$$(f, g) = \sum_i {f_i g_i}$$
+
+Метод наименьших квадратов.
+$$
+\begin{pmatrix}
+(\varphi_1, \varphi_1) & (\varphi_1, \varphi_2) & ... & (\varphi_1, \varphi_m) \\
+(\varphi_2, \varphi_1) & (\varphi_2, \varphi_2) & ... & (\varphi_2, \varphi_m) \\
+...						& ...					  & ... & ...					  \\
+(\varphi_m, \varphi_1) & (\varphi_m, \varphi_2) & ... & (\varphi_m, \varphi_m) \\
+\end{pmatrix}
+\begin{pmatrix}
+c_1 \\
+c_2 \\
+... \\
+c_m \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+(\varphi_1, f) \\
+(\varphi_2, f) \\
+... \\
+(\varphi_m, f) \\
+\end{pmatrix}
+$$
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Пример 2}
+Дан набор $n$ измерений $y_i = f(x_i)$. Необходимо аппроксимировать вектор $y$ вектором $\tilde{y}$, который получен линейной аппроксимацией 
+$$\tilde{y}_i = a x_i + b$$
+с минимальным отклонением: 
+$$\min_{a,b} (y - \tilde{y}, y - \tilde{y}).$$
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Пример 2}
+Пусть $m = 2$.
+
+$$\varphi_1 = (x_1, x_2, ..., x_n)$$ 
+$$\varphi_2 = (1, 1, ..., 1)$$ 
+
+Метод наименьших квадратов.
+$$(y - a \varphi_1 - b \varphi_2, y - a \varphi_1 - b \varphi_2) \to \min$$ 
+
+Система.
+$$
+\begin{pmatrix}
+x_1^2 + ... + x_n^2 & x_1 + ... + x_n \\
+x_1 + ... + x_n & n \\
+\end{pmatrix}
+\begin{pmatrix}
+a \\
+b \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+x_1 y_1 + ... + x_n y_n \\
+y_1 + ... + y_n  \\
+\end{pmatrix}
+$$ 
+
+Введем обозначение средних величин:
+$$\overline{z} = \frac{1}{n} \sum_{i=1}^{n} {z_i} .$$
+
+Система.
+$$
+\begin{pmatrix}
+\overline{x^2} & \overline{x} \\
+\overline{x} & 1 \\
+\end{pmatrix}
+\begin{pmatrix}
+a \\
+b \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+\overline{x y} \\
+\overline{y}  \\
+\end{pmatrix}
+$$ 
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Пример 2}
+
+Минимизируем по школьному:
+$$F(a,b) = \sum_{i=1}^n (a x_i + b - y_i)^2$$
+
+Производные по $a$ и $b$ должны обнулиться:
+$$
+\begin{cases}
+\sum_{i=1}^n x_i (a x_i + b - y_i) &= 0\\
+\sum_{i=1}^n (a x_i + b - y_i) &= 0\\
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a \sum_{i=1}^n x_i^2 + b \sum_{i=1}^n x_ i &= \sum_{i=1}^n x_i y_i \\
+a \sum_{i=1}^n x_i + b \sum_{i=1}^n 1 &= \sum_{i=1}^n y_i\\
+\end{cases}
+$$
+
+Поделим каждое уравнение системы на $n$ и получим: 
+\begin{equation}
+\begin{cases}
+a \overline{x^2} + b \overline{x} &= \overline{x y} \\
+a \overline{x} + b &= \overline{y}\\
+\end{cases}
+\Leftrightarrow
+\begin{cases}
+a &= \frac{\overline{x y} - \overline{x} *  \overline{y}}{\overline{x^2} - \overline{x}^2} \\
+b &= \overline{y} - a \overline{x}\\
+\end{cases}
+\end{equation}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Пример 2}
+
+Дана сетка на $n=3$ отрезка со значениями в узлах: $(2, 1)$, $(3, 4)$, $(4, 2)$, $(5, 5)$.
+
+Построить линейную аппроксимацию методом наименьших квадратов. 
+
+Рассмотрим 2 вектора: $x = ( 2, 3, 4, 5 )$ и $y = (1, 4, 2, 5)$.
+
+Вычислим средние величины:
+$$
+\overline{x} = \frac{1}{4} \left(2 + 3 + 4 + 5 \right) = \frac{7}{2}
+$$
+$$
+\overline{y} = \frac{1}{4} (1 + 4 + 2 + 5) = 3
+$$
+$$
+\overline{x y} = \frac{1}{4} \left( 2 \cdot 1 + 3 \cdot 4 + 4 \cdot 2 + 5 \cdot 5 \right) = \frac{47}{4}
+$$
+$$
+\overline{x^2} = \frac{1}{4} \left(2^2 + 3^2 + 4^2 + 5^2 \right) = \frac{54}{4}
+$$
+
+Коэффициенты прямой:
+$$
+a = \frac{\overline{x y} - \overline{x} \cdot \overline{y}}{\overline{x^2} - \overline{x}^2} = \frac{ \frac{47}{4} - \frac{7}{2}  \cdot 3 }{ \frac{54}{4} - \frac{49}{4}} = 1
+$$
+$$
+b = \overline{y} - a  \cdot \overline{x} = 3 - 1 \cdot \frac{7}{2} = -\frac{1}{2}
+$$
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Пример 2}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+[
+unit vector ratio*=1 1 1,
+xlabel=x,
+ylabel=y,
+xmin=0, xmax=6,
+ymin=0, ymax=5,
+grid=major,
+axis lines = middle
+]
+\addplot[blue,only marks] coordinates { (2, 1) (3, 4) (4, 2) (5, 5) };
+
+\addplot[red, domain=2:5] { -1/2 + x };
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Пример 2}
+
+Код, вычисляющий коэффициенты:
+\begin{lstlisting}
+def linearRegression(x, y)
+    a = (x * y).mean() - x.mean() * y.mean()
+    a /= (x * x).mean() - x.mean() ** 2
+    b = y.mean() - a * x.mean()
+    return a, b
+\end{lstlisting}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Литература}
+Подробнее в \cite[стр. 44]{Kalitkin} и \cite[стр. 65]{Samarsky}.
+
+
+
+\begin{thebibliography}{99}
+
+\bibitem{Kalitkin}
+Калиткин Н.Н. Численные методы. - Спб.: БХВ-Петербург, 2014.
+
+\bibitem{Samarsky}
+Самарский А.А., Гулин А.В. Численные методы. - М.: Наука, 1989.
+
+\end{thebibliography}
+\end{frame}
+
+\end{document}
