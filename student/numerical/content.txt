@@ -31,4 +31,9 @@
 <td> Нелинейные уравнения. Итерационные методы. </td>
 <td> <file 'numerical/files/num-present-05.pdf'> num-present-05.pdf </file>  </td>
 </tr>
+<tr>
+<td> 18/02/2019 </td>
+<td> Интерполяция. </td>
+<td> <file 'numerical/files/num-present-06.pdf'> num-present-06.pdf </file>  </td>
+</tr>
 </table>
