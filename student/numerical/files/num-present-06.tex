@@ -119,7 +119,7 @@ axis lines = middle
 
 \vfill
 
-Асимптотика для восстановления зависимости в $m$ точках: $m \log{n}$. 
+Асимптотика для восстановления зависимости в $m$ точках: $O(m \log{n})$. 
 
 
 \end{frame}
@@ -265,7 +265,7 @@ def P(z):
 
 \vfill
 
-Асимптотика для восстановления зависимости в $m$ точках: $m n^2$. 
+Асимптотика для восстановления зависимости в $m$ точках: $O(m n^2)$. 
 
 
 \vfill
@@ -398,43 +398,37 @@ $$
 
 Сводится к СЛАУ $(n+1)$-го порядка с трехдиагональной матрицей:
 $$
-\left(
-\begin{aligned}
-  & 1 & 0 & 0 & 0 & &\hdots& 0 & 0 & 0 &\\
-  & 1 & 4 & 1 & 0 & &\hdots& 0 & 0 & 0 &\\
-  & 0 & 1 & 4 & 1 & &\hdots& 0 & 0 & 0 &\\
-  & 0 & 0 & 1 & 4 & &\hdots& 0 & 0 & 0 &\\
-  &\vdots& &\vdots& &\vdots& &\vdots& &\ddots& &\vdots& &\vdots& &\vdots& \\
-  & 0 & 0 & 0 & 0 & &\hdots&  & 4 & 1 & 0 &\\
-  & 0 & 0 & 0 & 0 & &\hdots&  & 1 & 4 & 1 &\\
-  & 0 & 0 & 0 & 0 & &\hdots&  & 0 & 0 & 1 &\\
-\end{aligned}
-\right)
-\left(
-\begin{aligned}
-&B_0\\
-&B_1\\
-&B_2\\
-&B_3\\
-&\vdots\\
-&B_{n-2}\\
-&B_{n-1}\\
-&B_n\\
-\end{aligned}
-\right)
+\begin{pmatrix}
+   1 & 0 & 0 & 0 & &\hdots& 0 & 0 & 0 \\
+   1 & 4 & 1 & 0 & &\hdots& 0 & 0 & 0 \\
+   0 & 1 & 4 & 1 & &\hdots& 0 & 0 & 0 \\
+   0 & 0 & 1 & 4 & &\hdots& 0 & 0 & 0 \\
+  \vdots& \vdots& \vdots& \vdots& \ddots& \vdots& \vdots& \vdots \\
+   0 & 0 & 0 & 0 & &\hdots&  & 4 & 1 & 0 \\
+   0 & 0 & 0 & 0 & &\hdots&  & 1 & 4 & 1 \\
+   0 & 0 & 0 & 0 & &\hdots&  & 0 & 0 & 1 \\
+\end{pmatrix}
+\begin{pmatrix}
+B_0\\
+B_1\\
+B_2\\
+B_3\\
+\vdots\\
+B_{n-2}\\
+B_{n-1}\\
+B_n\\
+\end{pmatrix}
 =
-\left(
-\begin{aligned}
-&0\\
-&3 {y}_{xx, 1} \\
-&3 {y}_{xx, 2} \\
-&3 {y}_{xx, 3} \\
-&\vdots\\
-&3 {y}_{xx, n-2} \\
-&3 {y}_{xx, n-1} \\
-&0\\
-\end{aligned}
-\right)
+\begin{pmatrix}
+0\\
+3 {y}_{xx, 1} \\
+3 {y}_{xx, 2} \\
+3 {y}_{xx, 3} \\
+\vdots\\
+3 {y}_{xx, n-2} \\
+3 {y}_{xx, n-1} \\
+0\\
+\end{pmatrix}
 $$
 где 
 ${y}_{xx, i} = \frac{y_{i-1} - 2 y_{i} + y_{i+1}}{h^2}$
@@ -558,7 +552,7 @@ def splineGenerate(x, y)
 
 \vfill
 
-Асимптотика для восстановления зависимости в $m$ точках: $m n$. 
+Асимптотика для восстановления зависимости в $m$ точках: $O(m n)$. 
 
 \end{frame}
 
