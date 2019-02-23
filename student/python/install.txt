@@ -24,6 +24,11 @@ sudo apt install python3-pip
 sudo pip3 install matplotlib
 </bash>
 
+Чтобы отрисованный график можно было отобразить в виде отдельного окна
+<bash>
+sudo apt install python3-tk
+</bash>
+
 Теперь убедимся, что мы можем рисовать графики. Подключим класс pyplot из matplotlib (и обзовем его plt). Подготовим список значений, которые хотим отрисовать. Добавим соответствующие точки на плоскость методом plt.plot() и посмотрим на результат методом plt.show().
 <python>
 import matplotlib.pyplot as plt
