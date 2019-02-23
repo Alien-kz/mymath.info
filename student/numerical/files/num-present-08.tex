@@ -1,0 +1,448 @@
+\documentclass[10pt]{beamer}
+\usetheme{Madrid}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[all]{xy}
+\usepackage{gnuplottex}
+
+%\newtheorem{theorem}{Теорема}
+
+\author{Баев А.Ж.}
+\title{Введение в численные методы. \\ Интегрирование}
+\institute{Казахстанский филиал МГУ} 
+\date{22 февраля 2019}
+%\subject{} 
+
+\usepackage{tikz, pgfplots}
+\usepgfplotslibrary{fillbetween}
+%\pgfplotsset{compat=1.10}
+
+
+\usetikzlibrary{patterns} 
+\usetikzlibrary{arrows, matrix, positioning, decorations.pathreplacing}
+
+\usepackage{listings}
+\lstset{language=python}
+\lstset{basicstyle=\ttfamily}  
+\lstset{keywordstyle=\color{blue}}
+\lstset{frame=single}
+\lstset{numbers=left}
+\lstset{tabsize=4}
+
+
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{frame}[fragile]
+\frametitle{План на семестр}
+
+\begin{enumerate}
+\item СЛАУ (точные методы)
+\item СЛАУ (итерационные методы)
+\item решение нелинейных уравнений
+\item интерполяция
+\item аппроксимация
+\item \textbf{интегрирование}
+\item дифференцирование
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Интегрирование}
+
+Дана непрерывная на отрезке $[a; b]$ функция $f(x)$. Необходимо вычислить:
+
+$$I = \int_{a}^{b} f(x) dx.$$
+
+
+Основная идея: реализовать суммы Дарбу.
+$$I = \int_{a}^{b} f(x) dx \approx \sum{f(\xi_i)}.$$
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Типы методов}
+
+\begin{enumerate}
+\item детерминированные (метод прямоугольников, метод трапеций, метод Симпсона и др.);
+\item стохастические (метод Монте-Карло, геометрический метод и др.).
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Детерминированные методы}
+
+Введём равномерную сетку на отрезке $[a; b]$ порядка $n$:
+$$x_i = a + i * h, i = 0..n$$
+где $h = \frac{1}{n}$.
+
+
+Обозначим значения функции в этих узлах:
+$$f_i = f(x_i), i = 0..n$$
+
+Взвешенная сумма
+$$\sum_{i=0}^{n}  c_i f_i$$
+приближает интеграл при условии, что $\sum_{i=0}^{n} {c_i} = b - a$.
+
+
+Подбирая различные веса, можно получить различные приближения интеграла. 
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Пример}
+Вычислим интеграл:
+$$I = \int_{1}^{3} \bigl (1 + (x-1)(x-2)(x-3)(x-3) \bigr) dx = \frac{26}{15}.$$
+
+Сеточная функция:
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\pgfplotsset{ymin=0}
+\begin{axis}
+[domain=1:3]
+\addplot[blue, only marks, samples=401, mark=*, mark repeat=100, mark options={solid}]{1 + (x-1)*(x-2)*(x-3)*(x-3)};
+\addplot[blue!40, mark options={solid}]{1 + (x-1)*(x-2)*(x-3)*(x-3)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод левых прямоугольников}
+
+$$I_n = \sum_{i=0}^{n-1} f_i \cdot h = h \sum_{i=0}^{n-1} f_i.$$
+
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\pgfplotsset{ymin=0}
+\begin{axis}
+[domain=1:3]
+\draw[fill=blue!20] (axis cs:1.0,1.0) rectangle (axis cs:1.5,0);
+\draw[fill=blue!20] (axis cs:1.5,0.4375) rectangle (axis cs:2.0,0);
+\draw[fill=blue!20] (axis cs:2.0,1) rectangle (axis cs:2.5,0);
+\draw[fill=blue!20] (axis cs:2.5,1.1875) rectangle (axis cs:3.0,0);
+\addplot[blue, only marks, samples=401, mark=*, mark repeat=100, mark options={solid}]{1 + (x-1)*(x-2)*(x-3)*(x-3)};
+\addplot[blue, mark options={solid}]{1 + (x-1)*(x-2)*(x-3)*(x-3)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+Интеграл для примера: 
+$I_4 = \frac{1}{2} \left( 1 + \frac{7}{16} + 1 + \frac{19}{16} \right) = \frac{29}{16}.$
+
+Погрешность для примера: 
+$|I_4 - I| = \left|\frac{29}{16} - \frac{26}{15}\right| = \frac{17}{120} \approx 0.1417.$
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод левых прямоугольников}
+
+Погрешность: $|I - I_n| = O(h) = O \left(\frac{1}{N} \right)$.
+
+\vfill 
+
+Отдельный прямоугольник (интерполяционный полином 1 степени)
+$$ f(x) - f(x_i) = f'(\xi) (x - x_i)$$
+$$ \int_{x_i}^{x_{i+1}} (f(x) - f(x_i)) dx = f'(\xi) \int_{x_i}^{x_{i+1}}(x - x_i) dx =
+f'(\xi) \int_{0}^{h} x dx = f'(\xi) \cdot \frac{h^2}{2}
+$$
+$$ \left|\int_{x_i}^{x_{i+1}} (f(x) - f(x_i)) dx\right| \leqslant M_1 $$
+$$ \left|I - I_n \right| \leqslant n \cdot M_1 \cdot \frac{h^2}{2} = \frac{M_1 \cdot h}{2} \cdot (b-a)$$
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Метод трапеций}
+
+Основная идея: на каждом отрезке кусочно-линейная аппроксимация. 
+
+$$\overline{I}_n = \sum_{i=0}^{n-1} \frac{f_{i} + f_{i+1}}{2} h = h \left( \frac{f_0}{2} + \sum_{i=1}^{n-1} f_i + \frac{f_n}{2} \right) $$
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\pgfplotsset{ymin=0}
+\begin{axis}
+[domain=1:3]
+\draw[fill=blue!20] (axis cs:1.0,1.0) -- (axis cs:1.5,0.4375) -- (axis cs:1.5,0.0) -- (axis cs:1.0,0.0) -- cycle;
+\draw[fill=blue!20] (axis cs:1.5,0.4375) -- (axis cs:2.0,1.0) -- (axis cs:2.0,0.0) -- (axis cs:1.5,0.0) -- cycle;
+\draw[fill=blue!20] (axis cs:2.0,1.0) -- (axis cs:2.5,1.1875) -- (axis cs:2.5,0.0) -- (axis cs:2.0,0.0) -- cycle;
+\draw[fill=blue!20] (axis cs:2.5,1.1875) -- (axis cs:3.0,1.0) -- (axis cs:3.0,0.0) -- (axis cs:2.5,0.0) -- cycle;
+
+\addplot[blue, only marks, samples=401, mark=*, mark repeat=100, mark options={solid}]{1 + (x-1)*(x-2)*(x-3)*(x-3)};
+\addplot[name path=f, blue, mark options={solid}]{1 + (x-1)*(x-2)*(x-3)*(x-3)};
+\path[name path=axis] (axis cs:1,0) -- (axis cs:3,0);
+%\addplot fill between[of=f and axis];
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+Интеграл для примера: 
+$\overline{I}_4 = \frac{1}{2} \left( \frac{1}{2} + \frac{7}{16} + 1 + \frac{19}{16} + \frac{1}{2} \right) = \frac{29}{16}.$
+
+Погрешность для примера: 
+$|\overline{I}_4 - I| = \left|\frac{29}{16} - \frac{26}{15}\right| = \frac{17}{120} \approx 0.1417.$
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод трапеций}
+
+
+Погрешность: $|I - \overline{I}_n| = O(h^2) = O \left(\frac{1}{N^2} \right)$.
+
+\vfill 
+
+Отдельный прямоугольник (интерполяционный полином 2 степени)
+$$ f(x) = f(x_i) + \frac{f(x_{i+1}) - f(x_i)}{x_{i+1} - x_i} (x - x_i) + \frac{f''(\xi)}{2} (x - x_i)(x - x_{i+1})$$
+$$ \left|I - I_n \right| \leqslant n \cdot M_2 \cdot \frac{h^3}{12} = \frac{M_2 \cdot h}{12} \cdot (b-a)^2$$
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод Симпсона}
+
+Основная идея: на трех подряд идущих узлах кусочно-квадратичная аппроксимация (применим при $n = 2 m$).
+
+
+$$\int_{a}^{b} x^2 dx = \frac{1}{3} (b^3 - a^3) = \frac{b-a}{3} (b^2 + ba + a^2) = \frac{b-a}{6} \left(b^2 + (b+a)^2 + a^2 \right).$$
+
+Пусть $a = x_{2k}$, $b = x_{2k+2}$. Тогда $a+b = 2 x_{2k+1}$ и $b-a=2h$:
+
+$$\int_{x_{2k}}^{x_{2k+2}} x^3 dx = \frac{h}{3} \left(f(x_{2k}) + 4 f(x_{2k+1}) + f(x_{2k+2}) \right).$$
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод Симпсона}
+$$
+\tilde{I}_n = \sum_{i=0}^{m-1} \frac{f_{2i} + 4 f_{2i+1} + f_{2i+2}}{3} h = \frac{h}{3} \left( f_0 + 4 f_1 + 2 f_2 + 4 f_3 + ...  + 4 f_{2n-1} + f_{2n} \right) .
+$$
+\vfill
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\pgfplotsset{ymin=0}
+\begin{axis}
+[domain=1:3]
+
+\addplot[blue, only marks, samples=401, mark=*, mark repeat=100, mark options={solid}]{1 + (x-1)*(x-2)*(x-3)*(x-3)};
+\addplot[blue]{1 + (x-1)*(x-2)*(x-3)*(x-3)};
+\path[name path=axisf] (axis cs:1,0) -- (axis cs:2,0);
+\path[name path=axisg] (axis cs:2,0) -- (axis cs:3,0);
+
+\addplot[name path=f, black, domain=1:2]{9.0/4.0 * (x-1.5) * (x-1.5) + 7.0/16.0};
+\addplot[name path=g, black, domain=2:3]{- 3.0/4.0 * (x-2.5) * (x-2.5) + 19.0/16.0};
+\addplot[fill=blue!20] fill between[of=f and axisf];
+\addplot[fill=blue!20] fill between[of=g and axisg];
+
+\draw (axis cs:1.0,1.0) -- (axis cs:1.0,0.0)-- (axis cs:2.0,0.0) -- (axis cs:2.0,1.0);
+\draw (axis cs:2.0,1.0) -- (axis cs:2.0,0.0)-- (axis cs:3.0,0.0) -- (axis cs:3.0,1.0);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Интеграл для примера: 
+$\tilde{I}_4 = \frac{1}{6} \left( 1 * 1 + 4 * \frac{7}{16} + 2 * 1 + 4 * \frac{19}{16} + 1 * 1 \right) = \frac{7}{4}.$
+
+Погрешность для примера: 
+$|\tilde{I}_4 - I| = \left|\frac{7}{4} - \frac{26}{15}\right| = \frac{1}{60} \approx 0.0167.$
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Метод Симпсона}
+
+Погрешность: $|I - \tilde{I}_n| = O(h^3) = O \left(\frac{1}{N^3} \right)$.
+
+\vfill 
+
+Отдельная пара прямоугольников (интерполяционный полином 3 степени)
+$$ f(x) = P_2(x) + \frac{f^{iv}(\xi)}{4!} (x - a) (x - b) (x - \frac{a+b}{2})^2 dx$$
+$$ \left|I - I_n \right| \leqslant \frac{M_4 \cdot h^3}{2880} \cdot (b-a)$$
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Вероятностный метод Монте Карло}
+
+$$I = \int_{a}^{b} f(x) dx \approx \sum{f(\xi_i)} \Delta_i.$$
+
+Пусть $\xi_i$ --- случайная равномерно распределенная на отрезке $[a; b]$ величина, то есть
+$$\xi_i = a + u_i * (b - a)$$
+где $u_i \in U[0, 1]$.
+
+Интеграл будет аппроксимироваться так:
+$$\hat{I}_n = \frac{b-a}{N} \sum_{i=1}^{N}{f(\xi_i)}.$$
+
+Погрешность: $|I - \tilde{I}_n| = O \left( \frac{1}{\sqrt{N}} \right) $.
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Вероятностный метод Монте Карло}
+
+Пример $N = 20$:
+ 1.7888, 2.5969, 1.3951, 2.5365, 2.1079, 2.2577, 2.0268, 2.8324, 2.4346, 2.2139, 1.4858, 2.6084, 1.8019, 1.2176, 1.4365, 2.6782, 1.5921, 2.0486, 2.9456, 2.5427. 
+$$\hat{I}_{20} = 1.824732 .$$
+
+Погрешность:
+$$|\hat{I}_{20} - I| = \left|1.824732 - \frac{26}{15}\right| \approx 0.0914 .$$
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Геометрическое вероятностное приближение}
+
+Рассмотрим прямоугольник:
+$$[a; b] \times [m, M] ,$$
+где $m \le \min_{[a; b]} f(x) > 0, M \ge \max_{[a; b]} f(x) > 0$. Площадь прямоугольника:
+$$S = (b - a) (M - m).$$
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Геометрическое вероятностное приближение}
+Сгенерируем $n$ случайных равномерно распределенных по каждой координате точек $(x_i, y_i)$ (т.е. $x_i \in U[a; b]$, $y_i \in U[m; M]$). 
+
+Посчитаем $n_0$ --- количество точек, которые попали под график функции $f(x)$, т.е. $f(x_i) < y_i$. Отношение попавших точек к общему количеству аппроксимирует отношение интеграла к площади прямоугольника:
+$$ \frac{n_0}{n} \approx \frac{I}{S} \Leftrightarrow I_n = \frac{n_0}{n} * S .$$
+
+
+\vspace{0.9cm}
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\pgfplotsset{ymin=0, ymax=2}
+\begin{axis}
+[domain=1:3]
+
+
+\addplot[blue, name path=f]{1 + (x-1)*(x-2)*(x-3)*(x-3)};
+
+\path[name path=axisf] (axis cs:1,0) -- (axis cs:3,0);
+\path[name path=axisg] (axis cs:1,1.5) -- (axis cs:3,1.5);
+
+\addplot[fill=blue!20] fill between[of=f and axisf];
+\addplot[fill=red!20] fill between[of=f and axisg];
+
+\draw[fill] (axis cs:2.45835216274,0.286776348762) circle (1);
+\draw[fill] (axis cs:2.54990220529,1.33995458585) circle (1);
+\draw[fill] (axis cs:2.21310285864,0.759248971413) circle (1);
+\draw[fill] (axis cs:2.38120018789,1.36475418393) circle (1);
+\draw[fill] (axis cs:2.89542770759,0.290489763654) circle (1);
+\draw[fill] (axis cs:2.61784464681,1.37367636297) circle (1);
+\draw[fill] (axis cs:1.84958251525,0.505665035556) circle (1);
+\draw[fill] (axis cs:2.95986372594,0.534885307278) circle (1);
+\draw[fill] (axis cs:2.13540994481,1.34768198903) circle (1);
+\draw[fill] (axis cs:2.00442864876,1.31148364663) circle (1);
+\draw[fill] (axis cs:1.5312973618,1.171630656199) circle (1);
+\draw[fill] (axis cs:2.61726796921,0.774441373387) circle (1);
+\draw[fill] (axis cs:2.13322396329,0.352117121113) circle (1);
+\draw[fill] (axis cs:2.2335772508,1.11994518644) circle (1);
+\draw[fill] (axis cs:1.36599266179,0.335517222601) circle (1);
+\draw[fill] (axis cs:2.76437671308,0.599992237618) circle (1);
+\draw[fill] (axis cs:2.78266205154,0.734410514021) circle (1);
+\draw[fill] (axis cs:2.19502598347,1.09997952171) circle (1);
+\draw[fill] (axis cs:2.47324215134,0.0504806022238) circle (1);
+\draw[fill] (axis cs:2.65836644401,0.640607065899) circle (1);
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Геометрическое вероятностное приближение}
+Для примера: $m = 0.0$, $M = 1.5$, $S = (b-a) * (M-m) = 2 * 1.5 = 3$, $n = 20$, $n_0 = 14$. Интеграл для примера:
+$$\tilde{I}_{20} \approx \frac{14}{20} * 3 = \frac{21}{10}$$
+
+Погрешность для примера:
+$$|\tilde{I}_{20} - I| = \left|\frac{21}{10} - \frac{26}{15}\right| = \frac{11}{30} \approx 0.3667 .$$
+
+
+Погрешность: $|I - \tilde{I}_n| = O \left( \frac{1}{\sqrt{N}} \right)$. При выборе минимально возможного прямоугольника старший коэффициент в погрешности будет меньше, чем в предыдущем методе.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Правило Рунге}
+Бывает сложно заранее подобрать размер разбиения $n(\varepsilon)$ для вычисления интеграла с заданной точностью $\varepsilon$. 
+
+Для автоматического выбора размера разбиения используется правило Рунге:
+\begin{enumerate}
+\item задается начальное $n = n_0$ (например 4);
+\item вычисляется $I_n$ и $I_{2n}$;
+\item если $|I_n - I_{2n}| < \varepsilon$, то $I_{2n}$ и будет ответом;
+\item иначе $n$ удваивается $n := 2n$ и происходит возврат к шагу~2.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Правило Рунге}
+
+Правило Рунге:
+\begin{lstlisting}
+I2 = integral(n)
+do
+    I1 = I2
+    n = 2 * n
+    I2 = integral(n)
+while |I2 - I1| > eps
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{python}
+
+\begin{lstlisting}
+import numpy as np
+from scipy import integrate
+
+def f(x):
+	return 1 + (x-1) * (x-2) * (x-3) * (x-3)
+
+x = np.linspace(1.0, 3.0, 5)
+y = np.vectorize(f)(x)
+
+It = integrate.trapz(y, x)
+Is = integrate.simps(y, x)
+
+\end{lstlisting}
+
+Справка
+\begin{lstlisting}
+from scipy import integrate
+
+help(integrate)
+help(integrate.trapz)
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Литература}
+Подробнее в \cite[стр. 86]{Kalitkin} и \cite[стр. 72]{Samarsky}.
+Подробнee в \cite[стр. 117]{Kalitkin}.
+
+\begin{thebibliography}{99}
+
+\bibitem{Kalitkin}
+Калиткин Н.Н. Численные методы. - Спб.: БХВ-Петербург, 2014.
+
+\bibitem{Samarsky}
+Самарский А.А., Гулин А.В. Численные методы. - М.: Наука, 1989.
+
+\end{thebibliography}
+\end{frame}
+
+\end{document}

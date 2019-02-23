@@ -41,4 +41,9 @@
 <td> Аппроксимация. </td>
 <td> <file 'numerical/files/num-present-07.pdf'> num-present-07.pdf </file>  </td>
 </tr>
+<tr>
+<td> 22/02/2019 </td>
+<td> Интегрирование. </td>
+<td> <file 'numerical/files/num-present-08.pdf'> num-present-08.pdf </file>  </td>
+</tr>
 </table>
