@@ -23,7 +23,7 @@
 </tr>
 <tr>
 <td> 12/02/2019 </td>
-<td> Линейная алгебра. Итерационные методы. Примеры. </td>
+<td> Линейная алгебра. Итерационные методы. Примеры. Практическое задание №2.</td>
 <td> <file 'numerical/files/num-present-04.pdf'> num-present-04.pdf </file>  </td>
 </tr>
 <tr>
@@ -33,7 +33,7 @@
 </tr>
 <tr>
 <td> 18/02/2019 </td>
-<td> Интерполяция. </td>
+<td> Интерполяция. Практическое задание №3.</td>
 <td> <file 'numerical/files/num-present-06.pdf'> num-present-06.pdf </file>  </td>
 </tr>
 <tr>
