@@ -141,6 +141,10 @@ function prepare_text($text) {
 	$text = preg_replace("/<file (.*?)>/", "<a class='microbutton download_link' target='blank_' href=$1 download> &#128190;", $text);
 	$text = str_replace("</file>", "</a>", $text);
 
+	# pdffile
+	$text = preg_replace("/<pdf '(.*?)'>/", "<div><iframe src='https://docs.google.com/gview?url=https://mymath.info/student/$1&embedded=true' width='400px' height='300px' /></iframe></div>", $text);
+
+	
 	# no file
 	$text = preg_replace("/<nofile (.*?)>/", "", $text);
 	$text = str_replace("</nofile>", "", $text);
