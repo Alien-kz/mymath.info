@@ -33,6 +33,11 @@
 <td> IF WHILE </td>
 <td> <file 'cmc/files/cmc-present-25.pdf'> cmc-present-25.pdf </file>  </td>
 </tr>
+<tr>
+<td> 22/02/2019 </td>
+<td> Неожиданное Фурье преобразование </td>
+<td> <file 'cmc/files/cmc-present-27.pdf'> cmc-present-27.pdf </file>  </td>
+</tr>
 </table>
 
 Самая полезная ссылка: <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
