@@ -51,4 +51,11 @@
 <td> Дифференцирование. Задача Коши. </td>
 <td> <file 'numerical/files/num-present-09.pdf'> num-present-09.pdf </file>  </td>
 </tr>
+<tr>
+<td> 26/02/2019 </td>
+<td> Краевая задача. Задачи математической физики (одномерные). </td>
+<td> <file 'numerical/files/num-present-10.pdf'> num-present-10.pdf </file>
+<file 'numerical/files/num-present-10-diffusion.py'> diffusion.py </file>
+<file 'numerical/files/num-present-10-transfer.py'> transfer.py </file> </td>
+</tr>
 </table>
