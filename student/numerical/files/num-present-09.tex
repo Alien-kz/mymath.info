@@ -1,0 +1,603 @@
+\documentclass[10pt]{beamer}
+\usetheme{Madrid}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[all]{xy}
+\usepackage{gnuplottex}
+
+%\newtheorem{theorem}{Теорема}
+
+\author{Баев А.Ж.}
+\title{Введение в численные методы. \\ Дифференцирование и задача Коши}
+\institute{Казахстанский филиал МГУ} 
+\date{25 февраля 2019}
+%\subject{} 
+
+\usepackage{tikz, pgfplots}
+\usepgfplotslibrary{fillbetween}
+%\pgfplotsset{compat=1.10}
+
+
+\usetikzlibrary{patterns} 
+\usetikzlibrary{arrows, matrix, positioning, decorations.pathreplacing}
+
+\usepackage{listings}
+\lstset{language=python}
+\lstset{basicstyle=\ttfamily}  
+\lstset{keywordstyle=\color{blue}}
+\lstset{frame=single}
+\lstset{numbers=left}
+\lstset{tabsize=4}
+
+
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{frame}[fragile]
+\frametitle{План на семестр}
+
+\begin{enumerate}
+\item СЛАУ (точные методы)
+\item СЛАУ (итерационные методы)
+\item решение нелинейных уравнений
+\item интерполяция
+\item аппроксимация
+\item интегрирование
+\item \textbf{дифференцирование}
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Дифференцирования}
+
+Дана дифференцируемая на отрезке $(a; b)$ функция $f(x)$. Необходимо вычислить значение производной:
+$$f'(x).$$
+в точках равномерно сетки $x_i = a + i h$, где $h = \frac{b-a}{n}$.
+
+Основная идея: формула Тейлора.
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Первая производная}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1]
+\addplot[blue!30] {27 * x^3 - 45 * x^2 + 18 * x + 2};
+\addplot[blue, only marks, samples = 11] {27 * x^3 - 45 * x^2 + 18 * x + 2};
+\legend{$f(x)$};
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1]
+\addplot[red!30] {81*x^2 - 90 * x + 18 };
+\addplot[red, only marks, samples = 11] {81*x^2 - 90 * x + 18};
+\legend{$f'(x)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Первая производная (вперёд)}
+
+Определим значение производную в точке $x_i$ через значения $f_i$ и $f_{i+1}$.
+$$f_{x, i} = \frac{f_{i+1} - f_i}{h}$$
+
+Оценим погрешность с помощью формулы Тейлора
+$$f(x) = f(x_i) + (x - x_i) f'(x_i) + \frac{(x-x_i)^2}{2} f''(\xi)$$
+
+Подставим вместо $x = x_{i+1}$
+$$f_{i+1} = f_i + h f'_i + \frac{h^2}{2} f''(\xi)$$
+
+Погрешность:
+$$f_{x, i} = \frac{f_{i+1} - f_i}{h} = 
+\frac{f_i + h f'_i + \frac{h^2}{2} f''(\xi) - f_i}{h} =
+f'(x_i) + O(h)$$
+
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Первая производная (вперёд)}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1]
+\addplot[blue!30] {27 * x^3 - 45 * x^2 + 18 * x + 2};
+\addplot[blue, only marks, samples = 11] {27 * x^3 - 45 * x^2 + 18 * x + 2};
+\legend{$f(x)$};
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1]
+\addplot[red!30] {81*x^2 - 90 * x + 18 };
+\addplot[red, only marks, samples = 11] {81*x^2 - 90 * x + 18};
+\legend{$f'(x)$};
+\addplot[green, only marks] coordinates
+{
+( 0.0 , 13.77 )
+( 0.1 , 6.39 )
+( 0.2 , 0.63 )
+( 0.3 , -3.51 )
+( 0.4 , -6.03 )
+( 0.5 , -6.93 )
+( 0.6 , -6.21 )
+( 0.7 , -3.87 )
+( 0.8 , 0.09 )
+( 0.9 , 5.67 )
+};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Первая производная (назад)}
+
+
+Определим значение производную в точке $x_i$ через значения $f_{i-1}$ и $f_{i}$.
+$$f_{x, i} = \frac{f_{i+1} - f_i}{h}$$
+
+Из формулы Тейлора в точке $x_i$:
+$$f_{i-1} = f_i - h f'_i + \frac{h^2}{2} f''(\xi)$$
+
+Погрешность:
+$$f_{\overline{x}, i} = \frac{f_{i} - f_{i - 1}}{h}  = \frac{f_{i} - f_i + h f'_i - \frac{h^2}{2} f''(\xi)}{h} = f'(x_i) + O(h)$$
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Первая производная (назад)}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1]
+\addplot[blue!30] {27 * x^3 - 45 * x^2 + 18 * x + 2};
+\addplot[blue, only marks, samples = 11] {27 * x^3 - 45 * x^2 + 18 * x + 2};
+\legend{$f(x)$};
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1]
+\addplot[red!30] {81*x^2 - 90 * x + 18 };
+\addplot[red, only marks, samples = 11] {81*x^2 - 90 * x + 18};
+\legend{$f'(x)$};
+\addplot[green, only marks] coordinates
+{
+( 0.1 , 13.77 )
+( 0.2 , 6.39 )
+( 0.3 , 0.63 )
+( 0.4 , -3.51 )
+( 0.5 , -6.03 )
+( 0.6 , -6.93 )
+( 0.7 , -6.21 )
+( 0.8 , -3.87 )
+( 0.9 , 0.09 )
+( 1.0 , 5.67 )
+};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Первая производная (центральная)}
+
+Определим значение производную в точке $x_i$ через значения $f_{i-1}$ и $f_{i+1}$.
+$$f_{x, i} = \frac{f_{i+1} - f_{i-1}}{2h}$$
+
+Из формулы Тейлора в точке $x_i$:
+$$f_{i+1} = f_i + h f'_i + \frac{h^2}{2} f''(\xi_1)$$
+$$f_{i-1} = f_i - h f'_i + \frac{h^2}{2} f''(\xi_2)$$
+
+
+Погрешность:
+$$\frac{f_{i + 1} - f_{i - 1}}{2 h} = \frac{f_{i} + h f'_i + \frac12 h^2 f''_i + \frac16 h^3 f''(\xi_1) - f_{i} + h f'_i - \frac12 h^2 f''_i + \frac16 h^3 f''(\xi_2)}{2 h} = $$
+$$ = \frac{2 h f'_i + \frac16 h^3 (f''(\xi_1) + f''(\xi_2))}{2 h} = f'(x_i) + \frac{h^2}{6} f''(\xi)$$
+
+$$f_{\hat{x}, i} = \frac{f_{i + 1} - f_{i - 1}}{2 h} = f'(x_i) + O(h^2)$$
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Первая производная (центральная)}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1]
+\addplot[blue!30] {27 * x^3 - 45 * x^2 + 18 * x + 2};
+\addplot[blue, only marks, samples = 11] {27 * x^3 - 45 * x^2 + 18 * x + 2};
+\legend{$f(x)$};
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1]
+\addplot[red!30] {81*x^2 - 90 * x + 18 };
+\addplot[red, only marks, samples = 11] {81*x^2 - 90 * x + 18};
+\legend{$f'(x)$};
+\addplot[green, only marks] coordinates
+{
+( 0.1 , 10.08 )
+( 0.2 , 3.51 )
+( 0.3 , -1.44 )
+( 0.4 , -4.77 )
+( 0.5 , -6.48 )
+( 0.6 , -6.57 )
+( 0.7 , -5.04 )
+( 0.8 , -1.89 )
+( 0.9 , 2.88 )
+};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Первая производная (несимметричная второго порядка)}
+Определим значение производную в точке $x_i$ через значения $f_{i}$, $f_{i+1}$ и $f_{i+2}$.
+
+Из формулы Тейлора в точке $x_i$ получим
+$$f_{i+2} = f_{i} + (2 h) f'_i + \frac12 (2 h)^2 f''_i + \frac16 (2 h)^3 f''(\xi_1)$$ 
+
+Пояснение:
+$$\frac{- 3 f_i + 4 f_{i + 1} -f_{i + 2}}{2 h} = $$
+$$= \frac{
+- 3 f_i
++ 4 (f_{i} + h f'_i + \frac{h^2}{2} f''_i + \frac{h^3}{6} f'''(\xi_2)) 
+-(f_{i} + (2 h) f'_i + \frac{(2 h)^2}{2}  f''_i + \frac{(2 h)^3}{6} f''(\xi_1)) 
+}{2 h} =$$
+$$ = \frac{2 h f'_i + \frac23 h^3 f'''(\xi_2) - \frac43 h^3 f'''(\xi_1) }{2 h} = $$
+$$= f'_i + \frac13 h^2 (f'''(\xi_2) - f'''(\xi_1) ) - \frac23 h^2 f'''(\xi_1)$$
+
+$$f_{\tilde{x}, i} = \frac{-3f_{i} + 4 f_{i + 1} - f_{i+2}}{2 h} = f'(x_i) + O(h^2)$$
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Первая производная (несимметричная второго порядка)}
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1]
+\addplot[blue!30] {27 * x^3 - 45 * x^2 + 18 * x + 2};
+\addplot[blue, only marks, samples = 11] {27 * x^3 - 45 * x^2 + 18 * x + 2};
+\legend{$f(x)$};
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1]
+\addplot[red!30] {81*x^2 - 90 * x + 18 };
+\addplot[red, only marks, samples = 11] {81*x^2 - 90 * x + 18};
+\legend{$f'(x)$};
+\addplot[green, only marks] coordinates
+{
+( 0.0 , 17.46 )
+( 0.1 , 9.27 )
+( 0.2 , 2.7 )
+( 0.3 , -2.25 )
+( 0.4 , -5.58 )
+( 0.5 , -7.29 )
+( 0.6 , -7.38 )
+( 0.7 , -5.85 )
+( 0.8 , -2.7 )
+};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Вторая производная}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1]
+\addplot[blue!30] {27 * x^4 - 45 * x^3 + 18 * x^2 + 2 * x};
+\addplot[blue, only marks, samples = 11] {27 * x^4 - 45 * x^3 + 18 * x^2 + 2*x};
+\legend{$f(x)$};
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1,
+ymax = 120]
+\addplot[red!30] {324*x^2 - 270*x + 36};
+\addplot[red, only marks, samples = 11] {324*x^2 - 270*x + 36};
+\legend{$f''(x)$};
+\end{axis}
+\end{tikzpicture}
+
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Вторая производная}
+
+Оператор дифференцирования вперед и назад
+$$f_{x, i} = \frac{f_{i+1} - f_i}{h}$$
+$$f_{\overline{x}, i} = \frac{f_{i} - f_{i-1}}{h}$$
+
+Вторая производная
+$$
+f_{x\overline{x}, i} = ( f_{x, i} )_{\overline{x}}
+ = 
+\left( \frac{f_{i+1} - f_i}{h} \right)_{\overline{x}} = 
+\frac{
+\frac{f_{i+1} - f_i}{h} - \frac{f_i - f_{i-1}}{h}
+}{h} = \frac{f_{i+1} - 2 f_i + f_{i-1}}{h^2}
+$$
+
+Из ряда Тейлора
+$$f_{x\overline{x}, i}  = \frac{-f_{i + 2} + 4 f_{i + 1} - 3 f_i}{2 h} = f''(x_i) + O(h^2)$$
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Вторая производная}
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1]
+\addplot[blue!30] {27 * x^4 - 45 * x^3 + 18 * x^2 + 2 * x};
+\addplot[blue, only marks, samples = 11] {27 * x^4 - 45 * x^3 + 18 * x^2 + 2*x};
+\legend{$f(x)$};
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1,
+ymax = 120]
+\addplot[red!30] {324*x^2 - 270*x + 36};
+\addplot[red, only marks, samples = 11] {324*x^2 - 270*x + 36};
+\legend{$f''(x)$};
+\addplot[green, only marks] coordinates
+{
+( 0.1 , 12.78 )
+( 0.2 , -4.5 )
+( 0.3 , -15.3 )
+( 0.4 , -19.62 )
+( 0.5 , -17.46 )
+( 0.6 , -8.82 )
+( 0.7 , 6.3 )
+( 0.8 , 27.9 )
+( 0.9 , 55.98 )
+};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Некорректность дифференцирования}
+
+$$ \frac{f_{i+1} - f_i}{h} =  f_{x, i}$$
+Допустим данные $f_i$ и $f_{i+1}$ уже содержат погрешность по сравнению с $f(x_{i+1})$ и $f(x_{i})$ (ошибка представления вещественных чисел).
+
+$$ \frac{f_{i+1} - f_i}{h} = \frac{f(x_{i+1}) + \delta_{i+1} - f(x_i) -\delta_i}{h} = \frac{f(x_{i+1}) - f(x_i)}{h} + \frac{\delta_{i+1} - \delta_i}{h} $$
+
+Считаем, что $\delta_i < \delta, \delta_{i+1} < \delta$.
+
+$$ |f'(x_i) - f_{x, i}| < M_2 \frac{h}{2} + \frac{2 \delta}{h} $$
+
+Минимум достигается при $h = 2 \sqrt{\frac{\delta}{M_2}}$
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Задача Коши для дифференциального уравнения}
+Дано $f(t, u)$ и $a$. Определить $u(t)$ при $t < T$.
+$$
+\begin{cases}
+u'(t) = f(t, u(t))\\
+u(0) = a
+\end{cases}
+$$
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Задача Коши для дифференциального уравнения}
+
+$$
+\begin{cases}
+u'(t) = t^2 + 1 \\
+u(0) = 2
+\end{cases}
+$$
+
+\vfill
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1,
+xlabel=t,
+ylabel=y]
+\addplot[blue, thick] {x^3 / 3 + x + 2};
+\node[draw] at (axis cs:0.0, 2) {};
+\legend{$f(x)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Решение $u(t) = \frac{t^3}{3} + t + 2$
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Задача Коши для дифференциального уравнения}
+
+
+Введём равномерную сетку с шагом $\tau$: $t_i = i \cdot \tau$. Значения в узлах сетки $f_i$ и $y_i$. Проинтегрируем уравнение по $t$ на интервалах $t \in [t_i, t_{i+i}]$
+$$ 
+u(t_{i+1}) - u(t_i) = \int_{t_i}^{t_{i+1}} f(t, u(t)) dt
+$$
+
+В зависимости от аппроксимации интеграла получим различные методы.
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Явный метод Эйлера}
+
+Левые прямоугольники
+$$
+\begin{cases}
+y_{i + 1} - y_i = \tau \cdot f(t_i, y_i) \\
+y_0 = a
+\end{cases}
+$$
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}
+[domain=0:1,
+xlabel=t,
+ylabel=y]
+\addplot[blue, thick] {x^3 / 3 + x + 2};
+\legend{$y(t)$};
+\addplot[green, only marks] coordinates
+{
+( 0.0 , 2 )
+( 0.1 , 2.1 )
+( 0.2 , 2.201 )
+( 0.3 , 2.305 )
+( 0.4 , 2.414 )
+( 0.5 , 2.53 )
+( 0.6 , 2.655 )
+( 0.7 , 2.791 )
+( 0.8 , 2.94 )
+( 0.9 , 3.104 )
+( 1.0 , 3.285 )
+};
+\legend{$y_i$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Неявныe методы}
+
+Правые прямоугольники
+$$
+\begin{cases}
+y_{i + 1} - y_i = \tau \cdot f(t_{i+1}, y_{i+1}) \\
+y_0 = a
+\end{cases}
+$$
+
+Метод трапеций
+$$
+\begin{cases}
+y_{i + 1} - y_i = \frac{\tau}{2} \cdot \left(f(t_{i+1}, y_{i+1}) + f(t_{i}, y_{i}) \right) \\
+y_0 = a
+\end{cases}
+$$
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Методы Рунге Кутты}
+
+$$y_{n+1} - y_{n} = \tau \sum_{i=1}^{m} b_i k_i$$
+
+где $\sum_{i=1}^{m} {b_i} = 1$ (веса), $k_i$ --- некоторое значение функции $f$ на интервале $[t_n; t_{n+1}]$.
+
+$$k_i = f(t_n + c_i \tau, y_n + \tau \sum_{j = 1}^{m}{a_{ij}} k_j)$$
+где $\sum_{j=1}^{m} {a_{i, j}} = c_i$ (веса)
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Методы Рунге Кутты}
+Таблица Бутчера
+
+\begin{center}
+\begin{tabular}{c|cccc}
+$c_1$ & $a_{1,1}$ & $a_{1,1}$ & $\ldots$ & $a_{1,1}$ \\
+$c_2$ & $a_{2,1}$ & $a_{2,2}$ & $\ldots$ & $a_{2,n}$ \\
+$\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ & $\ldots$ \\
+$c_n$ & $a_{n,1}$ & $a_{n,2}$ & $\ldots$ & $a_{n,n}$ \\
+\hline
+1 & $b_{1}$ & $b_{2}$ & $\ldots$ & $b_{n}$ \\
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Методы Рунге Кутты}
+
+\begin{center}
+\begin{tabular}{c|cccc}
+$0$ & 0 & 0 \\
+0.5 & 0.5 & 0 \\
+\hline
+1 & 0 & 1 \\
+\end{tabular}
+
+Вспомогательные значения
+$$
+\begin{cases}
+k_1 = f(t_n, y_n)\\
+k_2 = f(t_n + \frac{\tau}{2}, y_n  + \frac{\tau}{2} k_1) \\
+\end{cases}
+$$
+
+Метод
+$$
+y_{n+1} - y_n = \tau k_2
+$$
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Методы Рунге Кутты}
+
+Порядок аппроксимации
+
+Первый: $$\sum_{i=1}^{m} b_i = 1$$
+
+Второй: $$2 \sum_{i=1}^{m} b_i c_i = 1$$
+
+Третий: $$3 \sum_{i=1}^{m} b_i c_i^2 = 1$$  
+$$6 \sum_{i=1}^{m} b_i \sum_{j=1}^{m} a_{i, j} c_j = 1$$
+
+\end{frame}
+
+\end{document}
