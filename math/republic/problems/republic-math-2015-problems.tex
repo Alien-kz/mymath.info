@@ -8,17 +8,21 @@
 \usepackage{geometry}			%paper format attributes
 \usepackage{fancyhdr}			%header
 \usepackage{graphicx}			%input pictures
+\usepackage{tabularx}			%smart table
 \usepackage{tikz}				%draw pictures
 \usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
 \usepackage{enumitem}			%enumarate parameters
 
-\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=15pt}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
 \setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
 \sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
 
 \newcommand{\head}[4]
 {
-	\pagestyle{fancy}
+	\thispagestyle{fancy}
 	\fancyhf{}
 	\chead{#3, #4}
 
@@ -31,9 +35,11 @@
 
 }
 
+\DeclareMathOperator*{\argmin}{Arg\,min}
+
 \begin{document}
 
-\head{VII Республиканская студенческая предметная олимпиада по~направлению~<<Математика>>}{26 марта 2015}{Казахский национальный университет имени аль-Фараби}{г.~Алматы}
+\head{VII Республиканская студенческая предметная олимпиада по~направлению~<<Математика>>}{26 марта 2015}{Казахский национальный университет имени аль-Фараби}{г. Алматы}
 
 \begin{enumerate}
 \item Функция $f(x)$ дважды непрерывно дифференцируема на отрезке $[a, b]$ и имеет на $[a, b]$ не менее трех различных нулей. Докажите, что существует точка $x \in [a, b]$ такая, что $f(x) + f''(x) = 2 f'(x)$. 

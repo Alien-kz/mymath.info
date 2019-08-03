@@ -1,0 +1,69 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tabularx}			%smart table
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{enumitem}			%enumarate parameters
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
+
+\newcommand{\head}[4]
+{
+	\thispagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+\DeclareMathOperator*{\argmin}{Arg\,min}
+
+\begin{document}
+
+\head{XI Республиканская студенческая предметная олимпиада по~направлению~<<Математика>>}{18 апреля 2019}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г.~Алматы}
+
+\begin{center}
+\begin{tabular}{|l|l|l|c|c|c|c|c|c|c|c|c|}
+\hline
+№ & Участник & ВУЗ & Курс & 1 & 2 & 3 & 4 & 5 & 6 & $\Sigma$ & Диплом \\
+\hline
+1 & Жанбырбаев Есеналы & КБТУ & 3 & 10 & 10 & 0 & 10 & 0 & 0 & 30 & 1 \\
+\hline
+2 & Нарбаев Бакдаурен & НУ & 1 & 10 & 10 & 0 & 10 & 0 & 0 & 30 & 1 \\
+\hline
+3 & Куанышбай Максат & НУ & 4 & 10 & 5 & 1 & 0 & 10 & 0 & 26 & 2 \\
+\hline
+4 & Курманбек Бахытжан & НУ & 2 & 10 & 0 & 2 & 10 & 4 & 0 & 26 & 2 \\
+\hline
+5 & Абдрахманов Ален & КБТУ & 3 & 10 & 10 & 0 & 3 & 0 & 1 & 24 & 3 \\
+\hline
+6 & Ильясов Акниет & ЕНУ & 3 & 10 & 2 & 1 & 0 & 10 & 0 & 23 & 3 \\
+\hline
+7 & Шакиев Александр & МУИТ & 3 & 10 & 3 & 0 & 0 & 10 & 0 & 23 & 3 \\
+\hline
+8 & Есбай Еркын & КФ МГУ & 1 & 10 & 0 & 7 & 0 & 0 & 0 & 17 & грамота \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\end{document} 

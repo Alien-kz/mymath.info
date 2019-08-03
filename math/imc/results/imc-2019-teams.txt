@@ -1,0 +1,4 @@
+Place	Team	Team members	Best 3 + average
+36.	Moscow State University, Kazakhstan Branch	<p>Bekarys Bekmaganbetov (61) First</p><p>Anuar Askergaliyev (41) Second</p>	153.00
+42.	Nazarbayev University A	<p>Izat Khamiyev (41) Second</p><p>Bakdauren Narbayev (35) Third</p><p>Bakytzhan Kurmanbek (32) Third</p>	144.00
+66.	Nazarbayev University B	<p>Zhumazhenis Dairabay (30) Third</p><p>Nartay Aikyn (27) Third</p>	85.50

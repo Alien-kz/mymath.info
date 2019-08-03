@@ -1,4 +1,4 @@
-\documentclass[12pt, a5paper, landscape]{article}
+\documentclass[11pt, a4paper]{article}
 
 \usepackage[T2A]{fontenc}		%cyrillic output
 \usepackage[utf8]{inputenc}		%cyrillic output
@@ -8,15 +8,21 @@
 \usepackage{geometry}			%paper format attributes
 \usepackage{fancyhdr}			%header
 \usepackage{graphicx}			%input pictures
+\usepackage{tabularx}			%smart table
 \usepackage{tikz}				%draw pictures
 \usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{enumitem}			%enumarate parameters
 
-\geometry{left=1cm, right=1cm, top=2cm, bottom=1cm, headheight=15pt}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
 \sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
 
 \newcommand{\head}[4]
 {
-	\pagestyle{fancy}
+	\thispagestyle{fancy}
 	\fancyhf{}
 	\chead{#3, #4}
 
@@ -29,9 +35,11 @@
 
 }
 
+\DeclareMathOperator*{\argmin}{Arg\,min}
+
 \begin{document}
 
-\head{IX Республиканская студенческая предметная олимпиада по~направлению~<<Математика>>}{13 апреля 2017}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г.~Астана}
+\head{IX Республиканская студенческая предметная олимпиада по~направлению~<<Математика>>}{13 апреля 2017}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
 
 \begin{center}
 \begin{tabular}{|l|l|l|c|c|c|c|c|c|c|c|c|}

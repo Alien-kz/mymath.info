@@ -1,0 +1,8 @@
+Pos	Participant	University	P1	P2	P3	P4	P5	Day1	P6	P7	P8	P9	P10	Day2	Sum	Prize
+37	Bekarys Bekmaganbetov	Moscow State University,<br/> Kazakhstan Branch	10	10	10	0	1	31	10	10	0	10		30	61	First
+128-137	Anuar Askergaliyev	Moscow State University,<br/> Kazakhstan Branch	10	10	9	0	0	29	2	10		0	0	12	41	Second
+128-137	Izat Khamiyev	Nazarbayev University	10	10	3			23	4	10		4		18	41	Second
+180-192	Bakdauren Narbayev	Nazarbayev University	6	7	9			22	3	10	0			13	35	Third
+215-226	Bakytzhan Kurmanbek	Nazarbayev University	10	8	8	0	1	27	3	2		0	0	5	32	Third
+240-247	Zhumazhenis Dairabay	Nazarbayev University	10		7	0	0	17	3	10		0		13	30	Third
+266-270	Nartay Aikyn	Nazarbayev University	10	7	0	0	0	17	3	7	0	0	0	10	27	Third

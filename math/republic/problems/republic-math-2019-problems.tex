@@ -1,0 +1,87 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tabularx}			%smart table
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{enumitem}			%enumarate parameters
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
+
+\newcommand{\head}[4]
+{
+	\thispagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+\DeclareMathOperator*{\argmin}{Arg\,min}
+
+\begin{document}
+
+\head{XI Республиканская студенческая предметная олимпиада по~направлению~<<Математика>>}{18 апреля 2019}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г.~Алматы}
+
+\begin{enumerate}
+
+\item Найдите сумму ряда
+$$
+\sum_{n = 2}^{\infty} \frac{1}{2^n} \cdot \frac{n + 1}{n (n - 1)}.
+$$
+
+\item Решите уравнение
+$$
+x^y = x + y
+$$
+в положительных рациональных числах.
+
+\item Пусть $f$ --- интегрируемая по Риману на отрезке $[0, 1]$ функция. Введём обозначение
+$$
+\mathcal{M}(f) = \argmin_{\lambda \in \mathbb{R}} \int\limits_{0}^{1} |f(x) - \lambda| \; dx.
+$$
+\begin{enumerate}
+\item [а)] Докажите, что множество $\mathcal{M}(f)$ не пустое.
+\item [б)] Приведите пример такой функции $f$, что множество $\mathcal{M}(f)$ не одноэлементно.
+\item [в)] Докажите, что если функция $f$ монотонная, то $f\left(\frac{1}{2}\right)\in \mathcal{M}(f)$.
+\item [г)] Приведите пример такой функции $f$, что $f\left(\frac{1}{2}\right)\not\in \mathcal{M}(f)$.
+
+\textit{Примечание:} $\argmin\limits_{\lambda \in S} g(\lambda) = \left\{\mu\in S\colon g(\mu)=\inf\limits_{\lambda \in S} g(\lambda)\right\}$.
+\end{enumerate}
+
+\item Дана матрица $A \in \mathbb{R}^{2 \times 2}$ такая, что $|A^2 + A + 2019E|= 0$. Докажите, что $A^2 + A + 2019 E = O$, где $E$ --- единичная матрица $2 \times 2$, а $O$ --- нулевая матрица $2 \times 2$.
+
+\item Дан эллипс с фокусами $A$ и $B$ и точка $C$ вне эллипса. Из точки $C$ провели касательные к эллипсу $l_1$ и $l_2$, которые образуют угол $\alpha$. Точки $A_1$ и $A_2$ --- точки, симметричные $A$ относительно касательных, $B_1$ и $B_2$ --- точки, симметричные $B$ относительно касательных. Вычислите
+$$
+\frac{ A_1A_2^2 + B_1B_2^2 }{CA^2 + CB^2},
+$$
+если
+\begin{enumerate}
+\item [а)] $\alpha = \frac{\pi}{2}$;
+\item [б)] $\alpha = \frac{\pi}{4}$.
+\end{enumerate}
+
+\item Докажите, что система линейных уравнений с целыми коэффицентами разрешима в целых числах тогда и только тогда, когда она разрешима по любому модулю.
+
+\end{enumerate}
+
+
+\end{document} 

@@ -1,44 +1,45 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[11pt, a4paper]{article}
 
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{mathtext}
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tabularx}			%smart table
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{enumitem}			%enumarate parameters
 
-\usepackage{comment}
-\usepackage{geometry}
-\geometry{left=1cm, right=1cm, top=2cm, bottom=2cm}
-
-\usepackage{graphicx}
-\usepackage{tikz}
-
-\usepackage{wrapfig}
-\usepackage{fancybox,fancyhdr}
-\sloppy
-
-\setlength{\headheight}{28pt}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
 
 \newcommand{\head}[4]
 {
+	\thispagestyle{fancy}
 	\fancyhf{}
-	\pagestyle{fancy}
 	\chead{#3, #4}
 
 	\begin{center}
 	\begin{large}
 	#1 \\
-	\textit{#2} \\
+	\textit{#2}\\
 	\end{large}
 	\end{center}
 
 }
 
+\DeclareMathOperator*{\argmin}{Arg\,min}
+
 \begin{document}
 
-\head{VIII Республиканская студенческая предметная олимпиада по направлению \\ <<Математическое и компьютерное моделирование>>}{01 апреля 2016}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
+\head{VIII Республиканская студенческая предметная олимпиада по~направлению~<<Математическое и компьютерное моделирование>>}{01 апреля 2016}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г. Астана}
 
 \begin{enumerate}
 

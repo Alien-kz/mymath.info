@@ -1,0 +1,69 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tabularx}			%smart table
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{enumitem}			%enumarate parameters
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
+
+\newcommand{\head}[4]
+{
+	\thispagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+\DeclareMathOperator*{\argmin}{Arg\,min}
+
+\begin{document}
+
+\head{XI Республиканская студенческая предметная олимпиада по~направлению~<<Математическое и компьютерное моделирование>>}{18 апреля 2019}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г.~Астана}
+
+\begin{center}
+\begin{tabular}{|l|l|l|c|c|c|c|c|c|c|c|c|}
+\hline
+№ & Участник & ВУЗ & Курс & 1 & 2 & 3 & 4 & 5 & 6 & $\Sigma$ & Диплом \\
+\hline
+1 & Жусупов Али & ЕНУ & 4 & 10 & 0 & 2 & 0 & 10 & 8 & 30 & 1 \\
+\hline
+2 & Хамиев Изат & НУ & 3 & 10 & 6 & 2 & 10 & 0 & 0 & 28 & 2 \\
+\hline
+3 & Вагнер Алан & КФ МГУ & 2 &  10 & 0 & 2 & 0 & 5 & 9 & 26 & 2 \\
+\hline
+4 & Понамарёв Валерий & КФ МГУ & 2 & 10 & 0 & 0 & 8 & 0 & 7 & 25 & 3 \\
+\hline
+5 & Кошкаров Азамат & КФ МГУ & 1 & 10 & 0 & 2 & 10 & 0 & 0 & 22 & 3 \\
+\hline
+6 & Асматуллаев Саддам & НУ & 2 & 0 & 2 & 0 & 10 & 0 & 7 & 19 & грамота \\
+\hline
+7 & Серикболсын Мейрам & КБТУ & 1 & 0 & 7 & 1 & 8 & 2 & 1 & 19 & грамота \\
+\hline
+8 & Орал Алмас & КБТУ & 2 & 0 & 1 & 3 & 8 & 6 & 0 & 18 & грамота \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\end{document} 

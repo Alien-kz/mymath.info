@@ -1,0 +1,88 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tabularx}			%smart table
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{enumitem}			%enumarate parameters
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
+
+\newcommand{\head}[4]
+{
+	\thispagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+\DeclareMathOperator*{\argmin}{Arg\,min}
+
+\begin{document}
+
+\head{XI Республиканская студенческая предметная олимпиада по~направлению~<<Математическое и компьютерное моделирование>>}{18 апреля 2019}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г.~Астана}
+
+\begin{enumerate}
+
+\item Пусть $n>1$. Приведите пример четырёх квадратных вырожденных матриц $A, B, C, D$ порядка $n$ таких, что блочная матрица порядка $2n$
+$$
+\begin{pmatrix}
+A & B\\
+C & D
+\end{pmatrix}
+$$
+невырождена.
+
+\item Найдите
+$$
+\lim_{n \to \infty} \sum_{k=1}^{n} \frac{\left(k - \sin{\frac{k}{n}}\right)^{2018}}{n^{2019}}.
+$$
+
+\item Даны $N$ различных точек на координатной прямой и число $K \leqslant N$. Чёрный ящик позволяет узнать координаты центра тяжести любых $K$ точек из данных. За какое минимальное количество запросов можно определить координаты всех точек?
+
+\item Найдите все многочлены $P(x)$ с неотрицательными коэффициентами, для которых верно
+$$
+3 \int\limits_{-1}^{1} P(x) \; dx = P(-1) + 4 P(0) + P(1).
+$$
+
+\item Существует ли такая функция {\tt int f(int x)}, что присваивание {\tt y = f(f(x))} при всех {\tt x} даёт тот же результат, что и {\tt y = g(x)}, где {\tt g(x)} описана следующим образом?
+\begin{verbatim}
+а)  int g(int x) {
+        return x + 2019;
+    }
+\end{verbatim}
+\begin{verbatim}
+б)  int g(int x) {
+        if (x % 2 == 0)
+            return x + 1;
+        else
+            return x - 1;
+    }
+\end{verbatim}
+\textit{Примечание:} Все арифметические действия производятся по правилам знаковой арифметики с модулем $2^{32}$. Например, если$x=2147483647$, то $x + 1$ принимает значение $-2147483648$.
+
+\item Дана бесконечная лента из белых и чёрных клеток. Робот начинает своё движение с некоторой клетки и движется вправо на одну клетку, если текущая клетка белая, и влево, если чёрная. Найдите математическое ожидание количества различных клеток, которые посетит этот робот.
+
+\end{enumerate}
+
+
+\end{document} 

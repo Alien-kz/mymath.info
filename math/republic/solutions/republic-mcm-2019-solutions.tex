@@ -1,0 +1,169 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tabularx}			%smart table
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{enumitem}			%enumarate parameters
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
+
+\newcommand{\head}[4]
+{
+	\thispagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+\DeclareMathOperator*{\argmin}{Arg\,min}
+
+\begin{document}
+
+\head{XI Республиканская студенческая предметная олимпиада по~направлению~<<Математическое и компьютерное моделирование>>}{18 апреля 2019}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г.~Астана}
+
+\begin{enumerate}
+
+\item (Баев А.Ж.) 
+$$
+A
+= D = 
+\begin{pmatrix}
+E_{n-1} & 0\\
+0 & 0
+\end{pmatrix},
+\quad
+B
+= C = 
+\begin{pmatrix}
+O_{n-1} & 0\\
+0 & 1
+\end{pmatrix}.
+$$
+
+\newpage
+
+\item (Абдикалыков А.К.) 
+
+Обозначим выражение, предел которого надо найти, как $S_n$. Эту сумму можно переписать как
+$$
+S_n = \frac{1}{n}\sum\limits_{k=1}^{n}\left(\frac{k-\sin\frac{k}{n}}{n}\right)^{2018}=\frac{1}{n}\sum\limits_{k=1}^{n}{f(\xi_k)},
+$$
+где $f(x)=x^{2018}$, а $\xi_k\in[\frac{k-1}{n}, \frac{k}{n}]$. Видно, что это некоторая интегральная сумма функции $f(x)$ при равномерном разбиении отрезка $[0, 1]$; значит, её предел при $n\to\infty$ равен интегралу
+$$
+\int\limits_{0}^{1}{x^{2018} \; dx} = \frac{1}{2019}.
+$$
+
+\newpage
+
+\item (Баев А.Ж.) 
+
+Пусть $x_1$, $x_2$, $\hdots$, $x_n$ --- искомые координаты. После $i$-го запроса мы получаем равенство:
+$$a_{i 1} x_1 + a_{i 2} x_2 + \hdots + a_{i n} x_n = f_i,$$
+где $a_{i j}$ равно либо $\frac{1}{K}$, либо 0, причём ненулевых коэффициентов ровно $K$. Таким образом, задача сводится к решению системы линейных уравнений
+$$
+\frac{1}{K} A x = f
+$$
+с матрицей специального вида. Покажем, что при любом $K<N$ существует невырожденная квадратная матрица порядка $N$ такая, чтобы в каждой строке было ровно $K$ единиц и $N-K$ нулей.
+
+Чтобы узнать координаты первых $(K + 1)$-й точки, решим систему $\frac{1}{K} B \overline{x} = f_{1 .. k+1}$ с  матрицей порядка $K + 1$ вида
+$$
+B =
+\begin{pmatrix}
+0 & 1  &  \hdots & 1 & 1 & 1 \\
+1 & 0  &  \hdots & 1 & 1 & 1\\
+\vdots  & \vdots & \ddots & \vdots & \vdots & \vdots \\
+1 & 1  &  \hdots & 0 & 1 & 1\\
+1 & 1  &  \hdots & 1 & 0 & 1\\
+1 & 1  &  \hdots & 1 & 1 & 0\\
+\end{pmatrix}
+$$
+Система уравнения с данной матрицей всегда совместна: сложим все строки --- получим строку из всех единиц, вычтем из полученной строки остальные строки --- получим строку из одной единицы. Запросами, соответствующими данной матрице, можно получить координаты первых $(K+1)$-й точки. Далее будем делать запросы, в каждом из которых будут первые $(K-1)$ точка и какая-то новая точка.
+$$
+A =
+\begin{pmatrix}
+0 & 1  & \hdots & 1 & 1 & 1 & 0 & 0 & \hdots & 0 \\
+1 & 0  &  \hdots & 1 & 1 & 1 & 0 & 0 & \hdots & 0 \\
+\vdots  & \vdots & \ddots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
+1 & 1  &  \hdots & 0 & 1 & 1 & 0 & 0 & \hdots & 0 \\
+1 & 1  &  \hdots & 1 & 0 & 1 & 0 & 0 & \hdots & 0 \\
+1 & 1  &  \hdots & 1 & 1 & 0 & 0 & 0 & \hdots & 0 \\
+1 & 1 &  \hdots & 1 & 0 & 0 & 1 & 0 & \hdots & 0 \\
+1 & 1  &  \hdots & 1 & 0 & 0 & 0 & 1 & \hdots & 0 \\
+\vdots & \vdots  &  \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & 1  &  \hdots & 1 & 0 & 0 & 0 & 0 & \hdots & 1 \\
+\end{pmatrix}
+$$
+Таким образом, при $K < N$, ответ --- $N$. А при $K = N$, очевидно, найти $x_i$ невозможно ни за какое количество запросов. 
+
+\newpage
+
+\item (Абдикалыков А.К., Баев А.Ж.) 
+
+Представим искомый многочлен в виде суммы $P(x)=Q(x)+R(x)$, где $Q(x)$ --- многочлен с нечётными показателями при $x$, $R(x)$ --- с чётными. При таких обозначениях условие задачи равносильно
+$$
+3 \int\limits_{0}^{1} R(x) \; dx = 2 R(0) + R(1),
+$$
+а нечётная составляющая $Q(x)$ может быть таким образом произвольной. Пусть $R(x)=a_{2k}x^{2k} + \hdots + a_2x^2 + a_0$, тогда наше равенство эквивалентно
+$$
+\frac{3}{5}a_4+\frac{3}{7}a_6+\hdots+\frac{3}{2k+1}a_{2k}=a_4+a_6+\hdots+a_{2k},
+$$
+что невозможно, если хотя бы один из коэффициентов $a_4$, $a_6$, $\hdots$, $a_{2k}$ больше нуля. Поэтому ответом на задачу являются все многочлены вида $xT(x^2) + ax^2 + b$.
+
+\newpage
+
+\item (Абдикалыков А.К.) 
+
+
+а) Допустим, что нашлась такая функция $f(x)$, что $f(f(x))=g(x)$. Тогда $f(x)$ обратима, поскольку $f(f(x - 2019)) = x$, причём обратная функция однозначно определена. Таким образом, $f$ осуществляет биективное отображение множества целых чисел $\{-2^{31}, -2^{31}+1, \hdots, 2^{31}-1\}$ на само себя; другими словами, $f$ --- некоторая перестановка чисел типа {\tt int}. То же самое можно сказать и про $g$: указанное множество данная функция преобразует в $\{-2^{31} + 2019, -2^{31}+2020, \hdots, 2^{31}-1, -2^{31}, -2^{31}+1, \hdots, -2^{31}+2018\}$. Нетрудно видеть, что $g$ --- нечётная перестановка (количество инверсий $2019 \cdot (2^{32} - 2019)$), но это приводит к противоречию, так как $g=f\circ f$ --- композиция двух чётных или двух нечётных перестановок и должна быть чётной. Следовательно, функции $f$, удовлетворяющей условиям, не существует.
+
+б) Подойдёт функция
+\begin{verbatim}
+int f(int x)
+{
+    int t = (x % 4 + 4) % 4;
+    if (t == 0 || t == 1)
+        return x + 2;
+    if (t == 2)
+        return x - 1;
+    if (t == 3)
+        return x - 3;
+}
+\end{verbatim}
+
+\newpage
+
+\item (Абдикалыков А.К.) 
+
+Допустим, что начальная клетка белая. Тогда робот будет двигаться вправо, пока не встретит чёрную клетку, после чего он зациклится. Выпишем возможные варианты: {\tt WB}, вероятность 1/4, посещены 2 клетки; {\tt WWB}, вероятность 1/8, посещены 3 клетки; {\tt WWWB}, вероятность 1/16, посещены 4 клетки; и так далее. Проведя аналогичные рассуждения для начальной чёрной клетки, получим те же числа. Искомое математическое ожидание будет равно
+$$
+2\left(\frac{2}{4}+\frac{3}{8}+\frac{4}{16}+\hdots\right)=\frac{2}{2}+\frac{3}{4}+\frac{4}{8}+\hdots+\frac{n}{2^{n-1}}+\hdots=M.
+$$
+Сумму $M$ можно найти несколькими способами, в том числе и так:
+$$
+M + 1 = M + \left(\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\hdots+\frac{1}{2^{n-1}}+\hdots\right)=\frac{3}{2}+\frac{4}{4}+\frac{5}{8}+\hdots+\frac{n+1}{2^{n-1}}+\hdots=2M-2 \Rightarrow
+$$
+$\Rightarrow M = 3.$
+\end{enumerate}
+
+
+\end{document} 

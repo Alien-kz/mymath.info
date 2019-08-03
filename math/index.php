@@ -85,7 +85,7 @@
 						$site = "http://imc-math.org.uk";
 						$results_link = $site."/index.php?year=$year&amp;item=results";
 						$problems_link = $site."/index.php?year=$year&amp;item=problems";
-						if ($year == "2018") {
+						if ($year == "2020") {
 							$site = "http://imc-math.ddns.net";
 							$results_link = $site."/?show=results";
 							$problems_link = $site."/?show=day1";

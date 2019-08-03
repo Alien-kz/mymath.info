@@ -1,0 +1,156 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}		%cyrillic output
+\usepackage[utf8]{inputenc}		%cyrillic output
+\usepackage[english, russian]{babel}	%word wrap
+\usepackage{amssymb, amsfonts, amsmath}	%math symbols
+\usepackage{mathtext}			%text in formulas
+\usepackage{geometry}			%paper format attributes
+\usepackage{fancyhdr}			%header
+\usepackage{graphicx}			%input pictures
+\usepackage{tabularx}			%smart table
+\usepackage{tikz}				%draw pictures
+\usetikzlibrary{patterns}		%draw pictures: fill
+\usetikzlibrary{positioning}	%draw pictures: below of
+\usetikzlibrary{calc}			%draw pictures: $\i$
+\usepackage{enumitem}			%enumarate parameters
+
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, headheight=15pt}
+\setlist[enumerate]{leftmargin=*}	%remove enumarate indenttion
+\sloppy							%correct overfull
+\pagestyle{empty}				%no page numbers
+
+\newcommand{\head}[4]
+{
+	\thispagestyle{fancy}
+	\fancyhf{}
+	\chead{#3, #4}
+
+	\begin{center}
+	\begin{large}
+	#1 \\
+	\textit{#2}\\
+	\end{large}
+	\end{center}
+
+}
+
+\DeclareMathOperator*{\argmin}{Arg\,min}
+
+\begin{document}
+
+\head{XI Республиканская студенческая предметная олимпиада по~направлению~<<Математика>>}{18 апреля 2019}{Казахстанский филиал МГУ имени М. В. Ломоносова}{г.~Алматы}
+
+\begin{enumerate}
+
+\item (Баев А.Ж.)
+
+Умножим числитель и знаменатель отдельного элемента ряда на $2^{n-1}$:
+$$
+\frac{1}{2^n} \cdot \frac{n + 1}{n (n - 1)}
+=
+\frac{2^{n-1}(n + 1)}{2^{n} n \cdot 2^{n-1} (n - 1)}
+=
+\frac{2^{n} n - 2^{n-1} (n - 1)}{2^{n} n \cdot 2^{n-1} (n - 1)}
+=
+$$
+$$
+=
+\frac{1}{2^{n-1} (n-1)} - \frac{1}{2^{n} n}.
+$$
+Обозначив $b_n = \frac{1}{2^n n}$, перепишем наш ряд в виде
+$$
+\sum_{n = 2}^{\infty} (b_{n - 1} - b_n) =  b_1 = \frac12.
+$$
+
+Ответ: $\frac12$.
+
+\newpage
+
+\item (Васильев А.Н.)
+
+Допустим, $x = \frac{p}{q}$ и $y = \frac{m}{n}$ --- несократимые дроби. Тогда
+$$
+\left( \frac{p}{q} \right) ^ \frac{m}{n} = \frac{p}{q} + \frac{m}{n}
+$$
+Чтобы значение левой части равенства было рациональным, необходимо $p=a^n$, $q = b^n$ для некоторых натуральных $a$ и $b$.
+$$
+\frac{a^m}{b^m} = \frac{a^n}{b^n} + \frac{m}{n} \Longleftrightarrow \frac{a^m b^n - a^n b^m}{b^{n + m}} = \frac{m}{n}
+$$
+Приведём дробь в левой части к несократимому виду. При $n > m$
+$$\frac{a^m (b^{n-m} - a^{n-m})}{b^{n}} = \frac{m}{n}$$
+и при $n < m$
+$$\frac{a^n (a^{m-n} - b^{m-n})}{b^{m}} = \frac{m}{n},$$
+а случай $m=n$, очевидно, не возможен. Получаем, что $n=b^{\max(m, n)}$ и в любом случае $n\geqslant b^n$, или $b \leqslant n^{\frac{1}{n}}$. Но $n^\frac{1}{n} < 2$ при любом $n$, и поэтому решение возможно только при $b = 1$ и $n=1$.
+
+Так, задача свелась к решению в целых числах. Обязательно должно выполняться $x \geqslant 2$ и $y\geqslant 2$, поскольку варианты $x=1$ и $y=1$ не возможны. Пусть $y>2$, тогда
+$$x ( x^{y - 1} - 1) \geqslant 2 (2^{y-1} - 1) > y.$$
+Следовательно, $y=2$, а $x$ можно найти, решив уравнение $x^2=x+2$.
+
+Ответ: $(2, 2)$.
+
+\newpage
+
+\item (Васильев А.Н.) 
+
+Обозначим $g(\lambda)=\int\limits_{0}^{1} |f(x) - \lambda| \; dx$. Функция $f(x)$ интегрируема на данном отрезке интегрирования, а значит, $g(\lambda)$ непрерывна на $\mathbb R$.
+
+а) Функция $f(x)$ интегрируема на $[0, 1]$, а значит, ограничена на нём. Пусть $m=\inf\limits_{x\in [0, 1]} f(x)$, $M=\sup\limits_{x\in [0, 1]} f(x)$. Очевидно, что функция $g(\lambda)$ убывает на $(-\infty, m)$ и возрастает на $(M, +\infty)$. А так как $g(\lambda)$ непрерывна на сегменте $[m, M]$, то она достигает на нём своего минимума, который при этом является глобальным. Следовательно, множество $\mathcal{M}(f)$ не пустое.
+
+б) Для $f(x)={\mathrm{sgn}}~\left(2x-1\right)$ функция $g(\lambda)$ будет постоянной на отрезке $[-1, 1]$, что даёт $\mathcal{M}(f)=[-1, 1]$.
+
+в) Без ограничения общности можно считать, что $f(x)$ нестрого возрастающая. Пусть $f(c-0)\leqslant \lambda \leqslant f(c+0)$ для некоторого $c\in\left[0, \frac{1}{2}\right]$ (случай $c\in\left[\frac{1}{2}, 1\right]$ рассматривается аналогично). Тогда
+$$
+g(\lambda) = \int\limits_{0}^{c} (\lambda - f(x)) \; dx + \int\limits_{c}^{1} (f(x) - \lambda) \; dx = 
+$$
+$$
+=\lambda(2c-1)+ \int\limits_{0}^{1}{f(x) \; dx}-2\int\limits_{0}^{c}{f(x) \; dx},
+$$
+$$
+g\left(f\left(\frac{1}{2}\right)\right)=\int\limits_{0}^{1}{f(x) \; dx}-2\int\limits_{0}^{\frac{1}{2}}{f(x) \; dx},
+$$
+$$
+g(\lambda)-g\left(f\left(\frac{1}{2}\right)\right) = \lambda(2c-1) + 2\int\limits_{c}^{\frac{1}{2}}{f(x) \; dx} \geqslant \lambda(2c-1) + 2\int\limits_{c}^{\frac{1}{2}}{\lambda \; dx}= 0.
+$$
+Следовательно, $f\left(\frac{1}{2}\right)\in \mathcal{M}(f)$.
+
+г) Примером такой функции может служить $f(x)=|2x-1|$. Здесь $g(\lambda)=\lambda^2-\lambda+\frac{1}{2}$ на $[0, 1]$, и $f\left(\frac{1}{2}\right)=0\not\in\mathcal{M}(f)=\left\{\frac{1}{2}\right\}$.
+
+\newpage
+
+\item (Абдикалыков А.К.) 
+
+Пусть $\lambda_1$, $\lambda_2$ --- собственные значения матрицы $A$, тогда $\mu_1=\lambda_1^2+\lambda_1+2019$ и $\mu_2=\lambda_2^2+\lambda_2+2019$ будут собственными значениями матрицы $A^2+A+2019E$. Но тогда по условию $(\lambda_1^2+\lambda_1+2019)(\lambda_2^2+\lambda_2+2019)=0$, и один из множителей должен быть равным нулю. Без ограничения общности будем считать, что $\lambda_1^2+\lambda_1+2019=0$. В таком случае $\lambda_1=\frac{1}{2}\left(-1\pm i\sqrt{4075}\right)$ --- комплексное число, а так как $A$ --- вещественная матрица, то $\lambda_2=\overline{\lambda_1}\not=\lambda_1$ и $A$ имеет два линейно независимых собственных вектора $x_1$ и $x_2$. Те же векторы будут собственными и для $A^2+A+2019E$, но уже для собственных чисел $\mu_1=\lambda_1^2+\lambda_1+2019=0$ и $\mu_2=\lambda_2^2+\lambda_2+2019=\overline{\lambda_1^2+\lambda_1+2019}=0$. Следовательно, $A^2 + A + 2019 E = O$.
+
+\newpage
+
+\item (Баев А.Ж.) 
+
+\begin{center}
+    \input{pictures/2019-republic.tex}
+\end{center}
+
+В решении задачи никак не используется эллипс. Достаточно заметить, что $CA = CA_1 = CA_2 = a$, $CB = CB_1 = CB_2 = b$ в силу симметрии. Также верно, что $\angle ACD = \angle A_1CD$ и $\angle ACE = \angle A_2CE$. Значит, 
+$$\angle DCE = \angle ACD  + \angle ACE = \frac12 \angle ACA_1 + \frac12 \angle ACA_2 = \frac12 \angle A_1CA_2$$
+Таким образом угол $\angle A_1CA_2 = 2 \alpha$; аналогично $\angle B_1CB_2 = 2 \alpha$.  Осталось выразить все неизвестные через $a$, $b$, $\alpha$ по теореме косинусов:
+$$
+\frac{ A_1A_2^2 + B_1B_2^2 }{CA^2 + CB^2}
+=
+\frac{ 2 a^2 - 2 a^2 \cos{2 \alpha} + 2 b^2 - 2 b^2 \cos{2 \alpha} }{a^2 + b^2}
+=
+2 (1 - \cos{2 \alpha})
+=
+4 \sin^2 \alpha 
+$$
+Ответ: а) 2; б) 4.
+
+\newpage
+
+\item (Клячко А.А.) 
+
+Очевидно, что если целочисленная система линейных уравнений разрешима, то она разрешима и по любому модулю. Предположим теперь, что у нас есть система с $n$ неизвестными $x_1, x_2, \hdots, x_n$, разрешимая по любому модулю. Элементарными преобразованиями эту систему можно привести к трапециевидной форме $Ax=b$ (также с целыми коэффициентами). Так как по предположению система разрешима по любому модулю, то в этой форме не будет строк, где ненулевым будет только свободный коэффициент. Пусть $M=\alpha_1\alpha_2\hdots\alpha_k>0$, где $\alpha_1, \alpha_2, \hdots, \alpha_k$ --- ведущие элементы строк матрицы $A$, которые без ограничения общности можно считать положительными. По условию $\exists~ x', c\in\mathbb{Z}^k$~: $Ax'=b+Mc$. Найдём такой вектор $\Delta x\in\mathbb{Z}^n$, что $A\Delta x=-Mc$. Это можно сделать обратным ходом метода Гаусса, предполагая нулевыми все компоненты $\Delta x$, не соответствующие ведущим коэффициентам рассматриваемой на данном шаге строки. Тогда $x=x'+\Delta x$ будет решением исходной системы.
+
+\end{enumerate}
+
+
+\end{document} 
