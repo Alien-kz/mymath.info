@@ -1,0 +1,44 @@
+<h3> Материалы 2019-2020 </h3>
+
+Самая полезная ссылка 1: <a href='http://cmcmsu.info/2course/'> cmcmsu.info </a>
+
+Самая полезная ссылка 2: <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
+
+<table>
+<tr>
+<th> Дата </th>
+<th> Тема </th>
+<th> Презентация </th>
+<th> Домашнее задание </th>
+<th> Ссылка ejudge.msu.kz </th>
+<th> Стоимость </th>
+<th> Срок </th>
+</tr>
+<tr>
+<td> 14/09/2019 </td>
+<td> План на семестр. Техническое вступление. Вспоминаем С. </td>
+<td> <file 'cmc/files/cmc-2019-present-01.pdf'> cmc-2019-present-01.pdf </file>  </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> 17/09/2019 </td>
+<td> Вспоминаем bash. Инструменты для компиляции. </td>
+<td> будет </td>
+<td> будет </td>
+<td> будет </td>
+<td> 10 </td>
+<td> будет </td>
+</tr>
+<tr>
+<td> 21/09/2019 </td>
+<td> Практика. </td>
+<td> </td>
+<td> будет </td>
+<td> будет </td>
+<td> 10 </td>
+<td> будет </td>
+</tr>
+</table>
