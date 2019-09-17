@@ -25,8 +25,8 @@
 </tr>
 <tr>
 <td> 17/09/2019 </td>
-<td> Вспоминаем bash. Инструменты для компиляции. </td>
-<td> будет </td>
+<td> Вспоминаем bash. Инструменты для практики. </td>
+<td> <file 'cmc/files/cmc-2019-present-01.pdf'> cmc-2019-present-02.pdf </file> </td>
 <td> будет </td>
 <td> будет </td>
 <td> 10 </td>
