@@ -4,13 +4,14 @@
 
 Самая полезная ссылка 2: <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
 
+Ссылка для практических работ: <a href='http://ejudge.msu.kz/cgi-bin/register?'> ejudge.msu.kz </a>
+
 <table>
 <tr>
 <th> Дата </th>
 <th> Тема </th>
 <th> Презентация </th>
 <th> Домашнее задание </th>
-<th> Ссылка ejudge.msu.kz </th>
 <th> Стоимость </th>
 <th> Срок </th>
 </tr>
@@ -21,22 +22,19 @@
 <td> </td>
 <td> </td>
 <td> </td>
-<td> </td>
 </tr>
 <tr>
-<td> 17/09/2019 </td>
+<td> 18/09/2019 </td>
 <td> Вспоминаем bash. Инструменты для практики. </td>
 <td> <file 'cmc/files/cmc-2019-present-01.pdf'> cmc-2019-present-02.pdf </file> </td>
-<td> будет </td>
-<td> будет </td>
+<td> <a href='http://ejudge.msu.kz/cgi-bin/new-client?contest_id=20'> Дом: до массивов </a> </td>
 <td> 10 </td>
-<td> будет </td>
+<td> 24/09/2018 21:00:00 </td>
 </tr>
 <tr>
 <td> 21/09/2019 </td>
 <td> Практика. </td>
 <td> </td>
-<td> будет </td>
 <td> будет </td>
 <td> 10 </td>
 <td> будет </td>
