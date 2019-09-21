@@ -27,7 +27,7 @@
 <td> 18/09/2019 </td>
 <td> Вспоминаем bash. Инструменты для практики. </td>
 <td> <file 'cmc/files/cmc-2019-present-02.pdf'> cmc-2019-present-02.pdf </file> </td>
-<td> <a href='http://ejudge.msu.kz/cgi-bin/new-client?contest_id=20'> Дом: до массивов </a> </td>
+<td> <a href='cmc/login.html'> Дом: до массивов </a> </td>
 <td> 10 </td>
 <td> 24/09/2018 21:00:00 </td>
 </tr>
