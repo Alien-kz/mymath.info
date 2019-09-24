@@ -43,7 +43,7 @@
 <td> 25/09/2019 </td>
 <td> Динамическая память. </td>
 <td> <file 'cmc/files/cmc-2019-present-03.pdf'> cmc-2019-present-03.pdf </file> </td>
-<td> <a href='cmc/login_22.html'> Дом: до массивов </a> </td>
+<td> <a href='cmc/login_22.html'> Дом: до указателей </a> </td>
 <td> 10 </td>
 <td> 02/10/2018 21:00:00 </td>
 </tr>
