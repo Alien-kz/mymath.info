@@ -5,40 +5,34 @@
 <link rel="stylesheet" href="/ejudge/unpriv3.css" type="text/css" />
 <title>Вход в систему [ВМК (дом): до массивов]</title></head>
 <body>
-<div id="main-cont">
-<div id="container">
-<div id="l12-col">
-<div id="l12">
+
 <div class="main_phrase">Вход [ВМК (дом): до массивов]</div>
+
 <form method="post" enctype="application/x-www-form-urlencoded" action="https://ejudge.msu.kz/cgi-bin/new-client">
 <input type="hidden" name="contest_id" value="20" />
 <input type="hidden" name="role" value="0" />
 <input type="hidden" name="prob_name" />
 
-<div class="user_actions"><table class="menu"><tr>
-<td class="menu"><div class="user_action_item">login: <input type="text" name="login" size="8" /></div></td>
-<td class="menu"><div class="user_action_item">пароль: <input type="password" name="password" size="8" /></div></td>
-<td class="menu"><div class="user_action_item">язык: <select name="locale_id"><option value="0">English</option>
-<option value="1" selected="selected">Russian</option><option value="2">Ukrainian</option><option value="3">Kazakh</option>
-</select>
-</div></td>
-<td class="menu"><div class="user_action_item"><input type="submit" name="action_2" value="Войти" /></div></td>
+<div class="user_actions">
 
 <table class="menu">
-
-
+<tr>
+<td class="menu"><div class="user_action_item">login: <input type="text" name="login" size="8" /></div></td>
+<td class="menu"><div class="user_action_item">пароль: <input type="password" name="password" size="8" /></div></td>
+<td class="menu"><div class="user_action_item">язык: 
+ <select name="locale_id">
+  <option value="0">English</option>
+  <option value="1" selected="selected">Russian</option>
+  <option value="2">Ukrainian</option>
+  <option value="3">Kazakh</option>
+ </select>
+</td>
+<td class="menu"><div class="user_action_item"><input type="submit" name="action_2" value="Войти" /></div></td>
+</tr>
 </table>
-</div></td>
-</tr></table></div>
+
+</div>
 </form>
 
-
-</div>
-</div>
-
-
-</div>
-</div>
-</div>
 </body>
 </html>

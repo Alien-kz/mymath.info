@@ -27,12 +27,28 @@
 <td> 18/09/2019 </td>
 <td> Вспоминаем bash. Инструменты для практики. </td>
 <td> <file 'cmc/files/cmc-2019-present-02.pdf'> cmc-2019-present-02.pdf </file> </td>
-<td> <a href='cmc/login.html'> Дом: до массивов </a> </td>
+<td> <a href='cmc/login_20.html'> Дом: до массивов </a> </td>
 <td> 10 </td>
 <td> 24/09/2018 21:00:00 </td>
 </tr>
 <tr>
 <td> 21/09/2019 </td>
+<td> Практика. </td>
+<td> </td>
+<td> была  </td>
+<td> 10 </td>
+<td> была </td>
+</tr>
+<tr>
+<td> 25/09/2019 </td>
+<td> Динамическая память. </td>
+<td> <file 'cmc/files/cmc-2019-present-03.pdf'> cmc-2019-present-03.pdf </file> </td>
+<td> <a href='cmc/login_22.html'> Дом: до массивов </a> </td>
+<td> 10 </td>
+<td> 02/10/2018 21:00:00 </td>
+</tr>
+<tr>
+<td> 28/09/2019 </td>
 <td> Практика. </td>
 <td> </td>
 <td> будет </td>
