@@ -43,12 +43,28 @@
 <td> 25/09/2019 </td>
 <td> Динамическая память. </td>
 <td> <file 'cmc/files/cmc-2019-present-03.pdf'> cmc-2019-present-03.pdf </file> </td>
-<td> <a href='cmc/login_22.html'> Дом: до указателей </a> </td>
+<td> <file 'cmc/files/cmc-home-02.pdf'> Дом: до указателей </file> </td>
 <td> 10 </td>
-<td> 02/10/2018 21:00:00 </td>
+<td> 09/10/2018 21:00:00 </td>
 </tr>
 <tr>
 <td> 28/09/2019 </td>
+<td> Практика. </td>
+<td> </td>
+<td> была </td>
+<td> 10 </td>
+<td> была </td>
+</tr>
+<tr>
+<td> 02/10/2019 </td>
+<td> Динамическая память. </td>
+<td> <file 'cmc/files/cmc-2019-present-04.pdf'> cmc-2019-present-04.pdf </file> </td>
+<td> <file 'cmc/files/cmc-home-03.pdf'> Дом: до списков </file> </td>
+<td> 10 </td>
+<td> 09/10/2018 21:00:00 </td>
+</tr>
+<tr>
+<td> ??? </td>
 <td> Практика. </td>
 <td> </td>
 <td> будет </td>
