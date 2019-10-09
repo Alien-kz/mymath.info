@@ -64,7 +64,23 @@
 <td> 09/10/2018 21:00:00 </td>
 </tr>
 <tr>
-<td> ??? </td>
+<td> 05/10/2019 </td>
+<td> Практика. </td>
+<td> </td>
+<td> была </td>
+<td> 10 </td>
+<td> была </td>
+</tr>
+<tr>
+<td> 09/10/2019 </td>
+<td> Системные вызовы. </td>
+<td> <file 'cmc/files/cmc-2019-present-05.pdf'> cmc-2019-present-05.pdf </file> </td>
+<td> <file 'cmc/files/cmc-home-04.pdf'> Системные вызовы </file> </td>
+<td> 10 </td>
+<td> 16/10/2018 21:00:00 </td>
+</tr>
+<tr>
+<td> 12/10/2019 </td>
 <td> Практика. </td>
 <td> </td>
 <td> будет </td>
