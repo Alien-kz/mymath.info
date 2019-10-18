@@ -68,7 +68,8 @@
 				print_post("Практикум на ЭВМ 3 семестр", "content", $subject."/content_2018_2019.txt"); 
 			}
 			if ($subject == "mm") {
-				print_post("Технология программирования на ЭВМ 1 семестр", "content", $subject."/content.txt"); 
+				print_post("Технология программирования на ЭВМ 1 семестр", "content", $subject."/content_2019_2020.txt"); 
+//				print_post("Технология программирования на ЭВМ 1 семестр", "content", $subject."/content_2018_2019.txt"); 
 			}
 			if ($subject == "numerical") {
 				print_post("Введение в численные методы", "content", $subject."/content.txt"); 
