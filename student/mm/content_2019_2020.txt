@@ -13,7 +13,7 @@
 <tr>
 <td> 19/10/2019 </td>
 <td> Типы чисел </td>
-<td> <file 'mm/files/mm-2019-present-00'> mm-2019-present-00 </file>  </td>
+<td> <file 'mm/files/mm-2019-present-00.pdf'> mm-2019-present-00.pdf </file>  </td>
 <td> Установить linux  </td>
 <td> Прочитать "Переменные. Приведение типов." </td>
 <td> </td>
