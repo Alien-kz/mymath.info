@@ -96,4 +96,13 @@
 <td> 100 </td>
 <td> 23/10/2019 21:00:00 </td>
 </tr>
+
+<tr>
+<td> 23/10/2019 </td>
+<td> Семестровая работа №1. bash. </td>
+<td> <file 'cmc/files/cmc-2019-present-07.pdf'> cmc-2019-present-07.pdf </file> </td>
+<td> </td>
+<td> - </td>
+<td> 26/10/2019 21:00:00 </td>
+</tr>
 </table>
