@@ -6,17 +6,23 @@
 <th> Тема </th>
 <th> Презентация </th>
 <th> Домашнее задание </th>
-<th> Ссылка ejudge.msu.kz </th>
 <th> Стоимость </th>
 <th> Срок </th>
 </tr>
 <tr>
 <td> 19/10/2019 </td>
-<td> Типы чисел </td>
+<td> Числа и арфиметика </td>
 <td> <file 'mm/files/mm-2019-present-00.pdf'> mm-2019-present-00.pdf </file>  </td>
-<td> Установить linux  </td>
-<td> Прочитать "Переменные. Приведение типов." </td>
+<td> Установить linux </td>
 <td> </td>
 <td> </td>
+</tr>
+<tr>
+<td> 25/10/2019 </td>
+<td> Переменные. Первая программа. </td>
+<td> <file 'mm/files/mm-2019-present-01.pdf'> mm-2019-present-01.pdf </file>  </td>
+<td> <file 'mm/files/mm-2019-home-01.pdf'> mm-2019-home-01.pdf </file>   </td>
+<td> 10 </td>
+<td> 01/11/2019 </td>
 </tr>
 </table>
