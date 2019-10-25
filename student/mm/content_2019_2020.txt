@@ -1,5 +1,7 @@
 <h3> Материалы 2019-2020 </h3>
 
+Книга: <a href='http://mymath.info/books/src/Intro_in_C_and_unix_shell.pdf'> Intro_in_C_and_unix_shell.pdf </a>
+
 <table>
 <tr>
 <th> Дата </th>
