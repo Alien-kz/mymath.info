@@ -114,4 +114,13 @@
 <td> - </td>
 <td> 02/11/2019 21:00:00 </td>
 </tr>
+
+<tr>
+<td> 30/10/2019 </td>
+<td> Практика </td>
+<td>  </td>
+<td> <file 'cmc/files/cmc-class-5.pdf'> cmc-class-5.pdf </file> </td>
+<td> </td>
+<td> </td>
+</tr>
 </table>
