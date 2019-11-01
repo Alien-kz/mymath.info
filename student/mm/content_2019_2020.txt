@@ -27,4 +27,14 @@
 <td> 10 </td>
 <td> 01/11/2019 </td>
 </tr>
+
+<tr>
+<td> 01/11/2019 </td>
+<td> Переменные. Первая программа. </td>
+<td> </file>  </td>
+<td> <file 'mm/files/class-01.pdf'> class-01.pdf </file>   </td>
+<td> 10 </td>
+<td> 01/11/2019 </td>
+</tr>
+
 </table>
