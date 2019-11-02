@@ -37,4 +37,12 @@
 <td> 01/11/2019 </td>
 </tr>
 
+<tr>
+<td> 25/10/2019 </td>
+<td> Условный оператор </td>
+<td> <file 'mm/files/mm-2019-present-02.pdf'> mm-2019-present-02.pdf </file>  </td>
+<td> <file 'mm/files/mm-2019-home-02.pdf'> mm-2019-home-02.pdf </file>   </td>
+<td> 10 </td>
+<td> 09/11/2019 </td>
+</tr>
 </table>
