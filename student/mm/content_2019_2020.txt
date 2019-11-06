@@ -32,9 +32,9 @@
 <td> 01/11/2019 </td>
 <td> Переменные. Первая программа. </td>
 <td> </file>  </td>
-<td> <file 'mm/files/class-01.pdf'> class-01.pdf </file>   </td>
+<td> Практика  </td>
 <td> 10 </td>
-<td> 01/11/2019 </td>
+<td> </td>
 </tr>
 
 <tr>
@@ -44,5 +44,24 @@
 <td> <file 'mm/files/mm-2019-home-02.pdf'> mm-2019-home-02.pdf </file>   </td>
 <td> 10 </td>
 <td> 09/11/2019 </td>
+</tr>
+
+<tr>
+<td> 02/11/2019 </td>
+<td> Условный оператор </td>
+<td> </td>
+<td> Практика </td>
+<td> 10 </td>
+<td> </td>
+</tr>
+
+
+<tr>
+<td> 06/11/2019 </td>
+<td> Цикл while </td>
+<td> <file 'mm/files/mm-2019-present-03.pdf'> mm-2019-present-03.pdf </file>  </td>
+<td> <file 'mm/files/mm-2019-home-03.pdf'> mm-2019-home-03.pdf </file>   </td>
+<td> 10 </td>
+<td> 13/11/2019 </td>
 </tr>
 </table>

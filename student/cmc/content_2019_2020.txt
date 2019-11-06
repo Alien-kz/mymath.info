@@ -123,4 +123,13 @@
 <td> </td>
 <td> </td>
 </tr>
+
+<tr>
+<td> 06/11/2019 </td>
+<td> Семестровая работа №2. judge. </td>
+<td> <file 'cmc/files/cmc-2019-present-09.pdf'> cmc-2019-present-09.pdf </file> </td>
+<td> </td>
+<td> 100 </td>
+<td> 20/11/2019 21:00:00 </td>
+</tr>
 </table>
