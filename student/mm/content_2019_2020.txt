@@ -64,4 +64,33 @@
 <td> 10 </td>
 <td> 13/11/2019 </td>
 </tr>
+
+<tr>
+<td> 07/11/2019 </td>
+<td> Цикл while</td>
+<td> </td>
+<td> Практика </td>
+<td> 10 </td>
+<td> </td>
+</tr>
+
+<tr>
+<td> 08/11/2019 </td>
+<td> Символьный тип</td>
+<td> <file 'mm/files/mm-2019-present-04.pdf'> mm-2019-present-04.pdf </file>  </td>
+<td> <file 'mm/files/mm-2019-home-04.pdf'> mm-2019-home-04.pdf </file>   </td>
+<td> 10 </td>
+<td> 15/11/2019 </td>
+</tr>
+
+<tr>
+<td> 09/11/2019 </td>
+<td> Символьный тип </td>
+<td> </td>
+<td> Практика </td>
+<td> 10 </td>
+<td> </td>
+</tr>
+
+
 </table>
