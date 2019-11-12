@@ -92,5 +92,22 @@
 <td> </td>
 </tr>
 
+<tr>
+<td> 11/11/2019 </td>
+<td> Цикл for </td>
+<td> <file 'mm/files/mm-2019-present-05.pdf'> mm-2019-present-05.pdf </file>  </td>
+<td> <file 'mm/files/mm-2019-home-05.pdf'> mm-2019-home-05.pdf </file>   </td>
+<td> 10 </td>
+<td> 15/11/2019 </td>
+</tr>
+
+<tr>
+<td> 13/11/2019 </td>
+<td> Цикл for </td>
+<td> </td>
+<td> Практика </td>
+<td> 10 </td>
+<td> </td>
+</tr>
 
 </table>
