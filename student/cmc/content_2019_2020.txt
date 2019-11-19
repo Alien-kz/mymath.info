@@ -132,4 +132,13 @@
 <td> 100 </td>
 <td> 20/11/2019 21:00:00 </td>
 </tr>
+
+<tr>
+<td> 20/11/2019 </td>
+<td> Клиент-сервер </td>
+<td> <file 'cmc/files/cmc-2019-present-10.pdf'> cmc-2019-present-10.pdf </file> </td>
+<td> <a href='https://ejudge.ru/study/3sem/sem15.pdf'> А.В.Чернов <br/>"Пример клиент-сервер"</a> <br />  <file 'cmc/files/client.c'> client.c </file> <file 'cmc/files/server.c'> server.c </file> </td>
+<td> </td>
+<td> </td>
+</tr>
 </table>
