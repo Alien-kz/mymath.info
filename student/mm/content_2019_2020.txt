@@ -128,4 +128,36 @@
 <td> 40 </td>
 <td> </td>
 </tr>
+<tr>
+<td> 25/11/2019 </td>
+<td> Строки и указатели </td>
+<td> <file 'mm/files/mm-2019-present-07.pdf'> mm-2019-present-07.pdf </file>  </td>
+<td> <file 'mm/files/mm-2019-home-07.pdf'> mm-2019-home-07.pdf </file>   </td>
+<td> 10 </td>
+<td> 06/12/2019 </td>
+</tr>
+<tr>
+<td> 27/11/2019 </td>
+<td> Строки и указатели </td>
+<td> </td>
+<td> Практика </td>
+<td> 10 </td>
+<td> </td>
+</tr>
+<tr>
+<td> 29/11/2019 </td>
+<td> Функции </td>
+<td> <file 'mm/files/mm-2019-present-08.pdf'> mm-2019-present-08.pdf </file>  </td>
+<td> <file 'mm/files/mm-2019-home-08.pdf'> mm-2019-home-08.pdf </file>   </td>
+<td> 10 </td>
+<td> 06/12/2019 </td>
+</tr>
+<tr>
+<td> 30/11/2019 </td>
+<td> Функции </td>
+<td> </td>
+<td> Практика </td>
+<td> 10 </td>
+<td> </td>
+</tr>
 </table>
