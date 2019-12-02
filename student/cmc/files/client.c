@@ -29,7 +29,7 @@ int init_socket(const char *ip, int port) {
     struct sockaddr_in server_address;
     server_address.sin_family = AF_INET;
     server_address.sin_port = htons(port);
-    memcpy(&server_address.sin_addr, host -> h_addr_list[0], sizeof(server_address));
+    memcpy(&server_address.sin_addr, host->h_addr_list[0], strlen(host->h_addr_list[0]) + 1);
 
     //connection
     struct sockaddr_in sin;
@@ -46,9 +46,9 @@ int init_socket(const char *ip, int port) {
 int main(int argc, char **argv) {
     if (argc != 3) {
         puts("Incorrect args.");
-        puts("./server <ip> <port>");
+        puts("./client <ip> <port>");
         puts("Example:");
-        puts("./server 127.0.0.1 5005");
+        puts("./client 127.0.0.1 5005");
         return ERR_INCORRECT_ARGS;
     }
     char *ip = argv[1];
