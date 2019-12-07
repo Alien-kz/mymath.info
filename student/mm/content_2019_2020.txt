@@ -184,4 +184,12 @@
 <td> 10 </td>
 <td> 14/12/2019 </td>
 </tr>
+<tr>
+<td> 07/12/2019 </td>
+<td> Динамическая память </td>
+<td> <file 'mm/files/mm-2019-present-11.pdf'> mm-2019-present-11.pdf </file>  </td>
+<td> <file 'mm/files/mm-2019-home-11.pdf'> mm-2019-home-11.pdf </file>   </td>
+<td> 10 </td>
+<td> 14/12/2019 </td>
+</tr>
 </table>
