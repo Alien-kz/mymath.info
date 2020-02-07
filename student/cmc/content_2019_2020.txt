@@ -4,7 +4,22 @@
 
 Самая полезная ссылка 2: <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
 
-Ссылка для практических работ: <a href='http://ejudge.msu.kz/cgi-bin/register?'> ejudge.msu.kz </a>
+<table>
+<tr>
+<th> Дата </th>
+<th> Тема </th>
+<th> Презентация </th>
+</tr>
+<tr>
+<td> 07/02/2020 </td>
+<td> План на семестр. Полиз </td>
+<td> <file 'cmc/files/cmc-2020-present-21.pdf'> cmc-2020-present-21.pdf </file>  </td>
+</tr>
+</table>
+
+
+
+
 
 <table>
 <tr>
