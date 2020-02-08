@@ -12,8 +12,13 @@
 </tr>
 <tr>
 <td> 07/02/2020 </td>
-<td> План на семестр. Полиз </td>
+<td> План на семестр. Интерпретатор (арифметика). </td>
 <td> <file 'cmc/files/cmc-2020-present-21.pdf'> cmc-2020-present-21.pdf </file>  </td>
+</tr>
+<tr>
+<td> 07/02/2020 </td>
+<td> План на семестр. Интерпретатор (присваивания). </td>
+<td> <file 'cmc/files/cmc-2020-present-22.pdf'> cmc-2020-present-22.pdf </file>  </td>
 </tr>
 </table>
 
