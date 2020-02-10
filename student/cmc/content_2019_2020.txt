@@ -16,9 +16,14 @@
 <td> <file 'cmc/files/cmc-2020-present-21.pdf'> cmc-2020-present-21.pdf </file>  </td>
 </tr>
 <tr>
-<td> 07/02/2020 </td>
-<td> План на семестр. Интерпретатор (присваивания). </td>
+<td> 08/02/2020 </td>
+<td> Интерпретатор (присваивания). </td>
 <td> <file 'cmc/files/cmc-2020-present-22.pdf'> cmc-2020-present-22.pdf </file>  </td>
+</tr>
+<tr>
+<td> 10/02/2020 </td>
+<td> Интерпретатор (присваивания). </td>
+<td> <file 'cmc/files/cmc-2020-present-23.pdf'> cmc-2020-present-23.pdf </file>  </td>
 </tr>
 </table>
 
