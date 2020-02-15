@@ -1,0 +1,26 @@
+<h3> Материалы 2019-2020 </h3>
+
+Чтобы скачать обновлённую презентацию, сбросьте кэш браузера для сайте mymath.info (cookies или куки). Например, в firefox это можно сделать так: управление данными, mymath.info, удалить выбранные.
+
+<table>
+<tr>
+<th> Дата </th>
+<th> Тема </th>
+<th> Презентация </th>
+</tr>
+<tr>
+<td> 08/02/2020 </td>
+<td> План на семестр. Линейная алгебра. Метод Гаусса. LU и LPU разложения. </td>
+<td> <file 'numerical/files/num-2020-present-01.pdf'> num-2020-present-01.pdf </file>  </td>
+</tr>
+<tr>
+<td> 11/02/2020 </td>
+<td> Линейная алгебра. Метод прогонки. Метод Холецкого. Практическое задание №1. </td>
+<td> <file 'numerical/files/num-2020-present-02.pdf'> num-2020-present-02.pdf </file>  </td>
+</tr>
+<tr>
+<td> 15/02/2020 </td>
+<td> Линейная алгебра. Итерационные методы. Теорема Самарского. </td>
+<td> <file 'numerical/files/num-2020-present-03.pdf'> num-2020-present-03.pdf </file>  </td>
+</tr>
+</table>
