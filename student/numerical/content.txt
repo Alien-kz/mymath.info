@@ -23,4 +23,9 @@
 <td> Линейная алгебра. Итерационные методы. Теорема Самарского. </td>
 <td> <file 'numerical/files/num-2020-present-03.pdf'> num-2020-present-03.pdf </file>  </td>
 </tr>
+<tr>
+<td> 18/02/2020 </td>
+<td> Итерационные методы. Примеры. Практическое задание №2. </td>
+<td> <file 'numerical/files/num-2020-present-04.pdf'> num-2020-present-04.pdf </file>  </td>
+</tr>
 </table>

@@ -22,7 +22,7 @@
 </tr>
 <tr>
 <td> 10/02/2020 </td>
-<td> Интерпретатор (присваивания). </td>
+<td> Интерпретатор (бинарные операторы). </td>
 <td> <file 'cmc/files/cmc-2020-present-23.pdf'> cmc-2020-present-23.pdf </file>  </td>
 </tr>
 </table>
