@@ -25,7 +25,12 @@
 </tr>
 <tr>
 <td> 18/02/2020 </td>
-<td> Итерационные методы. Примеры. Практическое задание №2. </td>
+<td> Линейная алгебра. Итерационные методы. Примеры. Практическое задание №2. </td>
 <td> <file 'numerical/files/num-2020-present-04.pdf'> num-2020-present-04.pdf </file>  </td>
+</tr>
+<tr>
+<td> 22/02/2020 </td>
+<td> Нелинейные уравнения. Итерационные методы. </td>
+<td> <file 'numerical/files/num-2020-present-05.pdf'> num-2020-present-05.pdf </file>  </td>
 </tr>
 </table>
