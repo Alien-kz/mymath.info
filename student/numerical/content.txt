@@ -32,5 +32,11 @@
 <td> 22/02/2020 </td>
 <td> Нелинейные уравнения. Итерационные методы. </td>
 <td> <file 'numerical/files/num-2020-present-05.pdf'> num-2020-present-05.pdf </file>  </td>
+<td> <file 'numerical/files/numerical.pdf'> Дополнительный материал </file>  </td>
+</tr>
+<tr>
+<td> 29/02/2020 </td>
+<td> Нелинейные уравнения. Итерационные методы. Практическое задание №3. </td>
+<td> <file 'numerical/files/num-2020-present-06.pdf'> num-2020-present-06.pdf </file>  </td>
 </tr>
 </table>
