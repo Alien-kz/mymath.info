@@ -27,17 +27,17 @@
 </tr>
 <tr>
 <td> 12/02/2020 </td>
-<td> Т. </td>
+<td> Интерпретатор (goto). </td>
 <td> <file 'cmc/files/cmc-2020-present-24.pdf'> cmc-2020-present-24.pdf </file>  </td>
 </tr>
 <tr>
 <td> 15/02/2020 </td>
-<td> Т. </td>
+<td> Интерпретатор (if while). </td>
 <td> <file 'cmc/files/cmc-2020-present-25.pdf'> cmc-2020-present-25.pdf </file>  </td>
 </tr>
 <tr>
 <td> 04/03/2020 </td>
-<td> Т. </td>
+<td> Интерпретатор (статическая и динамическая сборка). </td>
 <td> <file 'cmc/files/cmc-2020-present-26.pdf'> cmc-2020-present-26.pdf </file>  </td>
 </tr>
 </table>
