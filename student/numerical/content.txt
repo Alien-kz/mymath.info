@@ -36,7 +36,12 @@
 </tr>
 <tr>
 <td> 29/02/2020 </td>
-<td> Нелинейные уравнения. Итерационные методы. Практическое задание №3. </td>
+<td> Интерполяция. Практическое задание №3. </td>
 <td> <file 'numerical/files/num-2020-present-06.pdf'> num-2020-present-06.pdf </file>  </td>
+</tr>
+<tr>
+<td> 14/03/2020 </td>
+<td> Аппроксимация. </td>
+<td> <file 'numerical/files/num-2020-present-07.pdf'> num-2020-present-07.pdf </file>  </td>
 </tr>
 </table>

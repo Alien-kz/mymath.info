@@ -40,6 +40,12 @@
 <td> Интерпретатор (статическая и динамическая сборка). </td>
 <td> <file 'cmc/files/cmc-2020-present-26.pdf'> cmc-2020-present-26.pdf </file>  </td>
 </tr>
+<tr>
+<td> 14/03/2020 </td>
+<td> Аудио обработка. Сегментирование активности голоса. </td>
+<td> <file 'cmc/files/cmc-2020-present-27.pdf'> cmc-2020-present-27.pdf </file>
+     <file 'cmc/files/vad.cpp'> vad.cpp </file></td>
+</tr>
 </table>
 
 
