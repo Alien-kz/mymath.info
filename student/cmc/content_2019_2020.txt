@@ -46,6 +46,19 @@
 <td> <file 'cmc/files/cmc-2020-present-27.pdf'> cmc-2020-present-27.pdf </file>
      <file 'cmc/files/vad.cpp'> vad.cpp </file></td>
 </tr>
+<tr>
+<td> 11/04/2020 </td>
+<td> Аудио обработка. Преобразование Фурье. </td>
+<td> <file 'cmc/files/cmc-2020-present-28.pdf'> cmc-2020-present-28.pdf </file>
+</td>
+</tr>
+<tr>
+<td> 15/04/2020 </td>
+<td> Аудио обработка. Быстрое преобразование Фурье. </td>
+<td> <a href='https://habr.com/ru/company/otus/blog/449996/'> Хабр (БПФ) </a>
+</td>
+</tr>
+
 </table>
 
 
