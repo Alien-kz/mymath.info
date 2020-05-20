@@ -55,10 +55,23 @@
 <tr>
 <td> 15/04/2020 </td>
 <td> Аудио обработка. Быстрое преобразование Фурье. </td>
-<td> <a href='https://habr.com/ru/company/otus/blog/449996/'> Хабр (БПФ) </a>
+<td> <a href='https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm'> wiki (FFT) </a>
 </td>
 </tr>
-
+</tr>
+<tr>
+<td> 06/05/2020 </td>
+<td> Аудио обработка. Пайплайн для бота, распознающего цифры. </td>
+<td> <file 'cmc/files/audio_digit_recognition.zip'> audio_digit_recognition.zip </file>
+</td>
+</tr>
+</tr>
+<tr>
+<td> 20/05/2020 </td>
+<td> Краулер. </td>
+<td> <file 'cmc/files/wiki.py'> wiki.py </file>
+</td>
+</tr>
 </table>
 
 
