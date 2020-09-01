@@ -18,7 +18,7 @@
 <td> План на семестр. Техническое вступление. Вспоминаем С. </td>
 <td> <file 'cmc/files/cmc-2020-present-01.pdf'> cmc-2020-present-01.pdf </file>  </td>
 <td> <file 'cmc/files/cmc-home-01.pdf'> Дом: до матриц </file> </td>
-<td> </td>
-<td> </td>
+<td> 10 </td>
+<td> 09/09/2020 </td>
 </tr>
 </table>
