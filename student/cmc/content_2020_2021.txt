@@ -1,0 +1,241 @@
+<h3> Материалы 2019-2020 </h3>
+
+Самая полезная ссылка 1: <a href='http://cmcmsu.info/2course/'> cmcmsu.info </a>
+
+Самая полезная ссылка 2: <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
+
+<table>
+<tr>
+<th> Дата </th>
+<th> Тема </th>
+<th> Презентация </th>
+<th> Домашнее задание </th>
+<th> Стоимость </th>
+<th> Срок </th>
+</tr>
+<tr>
+<td> 02/09/2020 </td>
+<td> План на семестр. Техническое вступление. Вспоминаем С. </td>
+<td> <file 'cmc/files/cmc-2020-present-01.pdf'> cmc-2020-present-01.pdf </file>  </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</table>
+
+<h3> Материалы 2019-2020 </h3>
+
+Самая полезная ссылка 1: <a href='http://cmcmsu.info/2course/'> cmcmsu.info </a>
+
+Самая полезная ссылка 2: <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
+
+<table>
+<tr>
+<th> Дата </th>
+<th> Тема </th>
+<th> Презентация </th>
+</tr>
+<tr>
+<td> 07/02/2020 </td>
+<td> План на семестр. Интерпретатор (арифметика). </td>
+<td> <file 'cmc/files/cmc-2020-present-21.pdf'> cmc-2020-present-21.pdf </file>  </td>
+</tr>
+<tr>
+<td> 08/02/2020 </td>
+<td> Интерпретатор (присваивания). </td>
+<td> <file 'cmc/files/cmc-2020-present-22.pdf'> cmc-2020-present-22.pdf </file>  </td>
+</tr>
+<tr>
+<td> 10/02/2020 </td>
+<td> Интерпретатор (бинарные операторы). </td>
+<td> <file 'cmc/files/cmc-2020-present-23.pdf'> cmc-2020-present-23.pdf </file>  </td>
+</tr>
+<tr>
+<td> 12/02/2020 </td>
+<td> Интерпретатор (goto). </td>
+<td> <file 'cmc/files/cmc-2020-present-24.pdf'> cmc-2020-present-24.pdf </file>  </td>
+</tr>
+<tr>
+<td> 15/02/2020 </td>
+<td> Интерпретатор (if while). </td>
+<td> <file 'cmc/files/cmc-2020-present-25.pdf'> cmc-2020-present-25.pdf </file>  </td>
+</tr>
+<tr>
+<td> 04/03/2020 </td>
+<td> Интерпретатор (статическая и динамическая сборка). </td>
+<td> <file 'cmc/files/cmc-2020-present-26.pdf'> cmc-2020-present-26.pdf </file>  </td>
+</tr>
+<tr>
+<td> 14/03/2020 </td>
+<td> Аудио обработка. Сегментирование активности голоса. </td>
+<td> <file 'cmc/files/cmc-2020-present-27.pdf'> cmc-2020-present-27.pdf </file>
+     <file 'cmc/files/vad.cpp'> vad.cpp </file></td>
+</tr>
+<tr>
+<td> 11/04/2020 </td>
+<td> Аудио обработка. Преобразование Фурье. </td>
+<td> <file 'cmc/files/cmc-2020-present-28.pdf'> cmc-2020-present-28.pdf </file>
+</td>
+</tr>
+<tr>
+<td> 15/04/2020 </td>
+<td> Аудио обработка. Быстрое преобразование Фурье. </td>
+<td> <a href='https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm'> wiki (FFT) </a>
+</td>
+</tr>
+</tr>
+<tr>
+<td> 06/05/2020 </td>
+<td> Аудио обработка. Пайплайн для бота, распознающего цифры. </td>
+<td> <file 'cmc/files/audio_digit_recognition.zip'> audio_digit_recognition.zip </file>
+</td>
+</tr>
+</tr>
+<tr>
+<td> 20/05/2020 </td>
+<td> Краулер. </td>
+<td> <file 'cmc/files/wiki.py'> wiki.py </file>
+</td>
+</tr>
+</table>
+
+
+
+
+
+<table>
+<tr>
+<th> Дата </th>
+<th> Тема </th>
+<th> Презентация </th>
+<th> Домашнее задание </th>
+<th> Стоимость </th>
+<th> Срок </th>
+</tr>
+<tr>
+<td> 14/09/2019 </td>
+<td> План на семестр. Техническое вступление. Вспоминаем С. </td>
+<td> <file 'cmc/files/cmc-2019-present-01.pdf'> cmc-2019-present-01.pdf </file>  </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> 18/09/2019 </td>
+<td> Вспоминаем bash. Инструменты для практики. </td>
+<td> <file 'cmc/files/cmc-2019-present-02.pdf'> cmc-2019-present-02.pdf </file> </td>
+<td> <a href='cmc/login_20.html'> Дом: до массивов </a> </td>
+<td> 10 </td>
+<td> 24/09/2019 21:00:00 </td>
+</tr>
+<tr>
+<td> 21/09/2019 </td>
+<td> Практика. </td>
+<td> </td>
+<td> была  </td>
+<td> 10 </td>
+<td> была </td>
+</tr>
+<tr>
+<td> 25/09/2019 </td>
+<td> Динамическая память. </td>
+<td> <file 'cmc/files/cmc-2019-present-03.pdf'> cmc-2019-present-03.pdf </file> </td>
+<td> <file 'cmc/files/cmc-home-02.pdf'> Дом: до указателей </file> </td>
+<td> 10 </td>
+<td> 09/10/2019 21:00:00 </td>
+</tr>
+<tr>
+<td> 28/09/2019 </td>
+<td> Практика. </td>
+<td> </td>
+<td> была </td>
+<td> 10 </td>
+<td> была </td>
+</tr>
+<tr>
+<td> 02/10/2019 </td>
+<td> Динамическая память. </td>
+<td> <file 'cmc/files/cmc-2019-present-04.pdf'> cmc-2019-present-04.pdf </file> </td>
+<td> <file 'cmc/files/cmc-home-03.pdf'> Дом: до списков </file> </td>
+<td> 10 </td>
+<td> 09/10/2019 21:00:00 </td>
+</tr>
+<tr>
+<td> 05/10/2019 </td>
+<td> Практика. </td>
+<td> </td>
+<td> была </td>
+<td> 10 </td>
+<td> была </td>
+</tr>
+<tr>
+<td> 09/10/2019 </td>
+<td> Системные вызовы. </td>
+<td> <file 'cmc/files/cmc-2019-present-05.pdf'> cmc-2019-present-05.pdf </file> </td>
+<td> <file 'cmc/files/cmc-home-04.pdf'> Системные вызовы </file> </td>
+<td> 10 </td>
+<td> 16/10/2019 21:00:00 </td>
+</tr>
+<tr>
+<td> 12/10/2019 </td>
+<td> Практика. </td>
+<td> </td>
+<td> будет </td>
+<td> 10 </td>
+<td> будет </td>
+</tr>
+
+<tr>
+<td> 19/10/2019 </td>
+<td> Семестровая работа №1. bash. </td>
+<td> <file 'cmc/files/cmc-2019-present-06.pdf'> cmc-2019-present-06.pdf </file> </td>
+<td> </td>
+<td> 100 </td>
+<td> 23/10/2019 21:00:00 </td>
+</tr>
+
+<tr>
+<td> 23/10/2019 </td>
+<td> Семестровая работа №1. bash. </td>
+<td> <file 'cmc/files/cmc-2019-present-07.pdf'> cmc-2019-present-07.pdf </file> </td>
+<td> </td>
+<td> - </td>
+<td> 26/10/2019 21:00:00 </td>
+</tr>
+
+<tr>
+<td> 26/10/2019 </td>
+<td> Семестровая работа №1. bash. </td>
+<td> <file 'cmc/files/cmc-2019-present-08.pdf'> cmc-2019-present-08.pdf </file> </td>
+<td> </td>
+<td> - </td>
+<td> 02/11/2019 21:00:00 </td>
+</tr>
+
+<tr>
+<td> 30/10/2019 </td>
+<td> Практика </td>
+<td>  </td>
+<td> <file 'cmc/files/cmc-class-5.pdf'> cmc-class-5.pdf </file> </td>
+<td> </td>
+<td> </td>
+</tr>
+
+<tr>
+<td> 06/11/2019 </td>
+<td> Семестровая работа №2. judge. </td>
+<td> <file 'cmc/files/cmc-2019-present-09.pdf'> cmc-2019-present-09.pdf </file> </td>
+<td> </td>
+<td> 100 </td>
+<td> 20/11/2019 21:00:00 </td>
+</tr>
+
+<tr>
+<td> 23/11/2019 </td>
+<td> Клиент-сервер </td>
+<td> <file 'cmc/files/cmc-2019-present-10.pdf'> cmc-2019-present-10.pdf </file> <file 'cmc/files/cmc-2019-present-11.pdf'> cmc-2019-present-11.pdf </file> </td>
+<td> <a href='https://ejudge.ru/study/3sem/sem15.pdf'> А.В.Чернов <br/>"Пример клиент-сервер"</a> <br />  <file 'cmc/files/client.c'> client.c </file> <file 'cmc/files/server.c'> server.c </file> </td>
+<td> </td>
+<td> </td>
+</tr>
+</table>
