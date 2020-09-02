@@ -1,8 +1,10 @@
-<h3> Материалы 2019-2020 </h3>
+<h3> Материалы 2020-2021 </h3>
 
-Самая полезная ссылка 1: <a href='http://cmcmsu.info/2course/'> cmcmsu.info </a>
+Прогресс (ваш): <a href='https://docs.google.com/spreadsheets/d/1cXOXYVgxerUOwvifqUe4Aa7aqSFX9xiaWWueRO0Sitk'> https://docs.google.com </a>
 
-Самая полезная ссылка 2: <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
+Материалы курса (Москва): <a href='http://cmcmsu.info/2course/'> cmcmsu.info </a>
+
+Материалы курса (Москва): <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
 
 <table>
 <tr>
