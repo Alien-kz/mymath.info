@@ -23,4 +23,12 @@
 <td> 10 </td>
 <td> 09/09/2020 </td>
 </tr>
+<tr>
+<td> 04/09/2020 </td>
+<td> Техническое вступление. </td>
+<td> <file 'cmc/files/cmc-2020-present-02.pdf'> cmc-2020-present-02.pdf </file>  </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
 </table>
