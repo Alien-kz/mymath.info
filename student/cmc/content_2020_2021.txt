@@ -41,7 +41,7 @@
 </tr>
 <tr>
 <td> 11/09/2020 </td>
-<td> Указатели. </td>
+<td> Динамические матрицы и структуры. </td>
 <td> <file 'cmc/files/cmc-2020-present-04.pdf'> cmc-2020-present-04.pdf </file>  </td>
 <td> <file 'cmc/files/cmc-home-03.pdf'> Дом: до динамических структур </file> </td>
 <td> 10 </td>
