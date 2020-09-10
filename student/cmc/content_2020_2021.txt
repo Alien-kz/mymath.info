@@ -35,8 +35,16 @@
 <td> 09/09/2020 </td>
 <td> Указатели. </td>
 <td> <file 'cmc/files/cmc-2020-present-03.pdf'> cmc-2020-present-03.pdf </file>  </td>
-<td> <file 'cmc/files/cmc-home-02.pdf'> Дом: до матриц </file> </td>
+<td> <file 'cmc/files/cmc-home-02.pdf'> Дом: до динамических массивов </file> </td>
 <td> 10 </td>
 <td> 16/09/2020 23:59:59 </td>
+</tr>
+<tr>
+<td> 11/09/2020 </td>
+<td> Указатели. </td>
+<td> <file 'cmc/files/cmc-2020-present-04.pdf'> cmc-2020-present-04.pdf </file>  </td>
+<td> <file 'cmc/files/cmc-home-03.pdf'> Дом: до динамических структур </file> </td>
+<td> 10 </td>
+<td> 18/09/2020 23:59:59 </td>
 </tr>
 </table>
