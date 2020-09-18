@@ -45,6 +45,14 @@
 <td> <file 'cmc/files/cmc-2020-present-04.pdf'> cmc-2020-present-04.pdf </file>  </td>
 <td> <file 'cmc/files/cmc-home-03.pdf'> Дом: до динамических структур </file> </td>
 <td> 10 </td>
-<td> 18/09/2020 23:59:59 </td>
+<td> 23/09/2020 23:59:59 </td>
+</tr>
+<tr>
+<td> 18/09/2020 </td>
+<td> Системные вызовы. </td>
+<td> <file 'cmc/files/cmc-2020-present-05.pdf'> cmc-2020-present-05.pdf </file>  </td>
+<td> <file 'cmc/files/cmc-home-04.pdf'> Системные вызовы </file>  <file 'cmc/files/avatar.bmp'> avatar.bmp </file> </td>
+<td> 10 </td>
+<td> 25/09/2020 23:59:59 </td>
 </tr>
 </table>
