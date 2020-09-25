@@ -51,9 +51,9 @@
 <td> 18/09/2020 </td>
 <td> Системные вызовы. </td>
 <td> <file 'cmc/files/cmc-2020-present-05.pdf'> cmc-2020-present-05.pdf </file>  </td>
-<td> <file 'cmc/files/cmc-home-04.pdf'> Системные вызовы </file>  <file 'cmc/files/avatar.bmp'> avatar.bmp </file> </td>
+<td> <file 'cmc/files/cmc-home-04.pdf'> Дом: cистемные вызовы </file>  <file 'cmc/files/avatar.bmp'> avatar.bmp </file> </td>
 <td> 10 </td>
-<td> 25/09/2020 23:59:59 </td>
+<td> 30/09/2020 23:59:59 </td>
 </tr>
 <tr>
 <td> 23/09/2020 </td>
@@ -64,11 +64,11 @@
 <td> 30/09/2020 23:59:59 </td>
 </tr>
 <tr>
-<td> 25/09/2020 </td>
+<td> 30/09/2020 </td>
 <td> Семестровая №1. </td>
 <td> <file 'cmc/files/cmc-2020-present-07.pdf'> cmc-2020-present-07.pdf </file>  </td>
 <td> </td>
 <td> +20/100 </td>
-<td> 30/09/2020 23:59:59 </td>
+<td> 07/10/2020 23:59:59 </td>
 </tr>
 </table>
