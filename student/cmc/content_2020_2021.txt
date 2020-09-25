@@ -63,4 +63,12 @@
 <td> 40/100 </td>
 <td> 30/09/2020 23:59:59 </td>
 </tr>
+<tr>
+<td> 25/09/2020 </td>
+<td> Семестровая №1. </td>
+<td> <file 'cmc/files/cmc-2020-present-07.pdf'> cmc-2020-present-07.pdf </file>  </td>
+<td> </td>
+<td> +20/100 </td>
+<td> 30/09/2020 23:59:59 </td>
+</tr>
 </table>
