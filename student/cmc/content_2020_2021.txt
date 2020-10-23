@@ -79,4 +79,14 @@
 <td> +40/100 </td>
 <td> 16/10/2020 23:59:59 </td>
 </tr>
+
+<tr>
+<td> 23/10/2020 </td>
+<td> Клиент-сервер. </td>
+<td> <a href='https://github.com/Alien-kz/msu'> github.com/Alien-kz/msu </a>  </td>
+<td> </td>
+<td>  </td>
+<td> </td>
+</tr>
+
 </table>
