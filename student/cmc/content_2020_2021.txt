@@ -89,4 +89,12 @@
 <td> </td>
 </tr>
 
+<tr>
+<td> 25/11/2020 </td>
+<td> Семестровая №1 </td>
+<td> <a href='https://github.com/Alien-kz/msu/blob/main/web_client_server/webserver.md'> github.com/USER/webserver.git </a>  </td>
+<td> </td>
+<td>  </td>
+<td> 16/12/2020 23:59:59 </td>
+</tr>
 </table>
