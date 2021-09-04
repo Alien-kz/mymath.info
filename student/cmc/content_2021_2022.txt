@@ -1,0 +1,26 @@
+<h3> Материалы 2021-2022 </h3>
+
+Прогресс (ваш): <a href='https://docs.google.com/spreadsheets/d/1cXOXYVgxerUOwvifqUe4Aa7aqSFX9xiaWWueRO0Sitk'> https://docs.google.com </a>
+
+Материалы курса (Москва): <a href='http://cmcmsu.info/2course/'> cmcmsu.info </a>
+
+Материалы курса (Москва): <a href='https://ejudge.ru/study/3sem/unix.shtml'> ejudge.ru </a>
+
+<table>
+<tr>
+<th> Дата </th>
+<th> Тема </th>
+<th> Презентация </th>
+<th> Домашнее задание </th>
+<th> Стоимость </th>
+<th> Срок </th>
+</tr>
+<tr>
+<td> 01/09/2021 </td>
+<td> План на семестр. Техническое вступление. Вспоминаем С. </td>
+<td> <file 'cmc/files/cmc-2021-present-01.pdf'> cmc-2021-present-01.pdf </file>  </td>
+<td> <file 'cmc/files/cmc-home-01.pdf'> Дом: до матриц </file> </td>
+<td> 10 </td>
+<td> 07/09/2020 23:59:59 </td>
+</tr>
+</table>

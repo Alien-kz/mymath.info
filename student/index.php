@@ -64,6 +64,7 @@
 				div_close();
 			}
 			if ($subject == "cmc") {
+				print_post("Практикум на ЭВМ 3 семестр", "content", $subject."/content_2021_2022.txt"); 
 				print_post("Практикум на ЭВМ 3 семестр", "content", $subject."/content_2020_2021.txt"); 
 				print_post("Практикум на ЭВМ 3 семестр", "content", $subject."/content_2019_2020.txt"); 
 				print_post("Практикум на ЭВМ 3 семестр", "content", $subject."/content_2018_2019.txt"); 
