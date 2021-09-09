@@ -27,7 +27,7 @@
 <td> 01/09/2021 </td>
 <td> План на семестр. Техническое вступление. Вспоминаем С. </td>
 <td> <file 'cmc/files/cmc-2021-present-02.pdf'> cmc-2021-present-02.pdf </file> <file 'cmc/files/cmc-2021-present-03.pdf'> cmc-2021-present-03.pdf </file> </td>
-<td> <file 'cmc/files/cmc-home-2.pdf'> Дом: до матриц </file> </td>
+<td> <file 'cmc/files/cmc-home-2.pdf'> Дом: динамическая память </file> </td>
 <td> 10 </td>
 <td> 14/09/2021 20:59:59 </td>
 </tr>
