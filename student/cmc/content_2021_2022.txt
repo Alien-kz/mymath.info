@@ -43,7 +43,7 @@
 <td> 23/09/2021 </td>
 <td> Аргументы КС и системные вызовы. </td>
 <td> <file 'cmc/files/cmc-2021-present-05.pdf'> cmc-2021-present-05.pdf </file>
-<td> <file 'cmc/files/cmc-home-5.pdf'> Дом: аргументы КС и системные вызовы </file> </td>
+<td> <file 'cmc/files/cmc-home-5.pdf'> Дом: аргументы КС и системные вызовы </file> <file 'cmc/files/avatar.bmp'> avatar.bmp </file> </td>
 <td> 10 </td>
 <td> 29/09/2021 20:59:59 </td>
 </tr>
