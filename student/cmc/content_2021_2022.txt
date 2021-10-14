@@ -55,4 +55,12 @@
 <td> 30 </td>
 <td> 12/10/2021 20:59:59 </td>
 </tr>
+<tr>
+<td> 14/10/2021 </td>
+<td> Семетровая работа №1. Этапы 4-5. </td>
+<td> <file 'cmc/files/cmc-2021-present-07.pdf'> cmc-2021-present-07.pdf </file>
+<td>  <a href='https://github.com/USER/shell'> https://github.com/USER/shell </a> </td>
+<td> 30 </td>
+<td> 19/10/2021 20:59:59 </td>
+</tr>
 </table>
