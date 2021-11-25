@@ -81,10 +81,18 @@
 </tr>
 <tr>
 <td> 18/11/2021 </td>
-<td> Семетровая работа №1. Этап 7-8. </td>
+<td> Семетровая работа №1. Этап 9. </td>
 <td> <file 'cmc/files/cmc-2021-present-10.pdf'> cmc-2021-present-10.pdf </file>
 <td>  <a href='https://github.com/USER/shell'> https://github.com/USER/shell </a> </td>
 <td> 20 </td>
 <td> 23/11/2021 20:59:59 </td>
+</tr>
+<tr>
+<td> 25/11/2021 </td>
+<td> Сетевое подключение </td>
+<td> <file 'cmc/files/cmc-2021-present-11.pdf'> cmc-2021-present-11.pdf </file>
+<td>  <a href='https://github.com/Alien-kz/msu/tree/main/client_server'> https://github.com/Alien-kz/msu/tree/main/client_server </a> </td>
+<td> 20 </td>
+<td> 01/12/2021 20:59:59 </td>
 </tr>
 </table>
