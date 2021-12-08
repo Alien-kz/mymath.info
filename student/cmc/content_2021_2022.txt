@@ -95,4 +95,12 @@
 <td> 20 </td>
 <td> 01/12/2021 20:59:59 </td>
 </tr>
+<tr>
+<td> 08/12/2021 </td>
+<td> Сетевое подключение на примере WEB </td>
+<td> <file 'cmc/files/cmc-2021-present-12.pdf'> cmc-2021-present-12.pdf </file>
+<td>  <a href='https://github.com/Alien-kz/msu/tree/main/web_client_server'> https://github.com/Alien-kz/msu/tree/main/client_server </a> </td>
+<td> 20 </td>
+<td> 15/12/2021 20:59:59 </td>
+</tr>
 </table>
