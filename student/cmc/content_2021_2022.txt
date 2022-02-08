@@ -16,7 +16,7 @@
 <tr>
 <td> 08/02/2022 </td>
 <td> План на семестр. C++. Ввод-вывод. Конструктор. Методы. </td>
-<td> <file 'cmc/files/cmc-2022-present-21.pdf'> cmc-2022-present-21.pdf </file>  </td>
+<td> <file 'cmc/files/cmc-2022-present-21.pdf'> cmc-2022-present-21.pdf </file>  <a href='https://github.com/Alien-kz/cpp/tree/main/src/1'> примеры </a> </td>
 <td> <file 'https://github.com/Alien-kz/cpp/blob/main/pdf/1.pdf'> Методы </file> </td>
 <td> 10 </td>
 <td> 14/02/2022 20:59:59 </td>
