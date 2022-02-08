@@ -1,5 +1,28 @@
 <h3> Материалы 2021-2022 </h3>
 
+
+<h3> Материалы 2021-2022 </h3>
+
+
+<table>
+<tr>
+<th> Дата </th>
+<th> Тема </th>
+<th> Презентация </th>
+<th> Домашнее задание </th>
+<th> Стоимость </th>
+<th> Срок </th>
+</tr>
+<tr>
+<td> 08/02/2022 </td>
+<td> План на семестр. C++. Ввод-вывод. Конструктор. Методы. </td>
+<td> <file 'cmc/files/cmc-2022-present-21.pdf'> cmc-2022-present-21.pdf </file>  </td>
+<td> <file 'https://github.com/Alien-kz/cpp/blob/main/pdf/1.pdf'> Методы </file> </td>
+<td> 10 </td>
+<td> 14/02/2022 20:59:59 </td>
+</tr>
+</table>
+
 Прогресс (ваш): <a href='https://docs.google.com/spreadsheets/d/1cXOXYVgxerUOwvifqUe4Aa7aqSFX9xiaWWueRO0Sitk'> https://docs.google.com </a>
 
 Материалы курса (Москва): <a href='http://cmcmsu.info/2course/'> cmcmsu.info </a>
@@ -104,3 +127,6 @@
 <td> 15/12/2021 20:59:59 </td>
 </tr>
 </table>
+
+
+
