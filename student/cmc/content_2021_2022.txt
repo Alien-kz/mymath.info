@@ -1,9 +1,6 @@
 <h3> Материалы 2021-2022 </h3>
 
 
-<h3> Материалы 2021-2022 </h3>
-
-
 <table>
 <tr>
 <th> Дата </th>
@@ -20,6 +17,14 @@
 <td> <file 'https://github.com/Alien-kz/cpp/blob/main/pdf/1.pdf'> Методы </file> </td>
 <td> 10 </td>
 <td> 14/02/2022 20:59:59 </td>
+</tr>
+<tr>
+<td> 01/03/2022 </td>
+<td> План на семестр. C++. Ввод-вывод. Конструктор. Методы. </td>
+<td> <file 'cmc/files/cmc-2022-present-22.pdf'> cmc-2022-present-22.pdf </file>  </td>
+<td> Арифметика на ПОЛИЗ </td>
+<td> 0 </td>
+<td> </td>
 </tr>
 </table>
 
