@@ -20,10 +20,18 @@
 </tr>
 <tr>
 <td> 01/03/2022 </td>
-<td> План на семестр. C++. Ввод-вывод. Конструктор. Методы. </td>
+<td> Семестровая 1. Полиз </td>
 <td> <file 'cmc/files/cmc-2022-present-22.pdf'> cmc-2022-present-22.pdf </file>  </td>
 <td> Арифметика на ПОЛИЗ </td>
 <td> 0 </td>
+<td> </td>
+</tr>
+<tr>
+<td> 03/03/2022 </td>
+<td> Семестровая 1. Переменные </td>
+<td> <file 'cmc/files/cmc-2022-present-23.pdf'> cmc-2022-present-23.pdf </file>  </td>
+<td> Переменные </td>
+<td> 10 </td>
 <td> </td>
 </tr>
 </table>
