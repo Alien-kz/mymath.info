@@ -34,6 +34,14 @@
 <td> 10 </td>
 <td> </td>
 </tr>
+<tr>
+<td> 17/03/2022 </td>
+<td> Семестровая 1. Переменные </td>
+<td> <file 'cmc/files/cmc-2022-present-24.pdf'> cmc-2022-present-24.pdf </file>  </td>
+<td> Бинарные операторы. Рекурсивные спуск. </td>
+<td> 10 </td>
+<td> </td>
+</tr>
 </table>
 
 Прогресс (ваш): <a href='https://docs.google.com/spreadsheets/d/1cXOXYVgxerUOwvifqUe4Aa7aqSFX9xiaWWueRO0Sitk'> https://docs.google.com </a>
