@@ -54,7 +54,7 @@
 <td> 31/03/2022 </td>
 <td> Семестровая 1. IF WHILE. </td>
 <td> <file 'cmc/files/cmc-2022-present-26.pdf'> cmc-2022-present-26.pdf </file>  </td>
-<td> GOTO </td>
+<td> IF WHILE. </td>
 <td> 20 </td>
 <td> </td>
 </tr>
