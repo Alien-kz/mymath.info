@@ -61,9 +61,17 @@
 <tr>
 <td> 12/04/2022 </td>
 <td> Семестровая 1. Технические моменты. </td>
-<td> <file 'cmc/files/cmc-2022-present-26.pdf'> cmc-2022-present-26.pdf </file>  </td>
+<td> <file 'cmc/files/cmc-2022-present-27.pdf'> cmc-2022-present-27.pdf </file>  </td>
 <td> Технические моменты. </td>
 <td> 0 </td>
+<td> </td>
+</tr>
+<tr>
+<td> 14/04/2022 </td>
+<td> Семестровая 1. Массивы </td>
+<td> <file 'cmc/files/cmc-2022-present-28.pdf'> cmc-2022-present-28.pdf </file>  </td>
+<td> Массивы. </td>
+<td> 10 </td>
 <td> </td>
 </tr>
 </table>
