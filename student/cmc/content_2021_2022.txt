@@ -74,6 +74,22 @@
 <td> 10 </td>
 <td> </td>
 </tr>
+<tr>
+<td> 03/05/2022 </td>
+<td> Qt. Введение </td>
+<td> <file 'cmc/files/cmc-2022-present-29.pdf'> cmc-2022-present-29.pdf </file>  </td>
+<td> Qt. Введение </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> 05/05/2022 </td>
+<td> Qt. Игра </td>
+<td> <file 'cmc/files/cmc-2022-present-30.pdf'> cmc-2022-present-30.pdf </file>  </td>
+<td> Qt. Игра </td>
+<td> </td>
+<td> </td>
+</tr>
 </table>
 
 Прогресс (ваш): <a href='https://docs.google.com/spreadsheets/d/1cXOXYVgxerUOwvifqUe4Aa7aqSFX9xiaWWueRO0Sitk'> https://docs.google.com </a>
